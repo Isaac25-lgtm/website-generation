@@ -14,7 +14,7 @@ const PLAN_INFO = [
 // The three kinds of site, each shown with a real CC0 photo and a link to its live demo.
 const KINDS = [
   { t: "personal", name: "Personal & portfolio", img: "/stock/photo-camera.webp", alt: "A photographer holding a camera", desc: "Show your work, your story and your CV. Project galleries, a downloadable CV and a contact form, so the right people can find you and get in touch.", example: "/s/demo-portfolio/", shot: "/showcase/portfolio-home.webp", address: "/s/demo-portfolio/", exampleLabel: "See a photographer's portfolio" },
-  { t: "business", name: "Business", img: "/stock/safari-giraffe.webp", alt: "A giraffe browsing beside an acacia tree", desc: "Everything customers look for: your services and prices, photos, opening hours, a map and a WhatsApp button. Enquiries and quote requests land in your dashboard.", example: "/s/demo-business/", shot: "/showcase/business-home.webp", address: "/s/demo-business/", exampleLabel: "See a safari company's site" },
+  { t: "business", name: "Business", img: "/hero/customers.webp", alt: "Customers browsing a business website", desc: "Everything customers look for: your services and prices, photos, opening hours, a map and a WhatsApp button. Enquiries and quote requests land in your dashboard.", example: "/s/demo-business/", shot: "/showcase/business-home.webp", address: "/s/demo-business/", exampleLabel: "See a travel company's site" },
   { t: "ecommerce", name: "Online store", img: "/stock/fashion-atelier.webp", alt: "A woman among rails of clothing in an atelier", desc: "A real shop with products in sizes and colours, live stock levels, a cart and a checkout. Orders arrive in your dashboard, ready to confirm and deliver.", example: "/s/demo-store/", shot: "/showcase/store-home.webp", address: "/s/demo-store/", exampleLabel: "See a fashion boutique's shop" },
 ] as const;
 
@@ -105,7 +105,7 @@ export default function Home() {
           <p className="lede">Describe the website you need for your business, your portfolio or your shop. ImprintSites designs it, puts it on its own web address and keeps it running, and you can change anything without code.</p>
           <form className="hero-prompt" onSubmit={go} aria-label="Start building your website">
             <label htmlFor="prompt" className="sr-only">Describe your website</label>
-            <input id="prompt" value={prompt} onChange={(e) => setPrompt(e.target.value)} maxLength={2000} placeholder="Describe your website, e.g. a bakery in Nairobi with our menu and WhatsApp orders" />
+            <input id="prompt" value={prompt} onChange={(e) => setPrompt(e.target.value)} maxLength={2000} placeholder="Describe your website, e.g. a bakery in Lisbon with our menu and online orders" />
             <button className="btn btn-primary btn-lg" type="submit">Start building</button>
           </form>
           <div className="hero-types" role="group" aria-label="Website type">
@@ -230,7 +230,7 @@ export default function Home() {
             <details><summary>What does it cost?</summary><p>A one-time build fee when you publish: $20 for a personal site, $30 for a business site or $100 for an online store. After that, hosting and maintenance are {hosting} per site per month, covering your web address, secure hosting, backups and platform updates. You'll be asked to agree to the monthly plan before any monthly charge, and you can cancel it at any time.</p></details>
             <details><summary>Can I try it before paying?</summary><p>Yes. Create an account, fill in your details, generate the site and look at it on every screen size for free. You only pay when you decide to publish.</p></details>
             <details><summary>Can I change my site after it's live?</summary><p>Any time. Edit, preview privately, then publish the update. Earlier versions are kept if you want to go back.</p></details>
-            <details><summary>How do my customers pay in the shop?</summary><p>Right now: cash on delivery, pay on pickup, bank or mobile-money transfer, or arranging it on WhatsApp. Orders and stock are tracked properly. Card payments need your own payment account and will come as an option; the money always goes to you, not through us.</p></details>
+            <details><summary>How do my customers pay in the shop?</summary><p>Right now: pay on delivery, pay on pickup, bank transfer, or arranging it on WhatsApp. Orders and stock are tracked properly. Card payments need your own payment account and will come as an option; the money always goes to you, not through us.</p></details>
             <details><summary>How does my web address work?</summary><p>You pick a name when you create your site, and we check it's free. When you publish, it's set up automatically with a secure https connection, so there's nothing to configure. Connecting a domain you already own (like yourbusiness.com) is coming soon; domains themselves are bought from a registrar.</p></details>
             <details><summary>Does AI write my site?</summary><p>Your site is built from what you tell us. You can ask AI to tidy up the wording, but it doesn't add facts, and you check every suggestion before it goes live.</p></details>
           </div>

@@ -6,7 +6,7 @@ import { generateSiteDoc } from "../shared/generate";
 import { TEMPLATES } from "../shared/templates";
 import { slugify } from "../shared/util";
 
-const SEED_VERSION = "demo-v3";
+const SEED_VERSION = "demo-v4";
 let seededInIsolate = false;
 
 /** Idempotently creates the three public demo sites (clearly labelled as demonstrations). */
@@ -59,7 +59,7 @@ export async function ensureDemos(env: AppEnv): Promise<void> {
       (persona.products ?? []).forEach((p, i) => {
         const prd = newId("prd");
         stmts.push(env.DB.prepare("INSERT INTO products (id, project_id, title, handle, description, product_type, status, price_cents, compare_at_cents, currency, tags, images_json, option1_name, option2_name, max_per_order, featured, position, created_at, updated_at) VALUES (?, ?, ?, ?, ?, 'physical', 'active', ?, ?, ?, ?, ?, ?, ?, 10, ?, ?, ?, ?)")
-          .bind(prd, pid, p.title, slugify(p.title), p.description, zero ? p.price : p.price * 100, p.compareAt ? (zero ? p.compareAt : p.compareAt * 100) : null, currency, p.tags ?? "", JSON.stringify(p.image ? [{ stock: p.image, alt: p.title }] : []), p.option1?.name ?? null, p.option2?.name ?? null, p.featured ? 1 : 0, i, t - i * 1000, t));
+          .bind(prd, pid, p.title, slugify(p.title), p.description, zero ? p.price : Math.round(p.price * 100), p.compareAt ? (zero ? p.compareAt : Math.round(p.compareAt * 100)) : null, currency, p.tags ?? "", JSON.stringify(p.image ? [{ stock: p.image, alt: p.title }] : []), p.option1?.name ?? null, p.option2?.name ?? null, p.featured ? 1 : 0, i, t - i * 1000, t));
         stmts.push(env.DB.prepare("INSERT INTO product_collections (product_id, collection_id) VALUES (?, ?)").bind(prd, colIds.get(p.collection)!));
         const o1 = p.option1?.values ?? [null];
         const o2 = p.option2?.values ?? [null];

@@ -218,7 +218,7 @@ function LicensedSearch({ projectId, onImported }: { projectId: string; onImport
   return (
     <div className="stack">
       <div className="alert info small">Photos come from <strong>Openverse</strong>, a library of openly licensed images that allow commercial use. Licence and credit details are saved with each image, and the required credit appears on your site automatically. Always check that an image suits your use. Don't use other businesses' product photos.</div>
-      <form className="row" onSubmit={search}><input className="input" style={{ flex: 1 }} value={q} onChange={(e) => setQ(e.target.value)} placeholder="e.g. coffee beans, safari, office desk" aria-label="Search licensed photos" /><button className="btn btn-primary" disabled={busy || q.length < 2}>{busy ? <Spinner /> : "Search"}</button></form>
+      <form className="row" onSubmit={search}><input className="input" style={{ flex: 1 }} value={q} onChange={(e) => setQ(e.target.value)} placeholder="e.g. coffee beans, city skyline, office desk" aria-label="Search licensed photos" /><button className="btn btn-primary" disabled={busy || q.length < 2}>{busy ? <Spinner /> : "Search"}</button></form>
       {res && res.length === 0 && <p className="muted">No results.</p>}
       {res && <div className="img-grid" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))" }}>{res.map((r) => <button type="button" key={r.id} className="img-tile" aria-pressed={pick?.id === r.id} onClick={() => { setPick(r); setConfirm(false); }} title={r.title}><img src={r.thumbnail} alt={r.title} loading="lazy" referrerPolicy="no-referrer" /></button>)}</div>}
       {pick && (

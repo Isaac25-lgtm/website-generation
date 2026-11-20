@@ -63,7 +63,7 @@ export const PLANS: Record<SiteType, Plan> = Object.freeze({
       "Product catalogue with variants, inventory and CSV import",
       "Search, category filters, cart and checkout",
       "Orders dashboard with status tracking and stock control",
-      "Cash on delivery, pickup, bank / mobile-money transfer or WhatsApp ordering",
+      "Pay on delivery, pickup, bank transfer or WhatsApp ordering",
       "6+ professional store templates",
       "Online card/mobile payments once you connect your own verified gateway",
     ],

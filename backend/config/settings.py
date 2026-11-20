@@ -121,5 +121,10 @@ CLOUDFLARE_ACCOUNT_ID = env("CLOUDFLARE_ACCOUNT_ID")
 CLOUDFLARE_AI_API_TOKEN = env("CLOUDFLARE_AI_API_TOKEN")
 AI_MODEL = env("AI_MODEL", "@cf/meta/llama-3.3-70b-instruct-fp8-fast")
 AI_CONFIGURED = bool(CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_AI_API_TOKEN)
+# Python currently reads a snapshot copied from D1 by `manage.py import_d1`. A snapshot can't see logouts,
+# suspensions, membership removals or new drafts made on the Worker since the copy, so private reads from it are
+# refused unless explicitly allowed (local development only). Customer traffic needs an authoritative source first.
+READ_PATH_AUTHORITY = "snapshot"
+ALLOW_SNAPSHOT_READS = env("ALLOW_SNAPSHOT_READS", "1" if DEBUG else "0") == "1"
 # Media bytes are still stored and served by the Worker during the migration.
 MEDIA_STORAGE = env("MEDIA_STORAGE", "d1")

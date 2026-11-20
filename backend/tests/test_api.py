@@ -27,6 +27,7 @@ def test_readyz_reports_database_migrations_and_contracts():
     r = Client().get("/readyz")
     assert r.status_code == 200, r.json()
     assert r.json()["checks"] == {"database": "ok", "migrations": "ok", "contracts": "ok"}
+    assert r.json()["dataset"] == "disposable" and r.json()["authority"] == "snapshot"  # pytest uses test_*
 
 
 @pytest.mark.django_db
@@ -142,6 +143,16 @@ class TestProjectRead:
         p = make_project(u)
         Entitlement.objects.create(id=rid("ent"), project=p, user=u, site_type="business", source="admin_demo", status="revoked", created_at=now_ms())
         assert client(login(u)).get(API.format(p.id)).json()["entitlement"] is None
+
+    def test_snapshot_reads_fail_closed_unless_allowed(self, make_user, make_project, login):
+        u = make_user()
+        token = login(u)
+        p = make_project(u)
+        with override_settings(ALLOW_SNAPSHOT_READS=False):
+            r = client(token).get(API.format(p.id))
+            assert r.status_code == 503 and r.json()["code"] == "snapshot_not_authoritative"
+            assert client().get(API.format(p.id)).status_code == 503  # refused before any session lookup
+        assert client(token).get(API.format(p.id)).status_code == 200
 
     def test_only_get_is_served(self, make_user, make_project, login):
         u = make_user()

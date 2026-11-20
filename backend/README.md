@@ -6,6 +6,7 @@ Django + Django REST Framework + PostgreSQL (Neon). This is **step 2 of the migr
 |---|---|
 | Serves | `GET /healthz`, `GET /readyz`, `GET /api/config`, `GET /api/projects/<id>` |
 | Writes | Nothing. The Worker is still the only writer for every domain. Python reads a verified copy of the data. |
+| Authority | **Snapshot only.** A copy can't see logouts, suspensions, membership removals or drafts saved since the import. Private reads are therefore refused (`503 snapshot_not_authoritative`) unless `ALLOW_SNAPSHOT_READS=1`, which defaults to on only when `DJANGO_DEBUG=1`. Before any customer traffic, authorization must come from the current authority. Also test an edit followed immediately by a reload. |
 | Sign-in | Accepts the Worker's existing `is_session` cookie (same sessions table, `sha256(token)` ids). Python doesn't create sessions yet. |
 | Database | PostgreSQL on Neon. Tables and columns mirror D1 exactly (string ids, millisecond timestamps, JSON documents stored as text). |
 | Contracts | Validates SiteDocs against `contracts/sitedoc.schema.json`, which is generated from the TypeScript Zod schema. Plan prices come from `contracts/public-config.json`. |
@@ -36,7 +37,7 @@ cp .env.example .env                                            # then set DATAB
 curl http://127.0.0.1:8000/readyz                       # {"ok":true,"checks":{"database":"ok","migrations":"ok","contracts":"ok"}}
 ```
 
-`import_d1` reads only local Wrangler SQLite files (`.wrangler/state/v3/d1/...`). It cannot read production D1.
+`import_d1` reads only local Wrangler SQLite files (`.wrangler/state/v3/d1/...`). It cannot read production D1. Test suites call it with `--disposable-only`, which refuses any database not named `test_*`, `*_parity`, `*_e2e` or `*_disposable`. `/readyz` reports `"dataset": "disposable"` or `"configured"` so the suites can check before replacing data.
 
 ### Use the React UI with Python (one origin)
 
@@ -54,15 +55,19 @@ Projects created through the UI exist in D1 first. Run `import_d1 --yes` again b
 ## Tests
 
 ```bash
-cd backend && .venv/Scripts/python -m pytest              # 49 tests: contracts, API behaviour, importer
+cd backend && .venv/Scripts/python -m pytest              # 52 tests: contracts, API behaviour, snapshot guard, importer
 ```
 
 - Database tests run in a separate `test_neondb` database on the same Neon project, which is kept between runs (`--reuse-db`). After changing models, run `pytest --create-db`.
 - Without `DATABASE_URL`, the database tests are skipped with a reason, and the contract tests still run.
 
-Cross-implementation checks run from the repository root:
+Cross-implementation checks run from the repository root. They replace data, so point **both** Django and the tests at a disposable database first:
 
 ```bash
+export DATABASE_URL="postgresql://…/imprintsites_parity?sslmode=require"   # a separate database on the same Neon project
+backend/.venv/Scripts/python backend/manage.py migrate
+backend/.venv/Scripts/python backend/manage.py runserver 127.0.0.1:8000   # in its own terminal, same DATABASE_URL
+
 # Worker ↔ Python parity: same project body, errors and public config for the same session.
 # Needs the Worker preview WITHOUT PY_API on :8788 and Django on :8000.
 PY_API_URL=http://127.0.0.1:8000 npx vitest run -c vitest.integration.config.ts tests/integration/python-parity.test.ts

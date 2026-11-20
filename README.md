@@ -138,7 +138,7 @@ Every published site also has **hosting & maintenance at $4 per site per month**
 - Products, variants (two option axes), stock tracking, backorders, max-per-order limits, categories, and CSV import with column mapping and per-row validation.
 - Server-rendered search, category filters and sorting; product pages with variant pickers; cart; checkout.
 - Orders: totals computed server-side, idempotent submission, **atomic oversell protection** (a D1 trigger aborts any batch that would push stock below zero), status workflow, restocking on cancellation, CSV export.
-- Seller-controlled payment methods (cash on delivery, pay on pickup, bank or mobile-money transfer, WhatsApp) and delivery or pickup options with fees.
+- Seller-controlled payment methods (pay on delivery, pay on pickup, bank transfer, mobile wallet, WhatsApp) and delivery or pickup options with fees.
 
 ### Accounts and admin
 - Email/password accounts (PBKDF2-SHA256), sessions in HttpOnly cookies, CSRF protection, rate limiting, password reset, data export and deletion requests.
@@ -309,10 +309,10 @@ Step-by-step owner setup: [docs/cloudflare-setup.md](docs/cloudflare-setup.md).
 | Suite | Command | What it covers |
 |---|---|---|
 | **Unit** (64) | `npm run test:unit` | All 18 templates render every page; HTML escaping and link sanitising; no invented content; locked pricing; SSRF URL checks; webhook signatures; password hashing; upload type sniffing; CSV parsing; WCAG contrast of template palettes |
-| **Integration** (45, +3 parity) | `npm run test:integration` | Against a running Worker: auth and CSRF, private previews, payment-gated publishing, versions and rollback, leads, tenant isolation, upload security, SSRF, checkout, concurrent orders that can't oversell, exactly-once restocking, web-address picker, webhook verification |
+| **Integration** (49, +3 parity) | `npm run test:integration` | Against a running Worker: auth and CSRF, private previews, payment-gated publishing, versions and rollback, leads, tenant isolation, upload security, SSRF, checkout, concurrent orders that can't oversell, exactly-once restocking, web-address picker, webhook verification |
 | **End-to-end** (11) | `npx playwright test` | Real browser flows with axe-core accessibility checks and console-error checks: marketing pages, demo sites on desktop and mobile, full store purchase, sign-up → wizard → editor → publish gate, all 18 templates; saves screenshots |
-| **Merchant regressions** (9, part of integration) | `npx vitest run -c vitest.integration.config.ts tests/integration/merchant-regressions.test.ts` | Audit findings #1–#3: store currency from setup is used for products, quotes, orders and publishing; CSV re-import keeps variants and stock; editing after a sale never reverses it |
-| **Python backend** (49) | `cd backend && .venv/Scripts/python -m pytest` | Contracts, legacy session auth, project read shape and errors, D1 → PostgreSQL importer. Worker ↔ Python parity and a browser test are documented in [backend/README.md](backend/README.md) |
+| **Merchant regressions** (13, part of integration) | `npx vitest run -c vitest.integration.config.ts tests/integration/merchant-regressions.test.ts` | Audit findings #1–#3: store currency from setup is used for products, quotes, orders and publishing; CSV re-import keeps variants and stock; editing after a sale never reverses it |
+| **Python backend** (52) | `cd backend && .venv/Scripts/python -m pytest` | Contracts, legacy session auth, project read shape and errors, D1 → PostgreSQL importer. Worker ↔ Python parity and a browser test are documented in [backend/README.md](backend/README.md) |
 | **Production smoke** (36) | `node scripts/smoke-prod.mjs <url>` | Live checks, including real Workers AI and Browser Run calls; cleans up after itself |
 
 Integration and end-to-end tests read `TEST_BASE_URL` (default `http://localhost:8788`), so the same suites run against production:

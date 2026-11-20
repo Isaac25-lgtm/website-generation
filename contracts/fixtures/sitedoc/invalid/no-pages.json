@@ -4,11 +4,11 @@
   "templateId": "b-savanna",
   "brand": {
     "name": "Kijani Trails",
-    "tagline": "Small-group journeys into wild East Africa."
+    "tagline": "Small-group wildlife journeys, expertly guided."
   },
   "seo": {
-    "title": "Kijani Trails — Small-group journeys into wild East Africa.",
-    "description": "Guided safaris, mountain treks and nights under the stars, with local guides who know every track.",
+    "title": "Kijani Trails — Small-group wildlife journeys, expertly guided.",
+    "description": "Guided safaris, mountain treks and nights under the stars in the world's great parks, with local guides who know every track.",
     "lang": "en"
   },
   "theme": {
@@ -34,10 +34,10 @@
   "contact": {
     "email": "trips@example.com",
     "phone": "",
-    "whatsapp": "+255700000000",
+    "whatsapp": "+447700900123",
     "address": "",
-    "city": "Arusha",
-    "country": "Tanzania",
+    "city": "London",
+    "country": "United Kingdom",
     "mapQuery": "",
     "socials": []
   },

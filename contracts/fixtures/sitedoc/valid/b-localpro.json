@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Bright Plumbing & Repairs — Fast, honest home repairs.",
-    "description": "Plumbing, electrical and general home repairs across Kampala. Call or WhatsApp for a visit.",
+    "description": "Plumbing, electrical and general home repairs across Austin. Call or message us for a visit.",
     "lang": "en"
   },
   "theme": {
@@ -33,12 +33,12 @@
   },
   "contact": {
     "email": "",
-    "phone": "+256 700 000 000",
-    "whatsapp": "+256700000000",
-    "address": "Ntinda",
-    "city": "Kampala",
-    "country": "Uganda",
-    "mapQuery": "Ntinda, Kampala",
+    "phone": "+1 512 555 0142",
+    "whatsapp": "+15125550142",
+    "address": "Sample Avenue, East Austin",
+    "city": "Austin",
+    "country": "United States",
+    "mapQuery": "East Austin, Texas",
     "socials": []
   },
   "pages": [
@@ -49,18 +49,18 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1ef4n9",
+          "id": "hero-1exo1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "Home services · Kampala",
+            "eyebrow": "Home services · Austin",
             "heading": "Fast, honest home repairs.",
-            "subheading": "Plumbing, electrical and general home repairs across Kampala. Call or WhatsApp for a visit.",
+            "subheading": "Plumbing, electrical and general home repairs across Austin. Call or message us for a visit.",
             "primaryCta": {
               "label": "Chat on WhatsApp",
-              "href": "https://wa.me/256700000000"
+              "href": "https://wa.me/15125550142"
             },
             "secondaryCta": {
               "label": "Our services",
@@ -69,7 +69,7 @@
           }
         },
         {
-          "id": "services-1f32jx",
+          "id": "services-1fjzdb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -81,7 +81,7 @@
               {
                 "title": "Leak repairs",
                 "description": "Taps, pipes, tanks and toilets fixed properly.",
-                "price": "From UGX 50,000"
+                "price": "From $90"
               },
               {
                 "title": "Installations",
@@ -97,7 +97,7 @@
           }
         },
         {
-          "id": "about-1geumy",
+          "id": "about-1gdyd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -109,17 +109,17 @@
           }
         },
         {
-          "id": "cta-1h1e8s",
+          "id": "cta-1hgztz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "cta",
           "data": {
             "heading": "Ready when you are",
-            "body": "Serving Kampala and Wakiso.",
+            "body": "Serving Austin and Round Rock.",
             "cta": {
               "label": "Chat on WhatsApp",
-              "href": "https://wa.me/256700000000"
+              "href": "https://wa.me/15125550142"
             }
           }
         }
@@ -132,7 +132,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1i9flw",
+          "id": "about-1id7vg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -152,7 +152,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-1jdkmo",
+          "id": "services-1jdgoq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
               {
                 "title": "Leak repairs",
                 "description": "Taps, pipes, tanks and toilets fixed properly.",
-                "price": "From UGX 50,000"
+                "price": "From $90"
               },
               {
                 "title": "Installations",
@@ -204,20 +204,20 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1l3iop",
+          "id": "contact-1l4aa3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "contact",
           "data": {
             "heading": "Contact us",
-            "intro": "We serve Kampala and Wakiso.",
+            "intro": "We serve Austin and Round Rock.",
             "showForm": true,
             "showMap": true
           }
         },
         {
-          "id": "hours-1miejh",
+          "id": "hours-1mbn9e",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

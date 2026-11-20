@@ -2,9 +2,9 @@
 // labelled as the team's work, so no one reads them as "made with ImprintSites". Screenshots come from
 // `node scripts/make-ourwork.mjs`.
 const WORK = [
-  { title: "Jerseyville", sub: "Online sports store · Uganda", url: "https://jerseyville.omodingisaac123.workers.dev/", shot: "work-jerseyville" },
+  { title: "Jerseyville", sub: "Online sports store", url: "https://jerseyville.omodingisaac123.workers.dev/", shot: "work-jerseyville" },
   { title: "Motion Imprints", sub: "Design, print and branding studio", url: "https://motionimprints.online/", shot: "work-motionimprints" },
-  { title: "Active Technical Services", sub: "Engineering and construction · Jinja", url: "https://ats-public-web.onrender.com/", shot: "work-ats" },
+  { title: "Active Technical Services", sub: "Engineering and construction", url: "https://ats-public-web.onrender.com/", shot: "work-ats" },
 ];
 
 export function OurWork({ headingLevel = 2, dark = false }: { headingLevel?: 2 | 3; dark?: boolean }) {

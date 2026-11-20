@@ -71,6 +71,17 @@ Work from [docs/claude-handoff.md](docs/claude-handoff.md), steps 1 and 2:
 
 Test runs for this change: unit 64/64, integration 48/48 (including 9 merchant regressions and 3 Worker ↔ Python parity tests), Playwright 11/11 plus the Python-routing browser test, and backend pytest 49/49. axe found no violations in the new section.
 
+**Follow-up review (same day), fixed with tests:**
+
+- **Live store currency:** a live store keeps its published currency for new products. A form priced in another currency is refused with `409 currency_mismatch`. Checkout refuses lines priced in another currency, and the live catalogue hides them.
+- **Retried stock edits:** each opened product form sends a stable `editId` (migration `0004`). Replaying a save applies nothing more and keeps sales made in between. A changed value in the same form applies only the difference.
+- **Ambiguous CSV rows:** an option value shared by several variants (for example Medium/Red and Medium/Blue) is rejected before any stock changes. Rows must give the SKU or both option values.
+- **Python snapshot:** private reads fail closed outside local development. Parity and browser suites only import into a disposable database (`--disposable-only`).
+
+**International positioning:** demo personas are set in London, Lisbon, Berlin, Toronto, New York, Austin, Copenhagen, Singapore, Melbourne, Paris, San Francisco, Sydney, Vancouver and Los Angeles, priced in USD, EUR or GBP. Phone examples use fictional international numbers, and the currency list leads with major international currencies. Payment wording is neutral ("pay on delivery", bank transfer), and the privacy page cites GDPR, CCPA, LGPD and PIPEDA. `SEED_VERSION` is `demo-v4`.
+
+Test runs after the follow-up: unit 64/64, integration 52/52 (13 merchant and review regressions, 3 parity), Playwright 11/11 plus the Python-routing test, and backend pytest 52/52.
+
 Still open from the audit: findings #4–#10 and the additional defects (see [docs/production-audit.md](docs/production-audit.md)).
 
 ## Next release priorities

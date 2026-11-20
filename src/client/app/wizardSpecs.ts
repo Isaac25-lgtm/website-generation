@@ -18,8 +18,8 @@ const seo: FieldSpec[] = [
 ];
 const contactCore: FieldSpec[] = [
   { k: "email", label: "Public email", t: "email", max: 200 },
-  { k: "phone", label: "Phone (with country code)", t: "tel", ph: "+256 700 000 000", max: 40 },
-  { k: "whatsapp", label: "WhatsApp number (with country code)", t: "tel", ph: "+256700000000", max: 40, help: "Adds a WhatsApp chat button to your site." },
+  { k: "phone", label: "Phone (with country code)", t: "tel", ph: "+1 202 555 0143", max: 40 },
+  { k: "whatsapp", label: "WhatsApp number (with country code)", t: "tel", ph: "+12025550143", max: 40, help: "Adds a WhatsApp chat button to your site." },
 ];
 
 export const STEPS: Record<string, Step[]> = {
@@ -28,7 +28,7 @@ export const STEPS: Record<string, Step[]> = {
       { k: "name", label: "Your full name (as you want it shown)", t: "text", max: 80 },
       { k: "title", label: "Professional title", t: "text", ph: "e.g. Product designer, Civil engineer, Photographer", max: 100 },
       { k: "tagline", label: "Tagline (optional)", t: "text", ph: "A short line that captures what you do", max: 160 },
-      { k: "location", label: "Location", t: "text", ph: "e.g. Kampala, Uganda", max: 80 },
+      { k: "location", label: "Location", t: "text", ph: "e.g. Lisbon, Portugal", max: 80 },
       { k: "bio", label: "Your bio", t: "textarea", rows: 7, max: 4000, help: "A few short paragraphs about you, your work and what you're looking for." },
     ] },
     { id: "contact", title: "Contact & links", fields: [...contactCore, socials] },
@@ -71,7 +71,7 @@ export const STEPS: Record<string, Step[]> = {
     { id: "about", title: "About & benefits", fields: [
       { k: "about", label: "About your business / history", t: "textarea", rows: 6, max: 4000 },
       { k: "benefits", label: "Why customers choose you (one per line)", t: "textarea", rows: 4, max: 1000, ph: "Licensed technicians\nSame-day visits\nFixed, upfront prices" },
-      { k: "targetCustomers", label: "Who you serve", t: "text", max: 200, ph: "Homes and offices in Kampala" },
+      { k: "targetCustomers", label: "Who you serve", t: "text", max: 200, ph: "Homes and offices across the city" },
     ] },
     { id: "services", title: "Services", intro: "List what you offer. Prices are optional. This plan shows offerings, not a shopping cart.", fields: [
       { k: "services", label: "Services / offerings", t: "list", item: "Service", max: 24, fields: [{ k: "title", label: "Name", t: "text", max: 100 }, { k: "description", label: "Description", t: "textarea", rows: 3, max: 600 }, { k: "price", label: "Price or range (optional)", t: "text", max: 60, ph: "From UGX 50,000" }, { k: "image", label: "Image (optional)", t: "image" }] },
@@ -88,7 +88,7 @@ export const STEPS: Record<string, Step[]> = {
       { k: "address", label: "Street address", t: "text", max: 300 },
       { k: "city", label: "Town / city", t: "text", max: 80 },
       { k: "country", label: "Country", t: "text", max: 80 },
-      { k: "mapQuery", label: "Map location", t: "text", max: 300, help: "Exactly what to search on Google Maps (your business name and area, or full address). Leave empty to use your address.", ph: "Bright Plumbing, Ntinda, Kampala" },
+      { k: "mapQuery", label: "Map location", t: "text", max: 300, help: "Exactly what to search on Google Maps (your business name and area, or full address). Leave empty to use your address.", ph: "Bright Plumbing, 221 Sample Street, London" },
       { k: "serviceAreas", label: "Areas you serve (optional)", t: "text", max: 300 },
       hours, { k: "hoursNote", label: "Hours note (optional)", t: "text", max: 300, ph: "Closed on public holidays" },
       socials,
@@ -110,7 +110,7 @@ export const STEPS: Record<string, Step[]> = {
       { k: "logo", label: "Logo", t: "image" },
       { k: "heroImage", label: "Main banner image", t: "image" },
       { k: "country", label: "Country you operate from", t: "text", max: 80 },
-      { k: "currency", label: "Store currency", t: "select", options: [["USD", "US Dollar (USD)"], ["UGX", "Ugandan Shilling (UGX)"], ["KES", "Kenyan Shilling (KES)"], ["NGN", "Nigerian Naira (NGN)"], ["ZAR", "South African Rand (ZAR)"], ["TZS", "Tanzanian Shilling (TZS)"], ["RWF", "Rwandan Franc (RWF)"], ["GHS", "Ghanaian Cedi (GHS)"], ["EUR", "Euro (EUR)"], ["GBP", "British Pound (GBP)"]], help: "Set this before adding products. Prices are shown in this currency." },
+      { k: "currency", label: "Store currency", t: "select", options: [["USD", "US Dollar (USD)"], ["EUR", "Euro (EUR)"], ["GBP", "British Pound (GBP)"], ["CAD", "Canadian Dollar (CAD)"], ["AUD", "Australian Dollar (AUD)"], ["NZD", "New Zealand Dollar (NZD)"], ["CHF", "Swiss Franc (CHF)"], ["JPY", "Japanese Yen (JPY)"], ["SGD", "Singapore Dollar (SGD)"], ["HKD", "Hong Kong Dollar (HKD)"], ["AED", "UAE Dirham (AED)"], ["INR", "Indian Rupee (INR)"], ["BRL", "Brazilian Real (BRL)"], ["MXN", "Mexican Peso (MXN)"], ["SEK", "Swedish Krona (SEK)"], ["NOK", "Norwegian Krone (NOK)"], ["DKK", "Danish Krone (DKK)"], ["PLN", "Polish Złoty (PLN)"], ["ZAR", "South African Rand (ZAR)"], ["NGN", "Nigerian Naira (NGN)"], ["KES", "Kenyan Shilling (KES)"], ["GHS", "Ghanaian Cedi (GHS)"], ["UGX", "Ugandan Shilling (UGX)"], ["TZS", "Tanzanian Shilling (TZS)"], ["RWF", "Rwandan Franc (RWF)"]], help: "Set this before adding products. Prices are shown in this currency." },
       { k: "productType", label: "Product type", t: "select", options: [["physical", "Physical products"], ["digital", "Digital products (delivered manually by you)"], ["both", "Both"]] },
     ] },
     { id: "products", title: "Products & categories", special: "products", intro: "Add products manually, import a CSV, and organise categories. You can keep adding products later from your store dashboard." },
@@ -130,7 +130,7 @@ export const STEPS: Record<string, Step[]> = {
       { k: "mapQuery", label: "Map location (optional)", t: "text", max: 300 },
       hours,
       { k: "about", label: "Your story (optional)", t: "textarea", rows: 5, max: 4000 },
-      { k: "promoBanner", label: "Promotion banner text (optional, must be true)", t: "text", max: 200, ph: "Free delivery in Kampala on orders over UGX 100,000" },
+      { k: "promoBanner", label: "Promotion banner text (optional, must be true)", t: "text", max: 200, ph: "Free shipping on orders over $100" },
       socials, faqs, testimonials,
       { k: "store.notifyEmail", label: "Email for order notifications (optional)", t: "email", max: 200, help: "Used when email notifications are switched on for the platform." },
       ...seo,

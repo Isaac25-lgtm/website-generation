@@ -49,13 +49,13 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-o6ksj",
+          "id": "hero-of6rc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "Illustrator & animator · Accra, Ghana",
+            "eyebrow": "Illustrator & animator · New York, United States",
             "heading": "Bold pictures for brave brands.",
             "subheading": "Kofi Mensah, Illustrator & animator",
             "primaryCta": {
@@ -69,7 +69,7 @@
           }
         },
         {
-          "id": "about-pb0a",
+          "id": "about-p2c41",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -143,7 +143,7 @@
           }
         },
         {
-          "id": "cta-rkdtp",
+          "id": "cta-r2u3c",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -166,7 +166,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-smh1",
+          "id": "gallery-shp5h",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -217,14 +217,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-t8sfp",
+          "id": "contact-tg5hx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "contact",
           "data": {
             "heading": "Get in touch",
-            "intro": "Based in Accra, Ghana.",
+            "intro": "Based in New York, United States.",
             "showForm": true,
             "showMap": false
           }

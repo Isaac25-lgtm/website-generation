@@ -5,10 +5,13 @@ import { Modal, Spinner } from "../components/ui";
 import { parseCsv } from "../../shared/util";
 
 interface Variant { id?: string; option1?: string | null; option2?: string | null; sku?: string | null; priceMinor?: number | null; stock: number; trackInventory: boolean; allowBackorder: boolean }
-interface Product { id?: string; title: string; description: string; status: string; productType: string; priceMinor: number; compareAtMinor?: number | null; sku?: string | null; tags: string; images: { assetId: string; alt: string }[]; option1Name?: string | null; option2Name?: string | null; maxPerOrder: number; featured: boolean; collections: string[]; variants: Variant[] }
+interface Product { id?: string; currency?: string; title: string; description: string; status: string; productType: string; priceMinor: number; compareAtMinor?: number | null; sku?: string | null; tags: string; images: { assetId: string; alt: string }[]; option1Name?: string | null; option2Name?: string | null; maxPerOrder: number; featured: boolean; collections: string[]; variants: Variant[] }
 
-export function ProductsManager({ projectId, currency }: { projectId: string; currency: string }) {
+export function ProductsManager({ projectId, currency: fallbackCurrency }: { projectId: string; currency: string }) {
   const { toast } = useApp();
+  // The server decides the store currency (a live store keeps its published currency).
+  const [serverCurrency, setServerCurrency] = useState<string | null>(null);
+  const currency = serverCurrency ?? fallbackCurrency;
   const [products, setProducts] = useState<Product[] | null>(null);
   const [cols, setCols] = useState<{ id: string; name: string; products: number }[]>([]);
   const [edit, setEdit] = useState<Product | null>(null);
@@ -17,7 +20,7 @@ export function ProductsManager({ projectId, currency }: { projectId: string; cu
   const [q, setQ] = useState("");
   const load = async () => {
     const [p, c] = await Promise.all([api(`/api/projects/${projectId}/products`), api(`/api/projects/${projectId}/collections`)]);
-    setProducts(p.products); setCols(c.collections);
+    setProducts(p.products); setCols(c.collections); if (p.currency) setServerCurrency(p.currency);
   };
   useEffect(() => { load().catch((e) => toast(e.message, "err")); }, [projectId]);
   const shown = (products ?? []).filter((p) => !q || p.title.toLowerCase().includes(q.toLowerCase()) || (p.sku || "").toLowerCase().includes(q.toLowerCase()));
@@ -45,7 +48,7 @@ export function ProductsManager({ projectId, currency }: { projectId: string; cu
             return (
               <tr key={p.id}>
                 <td><div className="row" style={{ flexWrap: "nowrap" }}>{p.images[0] ? <img src={`/media/${p.images[0].assetId}`} alt="" style={{ width: 44, height: 44, borderRadius: 8, objectFit: "cover" }} /> : <div style={{ width: 44, height: 44, borderRadius: 8, background: "var(--soft)" }} />}<div><strong>{p.title}</strong><div className="tiny muted">{p.variants.length > 1 ? `${p.variants.length} variants` : p.sku || ""}{p.featured ? " · Featured" : ""}</div></div></div></td>
-                <td>{money(p.priceMinor, currency)}{p.compareAtMinor ? <div className="tiny muted" style={{ textDecoration: "line-through" }}>{money(p.compareAtMinor, currency)}</div> : null}</td>
+                <td>{money(p.priceMinor, p.currency || currency)}{p.compareAtMinor ? <div className="tiny muted" style={{ textDecoration: "line-through" }}>{money(p.compareAtMinor, p.currency || currency)}</div> : null}{p.currency && p.currency !== currency ? <div className="tiny" style={{ color: "#b45309" }}>Priced in {p.currency}. Edit and save to price it in {currency}.</div> : null}</td>
                 <td>{tracked ? <span className={`badge ${stock === 0 ? "red" : stock <= 3 ? "amber" : "green"}`}>{stock === 0 ? "Sold out" : `${stock} in stock`}</span> : <span className="badge">Not tracked</span>}</td>
                 <td><span className={`badge ${p.status === "active" ? "green" : ""}`}>{p.status}</span></td>
                 <td style={{ textAlign: "right" }}><button className="btn btn-sm" onClick={() => setEdit(JSON.parse(JSON.stringify(p)))}>Edit</button></td>
@@ -68,6 +71,8 @@ function ProductEditor({ projectId, currency, product, cols, onClose, onSaved }:
   const [opt1, setOpt1] = useState([...new Set(product.variants.map((v) => v.option1).filter(Boolean))].join(", "));
   const [opt2, setOpt2] = useState([...new Set(product.variants.map((v) => v.option2).filter(Boolean))].join(", "));
   const [busy, setBusy] = useState(false);
+  // One id per opened form: a retried save (for example after a lost response) changes stock only once.
+  const [editId] = useState(() => (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}${Math.random()}`).replace(/[^A-Za-z0-9]/g, "").slice(0, 40));
 
   const regenerate = (o1: string, o2: string) => {
     const a = o1.split(",").map((x) => x.trim()).filter(Boolean);
@@ -78,7 +83,7 @@ function ProductEditor({ projectId, currency, product, cols, onClose, onSaved }:
   const imgSpec: FieldSpec[] = [{ k: "images", label: "Product photos", t: "images", max: 12, help: "First image is the main photo. Use your own photos or licensed images." }];
   const save = async () => {
     setBusy(true);
-    const body = { ...p, priceMinor: toMinor(price || "0", currency), compareAtMinor: compare ? toMinor(compare, currency) : null, option1Name: p.option1Name || null, option2Name: p.option2Name || null, sku: p.sku || null,
+    const body = { ...p, currency, editId, priceMinor: toMinor(price || "0", currency), compareAtMinor: compare ? toMinor(compare, currency) : null, option1Name: p.option1Name || null, option2Name: p.option2Name || null, sku: p.sku || null,
       // stockBase = stock when this form opened, so the server applies only the merchant's change and keeps sales made meanwhile.
       variants: p.variants.map((v) => {
         const opened = v.id ? product.variants.find((x) => x.id === v.id) : undefined;
@@ -143,7 +148,7 @@ function ProductEditor({ projectId, currency, product, cols, onClose, onSaved }:
 const IMPORT_FIELDS: [string, string, RegExp][] = [
   ["title", "Product name *", /^(title|name|product)/i], ["price", "Price *", /^price/i], ["sku", "SKU", /sku|code/i], ["description", "Description", /desc/i],
   ["compareAt", "Compare-at price", /compare|was|old/i], ["stock", "Stock quantity", /stock|qty|quantity|inventory/i], ["category", "Category", /categ|collection/i],
-  ["tags", "Tags", /tag/i], ["option1Name", "Option name (e.g. Size)", /option.?name/i], ["option1", "Option value", /option.?value|^size$|^variant/i], ["status", "Status (active/draft)", /status/i],
+  ["tags", "Tags", /tag/i], ["option1Name", "Option name (e.g. Size)", /option.?name/i], ["option1", "Option value", /option.?value|^option.?1$|^size$|^variant/i], ["option2Name", "Second option name (e.g. Colour)", /option.?2.?name/i], ["option2", "Second option value", /option.?2.?value|^option.?2$|^colou?r$/i], ["status", "Status (active/draft)", /status/i],
 ];
 
 function CsvImport({ projectId, onClose, onDone }: { projectId: string; onClose: () => void; onDone: () => void }) {

@@ -94,7 +94,7 @@ export function Privacy() {
       <h2>Retention</h2>
       <p>We keep your account and sites while your account is active. When you request deletion, we remove your sites and personal data within 30 days, except records we must keep for legal, tax, fraud-prevention or dispute purposes (such as payment records).</p>
       <h2>Your rights</h2>
-      <p>You can access and download your data from your account page, correct it in your settings, and request deletion. Depending on where you live (for example under Uganda's Data Protection and Privacy Act, Kenya's Data Protection Act, Nigeria's Data Protection Act, South Africa's POPIA or the GDPR) you may have further rights to object or restrict processing. Contact us through the <Link to="/contact?topic=privacy">contact form</Link>{config?.operator.supportEmail ? <> or {config.operator.supportEmail}</> : null}.</p>
+      <p>You can access and download your data from your account page, correct it in your settings, and request deletion. Depending on where you live (for example under the EU or UK GDPR, the California Consumer Privacy Act, Brazil's LGPD, Canada's PIPEDA or other national data protection laws) you may have further rights to object or restrict processing. Contact us through the <Link to="/contact?topic=privacy">contact form</Link>{config?.operator.supportEmail ? <> or {config.operator.supportEmail}</> : null}.</p>
       <h2>Security</h2>
       <p>We use encrypted connections, hashed passwords, strict separation between customer accounts, and access controls for administrators. No system is perfectly secure; we will notify affected users of a breach as required by law.</p>
       <h2>Changes</h2>

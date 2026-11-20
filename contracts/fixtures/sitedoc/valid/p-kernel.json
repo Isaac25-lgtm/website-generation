@@ -58,13 +58,13 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-8aw56",
+          "id": "hero-8305f",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "Full-stack engineer · Lagos, Nigeria",
+            "eyebrow": "Full-stack engineer · Berlin, Germany",
             "heading": "I build fast, reliable software for the web.",
             "subheading": "Tunde Adebayo, Full-stack engineer",
             "primaryCta": {
@@ -78,7 +78,7 @@
           }
         },
         {
-          "id": "about-9dj1l",
+          "id": "about-9a75n",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,7 +156,7 @@
           }
         },
         {
-          "id": "cta-b2f3v",
+          "id": "cta-blevb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -179,7 +179,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "experience-c82i3",
+          "id": "experience-cifml",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -198,7 +198,7 @@
           }
         },
         {
-          "id": "education-daxcj",
+          "id": "education-d6hjg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -216,7 +216,7 @@
           }
         },
         {
-          "id": "skills-efo5i",
+          "id": "skills-e94kt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -254,14 +254,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-fbi6n",
+          "id": "contact-fblb1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "contact",
           "data": {
             "heading": "Get in touch",
-            "intro": "Based in Lagos, Nigeria.",
+            "intro": "Based in Berlin, Germany.",
             "showForm": true,
             "showMap": false
           }

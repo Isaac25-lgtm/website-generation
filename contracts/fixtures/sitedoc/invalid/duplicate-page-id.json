@@ -4,11 +4,11 @@
   "templateId": "b-savanna",
   "brand": {
     "name": "Kijani Trails",
-    "tagline": "Small-group journeys into wild East Africa."
+    "tagline": "Small-group wildlife journeys, expertly guided."
   },
   "seo": {
-    "title": "Kijani Trails — Small-group journeys into wild East Africa.",
-    "description": "Guided safaris, mountain treks and nights under the stars, with local guides who know every track.",
+    "title": "Kijani Trails — Small-group wildlife journeys, expertly guided.",
+    "description": "Guided safaris, mountain treks and nights under the stars in the world's great parks, with local guides who know every track.",
     "lang": "en"
   },
   "theme": {
@@ -34,10 +34,10 @@
   "contact": {
     "email": "trips@example.com",
     "phone": "",
-    "whatsapp": "+255700000000",
+    "whatsapp": "+447700900123",
     "address": "",
-    "city": "Arusha",
-    "country": "Tanzania",
+    "city": "London",
+    "country": "United Kingdom",
     "mapQuery": "",
     "socials": []
   },
@@ -49,15 +49,15 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-476rd6",
+          "id": "hero-47a7zb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "Tours & safaris · Arusha",
-            "heading": "Small-group journeys into wild East Africa.",
-            "subheading": "Guided safaris, mountain treks and nights under the stars, with local guides who know every track.",
+            "eyebrow": "Tours & safaris · London",
+            "heading": "Small-group wildlife journeys, expertly guided.",
+            "subheading": "Guided safaris, mountain treks and nights under the stars in the world's great parks, with local guides who know every track.",
             "primaryCta": {
               "label": "Request a quote",
               "href": "/services#quote"
@@ -74,7 +74,7 @@
           }
         },
         {
-          "id": "services-48aq1i",
+          "id": "services-48i4k6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -117,7 +117,7 @@
           }
         },
         {
-          "id": "about-49akg2",
+          "id": "about-49dvgs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,7 +138,7 @@
           }
         },
         {
-          "id": "cta-4aai51",
+          "id": "cta-4a2bkx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -161,7 +161,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-4b7n03",
+          "id": "about-4bcg8n",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -182,7 +182,7 @@
           }
         },
         {
-          "id": "faq-4c2hev",
+          "id": "faq-4cjlua",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -214,7 +214,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-4d91o1",
+          "id": "services-4d35td",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -281,7 +281,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-4fctuf",
+          "id": "gallery-4fa6ao",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -332,7 +332,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-4gl02p",
+          "id": "contact-4gbgtj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

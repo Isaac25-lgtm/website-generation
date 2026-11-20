@@ -3,12 +3,12 @@
   "type": "ecommerce",
   "templateId": "e-fresh",
   "brand": {
-    "name": "Shamba Fresh",
+    "name": "Field & Basket",
     "tagline": "Farm-fresh groceries to your door."
   },
   "seo": {
-    "title": "Shamba Fresh — Farm-fresh groceries to your door.",
-    "description": "Fruit, vegetables and pantry staples from local farms.",
+    "title": "Field & Basket — Farm-fresh groceries to your door.",
+    "description": "Fruit, vegetables and pantry staples from independent farms.",
     "lang": "en"
   },
   "theme": {
@@ -34,10 +34,10 @@
   "contact": {
     "email": "",
     "phone": "",
-    "whatsapp": "+256700000002",
+    "whatsapp": "+447700900456",
     "address": "",
-    "city": "Kampala",
-    "country": "Uganda",
+    "city": "London",
+    "country": "United Kingdom",
     "mapQuery": "",
     "socials": []
   },
@@ -49,13 +49,13 @@
       "inNav": true,
       "sections": [
         {
-          "id": "banner-30il6x",
+          "id": "banner-30c4h1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "banner",
           "data": {
-            "text": "Free delivery on orders over UGX 100,000 in Kampala",
+            "text": "Free delivery on orders over £40",
             "link": {
               "label": "Shop now",
               "href": "/shop"
@@ -63,7 +63,7 @@
           }
         },
         {
-          "id": "hero-31gg96",
+          "id": "hero-313bk5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -71,7 +71,7 @@
           "data": {
             "eyebrow": "Groceries",
             "heading": "Farm-fresh groceries to your door.",
-            "subheading": "Fruit, vegetables and pantry staples from local farms.",
+            "subheading": "Fruit, vegetables and pantry staples from independent farms.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -79,7 +79,7 @@
           }
         },
         {
-          "id": "collections-32svi",
+          "id": "collections-32fpwi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -90,7 +90,7 @@
           }
         },
         {
-          "id": "products-33bwqq",
+          "id": "products-33c0ve",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -112,7 +112,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-34d526",
+          "id": "products-34jeia",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -134,7 +134,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-353jgt",
+          "id": "contact-3525p2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -153,27 +153,27 @@
     "text": ""
   },
   "store": {
-    "currency": "UGX",
+    "currency": "GBP",
     "paymentMethods": [
       {
         "id": "cod",
         "kind": "cod",
-        "label": "Cash on delivery",
-        "instructions": "Pay the rider in cash or by mobile money when your order arrives."
+        "label": "Pay on delivery",
+        "instructions": "Pay the courier when your order arrives."
       },
       {
-        "id": "momo",
-        "kind": "mobile_money",
-        "label": "Mobile money transfer",
-        "instructions": "After placing your order, the seller will send you the mobile-money number to pay to. Your order is confirmed once payment is received."
+        "id": "bank",
+        "kind": "bank_transfer",
+        "label": "Bank transfer",
+        "instructions": "After placing your order you'll receive our bank details. Your order is confirmed once payment arrives."
       }
     ],
     "fulfillment": [
       {
         "id": "delivery",
         "kind": "delivery",
-        "label": "Same-day delivery (Kampala)",
-        "priceMinor": 5000,
+        "label": "Same-day delivery",
+        "priceMinor": 399,
         "details": "Delivered within 1–3 working days."
       },
       {
@@ -189,8 +189,8 @@
     "lowStockThreshold": 3,
     "checkoutNote": "You will receive a confirmation page with your order number. We'll contact you to confirm delivery.",
     "taxNote": "",
-    "returnsPolicy": "Unused items in their original packaging can be returned within 7 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
-    "shippingPolicy": "We deliver within the city in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
+    "returnsPolicy": "Unused items in their original packaging can be returned within 14 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
+    "shippingPolicy": "We deliver in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
     "privacyNote": "We use your name, phone number, email and address only to process and deliver your order and to contact you about it. We do not sell your information.",
     "prohibitedAck": true,
     "notifyEmail": ""

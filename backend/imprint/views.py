@@ -16,6 +16,12 @@ from .errors import ApiError, body
 from .models import Entitlement, GenerationJob, Project, ProjectIntake, ProjectMember, PublishedSite, SiteVersion, SystemSetting
 
 PROJECT_ID = re.compile(r"prj_[a-z0-9]{10,30}")
+DISPOSABLE_DB = re.compile(r"^test_|_(parity|e2e|disposable)$")
+
+
+def is_disposable_database(name: str) -> bool:
+    """Databases the test suites may overwrite: pytest's test_* databases and names ending in _parity/_e2e/_disposable."""
+    return bool(DISPOSABLE_DB.search(name or ""))
 JS_NUMBER = re.compile(r"[+-]?(\d+\.?\d*|\.\d+)([eE][+-]?\d+)?")
 
 
@@ -91,7 +97,12 @@ class ReadyView(APIView):
         except Exception:  # noqa: BLE001
             checks["contracts"] = "unreadable"
         ok = all(v == "ok" for v in checks.values())
-        return Response({"ok": ok, "checks": checks, "time": iso_now()}, status=200 if ok else 503)
+        return Response({
+            "ok": ok, "checks": checks, "time": iso_now(),
+            # Lets test suites confirm they're talking to a server on a disposable database before replacing data.
+            "dataset": "disposable" if is_disposable_database(settings.DATABASES["default"].get("NAME", "")) else "configured",
+            "authority": settings.READ_PATH_AUTHORITY, "privateReads": settings.ALLOW_SNAPSHOT_READS,
+        }, status=200 if ok else 503)
 
 
 class ConfigView(APIView):
@@ -134,6 +145,12 @@ class ProjectDetailView(APIView):
     """GET /api/projects/<id> with the Worker's response shape (src/worker/routes/projects.ts)."""
 
     permission_classes = [IsAuthenticated]
+
+    def initial(self, request, *args, **kwargs):
+        # Fail closed before touching sessions: snapshot data can be stale for logouts, suspensions and membership changes.
+        if not settings.ALLOW_SNAPSHOT_READS:
+            raise ApiError(503, "This service is reading a data snapshot and doesn't serve private data. Use the main API.", "snapshot_not_authoritative")
+        super().initial(request, *args, **kwargs)
 
     def get(self, request, project_id: str):
         user = request.user

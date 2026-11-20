@@ -16,11 +16,21 @@ async function storeProject(c: Ctx, id: string): Promise<ProjectRow> {
   return p;
 }
 
+/** Currency of the live (published) store, or null when the store isn't live. */
+export async function liveStoreCurrency(c: Ctx, projectId: string): Promise<string | null> {
+  const r = await c.env.DB.prepare("SELECT sv.doc_json FROM published_sites ps JOIN site_versions sv ON sv.id = ps.current_version_id WHERE ps.project_id = ? AND ps.status = 'live'").bind(projectId).first<{ doc_json: string }>();
+  if (!r) return null;
+  try { const cur = JSON.parse(r.doc_json)?.store?.currency; return typeof cur === "string" ? cur : null; } catch { return null; }
+}
+
 /**
- * The store's currency: the merchant's choice in setup (intake), then the generated site, then USD.
- * Products are priced in this currency at creation and import; publishing refuses any mismatch (audit #1).
+ * The currency products are priced in. A live store keeps selling in its published currency (catalogue changes
+ * go live immediately, so they must match the checkout). Before going live: the merchant's setup choice, then the
+ * generated site, then USD. Publishing refuses any mismatch (audit #1), and checkout refuses mismatched lines.
  */
 export async function storeCurrency(c: Ctx, p: ProjectRow): Promise<string> {
+  const live = await liveStoreCurrency(c, p.id);
+  if (live) return live;
   const intake = await c.env.DB.prepare("SELECT data_json FROM project_intake WHERE project_id = ?").bind(p.id).first<{ data_json: string }>();
   let chosen: unknown;
   try { chosen = JSON.parse(intake?.data_json || "{}").currency; } catch { chosen = undefined; }
@@ -62,6 +72,10 @@ const ProductIn = z.object({
   featured: z.boolean().default(false),
   collections: z.array(z.string().max(40)).max(20).default([]),
   variants: z.array(VariantIn).min(1).max(100),
+  /** Currency the merchant entered the prices in. Rejected when it differs from the store currency. */
+  currency: z.string().regex(/^[A-Z]{3}$/).optional(),
+  /** Stable id for one edit session (one opened form). Retrying the same save applies its stock changes once. */
+  editId: z.string().regex(/^[A-Za-z0-9_-]{8,64}$/).optional(),
 });
 type ProductInput = z.infer<typeof ProductIn>;
 
@@ -101,6 +115,9 @@ async function writeProduct(c: Ctx, p: ProjectRow, input: ProductInput, userId: 
   const id = existingId ?? newId("prd");
   const t = now();
   const currency = await storeCurrency(c, p);
+  if (input.currency && input.currency !== currency) {
+    throw new HttpError(409, `These prices were entered in ${input.currency}, but this store sells in ${currency}. Reload the page and enter the prices in ${currency}.`, "currency_mismatch");
+  }
   const handle = await uniqueHandle(c, p.id, input.handle || input.title, existingId);
   // Validate image ownership (tenant isolation)
   const uploadIds = input.images.map((i) => i.assetId).filter((x): x is string => !!x);
@@ -121,8 +138,8 @@ async function writeProduct(c: Ctx, p: ProjectRow, input: ProductInput, userId: 
   }
   const stmts: D1PreparedStatement[] = [];
   if (existingId) {
-    stmts.push(c.env.DB.prepare(`UPDATE products SET title=?, handle=?, description=?, product_type=?, status=?, price_cents=?, compare_at_cents=?, cost_cents=?, sku=?, weight_grams=?, dimensions=?, tags=?, images_json=?, option1_name=?, option2_name=?, max_per_order=?, featured=?, updated_at=? WHERE id=? AND project_id=?`)
-      .bind(input.title, handle, input.description, input.productType, input.status, input.priceMinor, input.compareAtMinor ?? null, input.costMinor ?? null, input.sku || null, input.weightGrams ?? null, input.dimensions ?? null, input.tags, JSON.stringify(input.images), input.option1Name || null, input.option2Name || null, input.maxPerOrder, input.featured ? 1 : 0, t, id, p.id));
+    stmts.push(c.env.DB.prepare(`UPDATE products SET title=?, handle=?, description=?, product_type=?, status=?, price_cents=?, compare_at_cents=?, cost_cents=?, currency=?, sku=?, weight_grams=?, dimensions=?, tags=?, images_json=?, option1_name=?, option2_name=?, max_per_order=?, featured=?, updated_at=? WHERE id=? AND project_id=?`)
+      .bind(input.title, handle, input.description, input.productType, input.status, input.priceMinor, input.compareAtMinor ?? null, input.costMinor ?? null, currency, input.sku || null, input.weightGrams ?? null, input.dimensions ?? null, input.tags, JSON.stringify(input.images), input.option1Name || null, input.option2Name || null, input.maxPerOrder, input.featured ? 1 : 0, t, id, p.id));
   } else {
     stmts.push(c.env.DB.prepare(`INSERT INTO products (id, project_id, title, handle, description, product_type, status, price_cents, compare_at_cents, cost_cents, currency, sku, weight_grams, dimensions, tags, images_json, option1_name, option2_name, max_per_order, featured, position, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`)
       .bind(id, p.id, input.title, handle, input.description, input.productType, input.status, input.priceMinor, input.compareAtMinor ?? null, input.costMinor ?? null, currency, input.sku || null, input.weightGrams ?? null, input.dimensions ?? null, input.tags, JSON.stringify(input.images), input.option1Name || null, input.option2Name || null, input.maxPerOrder, input.featured ? 1 : 0, 0, t, t));
@@ -139,11 +156,18 @@ async function writeProduct(c: Ctx, p: ProjectRow, input: ProductInput, userId: 
       stmts.push(c.env.DB.prepare("UPDATE product_variants SET title=?, option1=?, option2=?, sku=?, price_cents=?, track_inventory=?, allow_backorder=?, position=? WHERE id=? AND product_id=?")
         .bind(title, v.option1 || null, v.option2 || null, v.sku || null, v.priceMinor ?? null, v.trackInventory ? 1 : 0, v.allowBackorder ? 1 : 0, i, ex.id, id));
       if (v.stockBase !== undefined) {
-        const delta = v.stock - v.stockBase;
-        if (delta !== 0) {
-          // Atomic relative change; the oversell trigger rejects a result below zero.
-          stmts.push(c.env.DB.prepare("UPDATE product_variants SET stock = stock + ? WHERE id = ? AND product_id = ?").bind(delta, ex.id, id));
-          stmts.push(c.env.DB.prepare("INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, actor, created_at) VALUES (?, ?, ?, ?, 'manual_adjust', ?, ?)").bind(newId("inv"), p.id, ex.id, delta, userId, t));
+        const wanted = v.stock - v.stockBase; // the merchant's change, relative so sales made meanwhile are kept
+        if (wanted !== 0 && !input.editId) throw new HttpError(400, "Stock changes need an edit id so a retried save is applied only once. Reload the page and try again.", "edit_id_required");
+        if (input.editId) {
+          // Apply (wanted - already applied by this edit). A retried request applies nothing more; a changed value
+          // in the same edit applies only the difference. Movement and stock change commit together; the oversell
+          // trigger still rejects a result below zero.
+          const mid = newId("inv");
+          stmts.push(c.env.DB.prepare(`INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, actor, created_at, op_key)
+              SELECT ?, ?, ?, d, 'manual_adjust', ?, ?, ? FROM (SELECT ? - COALESCE((SELECT SUM(delta) FROM inventory_movements WHERE variant_id = ? AND op_key = ?), 0) AS d) WHERE d != 0`)
+            .bind(mid, p.id, ex.id, userId, t, input.editId, wanted, ex.id, input.editId));
+          stmts.push(c.env.DB.prepare("UPDATE product_variants SET stock = stock + (SELECT delta FROM inventory_movements WHERE id = ?) WHERE id = ? AND product_id = ? AND EXISTS (SELECT 1 FROM inventory_movements WHERE id = ?)")
+            .bind(mid, ex.id, id, mid));
         }
       } else if (v.stock !== ex.stock) {
         // Legacy absolute set (API clients that don't send stockBase).
@@ -215,6 +239,7 @@ const ImportRow = z.object({
   compareAt: z.union([z.string(), z.number()]).optional(), stock: z.union([z.string(), z.number()]).optional(),
   category: z.string().trim().max(60).optional().default(""), tags: z.string().max(400).optional().default(""),
   option1Name: z.string().max(40).optional().default(""), option1: z.string().max(60).optional().default(""),
+  option2Name: z.string().max(40).optional().default(""), option2: z.string().max(60).optional().default(""),
   status: z.string().optional().default("active"),
 });
 
@@ -258,11 +283,20 @@ commerce.post("/projects/:id/products/import", async (c) => {
       if (existing) {
         // Update: start from the current product so omitted columns and other variants are preserved.
         const cur = (await productOut(c, p.id, existing.id))[0];
+        if (cur.currency !== currency) { errors.push({ row: i + 2, error: `This product is priced in ${cur.currency} but the store sells in ${currency}. Update it in the product editor first.` }); continue; }
         const variants = cur.variants.map((v: any) => ({ id: v.id, option1: v.option1, option2: v.option2, sku: v.sku, priceMinor: v.priceMinor, stock: v.stock, stockBase: v.stock, trackInventory: v.trackInventory, allowBackorder: v.allowBackorder }));
         let target = existing.variantId ? variants.find((v: any) => v.id === existing!.variantId) : undefined;
         if (!target && r.data.option1) {
-          target = variants.find((v: any) => (v.option1 ?? "") === r.data.option1);
-          if (!target) { target = { option1: r.data.option1, option2: null, stock: 0, trackInventory: true, allowBackorder: false } as any; variants.push(target!); }
+          // Only an unambiguous option combination may select a variant; otherwise reject the row before changing anything.
+          const twoOptions = !!cur.option2Name || variants.some((v: any) => v.option2);
+          const matches = variants.filter((v: any) => (v.option1 ?? "") === r.data.option1 && (!has("option2") || (v.option2 ?? "") === r.data.option2));
+          if (matches.length > 1) { errors.push({ row: i + 2, error: `Several variants match “${r.data.option1}”. Add the second option value (for example the colour) or use the variant's SKU.` }); continue; }
+          target = matches[0];
+          if (!target) {
+            if (twoOptions && !has("option2")) { errors.push({ row: i + 2, error: `This product has two options. Add the second option value for “${r.data.option1}”, or use the variant's SKU.` }); continue; }
+            target = { option1: r.data.option1, option2: has("option2") ? r.data.option2 : null, stock: 0, trackInventory: true, allowBackorder: false } as any;
+            variants.push(target!);
+          }
         }
         if (has("stock")) {
           if (!target && variants.length === 1) target = variants[0];
@@ -278,18 +312,18 @@ commerce.post("/projects/:id/products/import", async (c) => {
           compareAtMinor: has("compareAt") ? toMinor(r.data.compareAt) : cur.compareAtMinor,
           costMinor: cur.costMinor, sku: cur.sku, weightGrams: cur.weightGrams, dimensions: cur.dimensions,
           tags: has("tags") ? r.data.tags : cur.tags, images: cur.images,
-          option1Name: has("option1Name") ? r.data.option1Name : cur.option1Name, option2Name: cur.option2Name,
+          option1Name: has("option1Name") ? r.data.option1Name : cur.option1Name, option2Name: has("option2Name") ? r.data.option2Name : cur.option2Name,
           maxPerOrder: cur.maxPerOrder, featured: cur.featured,
           collections: colId ? [...new Set([...cur.collections, colId])] : cur.collections,
-          variants,
+          variants, editId: newId("imp").replace("_", "-"),
         });
         await writeProduct(c, p, input, u.id, existing.id); updated++;
       } else {
         const input: ProductInput = ProductIn.parse({
           title: r.data.title, description: r.data.description, priceMinor: price, compareAtMinor: r.data.compareAt ? toMinor(r.data.compareAt) : null,
           sku: r.data.sku || null, tags: r.data.tags, status: ["active", "draft"].includes(r.data.status.toLowerCase()) ? r.data.status.toLowerCase() : "active",
-          option1Name: r.data.option1Name || null, collections: colId ? [colId] : [],
-          variants: [{ option1: r.data.option1 || null, stock, trackInventory: true }],
+          option1Name: r.data.option1Name || null, option2Name: r.data.option2Name || null, collections: colId ? [colId] : [],
+          variants: [{ option1: r.data.option1 || null, option2: r.data.option2 || null, stock, trackInventory: true }],
         });
         await writeProduct(c, p, input, u.id); created++;
       }

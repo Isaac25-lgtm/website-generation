@@ -38,7 +38,7 @@ test.describe("public marketing site", () => {
     await page.setViewportSize(MOBILE);
     await page.goto("/");
     await page.screenshot({ path: `${SHOTS}/02-home-mobile.png` });
-    await page.getByLabel("Describe your website").fill("A bakery in Nairobi with our menu and WhatsApp orders");
+    await page.getByLabel("Describe your website").fill("A bakery in Lisbon with our menu and online orders");
     await page.getByRole("button", { name: /Start building/ }).click();
     await expect(page).toHaveURL(/\/signup\?next=/);
     await expect(page.getByRole("heading", { name: /Create your free account/ })).toBeVisible();
@@ -116,9 +116,9 @@ test.describe("demo sites", () => {
     await page.screenshot({ path: `${SHOTS}/13-store-cart.png` });
     await page.getByRole("link", { name: "Continue to checkout" }).click();
     await page.getByLabel("Full name").fill("E2E Buyer");
-    await page.getByLabel(/^Phone/).fill("+256700123456");
-    await page.getByLabel("Street address").fill("Plot 12, Kira Road");
-    await page.getByLabel("Town / city").fill("Kampala");
+    await page.getByLabel(/^Phone/).fill("+33 1 99 00 12 34");
+    await page.getByLabel("Street address").fill("12 Rue de la Paix");
+    await page.getByLabel("Town / city").fill("Paris");
     await expect(page.locator("[data-summary]")).toContainText("Total");
     await page.screenshot({ path: `${SHOTS}/14-store-checkout.png`, fullPage: true });
     await page.waitForTimeout(2600);
@@ -156,7 +156,7 @@ test.describe("builder flows (signed in)", () => {
     await page.getByRole("button", { name: "Continue" }).click();
     await expect(page).toHaveURL(/\/setup$/);
     await page.getByLabel(/Professional title/).fill("UX designer");
-    await page.getByLabel("Location").fill("Nairobi, Kenya");
+    await page.getByLabel("Location").fill("Toronto, Canada");
     await page.getByLabel("Your bio").fill("I design calm, useful digital products for health and education teams.");
     await page.screenshot({ path: `${SHOTS}/22-wizard-personal.png` });
     await page.getByRole("button", { name: "Continue" }).click();
@@ -199,7 +199,7 @@ test.describe("builder flows (signed in)", () => {
     await page.goto("/dashboard/new?type=business");
     await page.getByLabel("Business name").fill("Kijiji Coffee");
     await page.getByRole("button", { name: "Continue" }).click();
-    await page.getByLabel("Tagline").fill("Single-origin coffee, roasted in Kampala");
+    await page.getByLabel("Tagline").fill("Single-origin coffee, roasted in Melbourne");
     await page.getByLabel(/Short description/).fill("A neighbourhood café and roastery.");
     await page.getByRole("button", { name: /Review & generate/ }).click();
     await page.getByLabel(/I confirm that I own/).check();

@@ -64,6 +64,20 @@ def test_import_requires_confirmation_and_dry_run_writes_nothing(d1_file):
     assert Project.objects.count() == 0
 
 
+def test_disposable_names():
+    from imprint.views import is_disposable_database
+    assert all(is_disposable_database(n) for n in ["test_neondb", "imprintsites_parity", "x_e2e", "a_disposable"])
+    assert not any(is_disposable_database(n) for n in ["neondb", "imprintsites", "parity_main", "", "testdb"])
+
+
+@pytest.mark.django_db(transaction=True)
+def test_disposable_only_refuses_the_configured_database(d1_file, monkeypatch):
+    from django.db import connection
+    monkeypatch.setitem(connection.settings_dict, "NAME", "neondb")
+    with pytest.raises(CommandError, match="Refusing"):
+        call_command("import_d1", sqlite=str(d1_file), yes=True, disposable_only=True)
+
+
 def test_missing_file_is_reported(tmp_path):
     with pytest.raises(CommandError, match="not found"):
         call_command("import_d1", sqlite=str(tmp_path / "missing.sqlite"), yes=True)

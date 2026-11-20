@@ -162,8 +162,8 @@ function StyleStep({ projectId, type, answers, onChange, templateId, setTemplate
 }
 
 const PAY_PRESETS: Record<string, { label: string; instructions: string }> = {
-  cod: { label: "Cash on delivery", instructions: "Pay in cash (or mobile money) when your order is delivered." },
-  mobile_money: { label: "Mobile money transfer", instructions: "After you order, we'll send you our mobile money number. Your order is confirmed once payment is received." },
+  cod: { label: "Cash on delivery", instructions: "Pay the courier when your order is delivered." },
+  mobile_money: { label: "Mobile wallet transfer", instructions: "After you order, we'll send you our mobile wallet details. Your order is confirmed once payment is received." },
   bank_transfer: { label: "Bank transfer", instructions: "After you order, we'll send our bank details. Please use your order number as the reference." },
   pay_on_pickup: { label: "Pay on pickup", instructions: "Pay when you collect your order from our shop." },
   whatsapp: { label: "Arrange payment on WhatsApp", instructions: "We'll message you on WhatsApp to agree payment and delivery." },
@@ -175,7 +175,7 @@ export function PaymentsStep({ answers, onChange }: { answers: any; onChange: (a
   const set = (store: any) => onChange({ ...answers, store: { ...st, ...store } });
   return (
     <div className="stack">
-      <div className="alert info small"><strong>How payment works today:</strong> customers place real orders, and you collect payment yourself using the methods below. Online card or mobile-money checkout needs your own verified payment account (Flutterwave, Pesapal or Paystack). These integrations are coming, and your store will never pretend to take card payments until then. Your sales never pass through our account.</div>
+      <div className="alert info small"><strong>How payment works today:</strong> customers place real orders, and you collect payment yourself using the methods below. Online card checkout needs your own verified payment account (Flutterwave, Pesapal or Paystack). These integrations are coming, and your store will never pretend to take card payments until then. Your sales never pass through our account.</div>
       <div className="stack-sm"><span className="label">Payment methods your customers can choose</span>
         {Object.entries(PAY_PRESETS).map(([kind, p]) => {
           const on = list.find((m) => m.kind === kind);
@@ -208,7 +208,7 @@ export function DeliveryStep({ answers, onChange }: { answers: any; onChange: (a
           <div className="list-item-head"><strong className="small">Option {i + 1}</strong><button className="icon-btn" aria-label="Remove option" onClick={() => set({ fulfillment: list.filter((_, j) => j !== i) })}>✕</button></div>
           <div className="grid-2" style={{ gap: ".75rem" }}>
             <label className="field"><span>Type</span><select value={f.kind} onChange={(e) => upd(i, { kind: e.target.value })}><option value="delivery">Delivery to an address</option><option value="pickup">Pickup</option><option value="digital">Digital delivery</option></select></label>
-            <label className="field"><span>Name shown to customers</span><input value={f.label || ""} maxLength={80} onChange={(e) => upd(i, { label: e.target.value })} placeholder="Kampala delivery" /></label>
+            <label className="field"><span>Name shown to customers</span><input value={f.label || ""} maxLength={80} onChange={(e) => upd(i, { label: e.target.value })} placeholder="Standard delivery" /></label>
             <label className="field"><span>Fee ({cur})</span><input inputMode="decimal" value={f.priceMinor ? toMajor(f.priceMinor, cur) : ""} placeholder="0" onChange={(e) => upd(i, { priceMinor: toMinor(e.target.value || "0", cur) })} /><span className="help">{f.priceMinor ? money(f.priceMinor, cur) : "Free"}</span></label>
             <label className="field"><span>Details</span><input value={f.details || ""} maxLength={400} onChange={(e) => upd(i, { details: e.target.value })} placeholder="1–2 working days" /></label>
           </div>

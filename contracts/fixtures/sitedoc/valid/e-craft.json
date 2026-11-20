@@ -3,11 +3,11 @@
   "type": "ecommerce",
   "templateId": "e-craft",
   "brand": {
-    "name": "Ubuntu Crafts",
+    "name": "Hearth & Hand",
     "tagline": "Handmade by artisans, made to last."
   },
   "seo": {
-    "title": "Ubuntu Crafts — Handmade by artisans, made to last.",
+    "title": "Hearth & Hand — Handmade by artisans, made to last.",
     "description": "Baskets, ceramics and textiles from artisan cooperatives.",
     "lang": "en"
   },
@@ -36,8 +36,8 @@
     "phone": "",
     "whatsapp": "",
     "address": "",
-    "city": "",
-    "country": "Kenya",
+    "city": "Vancouver",
+    "country": "Canada",
     "mapQuery": "",
     "socials": []
   },
@@ -49,7 +49,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-3ba0l2",
+          "id": "hero-3bcc8r",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -69,7 +69,7 @@
           }
         },
         {
-          "id": "collections-3c4ogd",
+          "id": "collections-3cmr3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -80,7 +80,7 @@
           }
         },
         {
-          "id": "products-3d9mv9",
+          "id": "products-3dc2fc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -94,13 +94,13 @@
           }
         },
         {
-          "id": "about-3e6xkk",
+          "id": "about-3e4fjh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
-            "heading": "About Ubuntu Crafts",
+            "heading": "About Hearth & Hand",
             "body": "Every piece is made by hand by a cooperative member.",
             "highlights": []
           }
@@ -114,7 +114,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-3fe5il",
+          "id": "products-3f6g18",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -136,7 +136,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-3ggf0x",
+          "id": "about-3g64vd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,7 +156,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-3h8inr",
+          "id": "contact-3hgjst",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -180,14 +180,14 @@
       {
         "id": "cod",
         "kind": "cod",
-        "label": "Cash on delivery",
-        "instructions": "Pay the rider in cash or by mobile money when your order arrives."
+        "label": "Pay on delivery",
+        "instructions": "Pay the courier when your order arrives."
       },
       {
-        "id": "momo",
-        "kind": "mobile_money",
-        "label": "Mobile money transfer",
-        "instructions": "After placing your order, the seller will send you the mobile-money number to pay to. Your order is confirmed once payment is received."
+        "id": "bank",
+        "kind": "bank_transfer",
+        "label": "Bank transfer",
+        "instructions": "After placing your order you'll receive our bank details. Your order is confirmed once payment arrives."
       }
     ],
     "fulfillment": [
@@ -211,8 +211,8 @@
     "lowStockThreshold": 3,
     "checkoutNote": "You will receive a confirmation page with your order number. We'll contact you to confirm delivery.",
     "taxNote": "",
-    "returnsPolicy": "Unused items in their original packaging can be returned within 7 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
-    "shippingPolicy": "We deliver within the city in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
+    "returnsPolicy": "Unused items in their original packaging can be returned within 14 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
+    "shippingPolicy": "We deliver in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
     "privacyNote": "We use your name, phone number, email and address only to process and deliver your order and to contact you about it. We do not sell your information.",
     "prohibitedAck": true,
     "notifyEmail": ""

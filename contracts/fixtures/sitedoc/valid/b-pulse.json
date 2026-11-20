@@ -36,8 +36,8 @@
     "phone": "",
     "whatsapp": "",
     "address": "",
-    "city": "Lagos",
-    "country": "Nigeria",
+    "city": "Singapore",
+    "country": "Singapore",
     "mapQuery": "",
     "socials": []
   },
@@ -49,13 +49,13 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-26a221",
+          "id": "hero-26396",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "Software agency · Lagos",
+            "eyebrow": "Software agency · Singapore",
             "heading": "Software products, shipped.",
             "subheading": "We design and build web apps, mobile apps and internal tools for ambitious teams.",
             "primaryCta": {
@@ -69,7 +69,7 @@
           }
         },
         {
-          "id": "services-278ege",
+          "id": "services-27gizp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -97,7 +97,7 @@
           }
         },
         {
-          "id": "about-289bgb",
+          "id": "about-288kot",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -109,7 +109,7 @@
           }
         },
         {
-          "id": "cta-29e39l",
+          "id": "cta-297hyj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -132,7 +132,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-2ag7fm",
+          "id": "about-2aihom",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -152,7 +152,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-2bj9xw",
+          "id": "services-2b4j2m",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -204,7 +204,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-2d50ww",
+          "id": "contact-2db6f",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

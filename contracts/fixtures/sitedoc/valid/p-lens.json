@@ -54,13 +54,13 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-uy6s",
+          "id": "hero-u6ak0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "Documentary & portrait photographer · Kampala, Uganda",
+            "eyebrow": "Documentary & portrait photographer · Lisbon, Portugal",
             "heading": "Light, people and the places between.",
             "subheading": "Amina Yusuf, Documentary & portrait photographer",
             "primaryCta": {
@@ -79,14 +79,14 @@
           }
         },
         {
-          "id": "about-v121i",
+          "id": "about-vbin6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "About me",
-            "body": "I photograph people where they live and work, and the landscapes that shape them. For six years I've worked with newspapers, NGOs and families across East Africa.\n\nAvailable for editorial, documentary and portrait commissions.",
+            "body": "I photograph people where they live and work, and the landscapes that shape them. For six years I've worked with newspapers, NGOs and families across Europe and beyond.\n\nAvailable for editorial, documentary and portrait commissions.",
             "highlights": []
           }
         },
@@ -157,7 +157,7 @@
           }
         },
         {
-          "id": "cta-x4lot",
+          "id": "cta-x3np7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -180,7 +180,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-yjbr3",
+          "id": "gallery-y8df8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -246,14 +246,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-z32le",
+          "id": "contact-zasox",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "contact",
           "data": {
             "heading": "Get in touch",
-            "intro": "Based in Kampala, Uganda.",
+            "intro": "Based in Lisbon, Portugal.",
             "showForm": true,
             "showMap": false
           }

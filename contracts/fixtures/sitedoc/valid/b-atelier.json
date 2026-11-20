@@ -36,8 +36,8 @@
     "phone": "",
     "whatsapp": "",
     "address": "",
-    "city": "Johannesburg",
-    "country": "South Africa",
+    "city": "Copenhagen",
+    "country": "Denmark",
     "mapQuery": "",
     "socials": []
   },
@@ -49,13 +49,13 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1xhvoj",
+          "id": "hero-1xdc8y",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "Architecture · Johannesburg",
+            "eyebrow": "Architecture · Copenhagen",
             "heading": "Architecture and interiors with restraint.",
             "subheading": "Residential and small commercial projects designed for light, material and longevity.",
             "primaryCta": {
@@ -69,7 +69,7 @@
           }
         },
         {
-          "id": "services-1yfdiq",
+          "id": "services-1yjn0o",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -97,7 +97,7 @@
           }
         },
         {
-          "id": "about-1zdhwx",
+          "id": "about-1zga15",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -114,7 +114,7 @@
           }
         },
         {
-          "id": "cta-204yeg",
+          "id": "cta-20jg83",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -137,7 +137,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-21ekh8",
+          "id": "about-21im1a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-22g18o",
+          "id": "services-22dl69",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -214,7 +214,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-24f1dg",
+          "id": "gallery-245aab",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -265,7 +265,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-253mf0",
+          "id": "contact-25l2c2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

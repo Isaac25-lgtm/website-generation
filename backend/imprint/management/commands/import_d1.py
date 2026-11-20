@@ -18,6 +18,7 @@ from django.db import connection, models, transaction
 
 from imprint.contracts import draft_doc
 from imprint.models import READ_PATH_MODELS, Project
+from imprint.views import is_disposable_database
 
 BATCH = 500
 
@@ -59,6 +60,8 @@ class Command(BaseCommand):
         parser.add_argument("--sqlite", help="Path to the D1 .sqlite file (default: newest local Wrangler D1 database).")
         parser.add_argument("--dry-run", action="store_true", help="Report what would be copied without writing.")
         parser.add_argument("--yes", action="store_true", help="Confirm replacing the target tables (required unless --dry-run).")
+        parser.add_argument("--disposable-only", action="store_true",
+                            help="Refuse unless the target is a disposable database (test_*, *_parity, *_e2e, *_disposable). Used by test suites.")
 
     def handle(self, *args, **opts):
         path = Path(opts["sqlite"]) if opts["sqlite"] else find_local_d1()
@@ -67,6 +70,8 @@ class Command(BaseCommand):
         db = connection.settings_dict
         self.stdout.write(f"Source: {path}")
         self.stdout.write(f"Target: {db.get('HOST')}/{db.get('NAME')}")
+        if opts["disposable_only"] and not is_disposable_database(db.get("NAME", "")):
+            raise CommandError(f"Refusing to replace data in '{db.get('NAME')}': --disposable-only needs a database named test_*, *_parity, *_e2e or *_disposable.")
         if not opts["dry_run"] and not opts["yes"]:
             raise CommandError("This replaces the target tables. Re-run with --yes to confirm, or use --dry-run.")
 

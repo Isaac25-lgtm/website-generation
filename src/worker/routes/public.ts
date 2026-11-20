@@ -88,7 +88,7 @@ async function priceItems(env: AppEnv, site: LiveSite, items: z.infer<typeof Ite
   if (!ids.length) return { lines: [], subtotal: 0 };
   const rows = await env.DB.prepare(
     `SELECT v.id, v.title AS vtitle, v.price_cents AS vprice, v.stock, v.track_inventory, v.allow_backorder, v.sku AS vsku,
-            p.id AS pid, p.title, p.handle, p.price_cents, p.images_json, p.max_per_order, p.status, p.sku
+            p.id AS pid, p.title, p.handle, p.price_cents, p.images_json, p.max_per_order, p.status, p.sku, p.currency
        FROM product_variants v JOIN products p ON p.id = v.product_id
       WHERE v.project_id = ? AND v.id IN (${ids.map(() => "?").join(",")})`,
   ).bind(site.projectId, ...ids).all<any>();
@@ -96,6 +96,8 @@ async function priceItems(env: AppEnv, site: LiveSite, items: z.infer<typeof Ite
     const r = rows.results.find((x) => x.id === id);
     const want = merged.get(id)!;
     if (!r || r.status !== "active") return { variantId: id, missing: true, quantity: 0, title: "Item no longer available", note: "This item was removed from the store." };
+    // A price in another currency is never charged as the store currency (audit #1 follow-up).
+    if (r.currency !== site.doc.store?.currency) return { variantId: id, missing: true, requested: want, quantity: 0, lineMinor: 0, title: r.title, note: "Price unavailable while the seller updates this item" };
     const unit = r.vprice ?? r.price_cents;
     const cap = r.track_inventory && !r.allow_backorder ? Math.max(0, Math.min(r.max_per_order, r.stock)) : r.max_per_order;
     const qty = Math.min(want, cap);

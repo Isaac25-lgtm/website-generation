@@ -27,16 +27,16 @@ export interface Persona {
 
 const STORE_BASE = (currency: string, delivery: string, deliveryPrice: number, pickup: string): Partial<StoreSettings> => ({
   paymentMethods: [
-    { id: "cod", kind: "cod", label: "Cash on delivery", instructions: "Pay the rider in cash or by mobile money when your order arrives." },
-    { id: "momo", kind: "mobile_money", label: "Mobile money transfer", instructions: "After placing your order, the seller will send you the mobile-money number to pay to. Your order is confirmed once payment is received." },
+    { id: "cod", kind: "cod", label: "Pay on delivery", instructions: "Pay the courier when your order arrives." },
+    { id: "bank", kind: "bank_transfer", label: "Bank transfer", instructions: "After placing your order you'll receive our bank details. Your order is confirmed once payment arrives." },
   ],
   fulfillment: [
     { id: "delivery", kind: "delivery", label: delivery, priceMinor: deliveryPrice, details: "Delivered within 1–3 working days." },
     { id: "pickup", kind: "pickup", label: pickup, priceMinor: 0, details: "Collect from our shop during opening hours." },
   ],
   requirePhone: true,
-  returnsPolicy: "Unused items in their original packaging can be returned within 7 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
-  shippingPolicy: "We deliver within the city in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
+  returnsPolicy: "Unused items in their original packaging can be returned within 14 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
+  shippingPolicy: "We deliver in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
   privacyNote: "We use your name, phone number, email and address only to process and deliver your order and to contact you about it. We do not sell your information.",
   checkoutNote: "You will receive a confirmation page with your order number. We'll contact you to confirm delivery.",
   prohibitedAck: true,
@@ -45,19 +45,19 @@ const STORE_BASE = (currency: string, delivery: string, deliveryPrice: number, p
 export const PERSONAS: Record<string, Persona> = {
   // ─── personal ───
   "p-folio": { answers: {
-    name: "Wanjiru Kamau", title: "Writer & Brand Strategist", tagline: "Words that make brands feel human.", location: "Nairobi, Kenya",
-    bio: "I help founders and teams find the words for what they do. For eight years I've written brand stories, product launches and long-form features for clients across East Africa and Europe.\n\nMy process is simple: listen closely, write clearly, and edit until every sentence earns its place.",
+    name: "Wanjiru Kamau", title: "Writer & Brand Strategist", tagline: "Words that make brands feel human.", location: "London, United Kingdom",
+    bio: "I help founders and teams find the words for what they do. For eight years I've written brand stories, product launches and long-form features for clients across Europe and North America.\n\nMy process is simple: listen closely, write clearly, and edit until every sentence earns its place.",
     email: "hello@example.com", skills: "Brand voice, Copywriting, Editorial strategy, Content design, Workshops",
     projects: [
       { title: "Brand voice for a fintech launch", role: "Lead writer", period: "2025", description: "Defined tone of voice, naming and launch messaging for a mobile savings product.", tags: "Brand voice, Naming", images: [art("folio-a")] },
-      { title: "Coastal travel feature series", role: "Writer", period: "2024", description: "A six-part feature series on sustainable travel along the Swahili coast.", tags: "Editorial", images: [art("folio-b")] },
+      { title: "Coastal travel feature series", role: "Writer", period: "2024", description: "A six-part feature series on sustainable travel along the Atlantic coast.", tags: "Editorial", images: [art("folio-b")] },
       { title: "Nonprofit annual report", role: "Editor", period: "2024", description: "Edited and structured a 40-page impact report into a clear narrative.", tags: "Editing, Reports", images: [art("folio-c")] },
     ],
     experience: [{ role: "Independent brand writer", org: "Self-employed", period: "2021 — now", description: "Brand voice, messaging and editorial work for startups and NGOs." }, { role: "Senior copywriter", org: "Agency (fictional)", period: "2017 — 2021", description: "Campaigns and content for retail and telecom clients." }],
     socials: [{ network: "LinkedIn", url: "https://www.linkedin.com/" }],
   } },
   "p-kernel": { answers: {
-    name: "Tunde Adebayo", title: "Full-stack engineer", tagline: "I build fast, reliable software for the web.", location: "Lagos, Nigeria",
+    name: "Tunde Adebayo", title: "Full-stack engineer", tagline: "I build fast, reliable software for the web.", location: "Berlin, Germany",
     bio: "Full-stack engineer focused on TypeScript, edge computing and data-heavy dashboards. I care about performance budgets, accessible interfaces and boring, dependable infrastructure.",
     email: "dev@example.com", skillGroups: [{ name: "Languages", items: "TypeScript, Python, SQL, Go" }, { name: "Platforms", items: "Cloudflare Workers, PostgreSQL, React, Docker" }],
     projects: [
@@ -70,7 +70,7 @@ export const PERSONAS: Record<string, Persona> = {
     socials: [{ network: "GitHub", url: "https://github.com/" }, { network: "LinkedIn", url: "https://www.linkedin.com/" }],
   } },
   "p-scholar": { answers: {
-    name: "Dr. Naledi Mokoena", title: "Public health researcher", tagline: "", location: "Cape Town, South Africa",
+    name: "Dr. Naledi Mokoena", title: "Public health researcher", tagline: "", location: "Toronto, Canada",
     bio: "I study how community health programmes can reach more people at lower cost. My work combines field trials, survey methods and health economics.",
     email: "research@example.com", headshot: art("scholar-head", "Portrait"),
     experience: [{ role: "Senior research fellow", org: "Research institute (fictional)", period: "2020 — now", description: "Leads a programme evaluating community health worker models." }, { role: "Postdoctoral researcher", org: "University (fictional)", period: "2017 — 2020" }],
@@ -79,7 +79,7 @@ export const PERSONAS: Record<string, Persona> = {
     skills: "Epidemiology, Survey design, Stata, R, Health economics",
   } },
   "p-studio": { answers: {
-    name: "Kofi Mensah", title: "Illustrator & animator", tagline: "Bold pictures for brave brands.", location: "Accra, Ghana",
+    name: "Kofi Mensah", title: "Illustrator & animator", tagline: "Bold pictures for brave brands.", location: "New York, United States",
     bio: "I make loud, joyful illustrations and short animations for brands, books and music. Colour first, always.",
     email: "studio@example.com",
     projects: [
@@ -90,8 +90,8 @@ export const PERSONAS: Record<string, Persona> = {
     gallery: gal("pop-g", 6),
   } },
   "p-lens": { answers: {
-    name: "Amina Yusuf", title: "Documentary & portrait photographer", tagline: "Light, people and the places between.", location: "Kampala, Uganda",
-    bio: "I photograph people where they live and work, and the landscapes that shape them. For six years I've worked with newspapers, NGOs and families across East Africa.\n\nAvailable for editorial, documentary and portrait commissions.",
+    name: "Amina Yusuf", title: "Documentary & portrait photographer", tagline: "Light, people and the places between.", location: "Lisbon, Portugal",
+    bio: "I photograph people where they live and work, and the landscapes that shape them. For six years I've worked with newspapers, NGOs and families across Europe and beyond.\n\nAvailable for editorial, documentary and portrait commissions.",
     email: "photo@example.com", heroImage: st("photo-hero", "A small boat on a misty lake at sunrise"),
     gallery: [
       st("photo-portrait-smile", "Portrait of a young woman laughing"), st("photo-fisherman-gold", "A fisherman walking ashore at golden hour"),
@@ -114,25 +114,25 @@ export const PERSONAS: Record<string, Persona> = {
   } },
   // ─── business ───
   "b-meridian": { answers: {
-    businessName: "Kingsway Advisory", tagline: "Clear advice for growing businesses.", industry: "Business consulting", city: "Nairobi", country: "Kenya",
-    description: "Financial, tax and strategy advisory for small and medium enterprises across East Africa.",
+    businessName: "Kingsway Advisory", tagline: "Clear advice for growing businesses.", industry: "Business consulting", city: "London", country: "United Kingdom",
+    description: "Financial, tax and strategy advisory for small and medium-sized businesses across the UK and Europe.",
     about: "We work alongside owners and finance teams to build sound systems, plan for growth and stay compliant. Every engagement is led by a senior advisor.",
     benefits: "Senior advisors on every project\nFixed-fee engagements\nPractical, plain-language reports",
     services: [{ title: "Financial planning", description: "Budgets, forecasts and cash-flow models you can actually use." }, { title: "Tax advisory", description: "Planning and compliance support for growing companies." }, { title: "Business strategy", description: "Market entry, pricing and growth planning workshops." }],
-    phone: "+254 700 000 000", email: "info@example.com", address: "Sample Road, Westlands", mapQuery: "Westlands, Nairobi", primaryGoal: "form", quoteForm: true,
+    phone: "+44 20 7946 0123", email: "info@example.com", address: "1 Sample Street, Canary Wharf", mapQuery: "Canary Wharf, London", primaryGoal: "form", quoteForm: true,
     hours: [{ days: "Monday – Friday", hours: "8:30 – 17:30" }],
   } },
   "b-localpro": { answers: {
-    businessName: "Bright Plumbing & Repairs", tagline: "Fast, honest home repairs.", industry: "Home services", city: "Kampala", country: "Uganda",
-    description: "Plumbing, electrical and general home repairs across Kampala. Call or WhatsApp for a visit.",
+    businessName: "Bright Plumbing & Repairs", tagline: "Fast, honest home repairs.", industry: "Home services", city: "Austin", country: "United States",
+    description: "Plumbing, electrical and general home repairs across Austin. Call or message us for a visit.",
     about: "A small team of qualified technicians handling leaks, installations and repairs for homes and offices.",
-    services: [{ title: "Leak repairs", description: "Taps, pipes, tanks and toilets fixed properly.", price: "From UGX 50,000" }, { title: "Installations", description: "Water heaters, sinks, showers and pumps." }, { title: "Electrical fixes", description: "Sockets, lighting and safe wiring checks." }],
-    phone: "+256 700 000 000", whatsapp: "+256700000000", primaryGoal: "whatsapp", serviceAreas: "Kampala and Wakiso", address: "Ntinda", mapQuery: "Ntinda, Kampala",
+    services: [{ title: "Leak repairs", description: "Taps, pipes, tanks and toilets fixed properly.", price: "From $90" }, { title: "Installations", description: "Water heaters, sinks, showers and pumps." }, { title: "Electrical fixes", description: "Sockets, lighting and safe wiring checks." }],
+    phone: "+1 512 555 0142", whatsapp: "+15125550142", primaryGoal: "whatsapp", serviceAreas: "Austin and Round Rock", address: "Sample Avenue, East Austin", mapQuery: "East Austin, Texas",
     hours: [{ days: "Mon – Sat", hours: "7:00 – 19:00" }],
   } },
   "b-savanna": { answers: {
-    businessName: "Kijani Trails", tagline: "Small-group journeys into wild East Africa.", industry: "Tours & safaris", city: "Arusha", country: "Tanzania",
-    description: "Guided safaris, mountain treks and nights under the stars, with local guides who know every track.",
+    businessName: "Kijani Trails", tagline: "Small-group wildlife journeys, expertly guided.", industry: "Tours & safaris", city: "London", country: "United Kingdom",
+    description: "Guided safaris, mountain treks and nights under the stars in the world's great parks, with local guides who know every track.",
     about: "Kijani Trails runs small-group trips that put local guides and communities first. Groups stay small, between two and eight travellers, so every trip feels personal and every sighting is yours to enjoy.",
     benefits: "Local, licensed guides\nGroups of 2–8 travellers\nTailor-made itineraries",
     heroImage: st("safari-hero", "A traveller watching elephants from a safari vehicle"),
@@ -145,34 +145,34 @@ export const PERSONAS: Record<string, Persona> = {
       { title: "Mountain treks", description: "Guided multi-day hikes with porters, cooks and camp crews.", price: "From $980", image: st("safari-trek", "A hiker on a mountain ridge") },
       { title: "Fly-camp nights", description: "Sleep out in the bush under a sky full of stars, with a private camp team.", price: "From $420", image: st("safari-camp", "A lit tent under the night sky") },
     ],
-    email: "trips@example.com", whatsapp: "+255700000000", primaryGoal: "quote", quoteForm: true,
+    email: "trips@example.com", whatsapp: "+447700900123", primaryGoal: "quote", quoteForm: true,
     faqs: [{ q: "How big are your groups?", a: "Between 2 and 8 travellers." }, { q: "Can you arrange airport transfers?", a: "Yes, on request when you book." }, { q: "When is the best time to travel?", a: "June to October for the dry season, but every month has something special. Ask us." }],
   } },
   "b-atelier": { answers: {
-    businessName: "Form Studio", tagline: "Architecture and interiors with restraint.", industry: "Architecture", city: "Johannesburg", country: "South Africa",
+    businessName: "Form Studio", tagline: "Architecture and interiors with restraint.", industry: "Architecture", city: "Copenhagen", country: "Denmark",
     description: "Residential and small commercial projects designed for light, material and longevity.",
     about: "Form Studio is a small practice working on homes, studios and workplaces.",
     services: [{ title: "Residential architecture", description: "New homes and renovations from concept to completion." }, { title: "Interior design", description: "Material palettes, joinery and furniture." }, { title: "Feasibility studies", description: "Site analysis, massing and budget guidance." }],
     gallery: gal("atl-g", 6), email: "studio@example.com", primaryGoal: "email",
   } },
   "b-pulse": { answers: {
-    businessName: "Nimbus Digital", tagline: "Software products, shipped.", industry: "Software agency", city: "Lagos", country: "Nigeria",
+    businessName: "Nimbus Digital", tagline: "Software products, shipped.", industry: "Software agency", city: "Singapore", country: "Singapore",
     description: "We design and build web apps, mobile apps and internal tools for ambitious teams.",
     about: "A senior team of designers and engineers delivering in small, predictable sprints.",
     services: [{ title: "Product design", description: "Research, UX and interface design." }, { title: "Web & mobile apps", description: "Production-grade apps with modern stacks." }, { title: "Cloud & DevOps", description: "Reliable infrastructure and CI/CD." }],
     email: "hello@example.com", primaryGoal: "quote", quoteForm: true,
   } },
   "b-harvest": { answers: {
-    businessName: "Mama Ngozi's Kitchen", tagline: "Home-style cooking, every day.", industry: "Restaurant", city: "Abuja", country: "Nigeria",
-    description: "Fresh local dishes, cooked daily. Eat in, take away or order for events.",
+    businessName: "Mama Rosa's Kitchen", tagline: "Home-style cooking, every day.", industry: "Restaurant", city: "Melbourne", country: "Australia",
+    description: "Fresh seasonal dishes, cooked daily. Eat in, take away or order for events.",
     about: "A family kitchen serving the dishes we grew up with.",
-    services: [{ title: "Jollof rice & chicken", description: "Smoky party-style jollof.", price: "₦4,500" }, { title: "Egusi soup & pounded yam", description: "Rich melon-seed soup with greens.", price: "₦5,000" }, { title: "Suya platter", description: "Spiced grilled beef with onions.", price: "₦3,500" }, { title: "Event catering", description: "Trays for 20–200 guests.", price: "On request" }],
-    phone: "+234 800 000 0000", address: "Sample Street, Wuse 2", mapQuery: "Wuse 2, Abuja", primaryGoal: "call",
+    services: [{ title: "Hand-made pappardelle", description: "Slow-cooked beef ragù and parmesan.", price: "A$26" }, { title: "Wood-fired margherita", description: "San Marzano tomato, fior di latte and basil.", price: "A$22" }, { title: "Tiramisu", description: "Made fresh every morning.", price: "A$12" }, { title: "Event catering", description: "Trays for 20–200 guests.", price: "On request" }],
+    phone: "+61 3 5550 1234", address: "Sample Street, Fitzroy", mapQuery: "Fitzroy, Melbourne", primaryGoal: "call",
     hours: [{ days: "Mon – Fri", hours: "11:00 – 21:00" }, { days: "Sat – Sun", hours: "12:00 – 22:00" }], heroImage: art("harvest-hero"),
   } },
   // ─── e-commerce ───
   "e-maison": {
-    answers: { storeName: "Maison Nia", tagline: "Considered clothing, made in Kampala.", industry: "Fashion", description: "Small-batch womenswear and accessories in natural fabrics.", about: "Maison Nia is a small atelier making timeless pieces in limited runs. Every garment is cut and finished by hand in our Kampala studio.", currency: "USD", country: "Uganda", city: "Kampala", whatsapp: "+256700000001", email: "shop@example.com", heroImage: st("fashion-hero", "Two women in floral dresses holding a hydrangea"), gallery: [st("fashion-atelier", "Inside the atelier, among rails of clothing")], promoBanner: "Free studio pickup in Kampala", store: STORE_BASE("USD", "Kampala delivery", 300, "Studio pickup") },
+    answers: { storeName: "Maison Nia", tagline: "Considered clothing, made in Paris.", industry: "Fashion", description: "Small-batch womenswear and accessories in natural fabrics.", about: "Maison Nia is a small atelier making timeless pieces in limited runs. Every garment is cut and finished by hand in our Paris studio.", currency: "EUR", country: "France", city: "Paris", whatsapp: "+33199000001", email: "shop@example.com", heroImage: st("fashion-hero", "Two women in floral dresses holding a hydrangea"), gallery: [st("fashion-atelier", "Inside the atelier, among rails of clothing")], promoBanner: "Free studio pickup in Paris", store: STORE_BASE("EUR", "Tracked delivery", 600, "Studio pickup") },
     collections: ["Dresses", "Tops & jackets", "Accessories"],
     products: [
       { title: "Floral wrap dress", price: 68, description: "A relaxed wrap dress in printed cotton with a tie waist and flutter sleeves.", collection: "Dresses", option1: { name: "Size", values: ["S", "M", "L"] }, option2: { name: "Colour", values: ["Navy", "Blush"] }, stock: 4, featured: true, image: "fashion-floral-dress" },
@@ -185,7 +185,7 @@ export const PERSONAS: Record<string, Persona> = {
       { title: "Spiral brass earrings", price: 18, description: "Hand-formed brass spirals on hypoallergenic hooks.", collection: "Accessories", stock: 12, featured: true, image: "fashion-earrings" },
     ] },
   "e-volt": {
-    answers: { storeName: "Voltline", tagline: "Gadgets that just work.", industry: "Electronics", description: "Phones accessories, audio and smart-home gear with local warranty support.", currency: "USD", country: "Kenya", city: "Nairobi", whatsapp: "+254700000001", store: STORE_BASE("USD", "Nairobi delivery", 250, "Store pickup") },
+    answers: { storeName: "Voltline", tagline: "Gadgets that just work.", industry: "Electronics", description: "Phone accessories, audio and smart-home gear with a two-year warranty.", currency: "USD", country: "United States", city: "San Francisco", whatsapp: "+14155550123", store: STORE_BASE("USD", "Standard shipping", 500, "Store pickup") },
     collections: ["Audio", "Power", "Smart home"],
     products: [
       { title: "Wireless earbuds Pro", price: 49, description: "Noise reduction, 24h battery with case.", collection: "Audio", option1: { name: "Colour", values: ["Black", "White"] }, stock: 10, featured: true },
@@ -195,18 +195,18 @@ export const PERSONAS: Record<string, Persona> = {
       { title: "65W USB-C charger", price: 22, description: "Charges laptops, tablets and phones.", collection: "Power", stock: 20 },
     ] },
   "e-fresh": {
-    answers: { storeName: "Shamba Fresh", tagline: "Farm-fresh groceries to your door.", industry: "Groceries", description: "Fruit, vegetables and pantry staples from local farms.", currency: "UGX", country: "Uganda", city: "Kampala", whatsapp: "+256700000002", promoBanner: "Free delivery on orders over UGX 100,000 in Kampala", store: STORE_BASE("UGX", "Same-day delivery (Kampala)", 5000, "Market stall pickup") },
+    answers: { storeName: "Field & Basket", tagline: "Farm-fresh groceries to your door.", industry: "Groceries", description: "Fruit, vegetables and pantry staples from independent farms.", currency: "GBP", country: "United Kingdom", city: "London", whatsapp: "+447700900456", promoBanner: "Free delivery on orders over £40", store: STORE_BASE("GBP", "Same-day delivery", 399, "Market stall pickup") },
     collections: ["Fruit", "Vegetables", "Pantry"],
     products: [
-      { title: "Matooke bunch", price: 25000, description: "Fresh green bananas, medium bunch.", collection: "Vegetables", stock: 20, featured: true },
-      { title: "Avocados (5 pack)", price: 6000, description: "Ripe Hass avocados.", collection: "Fruit", stock: 30, featured: true },
-      { title: "Pineapple", price: 4000, description: "Sweet local pineapple.", collection: "Fruit", stock: 25, featured: true },
-      { title: "Groundnut paste 500g", price: 9000, description: "Stone-ground, no additives.", collection: "Pantry", stock: 14, featured: true },
-      { title: "Fresh tomatoes 1kg", price: 5000, description: "Firm, ripe tomatoes.", collection: "Vegetables", stock: 40 },
-      { title: "Local honey 500ml", price: 18000, description: "Raw honey from a farm cooperative.", collection: "Pantry", stock: 2 },
+      { title: "Seasonal veg box", price: 18, description: "A week of seasonal vegetables for two.", collection: "Vegetables", stock: 20, featured: true },
+      { title: "Avocados (4 pack)", price: 4.5, description: "Ripe Hass avocados.", collection: "Fruit", stock: 30, featured: true },
+      { title: "Pineapple", price: 2.5, description: "Sweet, ready to eat.", collection: "Fruit", stock: 25, featured: true },
+      { title: "Peanut butter 500g", price: 5.5, description: "Stone-ground, no additives.", collection: "Pantry", stock: 14, featured: true },
+      { title: "Vine tomatoes 1kg", price: 3.2, description: "Firm, ripe tomatoes.", collection: "Vegetables", stock: 40 },
+      { title: "Wildflower honey 340g", price: 9, description: "Raw honey from a farm cooperative.", collection: "Pantry", stock: 2 },
     ] },
   "e-lumiere": {
-    answers: { storeName: "Lumière Botanics", tagline: "Gentle skincare from botanical oils.", industry: "Skincare", description: "Small-batch skincare made with shea, marula and baobab.", currency: "USD", country: "South Africa", city: "Cape Town", store: STORE_BASE("USD", "Courier delivery", 600, "Studio collection") },
+    answers: { storeName: "Lumière Botanics", tagline: "Gentle skincare from botanical oils.", industry: "Skincare", description: "Small-batch skincare made with shea, marula and baobab.", currency: "USD", country: "Australia", city: "Sydney", store: STORE_BASE("USD", "Courier delivery", 600, "Studio collection") },
     collections: ["Face", "Body"],
     products: [
       { title: "Marula face oil", price: 28, description: "Lightweight daily face oil.", collection: "Face", stock: 12, featured: true },
@@ -214,16 +214,16 @@ export const PERSONAS: Record<string, Persona> = {
       { title: "Baobab cleansing balm", price: 24, description: "Melts away make-up and SPF.", collection: "Face", stock: 7, featured: true },
     ] },
   "e-craft": {
-    answers: { storeName: "Ubuntu Crafts", tagline: "Handmade by artisans, made to last.", industry: "Handmade goods", description: "Baskets, ceramics and textiles from artisan cooperatives.", about: "Every piece is made by hand by a cooperative member.", currency: "USD", country: "Kenya", store: STORE_BASE("USD", "Courier delivery", 800, "Workshop pickup") },
+    answers: { storeName: "Hearth & Hand", tagline: "Handmade by artisans, made to last.", industry: "Handmade goods", description: "Baskets, ceramics and textiles from artisan cooperatives.", about: "Every piece is made by hand by a cooperative member.", currency: "USD", country: "Canada", city: "Vancouver", store: STORE_BASE("USD", "Courier delivery", 800, "Workshop pickup") },
     collections: ["Baskets", "Ceramics", "Textiles"],
     products: [
       { title: "Sisal market basket", price: 35, description: "Hand-woven sisal basket with leather straps.", collection: "Baskets", stock: 6, featured: true },
       { title: "Speckled stoneware mug", price: 16, description: "Wheel-thrown mug, food safe glaze.", collection: "Ceramics", stock: 14, featured: true },
-      { title: "Kikoi throw", price: 29, description: "Striped cotton throw.", collection: "Textiles", stock: 5, featured: true },
+      { title: "Striped cotton throw", price: 29, description: "Soft woven cotton throw.", collection: "Textiles", stock: 5, featured: true },
       { title: "Serving bowl", price: 38, description: "Large hand-glazed serving bowl.", collection: "Ceramics", stock: 3, featured: true },
     ] },
   "e-concrete": {
-    answers: { storeName: "CONCRETE", tagline: "Streetwear from the block.", industry: "Streetwear", description: "Heavyweight tees, hoodies and caps.", currency: "USD", country: "Nigeria", store: STORE_BASE("USD", "Delivery", 500, "Pickup") },
+    answers: { storeName: "CONCRETE", tagline: "Streetwear from the block.", industry: "Streetwear", description: "Heavyweight tees, hoodies and caps.", currency: "USD", country: "United States", city: "Los Angeles", store: STORE_BASE("USD", "Standard shipping", 500, "Pickup") },
     collections: ["Tees", "Hoodies", "Caps"],
     products: [
       { title: "Heavyweight logo tee", price: 30, description: "300gsm cotton, boxy fit.", collection: "Tees", option1: { name: "Size", values: ["S", "M", "L", "XL"] }, option2: { name: "Colour", values: ["Black", "Bone"] }, stock: 6, featured: true },

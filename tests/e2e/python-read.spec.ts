@@ -3,7 +3,8 @@ import { execFileSync } from "node:child_process";
 
 // The React editor loads a project from the Python backend through the local single origin.
 // Run with the preview server started as `PY_API=http://127.0.0.1:8000 npx vite preview --port 8788`
-// and the same PY_API set for this test run (see backend/README.md).
+// and the same PY_API set for this test run (see backend/README.md). Django and this test must both use a
+// disposable database (DATABASE_URL=…/imprintsites_parity): the import below replaces its tables.
 const PYTHON = process.platform === "win32" ? "backend/.venv/Scripts/python.exe" : "backend/.venv/bin/python";
 const run = `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
 
@@ -17,7 +18,9 @@ test("the editor loads a project served by Python", async ({ page }) => {
   await page.request.put(`/api/projects/${id}/intake`, { headers: h, data: { step: 2, answers: { businessName: "Kijani Trails", tagline: "Guided walks in Kampala" } } });
   expect((await page.request.post(`/api/projects/${id}/generate`, { headers: h, data: {} })).ok()).toBe(true);
 
-  execFileSync(PYTHON, ["backend/manage.py", "import_d1", "--yes"], { stdio: "ignore" });
+  const ready = await (await page.request.get(`${process.env.PY_API_URL || "http://127.0.0.1:8000"}/readyz`)).json();
+  expect(ready.dataset, "Start Django with DATABASE_URL pointing at a disposable database").toBe("disposable");
+  execFileSync(PYTHON, ["backend/manage.py", "import_d1", "--yes", "--disposable-only"], { stdio: "pipe" });
 
   const read = page.waitForResponse((r) => r.request().method() === "GET" && new URL(r.url()).pathname === `/api/projects/${id}`);
   await page.goto(`/projects/${id}/editor`);

@@ -175,8 +175,93 @@ describe("audit #3: editing a product after a sale keeps the post-sale stock", (
     expect(edit.json.product.variants[0].stock).toBe(3);
     // A deliberate +7 adjustment made from the same stale form applies as a change, not an overwrite.
     const adj = await merchant.req(`/api/projects/${ids.store}/products/${ids.product}`, { method: "PUT", body: {
-      title: "Woven basket", priceMinor: 10000, variants: [{ id: ids.variant, stock: 12, stockBase: 5 }],
+      title: "Woven basket", priceMinor: 10000, editId: `adj${run}`, variants: [{ id: ids.variant, stock: 12, stockBase: 5 }],
     } });
     expect(adj.json.product.variants[0].stock).toBe(10);
+  });
+});
+
+// ── Follow-up review cases (reproduced by the reviewer against the first fix) ──
+
+async function order(storeId: string, variantId: string, qty: number, key: string) {
+  return shopper.req(`/api/public/store/${storeId}/orders`, { body: {
+    items: [{ variantId, quantity: qty }], fulfillmentId: "pick1", paymentMethodId: "cod1",
+    customer: { name: "Test Buyer", phone: "+256700000002", email: "" }, consent: true, idempotencyKey: key, t: old(),
+  } });
+}
+
+describe("review: a live store keeps one currency across catalogue and checkout", () => {
+  const ids: Record<string, string> = {};
+  it("prices new products in the live currency even after the setup currency changes", async () => {
+    ids.store = await newStore("Live USD shop", "USD");
+    const first = await merchant.req(`/api/projects/${ids.store}/products`, { body: { title: "Cap", priceMinor: 1500, variants: [{ stock: 4 }] } });
+    expect((await publish(ids.store)).status).toBe(200);
+    expect((await merchant.req(`/api/projects/${ids.store}/intake`, { method: "PUT", body: { step: 1, answers: STORE("UGX") } })).status).toBe(200);
+    expect((await merchant.req(`/api/projects/${ids.store}/products`)).json.currency).toBe("USD");
+    // A form that still shows UGX is refused instead of silently charging USD 100.00
+    const ugx = await merchant.req(`/api/projects/${ids.store}/products`, { body: { title: "Scarf", currency: "UGX", priceMinor: 10000, variants: [{ stock: 2 }] } });
+    expect(ugx.status).toBe(409);
+    expect(ugx.json.code).toBe("currency_mismatch");
+    const usd = await merchant.req(`/api/projects/${ids.store}/products`, { body: { title: "Scarf", currency: "USD", priceMinor: 2500, variants: [{ stock: 2 }] } });
+    expect(usd.json.product.currency).toBe("USD");
+    const quote = await shopper.req(`/api/public/store/${ids.store}/quote`, { body: { items: [{ variantId: usd.json.product.variants[0].id, quantity: 1 }] } });
+    expect(quote.json).toMatchObject({ currency: "USD", subtotalMinor: 2500 });
+    ids.cap = first.json.product.id;
+    ids.capVariant = first.json.product.variants[0].id;
+  });
+
+  it("never quotes, sells or lists a product priced in another currency", async () => {
+    sql(`UPDATE products SET currency='UGX', price_cents=10000 WHERE id='${ids.cap}'`); // e.g. data written before this fix
+    const quote = await shopper.req(`/api/public/store/${ids.store}/quote`, { body: { items: [{ variantId: ids.capVariant, quantity: 1 }] } });
+    expect(quote.json.subtotalMinor).toBe(0);
+    expect(quote.json.lines[0]).toMatchObject({ missing: true, quantity: 0 });
+    const o = await order(ids.store, ids.capVariant, 1, `mix${run}`);
+    expect(o.status).toBe(409);
+    const slug = (await merchant.req(`/api/projects/${ids.store}`)).json.project.slug;
+    const shop = await shopper.req(`/s/${slug}/shop`, { raw: true });
+    expect(shop.text).toContain("Scarf");
+    expect(shop.text).not.toContain(">Cap<");
+  });
+});
+
+describe("review: retrying the same stock edit applies it once", () => {
+  it("dedupes a replayed save, keeps sales made in between and applies later changes in the same edit", async () => {
+    const id = await newStore("Retry shop", "USD");
+    const prod = await merchant.req(`/api/projects/${id}/products`, { body: { title: "Ball", priceMinor: 900, variants: [{ stock: 5 }] } });
+    const pid = prod.json.product.id, vid = prod.json.product.variants[0].id;
+    expect((await publish(id)).status).toBe(200);
+    const save = (stock: number) => merchant.req(`/api/projects/${id}/products/${pid}`, { method: "PUT", body: { title: "Ball", priceMinor: 900, editId: `retry${run}`, variants: [{ id: vid, stock, stockBase: 5 }] } });
+    expect((await save(7)).json.product.variants[0].stock).toBe(7);
+    expect((await save(7)).json.product.variants[0].stock).toBe(7); // retry after a lost response
+    expect((await order(id, vid, 1, `ret${run}`)).status).toBe(200); // a sale: 6
+    expect((await save(7)).json.product.variants[0].stock).toBe(6); // another retry keeps the sale
+    expect((await save(9)).json.product.variants[0].stock).toBe(8); // same form, 7 → 9 adds only 2
+    const noId = await merchant.req(`/api/projects/${id}/products/${pid}`, { method: "PUT", body: { title: "Ball", priceMinor: 900, variants: [{ id: vid, stock: 20, stockBase: 8 }] } });
+    expect(noId.status).toBe(400);
+    expect(noId.json.code).toBe("edit_id_required");
+  });
+});
+
+describe("review: CSV rows must identify exactly one variant", () => {
+  it("rejects an option value shared by several variants before changing stock", async () => {
+    const id = await newStore("Shirts", "USD");
+    const sku = `SH-${run}`;
+    const created = await merchant.req(`/api/projects/${id}/products`, { body: {
+      title: "Shirt", priceMinor: 2000, sku, option1Name: "Size", option2Name: "Colour",
+      variants: [{ option1: "Medium", option2: "Red", stock: 2 }, { option1: "Medium", option2: "Blue", stock: 3 }],
+    } });
+    expect(created.status).toBe(200);
+    const stocks = async () => Object.fromEntries((await merchant.req(`/api/projects/${id}/products`)).json.products[0].variants.map((v: any) => [`${v.option1}/${v.option2}`, v.stock]));
+    const amb = await merchant.req(`/api/projects/${id}/products/import`, { body: { rows: [{ title: "Shirt", price: "20", sku, option1: "Medium", stock: "9" }] } });
+    expect(amb.json.failed).toBe(1);
+    expect(amb.json.errors[0].error).toMatch(/Several variants/);
+    expect(await stocks()).toEqual({ "Medium/Red": 2, "Medium/Blue": 3 });
+    const one = await merchant.req(`/api/projects/${id}/products/import`, { body: { rows: [{ title: "Shirt", price: "20", sku, option1: "Medium", option2: "Blue", stock: "9" }] } });
+    expect(one.json.failed).toBe(0);
+    expect(await stocks()).toEqual({ "Medium/Red": 2, "Medium/Blue": 9 });
+    const missing2 = await merchant.req(`/api/projects/${id}/products/import`, { body: { rows: [{ title: "Shirt", price: "20", sku, option1: "Large", stock: "1" }] } });
+    expect(missing2.json.failed).toBe(1);
+    expect(missing2.json.errors[0].error).toMatch(/two options/);
+    expect(Object.keys(await stocks())).toHaveLength(2);
   });
 });

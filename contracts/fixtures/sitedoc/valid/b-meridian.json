@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Kingsway Advisory — Clear advice for growing businesses.",
-    "description": "Financial, tax and strategy advisory for small and medium enterprises across East Africa.",
+    "description": "Financial, tax and strategy advisory for small and medium-sized businesses across the UK and Europe.",
     "lang": "en"
   },
   "theme": {
@@ -33,12 +33,12 @@
   },
   "contact": {
     "email": "info@example.com",
-    "phone": "+254 700 000 000",
+    "phone": "+44 20 7946 0123",
     "whatsapp": "",
-    "address": "Sample Road, Westlands",
-    "city": "Nairobi",
-    "country": "Kenya",
-    "mapQuery": "Westlands, Nairobi",
+    "address": "1 Sample Street, Canary Wharf",
+    "city": "London",
+    "country": "United Kingdom",
+    "mapQuery": "Canary Wharf, London",
     "socials": []
   },
   "pages": [
@@ -49,15 +49,15 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-15a77l",
+          "id": "hero-15855d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "Business consulting · Nairobi",
+            "eyebrow": "Business consulting · London",
             "heading": "Clear advice for growing businesses.",
-            "subheading": "Financial, tax and strategy advisory for small and medium enterprises across East Africa.",
+            "subheading": "Financial, tax and strategy advisory for small and medium-sized businesses across the UK and Europe.",
             "primaryCta": {
               "label": "Contact us",
               "href": "/contact"
@@ -69,7 +69,7 @@
           }
         },
         {
-          "id": "services-161lz0",
+          "id": "services-169zvh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -97,7 +97,7 @@
           }
         },
         {
-          "id": "about-17jnva",
+          "id": "about-17c25w",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -113,7 +113,7 @@
           }
         },
         {
-          "id": "cta-18di0s",
+          "id": "cta-18eim5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -136,7 +136,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-19dgt7",
+          "id": "about-19jmle",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -160,7 +160,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-1a63fb",
+          "id": "services-1a9kkg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -212,7 +212,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1ce80d",
+          "id": "contact-1cdf1v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -225,7 +225,7 @@
           }
         },
         {
-          "id": "hours-1d6lqn",
+          "id": "hours-1d50g",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -52,7 +52,10 @@ async function servePublished(c: Ctx) {
   const doc = parsed.doc;
   const ctx = { ...renderCtxBase(c, row.id, `/s/${slug}`, "published" as const), nonce, isDemo: !!row.is_demo, query: url.searchParams, staticMode: url.searchParams.get("static") === "1", assets: await loadAssetMeta(c.env, row.id) };
   if (doc.type === "ecommerce") {
-    Object.assign(ctx, { store: await loadStore(c.env, row.id) });
+    const store = await loadStore(c.env, row.id);
+    // Only list products priced in the live store's currency; checkout refuses the rest.
+    store.products = store.products.filter((p) => p.currency === doc.store?.currency);
+    Object.assign(ctx, { store });
     const m = rest.match(/^\/order\/(ord_[a-z0-9]+)\/?$/);
     if (m) Object.assign(ctx, { order: await routeOrderView(c.env, row.id, m[1], url.searchParams.get("k") ?? undefined) });
   }

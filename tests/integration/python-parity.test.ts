@@ -4,6 +4,8 @@ import { execFileSync, execSync } from "node:child_process";
 // Worker ↔ Python parity for the migrated read path. Runs only when PY_API_URL points at the Django server
 // (for example PY_API_URL=http://127.0.0.1:8000) and TEST_BASE_URL is a local Worker started WITHOUT PY_API.
 // The project is created through the Worker, copied with `manage.py import_d1`, then read from both.
+// The copy REPLACES the target tables, so both Django and this test must use a disposable database
+// (export DATABASE_URL=…/imprintsites_parity before starting Django and this test). Anything else is refused.
 const BASE = (process.env.TEST_BASE_URL || "http://localhost:8788").replace(/\/$/, "");
 const PY = (process.env.PY_API_URL || "").replace(/\/$/, "");
 const PYTHON = process.platform === "win32" ? "backend/.venv/Scripts/python.exe" : "backend/.venv/bin/python";
@@ -29,6 +31,8 @@ describe.skipIf(!PY)("Python read path matches the Worker", () => {
   let owner = "", stranger = "", id = "";
 
   beforeAll(async () => {
+    const ready = await call(PY, "/readyz");
+    expect(ready.json.dataset, "Start Django with DATABASE_URL pointing at a disposable database (e.g. …/imprintsites_parity)").toBe("disposable");
     sql("DELETE FROM rate_limits");
     const signup = async (who: string) => (await call(BASE, "/api/auth/signup", { body: { name: who, email: `${who}-${run}@test.example`, password: "Sup3r-Secret-Pass", acceptTerms: true } })).cookie!;
     owner = await signup("pyowner");
@@ -44,7 +48,7 @@ describe.skipIf(!PY)("Python read path matches the Worker", () => {
     await call(BASE, `/api/admin/projects/${id}/entitlement`, { body: { reason: "Parity test" }, cookie: admin });
     expect((await call(BASE, `/api/projects/${id}/publish`, { body: { contentRightsAck: true }, cookie: owner })).status).toBe(200);
 
-    execFileSync(PYTHON, ["backend/manage.py", "import_d1", "--yes"], { stdio: "ignore" });
+    execFileSync(PYTHON, ["backend/manage.py", "import_d1", "--yes", "--disposable-only"], { stdio: "pipe" });
   }, 240_000);
 
   it("returns the same project document, intake, publication and entitlement", async () => {

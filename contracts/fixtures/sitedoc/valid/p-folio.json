@@ -54,13 +54,13 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1frha",
+          "id": "hero-1gg4v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "Writer & Brand Strategist · Nairobi, Kenya",
+            "eyebrow": "Writer & Brand Strategist · London, United Kingdom",
             "heading": "Words that make brands feel human.",
             "subheading": "Wanjiru Kamau, Writer & Brand Strategist",
             "primaryCta": {
@@ -74,14 +74,14 @@
           }
         },
         {
-          "id": "about-297ef",
+          "id": "about-23j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "About me",
-            "body": "I help founders and teams find the words for what they do. For eight years I've written brand stories, product launches and long-form features for clients across East Africa and Europe.\n\nMy process is simple: listen closely, write clearly, and edit until every sentence earns its place.",
+            "body": "I help founders and teams find the words for what they do. For eight years I've written brand stories, product launches and long-form features for clients across Europe and North America.\n\nMy process is simple: listen closely, write clearly, and edit until every sentence earns its place.",
             "highlights": []
           }
         },
@@ -114,7 +114,7 @@
               },
               {
                 "title": "Coastal travel feature series",
-                "description": "A six-part feature series on sustainable travel along the Swahili coast.",
+                "description": "A six-part feature series on sustainable travel along the Atlantic coast.",
                 "role": "Writer",
                 "period": "2024",
                 "tags": [
@@ -149,7 +149,7 @@
           }
         },
         {
-          "id": "cta-4cxy6",
+          "id": "cta-49ecz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -172,7 +172,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "experience-5125y",
+          "id": "experience-532fk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -198,7 +198,7 @@
           }
         },
         {
-          "id": "skills-6e6um",
+          "id": "skills-6eh57",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -228,14 +228,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-72bqs",
+          "id": "contact-7k5jj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "contact",
           "data": {
             "heading": "Get in touch",
-            "intro": "Based in Nairobi, Kenya.",
+            "intro": "Based in London, United Kingdom.",
             "showForm": true,
             "showMap": false
           }

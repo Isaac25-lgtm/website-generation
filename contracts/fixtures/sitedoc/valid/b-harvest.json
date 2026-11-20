@@ -3,12 +3,12 @@
   "type": "business",
   "templateId": "b-harvest",
   "brand": {
-    "name": "Mama Ngozi's Kitchen",
+    "name": "Mama Rosa's Kitchen",
     "tagline": "Home-style cooking, every day."
   },
   "seo": {
-    "title": "Mama Ngozi's Kitchen — Home-style cooking, every day.",
-    "description": "Fresh local dishes, cooked daily. Eat in, take away or order for events.",
+    "title": "Mama Rosa's Kitchen — Home-style cooking, every day.",
+    "description": "Fresh seasonal dishes, cooked daily. Eat in, take away or order for events.",
     "lang": "en"
   },
   "theme": {
@@ -33,12 +33,12 @@
   },
   "contact": {
     "email": "",
-    "phone": "+234 800 000 0000",
+    "phone": "+61 3 5550 1234",
     "whatsapp": "",
-    "address": "Sample Street, Wuse 2",
-    "city": "Abuja",
-    "country": "Nigeria",
-    "mapQuery": "Wuse 2, Abuja",
+    "address": "Sample Street, Fitzroy",
+    "city": "Melbourne",
+    "country": "Australia",
+    "mapQuery": "Fitzroy, Melbourne",
     "socials": []
   },
   "pages": [
@@ -49,18 +49,18 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-2e3584",
+          "id": "hero-2e3zqq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "Restaurant · Abuja",
+            "eyebrow": "Restaurant · Melbourne",
             "heading": "Home-style cooking, every day.",
-            "subheading": "Fresh local dishes, cooked daily. Eat in, take away or order for events.",
+            "subheading": "Fresh seasonal dishes, cooked daily. Eat in, take away or order for events.",
             "primaryCta": {
-              "label": "Call +234 800 000 0000",
-              "href": "tel:+2348000000000"
+              "label": "Call +61 3 5550 1234",
+              "href": "tel:+61355501234"
             },
             "secondaryCta": {
               "label": "Our services",
@@ -68,13 +68,13 @@
             },
             "image": {
               "art": "harvest-hero",
-              "alt": "Mama Ngozi's Kitchen",
+              "alt": "Mama Rosa's Kitchen",
               "caption": ""
             }
           }
         },
         {
-          "id": "services-2ff4qe",
+          "id": "services-2f34ir",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -84,19 +84,19 @@
             "intro": "",
             "items": [
               {
-                "title": "Jollof rice & chicken",
-                "description": "Smoky party-style jollof.",
-                "price": "₦4,500"
+                "title": "Hand-made pappardelle",
+                "description": "Slow-cooked beef ragù and parmesan.",
+                "price": "A$26"
               },
               {
-                "title": "Egusi soup & pounded yam",
-                "description": "Rich melon-seed soup with greens.",
-                "price": "₦5,000"
+                "title": "Wood-fired margherita",
+                "description": "San Marzano tomato, fior di latte and basil.",
+                "price": "A$22"
               },
               {
-                "title": "Suya platter",
-                "description": "Spiced grilled beef with onions.",
-                "price": "₦3,500"
+                "title": "Tiramisu",
+                "description": "Made fresh every morning.",
+                "price": "A$12"
               },
               {
                 "title": "Event catering",
@@ -107,19 +107,19 @@
           }
         },
         {
-          "id": "about-2gelvg",
+          "id": "about-2gdlw2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
-            "heading": "About Mama Ngozi's Kitchen",
+            "heading": "About Mama Rosa's Kitchen",
             "body": "A family kitchen serving the dishes we grew up with.",
             "highlights": []
           }
         },
         {
-          "id": "cta-2ha5qc",
+          "id": "cta-2h5dih",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -128,8 +128,8 @@
             "heading": "Ready when you are",
             "body": "",
             "cta": {
-              "label": "Call +234 800 000 0000",
-              "href": "tel:+2348000000000"
+              "label": "Call +61 3 5550 1234",
+              "href": "tel:+61355501234"
             }
           }
         }
@@ -142,7 +142,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-2i8bvc",
+          "id": "about-2iieea",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-2jgktx",
+          "id": "services-2j813h",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -172,19 +172,19 @@
             "intro": "",
             "items": [
               {
-                "title": "Jollof rice & chicken",
-                "description": "Smoky party-style jollof.",
-                "price": "₦4,500"
+                "title": "Hand-made pappardelle",
+                "description": "Slow-cooked beef ragù and parmesan.",
+                "price": "A$26"
               },
               {
-                "title": "Egusi soup & pounded yam",
-                "description": "Rich melon-seed soup with greens.",
-                "price": "₦5,000"
+                "title": "Wood-fired margherita",
+                "description": "San Marzano tomato, fior di latte and basil.",
+                "price": "A$22"
               },
               {
-                "title": "Suya platter",
-                "description": "Spiced grilled beef with onions.",
-                "price": "₦3,500"
+                "title": "Tiramisu",
+                "description": "Made fresh every morning.",
+                "price": "A$12"
               },
               {
                 "title": "Event catering",
@@ -204,9 +204,9 @@
             "heading": "Request a quote",
             "intro": "Tell us about your needs and we'll get back to you.",
             "services": [
-              "Jollof rice & chicken",
-              "Egusi soup & pounded yam",
-              "Suya platter",
+              "Hand-made pappardelle",
+              "Wood-fired margherita",
+              "Tiramisu",
               "Event catering"
             ]
           }
@@ -220,7 +220,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-2l9i70",
+          "id": "contact-2lcprt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -233,7 +233,7 @@
           }
         },
         {
-          "id": "hours-2mj4du",
+          "id": "hours-2mfpg6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

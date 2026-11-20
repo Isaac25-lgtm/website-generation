@@ -13,7 +13,13 @@ async function req(path, { method, body, form, raw } = {}) {
   let b;
   if (form) b = form; else if (body !== undefined) { headers["content-type"] = "application/json"; b = JSON.stringify(body); }
   const t0 = Date.now();
-  const res = await fetch(BASE + path, { method: method ?? (b ? "POST" : "GET"), headers, body: b, redirect: "manual" });
+  const init = { method: method ?? (b ? "POST" : "GET"), headers, body: b, redirect: "manual" };
+  let res;
+  // Retry only when the connection never opened (the request wasn't sent), so retrying can't duplicate a write.
+  for (let attempt = 0; ; attempt++) {
+    try { res = await fetch(BASE + path, init); break; }
+    catch (e) { if (attempt < 3 && e?.cause?.code === "UND_ERR_CONNECT_TIMEOUT") { await new Promise((r) => setTimeout(r, 2000)); continue; } throw e; }
+  }
   const sc = res.headers.get("set-cookie"); const m = sc?.match(/is_session=([^;]*)/); if (m) cookie = `is_session=${m[1]}`;
   const ms = Date.now() - t0;
   if (raw) return { status: res.status, text: await res.text(), res, ms };

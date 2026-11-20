@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-pulse",
+  "brand": {
+    "name": "Nimbus Digital",
+    "tagline": "Software products, shipped."
+  },
+  "seo": {
+    "title": "Nimbus Digital — Software products, shipped.",
+    "description": "We design and build web apps, mobile apps and internal tools for ambitious teams.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#070b1a",
+      "surface": "#0f1530",
+      "text": "#e8ecff",
+      "muted": "#97a0c3",
+      "primary": "#6d7bff",
+      "accent": "#22d3ee"
+    },
+    "fontHeading": "bricolage",
+    "fontBody": "inter",
+    "radius": "lg",
+    "density": "comfortable",
+    "headingScale": "lg",
+    "animation": "lively",
+    "headerStyle": "floating",
+    "cardStyle": "glass",
+    "ornament": "blobs"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Lagos",
+    "country": "Nigeria",
+    "mapQuery": "",
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-26a221",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Software agency · Lagos",
+            "heading": "Software products, shipped.",
+            "subheading": "We design and build web apps, mobile apps and internal tools for ambitious teams.",
+            "primaryCta": {
+              "label": "Request a quote",
+              "href": "/services#quote"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            }
+          }
+        },
+        {
+          "id": "services-278ege",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Product design",
+                "description": "Research, UX and interface design.",
+                "price": ""
+              },
+              {
+                "title": "Web & mobile apps",
+                "description": "Production-grade apps with modern stacks.",
+                "price": ""
+              },
+              {
+                "title": "Cloud & DevOps",
+                "description": "Reliable infrastructure and CI/CD.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-289bgb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Nimbus Digital",
+            "body": "A senior team of designers and engineers delivering in small, predictable sprints.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-29e39l",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Tell us what you need",
+            "body": "",
+            "cta": {
+              "label": "Request a quote",
+              "href": "/services#quote"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-2ag7fm",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "A senior team of designers and engineers delivering in small, predictable sprints.",
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-2bj9xw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Product design",
+                "description": "Research, UX and interface design.",
+                "price": ""
+              },
+              {
+                "title": "Web & mobile apps",
+                "description": "Production-grade apps with modern stacks.",
+                "price": ""
+              },
+              {
+                "title": "Cloud & DevOps",
+                "description": "Reliable infrastructure and CI/CD.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Product design",
+              "Web & mobile apps",
+              "Cloud & DevOps"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-2d50ww",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

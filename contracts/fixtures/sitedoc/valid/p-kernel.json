@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-kernel",
+  "brand": {
+    "name": "Tunde Adebayo",
+    "tagline": "I build fast, reliable software for the web."
+  },
+  "seo": {
+    "title": "Tunde Adebayo — I build fast, reliable software for the web.",
+    "description": "I build fast, reliable software for the web.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0a0e13",
+      "surface": "#111820",
+      "text": "#d8e3ee",
+      "muted": "#8496a8",
+      "primary": "#3cf2a6",
+      "accent": "#7aa2ff"
+    },
+    "fontHeading": "jetbrains-mono",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "comfortable",
+    "headingScale": "md",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "outline",
+    "ornament": "grid"
+  },
+  "contact": {
+    "email": "dev@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "socials": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-8aw56",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Full-stack engineer · Lagos, Nigeria",
+            "heading": "I build fast, reliable software for the web.",
+            "subheading": "Tunde Adebayo, Full-stack engineer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-9dj1l",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Full-stack engineer focused on TypeScript, edge computing and data-heavy dashboards. I care about performance budgets, accessible interfaces and boring, dependable infrastructure.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Logistics tracking dashboard",
+                "description": "Real-time shipment tracking for 2,000+ daily deliveries with offline-first mobile views.",
+                "role": "Lead engineer",
+                "period": "2025",
+                "tags": [
+                  "React",
+                  "Workers",
+                  "D1"
+                ],
+                "link": "https://example.com",
+                "images": [
+                  {
+                    "art": "kernel-a",
+                    "alt": "Logistics tracking dashboard",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Open-source CSV validator",
+                "description": "A small library that validates large CSV uploads in the browser.",
+                "role": "Maintainer",
+                "period": "2024",
+                "tags": [
+                  "TypeScript",
+                  "OSS"
+                ],
+                "images": [
+                  {
+                    "art": "kernel-b",
+                    "alt": "Open-source CSV validator",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "School fees payment portal",
+                "description": "Payment reconciliation and receipts for a network of schools.",
+                "role": "Backend",
+                "period": "2023",
+                "tags": [
+                  "Python",
+                  "SQL"
+                ],
+                "images": [
+                  {
+                    "art": "kernel-c",
+                    "alt": "School fees payment portal",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-b2f3v",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-c82i3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Senior software engineer",
+                "org": "Logistics startup (fictional)",
+                "period": "2022 — now",
+                "location": "Remote",
+                "description": "Owns the tracking platform and developer tooling."
+              }
+            ]
+          }
+        },
+        {
+          "id": "education-daxcj",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "education",
+          "data": {
+            "heading": "Education & certifications",
+            "items": [
+              {
+                "title": "BSc Computer Science",
+                "org": "University (fictional)",
+                "period": "2015 — 2019",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-efo5i",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "Languages",
+                "items": [
+                  "TypeScript",
+                  "Python",
+                  "SQL",
+                  "Go"
+                ]
+              },
+              {
+                "name": "Platforms",
+                "items": [
+                  "Cloudflare Workers",
+                  "PostgreSQL",
+                  "React",
+                  "Docker"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-fbi6n",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Lagos, Nigeria.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

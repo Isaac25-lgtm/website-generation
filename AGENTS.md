@@ -1,5 +1,14 @@
 # AGENTS.md: handoff for coding agents (Codex and others)
 
+**Current handoff (20 November 2026).** Read the [Claude engineering handoff](docs/claude-handoff.md) and [production audit](docs/production-audit.md) for the release decision, verified findings and proposed Python backend / React frontend split. The remaining sections record the original TypeScript build and its historical release procedure.
+
+**Since then (local, uncommitted until the owner reviews):**
+
+- Audit findings #1–#3 are fixed, with regression tests.
+- A Python read path exists in `backend/` (Django + DRF + Neon PostgreSQL); see [backend/README.md](backend/README.md).
+- Shared `contracts/` are generated from the TypeScript schema.
+- The owner has little local disk space, so use hosted services (Neon) rather than local databases. Keep `backend/.env` out of git.
+
 Written 2026-11-20 at the end of the first build session. Read this file first, then `BUILD_STATUS.md` and `DEPLOYMENT_REPORT.md`.
 
 ## 1. What this is

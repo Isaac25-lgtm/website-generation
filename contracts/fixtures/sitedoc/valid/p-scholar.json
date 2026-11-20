@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-scholar",
+  "brand": {
+    "name": "Dr. Naledi Mokoena",
+    "tagline": "Public health researcher"
+  },
+  "seo": {
+    "title": "Dr. Naledi Mokoena — Public health researcher",
+    "description": "Public health researcher",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f4f6fa",
+      "text": "#1b2333",
+      "muted": "#5b6578",
+      "primary": "#1f4fd1",
+      "accent": "#b7791f"
+    },
+    "fontHeading": "libre-baskerville",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "comfortable",
+    "headingScale": "sm",
+    "animation": "none",
+    "headerStyle": "sidebar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "research@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-g9kpv",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Public health researcher · Cape Town, South Africa",
+            "heading": "Dr. Naledi Mokoena",
+            "subheading": "Public health researcher",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "image": {
+              "art": "scholar-head",
+              "alt": "Portrait",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-hgbnn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I study how community health programmes can reach more people at lower cost. My work combines field trials, survey methods and health economics.",
+            "image": {
+              "art": "scholar-head",
+              "alt": "Portrait",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-i71d5",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-j3mno",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Senior research fellow",
+                "org": "Research institute (fictional)",
+                "period": "2020 — now",
+                "location": "",
+                "description": "Leads a programme evaluating community health worker models."
+              },
+              {
+                "role": "Postdoctoral researcher",
+                "org": "University (fictional)",
+                "period": "2017 — 2020",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "education-kdon1",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "education",
+          "data": {
+            "heading": "Education & certifications",
+            "items": [
+              {
+                "title": "PhD, Epidemiology",
+                "org": "University (fictional)",
+                "period": "2017",
+                "description": ""
+              },
+              {
+                "title": "MPH",
+                "org": "University (fictional)",
+                "period": "2012",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-ldyo7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "Epidemiology",
+                  "Survey design",
+                  "Stata",
+                  "R",
+                  "Health economics"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "achievements-m14mp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "achievements",
+          "data": {
+            "heading": "Achievements & publications",
+            "items": [
+              {
+                "title": "Cost-effectiveness of community health visits (journal article)",
+                "detail": "Sample publication entry.",
+                "year": "2025"
+              },
+              {
+                "title": "Early-career research award (sample)",
+                "detail": "",
+                "year": "2023"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-n2ebq",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Cape Town, South Africa.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

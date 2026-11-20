@@ -3,6 +3,7 @@ import { Link, useNavigate, useSearchParams } from "react-router";
 import { api, hostingPrice, useApp, usd } from "../lib";
 import { Field, Icon, Modal, SiteThumb, Spinner } from "../components/ui";
 import { PLANS } from "../../shared/pricing";
+import { OurWork } from "./OurWork";
 import { startIntent } from "./Home";
 
 export function Pricing() {
@@ -127,6 +128,7 @@ export function Examples() {
             </article>
           ))}
         </div>
+        <div style={{ marginTop: "4.5rem" }}><OurWork /></div>
       </div>
     </main>
   );

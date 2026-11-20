@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-meridian",
+  "brand": {
+    "name": "Kingsway Advisory",
+    "tagline": "Clear advice for growing businesses."
+  },
+  "seo": {
+    "title": "Kingsway Advisory — Clear advice for growing businesses.",
+    "description": "Financial, tax and strategy advisory for small and medium enterprises across East Africa.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f3f5f9",
+      "text": "#0f1b33",
+      "muted": "#55617a",
+      "primary": "#13305f",
+      "accent": "#c39a45"
+    },
+    "fontHeading": "playfair",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "comfortable",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "elevated",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "info@example.com",
+    "phone": "+254 700 000 000",
+    "whatsapp": "",
+    "address": "Sample Road, Westlands",
+    "city": "Nairobi",
+    "country": "Kenya",
+    "mapQuery": "Westlands, Nairobi",
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-15a77l",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Business consulting · Nairobi",
+            "heading": "Clear advice for growing businesses.",
+            "subheading": "Financial, tax and strategy advisory for small and medium enterprises across East Africa.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            }
+          }
+        },
+        {
+          "id": "services-161lz0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Financial planning",
+                "description": "Budgets, forecasts and cash-flow models you can actually use.",
+                "price": ""
+              },
+              {
+                "title": "Tax advisory",
+                "description": "Planning and compliance support for growing companies.",
+                "price": ""
+              },
+              {
+                "title": "Business strategy",
+                "description": "Market entry, pricing and growth planning workshops.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-17jnva",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Kingsway Advisory",
+            "body": "We work alongside owners and finance teams to build sound systems, plan for growth and stay compliant. Every engagement is led by a senior advisor.",
+            "highlights": [
+              "Senior advisors on every project",
+              "Fixed-fee engagements",
+              "Practical, plain-language reports"
+            ]
+          }
+        },
+        {
+          "id": "cta-18di0s",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-19dgt7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "We work alongside owners and finance teams to build sound systems, plan for growth and stay compliant. Every engagement is led by a senior advisor.",
+            "highlights": [
+              "Senior advisors on every project",
+              "Fixed-fee engagements",
+              "Practical, plain-language reports"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-1a63fb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Financial planning",
+                "description": "Budgets, forecasts and cash-flow models you can actually use.",
+                "price": ""
+              },
+              {
+                "title": "Tax advisory",
+                "description": "Planning and compliance support for growing companies.",
+                "price": ""
+              },
+              {
+                "title": "Business strategy",
+                "description": "Market entry, pricing and growth planning workshops.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Financial planning",
+              "Tax advisory",
+              "Business strategy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-1ce80d",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": true
+          }
+        },
+        {
+          "id": "hours-1d6lqn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hours",
+          "data": {
+            "heading": "Opening hours",
+            "rows": [
+              {
+                "days": "Monday – Friday",
+                "hours": "8:30 – 17:30"
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-folio",
+  "brand": {
+    "name": "Wanjiru Kamau",
+    "tagline": "Words that make brands feel human."
+  },
+  "seo": {
+    "title": "Wanjiru Kamau — Words that make brands feel human.",
+    "description": "Words that make brands feel human.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f6f2ea",
+      "surface": "#efe8db",
+      "text": "#1c1a17",
+      "muted": "#6b645a",
+      "primary": "#a8461f",
+      "accent": "#2f4a3a"
+    },
+    "fontHeading": "fraunces",
+    "fontBody": "inter",
+    "radius": "none",
+    "density": "airy",
+    "headingScale": "xl",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "lines"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "socials": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-1frha",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Writer & Brand Strategist · Nairobi, Kenya",
+            "heading": "Words that make brands feel human.",
+            "subheading": "Wanjiru Kamau, Writer & Brand Strategist",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-297ef",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I help founders and teams find the words for what they do. For eight years I've written brand stories, product launches and long-form features for clients across East Africa and Europe.\n\nMy process is simple: listen closely, write clearly, and edit until every sentence earns its place.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Brand voice for a fintech launch",
+                "description": "Defined tone of voice, naming and launch messaging for a mobile savings product.",
+                "role": "Lead writer",
+                "period": "2025",
+                "tags": [
+                  "Brand voice",
+                  "Naming"
+                ],
+                "images": [
+                  {
+                    "art": "folio-a",
+                    "alt": "Brand voice for a fintech launch",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Coastal travel feature series",
+                "description": "A six-part feature series on sustainable travel along the Swahili coast.",
+                "role": "Writer",
+                "period": "2024",
+                "tags": [
+                  "Editorial"
+                ],
+                "images": [
+                  {
+                    "art": "folio-b",
+                    "alt": "Coastal travel feature series",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Nonprofit annual report",
+                "description": "Edited and structured a 40-page impact report into a clear narrative.",
+                "role": "Editor",
+                "period": "2024",
+                "tags": [
+                  "Editing",
+                  "Reports"
+                ],
+                "images": [
+                  {
+                    "art": "folio-c",
+                    "alt": "Nonprofit annual report",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-4cxy6",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-5125y",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Independent brand writer",
+                "org": "Self-employed",
+                "period": "2021 — now",
+                "location": "",
+                "description": "Brand voice, messaging and editorial work for startups and NGOs."
+              },
+              {
+                "role": "Senior copywriter",
+                "org": "Agency (fictional)",
+                "period": "2017 — 2021",
+                "location": "",
+                "description": "Campaigns and content for retail and telecom clients."
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-6e6um",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "Brand voice",
+                  "Copywriting",
+                  "Editorial strategy",
+                  "Content design",
+                  "Workshops"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-72bqs",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Nairobi, Kenya.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

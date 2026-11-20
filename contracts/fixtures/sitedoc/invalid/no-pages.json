@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-savanna",
+  "brand": {
+    "name": "Kijani Trails",
+    "tagline": "Small-group journeys into wild East Africa."
+  },
+  "seo": {
+    "title": "Kijani Trails — Small-group journeys into wild East Africa.",
+    "description": "Guided safaris, mountain treks and nights under the stars, with local guides who know every track.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#fbf5ec",
+      "surface": "#f3e7d6",
+      "text": "#2b1d12",
+      "muted": "#6e5a48",
+      "primary": "#b85a1c",
+      "accent": "#2f6b4f"
+    },
+    "fontHeading": "dm-serif",
+    "fontBody": "dm-sans",
+    "radius": "md",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "grain"
+  },
+  "contact": {
+    "email": "trips@example.com",
+    "phone": "",
+    "whatsapp": "+255700000000",
+    "address": "",
+    "city": "Arusha",
+    "country": "Tanzania",
+    "mapQuery": "",
+    "socials": []
+  },
+  "pages": [],
+  "footer": {
+    "text": ""
+  }
+}

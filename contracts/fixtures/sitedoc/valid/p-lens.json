@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-lens",
+  "brand": {
+    "name": "Amina Yusuf",
+    "tagline": "Light, people and the places between."
+  },
+  "seo": {
+    "title": "Amina Yusuf — Light, people and the places between.",
+    "description": "Light, people and the places between.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0d0d0d",
+      "surface": "#171717",
+      "text": "#f2efe9",
+      "muted": "#a39e94",
+      "primary": "#f2c46b",
+      "accent": "#f2efe9"
+    },
+    "fontHeading": "cormorant",
+    "fontBody": "work-sans",
+    "radius": "none",
+    "density": "airy",
+    "headingScale": "xl",
+    "animation": "subtle",
+    "headerStyle": "centered",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "photo@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "socials": [
+      {
+        "network": "Instagram",
+        "url": "https://www.instagram.com/"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-uy6s",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Documentary & portrait photographer · Kampala, Uganda",
+            "heading": "Light, people and the places between.",
+            "subheading": "Amina Yusuf, Documentary & portrait photographer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "photo-hero",
+              "alt": "A small boat on a misty lake at sunrise",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-v121i",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I photograph people where they live and work, and the landscapes that shape them. For six years I've worked with newspapers, NGOs and families across East Africa.\n\nAvailable for editorial, documentary and portrait commissions.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Lake communities",
+                "description": "A year-long documentary series following fishing families on the lake: early mornings, long days and the markets that depend on them.",
+                "role": "Photographer",
+                "period": "2025",
+                "tags": [
+                  "Documentary",
+                  "Editorial"
+                ],
+                "images": [
+                  {
+                    "stock": "photo-fisherman-bw",
+                    "alt": "Fisherman steering a boat",
+                    "caption": ""
+                  },
+                  {
+                    "stock": "photo-fisherman-gold",
+                    "alt": "Fisherman at golden hour",
+                    "caption": ""
+                  },
+                  {
+                    "stock": "photo-boat",
+                    "alt": "Boat on the horizon",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Makers",
+                "description": "Portraits of artists and craftspeople, made where they work.",
+                "role": "Photographer",
+                "period": "2024",
+                "tags": [
+                  "Portraits"
+                ],
+                "images": [
+                  {
+                    "stock": "photo-street-artist",
+                    "alt": "Street artist at work",
+                    "caption": ""
+                  },
+                  {
+                    "stock": "photo-portrait-smile",
+                    "alt": "Portrait of a young woman",
+                    "caption": ""
+                  },
+                  {
+                    "stock": "photo-elder",
+                    "alt": "Portrait of an elderly man",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-x4lot",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-yjbr3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "photo-portrait-smile",
+                "alt": "Portrait of a young woman laughing",
+                "caption": ""
+              },
+              {
+                "stock": "photo-fisherman-gold",
+                "alt": "A fisherman walking ashore at golden hour",
+                "caption": ""
+              },
+              {
+                "stock": "photo-teal-lake",
+                "alt": "A teal mountain lake seen from above",
+                "caption": ""
+              },
+              {
+                "stock": "photo-street-artist",
+                "alt": "A street artist drawing portraits",
+                "caption": ""
+              },
+              {
+                "stock": "photo-sea",
+                "alt": "A woman standing in shallow sea water",
+                "caption": ""
+              },
+              {
+                "stock": "photo-misty-mountains",
+                "alt": "Mist rolling over forested mountains",
+                "caption": ""
+              },
+              {
+                "stock": "photo-elder",
+                "alt": "Black and white portrait of an elderly man",
+                "caption": ""
+              },
+              {
+                "stock": "photo-kayak",
+                "alt": "View from a kayak on a calm lake",
+                "caption": ""
+              },
+              {
+                "stock": "photo-boat",
+                "alt": "A lone boat on a still horizon",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-z32le",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Kampala, Uganda.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

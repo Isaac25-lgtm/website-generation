@@ -212,6 +212,8 @@ More detail: [docs/architecture.md](docs/architecture.md).
 | Payments | Dodo Payments (Standard Webhooks) |
 | Testing | Vitest (unit and integration), Playwright with axe-core (end-to-end and accessibility) |
 | Language | TypeScript (strict) |
+| Python backend (migration in progress) | Django 6, Django REST Framework, PostgreSQL on Neon. It serves the project read path today; see [backend/README.md](backend/README.md) |
+| Shared contracts | `contracts/`: SiteDoc JSON Schema, public config and a fixture corpus, all generated from the TypeScript source and validated in both languages |
 
 ---
 
@@ -306,9 +308,11 @@ Step-by-step owner setup: [docs/cloudflare-setup.md](docs/cloudflare-setup.md).
 
 | Suite | Command | What it covers |
 |---|---|---|
-| **Unit** (59) | `npm run test:unit` | All 18 templates render every page; HTML escaping and link sanitising; no invented content; locked pricing; SSRF URL checks; webhook signatures; password hashing; upload type sniffing; CSV parsing; WCAG contrast of template palettes |
-| **Integration** (36) | `npm run test:integration` | Against a running Worker: auth and CSRF, private previews, payment-gated publishing, versions and rollback, leads, tenant isolation, upload security, SSRF, checkout, concurrent orders that can't oversell, exactly-once restocking, web-address picker, webhook verification |
+| **Unit** (64) | `npm run test:unit` | All 18 templates render every page; HTML escaping and link sanitising; no invented content; locked pricing; SSRF URL checks; webhook signatures; password hashing; upload type sniffing; CSV parsing; WCAG contrast of template palettes |
+| **Integration** (45, +3 parity) | `npm run test:integration` | Against a running Worker: auth and CSRF, private previews, payment-gated publishing, versions and rollback, leads, tenant isolation, upload security, SSRF, checkout, concurrent orders that can't oversell, exactly-once restocking, web-address picker, webhook verification |
 | **End-to-end** (11) | `npx playwright test` | Real browser flows with axe-core accessibility checks and console-error checks: marketing pages, demo sites on desktop and mobile, full store purchase, sign-up → wizard → editor → publish gate, all 18 templates; saves screenshots |
+| **Merchant regressions** (9, part of integration) | `npx vitest run -c vitest.integration.config.ts tests/integration/merchant-regressions.test.ts` | Audit findings #1–#3: store currency from setup is used for products, quotes, orders and publishing; CSV re-import keeps variants and stock; editing after a sale never reverses it |
+| **Python backend** (49) | `cd backend && .venv/Scripts/python -m pytest` | Contracts, legacy session auth, project read shape and errors, D1 → PostgreSQL importer. Worker ↔ Python parity and a browser test are documented in [backend/README.md](backend/README.md) |
 | **Production smoke** (36) | `node scripts/smoke-prod.mjs <url>` | Live checks, including real Workers AI and Browser Run calls; cleans up after itself |
 
 Integration and end-to-end tests read `TEST_BASE_URL` (default `http://localhost:8788`), so the same suites run against production:

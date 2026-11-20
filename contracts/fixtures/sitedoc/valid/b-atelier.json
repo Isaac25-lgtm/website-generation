@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-atelier",
+  "brand": {
+    "name": "Form Studio",
+    "tagline": "Architecture and interiors with restraint."
+  },
+  "seo": {
+    "title": "Form Studio — Architecture and interiors with restraint.",
+    "description": "Residential and small commercial projects designed for light, material and longevity.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f4f4f1",
+      "surface": "#ebebe6",
+      "text": "#111111",
+      "muted": "#5d5d58",
+      "primary": "#111111",
+      "accent": "#8f846c"
+    },
+    "fontHeading": "space-grotesk",
+    "fontBody": "inter",
+    "radius": "none",
+    "density": "airy",
+    "headingScale": "xl",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "lines"
+  },
+  "contact": {
+    "email": "studio@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Johannesburg",
+    "country": "South Africa",
+    "mapQuery": "",
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-1xhvoj",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Architecture · Johannesburg",
+            "heading": "Architecture and interiors with restraint.",
+            "subheading": "Residential and small commercial projects designed for light, material and longevity.",
+            "primaryCta": {
+              "label": "Email us",
+              "href": "mailto:studio@example.com"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            }
+          }
+        },
+        {
+          "id": "services-1yfdiq",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Residential architecture",
+                "description": "New homes and renovations from concept to completion.",
+                "price": ""
+              },
+              {
+                "title": "Interior design",
+                "description": "Material palettes, joinery and furniture.",
+                "price": ""
+              },
+              {
+                "title": "Feasibility studies",
+                "description": "Site analysis, massing and budget guidance.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-1zdhwx",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Form Studio",
+            "body": "Form Studio is a small practice working on homes, studios and workplaces.",
+            "image": {
+              "art": "atl-g-0",
+              "alt": "",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-204yeg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Email us",
+              "href": "mailto:studio@example.com"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-21ekh8",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Form Studio is a small practice working on homes, studios and workplaces.",
+            "image": {
+              "art": "atl-g-1",
+              "alt": "",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-22g18o",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Residential architecture",
+                "description": "New homes and renovations from concept to completion.",
+                "price": ""
+              },
+              {
+                "title": "Interior design",
+                "description": "Material palettes, joinery and furniture.",
+                "price": ""
+              },
+              {
+                "title": "Feasibility studies",
+                "description": "Site analysis, massing and budget guidance.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Residential architecture",
+              "Interior design",
+              "Feasibility studies"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-24f1dg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "art": "atl-g-0",
+                "alt": "",
+                "caption": ""
+              },
+              {
+                "art": "atl-g-1",
+                "alt": "",
+                "caption": ""
+              },
+              {
+                "art": "atl-g-2",
+                "alt": "",
+                "caption": ""
+              },
+              {
+                "art": "atl-g-3",
+                "alt": "",
+                "caption": ""
+              },
+              {
+                "art": "atl-g-4",
+                "alt": "",
+                "caption": ""
+              },
+              {
+                "art": "atl-g-5",
+                "alt": "",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-253mf0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

@@ -393,6 +393,11 @@ projects.post("/:id/publish", async (c) => {
   if (hasAi && !p.ai_review_ack_at && !body.aiReviewAck) throw new HttpError(400, "Please confirm you've reviewed the AI-suggested text for accuracy.", "ai_ack_required");
   const products = doc.type === "ecommerce" ? await c.env.DB.prepare("SELECT COUNT(*) AS n FROM products WHERE project_id = ? AND status = 'active'").bind(p.id).first<{ n: number }>() : { n: 0 };
   const problems = publishProblems(doc, p, products?.n ?? 0);
+  if (doc.type === "ecommerce" && doc.store) {
+    // Never publish prices in a currency other than the store's; amounts are not converted automatically (audit #1).
+    const other = await c.env.DB.prepare("SELECT currency, COUNT(*) AS n FROM products WHERE project_id = ? AND status = 'active' AND currency != ? GROUP BY currency").bind(p.id, doc.store.currency).all<{ currency: string; n: number }>();
+    for (const row of other.results) problems.push(`${row.n} product${row.n === 1 ? " is" : "s are"} priced in ${row.currency}, but your store currency is ${doc.store.currency}. Prices aren't converted automatically: update ${row.n === 1 ? "it" : "them"} (or regenerate your site after changing the store currency) before publishing.`);
+  }
   if (problems.length) throw new HttpError(422, "A few things are needed before publishing.", "not_ready", { problems });
   const last = await c.env.DB.prepare("SELECT COALESCE(MAX(version), 0) AS v FROM site_versions WHERE project_id = ?").bind(p.id).first<{ v: number }>();
   const version = (last?.v ?? 0) + 1;

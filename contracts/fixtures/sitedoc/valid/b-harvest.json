@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-harvest",
+  "brand": {
+    "name": "Mama Ngozi's Kitchen",
+    "tagline": "Home-style cooking, every day."
+  },
+  "seo": {
+    "title": "Mama Ngozi's Kitchen — Home-style cooking, every day.",
+    "description": "Fresh local dishes, cooked daily. Eat in, take away or order for events.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#fffaf1",
+      "surface": "#f7ecd9",
+      "text": "#2a1a12",
+      "muted": "#6f5747",
+      "primary": "#8c2f1b",
+      "accent": "#c9922b"
+    },
+    "fontHeading": "lora",
+    "fontBody": "work-sans",
+    "radius": "md",
+    "density": "comfortable",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "centered",
+    "cardStyle": "outline",
+    "ornament": "grain"
+  },
+  "contact": {
+    "email": "",
+    "phone": "+234 800 000 0000",
+    "whatsapp": "",
+    "address": "Sample Street, Wuse 2",
+    "city": "Abuja",
+    "country": "Nigeria",
+    "mapQuery": "Wuse 2, Abuja",
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-2e3584",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Restaurant · Abuja",
+            "heading": "Home-style cooking, every day.",
+            "subheading": "Fresh local dishes, cooked daily. Eat in, take away or order for events.",
+            "primaryCta": {
+              "label": "Call +234 800 000 0000",
+              "href": "tel:+2348000000000"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "art": "harvest-hero",
+              "alt": "Mama Ngozi's Kitchen",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-2ff4qe",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Jollof rice & chicken",
+                "description": "Smoky party-style jollof.",
+                "price": "₦4,500"
+              },
+              {
+                "title": "Egusi soup & pounded yam",
+                "description": "Rich melon-seed soup with greens.",
+                "price": "₦5,000"
+              },
+              {
+                "title": "Suya platter",
+                "description": "Spiced grilled beef with onions.",
+                "price": "₦3,500"
+              },
+              {
+                "title": "Event catering",
+                "description": "Trays for 20–200 guests.",
+                "price": "On request"
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-2gelvg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Mama Ngozi's Kitchen",
+            "body": "A family kitchen serving the dishes we grew up with.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-2ha5qc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Call +234 800 000 0000",
+              "href": "tel:+2348000000000"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-2i8bvc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "A family kitchen serving the dishes we grew up with.",
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-2jgktx",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Jollof rice & chicken",
+                "description": "Smoky party-style jollof.",
+                "price": "₦4,500"
+              },
+              {
+                "title": "Egusi soup & pounded yam",
+                "description": "Rich melon-seed soup with greens.",
+                "price": "₦5,000"
+              },
+              {
+                "title": "Suya platter",
+                "description": "Spiced grilled beef with onions.",
+                "price": "₦3,500"
+              },
+              {
+                "title": "Event catering",
+                "description": "Trays for 20–200 guests.",
+                "price": "On request"
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Jollof rice & chicken",
+              "Egusi soup & pounded yam",
+              "Suya platter",
+              "Event catering"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-2l9i70",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": true
+          }
+        },
+        {
+          "id": "hours-2mj4du",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hours",
+          "data": {
+            "heading": "Opening hours",
+            "rows": [
+              {
+                "days": "Mon – Fri",
+                "hours": "11:00 – 21:00"
+              },
+              {
+                "days": "Sat – Sun",
+                "hours": "12:00 – 22:00"
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

@@ -53,6 +53,26 @@ Updated 2026-11-20. Legend: ✅ built and tested · ⚠️ works with a limitati
 - The contact form rejected real visitors whose computer clock was skewed. The anti-bot timing now uses elapsed time measured in the browser.
 - The hero slideshow showed a blank frame when jumping straight to a photo that hadn't loaded. The selected photo now loads immediately.
 
+## Audit follow-up and Python read path (20 November 2026, local only, not deployed)
+
+Work from [docs/claude-handoff.md](docs/claude-handoff.md), steps 1 and 2:
+
+- **Merchant defects fixed in the Worker** (each covered by `tests/integration/merchant-regressions.test.ts`; all 9 tests failed before the fix):
+  - **#1** The store currency chosen in setup prices products, CSV imports, quotes and orders before generation, and publishing refuses products priced in another currency.
+  - **#2** CSV re-import updates only the columns provided. It matches by variant SKU, then product SKU, keeps every variant, sets stock per option value, and reports an error for an ambiguous bare stock value.
+  - **#3** Product edits send `stockBase`, and the server applies only the change, so sales made while the form was open are kept.
+- **Build reproducibility:** `build` and `typecheck` run `wrangler types` first. `.dev.vars.example` is now tracked. `AppEnv` no longer depends on whether a local `.dev.vars` exists.
+- **Python backend** (`backend/`, Django/DRF on Neon PostgreSQL):
+  - endpoints: health, readiness, `/api/config` and `GET /api/projects/<id>`
+  - a verified D1 → PostgreSQL importer
+  - shared `contracts/`
+  - the local UI routes the project read to Python when `PY_API` is set
+- **Home and Examples:** a new "Our work" group shows three live sites by the Motion Imprints team, kept separate from the builder demos.
+
+Test runs for this change: unit 64/64, integration 48/48 (including 9 merchant regressions and 3 Worker ↔ Python parity tests), Playwright 11/11 plus the Python-routing browser test, and backend pytest 49/49. axe found no violations in the new section.
+
+Still open from the audit: findings #4–#10 and the additional defects (see [docs/production-audit.md](docs/production-audit.md)).
+
 ## Next release priorities
 
 1. Owner setup: Workers Paid, R2, Google OAuth, Dodo test keys and products, admin account (see `docs/cloudflare-setup.md`).

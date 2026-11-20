@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-localpro",
+  "brand": {
+    "name": "Bright Plumbing & Repairs",
+    "tagline": "Fast, honest home repairs."
+  },
+  "seo": {
+    "title": "Bright Plumbing & Repairs — Fast, honest home repairs.",
+    "description": "Plumbing, electrical and general home repairs across Kampala. Call or WhatsApp for a visit.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f1f8f4",
+      "text": "#11211a",
+      "muted": "#4b5d55",
+      "primary": "#0d8a4f",
+      "accent": "#ffb703"
+    },
+    "fontHeading": "poppins",
+    "fontBody": "inter",
+    "radius": "lg",
+    "density": "comfortable",
+    "headingScale": "md",
+    "animation": "subtle",
+    "headerStyle": "split",
+    "cardStyle": "outline",
+    "ornament": "dots"
+  },
+  "contact": {
+    "email": "",
+    "phone": "+256 700 000 000",
+    "whatsapp": "+256700000000",
+    "address": "Ntinda",
+    "city": "Kampala",
+    "country": "Uganda",
+    "mapQuery": "Ntinda, Kampala",
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-1ef4n9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Home services · Kampala",
+            "heading": "Fast, honest home repairs.",
+            "subheading": "Plumbing, electrical and general home repairs across Kampala. Call or WhatsApp for a visit.",
+            "primaryCta": {
+              "label": "Chat on WhatsApp",
+              "href": "https://wa.me/256700000000"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            }
+          }
+        },
+        {
+          "id": "services-1f32jx",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Leak repairs",
+                "description": "Taps, pipes, tanks and toilets fixed properly.",
+                "price": "From UGX 50,000"
+              },
+              {
+                "title": "Installations",
+                "description": "Water heaters, sinks, showers and pumps.",
+                "price": ""
+              },
+              {
+                "title": "Electrical fixes",
+                "description": "Sockets, lighting and safe wiring checks.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-1geumy",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Bright Plumbing & Repairs",
+            "body": "A small team of qualified technicians handling leaks, installations and repairs for homes and offices.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-1h1e8s",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "Serving Kampala and Wakiso.",
+            "cta": {
+              "label": "Chat on WhatsApp",
+              "href": "https://wa.me/256700000000"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-1i9flw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "A small team of qualified technicians handling leaks, installations and repairs for homes and offices.",
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-1jdkmo",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Leak repairs",
+                "description": "Taps, pipes, tanks and toilets fixed properly.",
+                "price": "From UGX 50,000"
+              },
+              {
+                "title": "Installations",
+                "description": "Water heaters, sinks, showers and pumps.",
+                "price": ""
+              },
+              {
+                "title": "Electrical fixes",
+                "description": "Sockets, lighting and safe wiring checks.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Leak repairs",
+              "Installations",
+              "Electrical fixes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-1l3iop",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "We serve Kampala and Wakiso.",
+            "showForm": true,
+            "showMap": true
+          }
+        },
+        {
+          "id": "hours-1miejh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hours",
+          "data": {
+            "heading": "Opening hours",
+            "rows": [
+              {
+                "days": "Mon – Sat",
+                "hours": "7:00 – 19:00"
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

@@ -79,7 +79,11 @@ function ProductEditor({ projectId, currency, product, cols, onClose, onSaved }:
   const save = async () => {
     setBusy(true);
     const body = { ...p, priceMinor: toMinor(price || "0", currency), compareAtMinor: compare ? toMinor(compare, currency) : null, option1Name: p.option1Name || null, option2Name: p.option2Name || null, sku: p.sku || null,
-      variants: p.variants.map((v) => ({ ...v, option1: v.option1 || null, option2: v.option2 || null, sku: v.sku || null, stock: Number(v.stock) || 0 })) };
+      // stockBase = stock when this form opened, so the server applies only the merchant's change and keeps sales made meanwhile.
+      variants: p.variants.map((v) => {
+        const opened = v.id ? product.variants.find((x) => x.id === v.id) : undefined;
+        return { ...v, option1: v.option1 || null, option2: v.option2 || null, sku: v.sku || null, stock: Number(v.stock) || 0, ...(opened ? { stockBase: opened.stock } : {}) };
+      }) };
     try {
       if (p.id) await api(`/api/projects/${projectId}/products/${p.id}`, { method: "PUT", body }); else await api(`/api/projects/${projectId}/products`, { body });
       toast("Product saved"); onSaved();

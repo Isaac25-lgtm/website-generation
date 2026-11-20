@@ -16,7 +16,15 @@ async function storeProject(c: Ctx, id: string): Promise<ProjectRow> {
   return p;
 }
 
-function storeCurrency(p: ProjectRow): string {
+/**
+ * The store's currency: the merchant's choice in setup (intake), then the generated site, then USD.
+ * Products are priced in this currency at creation and import; publishing refuses any mismatch (audit #1).
+ */
+export async function storeCurrency(c: Ctx, p: ProjectRow): Promise<string> {
+  const intake = await c.env.DB.prepare("SELECT data_json FROM project_intake WHERE project_id = ?").bind(p.id).first<{ data_json: string }>();
+  let chosen: unknown;
+  try { chosen = JSON.parse(intake?.data_json || "{}").currency; } catch { chosen = undefined; }
+  if (typeof chosen === "string" && /^[A-Z]{3}$/.test(chosen)) return chosen;
   return draftDoc(p)?.store?.currency ?? "USD";
 }
 
@@ -27,6 +35,8 @@ const VariantIn = z.object({
   sku: z.string().trim().max(60).nullable().optional(),
   priceMinor: z.number().int().min(0).max(1e10).nullable().optional(),
   stock: z.number().int().min(-100000).max(1_000_000).default(0),
+  /** Stock when the merchant's form was loaded. When present, only (stock - stockBase) is applied (audit #3). */
+  stockBase: z.number().int().min(-100000).max(1_000_000).optional(),
   trackInventory: z.boolean().default(true),
   allowBackorder: z.boolean().default(false),
 });
@@ -44,7 +54,8 @@ const ProductIn = z.object({
   weightGrams: z.number().int().min(0).max(1e7).nullable().optional(),
   dimensions: z.string().max(80).nullable().optional(),
   tags: z.string().max(400).default(""),
-  images: z.array(z.object({ assetId: z.string().regex(/^ast_[a-z0-9]+$/), alt: z.string().max(300).default("") })).max(12).default([]),
+  images: z.array(z.object({ assetId: z.string().regex(/^ast_[a-z0-9]+$/).optional(), stock: z.string().regex(/^[a-z0-9-]{1,48}$/).optional(), alt: z.string().max(300).default("") })
+    .refine((i) => !!i.assetId !== !!i.stock, "Each image needs exactly one source.")).max(12).default([]),
   option1Name: z.string().trim().max(40).nullable().optional(),
   option2Name: z.string().trim().max(40).nullable().optional(),
   maxPerOrder: z.number().int().min(1).max(999).default(10),
@@ -89,11 +100,12 @@ async function uniqueHandle(c: Ctx, projectId: string, base: string, exceptId?: 
 async function writeProduct(c: Ctx, p: ProjectRow, input: ProductInput, userId: string, existingId?: string): Promise<string> {
   const id = existingId ?? newId("prd");
   const t = now();
-  const currency = storeCurrency(p);
+  const currency = await storeCurrency(c, p);
   const handle = await uniqueHandle(c, p.id, input.handle || input.title, existingId);
   // Validate image ownership (tenant isolation)
-  if (input.images.length) {
-    const ids = input.images.map((i) => i.assetId);
+  const uploadIds = input.images.map((i) => i.assetId).filter((x): x is string => !!x);
+  if (uploadIds.length) {
+    const ids = uploadIds;
     const owned = await c.env.DB.prepare(`SELECT COUNT(*) AS n FROM site_assets WHERE project_id = ? AND deleted_at IS NULL AND id IN (${ids.map(() => "?").join(",")})`).bind(p.id, ...ids).first<{ n: number }>();
     if ((owned?.n ?? 0) !== new Set(ids).size) throw new HttpError(400, "One of the product images isn't in this project's media library.");
   }
@@ -123,9 +135,21 @@ async function writeProduct(c: Ctx, p: ProjectRow, input: ProductInput, userId: 
     const ex = v.id ? existing.find((e) => e.id === v.id) : undefined;
     if (ex) {
       keep.add(ex.id);
-      stmts.push(c.env.DB.prepare("UPDATE product_variants SET title=?, option1=?, option2=?, sku=?, price_cents=?, stock=?, track_inventory=?, allow_backorder=?, position=? WHERE id=? AND product_id=?")
-        .bind(title, v.option1 || null, v.option2 || null, v.sku || null, v.priceMinor ?? null, v.stock, v.trackInventory ? 1 : 0, v.allowBackorder ? 1 : 0, i, ex.id, id));
-      if (v.stock !== ex.stock) stmts.push(c.env.DB.prepare("INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, actor, created_at) VALUES (?, ?, ?, ?, 'manual_adjust', ?, ?)").bind(newId("inv"), p.id, ex.id, v.stock - ex.stock, userId, t));
+      // Catalogue fields only; stock is changed separately so a stale form can never overwrite sales.
+      stmts.push(c.env.DB.prepare("UPDATE product_variants SET title=?, option1=?, option2=?, sku=?, price_cents=?, track_inventory=?, allow_backorder=?, position=? WHERE id=? AND product_id=?")
+        .bind(title, v.option1 || null, v.option2 || null, v.sku || null, v.priceMinor ?? null, v.trackInventory ? 1 : 0, v.allowBackorder ? 1 : 0, i, ex.id, id));
+      if (v.stockBase !== undefined) {
+        const delta = v.stock - v.stockBase;
+        if (delta !== 0) {
+          // Atomic relative change; the oversell trigger rejects a result below zero.
+          stmts.push(c.env.DB.prepare("UPDATE product_variants SET stock = stock + ? WHERE id = ? AND product_id = ?").bind(delta, ex.id, id));
+          stmts.push(c.env.DB.prepare("INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, actor, created_at) VALUES (?, ?, ?, ?, 'manual_adjust', ?, ?)").bind(newId("inv"), p.id, ex.id, delta, userId, t));
+        }
+      } else if (v.stock !== ex.stock) {
+        // Legacy absolute set (API clients that don't send stockBase).
+        stmts.push(c.env.DB.prepare("UPDATE product_variants SET stock = ? WHERE id = ? AND product_id = ?").bind(v.stock, ex.id, id));
+        stmts.push(c.env.DB.prepare("INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, actor, created_at) VALUES (?, ?, ?, ?, 'manual_adjust', ?, ?)").bind(newId("inv"), p.id, ex.id, v.stock - ex.stock, userId, t));
+      }
     } else {
       const vid = newId("var");
       stmts.push(c.env.DB.prepare("INSERT INTO product_variants (id, product_id, project_id, title, option1, option2, sku, price_cents, stock, track_inventory, allow_backorder, position) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)")
@@ -148,7 +172,7 @@ async function writeProduct(c: Ctx, p: ProjectRow, input: ProductInput, userId: 
 
 commerce.get("/projects/:id/products", async (c) => {
   const p = await storeProject(c, c.req.param("id"));
-  return c.json({ products: await productOut(c, p.id), currency: storeCurrency(p) });
+  return c.json({ products: await productOut(c, p.id), currency: await storeCurrency(c, p) });
 });
 
 commerce.post("/projects/:id/products", async (c) => {
@@ -199,7 +223,7 @@ commerce.post("/projects/:id/products/import", async (c) => {
   const p = await storeProject(c, c.req.param("id"));
   const body = z.object({ rows: z.array(z.record(z.string(), z.unknown())).min(1).max(500) }).safeParse(await c.req.json().catch(() => ({})));
   if (!body.success) throw new HttpError(400, "No rows to import (maximum 500 per file).");
-  const currency = storeCurrency(p);
+  const currency = await storeCurrency(c, p);
   const zeroDec = ["UGX", "JPY", "KRW", "RWF", "XOF", "XAF", "VND", "BIF", "CLP", "GNF", "PYG"].includes(currency);
   const toMinor = (v: unknown) => { const s = String(v ?? "").replace(/[^0-9.\-]/g, ""); if (!/\d/.test(s)) return null; const n = Number(s); return Number.isFinite(n) && n >= 0 ? Math.round(zeroDec ? n : n * 100) : null; };
   let created = 0, updated = 0;
@@ -221,19 +245,54 @@ commerce.post("/projects/:id/products/import", async (c) => {
         cols.set(r.data.category.toLowerCase(), colId);
       }
     }
-    const existing = r.data.sku ? await c.env.DB.prepare("SELECT id FROM products WHERE project_id = ? AND sku = ?").bind(p.id, r.data.sku).first<{ id: string }>() : null;
-    const input: ProductInput = ProductIn.parse({
-      title: r.data.title, description: r.data.description, priceMinor: price, compareAtMinor: r.data.compareAt ? toMinor(r.data.compareAt) : null,
-      sku: r.data.sku || null, tags: r.data.tags, status: ["active", "draft"].includes(r.data.status.toLowerCase()) ? r.data.status.toLowerCase() : "active",
-      option1Name: r.data.option1Name || null, collections: colId ? [colId] : [],
-      variants: [{ option1: r.data.option1 || null, stock, trackInventory: true }],
-    });
+    // Match an existing product by variant SKU first, then by product SKU.
+    const raw = body.data.rows[i] as Record<string, unknown>;
+    const has = (k: string) => raw[k] !== undefined && raw[k] !== null && String(raw[k]).trim() !== "";
+    let existing: { id: string; variantId?: string } | null = null;
+    if (r.data.sku) {
+      const vm = await c.env.DB.prepare("SELECT product_id, id FROM product_variants WHERE project_id = ? AND sku = ?").bind(p.id, r.data.sku).first<{ product_id: string; id: string }>();
+      if (vm) existing = { id: vm.product_id, variantId: vm.id };
+      else existing = await c.env.DB.prepare("SELECT id FROM products WHERE project_id = ? AND sku = ?").bind(p.id, r.data.sku).first<{ id: string }>();
+    }
     try {
       if (existing) {
+        // Update: start from the current product so omitted columns and other variants are preserved.
         const cur = (await productOut(c, p.id, existing.id))[0];
-        input.images = cur.images; input.variants[0].id = cur.variants[0]?.id;
+        const variants = cur.variants.map((v: any) => ({ id: v.id, option1: v.option1, option2: v.option2, sku: v.sku, priceMinor: v.priceMinor, stock: v.stock, stockBase: v.stock, trackInventory: v.trackInventory, allowBackorder: v.allowBackorder }));
+        let target = existing.variantId ? variants.find((v: any) => v.id === existing!.variantId) : undefined;
+        if (!target && r.data.option1) {
+          target = variants.find((v: any) => (v.option1 ?? "") === r.data.option1);
+          if (!target) { target = { option1: r.data.option1, option2: null, stock: 0, trackInventory: true, allowBackorder: false } as any; variants.push(target!); }
+        }
+        if (has("stock")) {
+          if (!target && variants.length === 1) target = variants[0];
+          if (!target) { errors.push({ row: i + 2, error: "This product has several variants. Add an option value (for example the size) to say which variant the stock is for." }); continue; }
+          target.stock = stock;
+        }
+        const input: ProductInput = ProductIn.parse({
+          title: r.data.title, handle: cur.handle,
+          description: has("description") ? r.data.description : cur.description,
+          productType: cur.productType,
+          status: has("status") && ["active", "draft"].includes(r.data.status.toLowerCase()) ? r.data.status.toLowerCase() : cur.status,
+          priceMinor: price,
+          compareAtMinor: has("compareAt") ? toMinor(r.data.compareAt) : cur.compareAtMinor,
+          costMinor: cur.costMinor, sku: cur.sku, weightGrams: cur.weightGrams, dimensions: cur.dimensions,
+          tags: has("tags") ? r.data.tags : cur.tags, images: cur.images,
+          option1Name: has("option1Name") ? r.data.option1Name : cur.option1Name, option2Name: cur.option2Name,
+          maxPerOrder: cur.maxPerOrder, featured: cur.featured,
+          collections: colId ? [...new Set([...cur.collections, colId])] : cur.collections,
+          variants,
+        });
         await writeProduct(c, p, input, u.id, existing.id); updated++;
-      } else { await writeProduct(c, p, input, u.id); created++; }
+      } else {
+        const input: ProductInput = ProductIn.parse({
+          title: r.data.title, description: r.data.description, priceMinor: price, compareAtMinor: r.data.compareAt ? toMinor(r.data.compareAt) : null,
+          sku: r.data.sku || null, tags: r.data.tags, status: ["active", "draft"].includes(r.data.status.toLowerCase()) ? r.data.status.toLowerCase() : "active",
+          option1Name: r.data.option1Name || null, collections: colId ? [colId] : [],
+          variants: [{ option1: r.data.option1 || null, stock, trackInventory: true }],
+        });
+        await writeProduct(c, p, input, u.id); created++;
+      }
     } catch (e) { errors.push({ row: i + 2, error: e instanceof HttpError ? e.message : "Could not save" }); }
   }
   await c.env.DB.prepare("INSERT INTO product_imports (id, project_id, user_id, rows_total, rows_created, rows_updated, rows_failed, errors_json, created_at) VALUES (?,?,?,?,?,?,?,?,?)")

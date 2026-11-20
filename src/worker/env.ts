@@ -1,6 +1,11 @@
 import type { Context } from "hono";
 
-export interface AppEnv extends Env {
+// Secrets are optional at runtime. `wrangler types` marks any secret found in a local .dev.vars as required,
+// so they are omitted from the generated Env and redeclared here; the type is the same with or without .dev.vars.
+type SecretKeys = "SESSION_SECRET" | "PUBLIC_BASE_URL" | "ADMIN_EMAILS" | "GOOGLE_CLIENT_ID" | "GOOGLE_CLIENT_SECRET" | "DODO_API_KEY" | "DODO_WEBHOOK_SECRET"
+  | "DODO_PRODUCT_PERSONAL" | "DODO_PRODUCT_BUSINESS" | "DODO_PRODUCT_ECOMMERCE" | "RESEND_API_KEY" | "EMAIL_FROM" | "TURNSTILE_SECRET";
+
+export interface AppEnv extends Omit<Env, SecretKeys> {
   MEDIA?: R2Bucket;
   SESSION_SECRET?: string;
   PUBLIC_BASE_URL?: string;

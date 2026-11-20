@@ -1,0 +1,14 @@
+# Copy to .dev.vars for local development. Never commit real values.
+SESSION_SECRET=generate-a-long-random-string
+PUBLIC_BASE_URL=http://localhost:8788
+# Optional integrations (leave unset to keep them disabled; the UI states this honestly)
+# ADMIN_EMAILS=owner@example.com              # Google-verified emails that get admin access
+# GOOGLE_CLIENT_ID=
+# GOOGLE_CLIENT_SECRET=
+# DODO_API_KEY=                                # test-mode key: dodo_test_...
+# DODO_WEBHOOK_SECRET=                         # whsec_...
+# DODO_PRODUCT_PERSONAL=
+# DODO_PRODUCT_BUSINESS=
+# DODO_PRODUCT_ECOMMERCE=
+# RESEND_API_KEY=
+# EMAIL_FROM="ImprintSites AI <noreply@yourdomain>"

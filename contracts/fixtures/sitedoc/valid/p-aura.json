@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-aura",
+  "brand": {
+    "name": "Grace Njeri",
+    "tagline": "Find work that fits the life you want."
+  },
+  "seo": {
+    "title": "Grace Njeri — Find work that fits the life you want.",
+    "description": "Find work that fits the life you want.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f7f5ff",
+      "surface": "#ffffff",
+      "text": "#221c3a",
+      "muted": "#615a7c",
+      "primary": "#7454f6",
+      "accent": "#ff7fa6"
+    },
+    "fontHeading": "outfit",
+    "fontBody": "manrope",
+    "radius": "xl",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "lively",
+    "headerStyle": "floating",
+    "cardStyle": "glass",
+    "ornament": "blobs"
+  },
+  "contact": {
+    "email": "coach@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-10i9cv",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Career coach & speaker · Online · Worldwide",
+            "heading": "Find work that fits the life you want.",
+            "subheading": "Grace Njeri, Career coach & speaker",
+            "primaryCta": {
+              "label": "Book a call",
+              "href": "https://example.com/book"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-11klic",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I help professionals navigate career changes with clarity and confidence through 1:1 coaching, workshops and talks.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "1:1 career coaching",
+                "description": "Six sessions to map your strengths, options and next move.",
+                "role": "",
+                "period": "",
+                "tags": [],
+                "images": [
+                  {
+                    "art": "aura-a",
+                    "alt": "1:1 career coaching",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Team workshops",
+                "description": "Interactive workshops on feedback, growth and wellbeing at work.",
+                "role": "",
+                "period": "",
+                "tags": [],
+                "images": [
+                  {
+                    "art": "aura-b",
+                    "alt": "Team workshops",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-13ia9r",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-143mh4",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Online · Worldwide.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

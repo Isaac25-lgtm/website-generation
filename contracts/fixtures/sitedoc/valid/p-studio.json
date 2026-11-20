@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-studio",
+  "brand": {
+    "name": "Kofi Mensah",
+    "tagline": "Bold pictures for brave brands."
+  },
+  "seo": {
+    "title": "Kofi Mensah — Bold pictures for brave brands.",
+    "description": "Bold pictures for brave brands.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#fff6e0",
+      "surface": "#ffffff",
+      "text": "#141414",
+      "muted": "#4d4a44",
+      "primary": "#ff4d2e",
+      "accent": "#2e5bff"
+    },
+    "fontHeading": "archivo-black",
+    "fontBody": "dm-sans",
+    "radius": "lg",
+    "density": "comfortable",
+    "headingScale": "xl",
+    "animation": "lively",
+    "headerStyle": "floating",
+    "cardStyle": "flat",
+    "ornament": "dots"
+  },
+  "contact": {
+    "email": "studio@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-o6ksj",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Illustrator & animator · Accra, Ghana",
+            "heading": "Bold pictures for brave brands.",
+            "subheading": "Kofi Mensah, Illustrator & animator",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-pb0a",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I make loud, joyful illustrations and short animations for brands, books and music. Colour first, always.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Album artwork series",
+                "description": "Cover art and animated loops for an independent label.",
+                "role": "",
+                "period": "2025",
+                "tags": [
+                  "Illustration",
+                  "Motion"
+                ],
+                "images": [
+                  {
+                    "art": "pop-a",
+                    "alt": "Album artwork series",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Children's picture book",
+                "description": "32 illustrated spreads for a bilingual picture book.",
+                "role": "",
+                "period": "2024",
+                "tags": [
+                  "Books"
+                ],
+                "images": [
+                  {
+                    "art": "pop-b",
+                    "alt": "Children's picture book",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Festival identity",
+                "description": "Posters, stage graphics and merch for a city arts festival.",
+                "role": "",
+                "period": "2024",
+                "tags": [
+                  "Branding"
+                ],
+                "images": [
+                  {
+                    "art": "pop-c",
+                    "alt": "Festival identity",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-rkdtp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-smh1",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "art": "pop-g-0",
+                "alt": "",
+                "caption": ""
+              },
+              {
+                "art": "pop-g-1",
+                "alt": "",
+                "caption": ""
+              },
+              {
+                "art": "pop-g-2",
+                "alt": "",
+                "caption": ""
+              },
+              {
+                "art": "pop-g-3",
+                "alt": "",
+                "caption": ""
+              },
+              {
+                "art": "pop-g-4",
+                "alt": "",
+                "caption": ""
+              },
+              {
+                "art": "pop-g-5",
+                "alt": "",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-t8sfp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Accra, Ghana.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

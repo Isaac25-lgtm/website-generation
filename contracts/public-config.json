@@ -1,0 +1,42 @@
+{
+  "plans": [
+    {
+      "type": "personal",
+      "name": "Personal / Portfolio",
+      "priceCents": 2000,
+      "currency": "USD",
+      "billing": "one_time"
+    },
+    {
+      "type": "business",
+      "name": "Business",
+      "priceCents": 3000,
+      "currency": "USD",
+      "billing": "one_time"
+    },
+    {
+      "type": "ecommerce",
+      "name": "E-commerce",
+      "priceCents": 10000,
+      "currency": "USD",
+      "billing": "one_time"
+    }
+  ],
+  "demos": [
+    {
+      "slug": "demo-portfolio",
+      "type": "personal",
+      "url": "/s/demo-portfolio/"
+    },
+    {
+      "slug": "demo-business",
+      "type": "business",
+      "url": "/s/demo-business/"
+    },
+    {
+      "slug": "demo-store",
+      "type": "ecommerce",
+      "url": "/s/demo-store/"
+    }
+  ]
+}

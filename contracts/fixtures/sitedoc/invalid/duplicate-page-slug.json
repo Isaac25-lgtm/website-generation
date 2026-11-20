@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-savanna",
+  "brand": {
+    "name": "Kijani Trails",
+    "tagline": "Small-group journeys into wild East Africa."
+  },
+  "seo": {
+    "title": "Kijani Trails — Small-group journeys into wild East Africa.",
+    "description": "Guided safaris, mountain treks and nights under the stars, with local guides who know every track.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#fbf5ec",
+      "surface": "#f3e7d6",
+      "text": "#2b1d12",
+      "muted": "#6e5a48",
+      "primary": "#b85a1c",
+      "accent": "#2f6b4f"
+    },
+    "fontHeading": "dm-serif",
+    "fontBody": "dm-sans",
+    "radius": "md",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "grain"
+  },
+  "contact": {
+    "email": "trips@example.com",
+    "phone": "",
+    "whatsapp": "+255700000000",
+    "address": "",
+    "city": "Arusha",
+    "country": "Tanzania",
+    "mapQuery": "",
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-3xf7i1",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Tours & safaris · Arusha",
+            "heading": "Small-group journeys into wild East Africa.",
+            "subheading": "Guided safaris, mountain treks and nights under the stars, with local guides who know every track.",
+            "primaryCta": {
+              "label": "Request a quote",
+              "href": "/services#quote"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "safari-hero",
+              "alt": "A traveller watching elephants from a safari vehicle",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-3y8ev3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Classic safari",
+                "description": "Five days across the northern parks in an open-roof vehicle with an expert guide.",
+                "price": "From $1,450",
+                "image": {
+                  "stock": "safari-drive",
+                  "alt": "Safari vehicle on the savanna",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Mountain treks",
+                "description": "Guided multi-day hikes with porters, cooks and camp crews.",
+                "price": "From $980",
+                "image": {
+                  "stock": "safari-trek",
+                  "alt": "A hiker on a mountain ridge",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Fly-camp nights",
+                "description": "Sleep out in the bush under a sky full of stars, with a private camp team.",
+                "price": "From $420",
+                "image": {
+                  "stock": "safari-camp",
+                  "alt": "A lit tent under the night sky",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-3zcckn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Kijani Trails",
+            "body": "Kijani Trails runs small-group trips that put local guides and communities first. Groups stay small, between two and eight travellers, so every trip feels personal and every sighting is yours to enjoy.",
+            "image": {
+              "stock": "safari-giraffe",
+              "alt": "A giraffe browsing beside an acacia tree",
+              "caption": ""
+            },
+            "highlights": [
+              "Local, licensed guides",
+              "Groups of 2–8 travellers",
+              "Tailor-made itineraries"
+            ]
+          }
+        },
+        {
+          "id": "cta-40ax7q",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Tell us what you need",
+            "body": "",
+            "cta": {
+              "label": "Request a quote",
+              "href": "/services#quote"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-41lbpj",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Kijani Trails runs small-group trips that put local guides and communities first. Groups stay small, between two and eight travellers, so every trip feels personal and every sighting is yours to enjoy.",
+            "image": {
+              "stock": "safari-lion",
+              "alt": "A male lion resting",
+              "caption": ""
+            },
+            "highlights": [
+              "Local, licensed guides",
+              "Groups of 2–8 travellers",
+              "Tailor-made itineraries"
+            ]
+          }
+        },
+        {
+          "id": "faq-42arv2",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "How big are your groups?",
+                "a": "Between 2 and 8 travellers."
+              },
+              {
+                "q": "Can you arrange airport transfers?",
+                "a": "Yes, on request when you book."
+              },
+              {
+                "q": "When is the best time to travel?",
+                "a": "June to October for the dry season, but every month has something special. Ask us."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-43grqc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Classic safari",
+                "description": "Five days across the northern parks in an open-roof vehicle with an expert guide.",
+                "price": "From $1,450",
+                "image": {
+                  "stock": "safari-drive",
+                  "alt": "Safari vehicle on the savanna",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Mountain treks",
+                "description": "Guided multi-day hikes with porters, cooks and camp crews.",
+                "price": "From $980",
+                "image": {
+                  "stock": "safari-trek",
+                  "alt": "A hiker on a mountain ridge",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Fly-camp nights",
+                "description": "Sleep out in the bush under a sky full of stars, with a private camp team.",
+                "price": "From $420",
+                "image": {
+                  "stock": "safari-camp",
+                  "alt": "A lit tent under the night sky",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Classic safari",
+              "Mountain treks",
+              "Fly-camp nights"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-455oeb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "safari-giraffe",
+                "alt": "A giraffe browsing beside an acacia tree",
+                "caption": ""
+              },
+              {
+                "stock": "safari-lion",
+                "alt": "A male lion resting",
+                "caption": ""
+              },
+              {
+                "stock": "safari-sunset-giraffe",
+                "alt": "A giraffe silhouetted at sunset",
+                "caption": ""
+              },
+              {
+                "stock": "safari-zebra",
+                "alt": "A zebra grazing",
+                "caption": ""
+              },
+              {
+                "stock": "safari-plains",
+                "alt": "Sunset over open plains",
+                "caption": ""
+              },
+              {
+                "stock": "safari-dust",
+                "alt": "A safari vehicle on a dusty game drive",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-46j464",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

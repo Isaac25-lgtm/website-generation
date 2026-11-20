@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 import { hostingPrice, useApp, usd } from "../lib";
 import { Icon } from "../components/ui";
 import { PLANS } from "../../shared/pricing";
+import { OurWork } from "./OurWork";
 
 const PLAN_INFO = [
   { type: "personal", label: "Personal", price: 2000 },
@@ -179,6 +180,7 @@ export default function Home() {
             </div>
           ))}
           <p className="showcase-note">Demo sites with made-up content, built on the platform. Open any of them and click around; the shop even takes test orders.</p>
+          <OurWork headingLevel={3} dark />
         </div>
       </section>
 

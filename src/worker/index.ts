@@ -38,7 +38,7 @@ app.get("/healthz", async (c) => {
 });
 
 app.get("/api/config", async (c) => {
-  const rows = await c.env.DB.prepare("SELECT key, value FROM system_settings WHERE key IN ('hosting_fee_status','hosting_fee_amount','hosting_fee_currency','hosting_fee_interval','operator_display_name','operator_status_note','support_email','ai_generations_per_project')").all<{ key: string; value: string }>();
+  const rows = await c.env.DB.prepare("SELECT key, value FROM system_settings WHERE key IN ('hosting_fee_status','hosting_fee_amount','hosting_fee_amount_personal','hosting_fee_amount_business','hosting_fee_amount_ecommerce','hosting_fee_currency','hosting_fee_interval','operator_display_name','operator_status_note','support_email','ai_generations_per_project')").all<{ key: string; value: string }>();
   const s = Object.fromEntries(rows.results.map((r) => [r.key, r.value]));
   return c.json({
     appName: c.env.APP_NAME,
@@ -49,7 +49,7 @@ app.get("/api/config", async (c) => {
     browserRun: { bound: !!c.env.BROWSER },
     email: { configured: emailConfigured(c.env) },
     storage: storageBackend(c.env),
-    hosting: { status: s.hosting_fee_status || "not_set", amount: s.hosting_fee_amount || "", currency: s.hosting_fee_currency || "", interval: s.hosting_fee_interval || "" },
+    hosting: { status: s.hosting_fee_status || "not_set", amount: s.hosting_fee_amount || "", amounts: { personal: s.hosting_fee_amount_personal || "", business: s.hosting_fee_amount_business || "", ecommerce: s.hosting_fee_amount_ecommerce || "" }, currency: s.hosting_fee_currency || "", interval: s.hosting_fee_interval || "" },
     operator: { name: s.operator_display_name || "Motion Imprints Technologies", note: s.operator_status_note || "", supportEmail: s.support_email || "" },
     demos: PUBLIC_DEMOS.map((d) => ({ slug: d.slug, type: d.type, url: `/s/${d.slug}/` })),
   });

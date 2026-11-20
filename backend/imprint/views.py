@@ -114,7 +114,8 @@ class ConfigView(APIView):
 
     authentication_classes: list = []
     permission_classes: list = []
-    KEYS = ["hosting_fee_status", "hosting_fee_amount", "hosting_fee_currency", "hosting_fee_interval",
+    KEYS = ["hosting_fee_status", "hosting_fee_amount", "hosting_fee_amount_personal", "hosting_fee_amount_business",
+            "hosting_fee_amount_ecommerce", "hosting_fee_currency", "hosting_fee_interval",
             "operator_display_name", "operator_status_note", "support_email", "ai_generations_per_project"]
 
     def get(self, request):
@@ -131,6 +132,7 @@ class ConfigView(APIView):
             "storage": settings.MEDIA_STORAGE,
             "hosting": {
                 "status": s.get("hosting_fee_status") or "not_set", "amount": s.get("hosting_fee_amount") or "",
+                "amounts": {t: s.get(f"hosting_fee_amount_{t}") or "" for t in ("personal", "business", "ecommerce")},
                 "currency": s.get("hosting_fee_currency") or "", "interval": s.get("hosting_fee_interval") or "",
             },
             "operator": {

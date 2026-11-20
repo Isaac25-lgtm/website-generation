@@ -62,7 +62,7 @@ ImprintSites AI turns a plain-language description into a polished, mobile-ready
 | **Business** | Multi-page site with services, gallery, map, opening hours, WhatsApp, contact and quote forms | **$30** |
 | **Online store** | Product catalogue with variants and stock, search and filters, cart, checkout, orders dashboard | **$100** |
 
-Every published site also has **hosting & maintenance at $4 per site per month**.
+Every published site also has **hosting & maintenance per site per month: $3 for a personal site, $4 for a business site, $5 for an online store**.
 
 **How a site is made:**
 
@@ -109,7 +109,7 @@ Every published site also has **hosting & maintenance at $4 per site per month**
 </tr>
 <tr>
 <td width="50%"><img src="docs/screenshots/templates.jpg" alt="Template gallery" /><br /><sub><b>Template gallery</b>: 18 templates, 9 unlocked by signing in</sub></td>
-<td width="50%"><img src="docs/screenshots/pricing.jpg" alt="Pricing table" /><br /><sub><b>Pricing</b>: one-time build fee plus $4/month hosting & maintenance</sub></td>
+<td width="50%"><img src="docs/screenshots/pricing.jpg" alt="Pricing table" /><br /><sub><b>Pricing</b>: one-time build fee plus $3–$5/month hosting & maintenance</sub></td>
 </tr>
 </table>
 
@@ -156,7 +156,7 @@ Every published site also has **hosting & maintenance at $4 per site per month**
 | | Personal & portfolio | Business | Online store |
 |---|---:|---:|---:|
 | **Build fee (one-time)** | $20 | $30 | $100 |
-| **Hosting & maintenance** | $4 / month | $4 / month | $4 / month |
+| **Hosting & maintenance** | $3 / month | $4 / month | $5 / month |
 
 - **Build fees** are locked in [`src/shared/pricing.ts`](src/shared/pricing.ts) and are never accepted from the client.
 - **Hosting & maintenance** is stored in `system_settings` and can be changed in the admin console. Monthly billing is not live yet; customers are told they'll agree to the plan before any monthly charge.
@@ -382,7 +382,7 @@ Full threat model and residual risks: [SECURITY_NOTES.md](SECURITY_NOTES.md).
 
 **Next on the roadmap:**
 
-1. **Monthly hosting billing:** a Dodo subscription for the $4/month plan, with explicit opt-in.
+1. **Monthly hosting billing:** Dodo subscriptions for the $3 / $4 / $5 monthly plans, with explicit opt-in.
 2. **Custom domains:** an owned zone plus Cloudflare for SaaS custom hostnames ([docs/domain-publishing.md](docs/domain-publishing.md)).
 3. **Seller card payments:** each store connects its own gateway (Flutterwave, Paystack or Pesapal).
 4. Turnstile on public forms, edge caching for published pages, and prerendered marketing pages for SEO.

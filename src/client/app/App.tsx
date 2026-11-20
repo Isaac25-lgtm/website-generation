@@ -86,7 +86,7 @@ export function NewProject() {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const { config } = useApp();
-  const hp = hostingPrice(config);
+  const hp = hostingPrice(config, type);
   const prompt: string = params.get("from") === "prompt" ? intent?.prompt || "" : "";
   const toSlug = (v: string) => v.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40).replace(/-+$/, "");
   useEffect(() => { if (!slugEdited) setSlug(toSlug(name)); }, [name, slugEdited]);
@@ -227,7 +227,7 @@ export function Publish() {
             <a className="btn btn-sm" style={{ justifySelf: "start" }} href={`/api/projects/${id}/export`}>Download ZIP</a>
           </div>
           <PaymentsHistory id={id!} />
-          {config && <p className="tiny muted">Hosting &amp; maintenance: {hostingPrice(config).label} per site per {hostingPrice(config).interval}{hostingPrice(config).billingLive ? "." : ". You'll agree to the monthly plan before any monthly charge."}</p>}
+          {config && <p className="tiny muted">Hosting &amp; maintenance: {hostingPrice(config, p.type).label} per site per {hostingPrice(config, p.type).interval}{hostingPrice(config, p.type).billingLive ? "." : ". You'll agree to the monthly plan before any monthly charge."}</p>}
         </div>
       </div>
     </div>

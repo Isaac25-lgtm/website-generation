@@ -64,7 +64,7 @@ All of the following work and are tested locally and on production:
 
 **Not built yet** (next priorities):
 
-- **Monthly hosting billing.** The $4/site/month is displayed everywhere with status `announced`, but nothing collects it. It needs a Dodo subscription product plus an opt-in flow. Only then switch `hosting_fee_status` to `active`.
+- **Monthly hosting billing.** The hosting fee ($3 personal / $4 business / $5 online store, per site per month) is displayed everywhere with status `announced`, but nothing collects it. It needs a Dodo subscription product plus an opt-in flow. Only then switch `hosting_fee_status` to `active`.
 - **Custom domains (Stage 2).** Needs an owned zone plus Cloudflare for SaaS custom hostnames. See `docs/domain-publishing.md`. The UI currently says "coming soon" and only collects interest.
 - **Card payments inside customer stores.** Each seller would connect their own gateway (Flutterwave, Paystack or Pesapal sandbox). Never route seller revenue through the platform's Dodo account.
 - **Smaller items:**
@@ -76,7 +76,7 @@ All of the following work and are tested locally and on production:
 ## 3. Non-negotiable owner rules
 
 - **Prices:** build fees are **$20 / $30 / $100 USD, one-time**, locked in `src/shared/pricing.ts` (frozen object) and never taken from the client.
-  - Hosting & maintenance is **$4 per site per month**. Always state the number; the owner explicitly rejected vague wording like "flat fee".
+  - Hosting & maintenance per site per month is **$3 personal, $4 business, $5 online store** (owner, 2026-11-21). Always state the numbers; the owner explicitly rejected vague wording like "flat fee".
   - The hosting values are stored in `system_settings` (migrations 0002 and 0003), and the UI reads them via `hostingPrice()` in `src/client/lib.tsx`.
 - **Truthfulness:**
   - Never fake payments, deployments, AI calls, testimonials, reviews, sales numbers, logos or "verified" badges.
@@ -179,7 +179,7 @@ npx wrangler d1 execute DB --remote --file scripts/cleanup-test-data.sql --yes  
 - `README.md`: setup and overview
 - `BUILD_STATUS.md`: feature checklist and test results
 - `DEPLOYMENT_REPORT.md`: deploy history and verification evidence
-- `PRICING_AND_BILLING.md`: locked pricing, $4 hosting, Dodo flow, marketplace segregation
+- `PRICING_AND_BILLING.md`: locked pricing, $3/$4/$5 hosting, Dodo flow, marketplace segregation
 - `SECURITY_NOTES.md`: trust boundaries, controls, residual risks
 - `docs/cloudflare-setup.md`: owner actions
 - `docs/dodo-integration.md`

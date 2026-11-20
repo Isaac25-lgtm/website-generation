@@ -15,9 +15,18 @@
 
 Publishing for that website at `/s/<slug>/` on the platform, unlimited manual editing and republishing, version rollback, and export. AI suggestions are capped per site; the default is 20 and it's set in admin under `ai_generations_per_project`.
 
-## Hosting & maintenance: USD 4 per published site per month (owner-approved 2026-11-20)
+## Hosting & maintenance per published site per month (owner-approved 2026-11-21)
 
-- This covers hosting at the site's web address over https, backups, security and platform updates, and support. It's stated explicitly as **$4 per site per month** on the home page, pricing, how-it-works, the new-site screen, the publish page, the FAQ, the Terms and the Refund policy.
+| Site type | Monthly hosting & maintenance |
+|---|---|
+| Personal / portfolio | **USD 3** |
+| Business | **USD 4** |
+| E-commerce (online store) | **USD 5** |
+
+History: USD 5 flat, reduced to USD 4 flat on 2026-11-20, then set per site type as above on 2026-11-21.
+
+- Stored in `system_settings` as `hosting_fee_amount_personal`, `hosting_fee_amount_business` and `hosting_fee_amount_ecommerce` (migration `0006`). `hosting_fee_amount` remains the business figure for older clients. The UI reads them through `hostingPrice(config, type)` in `src/client/lib.tsx`; the Python config endpoint returns the same `hosting.amounts`.
+- This covers hosting at the site's web address over https, backups, security and platform updates, and support. Always state the numbers ($3 / $4 / $5); the owner rejected vague wording such as "flat fee". Monthly billing is not built yet (status `announced`): customers agree to the monthly plan before any monthly charge.
 - It's stored in `system_settings`: `hosting_fee_amount=4`, `hosting_fee_currency=USD`, `hosting_fee_interval=month`, `hosting_fee_status=announced` (migrations `0002`, `0003`). Admins can change these under Admin → Settings, and every page reads them.
 - **Billing status:** `announced`. Monthly collection is **not built yet**; it needs a Dodo subscription product plus an opt-in flow. Until then, the site tells customers they'll agree to the monthly plan before any monthly charge. Switch the status to `active` only once that flow is live and tested.
 - Customers can cancel any time. The site goes offline at the end of the paid month, and export is always available.

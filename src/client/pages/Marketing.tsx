@@ -12,14 +12,14 @@ export function Pricing() {
   return (
     <main id="main" className="section">
       <div className="container">
-        <div className="section-head"><span className="eyebrow">Pricing</span><h1 style={{ fontSize: "clamp(2.2rem,4.5vw,3.4rem)" }}>Simple pricing</h1><p>A one-time fee to build and publish your website, then {hp.label} per site per {hp.interval} for hosting and maintenance. Preview everything free before you pay.</p></div>
+        <div className="section-head"><span className="eyebrow">Pricing</span><h1 style={{ fontSize: "clamp(2.2rem,4.5vw,3.4rem)" }}>Simple pricing</h1><p>A one-time fee to build and publish your website, then {hp.range} per site per {hp.interval} for hosting and maintenance, depending on the site type. Preview everything free before you pay.</p></div>
         <div className="grid-3" style={{ alignItems: "stretch" }}>
           {Object.values(PLANS).map((p) => (
             <article key={p.type} className={`card plan ${p.type === "business" ? "featured" : ""}`}>
               {p.type === "business" && <span className="tag">Most chosen</span>}
               <h2 style={{ fontSize: "1.35rem", margin: 0 }}>{p.name}</h2>
               <div className="price">{usd(p.priceCents)} <small>USD, one-time build fee</small></div>
-              <p className="small" style={{ margin: "0 0 .6rem" }}>+ {hp.label}/{hp.interval} hosting &amp; maintenance</p>
+              <p className="small" style={{ margin: "0 0 .6rem" }}>+ {hostingPrice(config, p.type).label}/{hp.interval} hosting &amp; maintenance</p>
               <p className="muted" style={{ margin: 0 }}>{p.summary}</p>
               <ul>{p.includes.map((x) => <li key={x}>{x}</li>)}</ul>
               <button className={`btn ${p.type === "business" ? "btn-primary" : ""} btn-lg`} onClick={() => { startIntent(p.type, "", ""); nav(me ? `/dashboard/new?type=${p.type}` : `/signup?next=${encodeURIComponent(`/dashboard/new?type=${p.type}`)}`); }}>Start free preview</button>
@@ -32,7 +32,8 @@ export function Pricing() {
             <p className="muted small">Creating your website with our builder and templates, setting up your web address, publishing, unlimited manual editing and republishing, and your data export. AI suggestions are limited to {config?.ai.perProjectLimit ?? 20} per site (manual editing is unlimited).</p>
           </div>
           <div className="card">
-            <h3>Hosting &amp; maintenance: {hp.label} per site per {hp.interval}</h3>
+            <h3>Hosting &amp; maintenance: {hp.range} per site per {hp.interval}</h3>
+            <p className="small" style={{ margin: "0 0 .5rem" }}><strong>{hp.byType.personal}</strong> personal · <strong>{hp.byType.business}</strong> business · <strong>{hp.byType.ecommerce}</strong> online store, per site per {hp.interval}.</p>
             <p className="muted small">
               Keeps your site online at its web address over secure https, with backups, security and platform updates, and support. It's billed monthly per published site, and you can cancel any time (your site goes offline at the end of the paid month; you can export it first).
               {" "}{hp.billingLive ? "" : "Monthly billing is being set up: you'll be asked to agree to the monthly plan before any monthly charge is made."}
@@ -146,7 +147,7 @@ export function HowItWorks() {
             ["4. Generate & preview", "Your site is built from your answers using our template engine. Optional AI can polish your wording, but it never adds facts. You review everything. Preview it privately on desktop, tablet and mobile."],
             ["5. Edit and refine", "Change text, images, colours, fonts and layout, reorder sections, add pages, or type requests like “use more space” or “make it more elegant”. Every change can be undone, and checkpoints are kept."],
             ["6. Pick your web address", "Choose the name for your site's address, for example /s/your-business. We check that it's free and set it up automatically with a secure https connection when you publish, so there's nothing to configure. Connecting a domain you already own is coming soon."],
-            ["7. Publish", `Pay the one-time build fee and your site goes live instantly. Hosting and maintenance are then ${hostingPrice(config).label} per site per month, billed monthly once you agree to the plan, and you can cancel any time. Publishing is unlocked only by a confirmed payment.`],
+            ["7. Publish", `Pay the one-time build fee and your site goes live instantly. Hosting and maintenance are then ${hostingPrice(config).range} per site per month depending on the site type, billed monthly once you agree to the plan, and you can cancel any time. Publishing is unlocked only by a confirmed payment.`],
             ["8. Manage", "Leads, quote requests and store orders arrive in your dashboard. Update your site at any time; earlier versions can be restored. Export your site whenever you like."],
           ].map(([h, d]) => <article className="card" key={h}><h2 style={{ fontSize: "1.25rem" }}>{h}</h2><p className="muted" style={{ margin: 0 }}>{d}</p></article>)}
         </div>

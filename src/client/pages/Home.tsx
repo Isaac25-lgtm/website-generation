@@ -13,8 +13,8 @@ const PLAN_INFO = [
 // The three kinds of site, each shown with a real CC0 photo and a link to its live demo.
 const KINDS = [
   { t: "personal", name: "Personal & portfolio", img: "/stock/photo-camera.webp", alt: "A photographer holding a camera", desc: "Show your work, your story and your CV. Project galleries, a downloadable CV and a contact form, so the right people can find you and get in touch.", example: "/s/demo-portfolio/", shot: "/showcase/portfolio-full.webp", address: "/s/demo-portfolio/", exampleLabel: "See a photographer's portfolio" },
-  { t: "business", name: "Business", img: "/hero/business-office.webp", alt: "Colleagues talking in a modern office", desc: "Everything customers look for: your services and prices, photos, opening hours, a map and a WhatsApp button. Enquiries and quote requests land in your dashboard.", example: "/s/demo-business/", shot: "/showcase/business-full.webp", address: "/s/demo-business/", exampleLabel: "See a consultancy's site" },
-  { t: "ecommerce", name: "Online store", img: "/hero/store-boutique.webp", alt: "A boutique with clothing rails, shelving and pendant lights", desc: "A real shop with products in sizes and colours, live stock levels, a cart and a checkout. Orders arrive in your dashboard, ready to confirm and deliver.", example: "/s/demo-store/", shot: "/showcase/store-full.webp", address: "/s/demo-store/", exampleLabel: "See a fashion boutique's shop" },
+  { t: "business", name: "Business", img: "/hero/business-exec-office.webp", alt: "An executive office with floor-to-ceiling windows over the city", desc: "Everything customers look for: your services and prices, photos, opening hours, a map and a WhatsApp button. Enquiries and quote requests land in your dashboard.", example: "/s/demo-business/", shot: "/showcase/business-full.webp", address: "/s/demo-business/", exampleLabel: "See a consultancy's site" },
+  { t: "ecommerce", name: "Online store", img: "/hero/store-bright-boutique.webp", alt: "A bright fashion boutique with clothing rails", desc: "A real shop with products in sizes and colours, live stock levels, a cart and a checkout. Orders arrive in your dashboard, ready to confirm and deliver.", example: "/s/demo-store/", shot: "/showcase/store-full.webp", address: "/s/demo-store/", exampleLabel: "See a fashion boutique's shop" },
 ] as const;
 
 // "Made with ImprintSites": screenshots of real sites on the platform (our demos), Framer-style bento wall.
@@ -91,7 +91,7 @@ export default function Home() {
 
   const next = "/dashboard/new?from=prompt";
   const hp = hostingPrice(config);
-  const hosting = hp.label;
+  const hosting = hp.range;
   const go = (e?: React.FormEvent) => { e?.preventDefault(); startIntent(type, prompt, url); nav(me ? next : `/signup?next=${encodeURIComponent(next)}`); };
   const startPlan = (t: string) => { startIntent(t, "", ""); nav(me ? `/dashboard/new?type=${t}` : `/signup?next=${encodeURIComponent(`/dashboard/new?type=${t}`)}`); };
 
@@ -157,7 +157,7 @@ export default function Home() {
               ["Choose a look", "Pick a template, or paste a site you admire and we'll take its style, never its content."],
               ["Preview and adjust", "See the real site on phone, tablet and desktop. Change anything, or just ask for it."],
               ["Pick your web address", "Choose a name like /s/your-business. We set it up automatically with secure https. Your own domain: coming soon."],
-              ["Publish", `Pay the one-time build fee and you're live. Hosting and maintenance are then ${hosting} per site per month.`],
+              ["Publish", `Pay the one-time build fee and you're live. Hosting and maintenance are then ${hosting} per site per month, depending on the site type.`],
             ].map(([h, d], k) => (
               <li key={h} className="step"><span className="num">{String(k + 1).padStart(2, "0")}</span><h3>{h}</h3><p className="muted">{d}</p></li>
             ))}
@@ -203,7 +203,7 @@ export default function Home() {
 
       <section className="section alt" aria-labelledby="pricing">
         <div className="container">
-          <div className="section-head center"><span className="eyebrow">Pricing</span><h2 id="pricing">Simple, honest pricing</h2><p>Build and preview for free. Pay once to publish, then a flat monthly fee keeps your site online and looked after.</p></div>
+          <div className="section-head center"><span className="eyebrow">Pricing</span><h2 id="pricing">Simple, honest pricing</h2><p>Build and preview for free. Pay once to publish, then {hp.byType.personal} to {hp.byType.ecommerce} a month keeps your site online and looked after.</p></div>
           <div className="price-grid">
             {Object.values(PLANS).map((p) => (
               <article key={p.type} className={`price-card ${p.type === "business" ? "featured" : ""}`}>
@@ -211,7 +211,7 @@ export default function Home() {
                 <h3>{p.type === "ecommerce" ? "Online store" : p.type === "personal" ? "Personal & portfolio" : "Business"}</h3>
                 <p className="muted small" style={{ minHeight: "2.6em" }}>{p.summary}</p>
                 <div className="price-big">{usd(p.priceCents)}<small>one-time build</small></div>
-                <div className="price-monthly">+ {hp.label} / {hp.interval} hosting &amp; maintenance</div>
+                <div className="price-monthly">+ {hostingPrice(config, p.type).label} / {hp.interval} hosting &amp; maintenance</div>
                 <ul>{p.includes.map((x) => <li key={x}>{x}</li>)}<li>Web address set up for you, with https</li></ul>
                 <button className={`btn btn-lg btn-block ${p.type === "business" ? "btn-primary" : "btn-outline"}`} onClick={() => startPlan(p.type)}>Start free preview</button>
               </article>
@@ -225,7 +225,7 @@ export default function Home() {
         <div className="narrow">
           <div className="section-head"><h2 id="faq">Common questions</h2></div>
           <div className="faq">
-            <details><summary>What does it cost?</summary><p>A one-time build fee when you publish: $20 for a personal site, $30 for a business site or $100 for an online store. After that, hosting and maintenance are {hosting} per site per month, covering your web address, secure hosting, backups and platform updates. You'll be asked to agree to the monthly plan before any monthly charge, and you can cancel it at any time.</p></details>
+            <details><summary>What does it cost?</summary><p>A one-time build fee when you publish: $20 for a personal site, $30 for a business site or $100 for an online store. After that, hosting and maintenance are {hp.byType.personal} a month for a personal site, {hp.byType.business} for a business site or {hp.byType.ecommerce} for an online store, covering your web address, secure hosting, backups and platform updates. You'll be asked to agree to the monthly plan before any monthly charge, and you can cancel it at any time.</p></details>
             <details><summary>Can I try it before paying?</summary><p>Yes. Create an account, fill in your details, generate the site and look at it on every screen size for free. You only pay when you decide to publish.</p></details>
             <details><summary>Can I change my site after it's live?</summary><p>Any time. Edit, preview privately, then publish the update. Earlier versions are kept if you want to go back.</p></details>
             <details><summary>How do my customers pay in the shop?</summary><p>Right now: pay on delivery, pay on pickup, bank transfer, or arranging it on WhatsApp. Orders and stock are tracked properly. Card payments need your own payment account and will come as an option; the money always goes to you, not through us.</p></details>

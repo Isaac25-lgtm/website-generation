@@ -53,6 +53,7 @@ def test_config_shape_and_settings():
     r = Client().get("/api/config").json()
     assert [p["priceCents"] for p in r["prices"]] == [2000, 3000, 10000]
     assert r["hosting"]["amount"] == "4" and r["hosting"]["status"] == "announced"
+    assert r["hosting"]["amounts"] == {"personal": "", "business": "", "ecommerce": ""}  # unset keys stay empty, as in the Worker
     assert r["ai"]["perProjectLimit"] == 20 and r["payments"] == {"provider": "dodo", "configured": False, "mode": "test"}
 
 

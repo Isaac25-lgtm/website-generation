@@ -32,7 +32,7 @@ Updated 2026-11-20. Legend: ✅ built and tested · ⚠️ works with a limitati
 
 ## Pricing
 - **Build fees:** $20 / $30 / $100, one-time and locked server-side.
-- **Hosting & maintenance:** $4 per site per month. It's shown everywhere; monthly billing is not yet live (status `announced`).
+- **Hosting & maintenance:** $3 (personal), $4 (business) or $5 (online store) per site per month. It's shown everywhere; monthly billing is not yet live (status `announced`).
 
 ## Test runs (final)
 

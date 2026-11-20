@@ -129,7 +129,7 @@ function Settings() {
   if (!data) return <Spinner />;
   const cur = vals ?? Object.fromEntries(data.settings.filter((s: any) => !s.key.startsWith("demo_seed")).map((s: any) => [s.key, s.value]));
   const LABELS: Record<string, string> = {
-    hosting_fee_status: "Hosting fee status (not_set / announced / active)", hosting_fee_amount: "Hosting fee amount (approved figure only)", hosting_fee_currency: "Hosting fee currency", hosting_fee_interval: "Hosting fee interval (e.g. month)",
+    hosting_fee_status: "Hosting fee status (not_set / announced / active)", hosting_fee_amount: "Hosting fee amount (approved figure only)", hosting_fee_amount_personal: "Hosting fee: personal sites (approved figure only)", hosting_fee_amount_business: "Hosting fee: business sites (approved figure only)", hosting_fee_amount_ecommerce: "Hosting fee: online stores (approved figure only)", hosting_fee_currency: "Hosting fee currency", hosting_fee_interval: "Hosting fee interval (e.g. month)",
     ai_generations_per_project: "AI suggestions allowed per site", free_previews_per_day: "Free previews per day", operator_display_name: "Operator name shown on legal pages", operator_status_note: "Operator status note", support_email: "Public support email (leave empty if none)",
   };
   return (

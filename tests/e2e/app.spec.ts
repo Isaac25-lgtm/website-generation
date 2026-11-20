@@ -25,8 +25,8 @@ test.describe("public marketing site", () => {
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Imagine it. Build it. Launch it.");
     await expect(page.getByLabel("Describe your website")).toBeVisible();
     for (const p of ["$20", "$30", "$100"]) await expect(page.getByText(p).first()).toBeVisible();
-    await expect(page.getByText("+ $4 / month hosting & maintenance").first()).toBeAttached();
-    await expect(page.getByText(/Hosting and maintenance are then \$4 per site per month/)).toBeAttached();
+    for (const fee of ["+ $3 / month hosting & maintenance", "+ $4 / month hosting & maintenance", "+ $5 / month hosting & maintenance"]) await expect(page.getByText(fee).first()).toBeAttached();
+    await expect(page.getByText(/Hosting and maintenance are then \$3–\$5 per site per month, depending on the site type/)).toBeAttached();
     await page.waitForTimeout(1200);
     await page.screenshot({ path: `${SHOTS}/01-home-desktop.png` });
     await page.screenshot({ path: `${SHOTS}/01b-home-desktop-full.png`, fullPage: true });
@@ -49,13 +49,13 @@ test.describe("public marketing site", () => {
     await expect(page.getByText("$20").first()).toBeVisible();
     await expect(page.getByText("$30").first()).toBeVisible();
     await expect(page.getByText("$100").first()).toBeVisible();
-    await expect(page.getByRole("heading", { name: /Hosting & maintenance: \$4 per site per month/ })).toBeVisible();
+    await expect(page.getByRole("heading", { name: /Hosting & maintenance: \$3–\$5 per site per month/ })).toBeVisible();
     await page.screenshot({ path: `${SHOTS}/03-pricing.png`, fullPage: true });
     await noSeriousA11y(page, "pricing");
     for (const [path, h] of [["/terms", "Terms of Service"], ["/privacy", "Privacy Policy"], ["/refunds", "Refund & Cancellation Policy"]]) {
       await page.goto(path);
       await expect(page.getByRole("heading", { level: 1 })).toHaveText(h);
-      if (path === "/terms") await expect(page.getByText(/costs \$4 per month/)).toBeVisible();
+      if (path === "/terms") await expect(page.getByText(/costs \$3 per month for a personal site, \$4 for a business site and \$5 for an online store/)).toBeVisible();
       await expect(page.locator("main")).not.toContainText(/lorem|TODO|\[company\]/i);
     }
     await page.goto("/contact");

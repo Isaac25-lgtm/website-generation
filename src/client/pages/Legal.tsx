@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { useApp } from "../lib";
+import { hostingPrice, useApp } from "../lib";
 
 const UPDATED = "20 November 2026";
 
@@ -36,7 +36,7 @@ export function Terms() {
         <li>Build fees are one-time payments in US dollars: <strong>Personal $20</strong>, <strong>Business $30</strong>, <strong>E-commerce $100</strong>, per website.</li>
         <li>The build fee unlocks publishing of that website at a web address on our platform (set up automatically), unlimited manual editing and republishing, and export of your site. AI suggestions are subject to a per-site limit shown in the product.</li>
         <li>Previewing and editing before payment are free. Publishing requires a confirmed payment.</li>
-        <li><strong>Hosting &amp; maintenance</strong> for each published site costs {h?.amount ? `${h.currency === "USD" ? "$" : h.currency + " "}${h.amount}` : "$4"} per {h?.interval || "month"}, billed monthly. It covers hosting at your web address over https, backups, security and platform updates, and support. You agree to the monthly plan separately before any monthly charge, and you can cancel at any time; the site goes offline at the end of the paid period and you can export it first.</li>
+        <li><strong>Hosting &amp; maintenance</strong> for each published site costs {hostingPrice(config, "personal").label} per {h?.interval || "month"} for a personal site, {hostingPrice(config, "business").label} for a business site and {hostingPrice(config, "ecommerce").label} for an online store, billed monthly. It covers hosting at your web address over https, backups, security and platform updates, and support. You agree to the monthly plan separately before any monthly charge, and you can cancel at any time; the site goes offline at the end of the paid period and you can export it first.</li>
         <li>Custom domain names are not included and are bought from a domain registrar at their prices.</li>
       </ul>
       <h2>4. Payments</h2>

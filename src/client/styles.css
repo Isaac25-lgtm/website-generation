@@ -163,6 +163,8 @@ button { font: inherit; }
 @keyframes kind-scroll-store { 0%, 10% { object-position: 50% 0%; } 30%, 52% { object-position: 50% 47%; } 66%, 84% { object-position: 50% 66%; } 100% { object-position: 50% 0%; } }
 @media (prefers-reduced-motion: reduce) { .kind-screen img { animation: none; } }
 .kind-card:hover .kind-photo { transform: scale(1.05); }
+/* Frame the store photo on the boutique interior (the browser frame covers the right side). */
+.kind-card[data-kind="ecommerce"] .kind-photo { object-position: 0% 50%; }
 .kind-card:hover .kind-browser { transform: translateY(-8px) rotate(0deg); }
 .kind-body { padding: 1.15rem 1.25rem 1.2rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
 .kind-body h3 { font: 600 1.3rem var(--font-h); margin: 0; letter-spacing: -.01em; }

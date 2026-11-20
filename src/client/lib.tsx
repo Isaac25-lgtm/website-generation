@@ -33,7 +33,7 @@ export interface Config {
   browserRun: { bound: boolean };
   email: { configured: boolean };
   storage: string;
-  hosting: { status: string; amount: string; currency: string; interval: string };
+  hosting: { status: string; amount: string; amounts?: Partial<Record<"personal" | "business" | "ecommerce", string>>; currency: string; interval: string };
   operator: { name: string; note: string; supportEmail: string };
   demos: { slug: string; type: string; url: string }[];
 }
@@ -67,13 +67,27 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
 export const usd = (cents: number) => `$${(cents / 100).toFixed(cents % 100 ? 2 : 0)}`;
 
-/** Hosting & maintenance price as configured by the admin (defaults to the approved $4/site/month). */
-export function hostingPrice(config: Config | null): { label: string; amount: string; interval: string; billingLive: boolean } {
+type SiteKind = "personal" | "business" | "ecommerce";
+/** Owner-approved hosting & maintenance per published site per month, used until the admin settings load. */
+const HOSTING_DEFAULTS: Record<SiteKind, string> = { personal: "3", business: "4", ecommerce: "5" };
+
+/**
+ * Hosting & maintenance price as configured by the admin, per site type (approved: $3 personal, $4 business,
+ * $5 online store). `label` is the price for `type` (business when omitted); `range` spans all types, e.g. "$3–$5".
+ */
+export function hostingPrice(config: Config | null, type?: string): { label: string; range: string; byType: Record<SiteKind, string>; amount: string; interval: string; billingLive: boolean } {
   const h = config?.hosting;
-  const amount = h?.amount || "4";
   const cur = h?.currency || "USD";
   const interval = h?.interval || "month";
-  return { label: cur === "USD" ? `$${amount}` : `${cur} ${amount}`, amount, interval, billingLive: h?.status === "active" };
+  const amounts = { ...HOSTING_DEFAULTS };
+  for (const k of Object.keys(amounts) as SiteKind[]) { const v = h?.amounts?.[k]; if (v) amounts[k] = v; }
+  const fmt = (a: string) => (cur === "USD" ? `$${a}` : `${cur} ${a}`);
+  const kind: SiteKind = type === "personal" || type === "ecommerce" ? type : "business";
+  const nums = Object.values(amounts).map(Number).filter(Number.isFinite);
+  const lo = String(Math.min(...nums)), hi = String(Math.max(...nums));
+  const range = lo === hi ? fmt(lo) : cur === "USD" ? `$${lo}–$${hi}` : `${cur} ${lo}–${hi}`;
+  const byType = { personal: fmt(amounts.personal), business: fmt(amounts.business), ecommerce: fmt(amounts.ecommerce) };
+  return { label: fmt(amounts[kind]), range, byType, amount: amounts[kind], interval, billingLive: h?.status === "active" };
 }
 
 export function money(minor: number, currency: string) {

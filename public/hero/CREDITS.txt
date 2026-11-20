@@ -1,0 +1,11 @@
+Hero background photos. All CC0 1.0 (public domain dedication, https://creativecommons.org/publicdomain/zero/1.0/).
+No attribution is required; recorded here for provenance. Re-encoded to WebP.
+
+describe.webp — "Design Wireframe" by FOCA Stock, via StockSnap. https://stocksnap.io/photo/design-wireframe-20VFXOOUWG CC0 1.0
+design.webp — "Office Work" by Jens Kreuter, via StockSnap. https://stocksnap.io/photo/office-work-0SQT0QS773 CC0 1.0
+devices.webp — "Macbook Laptop" by Wilfred Iven, via StockSnap. https://stocksnap.io/photo/macbook-laptop-RMATTE7HXJ CC0 1.0
+edit.webp — "Macbook Laptop" by Startup Stock Photos, via StockSnap. https://stocksnap.io/photo/macbook-laptop-RLC58MRIX8 CC0 1.0
+customers.webp — "Woman Mobile" by Bruce Mars, via StockSnap. https://stocksnap.io/photo/woman-mobile-Q93BUD2Z3Z CC0 1.0
+orders.webp — "Box Boxes" by Bench Accounting, via StockSnap. https://stocksnap.io/photo/box-boxes-WP1KHDXGOY CC0 1.0
+
+To use sharper versions, download the originals from the links above and save them here at ~1920px wide under the same names.

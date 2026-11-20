@@ -1,0 +1,35 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "imprintsites",
+  "main": "./src/worker/index.ts",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "upload_source_maps": true,
+  "observability": { "enabled": true },
+  "triggers": { "crons": ["17 3 * * *"] },
+  "assets": {
+    "not_found_handling": "single-page-application",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/s/*", "/preview/*", "/media/*", "/robots.txt", "/sitemap.xml", "/healthz"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "imprintsites-db",
+      "database_id": "60f0763d-31e0-4c2c-871f-a24ac493af5d",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // R2 is not yet enabled on the account (Cloudflare error 10042).
+  // After enabling R2 in the dashboard, run: npx wrangler r2 bucket create imprintsites-media
+  // and uncomment the block below. Uploads then go to R2; earlier D1-stored uploads keep working.
+  // "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "imprintsites-media" }],
+  "ai": { "binding": "AI" },
+  "browser": { "binding": "BROWSER" },
+  "vars": {
+    "APP_NAME": "ImprintSites AI",
+    "APP_ENV": "production",
+    "PAYMENTS_MODE": "test",
+    "AI_MODEL": "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+  }
+}

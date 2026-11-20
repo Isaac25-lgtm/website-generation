@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ImprintSites AI">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#0a2fe0"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#28c8ff"/><stop offset="1" stop-color="#0b8cff"/></linearGradient>
+    <mask id="m"><rect width="64" height="64" fill="#fff"/><rect x="29.5" y="-1.5" width="33" height="33" rx="10" fill="#000"/></mask>
+  </defs>
+  <rect x="2" y="15" width="46" height="46" rx="11" fill="url(#g1)" mask="url(#m)"/>
+  <rect x="33" y="2" width="27" height="27" rx="7.5" fill="url(#g2)"/>
+  <rect x="9" y="22" width="15.5" height="15" rx="4" fill="#e8efff"/>
+  <rect x="9" y="41.5" width="15.5" height="12.5" rx="4" fill="#fff"/>
+  <rect x="28.5" y="41.5" width="13" height="12.5" rx="4" fill="#fff"/>
+</svg>

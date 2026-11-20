@@ -1,0 +1,85 @@
+// LOCKED creation prices. One-time fees in USD minor units (cents).
+// Changing these requires explicit owner approval (see PRICING_AND_BILLING.md).
+// The server never accepts an amount from the client; it always reads from here.
+
+export const SITE_TYPES = ["personal", "business", "ecommerce"] as const;
+export type SiteType = (typeof SITE_TYPES)[number];
+
+export interface Plan {
+  type: SiteType;
+  name: string;
+  shortName: string;
+  priceCents: number;
+  currency: "USD";
+  billing: "one_time";
+  summary: string;
+  includes: string[];
+}
+
+export const PLANS: Record<SiteType, Plan> = Object.freeze({
+  personal: {
+    type: "personal",
+    name: "Personal / Portfolio",
+    shortName: "Personal",
+    priceCents: 2000,
+    currency: "USD",
+    billing: "one_time",
+    summary: "A polished personal site for your work, CV and projects.",
+    includes: [
+      "About, experience, skills and education sections",
+      "Portfolio projects with photo galleries and links",
+      "Downloadable CV / résumé",
+      "Working contact form delivered to your dashboard",
+      "6+ professional personal templates",
+      "Unlimited manual edits and republishing",
+    ],
+  },
+  business: {
+    type: "business",
+    name: "Business",
+    shortName: "Business",
+    priceCents: 3000,
+    currency: "USD",
+    billing: "one_time",
+    summary: "A professional multi-page presence that brings in enquiries.",
+    includes: [
+      "Home, About, Services, Gallery and Contact pages",
+      "Services with images and optional price ranges",
+      "Contact and quote-request forms with a leads inbox",
+      "Map, opening hours, WhatsApp and call buttons",
+      "6+ professional business templates",
+      "Unlimited manual edits and republishing",
+    ],
+  },
+  ecommerce: {
+    type: "ecommerce",
+    name: "E-commerce",
+    shortName: "E-commerce",
+    priceCents: 10000,
+    currency: "USD",
+    billing: "one_time",
+    summary: "A real online store with catalogue, cart, checkout and order management.",
+    includes: [
+      "Product catalogue with variants, inventory and CSV import",
+      "Search, category filters, cart and checkout",
+      "Orders dashboard with status tracking and stock control",
+      "Cash on delivery, pickup, bank / mobile-money transfer or WhatsApp ordering",
+      "6+ professional store templates",
+      "Online card/mobile payments once you connect your own verified gateway",
+    ],
+  },
+} as const);
+
+export function priceFor(type: SiteType): number {
+  const plan = PLANS[type];
+  if (!plan) throw new Error(`Unknown site type: ${type}`);
+  return plan.priceCents;
+}
+
+export function formatUsd(cents: number): string {
+  return `$${(cents / 100).toFixed(cents % 100 === 0 ? 0 : 2)}`;
+}
+
+export function isSiteType(v: unknown): v is SiteType {
+  return typeof v === "string" && (SITE_TYPES as readonly string[]).includes(v);
+}

@@ -16,6 +16,16 @@ def client(token: str | None = None) -> Client:
     return c
 
 
+def test_snapshot_reads_cannot_be_enabled_outside_debug():
+    import os
+    import subprocess
+    import sys
+    env = {**os.environ, "DJANGO_DEBUG": "0", "ALLOW_SNAPSHOT_READS": "1", "DJANGO_SECRET_KEY": "x" * 50}
+    r = subprocess.run([sys.executable, "-c", "import django, os; os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings'); django.setup()"],
+                       env=env, capture_output=True, text=True, cwd=str(__import__("pathlib").Path(__file__).resolve().parents[1]))
+    assert r.returncode != 0 and "only allowed with DJANGO_DEBUG=1" in r.stderr
+
+
 def test_healthz_needs_no_database():
     r = Client().get("/healthz")
     assert r.status_code == 200 and r.json()["ok"] is True

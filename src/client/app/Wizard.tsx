@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
-import { api, compressImage, money, sampleColors, toMajor, toMinor, useApp } from "../lib";
+import { api, compressImage, money, priceError, sampleColors, toMajor, toMinor, useApp } from "../lib";
 import { Fields, type FieldSpec } from "../components/forms";
 import { LoadingPage, Spinner } from "../components/ui";
 import { TemplateGallery } from "../pages/Marketing";
@@ -209,7 +209,7 @@ export function DeliveryStep({ answers, onChange }: { answers: any; onChange: (a
           <div className="grid-2" style={{ gap: ".75rem" }}>
             <label className="field"><span>Type</span><select value={f.kind} onChange={(e) => upd(i, { kind: e.target.value })}><option value="delivery">Delivery to an address</option><option value="pickup">Pickup</option><option value="digital">Digital delivery</option></select></label>
             <label className="field"><span>Name shown to customers</span><input value={f.label || ""} maxLength={80} onChange={(e) => upd(i, { label: e.target.value })} placeholder="Standard delivery" /></label>
-            <label className="field"><span>Fee ({cur})</span><input inputMode="decimal" value={f.priceMinor ? toMajor(f.priceMinor, cur) : ""} placeholder="0" onChange={(e) => upd(i, { priceMinor: toMinor(e.target.value || "0", cur) })} /><span className="help">{f.priceMinor ? money(f.priceMinor, cur) : "Free"}</span></label>
+            <FeeField cur={cur} minor={f.priceMinor} onChange={(minor) => upd(i, { priceMinor: minor })} />
             <label className="field"><span>Details</span><input value={f.details || ""} maxLength={400} onChange={(e) => upd(i, { details: e.target.value })} placeholder="1–2 working days" /></label>
           </div>
         </div>
@@ -250,5 +250,18 @@ function ReviewStep({ proj, answers, steps, goTo, onGenerate, aiAvailable }: { p
         <button className="btn btn-primary btn-lg" disabled={busy || !rights} onClick={async () => { setBusy(true); setErr(""); try { await onGenerate(useAi, rights); } catch (e) { setErr((e as Error).message); setBusy(false); } }}>{busy ? <><Spinner /> Generating…</> : <>Generate my website</>}</button>
       </div>
     </div>
+  );
+}
+
+/** Delivery fee input: keeps what the merchant typed and only stores a fee that parses unambiguously. */
+function FeeField({ cur, minor, onChange }: { cur: string; minor: number; onChange: (minor: number) => void }) {
+  const [text, setText] = useState(minor ? toMajor(minor, cur) : "");
+  const parsed = text.trim() ? toMinor(text, cur) : 0;
+  const error = text.trim() && parsed === null ? priceError(text, cur) : null;
+  return (
+    <label className="field"><span>Fee ({cur})</span>
+      <input inputMode="decimal" value={text} placeholder="0" aria-invalid={!!error} onChange={(e) => { setText(e.target.value); const m = e.target.value.trim() ? toMinor(e.target.value, cur) : 0; if (m !== null) onChange(m); }} />
+      <span className="help" style={error ? { color: "#b91c1c" } : undefined}>{error ?? (parsed ? money(parsed, cur) : "Free")}</span>
+    </label>
   );
 }

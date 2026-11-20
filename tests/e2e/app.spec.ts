@@ -151,7 +151,8 @@ test.describe("builder flows (signed in)", () => {
     await page.goto("/dashboard/new?type=personal");
     await page.getByLabel("Your name").fill("Nia Achieng");
     await expect(page.getByText(/^Available\./)).toBeVisible({ timeout: 10000 });
-    await expect(page.getByLabel("Web address")).toHaveValue(/^nia-achieng(-\d+)?$/);
+    // Suggestions use -2 … -6, then a random suffix once those are taken (repeated local runs).
+    await expect(page.getByLabel("Web address")).toHaveValue(/^nia-achieng(-[a-z0-9]+)?$/);
     await page.screenshot({ path: `${SHOTS}/21b-new-site-address.png` });
     await page.getByRole("button", { name: "Continue" }).click();
     await expect(page).toHaveURL(/\/setup$/);

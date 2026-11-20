@@ -88,12 +88,55 @@ export function formatMoney(minor: number, currency: string): string {
   }
 }
 
-/** Parse a user-entered major-unit price ("12.50") into minor units. */
-export function parseMoney(input: string | number, currency: string): number | null {
-  const n = typeof input === "number" ? input : Number(String(input).replace(/[, ]/g, ""));
-  if (!Number.isFinite(n) || n < 0 || n > 1e9) return null;
+export type PriceParse = { ok: true; minor: number } | { ok: false; error: string };
+
+/**
+ * Parse a merchant-entered price (major units) into integer minor units without guessing.
+ * Accepts 19.95, 19,95 (decimal comma), 1,234.50, 1.234,50, 1 234,50, 1'234.50 and a leading/trailing
+ * currency symbol or code. For currencies with cents, a single separator followed by exactly three digits
+ * (1,234 or 1.234) is ambiguous and rejected. Used by the CSV import, the product editor and delivery fees.
+ */
+export function parsePrice(input: string | number, currency: string): PriceParse {
   const decimals = currencyDecimals(currency);
-  return Math.round(decimals === 0 ? n : n * 100);
+  const raw = typeof input === "number" ? (Number.isFinite(input) ? String(input) : "") : String(input ?? "");
+  const shown = raw.trim().slice(0, 40);
+  const invalid: PriceParse = { ok: false, error: `“${shown}” isn't a valid price.` };
+  if (!shown) return { ok: false, error: "Enter a price." };
+  if (/^\s*-/.test(raw)) return { ok: false, error: "Prices can't be negative." };
+  const s = raw.replace(/[\s\u00a0\u202f']/g, "").replace(/^[^\d.,]+/, "").replace(/[^\d.,]+$/, "");
+  if (!/^\d[\d.,]*\d$|^\d$/.test(s)) return invalid;
+  const dot = s.lastIndexOf("."), comma = s.lastIndexOf(",");
+  let int = s, frac = "", group = "";
+  if (dot >= 0 && comma >= 0) {
+    const dec = dot > comma ? "." : ",";
+    group = dec === "." ? "," : ".";
+    const i = s.lastIndexOf(dec);
+    int = s.slice(0, i); frac = s.slice(i + 1);
+    if (int.includes(dec)) return invalid;
+  } else if (dot >= 0 || comma >= 0) {
+    const sep = dot >= 0 ? "." : ",";
+    const parts = s.split(sep);
+    if (parts.length > 2) group = sep;
+    else if (parts[1].length === 3) {
+      if (decimals > 0) return { ok: false, error: `“${shown}” is ambiguous: it could mean ${parts[0]}${parts[1]} or ${parts[0]}.${parts[1]}. Write ${parts[0]}${parts[1]} or use two decimals (for example ${parts[0]}${parts[1]}.00).` };
+      group = sep; // no cents in this currency, so the separator can only group thousands
+    } else { int = parts[0]; frac = parts[1]; }
+  }
+  if (group) {
+    if (!new RegExp(`^\\d{1,3}(\\${group}\\d{3})+$`).test(int)) return invalid;
+    int = int.split(group).join("");
+  }
+  if (!/^\d+$/.test(int) || (frac && !/^\d+$/.test(frac))) return invalid;
+  if (frac.length > decimals) return { ok: false, error: decimals === 0 ? `${currency} prices have no decimal places.` : `Use at most ${decimals} decimal places.` };
+  const minor = Number(int) * 10 ** decimals + Number((frac + "00").slice(0, decimals) || "0");
+  if (!Number.isSafeInteger(minor) || minor > 1e10) return { ok: false, error: "That price is too large." };
+  return { ok: true, minor };
+}
+
+/** parsePrice() for callers that only need the amount. */
+export function parseMoney(input: string | number, currency: string): number | null {
+  const r = parsePrice(input, currency);
+  return r.ok ? r.minor : null;
 }
 
 export function digitsOnly(phone: string | undefined): string {

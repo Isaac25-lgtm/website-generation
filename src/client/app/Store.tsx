@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { api, fmtDate, money, toMajor, toMinor, useApp } from "../lib";
+import { api, fmtDate, money, priceError, toMajor, toMinor, useApp } from "../lib";
 import { Fields, type FieldSpec } from "../components/forms";
 import { Modal, Spinner } from "../components/ui";
 import { parseCsv } from "../../shared/util";
@@ -71,6 +71,8 @@ function ProductEditor({ projectId, currency, product, cols, onClose, onSaved }:
   const [opt1, setOpt1] = useState([...new Set(product.variants.map((v) => v.option1).filter(Boolean))].join(", "));
   const [opt2, setOpt2] = useState([...new Set(product.variants.map((v) => v.option2).filter(Boolean))].join(", "));
   const [busy, setBusy] = useState(false);
+  // What the merchant typed in each variant's price override (validated on save, never reinterpreted while typing).
+  const [variantPrices, setVariantPrices] = useState<string[]>(() => product.variants.map((v) => (v.priceMinor != null ? toMajor(v.priceMinor, currency) : "")));
   // One id per opened form: a retried save (for example after a lost response) changes stock only once.
   const [editId] = useState(() => (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}${Math.random()}`).replace(/[^A-Za-z0-9]/g, "").slice(0, 40));
 
@@ -78,16 +80,26 @@ function ProductEditor({ projectId, currency, product, cols, onClose, onSaved }:
     const a = o1.split(",").map((x) => x.trim()).filter(Boolean);
     const b = o2.split(",").map((x) => x.trim()).filter(Boolean);
     const combos = (a.length ? a : [null]).flatMap((x) => (b.length ? b : [null]).map((y) => ({ x, y })));
-    setP((cur) => ({ ...cur, variants: combos.map(({ x, y }) => cur.variants.find((v) => (v.option1 ?? null) === x && (v.option2 ?? null) === y) ?? { option1: x, option2: y, stock: 0, trackInventory: true, allowBackorder: false }) }));
+    setP((cur) => {
+      const next = combos.map(({ x, y }) => cur.variants.find((v) => (v.option1 ?? null) === x && (v.option2 ?? null) === y) ?? { option1: x, option2: y, stock: 0, trackInventory: true, allowBackorder: false });
+      setVariantPrices((prices) => next.map((v) => { const j = cur.variants.indexOf(v); return j >= 0 ? prices[j] ?? "" : ""; }));
+      return { ...cur, variants: next };
+    });
   };
   const imgSpec: FieldSpec[] = [{ k: "images", label: "Product photos", t: "images", max: 12, help: "First image is the main photo. Use your own photos or licensed images." }];
   const save = async () => {
+    const problems = [
+      price ? priceError(price, currency) && `Price: ${priceError(price, currency)}` : null,
+      compare ? priceError(compare, currency) && `Compare-at price: ${priceError(compare, currency)}` : null,
+      ...p.variants.map((_, i) => (variantPrices[i] ? priceError(variantPrices[i], currency) && `Variant price: ${priceError(variantPrices[i], currency)}` : null)),
+    ].filter(Boolean);
+    if (problems.length) { toast(String(problems[0]), "err"); return; }
     setBusy(true);
-    const body = { ...p, currency, editId, priceMinor: toMinor(price || "0", currency), compareAtMinor: compare ? toMinor(compare, currency) : null, option1Name: p.option1Name || null, option2Name: p.option2Name || null, sku: p.sku || null,
+    const body = { ...p, currency, editId, priceMinor: price ? toMinor(price, currency) ?? 0 : 0, compareAtMinor: compare ? toMinor(compare, currency) : null, option1Name: p.option1Name || null, option2Name: p.option2Name || null, sku: p.sku || null,
       // stockBase = stock when this form opened, so the server applies only the merchant's change and keeps sales made meanwhile.
-      variants: p.variants.map((v) => {
+      variants: p.variants.map((v, i) => {
         const opened = v.id ? product.variants.find((x) => x.id === v.id) : undefined;
-        return { ...v, option1: v.option1 || null, option2: v.option2 || null, sku: v.sku || null, stock: Number(v.stock) || 0, ...(opened ? { stockBase: opened.stock } : {}) };
+        return { ...v, option1: v.option1 || null, option2: v.option2 || null, sku: v.sku || null, stock: Number(v.stock) || 0, priceMinor: variantPrices[i] ? toMinor(variantPrices[i], currency) : null, ...(opened ? { stockBase: opened.stock } : {}) };
       }) };
     try {
       if (p.id) await api(`/api/projects/${projectId}/products/${p.id}`, { method: "PUT", body }); else await api(`/api/projects/${projectId}/products`, { body });
@@ -127,7 +139,7 @@ function ProductEditor({ projectId, currency, product, cols, onClose, onSaved }:
                 <tr key={i}>
                   <td>{[v.option1, v.option2].filter(Boolean).join(" / ") || "Default"}</td>
                   <td><input className="input" style={{ width: 80, minHeight: 36 }} type="number" min={0} value={v.stock} aria-label="Stock" onChange={(e) => setP({ ...p, variants: p.variants.map((x, j) => (j === i ? { ...x, stock: Number(e.target.value) } : x)) })} /></td>
-                  <td><input className="input" style={{ width: 100, minHeight: 36 }} inputMode="decimal" placeholder="—" aria-label="Price override" value={v.priceMinor != null ? toMajor(v.priceMinor, currency) : ""} onChange={(e) => setP({ ...p, variants: p.variants.map((x, j) => (j === i ? { ...x, priceMinor: e.target.value ? toMinor(e.target.value, currency) : null } : x)) })} /></td>
+                  <td><input className="input" style={{ width: 100, minHeight: 36 }} inputMode="decimal" placeholder="—" aria-label="Price override" value={variantPrices[i] ?? ""} onChange={(e) => setVariantPrices((cur) => { const next = [...cur]; next[i] = e.target.value; return next; })} /></td>
                   <td><input type="checkbox" checked={v.trackInventory} aria-label="Track inventory" onChange={(e) => setP({ ...p, variants: p.variants.map((x, j) => (j === i ? { ...x, trackInventory: e.target.checked } : x)) })} /></td>
                   <td><input type="checkbox" checked={v.allowBackorder} aria-label="Allow backorder" onChange={(e) => setP({ ...p, variants: p.variants.map((x, j) => (j === i ? { ...x, allowBackorder: e.target.checked } : x)) })} /></td>
                 </tr>

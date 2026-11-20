@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router";
 import { hostingPrice, useApp, usd } from "../lib";
 import { Icon } from "../components/ui";
 import { PLANS } from "../../shared/pricing";
-import { OurWork } from "./OurWork";
 
 const PLAN_INFO = [
   { type: "personal", label: "Personal", price: 2000 },
@@ -13,9 +12,9 @@ const PLAN_INFO = [
 
 // The three kinds of site, each shown with a real CC0 photo and a link to its live demo.
 const KINDS = [
-  { t: "personal", name: "Personal & portfolio", img: "/stock/photo-camera.webp", alt: "A photographer holding a camera", desc: "Show your work, your story and your CV. Project galleries, a downloadable CV and a contact form, so the right people can find you and get in touch.", example: "/s/demo-portfolio/", shot: "/showcase/portfolio-home.webp", address: "/s/demo-portfolio/", exampleLabel: "See a photographer's portfolio" },
-  { t: "business", name: "Business", img: "/hero/customers.webp", alt: "Customers browsing a business website", desc: "Everything customers look for: your services and prices, photos, opening hours, a map and a WhatsApp button. Enquiries and quote requests land in your dashboard.", example: "/s/demo-business/", shot: "/showcase/business-home.webp", address: "/s/demo-business/", exampleLabel: "See a travel company's site" },
-  { t: "ecommerce", name: "Online store", img: "/stock/fashion-atelier.webp", alt: "A woman among rails of clothing in an atelier", desc: "A real shop with products in sizes and colours, live stock levels, a cart and a checkout. Orders arrive in your dashboard, ready to confirm and deliver.", example: "/s/demo-store/", shot: "/showcase/store-home.webp", address: "/s/demo-store/", exampleLabel: "See a fashion boutique's shop" },
+  { t: "personal", name: "Personal & portfolio", img: "/stock/photo-camera.webp", alt: "A photographer holding a camera", desc: "Show your work, your story and your CV. Project galleries, a downloadable CV and a contact form, so the right people can find you and get in touch.", example: "/s/demo-portfolio/", shot: "/showcase/portfolio-full.webp", address: "/s/demo-portfolio/", exampleLabel: "See a photographer's portfolio" },
+  { t: "business", name: "Business", img: "/hero/customers.webp", alt: "Customers browsing a business website", desc: "Everything customers look for: your services and prices, photos, opening hours, a map and a WhatsApp button. Enquiries and quote requests land in your dashboard.", example: "/s/demo-business/", shot: "/showcase/business-full.webp", address: "/s/demo-business/", exampleLabel: "See a consultancy's site" },
+  { t: "ecommerce", name: "Online store", img: "/stock/fashion-atelier.webp", alt: "A woman among rails of clothing in an atelier", desc: "A real shop with products in sizes and colours, live stock levels, a cart and a checkout. Orders arrive in your dashboard, ready to confirm and deliver.", example: "/s/demo-store/", shot: "/showcase/store-full.webp", address: "/s/demo-store/", exampleLabel: "See a fashion boutique's shop" },
 ] as const;
 
 // "Made with ImprintSites": screenshots of real sites on the platform (our demos), Framer-style bento wall.
@@ -23,7 +22,7 @@ const SHOWCASE = [
   [
     { src: "/showcase/store-home.webp", href: "/s/demo-store/", title: "Maison Nia", sub: "Online store · Maison template" },
     { src: "/showcase/store-product-m.webp", href: "/s/demo-store/product/floral-wrap-dress", title: "Product page", sub: "On a phone", phone: true },
-    { src: "/showcase/business-home.webp", href: "/s/demo-business/", title: "Kijani Trails", sub: "Business · Savanna template" },
+    { src: "/showcase/business-home.webp", href: "/s/demo-business/", title: "Kingsway Advisory", sub: "Business · Meridian template" },
   ],
   [
     { src: "/showcase/portfolio-home.webp", href: "/s/demo-portfolio/", title: "Amina Yusuf", sub: "Portfolio · Lens template" },
@@ -130,13 +129,13 @@ export default function Home() {
         <h2 id="kinds" className="sr-only">What you can build</h2>
         <div className="container kind-grid">
           {KINDS.map((k) => (
-            <article key={k.t} className="kind-card">
+            <article key={k.t} className="kind-card" data-kind={k.t}>
               <a href={k.example} className="kind-media" aria-label={k.exampleLabel}>
                 <img className="kind-photo" src={k.img} alt={k.alt} width={960} height={640} loading="lazy" decoding="async" />
                 <span className="kind-chip">{k.name}</span>
                 <span className="kind-browser" aria-hidden="true">
                   <span className="kind-chrome"><i /><i /><i /><span className="kind-url">imprintsites…{k.address}</span></span>
-                  <img src={k.shot} alt="" loading="lazy" decoding="async" />
+                  <span className="kind-screen"><img src={k.shot} alt="" loading="lazy" decoding="async" /></span>
                 </span>
               </a>
               <div className="kind-body">
@@ -180,7 +179,6 @@ export default function Home() {
             </div>
           ))}
           <p className="showcase-note">Demo sites with made-up content, built on the platform. Open any of them and click around; the shop even takes test orders.</p>
-          <OurWork headingLevel={3} dark />
         </div>
       </section>
 

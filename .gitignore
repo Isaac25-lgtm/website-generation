@@ -21,3 +21,5 @@ backend/.pgdata/
 __pycache__/
 *.pyc
 .pytest_cache/
+# Smoke test run records (exact ids of synthetic production records)
+scripts/smoke-runs/

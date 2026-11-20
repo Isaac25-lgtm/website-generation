@@ -265,3 +265,102 @@ describe("review: CSV rows must identify exactly one variant", () => {
     expect(Object.keys(await stocks())).toHaveLength(2);
   });
 });
+
+// ── Release audit 6a1cc2c (docs/release-audit-6a1cc2c.md) ──
+
+describe("audit 6a1cc2c: replaying a save never undoes a sale", () => {
+  it("keeps a variant created in the edit, its id, the post-sale stock and the order reference", async () => {
+    const id = await newStore("Scarves", "USD");
+    const made = await merchant.req(`/api/projects/${id}/products`, { body: { title: "Scarf", priceMinor: 1500, option1Name: "Colour", variants: [{ option1: "Blue", stock: 3 }] } });
+    const pid = made.json.product.id, blue = made.json.product.variants[0].id;
+    expect((await publish(id)).status).toBe(200);
+    const save = () => merchant.req(`/api/projects/${id}/products/${pid}`, { method: "PUT", body: { title: "Scarf", priceMinor: 1500, option1Name: "Colour", editId: `green${run}`,
+      variants: [{ id: blue, option1: "Blue", stock: 3, stockBase: 3 }, { option1: "Green", stock: 7 }] } });
+    const first = await save();
+    const green = first.json.product.variants.find((v: any) => v.option1 === "Green");
+    expect(green.stock).toBe(7);
+    const o = await order(id, green.id, 2, `grn${run}`);
+    expect(o.status).toBe(200);
+    const replay = await save(); // the identical request again, e.g. after a lost response
+    const after = Object.fromEntries(replay.json.product.variants.map((v: any) => [v.option1, v]));
+    expect(after.Green.id).toBe(green.id);
+    expect(after.Green.stock).toBe(5);
+    expect(after.Blue.stock).toBe(3);
+    // Cancelling the order restocks that same variant
+    const oid = o.json.orderUrl.match(/order\/(ord_[a-z0-9]+)/)[1];
+    expect((await merchant.req(`/api/projects/${id}/orders/${oid}`, { method: "PATCH", body: { status: "cancelled" } })).status).toBe(200);
+    const final = (await merchant.req(`/api/projects/${id}/products`)).json.products.find((x: any) => x.id === pid);
+    expect(final.variants.find((v: any) => v.id === green.id).stock).toBe(7);
+  });
+
+  it("treats a replayed product create as the same product", async () => {
+    const id = await newStore("Replay create", "USD");
+    const body = { title: "Mug", priceMinor: 900, editId: `mug${run}`, variants: [{ stock: 4 }] };
+    const a = await merchant.req(`/api/projects/${id}/products`, { body });
+    const b = await merchant.req(`/api/projects/${id}/products`, { body });
+    expect(b.json.product.id).toBe(a.json.product.id);
+    expect(b.json.product.variants[0].id).toBe(a.json.product.variants[0].id);
+    expect(b.json.product.variants[0].stock).toBe(4);
+    expect((await merchant.req(`/api/projects/${id}/products`)).json.products).toHaveLength(1);
+  });
+});
+
+describe("audit 6a1cc2c: CSV prices are parsed strictly", () => {
+  it("reads 19,95 as €19.95 and rejects ambiguous or invalid prices", async () => {
+    const id = await newStore("Euro shop", "EUR");
+    const imp = await merchant.req(`/api/projects/${id}/products/import`, { body: { rows: [
+      { title: "Comma", price: "19,95", compareAt: "24,95" },
+      { title: "Grouped", price: "1.234,50" },
+      { title: "Ambiguous", price: "1,234" },
+      { title: "Words", price: "nineteen" },
+    ] } });
+    expect(imp.json).toMatchObject({ created: 2, failed: 2 });
+    const errs = imp.json.errors.map((e: any) => e.error).join(" | ");
+    expect(errs).toMatch(/ambiguous/);
+    expect(errs).toMatch(/isn't a valid price/);
+    const prices = Object.fromEntries((await merchant.req(`/api/projects/${id}/products`)).json.products.map((p: any) => [p.title, [p.priceMinor, p.compareAtMinor]]));
+    expect(prices).toEqual({ Comma: [1995, 2495], Grouped: [123450, null] });
+  });
+});
+
+describe("audit 6a1cc2c: a variant SKU row changes only that variant", () => {
+  it("prices Red alone and leaves Blue's inherited price untouched", async () => {
+    const id = await newStore("Colours", "EUR");
+    const made = await merchant.req(`/api/projects/${id}/products`, { body: { title: "Tee", priceMinor: 1000, option1Name: "Colour",
+      variants: [{ option1: "Red", sku: `RED-${run}`, priceMinor: 1100, stock: 5 }, { option1: "Blue", sku: `BLUE-${run}`, stock: 5 }] } });
+    expect(made.status).toBe(200);
+    const v = Object.fromEntries(made.json.product.variants.map((x: any) => [x.option1, x.id]));
+    expect((await publish(id)).status).toBe(200);
+    const imp = await merchant.req(`/api/projects/${id}/products/import`, { body: { rows: [{ title: "Tee", price: "22", sku: `RED-${run}` }] } });
+    expect(imp.json).toMatchObject({ updated: 1, failed: 0 });
+    const quote = await shopper.req(`/api/public/store/${id}/quote`, { body: { items: [{ variantId: v.Red, quantity: 1 }, { variantId: v.Blue, quantity: 1 }] } });
+    const unit = Object.fromEntries(quote.json.lines.map((l: any) => [l.variantId, l.unitMinor]));
+    expect(unit[v.Red]).toBe(2200);
+    expect(unit[v.Blue]).toBe(1000);
+    const cmp = await merchant.req(`/api/projects/${id}/products/import`, { body: { rows: [{ title: "Tee", price: "22", compareAt: "30", sku: `RED-${run}` }] } });
+    expect(cmp.json.failed).toBe(1);
+    expect(cmp.json.errors[0].error).toMatch(/whole product/);
+  });
+});
+
+describe("audit 6a1cc2c: SKUs identify exactly one variant", () => {
+  it("refuses duplicate variant SKUs and import rows that match more than one target", async () => {
+    const id = await newStore("Dupes", "USD");
+    const dup = await merchant.req(`/api/projects/${id}/products`, { body: { title: "Cap", priceMinor: 900, option1Name: "Colour",
+      variants: [{ option1: "Black", sku: `CAP-${run}`, stock: 2 }, { option1: "White", sku: `CAP-${run}`, stock: 4 }] } });
+    expect(dup.status).toBe(409);
+    expect(dup.json.code).toBe("duplicate_sku");
+    const one = await merchant.req(`/api/projects/${id}/products`, { body: { title: "Cap", priceMinor: 900, option1Name: "Colour",
+      variants: [{ option1: "Black", sku: `CAPB-${run}`, stock: 2 }, { option1: "White", sku: `CAPW-${run}`, stock: 4 }] } });
+    expect(one.status).toBe(200);
+    const other = await merchant.req(`/api/projects/${id}/products`, { body: { title: "Visor", priceMinor: 700, variants: [{ sku: `CAPB-${run}`, stock: 1 }] } });
+    expect(other.status).toBe(409);
+    // A product SKU equal to another product's variant SKU is ambiguous for imports: reject the row, change nothing.
+    expect((await merchant.req(`/api/projects/${id}/products`, { body: { title: "Bag", priceMinor: 2000, sku: `CAPW-${run}`, variants: [{ stock: 1 }] } })).status).toBe(200);
+    const imp = await merchant.req(`/api/projects/${id}/products/import`, { body: { rows: [{ title: "Cap", price: "9", sku: `CAPW-${run}`, stock: "9" }] } });
+    expect(imp.json.failed).toBe(1);
+    expect(imp.json.errors[0].error).toMatch(/different product/);
+    const cap = (await merchant.req(`/api/projects/${id}/products`)).json.products.find((p: any) => p.title === "Cap");
+    expect(Object.fromEntries(cap.variants.map((x: any) => [x.option1, x.stock]))).toEqual({ Black: 2, White: 4 });
+  });
+});

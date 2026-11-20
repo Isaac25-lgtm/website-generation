@@ -89,7 +89,7 @@ Every published site also has **hosting & maintenance at $4 per site per month**
 <table>
 <tr>
 <td width="33%"><img src="docs/screenshots/demo-store.jpg" alt="Fashion store demo" /><br /><sub><b>Store demo</b>: Maison template</sub></td>
-<td width="33%"><img src="docs/screenshots/demo-business.jpg" alt="Safari business demo" /><br /><sub><b>Business demo</b>: Savanna template</sub></td>
+<td width="33%"><img src="docs/screenshots/demo-business.jpg" alt="Consultancy business demo" /><br /><sub><b>Business demo</b>: Meridian template</sub></td>
 <td width="33%"><img src="docs/screenshots/demo-portfolio.jpg" alt="Photographer portfolio demo" /><br /><sub><b>Portfolio demo</b>: Lens template</sub></td>
 </tr>
 </table>

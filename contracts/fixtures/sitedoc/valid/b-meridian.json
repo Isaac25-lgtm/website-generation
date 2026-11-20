@@ -49,7 +49,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-15855d",
+          "id": "hero-158k44",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -65,11 +65,16 @@
             "secondaryCta": {
               "label": "Our services",
               "href": "/services"
+            },
+            "image": {
+              "stock": "biz-hero",
+              "alt": "An advisor meeting a client by a window overlooking the city",
+              "caption": ""
             }
           }
         },
         {
-          "id": "services-169zvh",
+          "id": "services-1615dv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -81,23 +86,38 @@
               {
                 "title": "Financial planning",
                 "description": "Budgets, forecasts and cash-flow models you can actually use.",
-                "price": ""
+                "price": "From £1,500",
+                "image": {
+                  "stock": "biz-analytics",
+                  "alt": "A laptop showing financial charts",
+                  "caption": ""
+                }
               },
               {
                 "title": "Tax advisory",
                 "description": "Planning and compliance support for growing companies.",
-                "price": ""
+                "price": "From £900",
+                "image": {
+                  "stock": "biz-papers",
+                  "alt": "Working through tax papers at a desk",
+                  "caption": ""
+                }
               },
               {
                 "title": "Business strategy",
                 "description": "Market entry, pricing and growth planning workshops.",
-                "price": ""
+                "price": "From £2,400",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A strategy workshop with a client team",
+                  "caption": ""
+                }
               }
             ]
           }
         },
         {
-          "id": "about-17c25w",
+          "id": "about-17imch",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -105,6 +125,11 @@
           "data": {
             "heading": "About Kingsway Advisory",
             "body": "We work alongside owners and finance teams to build sound systems, plan for growth and stay compliant. Every engagement is led by a senior advisor.",
+            "image": {
+              "stock": "biz-team",
+              "alt": "The advisory team in a planning meeting",
+              "caption": ""
+            },
             "highlights": [
               "Senior advisors on every project",
               "Fixed-fee engagements",
@@ -113,7 +138,7 @@
           }
         },
         {
-          "id": "cta-18eim5",
+          "id": "cta-18cxm9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -136,7 +161,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-19jmle",
+          "id": "about-194u9i",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -144,10 +169,39 @@
           "data": {
             "heading": "Our story",
             "body": "We work alongside owners and finance teams to build sound systems, plan for growth and stay compliant. Every engagement is led by a senior advisor.",
+            "image": {
+              "stock": "biz-review",
+              "alt": "Advisors reviewing a client's figures together",
+              "caption": ""
+            },
             "highlights": [
               "Senior advisors on every project",
               "Fixed-fee engagements",
               "Practical, plain-language reports"
+            ]
+          }
+        },
+        {
+          "id": "faq-1a6mhm",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "How do engagements start?",
+                "a": "With a free 30-minute call to understand your goals, then a fixed-fee proposal."
+              },
+              {
+                "q": "Do you work with businesses outside London?",
+                "a": "Yes. We work with clients across the UK and Europe, in person or online."
+              },
+              {
+                "q": "How are fees agreed?",
+                "a": "Every engagement has a fixed fee agreed in writing before work begins."
+              }
             ]
           }
         }
@@ -160,7 +214,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-1a9kkg",
+          "id": "services-1bh02l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -172,17 +226,32 @@
               {
                 "title": "Financial planning",
                 "description": "Budgets, forecasts and cash-flow models you can actually use.",
-                "price": ""
+                "price": "From £1,500",
+                "image": {
+                  "stock": "biz-analytics",
+                  "alt": "A laptop showing financial charts",
+                  "caption": ""
+                }
               },
               {
                 "title": "Tax advisory",
                 "description": "Planning and compliance support for growing companies.",
-                "price": ""
+                "price": "From £900",
+                "image": {
+                  "stock": "biz-papers",
+                  "alt": "Working through tax papers at a desk",
+                  "caption": ""
+                }
               },
               {
                 "title": "Business strategy",
                 "description": "Market entry, pricing and growth planning workshops.",
-                "price": ""
+                "price": "From £2,400",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A strategy workshop with a client team",
+                  "caption": ""
+                }
               }
             ]
           }
@@ -206,13 +275,54 @@
       ]
     },
     {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-1d2hl4",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "biz-team",
+                "alt": "The advisory team in a planning meeting",
+                "caption": ""
+              },
+              {
+                "stock": "biz-review",
+                "alt": "Advisors reviewing a client's figures together",
+                "caption": ""
+              },
+              {
+                "stock": "biz-office",
+                "alt": "Glass-walled meeting rooms in the office",
+                "caption": ""
+              },
+              {
+                "stock": "biz-handshake",
+                "alt": "A handshake across a meeting table",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1cdf1v",
+          "id": "contact-1e8n46",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -225,7 +335,7 @@
           }
         },
         {
-          "id": "hours-1d50g",
+          "id": "hours-1fc41u",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

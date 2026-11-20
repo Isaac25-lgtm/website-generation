@@ -1,3 +1,4 @@
+import { parseMoney, parsePrice } from "../shared/util";
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 
 // ── API client ──
@@ -81,7 +82,9 @@ export function money(minor: number, currency: string) {
   catch { return `${currency} ${zero ? minor : (minor / 100).toFixed(2)}`; }
 }
 export const isZeroDecimal = (c: string) => ["UGX", "JPY", "KRW", "RWF", "XOF", "XAF", "VND", "BIF", "CLP", "GNF", "PYG"].includes(c);
-export const toMinor = (major: string | number, c: string) => { const n = Number(String(major).replace(/[, ]/g, "")); return Number.isFinite(n) ? Math.round(isZeroDecimal(c) ? n : n * 100) : 0; };
+/** Merchant-entered price → minor units, or null when it isn't a valid, unambiguous price (see parsePrice). */
+export const toMinor = (major: string | number, c: string): number | null => parseMoney(major, c);
+export const priceError = (major: string, c: string): string | null => { const r = parsePrice(major, c); return r.ok ? null : r.error; };
 export const toMajor = (minor: number, c: string) => (isZeroDecimal(c) ? String(minor) : (minor / 100).toFixed(2));
 
 export function useAsync<T>(fn: () => Promise<T>, deps: unknown[]) {

@@ -126,5 +126,9 @@ AI_CONFIGURED = bool(CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_AI_API_TOKEN)
 # refused unless explicitly allowed (local development only). Customer traffic needs an authoritative source first.
 READ_PATH_AUTHORITY = "snapshot"
 ALLOW_SNAPSHOT_READS = env("ALLOW_SNAPSHOT_READS", "1" if DEBUG else "0") == "1"
+if ALLOW_SNAPSHOT_READS and not DEBUG:
+    # Local-only is an invariant, not a default: a deployed (non-debug) service must never serve private data
+    # from a stale snapshot, so refuse to start rather than rely on configuration being right.
+    raise ImproperlyConfigured("ALLOW_SNAPSHOT_READS=1 is only allowed with DJANGO_DEBUG=1 (local development).")
 # Media bytes are still stored and served by the Worker during the migration.
 MEDIA_STORAGE = env("MEDIA_STORAGE", "d1")

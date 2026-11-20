@@ -67,7 +67,7 @@ Work from [docs/claude-handoff.md](docs/claude-handoff.md), steps 1 and 2:
   - a verified D1 → PostgreSQL importer
   - shared `contracts/`
   - the local UI routes the project read to Python when `PY_API` is set
-- **Home and Examples:** a new "Our work" group shows three live sites by the Motion Imprints team, kept separate from the builder demos.
+- **Home and Examples:** an "Our work" group of three live team sites was added, then removed at the owner's request (20 Nov) so the examples stay focused on the international template demos.
 
 Test runs for this change: unit 64/64, integration 48/48 (including 9 merchant regressions and 3 Worker ↔ Python parity tests), Playwright 11/11 plus the Python-routing browser test, and backend pytest 49/49. axe found no violations in the new section.
 
@@ -81,6 +81,22 @@ Test runs for this change: unit 64/64, integration 48/48 (including 9 merchant r
 **International positioning:** demo personas are set in London, Lisbon, Berlin, Toronto, New York, Austin, Copenhagen, Singapore, Melbourne, Paris, San Francisco, Sydney, Vancouver and Los Angeles, priced in USD, EUR or GBP. Phone examples use fictional international numbers, and the currency list leads with major international currencies. Payment wording is neutral ("pay on delivery", bank transfer), and the privacy page cites GDPR, CCPA, LGPD and PIPEDA. `SEED_VERSION` is `demo-v4`.
 
 Test runs after the follow-up: unit 64/64, integration 52/52 (13 merchant and review regressions, 3 parity), Playwright 11/11 plus the Python-routing test, and backend pytest 52/52.
+
+**Release audit of 6a1cc2c ([docs/release-audit-6a1cc2c.md](docs/release-audit-6a1cc2c.md)), fixed with tests:**
+
+- **Replayed saves:** variants and products created inside an edit get ids derived from the edit id. Replaying the save keeps the same variant, its post-sale stock and its order references, and a cancellation restocks that variant.
+- **Prices:** one strict parser (`parsePrice`) serves the CSV import, the product editor and delivery fees. `19,95` is €19.95. `1,234` and `1.234` are rejected as ambiguous for currencies with cents.
+- **Variant SKU rows** price only that variant. Compare-at prices on a variant row are rejected.
+- **SKUs** identify exactly one variant: duplicates are refused on save, enforced by migration `0005`, and ambiguous import rows change nothing.
+- **Smoke test:** reads retry on any network error. Separate provider checks fail when AI or Browser Run fell back. Cleanup runs after errors and writes exact-ID SQL per run to `scripts/smoke-runs/` (gitignored).
+- **Python:** `ALLOW_SNAPSHOT_READS=1` without `DJANGO_DEBUG=1` now stops the server at startup.
+
+**Homepage:**
+- The cards scroll through the full demo pages; the store card rests on its products.
+- The business demo is now Kingsway Advisory (Meridian template, CC0 business photos).
+- "Our work" was removed.
+
+Test runs: unit 68/68, integration 57/57 (18 merchant and audit regressions, 3 parity), Playwright 11/11, backend pytest 53/53.
 
 Still open from the audit: findings #4–#10 and the additional defects (see [docs/production-audit.md](docs/production-audit.md)).
 

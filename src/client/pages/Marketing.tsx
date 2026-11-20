@@ -3,7 +3,6 @@ import { Link, useNavigate, useSearchParams } from "react-router";
 import { api, hostingPrice, useApp, usd } from "../lib";
 import { Field, Icon, Modal, SiteThumb, Spinner } from "../components/ui";
 import { PLANS } from "../../shared/pricing";
-import { OurWork } from "./OurWork";
 import { startIntent } from "./Home";
 
 export function Pricing() {
@@ -121,14 +120,13 @@ export function Examples() {
               <div>
                 <span className="badge blue">{d.type === "ecommerce" ? "E-commerce · $100" : d.type === "business" ? "Business · $30" : "Personal · $20"}</span>
                 <h2 style={{ marginTop: ".75rem" }}>{d.name.replace("Demo: ", "")}</h2>
-                <p className="muted">{d.type === "ecommerce" ? "Browse categories, search, choose sizes and colours, add to cart and place a test order. Stock, totals and order confirmation are real." : d.type === "business" ? "Multi-page business site with services, gallery, FAQ, quote requests and WhatsApp contact." : "Developer portfolio with projects, experience, skills and a contact form."}</p>
+                <p className="muted">{d.type === "ecommerce" ? "Browse categories, search, choose sizes and colours, add to cart and place a test order. Stock, totals and order confirmation are real." : d.type === "business" ? "Multi-page business site with services and prices, a gallery, FAQ, quote requests, opening hours and click-to-call." : "Developer portfolio with projects, experience, skills and a contact form."}</p>
                 <p className="small muted">Template: {d.template}</p>
                 <a className="btn btn-primary" href={d.url}>Open live site →</a>
               </div>
             </article>
           ))}
         </div>
-        <div style={{ marginTop: "4.5rem" }}><OurWork /></div>
       </div>
     </main>
   );

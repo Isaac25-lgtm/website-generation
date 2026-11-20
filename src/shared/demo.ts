@@ -118,7 +118,17 @@ export const PERSONAS: Record<string, Persona> = {
     description: "Financial, tax and strategy advisory for small and medium-sized businesses across the UK and Europe.",
     about: "We work alongside owners and finance teams to build sound systems, plan for growth and stay compliant. Every engagement is led by a senior advisor.",
     benefits: "Senior advisors on every project\nFixed-fee engagements\nPractical, plain-language reports",
-    services: [{ title: "Financial planning", description: "Budgets, forecasts and cash-flow models you can actually use." }, { title: "Tax advisory", description: "Planning and compliance support for growing companies." }, { title: "Business strategy", description: "Market entry, pricing and growth planning workshops." }],
+    heroImage: st("biz-hero", "An advisor meeting a client by a window overlooking the city"),
+    gallery: [
+      st("biz-team", "The advisory team in a planning meeting"), st("biz-review", "Advisors reviewing a client's figures together"),
+      st("biz-office", "Glass-walled meeting rooms in the office"), st("biz-handshake", "A handshake across a meeting table"),
+    ],
+    services: [
+      { title: "Financial planning", description: "Budgets, forecasts and cash-flow models you can actually use.", price: "From £1,500", image: st("biz-analytics", "A laptop showing financial charts") },
+      { title: "Tax advisory", description: "Planning and compliance support for growing companies.", price: "From £900", image: st("biz-papers", "Working through tax papers at a desk") },
+      { title: "Business strategy", description: "Market entry, pricing and growth planning workshops.", price: "From £2,400", image: st("biz-workshop", "A strategy workshop with a client team") },
+    ],
+    faqs: [{ q: "How do engagements start?", a: "With a free 30-minute call to understand your goals, then a fixed-fee proposal." }, { q: "Do you work with businesses outside London?", a: "Yes. We work with clients across the UK and Europe, in person or online." }, { q: "How are fees agreed?", a: "Every engagement has a fixed fee agreed in writing before work begins." }],
     phone: "+44 20 7946 0123", email: "info@example.com", address: "1 Sample Street, Canary Wharf", mapQuery: "Canary Wharf, London", primaryGoal: "form", quoteForm: true,
     hours: [{ days: "Monday – Friday", hours: "8:30 – 17:30" }],
   } },
@@ -260,6 +270,6 @@ export function demoProductViews(persona: Persona, currency: string): { products
 /** The three publicly linked demo sites (one per paid product). */
 export const PUBLIC_DEMOS = [
   { slug: "demo-portfolio", templateId: "p-lens", type: "personal" as const, name: "Demo: Amina Yusuf photography" },
-  { slug: "demo-business", templateId: "b-savanna", type: "business" as const, name: "Demo: Kijani Trails" },
+  { slug: "demo-business", templateId: "b-meridian", type: "business" as const, name: "Demo: Kingsway Advisory" },
   { slug: "demo-store", templateId: "e-maison", type: "ecommerce" as const, name: "Demo: Maison Nia store" },
 ];

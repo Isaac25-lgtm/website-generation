@@ -6,7 +6,7 @@ import { generateSiteDoc } from "../shared/generate";
 import { TEMPLATES } from "../shared/templates";
 import { slugify } from "../shared/util";
 
-const SEED_VERSION = "demo-v4";
+const SEED_VERSION = "demo-v5";
 let seededInIsolate = false;
 
 /** Idempotently creates the three public demo sites (clearly labelled as demonstrations). */

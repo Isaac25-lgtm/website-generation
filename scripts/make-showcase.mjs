@@ -14,6 +14,10 @@ const SHOTS = [
   { name: "store-shop", path: "/s/demo-store/shop", vp: { width: 1440, height: 1000 }, outW: 1100 },
   { name: "store-product-m", path: "/s/demo-store/product/floral-wrap-dress", vp: { width: 390, height: 844 }, outW: 390 },
   { name: "business-services-m", path: "/s/demo-business/services", vp: { width: 390, height: 844 }, outW: 390 },
+  // Full pages for the scrolling browser frames on the home page's "what you can build" cards.
+  { name: "store-full", path: "/s/demo-store/", vp: { width: 1440, height: 1000 }, outW: 720, full: true },
+  { name: "business-full", path: "/s/demo-business/", vp: { width: 1440, height: 1000 }, outW: 720, full: true },
+  { name: "portfolio-full", path: "/s/demo-portfolio/", vp: { width: 1440, height: 1000 }, outW: 720, full: true },
 ];
 
 const browser = await chromium.launch({ channel: "chrome" });
@@ -21,8 +25,13 @@ for (const s of SHOTS) {
   const page = await browser.newPage({ viewport: s.vp, deviceScaleFactor: s.vp.width < 500 ? 2 : 1 });
   await page.goto(BASE + s.path, { waitUntil: "networkidle" });
   await page.addStyleTag({ content: ".notice,.ribbon,.wa-float{display:none!important}.rv{opacity:1!important;transform:none!important}" });
+  if (s.full) {
+    // Scroll through once so lazy images load, then capture the whole page from the top.
+    await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 150)); } window.scrollTo(0, 0); });
+    await page.waitForLoadState("networkidle").catch(() => {});
+  }
   await page.waitForTimeout(1200);
-  const png = await page.screenshot({ type: "png" });
+  const png = await page.screenshot({ type: "png", fullPage: !!s.full });
   const webp = await page.evaluate(async ({ b64, outW }) => {
     const img = new Image(); img.src = "data:image/png;base64," + b64; await img.decode();
     const c = document.createElement("canvas"); c.width = outW; c.height = Math.round((img.height * outW) / img.width);

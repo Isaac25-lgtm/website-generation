@@ -137,7 +137,7 @@ export const PERSONAS: Record<string, Persona> = {
     description: "Plumbing, electrical and general home repairs across Austin. Call or message us for a visit.",
     about: "A small team of qualified technicians handling leaks, installations and repairs for homes and offices.",
     services: [{ title: "Leak repairs", description: "Taps, pipes, tanks and toilets fixed properly.", price: "From $90" }, { title: "Installations", description: "Water heaters, sinks, showers and pumps." }, { title: "Electrical fixes", description: "Sockets, lighting and safe wiring checks." }],
-    phone: "+1 512 555 0142", whatsapp: "+15125550142", primaryGoal: "whatsapp", serviceAreas: "Austin and Round Rock", address: "Sample Avenue, East Austin", mapQuery: "East Austin, Texas",
+    phone: "+1 512 555 0142", whatsapp: "+15125550142", whatsappFloat: true, primaryGoal: "whatsapp", serviceAreas: "Austin and Round Rock", address: "Sample Avenue, East Austin", mapQuery: "East Austin, Texas",
     hours: [{ days: "Mon – Sat", hours: "7:00 – 19:00" }],
   } },
   "b-savanna": { answers: {
@@ -155,7 +155,7 @@ export const PERSONAS: Record<string, Persona> = {
       { title: "Mountain treks", description: "Guided multi-day hikes with porters, cooks and camp crews.", price: "From $980", image: st("safari-trek", "A hiker on a mountain ridge") },
       { title: "Fly-camp nights", description: "Sleep out in the bush under a sky full of stars, with a private camp team.", price: "From $420", image: st("safari-camp", "A lit tent under the night sky") },
     ],
-    email: "trips@example.com", whatsapp: "+447700900123", primaryGoal: "quote", quoteForm: true,
+    email: "trips@example.com", whatsapp: "+447700900123", whatsappFloat: true, primaryGoal: "quote", quoteForm: true,
     faqs: [{ q: "How big are your groups?", a: "Between 2 and 8 travellers." }, { q: "Can you arrange airport transfers?", a: "Yes, on request when you book." }, { q: "When is the best time to travel?", a: "June to October for the dry season, but every month has something special. Ask us." }],
   } },
   "b-atelier": { answers: {

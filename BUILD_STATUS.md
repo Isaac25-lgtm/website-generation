@@ -123,6 +123,11 @@ Test runs: unit 109/109, integration 54/54 (+3 parity, run with the Python serve
 
 Test runs: unit 109/109, integration 61/61 (23 merchant regressions, new draft-race and revocation tests; parity skipped, backend unchanged), Playwright 11/11 twice (the builder flow now also checks the address gate, autosave state and dialog focus).
 
+- **Floating WhatsApp button (option):** a "Add a floating WhatsApp button" tick box in every wizard (personal, business, store) and in the editor's Site settings. It shows a labelled green "WhatsApp" button in the corner of every page when ticked and a valid number is set; new sites are opt-in, and sites made before the option keep their original behaviour.
+- **Logo (option):** logo upload on all three wizards (personal sites now included) and in Site settings, with clearer guidance; "Show only the logo in the header" for logos that already contain the name (the name stays for screen readers); the logo is also the browser-tab icon.
+
+Test runs (final confirmation, 21 Nov): unit 117/117 (8 new WhatsApp and logo tests), integration 61/61, Playwright 11/11.
+
 Still open before a paid launch: billing webhook handling (audit #5) and inspiration privacy / URL policy (#8, #9). Paid launch stays on hold until #5 is fixed.
 
 ## Next release priorities

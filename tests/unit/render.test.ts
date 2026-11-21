@@ -77,3 +77,51 @@ describe("page headings", () => {
     expect(html).toContain('alt="A traveller watching elephants from a safari vehicle"');
   });
 });
+
+describe("floating WhatsApp button", () => {
+  const live = (doc: any, tplId: string) => renderSite(doc, TEMPLATE_MAP[tplId], { ...ctxFor("p1", tplId.startsWith("e-") ? demoProductViews(PERSONAS[tplId], doc.store!.currency) : undefined), mode: "published" as const }, "").html;
+  const biz = (extra: Record<string, unknown>) => generateSiteDoc("business", "b-meridian", { ...PERSONAS["b-meridian"].answers, whatsapp: "+15125550142", ...extra });
+  it("is off unless the owner ticks it, and on (with a label) when ticked", () => {
+    expect(live(biz({}), "b-meridian")).not.toContain('class="wa-float');
+    const html = live(biz({ whatsappFloat: true }), "b-meridian");
+    expect(html).toContain('class="wa-float"');
+    expect(html).toContain('href="https://wa.me/15125550142"');
+    expect(html).toMatch(/class="wa-float"[^>]*aria-label="Chat on WhatsApp">[\s\S]*?<span>WhatsApp<\/span><\/a>/);
+  });
+  it("needs a valid number", () => {
+    expect(live(biz({ whatsappFloat: true, whatsapp: "123" }), "b-meridian")).not.toContain('class="wa-float');
+  });
+  it("can be added to an online store too", () => {
+    const tpl = TEMPLATES.find((t) => t.type === "ecommerce")!;
+    const doc = generateSiteDoc("ecommerce", tpl.id, { ...PERSONAS[tpl.id].answers, whatsapp: "+447700900123", whatsappFloat: true });
+    expect(live(doc, tpl.id)).toContain('class="wa-float"');
+  });
+  it("keeps the original behaviour for sites made before the option existed", () => {
+    const doc = biz({}); delete (doc.contact as any).whatsappFloat;
+    expect(parseSiteDoc(doc).ok).toBe(true);
+    expect(live(doc, "b-meridian")).toContain('class="wa-float"');
+  });
+});
+
+describe("logo", () => {
+  const logo = { assetId: "ast_logo1", alt: "" };
+  const page = (extra: Record<string, unknown>) => renderSite(generateSiteDoc("business", "b-meridian", { ...PERSONAS["b-meridian"].answers, logo, ...extra }), TEMPLATE_MAP["b-meridian"], ctxFor("p1"), "").html;
+  it("shows the logo next to the name and as the browser-tab icon", () => {
+    const html = page({});
+    expect(html).toContain('<link rel="icon" href="/media/ast_logo1">');
+    expect(html).toMatch(/<a class="brand" [^>]*>[\s\S]*?\/media\/ast_logo1[\s\S]*?<span>[^<]+<\/span><\/a>/);
+  });
+  it("can show the logo alone, keeping the name for screen readers", () => {
+    const html = page({ logoOnly: true });
+    expect(html).toMatch(/<a class="brand logo-only" [^>]*>[\s\S]*?<span class="sr-only">[^<]+<\/span><\/a>/);
+  });
+  it("ignores 'logo only' when there is no logo", () => {
+    const html = renderSite(generateSiteDoc("business", "b-meridian", { ...PERSONAS["b-meridian"].answers, logo: undefined, logoOnly: true }), TEMPLATE_MAP["b-meridian"], ctxFor("p1"), "").html;
+    expect(html).not.toContain(`class="brand logo-only"`);
+    expect(html).not.toContain('rel="icon"');
+  });
+  it("personal sites can have a logo too", () => {
+    const doc = generateSiteDoc("personal", "p-folio", { ...PERSONAS["p-folio"].answers, logo });
+    expect(doc.brand.logo?.assetId).toBe("ast_logo1");
+  });
+});

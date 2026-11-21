@@ -143,6 +143,15 @@ export function digitsOnly(phone: string | undefined): string {
   return (phone || "").replace(/[^0-9]/g, "");
 }
 
+/**
+ * Whether the floating WhatsApp button shows. An explicit choice wins; older sites without one keep their original
+ * behaviour (on for personal and business sites that have a number, off for stores).
+ */
+export function whatsappFloatOn(type: string, contact: { whatsapp?: string; whatsappFloat?: boolean }): boolean {
+  if (!whatsappLink(contact.whatsapp)) return false;
+  return contact.whatsappFloat ?? type !== "ecommerce";
+}
+
 export function whatsappLink(number: string | undefined, text?: string): string | null {
   const d = digitsOnly(number);
   if (d.length < 8) return null;

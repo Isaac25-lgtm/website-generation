@@ -45,7 +45,7 @@ p{margin:0 0 1em;text-wrap:pretty}
 .site-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px)}
 .site-header .bar{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;min-height:72px}
 .brand{display:inline-flex;align-items:center;gap:.6rem;font:700 1.15rem/1 var(--font-h);text-decoration:none;letter-spacing:-.01em}
-.brand img{height:38px;width:auto;border-radius:var(--radius-sm)}
+.brand img{height:38px;width:auto;max-width:200px;object-fit:contain;border-radius:var(--radius-sm)}.brand.logo-only img{height:46px;max-width:240px;border-radius:0}
 .nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0;align-items:center}
 .nav a{text-decoration:none;font-weight:500;font-size:.96rem;opacity:.86;padding:.4rem 0;display:inline-block}
 .nav a:hover,.nav a[aria-current=page]{opacity:1;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
@@ -326,7 +326,7 @@ legend{font-weight:700;padding:0 .4rem}
 .socials{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
 .socials a{font-size:.9rem;padding:.35rem .8rem;border:1px solid var(--border);border-radius:99px;text-decoration:none}
 @media(max-width:760px){.site-footer .cols{grid-template-columns:1fr}}
-.wa-float{position:fixed;right:16px;bottom:16px;z-index:60;width:56px;height:56px;border-radius:50%;background:#1f9d55;color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:60;display:inline-flex;align-items:center;gap:.55rem;padding:.7rem 1.15rem .7rem .85rem;border-radius:999px;background:#0b6b4a;color:#fff;font:600 1rem/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;border:1px solid rgba(255,255,255,.18);box-shadow:0 12px 30px -8px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s}.wa-float:hover{transform:translateY(-2px);box-shadow:0 16px 34px -8px rgba(0,0,0,.45);color:#fff}.wa-float:focus-visible{outline:3px solid #fff;outline-offset:2px}.wa-float.raise{bottom:64px}
 .wa-float svg{width:28px;height:28px}
 /* ornaments */
 body.orn-grain{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}

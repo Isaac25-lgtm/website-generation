@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { whatsappFloatOn } from "../../shared/util";
 import { Link, useParams } from "react-router";
 import { api, fmtDate, useApp } from "../lib";
 import { Fields } from "../components/forms";
@@ -207,7 +208,7 @@ export default function Editor() {
           </div>
           <div className="panel">
             {sel.kind === "theme" && <><h3>Theme</h3><Fields specs={THEME_SPECS} value={doc} onChange={(v) => change(v.theme.mode !== doc.theme.mode ? switchMode({ ...v, theme: { ...v.theme, mode: doc.theme.mode } }, v.theme.mode) : v)} projectId={id!} /></>}
-            {sel.kind === "site" && <><h3>Site settings</h3><Fields specs={SITE_SPECS} value={doc} onChange={(v) => change(v)} projectId={id!} /></>}
+            {sel.kind === "site" && <><h3>Site settings</h3><Fields specs={SITE_SPECS} value={{ ...doc, contact: { ...doc.contact, whatsappFloat: whatsappFloatOn(doc.type, doc.contact) } }} onChange={(v) => change(v)} projectId={id!} /></>}
             {sel.kind === "store" && doc.store && (
               <div className="stack">
                 <h3>Payments</h3>

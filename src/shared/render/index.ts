@@ -3,7 +3,7 @@ import type { TemplateDef } from "../templates";
 import type { RenderCtx, RenderResult } from "./types";
 import { BASE_CSS, themeVars } from "./css";
 import { googleFontsHref } from "../fonts";
-import { esc, whatsappLink } from "../util";
+import { esc, whatsappFloatOn, whatsappLink } from "../util";
 import { img, linkAttrs, pageUrl, renderSection, socials, type SCtx } from "./sections";
 import { cartPage, checkoutPage, orderPage, policyPage, productPage } from "./store";
 import { SITE_RUNTIME } from "./runtime";
@@ -44,7 +44,7 @@ function header(s: SCtx, current: string): string {
   const style = doc.theme.headerStyle;
   const links = navPages.map((p) => `<li><a href="${esc(pageUrl(ctx, p.slug))}"${p.slug === current ? ' aria-current="page"' : ""}>${esc(p.title)}</a></li>`).join("");
   const logo = doc.brand.logo?.assetId ? img(s, doc.brand.logo, { w: 160, h: 80, eager: true, alt: "" }) : "";
-  const brand = `<a class="brand" href="${esc(pageUrl(ctx, ""))}">${logo}<span>${esc(doc.brand.name)}</span></a>`;
+  const brand = `<a class="brand${logo && doc.brand.logoOnly ? " logo-only" : ""}" href="${esc(pageUrl(ctx, ""))}">${logo}<span${logo && doc.brand.logoOnly ? ' class="sr-only"' : ""}>${esc(doc.brand.name)}</span></a>`;
   let actions = "";
   if (doc.type === "ecommerce") {
     actions = `<a class="btn btn-primary cart-link" href="${esc(ctx.basePath)}/cart">Cart<span class="cart-count" data-cart-count hidden>0</span></a>`;
@@ -150,8 +150,8 @@ export function renderSite(doc: SiteDoc, tpl: TemplateDef, ctx: RenderCtx, path:
     ctx.mode === "preview" ? `<div class="notice" role="note">Private preview: not published. Forms and checkout are switched off.</div>` : "",
   ].join("");
   const ribbon = ctx.mode === "preview" ? `<div class="ribbon" aria-hidden="true">PREVIEW · NOT PUBLISHED</div>` : ctx.mode === "template" ? `<div class="ribbon" aria-hidden="true">TEMPLATE PREVIEW · SAMPLE CONTENT</div>` : "";
-  const wa = doc.type !== "ecommerce" ? whatsappLink(doc.contact.whatsapp) : null;
-  const waFloat = wa && ctx.mode !== "template" ? `<a class="wa-float" href="${esc(wa)}" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">${WA_ICON}</a>` : "";
+  const wa = whatsappFloatOn(doc.type, doc.contact) ? whatsappLink(doc.contact.whatsapp) : null;
+  const waFloat = wa && ctx.mode !== "template" ? `<a class="wa-float${ctx.mode === "preview" ? " raise" : ""}" href="${esc(wa)}" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">${WA_ICON}<span>WhatsApp</span></a>` : "";
   const nonceAttr = ctx.nonce ? ` nonce="${esc(ctx.nonce)}"` : "";
   const canonical = ctx.mode === "published" ? `<link rel="canonical" href="${esc(ctx.platformUrl.replace(/\/$/, ""))}${esc(pageUrl(ctx, route.page?.slug ?? ""))}">` : "";
   const description = doc.seo.description || doc.brand.tagline;
@@ -164,7 +164,7 @@ export function renderSite(doc: SiteDoc, tpl: TemplateDef, ctx: RenderCtx, path:
 <title>${esc(title)}</title>
 ${description ? `<meta name="description" content="${esc(description)}">` : ""}
 ${noindex ? '<meta name="robots" content="noindex, nofollow">' : ""}
-${canonical}
+${canonical}${doc.brand.logo?.assetId ? `<link rel="icon" href="${esc(ctx.assetUrl(doc.brand.logo.assetId))}">` : ""}
 <meta property="og:title" content="${esc(title)}">
 ${description ? `<meta property="og:description" content="${esc(description)}">` : ""}
 <meta property="og:type" content="website">

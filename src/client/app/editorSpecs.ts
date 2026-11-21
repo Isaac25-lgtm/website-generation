@@ -71,9 +71,9 @@ export const THEME_SPECS: FieldSpec[] = [
 ];
 
 export const SITE_SPECS: FieldSpec[] = [
-  { k: "brand.name", label: "Site / business name", t: "text", max: 80 }, { k: "brand.tagline", label: "Tagline", t: "text", max: 160 }, { k: "brand.logo", label: "Logo", t: "image" },
+  { k: "brand.name", label: "Site / business name", t: "text", max: 80 }, { k: "brand.tagline", label: "Tagline", t: "text", max: 160 }, { k: "brand.logo", label: "Logo", t: "image", help: "PNG, JPG or WebP; a transparent PNG looks best. Also used as the browser-tab icon." }, { k: "brand.logoOnly", label: "Show only the logo in the header", t: "toggle", help: "Use this if your logo already includes your name." },
   { k: "seo.title", label: "Search title", t: "text", max: 70 }, { k: "seo.description", label: "Search description", t: "textarea", rows: 2, max: 170 },
-  { k: "contact.email", label: "Email", t: "email", max: 200 }, { k: "contact.phone", label: "Phone", t: "tel", max: 40 }, { k: "contact.whatsapp", label: "WhatsApp", t: "tel", max: 40 },
+  { k: "contact.email", label: "Email", t: "email", max: 200 }, { k: "contact.phone", label: "Phone", t: "tel", max: 40 }, { k: "contact.whatsapp", label: "WhatsApp", t: "tel", max: 40 }, { k: "contact.whatsappFloat", label: "Floating WhatsApp button", t: "toggle", help: "Keeps a WhatsApp chat button in the corner of every page. Needs the number above." },
   { k: "contact.address", label: "Address", t: "text", max: 300 }, { k: "contact.city", label: "City", t: "text", max: 80 }, { k: "contact.country", label: "Country", t: "text", max: 80 },
   { k: "contact.mapQuery", label: "Map location", t: "text", max: 300 },
   { k: "contact.socials", label: "Social links", t: "list", item: "Link", max: 12, fields: [{ k: "network", label: "Name", t: "text", max: 30 }, { k: "url", label: "URL", t: "url", max: 400 }] },

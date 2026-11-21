@@ -19,7 +19,8 @@ const seo: FieldSpec[] = [
 const contactCore: FieldSpec[] = [
   { k: "email", label: "Public email", t: "email", max: 200 },
   { k: "phone", label: "Phone (with country code)", t: "tel", ph: "+1 202 555 0143", max: 40 },
-  { k: "whatsapp", label: "WhatsApp number (with country code)", t: "tel", ph: "+12025550143", max: 40, help: "Adds a WhatsApp chat button to your site." },
+  { k: "whatsapp", label: "WhatsApp number (with country code)", t: "tel", ph: "+12025550143", max: 40, help: "Shown with your contact details." },
+  { k: "whatsappFloat", label: "Add a floating WhatsApp button", t: "toggle", help: "A “WhatsApp” button stays in the corner of every page so visitors can message you directly. Needs the number above." },
 ];
 
 export const STEPS: Record<string, Step[]> = {
@@ -46,6 +47,8 @@ export const STEPS: Record<string, Step[]> = {
     ] },
     { id: "media", title: "Photos, CV & video", fields: [
       { k: "headshot", label: "Profile photo / headshot", t: "image" },
+      { k: "logo", label: "Personal logo (optional)", t: "image", help: "PNG, JPG or WebP. A transparent PNG looks best. It appears at the top of every page and as the icon in the browser tab." },
+      { k: "logoOnly", label: "Show only the logo in the header", t: "toggle", help: "Tick this if your logo already includes your name, so it isn’t shown twice." },
       { k: "heroImage", label: "Cover / banner image (optional)", t: "image" },
       { k: "gallery", label: "Gallery (optional)", t: "images", max: 40 },
       { k: "cvAssetId", label: "CV / résumé (PDF)", t: "doc" },
@@ -66,7 +69,8 @@ export const STEPS: Record<string, Step[]> = {
       { k: "tagline", label: "Tagline", t: "text", max: 160, ph: "e.g. Fast, honest home repairs" },
       { k: "industry", label: "Industry", t: "text", max: 60, ph: "e.g. Plumbing, Restaurant, Consulting" },
       { k: "description", label: "Short description (1–2 sentences)", t: "textarea", rows: 3, max: 400 },
-      { k: "logo", label: "Logo (optional)", t: "image" },
+      { k: "logo", label: "Logo (optional)", t: "image", help: "PNG, JPG or WebP. A transparent PNG looks best. It appears at the top of every page and as the icon in the browser tab." },
+      { k: "logoOnly", label: "Show only the logo in the header", t: "toggle", help: "Tick this if your logo already includes your name, so it isn’t shown twice." },
     ] },
     { id: "about", title: "About & benefits", fields: [
       { k: "about", label: "About your business / history", t: "textarea", rows: 6, max: 4000 },
@@ -107,7 +111,8 @@ export const STEPS: Record<string, Step[]> = {
       { k: "tagline", label: "Tagline", t: "text", max: 160 },
       { k: "industry", label: "What you sell (industry)", t: "text", max: 60, ph: "Fashion, Electronics, Groceries…" },
       { k: "description", label: "Short description", t: "textarea", rows: 3, max: 400 },
-      { k: "logo", label: "Logo", t: "image" },
+      { k: "logo", label: "Logo (optional)", t: "image", help: "PNG, JPG or WebP. A transparent PNG looks best. It appears at the top of every page and as the icon in the browser tab." },
+      { k: "logoOnly", label: "Show only the logo in the header", t: "toggle", help: "Tick this if your logo already includes your name, so it isn’t shown twice." },
       { k: "heroImage", label: "Main banner image", t: "image" },
       { k: "country", label: "Country you operate from", t: "text", max: 80 },
       { k: "currency", label: "Store currency", t: "select", options: [["USD", "US Dollar (USD)"], ["EUR", "Euro (EUR)"], ["GBP", "British Pound (GBP)"], ["CAD", "Canadian Dollar (CAD)"], ["AUD", "Australian Dollar (AUD)"], ["NZD", "New Zealand Dollar (NZD)"], ["CHF", "Swiss Franc (CHF)"], ["JPY", "Japanese Yen (JPY)"], ["SGD", "Singapore Dollar (SGD)"], ["HKD", "Hong Kong Dollar (HKD)"], ["AED", "UAE Dirham (AED)"], ["INR", "Indian Rupee (INR)"], ["BRL", "Brazilian Real (BRL)"], ["MXN", "Mexican Peso (MXN)"], ["SEK", "Swedish Krona (SEK)"], ["NOK", "Norwegian Krone (NOK)"], ["DKK", "Danish Krone (DKK)"], ["PLN", "Polish Złoty (PLN)"], ["ZAR", "South African Rand (ZAR)"], ["NGN", "Nigerian Naira (NGN)"], ["KES", "Kenyan Shilling (KES)"], ["GHS", "Ghanaian Cedi (GHS)"], ["UGX", "Ugandan Shilling (UGX)"], ["TZS", "Tanzanian Shilling (TZS)"], ["RWF", "Rwandan Franc (RWF)"]], help: "Set this before adding products. Prices are shown in this currency." },

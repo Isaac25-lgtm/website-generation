@@ -17,12 +17,12 @@ export interface StyleAnswers {
 }
 
 export interface CommonAnswers {
-  email?: string; phone?: string; whatsapp?: string; address?: string; city?: string; country?: string; mapQuery?: string;
+  email?: string; phone?: string; whatsapp?: string; whatsappFloat?: boolean; address?: string; city?: string; country?: string; mapQuery?: string;
   socials?: { network: string; url: string }[];
   seoTitle?: string; seoDescription?: string; lang?: string;
   style?: StyleAnswers;
   inspiration?: { sourceHost?: string; notes?: string; tokens?: StyleAnswers };
-  logo?: ImageRef; heroImage?: ImageRef;
+  logo?: ImageRef; logoOnly?: boolean; heroImage?: ImageRef;
   testimonials?: { quote: string; name: string; role?: string }[];
   faqs?: { q: string; a: string }[];
   gallery?: ImageRef[];
@@ -119,7 +119,7 @@ function sec<K extends Section["kind"]>(kind: K, data: Extract<Section, { kind: 
 
 function contactBlock(a: CommonAnswers) {
   return {
-    email: s(a.email, 200), phone: s(a.phone, 40), whatsapp: s(a.whatsapp, 40), address: s(a.address, 300),
+    email: s(a.email, 200), phone: s(a.phone, 40), whatsapp: s(a.whatsapp, 40), whatsappFloat: a.whatsappFloat === true, address: s(a.address, 300),
     city: s(a.city, 80), country: s(a.country, 80), mapQuery: s(a.mapQuery, 300),
     socials: (a.socials ?? []).filter((x) => s(x?.url)).slice(0, 12).map((x) => ({ network: s(x.network, 30), url: s(x.url, 400) })),
   };
@@ -302,7 +302,7 @@ export function generateSiteDoc(type: SiteType, templateId: string | undefined, 
     schemaVersion: 1,
     type,
     templateId: tpl.id,
-    brand: { name: brandName, tagline, logo: img(a.logo, brandName) },
+    brand: { name: brandName, tagline, logo: img(a.logo, brandName), ...(a.logoOnly && a.logo?.assetId ? { logoOnly: true } : {}) },
     seo: { title: s(a.seoTitle, 70) || (tagline ? `${brandName} — ${tagline}`.slice(0, 70) : brandName), description: seoDesc.slice(0, 170), lang: /^[a-z]{2}(-[A-Z]{2})?$/.test(s(a.lang)) ? s(a.lang) : "en" },
     theme,
     contact: contactBlock(a),

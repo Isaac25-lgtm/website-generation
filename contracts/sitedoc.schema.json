@@ -63,6 +63,9 @@
             "caption"
           ],
           "additionalProperties": false
+        },
+        "logoOnly": {
+          "type": "boolean"
         }
       },
       "required": [
@@ -322,6 +325,9 @@
           "default": "",
           "type": "string",
           "maxLength": 300
+        },
+        "whatsappFloat": {
+          "type": "boolean"
         },
         "socials": {
           "default": [],

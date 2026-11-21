@@ -173,12 +173,14 @@ export const SiteDoc = z.object({
   schemaVersion: z.literal(1).default(1),
   type: z.enum(SITE_TYPES),
   templateId: z.string().max(40),
-  brand: z.object({ name: t(80), tagline: t(160), logo: ImageRef.optional() }),
+  brand: z.object({ name: t(80), tagline: t(160), logo: ImageRef.optional(), /** Header shows the logo alone (it already contains the name). */ logoOnly: z.boolean().optional() }),
   seo: z.object({ title: t(70), description: t(170), lang: z.string().regex(/^[a-z]{2}(-[A-Z]{2})?$/).default("en") }),
   theme: Theme,
   contact: z.object({
     email: t(200), phone: t(40), whatsapp: t(40), address: t(300), city: t(80), country: t(80),
     mapQuery: t(300),
+    /** Floating "WhatsApp" chat button on every page. Absent on sites made before the option existed (see whatsappFloatOn). */
+    whatsappFloat: z.boolean().optional(),
     socials: z.array(z.object({ network: t(30), url: t(400) })).max(12).default([]),
   }),
   pages: z.array(Page).min(1).max(12),

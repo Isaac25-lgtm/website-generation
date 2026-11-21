@@ -36,10 +36,8 @@ const CheckCircle = <svg viewBox="0 0 24 24" width="26" height="26" fill="none" 
 
 // Real CC0 photographs (see public/hero/CREDITS.txt), each showing a step of building and running a website with us.
 const SLIDES = [
-  { src: "/hero/describe.webp", label: "1 · Describe your idea", pos: "60% 50%" },
-  { src: "/hero/design.webp", label: "2 · We design your site", pos: "62% 50%" },
-  { src: "/hero/devices.webp", label: "3 · Looks right on every device", pos: "60% 55%" },
-  { src: "/hero/edit.webp", label: "Edit it any time", pos: "62% 45%" },
+  { src: "/hero/design.webp", label: "1 · We design your site", pos: "62% 50%" },
+  { src: "/hero/devices.webp", label: "2 · Looks right on every device", pos: "60% 55%" },
   { src: "/hero/customers.webp", label: "Customers find you online", pos: "64% 40%" },
   { src: "/hero/orders.webp", label: "Take orders and deliver", pos: "58% 45%" },
 ];

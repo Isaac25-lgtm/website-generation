@@ -1,5 +1,7 @@
 # AGENTS.md: handoff for coding agents (Codex and others)
 
+**Codex: start with the [code-integrity review handoff](docs/codex-integrity-review.md) (21 November 2026, commit `1e5c9c6`).**
+
 **Current handoff (20 November 2026).** Read the [Claude engineering handoff](docs/claude-handoff.md) and [production audit](docs/production-audit.md) for the release decision, verified findings and proposed Python backend / React frontend split. The remaining sections record the original TypeScript build and its historical release procedure.
 
 **Since then (local, uncommitted until the owner reviews):**

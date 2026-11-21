@@ -12,9 +12,9 @@ const PLAN_INFO = [
 
 // The three kinds of site, each shown with a real CC0 photo and a link to its live demo.
 const KINDS = [
-  { t: "personal", name: "Personal & portfolio", img: "/stock/photo-camera.webp", alt: "A photographer holding a camera", desc: "Show your work, your story and your CV. Project galleries, a downloadable CV and a contact form, so the right people can find you and get in touch.", example: "/s/demo-portfolio/", shot: "/showcase/portfolio-full.webp", address: "/s/demo-portfolio/", exampleLabel: "See a photographer's portfolio" },
-  { t: "business", name: "Business", img: "/hero/business-exec-office.webp", alt: "An executive office with floor-to-ceiling windows over the city", desc: "Everything customers look for: your services and prices, photos, opening hours, a map and a WhatsApp button. Enquiries and quote requests land in your dashboard.", example: "/s/demo-business/", shot: "/showcase/business-full.webp", address: "/s/demo-business/", exampleLabel: "See a consultancy's site" },
-  { t: "ecommerce", name: "Online store", img: "/hero/store-bright-boutique.webp", alt: "A bright fashion boutique with clothing rails", desc: "A real shop with products in sizes and colours, live stock levels, a cart and a checkout. Orders arrive in your dashboard, ready to confirm and deliver.", example: "/s/demo-store/", shot: "/showcase/store-full.webp", address: "/s/demo-store/", exampleLabel: "See a fashion boutique's shop" },
+  { t: "personal", name: "Personal & portfolio", img: "/stock/photo-camera.webp", alt: "A photographer holding a camera", desc: "Show your work, your story and your CV. Project galleries, a downloadable CV and a contact form, so the right people can find you and get in touch.", shot: "/showcase/portfolio-full.webp", address: "/s/demo-portfolio/" },
+  { t: "business", name: "Business", img: "/hero/business-exec-office.webp", alt: "An executive office with floor-to-ceiling windows over the city", desc: "Everything customers look for: your services and prices, photos, opening hours, a map and a WhatsApp button. Enquiries and quote requests land in your dashboard.", shot: "/showcase/business-full.webp", address: "/s/demo-business/" },
+  { t: "ecommerce", name: "Online store", img: "/hero/store-bright-boutique.webp", alt: "A bright fashion boutique with clothing rails", desc: "A real shop with products in sizes and colours, live stock levels, a cart and a checkout. Orders arrive in your dashboard, ready to confirm and deliver.", shot: "/showcase/store-full.webp", address: "/s/demo-store/" },
 ] as const;
 
 // "Made with ImprintSites": screenshots of our demo sites, shown as a picture wall on the landing page only.
@@ -135,18 +135,18 @@ export default function Home() {
         <div className="container kind-grid">
           {KINDS.map((k) => (
             <article key={k.t} className="kind-card" data-kind={k.t}>
-              <a href={k.example} className="kind-media" aria-label={k.exampleLabel}>
+              <div className="kind-media">
                 <img className="kind-photo" src={k.img} alt={k.alt} width={960} height={640} loading="lazy" decoding="async" />
                 <span className="kind-chip">{k.name}</span>
                 <span className="kind-browser" aria-hidden="true">
                   <span className="kind-chrome"><i /><i /><i /><span className="kind-url">imprintsites…{k.address}</span></span>
                   <span className="kind-screen"><img src={k.shot} alt="" loading="lazy" decoding="async" /></span>
                 </span>
-              </a>
+              </div>
               <div className="kind-body">
                 <h3>{k.name}</h3>
                 <p className="muted">{k.desc}</p>
-                <div className="kind-actions"><a href={k.example} className="kind-link">{k.exampleLabel} <span aria-hidden="true">→</span></a><button className="btn btn-sm" onClick={() => startPlan(k.t)}>Start</button></div>
+                <div className="kind-actions"><span className="small muted">{usd(PLAN_INFO.find((x) => x.type === k.t)?.price ?? 0)} one-time build</span><button className="btn btn-sm" onClick={() => startPlan(k.t)} aria-label={`Start a ${k.name.toLowerCase()} website`}>Start</button></div>
               </div>
             </article>
           ))}

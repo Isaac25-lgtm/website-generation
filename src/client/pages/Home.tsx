@@ -17,17 +17,18 @@ const KINDS = [
   { t: "ecommerce", name: "Online store", img: "/hero/store-bright-boutique.webp", alt: "A bright fashion boutique with clothing rails", desc: "A real shop with products in sizes and colours, live stock levels, a cart and a checkout. Orders arrive in your dashboard, ready to confirm and deliver.", example: "/s/demo-store/", shot: "/showcase/store-full.webp", address: "/s/demo-store/", exampleLabel: "See a fashion boutique's shop" },
 ] as const;
 
-// "Made with ImprintSites": screenshots of real sites on the platform (our demos), Framer-style bento wall.
+// "Made with ImprintSites": screenshots of our demo sites, shown as a picture wall on the landing page only.
+// Deliberately not links: visitors judge the product from these finished views, not by browsing sample content.
 const SHOWCASE = [
   [
-    { src: "/showcase/store-home.webp", href: "/s/demo-store/", title: "Maison Nia", sub: "Online store · Maison template" },
-    { src: "/showcase/store-product-m.webp", href: "/s/demo-store/product/floral-wrap-dress", title: "Product page", sub: "On a phone", phone: true },
-    { src: "/showcase/business-home.webp", href: "/s/demo-business/", title: "Kingsway Advisory", sub: "Business · Meridian template" },
+    { src: "/showcase/store-home.webp", title: "Maison Nia", sub: "Online store · Maison template" },
+    { src: "/showcase/store-product-m.webp", title: "Product page", sub: "On a phone", phone: true },
+    { src: "/showcase/business-home.webp", title: "Kingsway Advisory", sub: "Business · Meridian template" },
   ],
   [
-    { src: "/showcase/portfolio-home.webp", href: "/s/demo-portfolio/", title: "Amina Yusuf", sub: "Portfolio · Lens template" },
-    { src: "/showcase/business-services-m.webp", href: "/s/demo-business/services", title: "Services & quotes", sub: "On a phone", phone: true },
-    { src: "/showcase/store-shop.webp", href: "/s/demo-store/shop", title: "Shop with filters", sub: "Search, categories and cart" },
+    { src: "/showcase/portfolio-home.webp", title: "Amina Yusuf", sub: "Portfolio · Lens template" },
+    { src: "/showcase/business-services-m.webp", title: "Services & quotes", sub: "On a phone", phone: true },
+    { src: "/showcase/store-shop.webp", title: "Shop with filters", sub: "Search, categories and cart" },
   ],
 ] as const;
 
@@ -86,6 +87,8 @@ export default function Home() {
   const nav = useNavigate();
   const [type, setType] = useState<string>("business");
   const [prompt, setPrompt] = useState("");
+  // Old /examples links land here; bring the showcase into view.
+  useEffect(() => { if (window.location.hash === "#made") setTimeout(() => document.getElementById("made")?.scrollIntoView({ block: "start" }), 50); }, []);
   const [narrow, setNarrow] = useState(() => typeof window !== "undefined" && window.matchMedia("(max-width: 640px)").matches);
   useEffect(() => { const m = window.matchMedia("(max-width: 640px)"); const f = () => setNarrow(m.matches); m.addEventListener("change", f); return () => m.removeEventListener("change", f); }, []);
   const [url, setUrl] = useState("");
@@ -169,18 +172,18 @@ export default function Home() {
 
       <section className="showcase" aria-labelledby="made">
         <div className="container">
-          <div className="showcase-head"><h2 id="made">Made with ImprintSites</h2><a href="/examples" className="showcase-more">See all examples <span aria-hidden="true">→</span></a></div>
+          <div className="showcase-head"><h2 id="made">Made with ImprintSites</h2></div>
           {SHOWCASE.map((row, r) => (
             <div key={r} className={`bento bento-${r + 1}`}>
               {row.map((t) => (
-                <a key={t.src} href={t.href} className={`bento-tile ${"phone" in t && t.phone ? "is-phone" : ""}`}>
+                <figure key={t.src} className={`bento-tile ${"phone" in t && t.phone ? "is-phone" : ""}`}>
                   <img src={t.src} alt={`${t.title}: ${t.sub}`} loading="lazy" decoding="async" />
-                  <span className="bento-cap"><strong>{t.title}</strong><span>{t.sub}</span></span>
-                </a>
+                  <figcaption className="bento-cap"><strong>{t.title}</strong><span>{t.sub}</span></figcaption>
+                </figure>
               ))}
             </div>
           ))}
-          <p className="showcase-note">Demo sites with made-up content, built on the platform. Open any of them and click around; the shop even takes test orders.</p>
+          <p className="showcase-note">Demo sites with sample content, built with ImprintSites templates.</p>
         </div>
       </section>
 

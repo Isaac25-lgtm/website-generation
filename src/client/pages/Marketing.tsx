@@ -106,33 +106,6 @@ export function Templates() {
   );
 }
 
-export function Examples() {
-  const [demos, setDemos] = useState<any[]>([]);
-  useEffect(() => { api("/api/examples").then((r) => setDemos(r.examples)).catch(() => {}); }, []);
-  return (
-    <main id="main" className="section">
-      <div className="container">
-        <div className="section-head"><span className="eyebrow">Example websites</span><h1 style={{ fontSize: "clamp(2.2rem,4.5vw,3.4rem)" }}>See finished sites, live</h1><p>One working demo for each product. They're real published sites on our platform with fictional content, labelled as demonstrations. The store accepts test orders (nothing is shipped or charged).</p></div>
-        {!demos.length && <div className="center"><Spinner /></div>}
-        <div className="stack" style={{ gap: "2.5rem" }}>
-          {demos.map((d) => (
-            <article key={d.slug} className="grid-2" style={{ alignItems: "center", gap: "2.5rem" }}>
-              <div className="browser"><div className="chrome"><i /><i /><i /><span className="url">{d.url}</span></div><SiteThumb src={`/s/${d.slug}/`} title={d.name} eager /></div>
-              <div>
-                <span className="badge blue">{d.type === "ecommerce" ? "E-commerce · $100" : d.type === "business" ? "Business · $30" : "Personal · $20"}</span>
-                <h2 style={{ marginTop: ".75rem" }}>{d.name.replace("Demo: ", "")}</h2>
-                <p className="muted">{d.type === "ecommerce" ? "Browse categories, search, choose sizes and colours, add to cart and place a test order. Stock, totals and order confirmation are real." : d.type === "business" ? "Multi-page business site with services and prices, a gallery, FAQ, quote requests, opening hours and click-to-call." : "Developer portfolio with projects, experience, skills and a contact form."}</p>
-                <p className="small muted">Template: {d.template}</p>
-                <a className="btn btn-primary" href={d.url}>Open live site →</a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </main>
-  );
-}
-
 export function HowItWorks() {
   const { me, config } = useApp();
   return (

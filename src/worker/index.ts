@@ -70,7 +70,7 @@ app.route("/", sites);
 app.get("/robots.txt", (c) => c.text(`User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /preview/\nDisallow: /dashboard\nDisallow: /projects/\nSitemap: ${baseUrl(c)}/sitemap.xml\n`));
 app.get("/sitemap.xml", async (c) => {
   const b = baseUrl(c);
-  const pages = ["/", "/pricing", "/templates", "/examples", "/how-it-works", "/contact", "/terms", "/privacy", "/refunds"];
+  const pages = ["/", "/pricing", "/templates", "/how-it-works", "/contact", "/terms", "/privacy", "/refunds"];
   const sitesLive = await c.env.DB.prepare("SELECT ps.slug, ps.last_published_at FROM published_sites ps JOIN projects p ON p.id = ps.project_id WHERE ps.status = 'live' AND p.deleted_at IS NULL LIMIT 5000").all<{ slug: string; last_published_at: number }>();
   const urls = [...pages.map((p) => `<url><loc>${b}${p}</loc></url>`), ...sitesLive.results.map((s) => `<url><loc>${b}/s/${s.slug}/</loc><lastmod>${new Date(s.last_published_at).toISOString().slice(0, 10)}</lastmod></url>`)];
   return c.body(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.join("")}</urlset>`, 200, { "content-type": "application/xml" });

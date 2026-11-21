@@ -74,9 +74,12 @@ test.describe("public marketing site", () => {
     await expect(page.getByText(/member templates unlock/)).toBeVisible();
     await page.waitForTimeout(2500);
     await page.screenshot({ path: `${SHOTS}/05-templates-public.png` });
+    // Examples are shown only on the landing page, as pictures rather than links into the demo sites.
     await page.goto("/examples");
-    await page.waitForTimeout(2000);
-    await page.screenshot({ path: `${SHOTS}/06-examples.png` });
+    await expect(page).toHaveURL(/\/(#made)?$/);
+    await expect(page.getByRole("heading", { name: "Made with ImprintSites" })).toBeVisible();
+    await expect(page.locator(".showcase a")).toHaveCount(0);
+    await expect(page.getByRole("link", { name: /examples/i })).toHaveCount(0);
   });
 });
 

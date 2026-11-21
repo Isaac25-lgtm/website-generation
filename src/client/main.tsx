@@ -1,11 +1,11 @@
 import { StrictMode, Suspense, lazy, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, Outlet, RouterProvider, useLocation } from "react-router";
+import { createBrowserRouter, Navigate, Outlet, RouterProvider, useLocation } from "react-router";
 import "./styles.css";
 import { AppProvider } from "./lib";
 import { Footer, LoadingPage, MarketingNav } from "./components/ui";
 import Home from "./pages/Home";
-import { Contact, Examples, HowItWorks, NotFound, Pricing, Templates } from "./pages/Marketing";
+import { Contact, HowItWorks, NotFound, Pricing, Templates } from "./pages/Marketing";
 import { Privacy, Refunds, Terms } from "./pages/Legal";
 import { Forgot, Login, Reset, Signup } from "./pages/Auth";
 import { Account, AppShell, Dashboard, Leads, NewProject, Publish, RequireAuth, StorePage } from "./app/App";
@@ -16,7 +16,7 @@ const Admin = lazy(() => import("./app/Admin"));
 
 const TITLES: Record<string, string> = {
   "/": "ImprintSites AI — Describe your website. Make it beautiful. Publish it.",
-  "/pricing": "Pricing — ImprintSites AI", "/templates": "Templates — ImprintSites AI", "/examples": "Example sites — ImprintSites AI",
+  "/pricing": "Pricing — ImprintSites AI", "/templates": "Templates — ImprintSites AI",
   "/how-it-works": "How it works — ImprintSites AI", "/contact": "Contact & support — ImprintSites AI", "/terms": "Terms of Service — ImprintSites AI",
   "/privacy": "Privacy Policy — ImprintSites AI", "/refunds": "Refund & Cancellation Policy — ImprintSites AI", "/login": "Sign in — ImprintSites AI", "/signup": "Create account — ImprintSites AI",
 };
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/pricing", element: <Pricing /> },
       { path: "/templates", element: <Templates /> },
-      { path: "/examples", element: <Examples /> },
+      { path: "/examples", element: <Navigate to="/#made" replace /> }, // examples now live on the landing page only
       { path: "/how-it-works", element: <HowItWorks /> },
       { path: "/contact", element: <Contact /> },
       { path: "/terms", element: <Terms /> },

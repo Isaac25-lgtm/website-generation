@@ -227,3 +227,31 @@ function AskDialog({ opts, onDone }: { opts: AskOptions; onDone: (v: string | nu
     </div>
   );
 }
+
+/* ── Dark mode (a soft evening palette, not black). Off by default; the visitor's choice is remembered. ── */
+export type ThemeName = "light" | "dark";
+const THEME_KEY = "is_theme";
+export function readTheme(): ThemeName {
+  try { return localStorage.getItem(THEME_KEY) === "dark" ? "dark" : "light"; } catch { return "light"; }
+}
+export function applyTheme(t: ThemeName) {
+  const root = document.documentElement;
+  if (t === "dark") root.dataset.theme = "dark"; else delete root.dataset.theme;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", t === "dark" ? "#1c1f27" : "#ffffff");
+}
+export function useTheme(): [ThemeName, () => void] {
+  const [t, setT] = useState<ThemeName>(readTheme);
+  useEffect(() => {
+    const sync = () => setT(readTheme());
+    window.addEventListener("is-theme", sync);
+    window.addEventListener("storage", sync);
+    return () => { window.removeEventListener("is-theme", sync); window.removeEventListener("storage", sync); };
+  }, []);
+  useEffect(() => applyTheme(t), [t]);
+  const toggle = () => {
+    const next: ThemeName = readTheme() === "dark" ? "light" : "dark";
+    try { localStorage.setItem(THEME_KEY, next); } catch { /* private mode: applies to this page only */ }
+    applyTheme(next); setT(next); window.dispatchEvent(new Event("is-theme"));
+  };
+  return [t, toggle];
+}

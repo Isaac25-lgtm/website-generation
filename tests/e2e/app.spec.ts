@@ -83,6 +83,25 @@ test.describe("public marketing site", () => {
   });
 });
 
+test.describe("dark mode", () => {
+  test("is off by default, can be switched on from the header or footer, and is remembered", async ({ page }) => {
+    await page.goto("/");
+    expect(await page.evaluate(() => document.documentElement.dataset.theme ?? "light")).toBe("light");
+    const sw = page.getByRole("button", { name: "Dark mode" }).first();
+    await expect(sw).toHaveAttribute("aria-pressed", "false");
+    await sw.click();
+    expect(await page.evaluate(() => document.documentElement.dataset.theme)).toBe("dark");
+    const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+    expect(bg).toBe("rgb(28, 31, 39)"); // soft evening slate, not black
+    await page.reload();
+    expect(await page.evaluate(() => document.documentElement.dataset.theme)).toBe("dark");
+    await expect(page.getByRole("button", { name: /Dark mode/ }).last()).toHaveAttribute("aria-pressed", "true"); // footer switch agrees
+    await noSeriousA11y(page, "home dark");
+    await page.getByRole("button", { name: /Dark mode/ }).last().click();
+    expect(await page.evaluate(() => document.documentElement.dataset.theme ?? "light")).toBe("light");
+  });
+});
+
 test.describe("demo sites", () => {
   for (const [slug, label] of [["demo-portfolio", "personal"], ["demo-business", "business"], ["demo-store", "ecommerce"]]) {
     test(`${label} demo renders on desktop and mobile with no serious a11y issues`, async ({ page }) => {

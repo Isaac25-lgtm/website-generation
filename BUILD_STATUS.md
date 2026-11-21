@@ -128,6 +128,8 @@ Test runs: unit 109/109, integration 61/61 (23 merchant regressions, new draft-r
 
 Test runs (final confirmation, 21 Nov): unit 117/117 (8 new WhatsApp and logo tests), integration 61/61, Playwright 11/11.
 
+- **Dark mode (option):** a moon/sun switch in the site header and the app header, plus a "Dark mode On/Off" switch in the footer. It uses a soft evening palette (dusk slate `#1c1f27`, never black), is off by default and is remembered per browser. It covers the marketing pages, sign-in, dashboard, wizards, editor, store manager and admin. Customers' own site previews keep their own design. A Playwright test checks the default, both switches, persistence after reload and an axe scan in dark mode.
+
 Still open before a paid launch: billing webhook handling (audit #5) and inspiration privacy / URL policy (#8, #9). Paid launch stays on hold until #5 is fixed.
 
 ## Next release priorities

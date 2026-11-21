@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, NavLink, useLocation } from "react-router";
-import { useApp, useFocusTrap } from "../lib";
+import { useApp, useFocusTrap, useTheme } from "../lib";
 
 export function Logo({ to = "/", small = false }: { to?: string; small?: boolean }) {
   return (
@@ -33,6 +33,20 @@ export const Icon = {
   copy: <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2" /><path d="M5 15V5a2 2 0 0 1 2-2h8" /></svg>,
 };
 
+const MOON = <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z" /></svg>;
+const SUN = <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2" /><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4" /></svg>;
+
+/** Dark mode switch. `labelled` shows the words too (footer); otherwise an icon button with an accessible name. */
+export function ThemeToggle({ labelled = false }: { labelled?: boolean }) {
+  const [theme, toggle] = useTheme();
+  const on = theme === "dark";
+  return (
+    <button type="button" className={labelled ? "theme-switch" : "btn btn-ghost btn-sm theme-btn"} aria-pressed={on} onClick={toggle} title={on ? "Switch to light mode" : "Switch to dark mode"} aria-label={labelled ? undefined : "Dark mode"}>
+      {on ? SUN : MOON}{labelled && <span>Dark mode</span>}{labelled && <span className="theme-state" aria-hidden="true">{on ? "On" : "Off"}</span>}
+    </button>
+  );
+}
+
 export function MarketingNav() {
   const { me } = useApp();
   const [open, setOpen] = useState(false);
@@ -49,6 +63,7 @@ export function MarketingNav() {
           <NavLink to="/contact">Contact</NavLink>
         </nav>
         <div className="nav-actions">
+          <ThemeToggle />
           {me ? (
             <Link className="btn btn-primary btn-sm" to="/dashboard">Dashboard</Link>
           ) : (
@@ -79,7 +94,7 @@ export function Footer() {
           <div><h4>Support</h4><ul><li><Link to="/contact">Contact us</Link></li><li><Link to="/contact?topic=ip_report">Report content</Link></li><li><Link to="/login">Sign in</Link></li></ul></div>
           <div><h4>Legal</h4><ul><li><Link to="/terms">Terms of Service</Link></li><li><Link to="/privacy">Privacy Policy</Link></li><li><Link to="/refunds">Refund &amp; Cancellation</Link></li></ul></div>
         </div>
-        <div className="legal"><span>© {new Date().getFullYear()} {config?.operator.name ?? "Motion Imprints Technologies"}. All rights reserved.</span></div>
+        <div className="legal"><span>© {new Date().getFullYear()} {config?.operator.name ?? "Motion Imprints Technologies"}. All rights reserved.</span><ThemeToggle labelled /></div>
       </div>
     </footer>
   );

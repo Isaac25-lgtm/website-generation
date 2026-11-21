@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, NavLink, Outlet, useLocation, useNavigate, useParams, useSearchParams } from "react-router";
 import { api, fmtDate, hostingPrice, useApp, useAsync, usd } from "../lib";
-import { Icon, LoadingPage, Logo, Modal, SiteThumb, Spinner } from "../components/ui";
+import { Icon, LoadingPage, Logo, Modal, SiteThumb, Spinner, ThemeToggle } from "../components/ui";
 import { PLANS } from "../../shared/pricing";
 import { switchMode } from "../../shared/refine";
 import { OrdersManager, ProductsManager } from "./Store";
@@ -29,6 +29,7 @@ export function AppShell() {
             </nav>
           </div>
           <div className="row">
+            <ThemeToggle />
             <NavLink to="/account" className="btn btn-ghost btn-sm">{me?.name || me?.email}</NavLink>
             <button className="btn btn-sm" onClick={async () => { await api("/api/auth/logout", { body: {} }); await refresh(); nav("/"); }}>Sign out</button>
           </div>

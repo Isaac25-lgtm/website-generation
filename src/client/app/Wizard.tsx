@@ -311,7 +311,7 @@ function FeeField({ cur, minor, onChange }: { cur: string; minor: number; onChan
   return (
     <label className="field"><span>Fee ({cur})</span>
       <input inputMode="decimal" value={text} placeholder="0" aria-invalid={!!error} onChange={(e) => { setText(e.target.value); const m = e.target.value.trim() ? toMinor(e.target.value, cur) : 0; if (m !== null) onChange(m); }} />
-      <span className="help" style={error ? { color: "#b91c1c" } : undefined}>{error ?? (parsed ? money(parsed, cur) : "Free")}</span>
+      <span className="help" style={error ? { color: "var(--err)" } : undefined}>{error ?? (parsed ? money(parsed, cur) : "Free")}</span>
     </label>
   );
 }

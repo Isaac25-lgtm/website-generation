@@ -132,6 +132,7 @@ Still open before a paid launch: billing webhook handling (audit #5) and inspira
 
 ## Next release priorities
 
+0. **Full frontend/backend separation (owner requirement, scheduled for later).** The frontend and backend become separately deployed apps, and only the backend holds the database and secrets. The choice is still open: split the current TypeScript Worker, or move the backend to Python/Django as in [docs/claude-handoff.md](docs/claude-handoff.md). If Python is chosen, build the billing webhook fix (#5) there rather than twice.
 1. Owner setup: Workers Paid, R2, Google OAuth, Dodo test keys and products, admin account (see `docs/cloudflare-setup.md`).
 2. Run one Dodo **test-mode** purchase end-to-end and record the evidence in `DEPLOYMENT_REPORT.md`.
 3. Card payments for stores through each seller's own provider, once a seller has credentials.

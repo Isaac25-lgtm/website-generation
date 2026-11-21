@@ -274,12 +274,13 @@ button { font: inherit; }
 .faq details p { color: var(--muted); margin: .7rem 0 0; }
 
 /* footer */
-.footer { border-top: 1px solid var(--line); padding: 3.25rem 0 2rem; background: #fff; }
+.footer { border-top: 1px solid #dde6f6; padding: 3.25rem 0 2rem; background: #f3f7fe; }
 .footer .cols { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 2rem; }
-.footer h4 { font: 500 .82rem/1 var(--font-b); color: var(--muted); margin-bottom: .9rem; }
+.footer h4 { font: 500 .82rem/1 var(--font-b); color: var(--link); margin-bottom: .9rem; }
 .footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
-.footer a { color: var(--ink-2); font-size: .92rem; }
-.footer .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .82rem; }
+.footer a { color: var(--ink-2); font-size: .92rem; transition: color .15s; }
+.footer a:hover { color: var(--link); }
+.footer .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid #dde6f6; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .82rem; }
 @media (max-width: 800px) { .footer .cols { grid-template-columns: 1fr 1fr; } }
 
 /* forms */

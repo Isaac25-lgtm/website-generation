@@ -1,6 +1,6 @@
 # AGENTS.md: handoff for coding agents (Codex and others)
 
-**Codex: start with the [code-integrity review handoff](docs/codex-integrity-review.md) (21 November 2026, commit `1e5c9c6`).**
+**Codex: start with the [verification handoff](docs/codex-verification-db3d932.md) (21 November 2026, commit `db3d932`): check the fixes to your [1e5c9c6 review](docs/integrity-review-1e5c9c6.md) and the new WhatsApp/logo options.**
 
 **Current handoff (20 November 2026).** Read the [Claude engineering handoff](docs/claude-handoff.md) and [production audit](docs/production-audit.md) for the release decision, verified findings and proposed Python backend / React frontend split. The remaining sections record the original TypeScript build and its historical release procedure.
 
@@ -28,7 +28,7 @@ All of the following work and are tested locally and on production:
 
 - **Public marketing site:**
   - home: photo hero with rotating slides, "what you can build" cards, how-it-works, a "Made with ImprintSites" bento wall, an inspiration section, pricing, FAQ
-  - pages: pricing, templates (9 public and 9 member-only), examples, how-it-works, contact form, Terms, Privacy, Refunds
+  - pages: pricing, templates (9 public and 9 member-only), how-it-works, contact form, Terms, Privacy, Refunds (examples are shown only on the home page as a picture wall; `/examples` redirects there)
 - **Auth:** email/password, sessions, CSRF protection and rate limits. Google OAuth code is complete but has no client ID yet.
 - **Wizards and generator:** three intake wizards (personal, business, and an extended e-commerce flow) and a deterministic generator.
   - The generator turns answers into a SiteDoc JSON. It never invents facts.

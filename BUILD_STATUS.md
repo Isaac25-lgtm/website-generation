@@ -118,7 +118,7 @@ Test runs: unit 109/109, integration 54/54 (+3 parity, run with the Python serve
 - **Revoked access (audit #6):** when a site's last valid purchase or demo grant is revoked or refunded, the live site, its forms and checkout go offline and it can't be republished until access is restored.
 - **Signing key (audit #10):** production refuses to sign preview links or order receipts without `SESSION_SECRET` instead of falling back to a development key.
 - **Browser findings:** the home-page idea and website-you-love apply only to the site created from that prompt, then are cleared; the web address you see is the one you get (Continue waits for "Available", old availability answers are ignored); wizard saves run in order, show "Unsaved changes", are sent when the page closes, and a failed save keeps you on the step; dialogs keep keyboard focus inside and return it on close; a duplicate page id on the home page is fixed.
-- **Mobile hero:** on phones the text sits on a solid dark panel and the photo is shown as a clear, framed picture underneath, with a shorter subheading.
+- **Mobile hero:** on phones the photo leads the first screen as a clear, framed picture, with the headline, a shorter subheading and the prompt on a light background below it (the button stays on the first screen at 360×740).
 
 Test runs: unit 109/109, integration 61/61 (23 merchant regressions, new draft-race and revocation tests; parity skipped, backend unchanged), Playwright 11/11 twice (the builder flow now also checks the address gate, autosave state and dialog focus).
 

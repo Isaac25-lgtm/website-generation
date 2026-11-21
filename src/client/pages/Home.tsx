@@ -86,6 +86,8 @@ export default function Home() {
   const nav = useNavigate();
   const [type, setType] = useState<string>("business");
   const [prompt, setPrompt] = useState("");
+  const [narrow, setNarrow] = useState(() => typeof window !== "undefined" && window.matchMedia("(max-width: 640px)").matches);
+  useEffect(() => { const m = window.matchMedia("(max-width: 640px)"); const f = () => setNarrow(m.matches); m.addEventListener("change", f); return () => m.removeEventListener("change", f); }, []);
   const [url, setUrl] = useState("");
   const [showUrl, setShowUrl] = useState(false);
 
@@ -104,7 +106,7 @@ export default function Home() {
           <p className="lede"><span className="lede-long">Describe the website you need for your business, your portfolio or your shop. ImprintSites designs it, puts it on its own web address and keeps it running, and you can change anything without code.</span><span className="lede-short">Describe your business, portfolio or shop. We design it, host it and keep it running. Change anything without code.</span></p>
           <form className="hero-prompt" onSubmit={go} aria-label="Start building your website">
             <label htmlFor="prompt" className="sr-only">Describe your website</label>
-            <input id="prompt" value={prompt} onChange={(e) => setPrompt(e.target.value)} maxLength={2000} placeholder="Describe your website, e.g. a bakery in Lisbon with our menu and online orders" />
+            <input id="prompt" value={prompt} onChange={(e) => setPrompt(e.target.value)} maxLength={2000} placeholder={narrow ? "e.g. a bakery with online orders" : "Describe your website, e.g. a bakery in Lisbon with our menu and online orders"} />
             <button className="btn btn-primary btn-lg" type="submit">Start building</button>
           </form>
           <div className="hero-types" role="group" aria-label="Website type">

@@ -115,7 +115,6 @@ button { font: inherit; }
 .hero-dots button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: rgba(255,255,255,.45); cursor: pointer; }
 .hero-dots button[aria-pressed="true"] { background: #fff; width: 20px; border-radius: 99px; transition: width .3s; }
 .hero-pause { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.25); color: #fff; display: grid; place-items: center; cursor: pointer; }
-@media (max-width: 640px) { .hero-slide-label { display: none; } .hero-slide-ui { top: auto; bottom: 5rem; right: 1.25rem; } }
 .photo-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(16,16,18,.9) 0%, rgba(16,16,18,.78) 42%, rgba(16,16,18,.42) 100%), linear-gradient(0deg, rgba(16,16,18,.35), rgba(16,16,18,0) 40%); }
 .photo-hero-inner { position: relative; }
 .photo-hero h1 { color: #fff; font-weight: 700; font-size: clamp(2.3rem, 5.2vw, 4rem); letter-spacing: -.025em; line-height: 1.05; max-width: 21ch; margin-bottom: 1rem; }
@@ -136,8 +135,21 @@ button { font: inherit; }
 @media (max-width: 640px) {
   .hero-prompt { flex-direction: column; align-items: stretch; }
   .hero-prompt .btn { width: 100%; }
-  .photo-hero-shade { background: linear-gradient(180deg, rgba(16,16,18,.82), rgba(16,16,18,.9)); }
   .hero-checks { gap: .7rem; flex-direction: column; }
+}
+.lede-short { display: none; }
+/* Phones: text on a solid dark panel; the photo becomes a clear, framed picture underneath instead of a dimmed,
+   upscaled background behind the words. */
+@media (max-width: 640px) {
+  .lede-long { display: none; } .lede-short { display: inline; }
+  .photo-hero { display: flex; flex-direction: column; background: #141416; padding: 2.6rem 0 4.75rem; }
+  .photo-hero-inner { order: 1; }
+  .photo-hero-shade { display: none; }
+  .hero-slides { position: relative; order: 2; inset: auto; aspect-ratio: 3 / 2; margin: 2rem 1.25rem 0; border-radius: 16px; box-shadow: 0 18px 40px -18px rgba(0,0,0,.8); border: 1px solid rgba(255,255,255,.1); }
+  .hero-slides img.on { animation: none; }
+  .hero-slide-ui { position: relative; order: 3; inset: auto; top: auto; right: auto; bottom: auto; justify-content: center; margin: .85rem auto 0; }
+  .hero-slide-label { display: inline-block; }
+  .hero-checks { margin-top: 1.6rem; }
 }
 
 /* "What you can build": photo cards overlapping the bottom of the hero */

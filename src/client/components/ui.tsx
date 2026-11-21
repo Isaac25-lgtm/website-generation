@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, NavLink, useLocation } from "react-router";
-import { useApp } from "../lib";
+import { useApp, useFocusTrap } from "../lib";
 
 export function Logo({ to = "/", small = false }: { to?: string; small?: boolean }) {
   return (
@@ -96,13 +96,7 @@ export function LoadingPage() {
 
 export function Modal({ title, onClose, children, wide }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const prev = document.activeElement as HTMLElement | null;
-    ref.current?.focus();
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
-    document.addEventListener("keydown", onKey);
-    return () => { document.removeEventListener("keydown", onKey); prev?.focus(); };
-  }, [onClose]);
+  useFocusTrap(ref, onClose, "box");
   return (
     <div className="modal-back" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="modal" role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} ref={ref} style={wide ? { width: "min(100%, 1100px)" } : undefined}>

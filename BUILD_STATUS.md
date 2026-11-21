@@ -1,6 +1,6 @@
 # Build status
 
-Updated 2026-11-20. Legend: ✅ built and tested · ⚠️ works with a limitation · ❌ blocked on an external dependency.
+Updated 2026-11-21. Legend: ✅ built and tested · ⚠️ works with a limitation · ❌ blocked on an external dependency.
 
 ## Checklist
 
@@ -109,7 +109,20 @@ Test runs: unit 68/68, integration 57/57 (18 merchant and audit regressions, 3 p
 
 Test runs: unit 109/109, integration 54/54 (+3 parity, run with the Python server), Playwright 11/11 twice, backend pytest 53/53 (previous round).
 
-Still open from the audit: findings #4–#10 and the additional defects (see [docs/production-audit.md](docs/production-audit.md)).
+**Codex integrity review of 1e5c9c6 ([docs/integrity-review-1e5c9c6.md](docs/integrity-review-1e5c9c6.md)), fixed with tests (21 Nov 2026):**
+- **Checkout price change:** the shopper's accepted total travels with the order; if a price or delivery fee changed meanwhile the order is refused with the new quote instead of charging a different amount.
+- **Two people editing one product:** a variant is deleted only when the editor actually removed it; another editor's new size or colour is kept.
+- **Retried CSV import:** each import has an id, so a retry sets stock to the file's numbers once and never creates duplicate products.
+- **Cancelling an order:** restocks exactly what that order took, read from the stock ledger, even if stock tracking was switched off or on in between.
+- **Draft saves (audit #4):** saving is now an atomic compare-and-set; of several editors saving the same revision exactly one wins and the rest get "changed in another tab".
+- **Revoked access (audit #6):** when a site's last valid purchase or demo grant is revoked or refunded, the live site, its forms and checkout go offline and it can't be republished until access is restored.
+- **Signing key (audit #10):** production refuses to sign preview links or order receipts without `SESSION_SECRET` instead of falling back to a development key.
+- **Browser findings:** the home-page idea and website-you-love apply only to the site created from that prompt, then are cleared; the web address you see is the one you get (Continue waits for "Available", old availability answers are ignored); wizard saves run in order, show "Unsaved changes", are sent when the page closes, and a failed save keeps you on the step; dialogs keep keyboard focus inside and return it on close; a duplicate page id on the home page is fixed.
+- **Mobile hero:** on phones the text sits on a solid dark panel and the photo is shown as a clear, framed picture underneath, with a shorter subheading.
+
+Test runs: unit 109/109, integration 61/61 (23 merchant regressions, new draft-race and revocation tests; parity skipped, backend unchanged), Playwright 11/11 twice (the builder flow now also checks the address gate, autosave state and dialog focus).
+
+Still open before a paid launch: billing webhook handling (audit #5) and inspiration privacy / URL policy (#8, #9). Paid launch stays on hold until #5 is fixed.
 
 ## Next release priorities
 

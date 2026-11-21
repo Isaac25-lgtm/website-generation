@@ -432,3 +432,40 @@ describe("web address, hosting price and demo content", () => {
     expect(photo.headers.get("content-type")).toContain("image/webp");
   });
 });
+
+describe("draft concurrency and access revocation", () => {
+  let pid = "", slug = "";
+  it("two editors saving the same revision: exactly one wins, the other gets a conflict", async () => {
+    const r = await A.req("/api/projects", { body: { type: "business", name: `Race Studio ${run}`, slug: `race-studio-${run}` } });
+    expect(r.status).toBe(200);
+    pid = r.json.id; slug = r.json.slug;
+    const answers = { businessName: "Race Studio", tagline: "Design that ships", description: "Brand and web design.", services: [{ title: "Brand identity", description: "Logos and systems", price: "From $900" }], email: "hello@race.example", primaryGoal: "contact" };
+    expect((await A.req(`/api/projects/${pid}/intake`, { method: "PUT", body: { step: 3, answers } })).status).toBe(200);
+    expect((await A.req(`/api/projects/${pid}/generate`, { body: { useAi: false } })).status).toBe(200);
+    const p = (await A.req(`/api/projects/${pid}`)).json;
+    const one = JSON.parse(JSON.stringify(p.doc)); one.brand.tagline = "Editor one";
+    const two = JSON.parse(JSON.stringify(p.doc)); two.brand.tagline = "Editor two";
+    const results = await Promise.all([one, two, one, two].map((doc) => A.req(`/api/projects/${pid}/draft`, { method: "PUT", body: { doc, baseRevision: p.project.revision } })));
+    const codes = results.map((x) => x.status).sort();
+    expect(codes).toEqual([200, 409, 409, 409]);
+    const after = (await A.req(`/api/projects/${pid}`)).json;
+    expect(after.project.revision).toBe(p.project.revision + 1);
+    const winner = results.find((x) => x.status === 200)!;
+    expect(winner.json.revision).toBe(after.project.revision);
+  });
+  it("revoking the only demo grant takes the site and its pages offline", async () => {
+    expect((await B.req(`/api/admin/projects/${pid}/entitlement`, { body: { reason: "Integration revoke test" } })).status).toBe(200);
+    expect((await A.req(`/api/projects/${pid}/publish`, { body: { contentRightsAck: true } })).status).toBe(200);
+    expect((await anon.req(`/s/${slug}/`, { raw: true })).status).toBe(200);
+    const rev = await B.req(`/api/admin/projects/${pid}/entitlement`, { method: "DELETE" });
+    expect(rev.status).toBe(200);
+    expect(rev.json.withdrawn).toBe(true);
+    expect((await anon.req(`/s/${slug}/`, { raw: true })).status).toBe(404);
+    const leads = await anon.req(`/api/public/sites/${pid}/leads`, { body: { kind: "contact", name: "Jo", email: "jo@example.com", message: "Hello there", consent: "on", t: old() } });
+    expect(leads.status).toBe(404);
+    const mine = (await A.req("/api/projects")).json.projects.find((x: any) => x.id === pid);
+    expect(mine.published).toBe(false);
+    // and it can't simply be republished without a valid purchase or grant
+    expect((await A.req(`/api/projects/${pid}/publish`, { body: { contentRightsAck: true } })).status).toBe(402);
+  });
+});

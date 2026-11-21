@@ -101,7 +101,7 @@ export default function Home() {
         <HeroSlides />
         <div className="container photo-hero-inner">
           <h1>Imagine it. Build it. Launch it.</h1>
-          <p className="lede">Describe the website you need for your business, your portfolio or your shop. ImprintSites designs it, puts it on its own web address and keeps it running, and you can change anything without code.</p>
+          <p className="lede"><span className="lede-long">Describe the website you need for your business, your portfolio or your shop. ImprintSites designs it, puts it on its own web address and keeps it running, and you can change anything without code.</span><span className="lede-short">Describe your business, portfolio or shop. We design it, host it and keep it running. Change anything without code.</span></p>
           <form className="hero-prompt" onSubmit={go} aria-label="Start building your website">
             <label htmlFor="prompt" className="sr-only">Describe your website</label>
             <input id="prompt" value={prompt} onChange={(e) => setPrompt(e.target.value)} maxLength={2000} placeholder="Describe your website, e.g. a bakery in Lisbon with our menu and online orders" />
@@ -112,8 +112,8 @@ export default function Home() {
             {!showUrl ? <button type="button" className="link hero-reco" onClick={() => setShowUrl(true)}>+ Add a website you love <span className="reco-pill">Recommended</span></button> : (
               <span className="hero-url">
                 <span aria-hidden="true" style={{ width: 15, display: "inline-flex" }}>{Icon.link}</span>
-                <label htmlFor="insp" className="sr-only">Website you love (optional)</label>
-                <input id="insp" autoFocus value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://a-site-you-love.com" inputMode="url" />
+                <label htmlFor="insp-url" className="sr-only">Website you love (optional)</label>
+                <input id="insp-url" autoFocus value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://a-site-you-love.com" inputMode="url" />
               </span>
             )}
           </div>

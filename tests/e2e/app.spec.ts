@@ -154,9 +154,17 @@ test.describe("builder flows (signed in)", () => {
     // Suggestions use -2 … -6, then a random suffix once those are taken (repeated local runs).
     await expect(page.getByLabel("Web address")).toHaveValue(/^nia-achieng(-[a-z0-9]+)?$/);
     await page.screenshot({ path: `${SHOTS}/21b-new-site-address.png` });
+    // A taken address blocks Continue; it is never silently swapped for another one.
+    const chosen = await page.getByLabel("Web address").inputValue();
+    await page.getByLabel("Web address").fill("demo-store");
+    await expect(page.getByRole("button", { name: "Continue" })).toBeDisabled({ timeout: 10000 });
+    await page.getByLabel("Web address").fill(chosen);
+    await expect(page.getByText(/^Available\./)).toBeVisible({ timeout: 10000 });
     await page.getByRole("button", { name: "Continue" }).click();
     await expect(page).toHaveURL(/\/setup$/);
     await page.getByLabel(/Professional title/).fill("UX designer");
+    await expect(page.getByText(/Unsaved changes|Saving…|All changes saved/)).toBeVisible();
+    await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 10000 });
     await page.getByLabel("Location").fill("Toronto, Canada");
     await page.getByLabel("Your bio").fill("I design calm, useful digital products for health and education teams.");
     await page.screenshot({ path: `${SHOTS}/22-wizard-personal.png` });
@@ -170,6 +178,20 @@ test.describe("builder flows (signed in)", () => {
     const frame = page.frameLocator('iframe[title="Site preview"]');
     await expect(frame.getByRole("heading", { level: 1 })).toContainText(/Nia Achieng|UX designer/);
     await page.screenshot({ path: `${SHOTS}/24-editor-personal.png` });
+
+    // In-app dialogs keep keyboard focus inside, close on Escape and hand focus back to the button that opened them.
+    await page.locator(".sec-row > button").nth(1).click();
+    const del = page.getByRole("button", { name: "Delete section" }).first();
+    await del.click();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+    for (let k = 0; k < 6; k++) {
+      await page.keyboard.press(k % 2 ? "Shift+Tab" : "Tab");
+      expect(await dialog.evaluate((d) => d.contains(document.activeElement))).toBe(true);
+    }
+    await page.keyboard.press("Escape");
+    await expect(dialog).toHaveCount(0);
+    await expect(del).toBeFocused();
 
     await page.getByLabel("Describe a design change").fill("dark mode with more space");
     await page.getByRole("button", { name: "Apply" }).click();

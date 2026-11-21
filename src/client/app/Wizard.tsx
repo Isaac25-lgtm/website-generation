@@ -25,7 +25,7 @@ export default function Wizard() {
   const [answers, setAnswers] = useState<any>({});
   const [templateId, setTemplateId] = useState<string>("");
   const [step, setStep] = useState(0);
-  const [saving, setSaving] = useState<"idle" | "saving" | "saved" | "error">("idle");
+  const [saving, setSaving] = useState<"pending" | "idle" | "saving" | "saved" | "error">("idle");
   const timer = useRef<number | undefined>(undefined);
   const latest = useRef({ answers, step, templateId });
   latest.current = { answers, step, templateId };
@@ -39,27 +39,56 @@ export default function Wizard() {
     }).catch((e) => toast(e.message, "err"));
   }, [id]);
 
-  const save = useCallback(async (extra: Record<string, unknown> = {}) => {
-    const { answers: a, step: s, templateId: t } = latest.current;
-    setSaving("saving");
-    try { await api(`/api/projects/${id}/intake`, { method: "PUT", body: { step: s, answers: ensureIds(a), templateId: t, ...extra } }); setSaving("saved"); }
-    catch (e) { setSaving("error"); toast((e as Error).message, "err"); throw e; }
+  // Saves run one after another and each sends the newest answers, so a slow older save can never overwrite a
+  // newer one. "pending" means typed but not yet sent.
+  const queue = useRef<Promise<unknown>>(Promise.resolve());
+  const pending = useRef(false);
+  const save = useCallback((extra: Record<string, unknown> = {}) => {
+    const run = async () => {
+      const { answers: a, step: s, templateId: t } = latest.current;
+      pending.current = false;
+      setSaving("saving");
+      try { await api(`/api/projects/${id}/intake`, { method: "PUT", body: { step: s, answers: ensureIds(a), templateId: t, ...extra } }); if (!pending.current) setSaving("saved"); }
+      catch (e) { pending.current = true; setSaving("error"); toast((e as Error).message, "err"); throw e; }
+    };
+    const p = queue.current.then(run, run);
+    queue.current = p.catch(() => {});
+    return p;
   }, [id]);
 
-  const update = (a: any) => { setAnswers(a); window.clearTimeout(timer.current); timer.current = window.setTimeout(() => save().catch(() => {}), 900); };
-  useEffect(() => () => window.clearTimeout(timer.current), []);
+  const update = (a: any) => { setAnswers(a); latest.current.answers = a; pending.current = true; setSaving("pending"); window.clearTimeout(timer.current); timer.current = window.setTimeout(() => save().catch(() => {}), 900); };
+  useEffect(() => {
+    // Leaving or refreshing with an unsent edit: send it on the way out (keepalive survives the page unloading).
+    const flush = () => {
+      if (!pending.current) return;
+      const { answers: a, step: s, templateId: t } = latest.current;
+      const body = JSON.stringify({ step: s, answers: ensureIds(a), templateId: t });
+      if (body.length < 60_000) { pending.current = false; fetch(`/api/projects/${id}/intake`, { method: "PUT", keepalive: true, credentials: "same-origin", headers: { "content-type": "application/json", "x-requested-with": "imprintsites-app" }, body }).catch(() => {}); }
+    };
+    const warn = (e: BeforeUnloadEvent) => { flush(); if (pending.current) { e.preventDefault(); e.returnValue = ""; } };
+    window.addEventListener("pagehide", flush);
+    window.addEventListener("beforeunload", warn);
+    return () => { window.removeEventListener("pagehide", flush); window.removeEventListener("beforeunload", warn); window.clearTimeout(timer.current); };
+  }, [id]);
 
   if (!proj) return <LoadingPage />;
   const type = proj.project.type as string;
   const steps = STEPS[type];
   const cur = steps[step];
-  const go = async (n: number) => { window.clearTimeout(timer.current); setStep(n); latest.current.step = n; await save().catch(() => {}); window.scrollTo({ top: 0, behavior: "smooth" }); };
+  // Move only after the current answers are saved; on failure stay here (the error is shown) so nothing is lost silently.
+  const go = async (n: number) => {
+    window.clearTimeout(timer.current);
+    const prev = latest.current.step;
+    latest.current.step = n;
+    try { await save(); } catch { latest.current.step = prev; return; }
+    setStep(n); window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="container app-main">
       <div className="page-title">
         <div><Link to="/dashboard" className="small">← All sites</Link><h1>{proj.project.name}</h1><span className="muted small">{type === "ecommerce" ? "E-commerce store" : type === "business" ? "Business website" : "Personal website"} · step {step + 1} of {steps.length}</span></div>
-        <div className="row"><span className="small muted" aria-live="polite">{saving === "saving" ? "Saving…" : saving === "saved" ? "All changes saved" : saving === "error" ? "Not saved" : ""}</span>{proj.doc && <Link className="btn" to={`/projects/${id}/editor`}>Open editor</Link>}</div>
+        <div className="row"><span className="small muted" aria-live="polite">{saving === "pending" ? "Unsaved changes…" : saving === "saving" ? "Saving…" : saving === "saved" ? "All changes saved" : saving === "error" ? "Not saved. Check your connection; we'll retry when you continue." : ""}</span>{proj.doc && <Link className="btn" to={`/projects/${id}/editor`}>Open editor</Link>}</div>
       </div>
       <div className="progress" aria-hidden="true"><i style={{ width: `${((step + 1) / steps.length) * 100}%` }} /></div>
       <div className="wizard">
@@ -105,7 +134,8 @@ const STYLE_FIELDS: FieldSpec[] = [
 
 function StyleStep({ projectId, type, answers, onChange, templateId, setTemplateId }: { projectId: string; type: string; answers: any; onChange: (a: any) => void; templateId: string; setTemplateId: (t: string) => void }) {
   const { toast } = useApp();
-  const [url, setUrl] = useState<string>(answers.inspiration?.url || (() => { try { const i = JSON.parse(sessionStorage.getItem("is_intent") || "{}"); return i.url || ""; } catch { return ""; } })());
+  // Only this project's own saved answers: never another tab's or project's stored intent.
+  const [url, setUrl] = useState<string>(answers.inspiration?.url || "");
   const [busy, setBusy] = useState(false);
   const [brief, setBrief] = useState<any>(answers.inspiration?.brief || null);
   const [shot, setShot] = useState<string | null>(null);
@@ -121,7 +151,12 @@ function StyleStep({ projectId, type, answers, onChange, templateId, setTemplate
   const applied = !!brief && answers.inspiration?.sourceHost === brief.sourceHost && !!answers.inspiration?.tokens;
   const analyze = async () => {
     setBusy(true); setErr("");
-    try { const r = await api(`/api/projects/${projectId}/inspiration`, { body: { url } }); setBrief(r.brief); setShot(r.screenshotUrl); }
+    try {
+      const r = await api(`/api/projects/${projectId}/inspiration`, { body: { url } });
+      setBrief(r.brief); setShot(r.screenshotUrl);
+      // Keep the result with the project so revisiting this step doesn't analyse the same site again.
+      onChange({ ...answers, inspiration: { ...(answers.inspiration || {}), url, brief: r.brief } });
+    }
     catch (e) { setErr((e as Error).message); }
     setBusy(false);
   };

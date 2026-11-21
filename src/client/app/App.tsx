@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, NavLink, Outlet, useLocation, useNavigate, useParams, useSearchParams } from "react-router";
 import { api, fmtDate, hostingPrice, useApp, useAsync, usd } from "../lib";
 import { Icon, LoadingPage, Logo, Modal, SiteThumb, Spinner } from "../components/ui";
@@ -78,7 +78,10 @@ export function Dashboard() {
 export function NewProject() {
   const [params] = useSearchParams();
   const nav = useNavigate();
-  const intent = (() => { try { return JSON.parse(sessionStorage.getItem("is_intent") || "null"); } catch { return null; } })();
+  // The home-page intent (description + website you love) applies only when arriving from the home prompt, and only
+  // for a few hours; it is cleared once a site is created, so a later project never inherits it.
+  const intent = (() => { try { const i = JSON.parse(sessionStorage.getItem("is_intent") || "null"); return i && Date.now() - (i.at || 0) < 6 * 3600_000 ? i : null; } catch { return null; } })();
+  const fromPrompt = params.get("from") === "prompt";
   const [type, setType] = useState<string>(params.get("type") || intent?.type || "business");
   const [name, setName] = useState("");
   const [slug, setSlug] = useState("");
@@ -88,17 +91,20 @@ export function NewProject() {
   const [err, setErr] = useState("");
   const { config } = useApp();
   const hp = hostingPrice(config, type);
-  const prompt: string = params.get("from") === "prompt" ? intent?.prompt || "" : "";
+  const prompt: string = fromPrompt ? intent?.prompt || "" : "";
+  const checkSeq = useRef(0);
   const toSlug = (v: string) => v.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40).replace(/-+$/, "");
   useEffect(() => { if (!slugEdited) setSlug(toSlug(name)); }, [name, slugEdited]);
   useEffect(() => {
     if (slug.length < 3) { setSlugState({}); return; }
     setSlugState({ checking: true });
+    const seq = ++checkSeq.current;
     const t = setTimeout(() => { api(`/api/projects/slug-available?slug=${encodeURIComponent(slug)}`).then((r) => {
+      if (seq !== checkSeq.current) return; // a newer address was typed; ignore this older answer
       // Auto-suggested address taken? Switch to the free alternative. Typed by hand? Offer it instead.
       if (!r.available && r.suggestion && !slugEdited) { setSlug(r.suggestion); return; }
       setSlugState({ available: r.available, reason: r.reason, suggestion: r.suggestion });
-    }).catch(() => setSlugState({})); }, 350);
+    }).catch(() => { if (seq === checkSeq.current) setSlugState({}); }); }, 350);
     return () => clearTimeout(t);
   }, [slug, slugEdited]);
   const create = async (e: React.FormEvent) => {
@@ -109,9 +115,12 @@ export function NewProject() {
       if (type !== "personal" && prompt.length > 400) answers.about = prompt;
     }
     if (type === "personal") answers.name = name; else if (type === "business") answers.businessName = name; else answers.storeName = name;
-    if (intent?.url) answers.inspiration = { url: intent.url, notes: "" };
+    if (fromPrompt && intent?.url) answers.inspiration = { url: intent.url, notes: "" };
+    if (!slugState.available) { setErr("Choose an available web address first."); setBusy(false); return; }
     try {
-      const r = await api("/api/projects", { body: { type, name, slug: slugState.available ? slug : undefined, templateId: params.get("template") || undefined, answers } });
+      // Send exactly the address shown; the server refuses it (rather than inventing another) if it was just taken.
+      const r = await api("/api/projects", { body: { type, name, slug, templateId: params.get("template") || undefined, answers } });
+      sessionStorage.removeItem("is_intent");
       nav(`/projects/${r.id}/setup`);
     } catch (er) { setErr((er as Error).message); setBusy(false); }
   };
@@ -144,7 +153,7 @@ export function NewProject() {
         </div>
         <p className="muted small" style={{ margin: 0 }}>Free to build and preview. When you publish: a one-time {usd(PLANS[type as keyof typeof PLANS].priceCents)} build fee, then {hp.label} per {hp.interval} for hosting &amp; maintenance.</p>
         {err && <div className="alert err">{err}</div>}
-        <button className="btn btn-primary btn-lg" disabled={busy || !name.trim() || slugState.available === false || slugState.checking}>{busy && <Spinner />} Continue</button>
+        <button className="btn btn-primary btn-lg" disabled={busy || !name.trim() || !slugState.available || slugState.checking}>{busy && <Spinner />} Continue</button>
       </form>
     </div>
   );

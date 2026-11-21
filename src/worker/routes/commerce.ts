@@ -47,6 +47,8 @@ const VariantIn = z.object({
   stock: z.number().int().min(-100000).max(1_000_000).default(0),
   /** Stock when the merchant's form was loaded. When present, only (stock - stockBase) is applied (audit #3). */
   stockBase: z.number().int().min(-100000).max(1_000_000).optional(),
+  /** Set stock to an absolute count exactly once per opKey (CSV imports): a retried delivery changes nothing. */
+  stockSet: z.object({ target: z.number().int().min(0).max(1_000_000), opKey: z.string().regex(/^[A-Za-z0-9:_-]{8,120}$/) }).optional(),
   trackInventory: z.boolean().default(true),
   allowBackorder: z.boolean().default(false),
 });
@@ -76,6 +78,8 @@ const ProductIn = z.object({
   currency: z.string().regex(/^[A-Z]{3}$/).optional(),
   /** Stable id for one edit session (one opened form). Retrying the same save applies its stock changes once. */
   editId: z.string().regex(/^[A-Za-z0-9_-]{8,64}$/).optional(),
+  /** Variants the merchant deliberately removed in this form. Variants merely missing from an older form are kept. */
+  removeVariantIds: z.array(z.string().max(40)).max(100).default([]),
 });
 type ProductInput = z.infer<typeof ProductIn>;
 
@@ -170,6 +174,17 @@ async function writeProduct(c: Ctx, p: ProjectRow, input: ProductInput, userId: 
     stmts.push(c.env.DB.prepare("UPDATE product_variants SET stock = stock + (SELECT delta FROM inventory_movements WHERE id = ?) WHERE id = ? AND product_id = ? AND EXISTS (SELECT 1 FROM inventory_movements WHERE id = ?)")
       .bind(mid, variantId, id, mid));
   };
+  // Absolute count applied once per opKey. A marker movement is written even when the count already matches,
+  // so a retry after later sales can never reset stock.
+  const setOnce = (variantId: string, target: number, opKey: string) => {
+    const mid = newId("inv");
+    stmts.push(c.env.DB.prepare(`INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, actor, created_at, op_key)
+        SELECT ?, ?, v.id, ? - v.stock, 'import', ?, ?, ? FROM product_variants v WHERE v.id = ? AND v.product_id = ?
+          AND NOT EXISTS (SELECT 1 FROM inventory_movements WHERE variant_id = ? AND op_key = ?)`)
+      .bind(mid, p.id, target, userId, t, opKey, variantId, id, variantId, opKey));
+    stmts.push(c.env.DB.prepare("UPDATE product_variants SET stock = stock + (SELECT delta FROM inventory_movements WHERE id = ?) WHERE id = ? AND product_id = ? AND EXISTS (SELECT 1 FROM inventory_movements WHERE id = ?)")
+      .bind(mid, variantId, id, mid));
+  };
   input.variants.forEach((v, i) => {
     const title = [v.option1, v.option2].filter(Boolean).join(" / ") || "Default";
     const replayedNew = !v.id && createdIds[i] ? existing.find((e) => e.id === createdIds[i]) : undefined;
@@ -179,7 +194,8 @@ async function writeProduct(c: Ctx, p: ProjectRow, input: ProductInput, userId: 
       keep.add(replayedNew.id);
       stmts.push(c.env.DB.prepare("UPDATE product_variants SET title=?, option1=?, option2=?, sku=?, price_cents=?, track_inventory=?, allow_backorder=?, position=? WHERE id=? AND product_id=?")
         .bind(title, v.option1 || null, v.option2 || null, v.sku || null, v.priceMinor ?? null, v.trackInventory ? 1 : 0, v.allowBackorder ? 1 : 0, i, replayedNew.id, id));
-      applyOnce(replayedNew.id, Math.max(0, v.stock));
+      if (v.stockSet) setOnce(replayedNew.id, v.stockSet.target, v.stockSet.opKey);
+      else applyOnce(replayedNew.id, Math.max(0, v.stock));
       return;
     }
     const ex = v.id ? existing.find((e) => e.id === v.id) : undefined;
@@ -188,7 +204,9 @@ async function writeProduct(c: Ctx, p: ProjectRow, input: ProductInput, userId: 
       // Catalogue fields only; stock is changed separately so a stale form can never overwrite sales.
       stmts.push(c.env.DB.prepare("UPDATE product_variants SET title=?, option1=?, option2=?, sku=?, price_cents=?, track_inventory=?, allow_backorder=?, position=? WHERE id=? AND product_id=?")
         .bind(title, v.option1 || null, v.option2 || null, v.sku || null, v.priceMinor ?? null, v.trackInventory ? 1 : 0, v.allowBackorder ? 1 : 0, i, ex.id, id));
-      if (v.stockBase !== undefined) {
+      if (v.stockSet) {
+        setOnce(ex.id, v.stockSet.target, v.stockSet.opKey);
+      } else if (v.stockBase !== undefined) {
         const wanted = v.stock - v.stockBase; // the merchant's change, relative so sales made meanwhile are kept
         if (wanted !== 0 && !input.editId) throw new HttpError(400, "Stock changes need an edit id so a retried save is applied only once. Reload the page and try again.", "edit_id_required");
         // A retried request applies nothing more; a changed value in the same edit applies only the difference.
@@ -203,10 +221,13 @@ async function writeProduct(c: Ctx, p: ProjectRow, input: ProductInput, userId: 
       stmts.push(c.env.DB.prepare("INSERT INTO product_variants (id, product_id, project_id, title, option1, option2, sku, price_cents, stock, track_inventory, allow_backorder, position) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)")
         .bind(vid, id, p.id, title, v.option1 || null, v.option2 || null, v.sku || null, v.priceMinor ?? null, Math.max(0, v.stock), v.trackInventory ? 1 : 0, v.allowBackorder ? 1 : 0, i));
       // The initial movement carries the edit id, so a replay of this edit sees the stock as already applied.
-      if (v.stock > 0) stmts.push(c.env.DB.prepare("INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, actor, created_at, op_key) VALUES (?, ?, ?, ?, 'initial', ?, ?, ?)").bind(newId("inv"), p.id, vid, v.stock, userId, t, input.editId ?? null));
+      if (v.stock > 0 || v.stockSet) stmts.push(c.env.DB.prepare("INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, actor, created_at, op_key) VALUES (?, ?, ?, ?, 'initial', ?, ?, ?)").bind(newId("inv"), p.id, vid, Math.max(0, v.stock), userId, t, v.stockSet?.opKey ?? input.editId ?? null));
     }
   });
-  for (const e of existing) if (!keep.has(e.id)) stmts.push(c.env.DB.prepare("DELETE FROM product_variants WHERE id = ? AND product_id = ?").bind(e.id, id));
+  // Only variants the merchant explicitly removed are deleted. A variant missing from an older form (for example
+  // one another editor just added) is kept, so a stale save can never delete someone else's work.
+  const removable = new Set(input.removeVariantIds);
+  for (const e of existing) if (!keep.has(e.id) && removable.has(e.id)) stmts.push(c.env.DB.prepare("DELETE FROM product_variants WHERE id = ? AND product_id = ?").bind(e.id, id));
   stmts.push(c.env.DB.prepare("DELETE FROM product_collections WHERE product_id = ?").bind(id));
   for (const col of new Set(input.collections)) stmts.push(c.env.DB.prepare("INSERT INTO product_collections (product_id, collection_id) VALUES (?, ?)").bind(id, col));
   try { await c.env.DB.batch(stmts); }
@@ -276,7 +297,7 @@ const ImportRow = z.object({
 commerce.post("/projects/:id/products/import", async (c) => {
   const u = requireUser(c);
   const p = await storeProject(c, c.req.param("id"));
-  const body = z.object({ rows: z.array(z.record(z.string(), z.unknown())).min(1).max(500) }).safeParse(await c.req.json().catch(() => ({})));
+  const body = z.object({ rows: z.array(z.record(z.string(), z.unknown())).min(1).max(500), importId: z.string().regex(/^[A-Za-z0-9_-]{8,40}$/).optional() }).safeParse(await c.req.json().catch(() => ({})));
   if (!body.success) throw new HttpError(400, "No rows to import (maximum 500 per file).");
   const currency = await storeCurrency(c, p);
   // One validated conversion for every price (see parsePrice): ambiguous values are rejected, never guessed.
@@ -284,7 +305,11 @@ commerce.post("/projects/:id/products/import", async (c) => {
   let created = 0, updated = 0;
   const errors: { row: number; error: string }[] = [];
   const cols = new Map<string, string>(((await c.env.DB.prepare("SELECT id, name FROM collections WHERE project_id = ?").bind(p.id).all<{ id: string; name: string }>()).results).map((r) => [r.name.toLowerCase(), r.id]));
+  // One id per delivery of a file: the browser keeps it for retries of the same upload; a new upload gets a new one.
+  const importId = body.data.importId ?? newId("imp").replace("_", "");
   for (let i = 0; i < body.data.rows.length; i++) {
+    const rowEdit = `imp-${importId}-${i}`;
+    const rowOp = `import:${importId}:${i}`;
     const r = ImportRow.safeParse(body.data.rows[i]);
     if (!r.success) { errors.push({ row: i + 2, error: r.error.issues[0]?.message || "Invalid row" }); continue; }
     const priced = parsePrice(r.data.price, currency);
@@ -322,7 +347,7 @@ commerce.post("/projects/:id/products/import", async (c) => {
         // Update: start from the current product so omitted columns and other variants are preserved.
         const cur = (await productOut(c, p.id, existing.id))[0];
         if (cur.currency !== currency) { errors.push({ row: i + 2, error: `This product is priced in ${cur.currency} but the store sells in ${currency}. Update it in the product editor first.` }); continue; }
-        const variants = cur.variants.map((v: any) => ({ id: v.id, option1: v.option1, option2: v.option2, sku: v.sku, priceMinor: v.priceMinor, stock: v.stock, stockBase: v.stock, trackInventory: v.trackInventory, allowBackorder: v.allowBackorder }));
+        const variants: Array<Record<string, any>> = cur.variants.map((v: any) => ({ id: v.id, option1: v.option1, option2: v.option2, sku: v.sku, priceMinor: v.priceMinor, stock: v.stock, stockBase: v.stock, trackInventory: v.trackInventory, allowBackorder: v.allowBackorder }));
         let target = existing.variantId ? variants.find((v: any) => v.id === existing!.variantId) : undefined;
         // Scope: a variant SKU row prices that variant only; a product SKU row prices the product.
         if (existing.variantId) {
@@ -344,7 +369,9 @@ commerce.post("/projects/:id/products/import", async (c) => {
         if (has("stock")) {
           if (!target && variants.length === 1) target = variants[0];
           if (!target) { errors.push({ row: i + 2, error: "This product has several variants. Add an option value (for example the size) to say which variant the stock is for." }); continue; }
-          target.stock = stock;
+          // The count is set once per import delivery: resending the same file keeps sales made since.
+          target.stockSet = { target: stock, opKey: rowOp };
+          if (!target.id) target.stock = stock;
         }
         const input: ProductInput = ProductIn.parse({
           title: r.data.title, handle: cur.handle,
@@ -358,7 +385,7 @@ commerce.post("/projects/:id/products/import", async (c) => {
           option1Name: has("option1Name") ? r.data.option1Name : cur.option1Name, option2Name: has("option2Name") ? r.data.option2Name : cur.option2Name,
           maxPerOrder: cur.maxPerOrder, featured: cur.featured,
           collections: colId ? [...new Set([...cur.collections, colId])] : cur.collections,
-          variants, editId: newId("imp").replace("_", "-"),
+          variants, editId: rowEdit,
         });
         await writeProduct(c, p, input, u.id, existing.id); updated++;
       } else {
@@ -366,9 +393,14 @@ commerce.post("/projects/:id/products/import", async (c) => {
           title: r.data.title, description: r.data.description, priceMinor: price, compareAtMinor: comparePriced?.ok ? comparePriced.minor : null,
           sku: r.data.sku || null, tags: r.data.tags, status: ["active", "draft"].includes(r.data.status.toLowerCase()) ? r.data.status.toLowerCase() : "active",
           option1Name: r.data.option1Name || null, option2Name: r.data.option2Name || null, collections: colId ? [colId] : [],
-          variants: [{ option1: r.data.option1 || null, option2: r.data.option2 || null, stock, trackInventory: true }],
+          variants: [{ option1: r.data.option1 || null, option2: r.data.option2 || null, stock, trackInventory: true, stockSet: { target: stock, opKey: rowOp } }],
+          editId: rowEdit,
         });
-        await writeProduct(c, p, input, u.id); created++;
+        // A resent delivery maps to the product this row created the first time instead of a duplicate.
+        const createId = await editScopedId("prd", rowEdit, p.id);
+        const again = await c.env.DB.prepare("SELECT id FROM products WHERE id = ? AND project_id = ?").bind(createId, p.id).first();
+        if (again) await writeProduct(c, p, input, u.id, createId); else await writeProduct(c, p, input, u.id, undefined, createId);
+        created++;
       }
     } catch (e) { errors.push({ row: i + 2, error: e instanceof HttpError ? e.message : "Could not save" }); }
   }
@@ -462,16 +494,22 @@ commerce.patch("/projects/:id/orders/:oid", async (c) => {
   const t = now();
   const stmts: D1PreparedStatement[] = [
     // Conditional on the current status, so two concurrent updates can't both restock.
-    c.env.DB.prepare("UPDATE orders SET status = ?, payment_status = ?, updated_at = ? WHERE id = ? AND status = ?").bind(to, pay, t, o.id, o.status),
+    c.env.DB.prepare("UPDATE orders SET status = ?, payment_status = ?, updated_at = ? WHERE id = ? AND status = ? AND payment_status = ?").bind(to, pay, t, o.id, o.status, o.payment_status),
     // changes() refers to the UPDATE above: if it matched nothing (concurrent change), to_status becomes NULL,
     // violating NOT NULL and rolling back the whole batch, so stock can never be restocked twice.
     c.env.DB.prepare("INSERT INTO order_status_history (id, order_id, from_status, to_status, payment_status, note, actor, created_at) VALUES (?, ?, ?, CASE WHEN changes() = 1 THEN ? ELSE NULL END, ?, ?, ?, ?)").bind(newId("osh"), o.id, o.status, to, pay, body.note ?? null, u.id, t),
   ];
   if (to === "cancelled" && o.status !== "cancelled" && !o.is_demo) {
-    const items = await c.env.DB.prepare("SELECT variant_id, quantity FROM order_items WHERE order_id = ?").bind(o.id).all<{ variant_id: string; quantity: number }>();
-    for (const it of items.results) {
-      stmts.push(c.env.DB.prepare("UPDATE product_variants SET stock = stock + ? WHERE id = ? AND project_id = ? AND track_inventory = 1").bind(it.quantity, it.variant_id, p.id));
-      stmts.push(c.env.DB.prepare("INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, order_id, actor, created_at) VALUES (?, ?, ?, ?, 'order_cancel', ?, ?, ?)").bind(newId("inv"), p.id, it.variant_id, it.quantity, o.id, u.id, t));
+    // Give back exactly what this order took (its recorded debits, net of any earlier restock), once, whatever the
+    // variant's tracking setting is now. Variants the order never debited get nothing back.
+    const debited = await c.env.DB.prepare("SELECT DISTINCT variant_id FROM inventory_movements WHERE order_id = ? AND reason = 'order'").bind(o.id).all<{ variant_id: string }>();
+    for (const { variant_id } of debited.results) {
+      const mid = newId("inv");
+      stmts.push(c.env.DB.prepare(`INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, order_id, actor, created_at)
+          SELECT ?, ?, ?, d, 'order_cancel', ?, ?, ? FROM (SELECT -COALESCE(SUM(delta), 0) AS d FROM inventory_movements WHERE order_id = ? AND variant_id = ? AND reason IN ('order', 'order_cancel')) WHERE d > 0`)
+        .bind(mid, p.id, variant_id, o.id, u.id, t, o.id, variant_id));
+      stmts.push(c.env.DB.prepare("UPDATE product_variants SET stock = stock + (SELECT delta FROM inventory_movements WHERE id = ?) WHERE id = ? AND project_id = ? AND EXISTS (SELECT 1 FROM inventory_movements WHERE id = ?)")
+        .bind(mid, variant_id, p.id, mid));
     }
   }
   try { await c.env.DB.batch(stmts); }

@@ -130,6 +130,8 @@ const OrderBody = z.object({
   notes: z.string().trim().max(1000).default(""),
   consent: z.literal(true, { message: "Please agree to the use of your details for this order." }),
   idempotencyKey: z.string().regex(/^[a-z0-9]{8,64}$/),
+  /** The total the shopper was shown. If prices or fees changed since, the order is not placed (409 price_changed). */
+  expectedTotalMinor: z.number().int().min(0).optional(),
   hp: z.string().optional(), t: z.number().optional(),
 });
 
@@ -163,6 +165,11 @@ publicApi.post("/store/:pid/orders", async (c) => {
   if (!lines.length) throw new HttpError(400, "Your cart is empty.");
   const shipping = fulfil.priceMinor;
   const total = subtotal + shipping;
+  if (b.expectedTotalMinor !== undefined && b.expectedTotalMinor !== total) {
+    // Never charge a total the shopper didn't see: return the revised quote and place nothing.
+    return c.json({ error: "Prices changed since you opened checkout. Please check the new total and place your order again.", code: "price_changed",
+      quote: { currency: st.currency, lines, subtotalMinor: subtotal, shippingMinor: shipping, totalMinor: total } }, 409);
+  }
   const id = newId("ord");
   const token = await orderToken(c.env, id);
   const t = now();
@@ -182,7 +189,8 @@ publicApi.post("/store/:pid/orders", async (c) => {
     if (!site.isDemo) {
       // Atomic stock decrement: the oversell trigger aborts the whole batch if stock would go negative.
       stmts.push(c.env.DB.prepare("UPDATE product_variants SET stock = stock - ? WHERE id = ? AND project_id = ? AND track_inventory = 1").bind(l.quantity, l.variantId, site.projectId));
-      stmts.push(c.env.DB.prepare("INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, order_id, actor, created_at) VALUES (?, ?, ?, ?, 'order', ?, 'customer', ?)").bind(newId("inv"), site.projectId, l.variantId, -l.quantity, id, t));
+      // Record the debit only if stock was really taken (tracked variants), so cancellation gives back the same amount.
+      stmts.push(c.env.DB.prepare("INSERT INTO inventory_movements (id, project_id, variant_id, delta, reason, order_id, actor, created_at) SELECT ?, ?, ?, ?, 'order', ?, 'customer', ? WHERE changes() = 1").bind(newId("inv"), site.projectId, l.variantId, -l.quantity, id, t));
     }
   }
   try { await c.env.DB.batch(stmts); }
@@ -190,7 +198,9 @@ publicApi.post("/store/:pid/orders", async (c) => {
     const m = String((e as Error).message);
     if (m.includes("OUT_OF_STOCK")) throw new HttpError(409, "Sorry, an item in your cart just sold out. Please review your cart.", "out_of_stock");
     if (m.includes("UNIQUE") && m.includes("idempotency")) {
-      return c.json({ ok: true, orderUrl: `/s/${site.slug}/order/${(await c.env.DB.prepare("SELECT id FROM orders WHERE project_id = ? AND idempotency_key = ?").bind(site.projectId, b.idempotencyKey).first<{ id: string }>())?.id}?k=${token}`, duplicate: true });
+      // A concurrent retry won the race: return the receipt link for the order that was actually created.
+      const won = await c.env.DB.prepare("SELECT id FROM orders WHERE project_id = ? AND idempotency_key = ?").bind(site.projectId, b.idempotencyKey).first<{ id: string }>();
+      if (won) return c.json({ ok: true, orderUrl: `/s/${site.slug}/order/${won.id}?k=${await orderToken(c.env, won.id)}`, duplicate: true });
     }
     throw e;
   }

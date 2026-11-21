@@ -1,5 +1,5 @@
 import { parseMoney, parsePrice } from "../shared/util";
-import { createContext, useRef, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useRef, useCallback, useContext, useEffect, useState, type ReactNode, type RefObject } from "react";
 
 // ── API client ──
 export class ApiError extends Error {
@@ -36,6 +36,32 @@ export interface Config {
   hosting: { status: string; amount: string; amounts?: Partial<Record<"personal" | "business" | "ecommerce", string>>; currency: string; interval: string };
   operator: { name: string; note: string; supportEmail: string };
   demos: { slug: string; type: string; url: string }[];
+}
+
+/**
+ * Keyboard behaviour shared by every dialog: focus moves inside on open, Tab and Shift+Tab cycle within it,
+ * Escape closes it, and focus returns to the element that opened it.
+ */
+export function useFocusTrap(box: RefObject<HTMLElement | null>, onEscape: () => void, initial?: string) {
+  const esc = useRef(onEscape);
+  esc.current = onEscape;
+  useEffect(() => {
+    const prev = document.activeElement as HTMLElement | null;
+    const focusables = () => Array.from(box.current?.querySelectorAll<HTMLElement>('a[href],button:not([disabled]),input:not([disabled]):not([type=hidden]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])') ?? []);
+    const start = initial === "box" ? box.current : (initial && box.current?.querySelector<HTMLElement>(initial)) || focusables()[0] || box.current;
+    start?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { e.preventDefault(); esc.current(); return; }
+      if (e.key !== "Tab" || !box.current) return;
+      const list = focusables();
+      if (!list.length) { e.preventDefault(); box.current.focus(); return; }
+      const at = list.indexOf(document.activeElement as HTMLElement);
+      if (e.shiftKey && at <= 0) { e.preventDefault(); list[list.length - 1].focus(); }
+      else if (!e.shiftKey && (at === -1 || at === list.length - 1)) { e.preventDefault(); list[0].focus(); }
+    };
+    document.addEventListener("keydown", onKey, true);
+    return () => { document.removeEventListener("keydown", onKey, true); if (prev && document.contains(prev)) prev.focus(); };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 }
 
 /** Options for the in-app dialog that replaces the browser's prompt()/confirm(). */
@@ -172,20 +198,17 @@ export async function sampleColors(file: Blob): Promise<string[]> {
 function AskDialog({ opts, onDone }: { opts: AskOptions; onDone: (v: string | null) => void }) {
   const [value, setValue] = useState(opts.input?.initial ?? "");
   const box = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const prev = document.activeElement as HTMLElement | null;
-    (box.current?.querySelector("input,textarea,button.btn-primary,button.btn-danger") as HTMLElement | null)?.focus();
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onDone(null); };
-    document.addEventListener("keydown", onKey);
-    return () => { document.removeEventListener("keydown", onKey); prev?.focus(); };
-  }, [onDone]);
+  const settled = useRef(false);
+  // Resolve exactly once, however many times Enter, a button or Escape fires.
+  const finish = (v: string | null) => { if (settled.current) return; settled.current = true; onDone(v); };
+  useFocusTrap(box, () => finish(null), "input,textarea,button.btn-primary,button.btn-danger");
   const blocked = !!opts.input?.required && !value.trim();
-  const submit = (e?: { preventDefault: () => void }) => { e?.preventDefault(); if (!blocked) onDone(opts.input ? value.trim() : ""); };
+  const submit = (e?: { preventDefault: () => void }) => { e?.preventDefault(); if (!blocked) finish(opts.input ? value.trim() : ""); };
   const field = opts.input;
   return (
-    <div className="modal-back" onMouseDown={(e) => { if (e.target === e.currentTarget) onDone(null); }}>
-      <div className="modal" role="dialog" aria-modal="true" aria-label={opts.title} ref={box} style={{ width: "min(100%, 520px)" }}>
-        <div className="modal-head"><h2 style={{ fontSize: "1.15rem", margin: 0 }}>{opts.title}</h2><button className="btn btn-ghost btn-sm" onClick={() => onDone(null)} aria-label="Close">✕</button></div>
+    <div className="modal-back" onMouseDown={(e) => { if (e.target === e.currentTarget) finish(null); }}>
+      <div className="modal" role="dialog" aria-modal="true" aria-label={opts.title} ref={box} tabIndex={-1} style={{ width: "min(100%, 520px)" }}>
+        <div className="modal-head"><h2 style={{ fontSize: "1.15rem", margin: 0 }}>{opts.title}</h2><button className="btn btn-ghost btn-sm" onClick={() => finish(null)} aria-label="Close">✕</button></div>
         <form className="modal-body stack" onSubmit={submit}>
           {opts.message && <p style={{ margin: 0 }}>{opts.message}</p>}
           {field && (
@@ -196,7 +219,7 @@ function AskDialog({ opts, onDone }: { opts: AskOptions; onDone: (v: string | nu
             </label>
           )}
           <div className="row" style={{ justifyContent: "flex-end" }}>
-            {opts.cancelLabel !== null && <button type="button" className="btn" onClick={() => onDone(null)}>{opts.cancelLabel || "Cancel"}</button>}
+            {opts.cancelLabel !== null && <button type="button" className="btn" onClick={() => finish(null)}>{opts.cancelLabel || "Cancel"}</button>}
             <button type="submit" className={`btn ${opts.danger ? "btn-danger" : "btn-primary"}`} disabled={blocked}>{opts.confirmLabel || "OK"}</button>
           </div>
         </form>

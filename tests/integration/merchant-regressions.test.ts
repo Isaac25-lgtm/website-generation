@@ -364,3 +364,119 @@ describe("audit 6a1cc2c: SKUs identify exactly one variant", () => {
     expect(Object.fromEntries(cap.variants.map((x: any) => [x.option1, x.stock]))).toEqual({ Black: 2, White: 4 });
   });
 });
+
+// ── Integrity review of 1e5c9c6 (docs/integrity-review-1e5c9c6.md): the four P1 reproductions ──
+
+const stockOf = async (id: string, title: string) => {
+  const p = (await merchant.req(`/api/projects/${id}/products`)).json.products.find((x: any) => x.title === title);
+  return p ? Object.fromEntries(p.variants.map((v: any) => [v.option1 ?? "default", v.stock])) : null;
+};
+const placeOrder = (storeId: string, variantId: string, qty: number, key: string, expectedTotalMinor?: number) =>
+  shopper.req(`/api/public/store/${storeId}/orders`, { body: {
+    items: [{ variantId, quantity: qty }], fulfillmentId: "pick1", paymentMethodId: "cod1",
+    customer: { name: "Test Buyer", phone: "+33199000003", email: "" }, consent: true, idempotencyKey: key, t: old(),
+    ...(expectedTotalMinor !== undefined ? { expectedTotalMinor } : {}),
+  } });
+
+describe("integrity review: checkout never charges a total the shopper didn't see", () => {
+  it("returns a revised quote and places nothing when the price changed after quoting", async () => {
+    const id = await newStore("Price change", "EUR");
+    const made = await merchant.req(`/api/projects/${id}/products`, { body: { title: "Scarf", priceMinor: 1000, variants: [{ stock: 5 }] } });
+    const pid = made.json.product.id, vid = made.json.product.variants[0].id;
+    expect((await publish(id)).status).toBe(200);
+    const quote = await shopper.req(`/api/public/store/${id}/quote`, { body: { items: [{ variantId: vid, quantity: 2 }] } });
+    expect(quote.json.subtotalMinor).toBe(2000);
+    // The seller doubles the price while the shopper is on the checkout page.
+    expect((await merchant.req(`/api/projects/${id}/products/${pid}`, { method: "PUT", body: { title: "Scarf", priceMinor: 2000, editId: `pc${run}`, variants: [{ id: vid, stock: 5, stockBase: 5 }] } })).status).toBe(200);
+    const first = await placeOrder(id, vid, 2, `pca${run}`, 2000);
+    expect(first.status).toBe(409);
+    expect(first.json.code).toBe("price_changed");
+    expect(first.json.quote.totalMinor).toBe(4000);
+    expect((await merchant.req(`/api/projects/${id}/orders`)).json.orders).toHaveLength(0);
+    expect(await stockOf(id, "Scarf")).toEqual({ default: 5 });
+    // Only explicit acceptance of the new total places the order.
+    const accepted = await placeOrder(id, vid, 2, `pca${run}`, 4000);
+    expect(accepted.status).toBe(200);
+    expect((await merchant.req(`/api/projects/${id}/orders`)).json.orders[0]).toMatchObject({ total_cents: 4000 });
+    expect(await stockOf(id, "Scarf")).toEqual({ default: 3 });
+  });
+});
+
+describe("integrity review: an older product form never deletes another editor's variant", () => {
+  it("keeps a variant added by someone else, and still deletes one removed on purpose", async () => {
+    const id = await newStore("Two editors", "USD");
+    const made = await merchant.req(`/api/projects/${id}/products`, { body: { title: "Scarf", priceMinor: 1500, option1Name: "Colour", variants: [{ option1: "Blue", stock: 3 }] } });
+    const pid = made.json.product.id, blue = made.json.product.variants[0].id;
+    // Editor A adds Green with 7 units.
+    const a = await merchant.req(`/api/projects/${id}/products/${pid}`, { method: "PUT", body: { title: "Scarf", priceMinor: 1500, option1Name: "Colour", editId: `edA${run}`,
+      variants: [{ id: blue, option1: "Blue", stock: 3, stockBase: 3 }, { option1: "Green", stock: 7 }] } });
+    const green = a.json.product.variants.find((v: any) => v.option1 === "Green").id;
+    // Editor B opened the product before Green existed and only renames it.
+    const b = await merchant.req(`/api/projects/${id}/products/${pid}`, { method: "PUT", body: { title: "Silk scarf", priceMinor: 1500, option1Name: "Colour", editId: `edB${run}`,
+      variants: [{ id: blue, option1: "Blue", stock: 3, stockBase: 3 }] } });
+    expect(b.status).toBe(200);
+    const after = Object.fromEntries(b.json.product.variants.map((v: any) => [v.option1, v]));
+    expect(after.Green?.id).toBe(green);
+    expect(after.Green?.stock).toBe(7);
+    expect(b.json.product.title).toBe("Silk scarf");
+    // A deliberate removal from a current form still works.
+    const c = await merchant.req(`/api/projects/${id}/products/${pid}`, { method: "PUT", body: { title: "Silk scarf", priceMinor: 1500, option1Name: "Colour", editId: `edC${run}`,
+      variants: [{ id: blue, option1: "Blue", stock: 3, stockBase: 3 }], removeVariantIds: [green] } });
+    expect(c.json.product.variants.map((v: any) => v.option1)).toEqual(["Blue"]);
+  });
+});
+
+describe("integrity review: retrying a CSV delivery never restores sold stock", () => {
+  it("keeps post-sale stock on an identical retry, and a new import can still set a fresh count", async () => {
+    const id = await newStore("Import retry", "USD");
+    const rows = [{ title: "Cap", price: "10", sku: `CAPR-${run}`, stock: "8" }, { title: "Tote", price: "12", stock: "4" }];
+    const first = await merchant.req(`/api/projects/${id}/products/import`, { body: { rows, importId: `impA${run}` } });
+    expect(first.json).toMatchObject({ created: 2, failed: 0 });
+    expect((await publish(id)).status).toBe(200);
+    const cap = (await merchant.req(`/api/projects/${id}/products`)).json.products.find((p: any) => p.title === "Cap");
+    expect((await placeOrder(id, cap.variants[0].id, 2, `imr${run}`)).status).toBe(200);
+    expect(await stockOf(id, "Cap")).toEqual({ default: 6 });
+    // The identical delivery is resent (for example after a lost response).
+    const again = await merchant.req(`/api/projects/${id}/products/import`, { body: { rows, importId: `impA${run}` } });
+    expect(again.json.failed).toBe(0);
+    expect(await stockOf(id, "Cap")).toEqual({ default: 6 });
+    // No duplicate for the row without a SKU either.
+    expect((await merchant.req(`/api/projects/${id}/products`)).json.products.filter((p: any) => p.title === "Tote")).toHaveLength(1);
+    // A deliberate new stock count is a new import and applies.
+    expect((await merchant.req(`/api/projects/${id}/products/import`, { body: { rows: [rows[0]], importId: `impB${run}` } })).json.failed).toBe(0);
+    expect(await stockOf(id, "Cap")).toEqual({ default: 8 });
+  });
+});
+
+describe("integrity review: cancelling gives back exactly what the order took", () => {
+  it("adds nothing back for a sale made while tracking was off, even after tracking is switched on", async () => {
+    const id = await newStore("Untracked", "USD");
+    const made = await merchant.req(`/api/projects/${id}/products`, { body: { title: "Print", priceMinor: 500, variants: [{ stock: 5, trackInventory: false }] } });
+    const pid = made.json.product.id, vid = made.json.product.variants[0].id;
+    expect((await publish(id)).status).toBe(200);
+    const o = await placeOrder(id, vid, 2, `unt${run}`);
+    expect(o.status).toBe(200);
+    expect(await stockOf(id, "Print")).toEqual({ default: 5 });
+    await merchant.req(`/api/projects/${id}/products/${pid}`, { method: "PUT", body: { title: "Print", priceMinor: 500, editId: `trk${run}`, variants: [{ id: vid, stock: 5, stockBase: 5, trackInventory: true }] } });
+    const oid = o.json.orderUrl.match(/order\/(ord_[a-z0-9]+)/)[1];
+    expect((await merchant.req(`/api/projects/${id}/orders/${oid}`, { method: "PATCH", body: { status: "cancelled" } })).status).toBe(200);
+    expect(await stockOf(id, "Print")).toEqual({ default: 5 });
+    await merchant.req(`/api/projects/${id}/orders/${oid}`, { method: "PATCH", body: { status: "cancelled" } });
+    expect(await stockOf(id, "Print")).toEqual({ default: 5 });
+  });
+
+  it("gives back a tracked sale once, even if tracking was switched off before cancelling", async () => {
+    const id = await newStore("Tracked", "USD");
+    const made = await merchant.req(`/api/projects/${id}/products`, { body: { title: "Mug", priceMinor: 500, variants: [{ stock: 5 }] } });
+    const pid = made.json.product.id, vid = made.json.product.variants[0].id;
+    expect((await publish(id)).status).toBe(200);
+    const o = await placeOrder(id, vid, 2, `trk2${run}`);
+    expect(await stockOf(id, "Mug")).toEqual({ default: 3 });
+    await merchant.req(`/api/projects/${id}/products/${pid}`, { method: "PUT", body: { title: "Mug", priceMinor: 500, editId: `untr${run}`, variants: [{ id: vid, stock: 3, stockBase: 3, trackInventory: false }] } });
+    const oid = o.json.orderUrl.match(/order\/(ord_[a-z0-9]+)/)[1];
+    expect((await merchant.req(`/api/projects/${id}/orders/${oid}`, { method: "PATCH", body: { status: "cancelled" } })).status).toBe(200);
+    expect(await stockOf(id, "Mug")).toEqual({ default: 5 });
+    await merchant.req(`/api/projects/${id}/orders/${oid}`, { method: "PATCH", body: { status: "cancelled" } });
+    expect(await stockOf(id, "Mug")).toEqual({ default: 5 });
+  });
+});

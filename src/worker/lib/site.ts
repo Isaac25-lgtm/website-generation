@@ -99,8 +99,34 @@ export async function activeEntitlement(env: AppEnv, projectId: string): Promise
   return r ?? null;
 }
 
+/** Key for preview links and order receipts. Production refuses to sign with the development fallback. */
+function signingSecret(env: AppEnv): string {
+  if (env.SESSION_SECRET) return env.SESSION_SECRET;
+  if (env.APP_ENV === "production") throw new HttpError(503, "This service isn't fully configured yet. Please try again later.", "not_configured");
+  return "dev-secret";
+}
+
+/**
+ * When a site no longer has any valid purchase or admin grant (refund, revoked demo), take it offline: the public
+ * page and its checkout stop serving. Demo showcase sites are exempt. Returns true if a live site was withdrawn.
+ */
+export async function withdrawIfUnentitled(env: AppEnv, projectId: string, actorId: string | null, reason: string): Promise<boolean> {
+  if (await activeEntitlement(env, projectId)) return false;
+  const p = await env.DB.prepare("SELECT is_demo FROM projects WHERE id = ?").bind(projectId).first<{ is_demo: number }>();
+  if (!p || p.is_demo) return false;
+  const t = now();
+  const [r] = await env.DB.batch([
+    env.DB.prepare("UPDATE published_sites SET status = 'unpublished' WHERE project_id = ? AND status = 'live'").bind(projectId),
+    env.DB.prepare("UPDATE projects SET status = 'preview_ready', updated_at = ? WHERE id = ? AND status = 'published'").bind(t, projectId),
+  ]);
+  if (!r.meta.changes) return false;
+  await env.DB.prepare("INSERT INTO publication_jobs (id, project_id, user_id, action, status, created_at) VALUES (?, ?, ?, 'unpublish', 'succeeded', ?)").bind(newId("pub"), projectId, actorId, t).run();
+  await env.DB.prepare("INSERT INTO audit_logs (id, actor_id, action, target_type, target_id, detail_json, created_at) VALUES (?, ?, 'site.withdrawn', 'project', ?, ?, ?)").bind(newId("aud"), actorId, projectId, JSON.stringify({ reason }), t).run();
+  return true;
+}
+
 export async function previewToken(env: AppEnv, projectId: string, expires: number): Promise<string> {
-  return `${expires}.${await hmacB64url(env.SESSION_SECRET || "dev-secret", `preview:${projectId}:${expires}`)}`;
+  return `${expires}.${await hmacB64url(signingSecret(env), `preview:${projectId}:${expires}`)}`;
 }
 
 export async function verifyPreviewToken(env: AppEnv, projectId: string, token: string | undefined): Promise<boolean> {
@@ -108,12 +134,12 @@ export async function verifyPreviewToken(env: AppEnv, projectId: string, token: 
   const [exp, sig] = token.split(".");
   const e = Number(exp);
   if (!Number.isFinite(e) || e < now()) return false;
-  const expected = await hmacB64url(env.SESSION_SECRET || "dev-secret", `preview:${projectId}:${e}`);
+  const expected = await hmacB64url(signingSecret(env), `preview:${projectId}:${e}`);
   return timingSafeEqual(sig || "", expected);
 }
 
 export async function orderToken(env: AppEnv, orderId: string): Promise<string> {
-  return (await hmacB64url(env.SESSION_SECRET || "dev-secret", `order:${orderId}`)).slice(0, 32);
+  return (await hmacB64url(signingSecret(env), `order:${orderId}`)).slice(0, 32);
 }
 
 export const RESERVED_SLUGS = new Set(["admin", "api", "app", "www", "s", "preview", "media", "login", "signup", "dashboard", "pricing", "templates", "examples", "help", "support", "terms", "privacy", "refunds", "contact"]);
@@ -134,14 +160,22 @@ export async function uniqueSlug(env: AppEnv, rawBase: string): Promise<string> 
 export async function saveDraft(env: AppEnv, projectId: string, doc: SiteDoc, revision: number, userId: string | null, note: string | null, checkpoint: boolean) {
   const json = JSON.stringify(doc);
   const t = now();
-  const stmts = [
-    env.DB.prepare("UPDATE projects SET draft_json = ?, draft_revision = ?, template_id = ?, updated_at = ?, status = CASE WHEN status IN ('draft','generating') THEN 'preview_ready' ELSE status END WHERE id = ?")
-      .bind(json, revision, doc.templateId, t, projectId),
+  // Compare-and-set: the write lands only if the draft is still at the revision this save was based on, so two
+  // editors who both loaded revision N can't both succeed; the slower one gets a conflict instead of overwriting.
+  const head: D1PreparedStatement[] = [
+    env.DB.prepare("UPDATE projects SET draft_json = ?, draft_revision = ?, template_id = ?, updated_at = ?, status = CASE WHEN status IN ('draft','generating') THEN 'preview_ready' ELSE status END WHERE id = ? AND draft_revision = ?")
+      .bind(json, revision, doc.templateId, t, projectId, revision - 1),
   ];
   if (checkpoint) {
-    stmts.push(env.DB.prepare("INSERT INTO draft_history (id, project_id, revision, doc_json, note, created_by, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)").bind(newId("hist"), projectId, revision, json, note, userId, t));
+    head.push(env.DB.prepare("INSERT INTO draft_history (id, project_id, revision, doc_json, note, created_by, created_at) SELECT ?, ?, ?, ?, ?, ?, ? WHERE changes() = 1").bind(newId("hist"), projectId, revision, json, note, userId, t));
+  }
+  const [won] = await env.DB.batch(head);
+  if (!won.meta.changes) {
+    const cur = await env.DB.prepare("SELECT draft_revision FROM projects WHERE id = ?").bind(projectId).first<{ draft_revision: number }>();
+    throw new HttpError(409, "This site was changed in another tab or by another person. Reload to get the latest version.", "conflict", { revision: cur?.draft_revision });
   }
   // Denormalised page/block index (reporting only; the SiteDoc JSON stays authoritative).
+  const stmts: D1PreparedStatement[] = [];
   stmts.push(env.DB.prepare("DELETE FROM site_pages WHERE project_id = ?").bind(projectId));
   stmts.push(env.DB.prepare("DELETE FROM site_blocks WHERE project_id = ?").bind(projectId));
   doc.pages.forEach((p, i) => {

@@ -95,7 +95,9 @@ function ProductEditor({ projectId, currency, product, cols, onClose, onSaved }:
     ].filter(Boolean);
     if (problems.length) { toast(String(problems[0]), "err"); return; }
     setBusy(true);
-    const body = { ...p, currency, editId, priceMinor: price ? toMinor(price, currency) ?? 0 : 0, compareAtMinor: compare ? toMinor(compare, currency) : null, option1Name: p.option1Name || null, option2Name: p.option2Name || null, sku: p.sku || null,
+    // Only variants that were in this form when it opened and are gone now count as deliberate removals.
+    const removeVariantIds = product.variants.filter((v) => v.id && !p.variants.some((x) => x.id === v.id)).map((v) => v.id!);
+    const body = { ...p, currency, editId, removeVariantIds, priceMinor: price ? toMinor(price, currency) ?? 0 : 0, compareAtMinor: compare ? toMinor(compare, currency) : null, option1Name: p.option1Name || null, option2Name: p.option2Name || null, sku: p.sku || null,
       // stockBase = stock when this form opened, so the server applies only the merchant's change and keeps sales made meanwhile.
       variants: p.variants.map((v, i) => {
         const opened = v.id ? product.variants.find((x) => x.id === v.id) : undefined;
@@ -172,6 +174,8 @@ function CsvImport({ projectId, onClose, onDone }: { projectId: string; onClose:
   const [busy, setBusy] = useState(false);
   const headers = rows?.[0] ?? [];
   const data = useMemo(() => (rows ?? []).slice(1), [rows]);
+  // One id per loaded file, reused if the upload is retried, so stock counts are applied once.
+  const importId = useMemo(() => (rows ? `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 10)}` : ""), [rows]);
   return (
     <Modal title="Import products from CSV" onClose={onClose} wide>
       {!rows ? (
@@ -207,7 +211,7 @@ function CsvImport({ projectId, onClose, onDone }: { projectId: string; onClose:
             <button className="btn btn-primary" disabled={busy || map.title === undefined || map.price === undefined} onClick={async () => {
               setBusy(true);
               const payload = data.map((r) => Object.fromEntries(Object.entries(map).filter(([, i]) => i !== undefined).map(([k, i]) => [k, (r[i] ?? "").trim()])));
-              try { const res = await api(`/api/projects/${projectId}/products/import`, { body: { rows: payload } }); setResult(res); onDone(); } catch (e) { toast((e as Error).message, "err"); }
+              try { const res = await api(`/api/projects/${projectId}/products/import`, { body: { rows: payload, importId } }); setResult(res); onDone(); } catch (e) { toast((e as Error).message, "err"); }
               setBusy(false);
             }}>{busy && <Spinner />} Import {data.length} rows</button></div>
         </div>

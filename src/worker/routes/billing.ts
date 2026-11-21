@@ -3,7 +3,7 @@ import type { HonoEnv } from "../env";
 import { HttpError, baseUrl, now } from "../env";
 import { audit, enforceRate, requireUser } from "../lib/auth";
 import { newId, sha256Hex } from "../lib/crypto";
-import { activeEntitlement, ownedProject } from "../lib/site";
+import { activeEntitlement, ownedProject, withdrawIfUnentitled } from "../lib/site";
 import { createCheckout, dodoConfigured, getPayment, paymentsMode, productIdFor, verifyWebhook } from "../lib/dodo";
 import { PLANS, priceFor, type SiteType } from "../../shared/pricing";
 
@@ -131,10 +131,10 @@ async function processEvent(env: HonoEnv["Bindings"], type: string, data: Record
     await env.DB.batch([
       env.DB.prepare("UPDATE payments SET status = 'refunded', updated_at = ? WHERE id = ?").bind(t, payRow.id),
       env.DB.prepare("UPDATE entitlements SET status = 'revoked', revoked_at = ? WHERE payment_id = ? AND status = 'active'").bind(t, payRow.id),
-      env.DB.prepare("UPDATE published_sites SET status = 'unpublished' WHERE project_id = ? AND NOT EXISTS (SELECT 1 FROM entitlements WHERE project_id = ? AND status = 'active')").bind(payRow.project_id, payRow.project_id),
-      env.DB.prepare("UPDATE projects SET status = 'preview_ready' WHERE id = ? AND NOT EXISTS (SELECT 1 FROM entitlements WHERE project_id = ? AND status = 'active')").bind(payRow.project_id, payRow.project_id),
     ]);
     await audit(env, null, "billing.refunded", "project", payRow.project_id, { paymentId });
+    // Same rule as an admin revoke: offline only if nothing valid for the current payments mode remains.
+    await withdrawIfUnentitled(env, payRow.project_id, null, "payment refunded");
     return "processed";
   }
   return "ignored";

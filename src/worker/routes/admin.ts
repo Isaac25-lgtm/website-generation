@@ -4,6 +4,7 @@ import type { HonoEnv } from "../env";
 import { HttpError, baseUrl, now } from "../env";
 import { audit, requireAdmin } from "../lib/auth";
 import { newId, randomToken, sha256Hex } from "../lib/crypto";
+import { withdrawIfUnentitled } from "../lib/site";
 
 export const admin = new Hono<HonoEnv>();
 
@@ -89,7 +90,8 @@ admin.delete("/projects/:pid/entitlement", async (c) => {
   const me = requireAdmin(c);
   await c.env.DB.prepare("UPDATE entitlements SET status = 'revoked', revoked_at = ? WHERE project_id = ? AND source = 'admin_demo' AND status = 'active'").bind(now(), c.req.param("pid")).run();
   await audit(c.env, me.id, "admin.demo_entitlement_revoked", "project", c.req.param("pid"));
-  return c.json({ ok: true });
+  const withdrawn = await withdrawIfUnentitled(c.env, c.req.param("pid"), me.id, "demo access revoked");
+  return c.json({ ok: true, withdrawn });
 });
 
 admin.post("/projects/:pid/suspend", async (c) => {

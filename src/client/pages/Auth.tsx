@@ -9,6 +9,8 @@ const GOOGLE_ERRORS: Record<string, string> = {
   google_token: "Google sign-in failed. Please try again.",
   google_profile: "We couldn't read your Google profile. Please try again.",
   google_unverified: "Your Google email address isn't verified.",
+  google_denied: "Google sign-in was cancelled, or this Google account isn't on the testers list yet. While Google sign-in is in testing, only approved accounts can use it. You can still sign up with email.",
+  google_conflict: "This email is already linked to a different Google account. Sign in with that Google account, or with your email and password.",
   inactive: "This account is not active. Please contact support.",
 };
 

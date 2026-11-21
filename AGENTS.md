@@ -16,7 +16,7 @@ Written 2026-11-20 at the end of the first build session. Read this file first, 
 **ImprintSites AI** is a no-code website builder SaaS by Motion Imprints Technologies. The parent company may rename to "Motion Analytics", so the product name deliberately stands on its own. Customers describe a site, pick a template (or paste an inspiration URL), edit it in a live editor, pay, and publish.
 
 - **Live:** https://imprintsites.omodingisaac123.workers.dev (Cloudflare Worker `imprintsites`, latest version `712e0968-5fd8-4fb2-a3c0-63b8b61bd824`)
-- **Demo sites:** `/s/demo-portfolio/` (Lens template), `/s/demo-business/` (Savanna), `/s/demo-store/` (Maison)
+- **Demo sites:** `/s/demo-portfolio/` (Lens template, Lisbon photographer), `/s/demo-business/` (Meridian, Kingsway Advisory, London), `/s/demo-store/` (Maison, Maison Nia, Paris, EUR)
 - **Brand:** wordmark "ImprintSites" plus a blue "AI", tagline **"Imagine it. Build it. Launch it."**, logo `public/logo-mark.svg`.
 - **Original spec:** the owner's master prompt *"Motion Imprints Website Builder: Claude Code Master Build Prompt"*. It isn't in the repo; the key rules are restated in section 3.
 
@@ -66,7 +66,7 @@ All of the following work and are tested locally and on production:
 
 - **Monthly hosting billing.** The hosting fee ($3 personal / $4 business / $5 online store, per site per month) is displayed everywhere with status `announced`, but nothing collects it. It needs a Dodo subscription product plus an opt-in flow. Only then switch `hosting_fee_status` to `active`.
 - **Custom domains (Stage 2).** Needs an owned zone plus Cloudflare for SaaS custom hostnames. See `docs/domain-publishing.md`. The UI currently says "coming soon" and only collects interest.
-- **Card payments inside customer stores.** Each seller would connect their own gateway (Flutterwave, Paystack or Pesapal sandbox). Never route seller revenue through the platform's Dodo account.
+- **Card payments inside customer stores.** Each seller would connect their own card payment provider. Never route seller revenue through the platform's Dodo account.
 - **Smaller items:**
   - Turnstile on public forms
   - Cache API for non-store published pages
@@ -112,7 +112,7 @@ src/shared/   used by Worker + client: schema.ts (SiteDoc, Zod), pricing.ts, tem
 src/worker/   index.ts (Hono app, cron), routes/ (auth, projects, assets, commerce, public, billing, admin, sites),
               lib/ (auth, crypto, storage R2/D1, ssrf, ai, dodo, inspiration, site, zip, email), seed.ts (demo sites)
 src/client/   React SPA (react-router): pages/ (marketing, auth, legal), app/ (dashboard, wizard, editor, store, admin)
-migrations/   D1 SQL (0001 schema, 0002/0003 hosting fee)
+migrations/   D1 SQL (0001 schema, 0002/0003/0006 hosting fee, 0004 stock edit ids, 0005 unique variant SKUs)
 ```
 
 - **Routing:** `wrangler.jsonc` → `assets.run_worker_first` sends `/api/*`, `/s/*`, `/preview/*`, `/media/*`, robots, sitemap and healthz to the Worker. Everything else is served by the SPA.

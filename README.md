@@ -19,7 +19,8 @@ Describe the website you need, preview it on every device, refine it in a live e
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
 ![Hono](https://img.shields.io/badge/Hono-API-E36002?logo=hono&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-unit%2059%20·%20integration%2036%20·%20e2e%2011-2ea44f)
+![Python](https://img.shields.io/badge/Python-Django%206%20·%20Neon%20Postgres-3776AB?logo=python&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-unit%20109%20·%20integration%2057%20·%20e2e%2011%20·%20python%2053-2ea44f)
 
 <sub>A product of Motion Imprints Technologies</sub>
 
@@ -67,10 +68,10 @@ Every published site also has **hosting & maintenance per site per month: $3 for
 **How a site is made:**
 
 1. A **guided wizard** collects the customer's content. Answers save automatically, and the store flow is the most detailed of the three.
-2. The customer picks one of **18 original templates**, or **pastes a website they love**. The platform reads that site's high-level style (palette, type, spacing, shapes, layout rhythm) and applies it to an original design. Nothing is copied.
+2. The customer **pastes a website they love** (shown as the recommended option), or picks one of **18 original templates**. The platform reads that site's high-level style (palette, type, spacing, shapes, layout rhythm), names the best-matching templates and applies the style to an original design. Nothing is copied.
 3. A **deterministic generator** builds a strictly validated site document from the answers. Optional **Workers AI** can polish the wording, but it never adds facts, and the owner reviews every suggestion.
-4. The **editor** shows the real site at desktop, tablet and mobile sizes, with sections, theme controls, undo/redo, checkpoints, template switching, and plain-English design requests ("make it more elegant", "dark mode").
-5. The customer **picks a web address** (availability-checked, set up automatically with HTTPS), pays the one-time build fee, and the site goes live with version history and rollback.
+4. The **editor** shows the real site at desktop, tablet and mobile sizes, with a one-click **Light / Dark** switch, sections, theme controls, undo/redo, checkpoints, template switching, and plain-English design requests ("make it more elegant").
+5. The customer **picks a web address** (availability-checked, set up automatically with HTTPS), chooses light or dark one last time on the publish page, pays the one-time build fee, and the site goes live with version history and rollback. A ZIP copy of the site can be downloaded at any time.
 
 ---
 
@@ -125,9 +126,10 @@ Every published site also has **hosting & maintenance per site per month: $3 for
 ### Builder
 - **Three intake wizards** with autosave, repeatable lists (experience, projects, services, team, FAQs), media library, CSV/PDF uploads and Openverse photos with licence and attribution recorded.
 - **18 templates** (6 personal, 6 business, 6 e-commerce), each structurally distinct: editorial, terminal, sidebar, poster, full-bleed, mosaic, menu-style and more.
-- **Inspiration from a link:** Cloudflare Browser Run renders the page and extracts computed styles, with an HTML/CSS fallback and a screenshot-upload fallback. The result is a structured style brief with recommended templates.
+- **Inspiration from a link (recommended in the UI):** Cloudflare Browser Run renders the page and extracts computed styles, with an HTML/CSS fallback and a screenshot-upload fallback. The result is a plain-language style brief, a palette and named, clickable template matches. A link pasted on the home page is analysed automatically when the customer reaches the design step.
 - **Editor:** page and section management, inspector forms for 21 section types, theme tokens (colours, fonts, radius, density, motion), undo/redo, checkpoints, template switching, click-to-select in the preview, and true-size device previews.
-- **AI refinement:** design requests become validated token patches. Workers AI (`llama-3.3-70b-instruct-fp8-fast`, JSON mode) is used when available, with a deterministic rule-based fallback that is labelled as such.
+- **AI refinement:** design requests become validated token patches. Workers AI (`llama-3.3-70b-instruct-fp8-fast`, JSON mode) is used when available, within a 20-second budget, with a deterministic rule-based fallback that is labelled as such.
+- **Light and dark:** a Light / Dark switch in the editor and on the publish page. Light restores the template's own palette; brand colours are automatically kept readable on either background (WCAG contrast, tested for every template in both modes).
 
 ### Publishing
 - Path-based sites at `/s/<your-address>/`, with addresses checked for availability, reserved names blocked, and free alternatives suggested automatically.
@@ -136,13 +138,14 @@ Every published site also has **hosting & maintenance per site per month: $3 for
 
 ### Online stores
 - Products, variants (two option axes), stock tracking, backorders, max-per-order limits, categories, and CSV import with column mapping and per-row validation.
+- Prices are parsed strictly in every currency: `19,95` and `1.234,50` work, ambiguous values like `1,234` are rejected with an explanation. Variant SKUs are unique per store, and replaying a save never changes stock twice.
 - Server-rendered search, category filters and sorting; product pages with variant pickers; cart; checkout.
 - Orders: totals computed server-side, idempotent submission, **atomic oversell protection** (a D1 trigger aborts any batch that would push stock below zero), status workflow, restocking on cancellation, CSV export.
 - Seller-controlled payment methods (pay on delivery, pay on pickup, bank transfer, mobile wallet, WhatsApp) and delivery or pickup options with fees.
 
 ### Accounts and admin
 - Email/password accounts (PBKDF2-SHA256), sessions in HttpOnly cookies, CSRF protection, rate limiting, password reset, data export and deletion requests.
-- Google sign-in (OAuth 2.0 with PKCE and safe account linking), active once a client ID is configured.
+- Google sign-in (OAuth 2.0 with PKCE and safe account linking: an account already linked to another Google identity is never switched over), active once a client ID is configured. While the Google app is in Testing mode, only its listed test users can sign in, and others see a clear message.
 - Role-based admin console: overview metrics, users, projects (audited demo entitlements and suspensions), support tickets, payments and webhooks, orders, settings (including the hosting fee), and a full audit log.
 
 ### Billing (the platform's own service)
@@ -168,7 +171,7 @@ Full details: [PRICING_AND_BILLING.md](PRICING_AND_BILLING.md).
 
 ## Architecture
 
-The whole product runs as **one Cloudflare Worker**: a Hono API, a server-side site renderer, and a React SPA served as static assets.
+The live product runs as **one Cloudflare Worker**: a Hono API, a server-side site renderer, and a React SPA served as static assets. A **Python backend** (Django + DRF on Neon PostgreSQL) is being introduced route by route; today it serves a parity-tested project read locally and is not yet deployed. See [backend/README.md](backend/README.md) and [docs/claude-handoff.md](docs/claude-handoff.md).
 
 ```mermaid
 flowchart LR
@@ -187,6 +190,7 @@ flowchart LR
   API --> AI["Workers AI<br/>copy polish · refine"]
   API --> BR["Browser Run<br/>inspiration capture"]
   API --> DODO["Dodo Payments<br/>build-fee checkout + webhooks"]
+  PY["Python backend (Django + DRF)<br/>migration in progress"] -.->|read path, parity-tested| PG[("Neon PostgreSQL")]
 ```
 
 **Key ideas**
@@ -239,13 +243,15 @@ More detail: [docs/architecture.md](docs/architecture.md).
 │       ├── pages/           # Home, marketing, auth, legal
 │       ├── app/             # Dashboard, wizard, editor, store manager, publish, admin
 │       └── components/      # UI kit, spec-driven forms, media library
-├── migrations/              # D1 schema and settings migrations
+├── backend/                 # Python backend (Django + DRF), migration in progress: see backend/README.md
+├── contracts/               # SiteDoc JSON Schema, public config and fixtures shared by TypeScript and Python
+├── migrations/              # D1 schema and settings migrations (0001–0006)
 ├── public/                  # Logo, hero photos, demo photos (CC0), showcase screenshots
 ├── tests/
 │   ├── unit/                # Renderer (all templates), security, pricing, webhooks
 │   ├── integration/         # API tests against a running Worker
 │   └── e2e/                 # Playwright browser flows + accessibility
-├── scripts/                 # Production smoke test, admin bootstrap, showcase capture, cleanup SQL
+├── scripts/                 # Production smoke test (exact-id cleanup records), admin bootstrap, showcase capture
 └── docs/                    # Architecture, setup, costs, Dodo, domains, QA, screenshots
 ```
 
@@ -308,12 +314,12 @@ Step-by-step owner setup: [docs/cloudflare-setup.md](docs/cloudflare-setup.md).
 
 | Suite | Command | What it covers |
 |---|---|---|
-| **Unit** (64) | `npm run test:unit` | All 18 templates render every page; HTML escaping and link sanitising; no invented content; locked pricing; SSRF URL checks; webhook signatures; password hashing; upload type sniffing; CSV parsing; WCAG contrast of template palettes |
-| **Integration** (49, +3 parity) | `npm run test:integration` | Against a running Worker: auth and CSRF, private previews, payment-gated publishing, versions and rollback, leads, tenant isolation, upload security, SSRF, checkout, concurrent orders that can't oversell, exactly-once restocking, web-address picker, webhook verification |
+| **Unit** (109) | `npm run test:unit` | All 18 templates render every page; HTML escaping and link sanitising; no invented content; locked pricing; SSRF URL checks; webhook signatures; password hashing; upload type sniffing; CSV parsing; WCAG contrast of every template in light and dark mode; strict price parsing; Google account-linking rules; contracts |
+| **Integration** (54, +3 parity) | `npm run test:integration` | Against a running Worker: auth and CSRF, private previews, payment-gated publishing, versions and rollback, leads, tenant isolation, upload security, SSRF, checkout, concurrent orders that can't oversell, exactly-once restocking, web-address picker, webhook verification |
 | **End-to-end** (11) | `npx playwright test` | Real browser flows with axe-core accessibility checks and console-error checks: marketing pages, demo sites on desktop and mobile, full store purchase, sign-up → wizard → editor → publish gate, all 18 templates; saves screenshots |
-| **Merchant regressions** (13, part of integration) | `npx vitest run -c vitest.integration.config.ts tests/integration/merchant-regressions.test.ts` | Audit findings #1–#3: store currency from setup is used for products, quotes, orders and publishing; CSV re-import keeps variants and stock; editing after a sale never reverses it |
-| **Python backend** (52) | `cd backend && .venv/Scripts/python -m pytest` | Contracts, legacy session auth, project read shape and errors, D1 → PostgreSQL importer. Worker ↔ Python parity and a browser test are documented in [backend/README.md](backend/README.md) |
-| **Production smoke** (36) | `node scripts/smoke-prod.mjs <url>` | Live checks, including real Workers AI and Browser Run calls; cleans up after itself |
+| **Merchant regressions** (18, part of integration) | `npx vitest run -c vitest.integration.config.ts tests/integration/merchant-regressions.test.ts` | Audit findings: one store currency everywhere; CSV re-import keeps variants and stock; editing or replaying a save after a sale never reverses it; strict decimal-comma prices; variant-SKU rows price only that variant; duplicate SKUs refused |
+| **Python backend** (53) | `cd backend && .venv/Scripts/python -m pytest` | Contracts, legacy session auth, project read shape and errors, D1 → PostgreSQL importer. Worker ↔ Python parity and a browser test are documented in [backend/README.md](backend/README.md) |
+| **Production smoke** (39) | `node scripts/smoke-prod.mjs <url>` | Live checks, with separate checks that Workers AI and Browser Run really ran (not a fallback); deletes its project and writes exact-id cleanup SQL for anything else |
 
 Integration and end-to-end tests read `TEST_BASE_URL` (default `http://localhost:8788`), so the same suites run against production:
 
@@ -321,11 +327,7 @@ Integration and end-to-end tests read `TEST_BASE_URL` (default `http://localhost
 TEST_BASE_URL=https://imprintsites.omodingisaac123.workers.dev npx playwright test
 ```
 
-After any test run against production, remove the test data:
-
-```bash
-npx wrangler d1 execute DB --remote --file scripts/cleanup-test-data.sql --yes
-```
+Production test runs create real records. Each smoke run writes `scripts/smoke-runs/<run>.sql` (gitignored) that removes exactly that run's records; review it, then run it with `npx wrangler d1 execute DB --remote --file scripts/smoke-runs/<run>.sql`. Prefer an isolated staging environment for destructive browser suites.
 
 ---
 
@@ -368,7 +370,9 @@ Full threat model and residual risks: [SECURITY_NOTES.md](SECURITY_NOTES.md).
 
 ## Status and roadmap
 
-**Live and tested:** marketing site, accounts, wizards, generator, 18 templates, inspiration analysis, editor with AI refine, publishing with versions and rollback, web-address picker, stores with orders and stock control, leads, admin console, billing code.
+**Live and tested:** marketing site, accounts, wizards, generator, 18 templates, inspiration analysis, editor with AI refine and a Light / Dark switch, publishing with versions and rollback, web-address picker, stores with orders and stock control, leads, admin console, billing code.
+
+**Release decision:** paid launch is on hold until the remaining production-audit items are closed, chiefly billing-webhook handling and taking sites down when access is revoked ([docs/production-audit.md](docs/production-audit.md), [docs/release-audit-6a1cc2c.md](docs/release-audit-6a1cc2c.md)).
 
 **Waiting on account setup:**
 
@@ -376,7 +380,7 @@ Full threat model and residual risks: [SECURITY_NOTES.md](SECURITY_NOTES.md).
 |---|---|
 | Workers Paid plan | Upgrade pending (the code is sized for Paid limits) |
 | R2 media storage | Not enabled yet; uploads use D1 storage until then |
-| Google sign-in | Needs an OAuth client ID and secret |
+| Google sign-in | Code ready; needs an OAuth client (Testing mode with named test users) and its two secrets |
 | Dodo Payments | Needs test-mode keys, products and a webhook |
 | Email notifications | Needs a Resend key |
 
@@ -384,7 +388,7 @@ Full threat model and residual risks: [SECURITY_NOTES.md](SECURITY_NOTES.md).
 
 1. **Monthly hosting billing:** Dodo subscriptions for the $3 / $4 / $5 monthly plans, with explicit opt-in.
 2. **Custom domains:** an owned zone plus Cloudflare for SaaS custom hostnames ([docs/domain-publishing.md](docs/domain-publishing.md)).
-3. **Seller card payments:** each store connects its own gateway (Flutterwave, Paystack or Pesapal).
+3. **Seller card payments:** each store connects its own card payment provider; seller revenue never passes through the platform.
 4. Turnstile on public forms, edge caching for published pages, and prerendered marketing pages for SEO.
 
 Detailed checklist: [BUILD_STATUS.md](BUILD_STATUS.md).
@@ -396,6 +400,9 @@ Detailed checklist: [BUILD_STATUS.md](BUILD_STATUS.md).
 | Document | Contents |
 |---|---|
 | [AGENTS.md](AGENTS.md) | Handoff guide for coding agents: rules, conventions, release procedure, environment quirks |
+| [docs/claude-handoff.md](docs/claude-handoff.md) | Target architecture (React frontend, Python backend, shared contracts) and migration sequence |
+| [docs/production-audit.md](docs/production-audit.md) · [docs/release-audit-6a1cc2c.md](docs/release-audit-6a1cc2c.md) | Independent audits: findings, fixes and what is still open |
+| [backend/README.md](backend/README.md) | Python backend: setup on Neon, commands, tests, parity checks |
 | [BUILD_STATUS.md](BUILD_STATUS.md) | Feature checklist, test results, fixed defects, priorities |
 | [DEPLOYMENT_REPORT.md](DEPLOYMENT_REPORT.md) | Deployments, bindings and production verification evidence |
 | [PRICING_AND_BILLING.md](PRICING_AND_BILLING.md) | Locked pricing, hosting fee, Dodo flow, marketplace segregation |
@@ -411,7 +418,7 @@ Detailed checklist: [BUILD_STATUS.md](BUILD_STATUS.md).
 
 ## Credits and licensing
 
-- **Photography:** all hero and demo-site photos are **CC0 1.0** (public domain) from StockSnap via Openverse. Per-image credits are in [`public/hero/CREDITS.txt`](public/hero/CREDITS.txt) and [`public/stock/CREDITS.txt`](public/stock/CREDITS.txt).
+- **Photography:** all hero and demo-site photos are **CC0 1.0** (public domain), from StockSnap and rawpixel via Openverse. Per-image credits are in [`public/hero/CREDITS.txt`](public/hero/CREDITS.txt) and [`public/stock/CREDITS.txt`](public/stock/CREDITS.txt).
 - **Fonts:** Outfit, Inter and the template typefaces are served by Google Fonts under the SIL Open Font License.
 - **Demo content** (people, businesses, products and orders) is fictional and labelled as such wherever it appears.
 

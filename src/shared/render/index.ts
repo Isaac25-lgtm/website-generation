@@ -100,11 +100,13 @@ export function renderSite(doc: SiteDoc, tpl: TemplateDef, ctx: RenderCtx, path:
       const page = route.page!;
       const firstVisible = page.sections.find((x) => !x.hidden && x.kind !== "banner");
       const pageHead = firstVisible?.kind === "hero" ? "" : `<section class="page-head"><div class="wrap"><h1>${esc(page.slug ? page.title : doc.brand.name)}</h1></div></section>`;
-      // Avoid a doubled title ("Services" / "Services"): drop the first section's heading when it repeats the page <h1>.
-      const headText = (page.slug ? page.title : doc.brand.name).trim().toLowerCase();
+      // Avoid a doubled title ("Services" / "Services", "Contact" / "Contact us"): drop the first section's heading
+      // when it repeats the page <h1>, ignoring case, punctuation and filler words such as "us" or "our".
+      const norm = (x: string) => x.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter((w) => w && !["us", "our", "the", "with"].includes(w)).join(" ");
+      const headText = norm(page.slug ? page.title : doc.brand.name);
       const sections = page.sections.map((sec) => {
         const h = (sec.data as { heading?: string }).heading;
-        return pageHead && sec === firstVisible && typeof h === "string" && h.trim().toLowerCase() === headText
+        return pageHead && sec === firstVisible && typeof h === "string" && headText !== "" && norm(h) === headText
           ? ({ ...sec, data: { ...sec.data, heading: "" } } as typeof sec)
           : sec;
       });

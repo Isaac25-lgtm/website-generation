@@ -52,11 +52,11 @@ function Overview() {
 }
 
 function Projects() {
-  const { toast } = useApp();
+  const { toast, ask } = useApp();
   const [q, setQ] = useState("");
   const { data, reload } = useAsync(() => api(`/api/admin/projects?q=${encodeURIComponent(q)}`), [q]);
-  const grant = async (id: string) => { const reason = prompt("Reason for demo entitlement (audited):"); if (!reason) return; try { await api(`/api/admin/projects/${id}/entitlement`, { body: { reason } }); toast("Demo entitlement granted"); reload(); } catch (e) { toast((e as Error).message, "err"); } };
-  const suspend = async (id: string, s: boolean) => { const reason = prompt(s ? "Reason for suspension:" : "Reason for reinstating:"); if (!reason) return; try { await api(`/api/admin/projects/${id}/suspend`, { body: { reason, suspend: s } }); toast("Done"); reload(); } catch (e) { toast((e as Error).message, "err"); } };
+  const grant = async (id: string) => { const reason = await ask({ title: "Grant demo access", message: "This lets the owner publish without paying. Use it for demos and testing only.", input: { label: "Reason (recorded in the audit log)", required: true }, confirmLabel: "Grant access" }); if (!reason) return; try { await api(`/api/admin/projects/${id}/entitlement`, { body: { reason } }); toast("Demo entitlement granted"); reload(); } catch (e) { toast((e as Error).message, "err"); } };
+  const suspend = async (id: string, s: boolean) => { const reason = await ask({ title: s ? "Suspend this site" : "Reinstate this site", message: s ? "The site goes offline for visitors until it is reinstated." : "The site becomes available to visitors again.", input: { label: "Reason (recorded in the audit log)", required: true }, confirmLabel: s ? "Suspend" : "Reinstate", danger: s }); if (!reason) return; try { await api(`/api/admin/projects/${id}/suspend`, { body: { reason, suspend: s } }); toast("Done"); reload(); } catch (e) { toast((e as Error).message, "err"); } };
   return (
     <div className="stack">
       <input className="input" style={{ maxWidth: 320 }} placeholder="Search name, address or owner email" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search projects" />
@@ -69,7 +69,7 @@ function Projects() {
 }
 
 function Users() {
-  const { toast } = useApp();
+  const { toast, ask } = useApp();
   const [q, setQ] = useState("");
   const { data, reload } = useAsync(() => api(`/api/admin/users?q=${encodeURIComponent(q)}`), [q]);
   return (
@@ -77,7 +77,7 @@ function Users() {
       <input className="input" style={{ maxWidth: 320 }} placeholder="Search users" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search users" />
       {!data ? <Spinner /> : <div className="table-wrap"><table className="table"><thead><tr><th>User</th><th>Sign-in</th><th>Projects</th><th>Joined</th><th>Status</th><th></th></tr></thead><tbody>
         {data.users.map((u: any) => <tr key={u.id}><td><b>{u.name || "—"}</b><div className="small">{u.email}</div>{u.role === "admin" && <span className="badge red">admin</span>}</td><td className="small">{u.google ? "Google" : "Email"}{u.email_verified ? " · verified" : ""}</td><td>{u.projects}</td><td className="small">{fmtDate(u.created_at)}</td><td>{u.status}</td>
-          <td className="row" style={{ gap: 4 }}><button className="btn btn-sm" onClick={async () => { if (!confirm("Create a password reset link for this user? Only send it to the verified account holder.")) return; const r = await api(`/api/admin/users/${u.id}/reset-link`, { body: {} }); prompt("Reset link (expires in 24h):", r.url); }}>Reset link</button>
+          <td className="row" style={{ gap: 4 }}><button className="btn btn-sm" onClick={async () => { if ((await ask({ title: "Create a password reset link?", message: "Only send it to the verified account holder.", confirmLabel: "Create link" })) === null) return; const r = await api(`/api/admin/users/${u.id}/reset-link`, { body: {} }); await ask({ title: "Reset link created", message: "It expires in 24 hours. Copy it and send it only to the account holder.", input: { label: "Reset link", initial: r.url, readOnly: true }, confirmLabel: "Done", cancelLabel: null }); }}>Reset link</button>
             <button className="btn btn-sm btn-danger" onClick={async () => { try { await api(`/api/admin/users/${u.id}`, { method: "PATCH", body: { status: u.status === "active" ? "suspended" : "active" } }); reload(); } catch (e) { toast((e as Error).message, "err"); } }}>{u.status === "active" ? "Suspend" : "Activate"}</button></td></tr>)}
       </tbody></table></div>}
     </div>
@@ -85,6 +85,7 @@ function Users() {
 }
 
 function Tickets() {
+  const { ask } = useApp();
   const { data, reload } = useAsync(() => api("/api/admin/tickets"), []);
   if (!data) return <Spinner />;
   return (
@@ -97,7 +98,7 @@ function Tickets() {
           {t.reference_url && <div className="small">Page: <a href={t.reference_url} target="_blank" rel="noreferrer">{t.reference_url}</a></div>}
           <p style={{ whiteSpace: "pre-wrap", margin: 0 }}>{t.message}</p>
           {t.admin_note && <p className="small muted">Note: {t.admin_note}</p>}
-          <div className="row">{["in_progress", "resolved", "closed"].filter((s) => s !== t.status).map((s) => <button key={s} className="btn btn-sm" onClick={async () => { await api(`/api/admin/tickets/${t.id}`, { method: "PATCH", body: { status: s, adminNote: prompt("Internal note (optional)") || undefined } }); reload(); }}>Mark {s.replace("_", " ")}</button>)}</div>
+          <div className="row">{["in_progress", "resolved", "closed"].filter((s) => s !== t.status).map((s) => <button key={s} className="btn btn-sm" onClick={async () => { const note = await ask({ title: `Mark ${s.replace("_", " ")}`, input: { label: "Internal note (optional)", multiline: true }, confirmLabel: "Save" }); if (note === null) return; await api(`/api/admin/tickets/${t.id}`, { method: "PATCH", body: { status: s, adminNote: note || undefined } }); reload(); }}>Mark {s.replace("_", " ")}</button>)}</div>
         </article>
       ))}
     </div>

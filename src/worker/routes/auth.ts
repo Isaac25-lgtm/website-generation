@@ -5,6 +5,7 @@ import type { HonoEnv } from "../env";
 import { HttpError, baseUrl, now } from "../env";
 import { audit, createSession, destroySession, enforceRate, ipHash, requireUser } from "../lib/auth";
 import { b64url, hashPassword, newId, randomToken, sha256Hex, verifyPassword } from "../lib/crypto";
+import { googleAccountAction } from "../lib/google-link";
 import { emailConfigured, sendEmail } from "../lib/email";
 
 export const auth = new Hono<HonoEnv>();
@@ -79,6 +80,10 @@ auth.get("/google/callback", async (c) => {
   const raw = getCookie(c, "is_oauth");
   deleteCookie(c, "is_oauth", { path: "/api/auth/google", secure: true });
   let saved: { state: string; verifier: string; next: string };
+  // Google sends ?error=access_denied when the person cancels, or when the app is in Testing mode and their
+  // account is not on the test-user list. Say so instead of reporting an expired session.
+  const googleError = c.req.query("error");
+  if (googleError) return c.redirect(`/login?error=${googleError === "access_denied" ? "google_denied" : "google_token"}`);
   try { saved = JSON.parse(raw || ""); } catch { return c.redirect("/login?error=google_state"); }
   if (!c.req.query("code") || c.req.query("state") !== saved.state) return c.redirect("/login?error=google_state");
   const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
@@ -88,7 +93,12 @@ auth.get("/google/callback", async (c) => {
       redirect_uri: `${baseUrl(c)}/api/auth/google/callback`, grant_type: "authorization_code", code_verifier: saved.verifier,
     }),
   });
-  if (!tokenRes.ok) return c.redirect("/login?error=google_token");
+  if (!tokenRes.ok) {
+    // Google's error code (e.g. redirect_uri_mismatch, invalid_client) holds no secret and is what setup issues need.
+    const detail = (await tokenRes.json().catch(() => ({}))) as { error?: string };
+    console.error("google token exchange failed", tokenRes.status, detail.error ?? "");
+    return c.redirect("/login?error=google_token");
+  }
   const tok = (await tokenRes.json()) as { access_token?: string };
   const infoRes = await fetch("https://openidconnect.googleapis.com/v1/userinfo", { headers: { authorization: `Bearer ${tok.access_token}` } });
   if (!infoRes.ok) return c.redirect("/login?error=google_profile");
@@ -98,14 +108,20 @@ auth.get("/google/callback", async (c) => {
   const t = now();
   let user = await c.env.DB.prepare("SELECT id, status, google_sub, email_verified FROM users WHERE google_sub = ? OR email = ? ORDER BY (google_sub = ?) DESC LIMIT 1").bind(info.sub, email, info.sub).first<{ id: string; status: string; google_sub: string | null; email_verified: number }>();
   if (user && user.status !== "active") return c.redirect("/login?error=inactive");
-  if (!user) {
+  const action = googleAccountAction(user, info.sub);
+  if (action === "conflict") {
+    // The email belongs to an account already linked to a different Google identity: never switch it over.
+    await audit(c.env, user!.id, "auth.google_conflict_refused", "user", user!.id);
+    return c.redirect("/login?error=google_conflict");
+  }
+  if (action === "create") {
     const id = newId("usr");
     await c.env.DB.batch([
       c.env.DB.prepare("INSERT INTO users (id, email, name, google_sub, email_verified, avatar_url, created_at, updated_at) VALUES (?, ?, ?, ?, 1, ?, ?, ?)").bind(id, email, (info.name || "").slice(0, 80), info.sub, (info.picture || "").slice(0, 400), t, t),
       c.env.DB.prepare("INSERT INTO consents (id, user_id, kind, version, created_at) VALUES (?, ?, 'terms', ?, ?), (?, ?, 'privacy', ?, ?)").bind(newId("cns"), id, TERMS_VERSION, t, newId("cns"), id, TERMS_VERSION, t),
     ]);
     user = { id, status: "active", google_sub: info.sub, email_verified: 1 };
-  } else if (!user.google_sub) {
+  } else if (action === "link" && user) {
     // Linking Google to an email/password account whose address was never verified:
     // invalidate the unverified password and all sessions to defeat account pre-hijacking.
     const stmts = [c.env.DB.prepare("UPDATE users SET google_sub = ?, email_verified = 1, updated_at = ? WHERE id = ?").bind(info.sub, t, user.id)];
@@ -116,6 +132,7 @@ auth.get("/google/callback", async (c) => {
     await c.env.DB.batch(stmts);
     await audit(c.env, user.id, "auth.google_linked", "user", user.id, { passwordCleared: !user.email_verified });
   }
+  if (!user) return c.redirect("/login?error=google_token"); // unreachable: every action above leaves an account
   await createSession(c, user.id);
   return c.redirect(saved.next || "/dashboard");
 });

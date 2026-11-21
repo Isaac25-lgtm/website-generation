@@ -98,13 +98,24 @@ Test runs after the follow-up: unit 64/64, integration 52/52 (13 merchant and re
 
 Test runs: unit 68/68, integration 57/57 (18 merchant and audit regressions, 3 parity), Playwright 11/11, backend pytest 53/53.
 
+**Browser test pass and usability round (21 Nov 2026):** a full hands-on run in Chrome covered sign-up, the business and store wizards, AI wording and design requests, checkpoints, preview links, admin demo grants, publishing, a contact enquiry reaching the leads inbox, a euro store with sizes, checkout, the order lifecycle and the ZIP export. Fixed from it:
+- dark mode kept a navy brand colour for text on a dark page; brand colours are now kept readable automatically (tested for all templates in both modes);
+- a "Contact" / "Contact us" doubled heading; a leftover "UGX" price example and African payment-provider names;
+- native browser pop-ups replaced with in-app dialogs;
+- AI calls now have a 20-second budget with the labelled rule-based fallback (a slow call previously blocked the editor for 39 s);
+- the website-you-love option is marked RECOMMENDED, shows progress, names its template matches and applies with one click (and runs automatically when pasted on the home page);
+- a Light / Dark switch in the editor and on the publish page; plainer wording for stock options and the ZIP export;
+- Google sign-in: an account already linked to another Google identity is never switched over (audit #7), and people outside the testers list get a clear message.
+
+Test runs: unit 109/109, integration 54/54 (+3 parity, run with the Python server), Playwright 11/11 twice, backend pytest 53/53 (previous round).
+
 Still open from the audit: findings #4–#10 and the additional defects (see [docs/production-audit.md](docs/production-audit.md)).
 
 ## Next release priorities
 
 1. Owner setup: Workers Paid, R2, Google OAuth, Dodo test keys and products, admin account (see `docs/cloudflare-setup.md`).
 2. Run one Dodo **test-mode** purchase end-to-end and record the evidence in `DEPLOYMENT_REPORT.md`.
-3. Merchant gateway for stores (Flutterwave or Paystack sandbox) once a seller has credentials.
+3. Card payments for stores through each seller's own provider, once a seller has credentials.
 4. Email notifications (Resend) and Turnstile on public forms.
 5. Stage 2 domains: an owned SaaS zone, wildcard subdomains, Cloudflare for SaaS custom hostnames.
 6. Prerender marketing pages for SEO, and use the Cache API for published sites.

@@ -109,7 +109,7 @@ export default function Home() {
           </form>
           <div className="hero-types" role="group" aria-label="Website type">
             {PLAN_INFO.map((p) => <button key={p.type} type="button" aria-pressed={type === p.type} onClick={() => setType(p.type)}>{p.label} · {usd(p.price)}</button>)}
-            {!showUrl ? <button type="button" className="link" onClick={() => setShowUrl(true)}>+ Add a website you love</button> : (
+            {!showUrl ? <button type="button" className="link hero-reco" onClick={() => setShowUrl(true)}>+ Add a website you love <span className="reco-pill">Recommended</span></button> : (
               <span className="hero-url">
                 <span aria-hidden="true" style={{ width: 15, display: "inline-flex" }}>{Icon.link}</span>
                 <label htmlFor="insp" className="sr-only">Website you love (optional)</label>

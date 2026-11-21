@@ -1,5 +1,24 @@
 import { z } from "zod";
 import { FONT_KEYS, Theme, type SiteDoc } from "./schema";
+import { getTemplate } from "./templates";
+
+const NEUTRAL_PAGE = {
+  dark: { bg: "#0e1116", surface: "#171b22", text: "#eef1f5", muted: "#9aa3b1" },
+  light: { bg: "#ffffff", surface: "#f4f5f7", text: "#14171c", muted: "#5b6472" },
+} as const;
+
+/** Page colours for a mode: the template's own palette when it is designed for that mode, otherwise a neutral one. */
+export function modeColors(doc: SiteDoc, mode: "light" | "dark") {
+  const tpl = getTemplate(doc.templateId, doc.type);
+  if (tpl.theme.mode === mode) { const c = tpl.theme.colors; return { bg: c.bg, surface: c.surface, text: c.text, muted: c.muted }; }
+  return { ...NEUTRAL_PAGE[mode] };
+}
+
+/** Switch a site between light and dark, keeping its brand colours (they are kept readable by the renderer). */
+export function switchMode(doc: SiteDoc, mode: "light" | "dark"): SiteDoc {
+  if (doc.theme.mode === mode) return doc;
+  return { ...doc, theme: { ...doc.theme, mode, colors: { ...doc.theme.colors, ...modeColors(doc, mode) } } };
+}
 
 // A refinement is a small, validated, reversible patch to the site's design.
 // Produced either by the AI model (JSON mode) or by the deterministic rule engine.
@@ -23,10 +42,7 @@ export type RefinePatch = z.infer<typeof RefinePatch>;
 export function applyPatch(doc: SiteDoc, patch: RefinePatch): SiteDoc {
   const t = patch.theme;
   const c = { ...doc.theme.colors };
-  if (t.mode && t.mode !== doc.theme.mode) {
-    if (t.mode === "dark") Object.assign(c, { bg: "#0e1116", surface: "#171b22", text: "#eef1f5", muted: "#9aa3b1" });
-    else Object.assign(c, { bg: "#ffffff", surface: "#f4f5f7", text: "#14171c", muted: "#5b6472" });
-  }
+  if (t.mode && t.mode !== doc.theme.mode) Object.assign(c, modeColors(doc, t.mode));
   for (const k of ["primary", "accent", "bg", "surface", "text", "muted"] as const) if (t[k]) c[k] = t[k]!;
   const theme = {
     ...doc.theme, colors: c,

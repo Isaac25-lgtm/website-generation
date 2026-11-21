@@ -3,6 +3,7 @@ import { Link, Navigate, NavLink, Outlet, useLocation, useNavigate, useParams, u
 import { api, fmtDate, hostingPrice, useApp, useAsync, usd } from "../lib";
 import { Icon, LoadingPage, Logo, Modal, SiteThumb, Spinner } from "../components/ui";
 import { PLANS } from "../../shared/pricing";
+import { switchMode } from "../../shared/refine";
 import { OrdersManager, ProductsManager } from "./Store";
 
 export function RequireAuth() {
@@ -152,7 +153,7 @@ export function NewProject() {
 export function Publish() {
   const { id } = useParams();
   const [params] = useSearchParams();
-  const { toast, config } = useApp();
+  const { toast, config, ask } = useApp();
   const { data, reload } = useAsync(() => api(`/api/projects/${id}`), [id]);
   const vers = useAsync(() => api(`/api/projects/${id}/versions`), [id]);
   const [rights, setRights] = useState(false);
@@ -187,12 +188,19 @@ export function Publish() {
           </div>
           <div className="card stack">
             <h2 style={{ fontSize: "1.25rem", margin: 0 }}>2. Confirm & publish</h2>
+            {data.doc && (
+              <div className="stack-sm">
+                <span className="small"><b>Light or dark?</b> Choose how your site looks before you publish. You can change it again at any time.</span>
+                <div className="seg" role="group" aria-label="Colour mode" style={{ justifySelf: "start" }}>{(["light", "dark"] as const).map((m) => <button key={m} aria-pressed={data.doc.theme.mode === m} disabled={!!busy} onClick={() => data.doc.theme.mode !== m && run("mode", async () => { await api(`/api/projects/${id}/draft`, { method: "PUT", body: { doc: switchMode(data.doc, m), baseRevision: p.revision } }); toast(m === "dark" ? "Your site now has a dark look" : "Your site now has a light look"); reload(); })}>{m === "light" ? "Light" : "Dark"}</button>)}</div>
+                <span className="tiny muted">To see it first, open the editor or create a private preview link below.</span>
+              </div>
+            )}
             {!p.contentRightsAck && <label className="check"><input type="checkbox" checked={rights} onChange={(e) => setRights(e.target.checked)} /> I own or have permission to use all content and images on this site.</label>}
             {hasAi && <label className="check"><input type="checkbox" checked={aiAck} onChange={(e) => setAiAck(e.target.checked)} /> I've reviewed the AI-suggested text and confirm it's accurate.</label>}
             {problems.length > 0 && <div className="alert warn"><b>Before publishing:</b><ul style={{ margin: ".4rem 0 0" }}>{problems.map((x) => <li key={x}>{x}</li>)}</ul></div>}
             <div className="row">
               <button className="btn btn-primary btn-lg" disabled={!paid || !!busy || (!p.contentRightsAck && !rights) || (hasAi && !aiAck)} onClick={() => run("pub", async () => { setProblems([]); const r = await api(`/api/projects/${id}/publish`, { body: { contentRightsAck: rights || p.contentRightsAck, aiReviewAck: aiAck } }); toast(`Published version ${r.version}!`); reload(); vers.reload(); })}>{busy === "pub" && <Spinner />} {data.publish?.status === "live" ? "Publish latest changes" : "Publish site"}</button>
-              {data.publish?.status === "live" && <button className="btn btn-danger" disabled={!!busy || p.isDemo} onClick={() => confirm("Take this site offline?") && run("unpub", async () => { await api(`/api/projects/${id}/unpublish`, { body: {} }); toast("Site unpublished"); reload(); })}>Unpublish</button>}
+              {data.publish?.status === "live" && <button className="btn btn-danger" disabled={!!busy || p.isDemo} onClick={async () => (await ask({ title: "Take this site offline?", message: "Visitors will see a \"not published\" page until you publish again. Your content is kept.", confirmLabel: "Unpublish", danger: true })) !== null && run("unpub", async () => { await api(`/api/projects/${id}/unpublish`, { body: {} }); toast("Site unpublished"); reload(); })}>Unpublish</button>}
             </div>
             {data.publish?.status === "live" && <div className="alert ok">Live at <a href={data.publish.url} target="_blank" rel="noreferrer"><b>{data.publish.url}</b></a></div>}
           </div>
@@ -217,14 +225,14 @@ export function Publish() {
             {!vers.data ? <Spinner /> : vers.data.versions.length === 0 ? <p className="muted small" style={{ margin: 0 }}>Nothing published yet.</p> : (
               <ul style={{ listStyle: "none", padding: 0, margin: 0 }} className="stack-sm">{vers.data.versions.map((v: any) => (
                 <li key={v.id} className="row between small"><span>v{v.version} · {fmtDate(v.created_at)} {v.id === vers.data.current && vers.data.status === "live" ? <span className="badge green">live</span> : null}</span>
-                  {v.id !== vers.data.current && paid && <button className="btn btn-sm" onClick={() => confirm(`Restore version ${v.version} as the live site?`) && run("rb", async () => { await api(`/api/projects/${id}/versions/${v.id}/rollback`, { body: {} }); toast(`Version ${v.version} is live again`); vers.reload(); reload(); })}>Restore</button>}</li>
+                  {v.id !== vers.data.current && paid && <button className="btn btn-sm" onClick={async () => (await ask({ title: `Restore version ${v.version}?`, message: "This version becomes the live site straight away. You can restore a newer version at any time.", confirmLabel: "Restore" })) !== null && run("rb", async () => { await api(`/api/projects/${id}/versions/${v.id}/rollback`, { body: {} }); toast(`Version ${v.version} is live again`); vers.reload(); reload(); })}>Restore</button>}</li>
               ))}</ul>
             )}
           </div>
           <div className="card stack-sm">
             <h2 style={{ fontSize: "1.1rem", margin: 0 }}>Export</h2>
-            <p className="muted small" style={{ margin: 0 }}>Download your site as static HTML files, your images, and a structured site.json.</p>
-            <a className="btn btn-sm" style={{ justifySelf: "start" }} href={`/api/projects/${id}/export`}>Download ZIP</a>
+            <p className="muted small" style={{ margin: 0 }}>Download a copy of your website as one ZIP file: the web pages, your images and your content. Keep it as a backup, or upload the pages to any other web host. Your site here keeps working either way.</p>
+            <a className="btn btn-sm" style={{ justifySelf: "start" }} href={`/api/projects/${id}/export`}>Download a copy (ZIP)</a>
           </div>
           <PaymentsHistory id={id!} />
           {config && <p className="tiny muted">Hosting &amp; maintenance: {hostingPrice(config, p.type).label} per site per {hostingPrice(config, p.type).interval}{hostingPrice(config, p.type).billingLive ? "." : ". You'll agree to the monthly plan before any monthly charge."}</p>}

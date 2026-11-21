@@ -1,6 +1,6 @@
 import type { Theme } from "../schema";
 import { fontStack } from "../fonts";
-import { mix, readableOn } from "../util";
+import { ensureContrast, mix, readableOn } from "../util";
 
 const RADIUS = { none: "0px", sm: "6px", md: "12px", lg: "18px", xl: "28px" } as const;
 const SPACE = { compact: "clamp(2.5rem,5vw,3.75rem)", comfortable: "clamp(3.5rem,7vw,5.75rem)", airy: "clamp(4.5rem,9vw,8rem)" } as const;
@@ -9,7 +9,12 @@ const H2 = { sm: "clamp(1.5rem,2.6vw,2rem)", md: "clamp(1.7rem,3.2vw,2.5rem)", l
 
 export function themeVars(t: Theme): string {
   const c = t.colors;
-  return `:root{--bg:${c.bg};--surface:${c.surface};--text:${c.text};--muted:${c.muted};--primary:${c.primary};--on-primary:${readableOn(c.primary)};--accent:${c.accent};--on-accent:${readableOn(c.accent)};--border:${mix(c.bg, c.text, 0.14)};--soft:${mix(c.bg, c.primary, 0.08)};--radius:${RADIUS[t.radius]};--radius-sm:calc(${RADIUS[t.radius]} * .6);--space:${SPACE[t.density]};--font-h:${fontStack(t.fontHeading)};--font-b:${fontStack(t.fontBody)};--h1:${H1[t.headingScale]};--h2:${H2[t.headingScale]};--maxw:1180px;color-scheme:${t.mode}}`;
+  // Keep brand colours usable on this page background whatever the mode: buttons and bands need 3:1 against
+  // the page (WCAG non-text contrast), primary-coloured text needs 4.5:1. A navy primary on a dark page is lifted.
+  const primary = ensureContrast(c.primary, c.bg, c.text, 3);
+  const primaryInk = ensureContrast(c.primary, c.bg, c.text, 4.5);
+  const accent = ensureContrast(c.accent, c.bg, c.text, 3);
+  return `:root{--bg:${c.bg};--surface:${c.surface};--text:${c.text};--muted:${c.muted};--primary:${primary};--primary-ink:${primaryInk};--on-primary:${readableOn(primary)};--accent:${accent};--on-accent:${readableOn(accent)};--border:${mix(c.bg, c.text, 0.14)};--soft:${mix(c.bg, c.primary, 0.08)};--radius:${RADIUS[t.radius]};--radius-sm:calc(${RADIUS[t.radius]} * .6);--space:${SPACE[t.density]};--font-h:${fontStack(t.fontHeading)};--font-b:${fontStack(t.fontBody)};--h1:${H1[t.headingScale]};--h2:${H2[t.headingScale]};--maxw:1180px;color-scheme:${t.mode}}`;
 }
 
 export const BASE_CSS = `
@@ -88,7 +93,7 @@ p{margin:0 0 1em;text-wrap:pretty}
 .sec-head{max-width:760px;margin-bottom:clamp(1.75rem,3.5vw,3rem)}
 .sec-head.center{text-align:center;margin-inline:auto}
 .sec-head .lead,.lead{font-size:1.12rem;color:var(--muted)}
-.eyebrow{display:inline-block;font:600 .78rem/1 var(--font-b);letter-spacing:.16em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem}
+.eyebrow{display:inline-block;font:600 .78rem/1 var(--font-b);letter-spacing:.16em;text-transform:uppercase;color:var(--primary-ink);margin-bottom:1rem}
 .grid{display:grid;gap:clamp(1rem,2.2vw,1.75rem);grid-template-columns:repeat(auto-fill,minmax(min(100%,var(--min,280px)),1fr))}
 .card{background:var(--bg);border-radius:var(--radius);padding:clamp(1.25rem,2.4vw,1.85rem);position:relative;overflow:hidden}
 .card-media{margin:calc(-1*clamp(1.25rem,2.4vw,1.85rem)) calc(-1*clamp(1.25rem,2.4vw,1.85rem)) 1.25rem;aspect-ratio:16/10;overflow:hidden;background:var(--surface)}
@@ -125,7 +130,7 @@ body.cs-glass .card{background:color-mix(in srgb,var(--surface) 62%,transparent)
 .hero.terminal .term-bar{display:flex;gap:6px;padding:.75rem 1rem;border-bottom:1px solid var(--border)}
 .hero.terminal .term-bar i{width:11px;height:11px;border-radius:50%;background:var(--border)}
 .hero.terminal .term-body{padding:clamp(1.25rem,4vw,2.75rem)}
-.hero.terminal .prompt{color:var(--primary);font-size:.95rem;margin-bottom:1.25rem}
+.hero.terminal .prompt{color:var(--primary-ink);font-size:.95rem;margin-bottom:1.25rem}
 .hero.terminal h1{font-size:calc(var(--h1) * .82)}
 .hero.terminal .cursor{display:inline-block;width:.55em;height:1em;background:var(--primary);vertical-align:-.1em;margin-left:.15em;animation:blink 1.1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
@@ -217,7 +222,7 @@ blockquote{margin:0}
 .faq{max-width:860px;margin-inline:auto}
 .faq details{border-bottom:1px solid var(--border);padding:1.1rem 0}
 .faq summary{cursor:pointer;font-weight:600;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
-.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--primary)}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--primary-ink)}
 .faq details[open] summary::after{content:"–"}
 .faq details p{margin:.8rem 0 0;color:var(--muted)}
 /* hours */
@@ -243,7 +248,7 @@ form.f{display:grid;gap:1rem}
 .f .check{display:flex;gap:.6rem;align-items:flex-start;font-weight:400}
 .f .check input{width:20px;min-height:20px;height:20px;margin-top:.2rem}
 .form-status{min-height:1.5em;font-weight:600}
-.form-status.ok{color:var(--primary)}.form-status.err{color:#c0392b}
+.form-status.ok{color:var(--primary-ink)}.form-status.err{color:#c0392b}
 .form-card{background:var(--surface);border-radius:var(--radius);padding:clamp(1.25rem,3vw,2.25rem)}
 /* cta */
 .cta-band{background:var(--primary);color:var(--on-primary);border-radius:calc(var(--radius) + 6px);padding:clamp(2rem,6vw,4.5rem);text-align:center}
@@ -311,7 +316,7 @@ fieldset{border:1.5px solid var(--border);border-radius:var(--radius-sm);padding
 legend{font-weight:700;padding:0 .4rem}
 .opt{display:flex;gap:.7rem;align-items:flex-start;padding:.65rem 0;font-weight:400}
 .opt input{margin-top:.3rem;width:20px;height:20px;min-height:20px}
-.status-pill{display:inline-block;padding:.3rem .75rem;border-radius:99px;background:var(--soft);color:var(--primary);font-weight:700;font-size:.85rem;text-transform:capitalize}
+.status-pill{display:inline-block;padding:.3rem .75rem;border-radius:99px;background:var(--soft);color:var(--primary-ink);font-weight:700;font-size:.85rem;text-transform:capitalize}
 /* footer */
 .site-footer{padding-block:clamp(2.5rem,5vw,4rem) 2rem;border-top:1px solid var(--border);font-size:.95rem}
 .site-footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}

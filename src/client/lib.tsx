@@ -1,5 +1,5 @@
 import { parseMoney, parsePrice } from "../shared/util";
-import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useRef, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 
 // ── API client ──
 export class ApiError extends Error {
@@ -38,7 +38,20 @@ export interface Config {
   demos: { slug: string; type: string; url: string }[];
 }
 
-interface AppCtx { me: Me | null; loading: boolean; config: Config | null; refresh: () => Promise<void>; toast: (msg: string, kind?: "ok" | "err") => void }
+/** Options for the in-app dialog that replaces the browser's prompt()/confirm(). */
+export interface AskOptions {
+  title: string;
+  message?: string;
+  confirmLabel?: string;
+  cancelLabel?: string | null;
+  danger?: boolean;
+  input?: { label: string; placeholder?: string; required?: boolean; initial?: string; readOnly?: boolean; multiline?: boolean };
+}
+interface AppCtx {
+  me: Me | null; loading: boolean; config: Config | null; refresh: () => Promise<void>; toast: (msg: string, kind?: "ok" | "err") => void;
+  /** Resolves to the typed text ("" when there is no input) when confirmed, or null when cancelled. */
+  ask: (opts: AskOptions) => Promise<string | null>;
+}
 const Ctx = createContext<AppCtx>(null as unknown as AppCtx);
 export const useApp = () => useContext(Ctx);
 
@@ -47,6 +60,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [config, setConfig] = useState<Config | null>(null);
   const [toasts, setToasts] = useState<{ id: number; msg: string; kind: string }[]>([]);
+  const [dialog, setDialog] = useState<{ opts: AskOptions; resolve: (v: string | null) => void } | null>(null);
+  const ask = useCallback((opts: AskOptions) => new Promise<string | null>((resolve) => setDialog({ opts, resolve })), []);
   const refresh = useCallback(async () => {
     try { const r = await api<{ user: Me | null }>("/api/auth/me"); setMe(r.user); } catch { setMe(null); }
     setLoading(false);
@@ -58,8 +73,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setTimeout(() => setToasts((t) => t.filter((x) => x.id !== id)), 4200);
   }, []);
   return (
-    <Ctx.Provider value={{ me, loading, config, refresh, toast }}>
+    <Ctx.Provider value={{ me, loading, config, refresh, toast, ask }}>
       {children}
+      {dialog && <AskDialog opts={dialog.opts} onDone={(v) => { dialog.resolve(v); setDialog(null); }} />}
       <div className="toasts" role="status" aria-live="polite">{toasts.map((t) => <div key={t.id} className={`toast ${t.kind === "err" ? "err" : ""}`}>{t.msg}</div>)}</div>
     </Ctx.Provider>
   );
@@ -150,4 +166,41 @@ export async function sampleColors(file: Blob): Promise<string[]> {
     buckets.set(hex, (buckets.get(hex) ?? 0) + 1);
   }
   return [...buckets.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12).map((x) => x[0]);
+}
+
+/** Accessible in-app dialog (focus moves in, Escape cancels, Enter confirms). */
+function AskDialog({ opts, onDone }: { opts: AskOptions; onDone: (v: string | null) => void }) {
+  const [value, setValue] = useState(opts.input?.initial ?? "");
+  const box = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const prev = document.activeElement as HTMLElement | null;
+    (box.current?.querySelector("input,textarea,button.btn-primary,button.btn-danger") as HTMLElement | null)?.focus();
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onDone(null); };
+    document.addEventListener("keydown", onKey);
+    return () => { document.removeEventListener("keydown", onKey); prev?.focus(); };
+  }, [onDone]);
+  const blocked = !!opts.input?.required && !value.trim();
+  const submit = (e?: { preventDefault: () => void }) => { e?.preventDefault(); if (!blocked) onDone(opts.input ? value.trim() : ""); };
+  const field = opts.input;
+  return (
+    <div className="modal-back" onMouseDown={(e) => { if (e.target === e.currentTarget) onDone(null); }}>
+      <div className="modal" role="dialog" aria-modal="true" aria-label={opts.title} ref={box} style={{ width: "min(100%, 520px)" }}>
+        <div className="modal-head"><h2 style={{ fontSize: "1.15rem", margin: 0 }}>{opts.title}</h2><button className="btn btn-ghost btn-sm" onClick={() => onDone(null)} aria-label="Close">✕</button></div>
+        <form className="modal-body stack" onSubmit={submit}>
+          {opts.message && <p style={{ margin: 0 }}>{opts.message}</p>}
+          {field && (
+            <label className="field"><span>{field.label}</span>
+              {field.multiline
+                ? <textarea rows={3} value={value} placeholder={field.placeholder} readOnly={field.readOnly} onChange={(e) => setValue(e.target.value)} />
+                : <input value={value} placeholder={field.placeholder} readOnly={field.readOnly} onFocus={(e) => field.readOnly && e.currentTarget.select()} onChange={(e) => setValue(e.target.value)} />}
+            </label>
+          )}
+          <div className="row" style={{ justifyContent: "flex-end" }}>
+            {opts.cancelLabel !== null && <button type="button" className="btn" onClick={() => onDone(null)}>{opts.cancelLabel || "Cancel"}</button>}
+            <button type="submit" className={`btn ${opts.danger ? "btn-danger" : "btn-primary"}`} disabled={blocked}>{opts.confirmLabel || "OK"}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }

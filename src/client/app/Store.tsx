@@ -8,7 +8,7 @@ interface Variant { id?: string; option1?: string | null; option2?: string | nul
 interface Product { id?: string; currency?: string; title: string; description: string; status: string; productType: string; priceMinor: number; compareAtMinor?: number | null; sku?: string | null; tags: string; images: { assetId: string; alt: string }[]; option1Name?: string | null; option2Name?: string | null; maxPerOrder: number; featured: boolean; collections: string[]; variants: Variant[] }
 
 export function ProductsManager({ projectId, currency: fallbackCurrency }: { projectId: string; currency: string }) {
-  const { toast } = useApp();
+  const { toast, ask } = useApp();
   // The server decides the store currency (a live store keeps its published currency).
   const [serverCurrency, setServerCurrency] = useState<string | null>(null);
   const currency = serverCurrency ?? fallbackCurrency;
@@ -29,7 +29,7 @@ export function ProductsManager({ projectId, currency: fallbackCurrency }: { pro
     <div className="stack">
       <div className="card stack-sm">
         <div className="row between"><strong>Categories</strong><span className="muted small">Group products so shoppers can filter.</span></div>
-        <div className="row">{cols.map((c) => <span key={c.id} className="badge">{c.name} · {c.products}<button className="icon-btn" style={{ width: 20, height: 20 }} aria-label={`Delete ${c.name}`} onClick={async () => { if (confirm(`Delete category “${c.name}”? Products stay.`)) { await api(`/api/projects/${projectId}/collections/${c.id}`, { method: "DELETE" }); load(); } }}>✕</button></span>)}{!cols.length && <span className="muted small">No categories yet.</span>}</div>
+        <div className="row">{cols.map((c) => <span key={c.id} className="badge">{c.name} · {c.products}<button className="icon-btn" style={{ width: 20, height: 20 }} aria-label={`Delete ${c.name}`} onClick={async () => { if ((await ask({ title: `Delete category “${c.name}”?`, message: "Products in it are kept; they just won’t be in this category any more.", confirmLabel: "Delete category", danger: true })) !== null) { await api(`/api/projects/${projectId}/collections/${c.id}`, { method: "DELETE" }); load(); } }}>✕</button></span>)}{!cols.length && <span className="muted small">No categories yet.</span>}</div>
         <form className="row" onSubmit={async (e) => { e.preventDefault(); if (!newCol.trim()) return; try { await api(`/api/projects/${projectId}/collections`, { body: { name: newCol } }); setNewCol(""); load(); } catch (er) { toast((er as Error).message, "err"); } }}>
           <input className="input" style={{ maxWidth: 280 }} placeholder="New category name" value={newCol} onChange={(e) => setNewCol(e.target.value)} aria-label="New category name" /><button className="btn btn-sm">Add category</button>
         </form>
@@ -64,7 +64,7 @@ export function ProductsManager({ projectId, currency: fallbackCurrency }: { pro
 }
 
 function ProductEditor({ projectId, currency, product, cols, onClose, onSaved }: { projectId: string; currency: string; product: Product; cols: { id: string; name: string }[]; onClose: () => void; onSaved: () => void }) {
-  const { toast } = useApp();
+  const { toast, ask } = useApp();
   const [p, setP] = useState<Product>(product);
   const [price, setPrice] = useState(product.priceMinor ? toMajor(product.priceMinor, currency) : "");
   const [compare, setCompare] = useState(product.compareAtMinor ? toMajor(product.compareAtMinor, currency) : "");
@@ -127,30 +127,31 @@ function ProductEditor({ projectId, currency, product, cols, onClose, onSaved }:
         <div className="stack">
           <Fields specs={imgSpec} value={p} onChange={(v) => setP(v)} projectId={projectId} />
           <div className="card stack-sm" style={{ background: "var(--soft)" }}>
-            <strong>Options & inventory</strong>
+            <strong>Sizes, colours and stock</strong>
+            <span className="tiny muted">Sell this product in different versions? Name the option (for example Size) and list the choices. We create one row per version so you can set its stock.</span>
             <div className="grid-2" style={{ gap: ".5rem" }}>
               <label className="field"><span>Option 1 name</span><input placeholder="Size" value={p.option1Name ?? ""} onChange={(e) => setP({ ...p, option1Name: e.target.value })} /></label>
               <label className="field"><span>Values (comma separated)</span><input placeholder="S, M, L" value={opt1} onChange={(e) => { setOpt1(e.target.value); regenerate(e.target.value, opt2); }} /></label>
               <label className="field"><span>Option 2 name</span><input placeholder="Colour" value={p.option2Name ?? ""} onChange={(e) => setP({ ...p, option2Name: e.target.value })} /></label>
               <label className="field"><span>Values</span><input placeholder="Black, White" value={opt2} onChange={(e) => { setOpt2(e.target.value); regenerate(opt1, e.target.value); }} /></label>
             </div>
-            <div className="table-wrap"><table className="table"><thead><tr><th>Variant</th><th>Stock</th><th>Price override</th><th>Track</th><th>Backorder</th></tr></thead><tbody>
+            <div className="table-wrap"><table className="table"><thead><tr><th>Version</th><th>In stock</th><th>Different price</th><th title="Count down stock as orders come in">Count stock</th><th title="Keep taking orders when stock reaches 0">Sell when 0</th></tr></thead><tbody>
               {p.variants.map((v, i) => (
                 <tr key={i}>
                   <td>{[v.option1, v.option2].filter(Boolean).join(" / ") || "Default"}</td>
                   <td><input className="input" style={{ width: 80, minHeight: 36 }} type="number" min={0} value={v.stock} aria-label="Stock" onChange={(e) => setP({ ...p, variants: p.variants.map((x, j) => (j === i ? { ...x, stock: Number(e.target.value) } : x)) })} /></td>
-                  <td><input className="input" style={{ width: 100, minHeight: 36 }} inputMode="decimal" placeholder="—" aria-label="Price override" value={variantPrices[i] ?? ""} onChange={(e) => setVariantPrices((cur) => { const next = [...cur]; next[i] = e.target.value; return next; })} /></td>
+                  <td><input className="input" style={{ width: 100, minHeight: 36 }} inputMode="decimal" placeholder="—" aria-label="Different price for this version (optional)" value={variantPrices[i] ?? ""} onChange={(e) => setVariantPrices((cur) => { const next = [...cur]; next[i] = e.target.value; return next; })} /></td>
                   <td><input type="checkbox" checked={v.trackInventory} aria-label="Track inventory" onChange={(e) => setP({ ...p, variants: p.variants.map((x, j) => (j === i ? { ...x, trackInventory: e.target.checked } : x)) })} /></td>
                   <td><input type="checkbox" checked={v.allowBackorder} aria-label="Allow backorder" onChange={(e) => setP({ ...p, variants: p.variants.map((x, j) => (j === i ? { ...x, allowBackorder: e.target.checked } : x)) })} /></td>
                 </tr>
               ))}
             </tbody></table></div>
-            <span className="tiny muted">Stock decreases automatically when orders are placed and returns if an order is cancelled. A product can never be oversold unless you allow backorders.</span>
+            <span className="tiny muted">Leave “Different price” empty to use the main price. Stock goes down automatically with each order and back up if an order is cancelled. With “Sell when 0” off, nobody can buy more than you have.</span>
           </div>
         </div>
       </div>
       <div className="row between" style={{ marginTop: "1.5rem" }}>
-        {p.id ? <button className="btn btn-danger" onClick={async () => { if (!confirm("Delete this product?")) return; try { const r = await api(`/api/projects/${projectId}/products/${p.id}`, { method: "DELETE" }); toast(r.message || "Deleted"); onSaved(); } catch (e) { toast((e as Error).message, "err"); } }}>Delete</button> : <span />}
+        {p.id ? <button className="btn btn-danger" onClick={async () => { if ((await ask({ title: "Delete this product?", message: "If it has orders it is archived instead, so order history stays intact.", confirmLabel: "Delete product", danger: true })) === null) return; try { const r = await api(`/api/projects/${projectId}/products/${p.id}`, { method: "DELETE" }); toast(r.message || "Deleted"); onSaved(); } catch (e) { toast((e as Error).message, "err"); } }}>Delete</button> : <span />}
         <div className="row"><button className="btn" onClick={onClose}>Cancel</button><button className="btn btn-primary" disabled={busy || !p.title.trim()} onClick={save}>{busy && <Spinner />} Save product</button></div>
       </div>
     </Modal>

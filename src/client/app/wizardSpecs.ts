@@ -74,7 +74,7 @@ export const STEPS: Record<string, Step[]> = {
       { k: "targetCustomers", label: "Who you serve", t: "text", max: 200, ph: "Homes and offices across the city" },
     ] },
     { id: "services", title: "Services", intro: "List what you offer. Prices are optional. This plan shows offerings, not a shopping cart.", fields: [
-      { k: "services", label: "Services / offerings", t: "list", item: "Service", max: 24, fields: [{ k: "title", label: "Name", t: "text", max: 100 }, { k: "description", label: "Description", t: "textarea", rows: 3, max: 600 }, { k: "price", label: "Price or range (optional)", t: "text", max: 60, ph: "From UGX 50,000" }, { k: "image", label: "Image (optional)", t: "image" }] },
+      { k: "services", label: "Services / offerings", t: "list", item: "Service", max: 24, fields: [{ k: "title", label: "Name", t: "text", max: 100 }, { k: "description", label: "Description", t: "textarea", rows: 3, max: 600 }, { k: "price", label: "Price or range (optional)", t: "text", max: 60, ph: "From $90" }, { k: "image", label: "Image (optional)", t: "image" }] },
       { k: "quoteForm", label: "Add a quote request form", t: "toggle", help: "Requests arrive in your dashboard." },
     ] },
     { id: "media", title: "Photos & team", fields: [

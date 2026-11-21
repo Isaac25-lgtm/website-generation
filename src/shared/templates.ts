@@ -36,7 +36,7 @@ export const TEMPLATES: TemplateDef[] = [
     art: "arcs",
     css: `
 body{counter-reset:sec}
-.sec>.wrap>.sec-head h2::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);display:block;font:500 .8rem/1 var(--font-b);letter-spacing:.2em;color:var(--primary);margin-bottom:.9rem}
+.sec>.wrap>.sec-head h2::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);display:block;font:500 .8rem/1 var(--font-b);letter-spacing:.2em;color:var(--primary-ink);margin-bottom:.9rem}
 .sec+.sec{border-top:1px solid var(--border)}
 h1,h2{font-weight:400;letter-spacing:-.02em}
 .hero h1 em,.hero h1{font-style:italic}
@@ -55,12 +55,12 @@ h1,h2{font-weight:400;letter-spacing:-.02em}
     variants: { hero: "terminal", projects: "cards", experience: "timeline", skills: "tags" },
     art: "grid",
     css: `
-.sec-head h2::before{content:"// ";color:var(--primary)}
+.sec-head h2::before{content:"// ";color:var(--primary-ink)}
 .card{background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(4px)}
-.tag{font-family:var(--font-h);font-size:.72rem;border-color:color-mix(in srgb,var(--primary) 40%,transparent);color:var(--primary)}
+.tag{font-family:var(--font-h);font-size:.72rem;border-color:color-mix(in srgb,var(--primary) 40%,transparent);color:var(--primary-ink)}
 .btn-primary{box-shadow:0 0 0 1px var(--primary),0 0 24px -6px var(--primary)}
 .site-header .brand{font-family:var(--font-h)}
-.site-header .brand::before{content:"~/";color:var(--primary);margin-right:2px}
+.site-header .brand::before{content:"~/";color:var(--primary-ink);margin-right:2px}
 `,
   }),
   T({
@@ -153,7 +153,7 @@ h1,h2,h3{font-weight:500;letter-spacing:.01em}
 .sec-head h2::after{content:"";display:block;width:56px;height:3px;background:var(--accent);margin-top:1rem}
 .sec-head.center h2::after{margin-inline:auto}
 .site-header{border-bottom:1px solid var(--border)}
-.card h3{color:var(--primary)}
+.card h3{color:var(--primary-ink)}
 `,
   }),
   T({
@@ -271,7 +271,7 @@ h1,h2{font-weight:500}
     art: "grid",
     css: `
 .product-card:hover{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary),0 18px 40px -20px var(--primary)}
-.price{color:var(--primary)}
+.price{color:var(--primary-ink)}
 `,
   }),
   T({

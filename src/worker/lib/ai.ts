@@ -12,18 +12,27 @@ export function aiAvailable(env: AppEnv): boolean {
   return !!env.AI && typeof (env.AI as unknown as { run?: unknown }).run === "function";
 }
 
-export async function aiJson<T>(env: AppEnv, opts: { system: string; user: string; jsonSchema: Record<string, unknown>; schema: z.ZodType<T>; maxTokens?: number }): Promise<AiResult<T> | AiFailure> {
+export async function aiJson<T>(env: AppEnv, opts: { system: string; user: string; jsonSchema: Record<string, unknown>; schema: z.ZodType<T>; maxTokens?: number; timeoutMs?: number }): Promise<AiResult<T> | AiFailure> {
   const model = env.AI_MODEL || "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
   if (!aiAvailable(env)) return { ok: false, error: "AI provider not configured", model };
   let lastErr = "unknown error";
+  // One overall time budget across attempts, so a slow provider can't keep the customer waiting: callers fall
+  // back to their rule-based path (and say so) when this returns ok: false.
+  const deadline = Date.now() + (opts.timeoutMs ?? 20_000);
   for (let attempt = 0; attempt < 2; attempt++) {
+    const remaining = deadline - Date.now();
+    if (remaining < 3_000) { if (attempt === 0) lastErr = "AI timed out"; break; }
+    let timer: ReturnType<typeof setTimeout> | undefined;
     try {
-      const res = (await (env.AI as unknown as { run: (m: string, i: unknown) => Promise<unknown> }).run(model, {
+      const call = (env.AI as unknown as { run: (m: string, i: unknown) => Promise<unknown> }).run(model, {
         messages: [{ role: "system", content: opts.system }, { role: "user", content: opts.user }],
         response_format: { type: "json_schema", json_schema: opts.jsonSchema },
         max_tokens: opts.maxTokens ?? 1200,
         temperature: 0.4,
-      })) as { response?: unknown; usage?: { prompt_tokens?: number; completion_tokens?: number } };
+      });
+      const timeout = new Promise<never>((_, reject) => { timer = setTimeout(() => reject(new Error("AI timed out")), remaining); });
+      const res = (await Promise.race([call, timeout])) as { response?: unknown; usage?: { prompt_tokens?: number; completion_tokens?: number } };
+      clearTimeout(timer);
       let raw = res?.response;
       if (typeof raw === "string") {
         const m = raw.match(/\{[\s\S]*\}/);
@@ -33,7 +42,9 @@ export async function aiJson<T>(env: AppEnv, opts: { system: string; user: strin
       if (!parsed.success) { lastErr = `Model output failed validation: ${parsed.error.issues[0]?.message}`; continue; }
       return { ok: true, data: parsed.data, model, inputTokens: res.usage?.prompt_tokens, outputTokens: res.usage?.completion_tokens };
     } catch (e) {
+      clearTimeout(timer);
       lastErr = (e as Error)?.message?.slice(0, 300) || "AI call failed";
+      if (lastErr === "AI timed out") break; // the budget is spent; don't start another attempt
     }
   }
   return { ok: false, error: lastErr, model };

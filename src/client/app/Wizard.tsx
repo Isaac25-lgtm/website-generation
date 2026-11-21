@@ -6,6 +6,7 @@ import { LoadingPage, Spinner } from "../components/ui";
 import { TemplateGallery } from "../pages/Marketing";
 import { STARTER_POLICIES, STEPS, type Step } from "./wizardSpecs";
 import { ProductsManager } from "./Store";
+import { TEMPLATE_MAP } from "../../shared/templates";
 
 const rid = () => Math.random().toString(36).slice(2, 10);
 
@@ -110,6 +111,14 @@ function StyleStep({ projectId, type, answers, onChange, templateId, setTemplate
   const [shot, setShot] = useState<string | null>(null);
   const [err, setErr] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
+  const autoRan = useRef(false);
+  // A website pasted on the home page is analysed automatically when this step opens.
+  useEffect(() => {
+    if (autoRan.current || brief || answers.inspiration?.sourceHost || url.length < 4) return;
+    autoRan.current = true;
+    analyze();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const applied = !!brief && answers.inspiration?.sourceHost === brief.sourceHost && !!answers.inspiration?.tokens;
   const analyze = async () => {
     setBusy(true); setErr("");
     try { const r = await api(`/api/projects/${projectId}/inspiration`, { body: { url } }); setBrief(r.brief); setShot(r.screenshotUrl); }
@@ -135,20 +144,26 @@ function StyleStep({ projectId, type, answers, onChange, templateId, setTemplate
   return (
     <div className="stack" style={{ gap: "2rem" }}>
       <div className="ai-box stack">
-        <div><strong>Paste a website you love</strong><p className="muted small" style={{ margin: ".25rem 0 0" }}>We'll read its high-level style (colours, fonts, spacing, shapes) and design an original site for you in that spirit. We never copy its content.</p></div>
+        <div><div className="row" style={{ gap: ".5rem" }}><strong>Paste a website you love</strong><span className="reco-pill">Recommended</span></div><p className="muted small" style={{ margin: ".35rem 0 0" }}>The quickest way to a site that looks the way you want. We read its style (colours, fonts, spacing, shapes) and design an original site for you in that spirit. We never copy its words, images or logo.</p></div>
         <div className="row"><input className="input" style={{ flex: 1, minWidth: 220 }} placeholder="https://www.example.com" value={url} onChange={(e) => setUrl(e.target.value)} aria-label="Inspiration website address" /><button className="btn btn-primary" disabled={busy || url.length < 4} onClick={analyze}>{busy ? <Spinner /> : "Analyse style"}</button></div>
         <div className="row small"><span className="muted">Site blocks automated visits?</span><button className="btn btn-sm" onClick={() => fileRef.current?.click()} disabled={busy}>Upload a screenshot instead</button><input ref={fileRef} type="file" accept="image/png,image/jpeg,image/webp" hidden onChange={(e) => e.target.files?.[0] && fromScreenshot(e.target.files[0])} /></div>
         <label className="field"><span>Describe the style you want (optional)</span><input value={answers.inspiration?.notes || ""} maxLength={600} placeholder="e.g. minimal and elegant, lots of white space, bold photos" onChange={(e) => onChange({ ...answers, inspiration: { ...(answers.inspiration || {}), notes: e.target.value } })} /></label>
+        {busy && <div className="alert info small" role="status"><Spinner /> Reading the website's style. This usually takes 5 to 30 seconds.</div>}
         {err && <div className="alert err" role="alert">{err}</div>}
         {brief && (
           <div className="card stack-sm">
             <div className="row between"><strong>Design brief: {brief.sourceHost}</strong><span className="badge blue">{brief.method === "browser" ? "Rendered with Browser Run" : brief.method === "screenshot" ? "From screenshot" : "From HTML/CSS"}</span></div>
             {shot && <img src={shot} alt={`Captured reference of ${brief.sourceHost}`} style={{ borderRadius: 10, border: "1px solid var(--line)", maxHeight: 260, objectFit: "cover", objectPosition: "top" }} />}
             <div className="row">{brief.palette.slice(0, 8).map((p: any) => <span key={p.hex} title={p.hex} style={{ width: 32, height: 32, borderRadius: 8, background: p.hex, border: "1px solid var(--line)" }} />)}</div>
-            <span className="small">Mood: <b>{brief.mood.join(" · ")}</b> · Mode: <b>{brief.mode}</b> · Type: <b>{brief.typography.feel}</b> · Corners: <b>{brief.shape.radius}</b></span>
-            <span className="small">Recommended templates: <b>{brief.recommendedTemplates.join(", ")}</b></span>
+            <span className="small">Feel: <b>{brief.mood.join(", ")}</b> · <b>{brief.mode === "dark" ? "Dark" : "Light"}</b> background · Fonts: <b>{brief.typography.feel}</b></span>
+            <div className="stack-sm"><span className="small"><b>Templates that match this style</b> (tap one to use it)</span>
+              <div className="row">{brief.recommendedTemplates.map((tid: string, i: number) => TEMPLATE_MAP[tid] && <button key={tid} type="button" className={`btn btn-sm ${templateId === tid ? "btn-primary" : ""}`} onClick={() => setTemplateId(tid)}>{TEMPLATE_MAP[tid].name}{i === 0 ? " · best match" : ""}{templateId === tid ? " ✓" : ""}</button>)}</div>
+            </div>
             {brief.uncertainties.length > 0 && <ul className="tiny muted" style={{ margin: 0 }}>{brief.uncertainties.map((u: string) => <li key={u}>{u}</li>)}</ul>}
-            <button className="btn btn-primary btn-sm" style={{ justifySelf: "start" }} onClick={apply}>Use this style</button>
+            {applied
+              ? <span className="badge green" style={{ justifySelf: "start" }}>✓ Your site will use this style</span>
+              : <button className="btn btn-primary" style={{ justifySelf: "start" }} onClick={apply}>Use this style for my site</button>}
+            <span className="tiny muted">This applies its colours, fonts and shapes and picks the best-matching template. You can change anything later in the editor.</span>
           </div>
         )}
         {answers.inspiration?.sourceHost && !brief && <span className="badge green">Using style from {answers.inspiration.sourceHost}</span>}
@@ -175,7 +190,7 @@ export function PaymentsStep({ answers, onChange }: { answers: any; onChange: (a
   const set = (store: any) => onChange({ ...answers, store: { ...st, ...store } });
   return (
     <div className="stack">
-      <div className="alert info small"><strong>How payment works today:</strong> customers place real orders, and you collect payment yourself using the methods below. Online card checkout needs your own verified payment account (Flutterwave, Pesapal or Paystack). These integrations are coming, and your store will never pretend to take card payments until then. Your sales never pass through our account.</div>
+      <div className="alert info small"><strong>How payment works today:</strong> customers place real orders, and you collect payment yourself using the methods below. Online card checkout will need your own verified account with a card payment provider. This is coming, and your store will never pretend to take card payments until then. Your sales never pass through our account.</div>
       <div className="stack-sm"><span className="label">Payment methods your customers can choose</span>
         {Object.entries(PAY_PRESETS).map(([kind, p]) => {
           const on = list.find((m) => m.kind === kind);

@@ -6,6 +6,7 @@ import { Icon, LoadingPage, Modal, Spinner } from "../components/ui";
 import { TemplateGallery } from "../pages/Marketing";
 import { NEW_SECTION_DATA, SECTION_LABELS, SECTION_SPECS, SITE_SPECS, STORE_POLICY_SPECS, THEME_SPECS } from "./editorSpecs";
 import { DeliveryStep, PaymentsStep } from "./Wizard";
+import { switchMode } from "../../shared/refine";
 
 type Sel = { kind: "section"; pageId: string; sectionId: string } | { kind: "theme" } | { kind: "site" } | { kind: "store" } | { kind: "page"; pageId: string };
 const DEVICES = { desktop: 1280, tablet: 820, mobile: 390 } as const;
@@ -19,7 +20,7 @@ const ALLOWED: Record<string, string[]> = {
 
 export default function Editor() {
   const { id } = useParams();
-  const { toast, config } = useApp();
+  const { toast, config, ask } = useApp();
   const [proj, setProj] = useState<any>(null);
   const [doc, setDoc] = useState<any>(null);
   const [rev, setRev] = useState(0);
@@ -160,6 +161,7 @@ export default function Editor() {
               <button className="btn btn-sm btn-ghost" onClick={undo} disabled={!past.length} aria-label="Undo" title="Undo (Ctrl+Z)">↶</button>
               <button className="btn btn-sm btn-ghost" onClick={redo} disabled={!future.length} aria-label="Redo" title="Redo (Ctrl+Shift+Z)">↷</button>
               <div className="seg" role="group" aria-label="Device preview">{(Object.keys(DEVICES) as (keyof typeof DEVICES)[]).map((d) => <button key={d} aria-pressed={device === d} onClick={() => setDevice(d)}>{d[0].toUpperCase() + d.slice(1)}</button>)}</div>
+              <div className="seg" role="group" aria-label="Colour mode" title="Switch your site between a light and a dark look">{(["light", "dark"] as const).map((m) => <button key={m} aria-pressed={doc.theme.mode === m} onClick={() => change(switchMode(doc, m))}>{m === "light" ? "Light" : "Dark"}</button>)}</div>
             </div>
             <div className="row" style={{ gap: ".35rem" }}>
               <button className="btn btn-sm" onClick={() => persist(true, "Manual checkpoint")}>Save checkpoint</button>
@@ -204,7 +206,7 @@ export default function Editor() {
             </div>
           </div>
           <div className="panel">
-            {sel.kind === "theme" && <><h3>Theme</h3><Fields specs={THEME_SPECS} value={doc} onChange={(v) => change(v)} projectId={id!} /></>}
+            {sel.kind === "theme" && <><h3>Theme</h3><Fields specs={THEME_SPECS} value={doc} onChange={(v) => change(v.theme.mode !== doc.theme.mode ? switchMode({ ...v, theme: { ...v.theme, mode: doc.theme.mode } }, v.theme.mode) : v)} projectId={id!} /></>}
             {sel.kind === "site" && <><h3>Site settings</h3><Fields specs={SITE_SPECS} value={doc} onChange={(v) => change(v)} projectId={id!} /></>}
             {sel.kind === "store" && doc.store && (
               <div className="stack">
@@ -222,7 +224,7 @@ export default function Editor() {
                 <label className="field"><span>Title (shown in menu)</span><input value={selPage.title} maxLength={80} onChange={(e) => updPage(selPage.id, (p) => ({ ...p, title: e.target.value }))} /></label>
                 {selPage.slug !== "" && <label className="field"><span>Address</span><input value={selPage.slug} maxLength={40} onChange={(e) => updPage(selPage.id, (p) => ({ ...p, slug: e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, "-").slice(0, 40) }))} /></label>}
                 <label className="check"><input type="checkbox" checked={selPage.inNav} onChange={(e) => updPage(selPage.id, (p) => ({ ...p, inNav: e.target.checked }))} /> Show in navigation menu</label>
-                {selPage.slug !== "" && <button className="btn btn-danger btn-sm" style={{ justifySelf: "start" }} onClick={() => { if (confirm(`Delete page “${selPage.title}”?`)) { change({ ...doc, pages: doc.pages.filter((p: any) => p.id !== selPage.id) }); setPageId(doc.pages[0].id); setSel({ kind: "theme" }); } }}>Delete page</button>}
+                {selPage.slug !== "" && <button className="btn btn-danger btn-sm" style={{ justifySelf: "start" }} onClick={async () => { if ((await ask({ title: `Delete page “${selPage.title}”?`, message: "You can undo this from the editor.", confirmLabel: "Delete page", danger: true })) !== null) { change({ ...doc, pages: doc.pages.filter((p: any) => p.id !== selPage.id) }); setPageId(doc.pages[0].id); setSel({ kind: "theme" }); } }}>Delete page</button>}
               </div>
             )}
             {sel.kind === "section" && selSection && (
@@ -230,7 +232,7 @@ export default function Editor() {
                 <div className="row between"><h3 style={{ margin: 0 }}>{SECTION_LABELS[selSection.kind]}</h3>
                   <div className="row" style={{ gap: 2 }}>
                     <button className="icon-btn" title="Duplicate" aria-label="Duplicate section" onClick={() => updPage(sel.pageId, (p) => { const i = p.sections.findIndex((x: any) => x.id === selSection.id); const s = [...p.sections]; s.splice(i + 1, 0, { ...JSON.parse(JSON.stringify(selSection)), id: sid(selSection.kind) }); return { ...p, sections: s }; })}>{Icon.copy}</button>
-                    <button className="icon-btn" title="Delete" aria-label="Delete section" onClick={() => { if (confirm("Delete this section?")) { updPage(sel.pageId, (p) => ({ ...p, sections: p.sections.filter((x: any) => x.id !== selSection.id) })); setSel({ kind: "page", pageId: sel.pageId }); } }}>{Icon.trash}</button>
+                    <button className="icon-btn" title="Delete" aria-label="Delete section" onClick={async () => { if ((await ask({ title: "Delete this section?", message: "You can undo this from the editor.", confirmLabel: "Delete section", danger: true })) !== null) { updPage(sel.pageId, (p) => ({ ...p, sections: p.sections.filter((x: any) => x.id !== selSection.id) })); setSel({ kind: "page", pageId: sel.pageId }); } }}>{Icon.trash}</button>
                   </div>
                 </div>
                 {selSection.aiSuggested && <div className="alert info small">This text was suggested by AI. Check it's accurate. <button className="btn btn-sm" onClick={() => updPage(sel.pageId, (p) => ({ ...p, sections: p.sections.map((x: any) => (x.id === selSection.id ? { ...x, aiSuggested: false } : x)) }))}>Mark as reviewed</button></div>}

@@ -200,6 +200,19 @@ export function readableOn(bg: string): string {
   return contrastRatio(bg, "#ffffff") >= contrastRatio(bg, "#111111") ? "#ffffff" : "#111111";
 }
 
+/**
+ * Return `color`, moved step by step towards `toward` (normally the page's text colour) until it reaches
+ * `target` contrast against `bg`. Colours that already pass are returned unchanged.
+ */
+export function ensureContrast(color: string, bg: string, toward: string, target: number): string {
+  if (contrastRatio(color, bg) >= target) return color;
+  for (let t = 0.05; t <= 1.0001; t += 0.05) {
+    const c = mix(color, toward, t);
+    if (contrastRatio(c, bg) >= target) return c;
+  }
+  return toward;
+}
+
 export function mix(a: string, b: string, t: number): string {
   const [r1, g1, b1] = hexToRgb(a);
   const [r2, g2, b2] = hexToRgb(b);

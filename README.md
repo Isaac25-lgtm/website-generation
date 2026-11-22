@@ -22,7 +22,7 @@ Describe the website you need, preview it on every device, refine it in a live e
 ![Python](https://img.shields.io/badge/Python-Django%206%20·%20Neon%20Postgres-3776AB?logo=python&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-unit%20109%20·%20integration%2057%20·%20e2e%2011%20·%20python%2053-2ea44f)
 
-<sub>A product of Motion Imprints Technologies</sub>
+<sub>A Locus Analytics product, built by Omoding Isaac</sub>
 
 </div>
 
@@ -422,4 +422,4 @@ Detailed checklist: [BUILD_STATUS.md](BUILD_STATUS.md).
 - **Fonts:** Outfit, Inter and the template typefaces are served by Google Fonts under the SIL Open Font License.
 - **Demo content** (people, businesses, products and orders) is fictional and labelled as such wherever it appears.
 
-**License:** no open-source license has been granted. © Motion Imprints Technologies. All rights reserved.
+**License:** no open-source license has been granted. © 2026 Omoding Isaac (Locus Analytics). All rights reserved.

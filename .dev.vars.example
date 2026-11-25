@@ -12,3 +12,5 @@ PUBLIC_BASE_URL=http://localhost:8788
 # DODO_PRODUCT_ECOMMERCE=
 # RESEND_API_KEY=
 # EMAIL_FROM="ImprintSites AI <noreply@yourdomain>"
+# DEEPSEEK_API_KEY=   (help assistant; set in production with: npx wrangler secret put DEEPSEEK_API_KEY)
+# DEEPSEEK_MODEL=deepseek-chat

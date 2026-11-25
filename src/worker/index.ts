@@ -15,6 +15,7 @@ import { publicApi, support } from "./routes/public";
 import { billing, webhooks } from "./routes/billing";
 import { admin } from "./routes/admin";
 import { sites } from "./routes/sites";
+import { assistant } from "./routes/assistant";
 import { PLANS } from "../shared/pricing";
 import { PUBLIC_DEMOS } from "../shared/demo";
 
@@ -65,6 +66,7 @@ app.route("/api/support", support);
 app.route("/api/billing", billing);
 app.route("/api/webhooks", webhooks);
 app.route("/api/admin", admin);
+app.route("/api/assistant", assistant);
 app.route("/", sites);
 
 app.get("/robots.txt", (c) => c.text(`User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /preview/\nDisallow: /dashboard\nDisallow: /projects/\nSitemap: ${baseUrl(c)}/sitemap.xml\n`));

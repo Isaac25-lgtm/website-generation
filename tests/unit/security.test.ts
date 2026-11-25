@@ -131,3 +131,12 @@ describe("template accessibility", () => {
     }
   });
 });
+
+describe("assistant system prompt", () => {
+  it("states the locked prices, the three site types and the safety rules", async () => {
+    const { systemPrompt } = await import("../../src/worker/routes/assistant");
+    const p = systemPrompt({ hosting_fee_amount_personal: "3", hosting_fee_amount_business: "4", hosting_fee_amount_ecommerce: "5" }, "/pricing");
+    for (const s of ["$20", "$30", "$100", "$3", "$4", "$5", "personal", "business", "online store", "Never ask for or accept passwords", "/pricing"]) expect(p).toContain(s);
+    expect(p).not.toMatch(/undefined|NaN/);
+  });
+});

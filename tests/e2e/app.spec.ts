@@ -104,6 +104,25 @@ test.describe("public marketing site", () => {
   });
 });
 
+test.describe("Ask ImprintSites AI", () => {
+  test("pill with the logo on marketing pages, opens a chat panel, answers or says it is not switched on", async ({ page }) => {
+    await page.goto("/pricing");
+    const pill = page.getByRole("button", { name: "Ask ImprintSites AI" });
+    await expect(pill).toBeVisible();
+    await expect(pill.locator('img[src="/logo-mark.svg"]')).toHaveCount(1);
+    await pill.click();
+    const panel = page.getByRole("dialog", { name: "Ask ImprintSites AI" });
+    await expect(panel).toBeVisible();
+    await panel.getByLabel("Your question").fill("What does a business site cost?");
+    await panel.getByRole("button", { name: "Send" }).click();
+    await expect(panel.locator(".ast-note, .ast-assistant:not(.ast-typing)").first()).toBeVisible({ timeout: 30_000 });
+    await page.keyboard.press("Escape");
+    await expect(panel).toBeHidden();
+    await page.goto("/login");
+    await expect(page.getByRole("button", { name: "Ask ImprintSites AI" })).toBeVisible();
+  });
+});
+
 test.describe("dark mode", () => {
   test("is off by default, can be switched on from the header or footer, and is remembered", async ({ page }) => {
     await page.goto("/");

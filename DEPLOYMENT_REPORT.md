@@ -188,3 +188,12 @@ Screenshots are in `tests/e2e/screenshots/prod/`. The test support ticket was de
   - Playwright 12/12 (local) plus the production run;
   - production smoke test 39/39;
   - test data removed.
+
+## 25 November 2026: "Ask ImprintSites AI" assistant (version e3301281)
+
+- A floating "Ask ImprintSites AI" pill with the logo sits on every platform page (marketing, sign-in, dashboard, editor, admin). It opens a chat panel; on the editor and setup pages it shrinks to the logo only, so the canvas stays clear.
+- Answers come from DeepSeek (`deepseek-chat`) through `POST /api/assistant`. The key is the Worker secret `DEEPSEEK_API_KEY` and never reaches the browser. Optional `DEEPSEEK_MODEL` overrides the model.
+- The system prompt holds the product facts (the locked $20/$30/$100 prices, hosting amounts from settings, template counts, what is coming soon) and rules: don't guess, never ask for passwords or card details, stay on topic.
+- Limits: 30 questions an hour per visitor, 120 for signed-in users; messages up to 2,000 characters; 25-second timeout. The CSRF header is required. Replies are shown as plain text.
+- **Not switched on yet:** the secret isn't set, so the endpoint returns 503 `not_configured` and the panel says so. To switch it on: `npx wrangler secret put DEEPSEEK_API_KEY`.
+- Tests: unit 1308, integration 62, Playwright 13 (local), smoke 39/39 plus the assistant e2e on production. Smoke records were cleaned up.

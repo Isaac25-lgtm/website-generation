@@ -5,6 +5,7 @@ import "./styles.css";
 import { AppProvider, applyTheme, readTheme } from "./lib";
 applyTheme(readTheme());
 import { Footer, LoadingPage, MarketingNav } from "./components/ui";
+import { Assistant } from "./components/Assistant";
 import Home from "./pages/Home";
 import { Contact, HowItWorks, NotFound, Pricing, Templates } from "./pages/Marketing";
 import { Privacy, Refunds, Terms } from "./pages/Legal";
@@ -31,6 +32,7 @@ function Chrome({ marketing }: { marketing: boolean }) {
       {marketing && <MarketingNav />}
       <Suspense fallback={<LoadingPage />}><Outlet /></Suspense>
       {marketing && <Footer />}
+      <Assistant />
     </>
   );
 }

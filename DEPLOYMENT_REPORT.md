@@ -212,3 +212,10 @@ Screenshots are in `tests/e2e/screenshots/prod/`. The test support ticket was de
 - Library: 299 templates (personal 93, business 63, online store 143). Every planned five-star site and the agreed four-star fills are now live.
 - Shop categories now have at least 5 designs each, except fragrance with 3: only one four-star fragrance source exists.
 - Tests: unit 1764, integration 62, Playwright 13 (local, including every template), smoke 39/39, all 299 live previews return 200. Smoke records were cleaned up.
+
+## 25 November 2026: review fixes and the help assistant switched on (version b1ec1c98)
+
+- Production migrations 0007 (assistant usage) and 0008 (per-reservation ledger) applied.
+- Live: every fix from the Codex review of 5a23f67, plus Codex's own follow-up fixes from its 6174c29 verification. Highlights: signed-out member templates show only a hero thumbnail; owner photos never reach customer sites; templates make no unrequested offers; phone layouts fit at 320, 390 and 768 px.
+- "Ask ImprintSites AI" is on, with the owner's DeepSeek key stored as the Worker secret `DEEPSEEK_API_KEY`. The model is `deepseek-flash`. Each page has its own detailed starter questions and a page guide. Answers are detailed and formatted. A service-wide daily allowance of 1,500,000 tokens applies, changeable in Admin settings (0 pauses the assistant).
+- Checks: unit 2,389, integration 64, Playwright 15 (local); smoke 39/39; all 299 thumbnails 200; full member pages gated when signed out; old photo URLs serve images; live answers checked on the store manager and How it works pages, and logged in the usage table. Smoke records were cleaned up.

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Dewlight — Layers of light, hydrating skincare.",
-    "description": "Layers of light, hydrating skincare.",
+    "description": "Dewlight makes hydrating toners, serums and creams for humid climates.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-18mb66g",
+          "id": "hero-18m47d3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Skincare",
             "heading": "Layers of light, hydrating skincare.",
-            "subheading": "Layers of light, hydrating skincare.",
+            "subheading": "Dewlight makes hydrating toners, serums and creams for humid climates.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-18n3foc",
+          "id": "collections-18n5ow0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-18o487k",
+          "id": "products-18o4m9x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-18pcjxi",
+          "id": "about-18pg534",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-18q3zw1",
+          "id": "products-18qanm4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-18rbm2m",
+          "id": "about-18rfjz6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-18sd6vm",
+          "id": "faq-18sf7n9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-18thmat",
+          "id": "contact-18tclkl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-18uf7ag",
+          "id": "hours-18usxc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

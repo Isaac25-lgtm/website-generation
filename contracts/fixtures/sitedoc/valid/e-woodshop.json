@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Grain & Joint — Furniture made by hand in Burgundy.",
-    "description": "Furniture made by hand in Burgundy.",
+    "description": "Grain & Joint is a family woodworking studio, making furniture and objects from local oak.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1tddtsf",
+          "id": "hero-1td5nq9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Woodwork",
             "heading": "Furniture made by hand in Burgundy.",
-            "subheading": "Furniture made by hand in Burgundy.",
+            "subheading": "Grain & Joint is a family woodworking studio, making furniture and objects from local oak.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1te7i7f",
+          "id": "collections-1te1rgr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1tfdenr",
+          "id": "products-1tf2z99",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1tg7w6b",
+          "id": "about-1tg2a06",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1th4ssi",
+          "id": "products-1thl443",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1ti6gbc",
+          "id": "about-1tih4qs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1tj2g1c",
+          "id": "faq-1tjcfvt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1tkkw6g",
+          "id": "contact-1tk7kzs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1tl4fsy",
+          "id": "hours-1tl4z10",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

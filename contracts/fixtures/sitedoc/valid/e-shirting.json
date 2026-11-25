@@ -4,11 +4,11 @@
   "templateId": "e-shirting",
   "brand": {
     "name": "Plain Weave",
-    "tagline": "One shirt, made properly, in five fabrics."
+    "tagline": "One button-down, made properly, in five fabrics."
   },
   "seo": {
-    "title": "Plain Weave — One shirt, made properly, in five fabrics.",
-    "description": "One shirt, made properly, in five fabrics.",
+    "title": "Plain Weave — One button-down, made properly, in five fabrics.",
+    "description": "Plain Weave makes one button-down pattern and refines it every season.",
     "lang": "en"
   },
   "theme": {
@@ -50,15 +50,15 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1f4lcz6",
+          "id": "hero-1f4dydd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Shirts",
-            "heading": "One shirt, made properly, in five fabrics.",
-            "subheading": "One shirt, made properly, in five fabrics.",
+            "heading": "One button-down, made properly, in five fabrics.",
+            "subheading": "Plain Weave makes one button-down pattern and refines it every season.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1f588fs",
+          "id": "collections-1f57e81",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1f6bq7a",
+          "id": "products-1f65cut",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,14 +100,14 @@
           }
         },
         {
-          "id": "about-1f748s8",
+          "id": "about-1f7hxp6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "About Plain Weave",
-            "body": "Plain Weave makes one shirt pattern and refines it every season. Each shirt is cut and sewn in a family workshop in northern Portugal.",
+            "body": "Plain Weave makes one button-down pattern and refines it every season. Each piece is cut and sewn in a family workshop in northern Portugal.",
             "image": {
               "stock": "fashion-slip-dress",
               "alt": "Bias-cut slip dress",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1f8cal",
+          "id": "products-1f8bait",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,14 +147,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1f9d6sy",
+          "id": "about-1f9g0v7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "Our story",
-            "body": "Plain Weave makes one shirt pattern and refines it every season. Each shirt is cut and sewn in a family workshop in northern Portugal.",
+            "body": "Plain Weave makes one button-down pattern and refines it every season. Each piece is cut and sewn in a family workshop in northern Portugal.",
             "image": {
               "stock": "fashion-olive-jacket",
               "alt": "Olive utility jacket",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1fah4w8",
+          "id": "faq-1faheki",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1fbjgmy",
+          "id": "contact-1fbcxvf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1fcho5e",
+          "id": "hours-1fc863u",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Fallow & Field — Distilled, non-alcoholic spirits.",
-    "description": "Distilled, non-alcoholic spirits.",
+    "description": "Fallow & Field distils botanicals one by one, then blends them into spirits without alcohol.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1mv28xa",
+          "id": "hero-1mv2p75",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Non-alcoholic spirits",
             "heading": "Distilled, non-alcoholic spirits.",
-            "subheading": "Distilled, non-alcoholic spirits.",
+            "subheading": "Fallow & Field distils botanicals one by one, then blends them into spirits without alcohol.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1mwk4dp",
+          "id": "collections-1mwdo3y",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1mx1113",
+          "id": "products-1mxifsq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1myfjpg",
+          "id": "about-1my5j28",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1mz8zwn",
+          "id": "products-1mz6u6f",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1n0gmdb",
+          "id": "about-1n05kg7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1n166ux",
+          "id": "faq-1n19pto",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1n2jgdy",
+          "id": "contact-1n2ebrj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1n3467r",
+          "id": "hours-1n3cye6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -3,12 +3,12 @@
   "type": "personal",
   "templateId": "p-ohhi",
   "brand": {
-    "name": "Chelsea Moore",
-    "tagline": "A cool way to say I follow every rabbit hole. Funny thing: they all come out in the same place."
+    "name": "Harriet Lane",
+    "tagline": "I start neighbourhood workshops and write about what people make when they share tools."
   },
   "seo": {
-    "title": "Chelsea Moore — A cool way to say I follow every rabbit hole. Funny th",
-    "description": "A cool way to say I follow every rabbit hole. Funny thing: they all come out in the same place.",
+    "title": "Harriet Lane — I start neighbourhood workshops and write about what pe",
+    "description": "I start neighbourhood workshops and write about what people make when they share tools.",
     "lang": "en"
   },
   "theme": {
@@ -32,7 +32,7 @@
     "ornament": "none"
   },
   "contact": {
-    "email": "chelsea@example.com",
+    "email": "harriet@example.com",
     "phone": "",
     "whatsapp": "",
     "address": "",
@@ -50,15 +50,15 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-hvoo",
+          "id": "hero-i86gtx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Community builder & author · Portland",
-            "heading": "A cool way to say I follow every rabbit hole. Funny thing: they all come out in the same place.",
-            "subheading": "Chelsea Moore, Community builder & author",
+            "heading": "I start neighbourhood workshops and write about what people make when they share tools.",
+            "subheading": "Harriet Lane, Community builder & author",
             "primaryCta": {
               "label": "Get in touch",
               "href": "/contact"
@@ -69,13 +69,13 @@
             },
             "image": {
               "stock": "pro-reader-woman",
-              "alt": "Chelsea Moore reading",
+              "alt": "Harriet Lane reading",
               "caption": ""
             }
           }
         },
         {
-          "id": "about-hw7i6r",
+          "id": "about-i98vmi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -85,7 +85,7 @@
             "body": "I build communities, write about shared economies and teach people to make things together.",
             "image": {
               "stock": "pro-reader-woman",
-              "alt": "Chelsea Moore reading",
+              "alt": "Harriet Lane reading",
               "caption": ""
             },
             "highlights": []
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-hy61qw",
+          "id": "cta-ib2iub",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -150,13 +150,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-ic4uz8",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Community builder",
+                "org": "Independent",
+                "period": "2014 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Author",
+                "org": "Two books (fictional)",
+                "period": "2015, 2024",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-hzeqdj",
+          "id": "contact-idbw53",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

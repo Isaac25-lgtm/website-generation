@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Golden Hour Rituals — Small rituals for skin and mood.",
-    "description": "Small rituals for skin and mood.",
+    "description": "We make powders, oils and creams for daily rituals.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-184izbe",
+          "id": "hero-184byos",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Wellness beauty",
             "heading": "Small rituals for skin and mood.",
-            "subheading": "Small rituals for skin and mood.",
+            "subheading": "We make powders, oils and creams for daily rituals.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-18598wl",
+          "id": "collections-185icyd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-186kvpy",
+          "id": "products-1865m3l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-18744o7",
+          "id": "about-1877etp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-188ix9p",
+          "id": "products-1886ad8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-189ddb0",
+          "id": "about-189516k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-18a7ri8",
+          "id": "faq-18afwtb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-18bepnp",
+          "id": "contact-18b6l8k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-18ccua6",
+          "id": "hours-18cftja",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

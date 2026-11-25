@@ -39,6 +39,7 @@
     "city": "London",
     "country": "United Kingdom",
     "mapQuery": "",
+    "whatsappFloat": true,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-3zi174",
+          "id": "hero-1yedkt5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -74,7 +75,7 @@
           }
         },
         {
-          "id": "services-402wfm",
+          "id": "services-1yfjie4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -117,7 +118,7 @@
           }
         },
         {
-          "id": "about-41gjy",
+          "id": "about-1ygginu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,7 +139,7 @@
           }
         },
         {
-          "id": "cta-4222r8",
+          "id": "cta-1yh2j9i",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -161,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-43dakb",
+          "id": "about-1yif996",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -182,7 +183,7 @@
           }
         },
         {
-          "id": "faq-44lc8x",
+          "id": "faq-1yj3sgo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -214,7 +215,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-45iytz",
+          "id": "services-1ykiiwd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -281,7 +282,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-475kvm",
+          "id": "gallery-1ym84uz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -332,7 +333,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-486yd6",
+          "id": "contact-1yn61b",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

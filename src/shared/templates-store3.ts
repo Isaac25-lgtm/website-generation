@@ -1,17 +1,13 @@
 import type { TemplateDef } from "./templates";
-import type { Theme } from "./schema";
-import type { StoreLayout } from "./render/layouts";
-import { storeTemplate } from "./templates-store";
+import { storeRows, type StoreRow } from "./templates-store";
 
 // Shop batch 3: one template per remaining five-star storefront in fashion, menswear, jewellery, furniture,
 // home, coffee, drinks, food, tech, sport and makers (structure only; no source names, photos, copy or code).
 
-type C = Theme["colors"];
-type Row = [id: string, name: string, category: string, layout: StoreLayout, rank: "signature" | "premium" | "standard", c: [string, string, string, string, string, string], h: Theme["fontHeading"], b: Theme["fontBody"], description: string, industries: string, x?: Partial<{ dark: boolean; hero: string; css: string; radius: Theme["radius"]; tier: "public" | "member"; header: Theme["headerStyle"] }>];
 
 const upper = `.nav a,.cart-link{text-transform:uppercase;letter-spacing:.14em!important;font-size:.72rem!important}`;
 
-const ROWS: Row[] = [
+const ROWS: StoreRow[] = [
   // Fashion and menswear
   ["e-shirting", "Shirting", "fashion", "quiet", "premium", ["#ffffff", "#f4f4f2", "#141414", "#5d5d5a", "#141414", "#3d5a80"], "instrument-sans", "inter", "One product told well: white space, fabric close-ups and a clear size guide.", "shirts, single-product brand, tailoring"],
   ["e-knitroom", "Knit Room", "fashion", "lifestyle", "premium", ["#f6f2ec", "#ece4d8", "#2a231b", "#685d4f", "#7a4b2a", "#7a4b2a"], "fraunces", "inter", "Warm wool tones and soft photographs of jumpers worn outdoors.", "knitwear, wool, slow fashion", { radius: "md" }],
@@ -98,13 +94,4 @@ const ROWS: Row[] = [
   ["e-cellar", "Cellar", "drinks", "tabletop", "standard", ["#f7f2ec", "#ece2d6", "#2a1a17", "#6a5650", "#7a2531", "#7a2531"], "playfair", "inter", "Wine-red and cream, a table photograph and this month's bottles as a list.", "wine, natural wine, wine shop"],
 ];
 
-export const STORE3_TEMPLATES: TemplateDef[] = ROWS.map(([id, name, category, layout, rank, c, h, b, description, industries, x = {}]) => ({
-  ...storeTemplate({
-    id, name, category, layout, tier: x.tier ?? "member",
-    styles: [layout, x.dark ? "dark" : "light"], industries: industries.split(", "), description,
-    colors: { bg: c[0], surface: c[1], text: c[2], muted: c[3], primary: c[4], accent: c[5] } as C,
-    mode: x.dark ? "dark" : "light", fontHeading: h, fontBody: b, headerStyle: x.header, radius: x.radius,
-    hero: x.hero, css: x.css ?? "",
-  }),
-  rank,
-}));
+export const STORE3_TEMPLATES: TemplateDef[] = storeRows(ROWS);

@@ -39,6 +39,7 @@
     "city": "Copenhagen",
     "country": "Denmark",
     "mapQuery": "",
+    "whatsappFloat": false,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1zl787",
+          "id": "hero-1zcbz6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -69,7 +70,7 @@
           }
         },
         {
-          "id": "services-20hg07",
+          "id": "services-20myx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -97,7 +98,7 @@
           }
         },
         {
-          "id": "about-21hbmc",
+          "id": "about-21dq75",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -114,7 +115,7 @@
           }
         },
         {
-          "id": "cta-22ewbm",
+          "id": "cta-227m65",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -137,7 +138,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-2348am",
+          "id": "about-23h59a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -162,7 +163,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-24ihq6",
+          "id": "services-24h089",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -214,7 +215,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-265lhe",
+          "id": "gallery-267q3b",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -265,7 +266,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-27fejx",
+          "id": "contact-27la70",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

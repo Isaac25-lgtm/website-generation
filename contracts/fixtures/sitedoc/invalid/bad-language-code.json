@@ -39,6 +39,7 @@
     "city": "London",
     "country": "United Kingdom",
     "mapQuery": "",
+    "whatsappFloat": true,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-5njqsn",
+          "id": "hero-2025whd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -74,7 +75,7 @@
           }
         },
         {
-          "id": "services-5o82j8",
+          "id": "services-203ewp0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -117,7 +118,7 @@
           }
         },
         {
-          "id": "about-5pl5ov",
+          "id": "about-2044kvd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,7 +139,7 @@
           }
         },
         {
-          "id": "cta-5q57sf",
+          "id": "cta-205h3ev",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -161,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-5rbnca",
+          "id": "about-2064gs5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -182,7 +183,7 @@
           }
         },
         {
-          "id": "faq-5sgsnn",
+          "id": "faq-207i8xy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -214,7 +215,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-5t9pvc",
+          "id": "services-208j4mj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -281,7 +282,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-5vhf6k",
+          "id": "gallery-20a2fxh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -332,7 +333,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-5w7t1o",
+          "id": "contact-20b9pcx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

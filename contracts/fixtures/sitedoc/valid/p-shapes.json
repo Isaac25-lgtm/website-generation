@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-ft3g9l",
+          "id": "hero-fximlr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -70,7 +70,7 @@
           }
         },
         {
-          "id": "about-fugydn",
+          "id": "about-fygvm2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -137,7 +137,7 @@
           }
         },
         {
-          "id": "cta-fw4spm",
+          "id": "cta-g0eu1l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -154,13 +154,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-g19gqr",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Independent brand advisor",
+                "org": "Self-employed",
+                "period": "2020 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Head of brand",
+                "org": "Beauty company (fictional)",
+                "period": "2013 — 2020",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-fx8cb0",
+          "id": "contact-g2au82",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

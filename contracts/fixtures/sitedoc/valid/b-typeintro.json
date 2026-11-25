@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-w42lby",
+          "id": "hero-w442g4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -68,14 +68,14 @@
               "href": "/services"
             },
             "image": {
-              "stock": "work-pattern",
+              "stock": "work-drawing",
               "alt": "Halden Works",
               "caption": ""
             }
           }
         },
         {
-          "id": "services-w5c9rw",
+          "id": "services-w5doat",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -89,8 +89,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "home-glass-jar",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -100,7 +100,7 @@
                 "price": "From $12,000",
                 "image": {
                   "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -109,8 +109,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "work-sketches",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-w69rdv",
+          "id": "about-w6ekes",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -127,8 +127,8 @@
             "heading": "About Halden Works",
             "body": "Halden Works is a small collective of independent designers sharing one studio.",
             "image": {
-              "stock": "work-pattern",
-              "alt": "A sculptural pattern",
+              "stock": "work-drawing",
+              "alt": "Halden Works work",
               "caption": ""
             },
             "highlights": [
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-w75cck",
+          "id": "cta-w74g1v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-w8ki5i",
+          "id": "about-w8fs2e",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -171,8 +171,8 @@
             "heading": "Our story",
             "body": "Halden Works is a small collective of independent designers sharing one studio.",
             "image": {
-              "stock": "obj-journal",
-              "alt": "Sketchbook",
+              "stock": "work-pattern",
+              "alt": "Halden Works work",
               "caption": ""
             },
             "highlights": [
@@ -183,7 +183,7 @@
           }
         },
         {
-          "id": "faq-w9jlm5",
+          "id": "faq-w9kz06",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -211,7 +211,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-wa1xjg",
+          "id": "services-waj5j9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -225,8 +225,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "home-glass-jar",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -236,7 +236,7 @@
                 "price": "From $12,000",
                 "image": {
                   "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -245,8 +245,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "work-sketches",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -278,7 +278,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-wc8cqq",
+          "id": "gallery-wc7p9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -288,23 +288,18 @@
             "intro": "",
             "images": [
               {
+                "stock": "work-drawing",
+                "alt": "Halden Works work",
+                "caption": ""
+              },
+              {
                 "stock": "work-pattern",
-                "alt": "A sculptural pattern",
+                "alt": "Halden Works work",
                 "caption": ""
               },
               {
                 "stock": "obj-journal",
-                "alt": "Sketchbook",
-                "caption": ""
-              },
-              {
-                "stock": "biz-glass",
-                "alt": "Office building",
-                "caption": ""
-              },
-              {
-                "stock": "home-white-room",
-                "alt": "Studio space",
+                "alt": "Halden Works work",
                 "caption": ""
               }
             ]
@@ -319,7 +314,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-wd3uf4",
+          "id": "contact-wd4v1d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

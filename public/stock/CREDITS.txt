@@ -201,7 +201,6 @@ shoe-runners-magenta.webp — "Sneakers Weights" by Kristin Hardwick, via StockS
 shoe-navy-canvas.webp — "Shoes Sneakers" by Patrycja Tomaszczyk, via StockSnap. https://stocksnap.io/photo/shoes-sneakers-3K5S13RPLL CC0 1.0
 shoe-white-studio.webp — "Sneakers Shoes" by Kristin Hardwick, via StockSnap. https://stocksnap.io/photo/sneakers-shoes-U20YIXFQBC CC0 1.0
 shoe-green-hightops.webp — "Sneakers Jeans" by Ylanite Koppens, via StockSnap. https://stocksnap.io/photo/sneakers-jeans-BRDLQ22VO4 CC0 1.0
-shoe-white-fence.webp — "Sneakers Shoes" by Kaique Rocha, via StockSnap. https://stocksnap.io/photo/sneakers-shoes-LQDXHY52PS CC0 1.0
 kids-tiny-sneakers.webp — "Baby Shoes" by Drew Hays, via StockSnap. https://stocksnap.io/photo/baby-shoes-AM0TUTSZ4U CC0 1.0
 kids-baby-feet.webp — "Child Baby" by Irene Lasus, via StockSnap. https://stocksnap.io/photo/child-baby-0IHHGNXUCH CC0 1.0
 kids-teddy-mobile.webp — "Baby Crib" by Freestocks.org, via StockSnap. https://stocksnap.io/photo/baby-crib-17QW4I2CLU CC0 1.0
@@ -267,7 +266,6 @@ tech-speaker-white.webp — "Speaker Dock" by %C1lvaro%20Bernal, via StockSnap. 
 tech-speakers-twin.webp — "Audio Speakers" by Nordwood Themes, via StockSnap. https://stocksnap.io/photo/audio-speakers-KOZLNZPIFM CC0 1.0
 tech-speaker-black.webp — "Speaker Device" by Matthew Henry, via StockSnap. https://stocksnap.io/photo/speaker-device-ONJQUPNPNL CC0 1.0
 tech-woofer.webp — "Speaker Music" by Krzysztof%20Puszczy%u0144ski, via StockSnap. https://stocksnap.io/photo/speaker-music-WKV40ATLIY CC0 1.0
-tech-desk-overhead.webp — "Apple Mac" by Jeff Sheldon, via StockSnap. https://stocksnap.io/photo/apple-mac-51CE04FEF9 CC0 1.0
 tech-studio-desk.webp — "Office Work" by Vilmos Vagyoczki, via StockSnap. https://stocksnap.io/photo/office-work-A4XAPP3ZTK CC0 1.0
 tech-lens-dial.webp — "Camera Lens" by Skitter Photo, via StockSnap. https://stocksnap.io/photo/camera-lens-OAIDO9GSRD CC0 1.0
 tech-lenses.webp — "Camera Lenses" by Evan Wise, via StockSnap. https://stocksnap.io/photo/camera-lenses-GTP7WI8GHQ CC0 1.0
@@ -306,3 +304,4 @@ make-candle-jar.webp — "Candle Table" by Christian Mackie, via StockSnap. http
 make-candle-tin.webp — "Candle Jar" by Burst, via StockSnap. https://stocksnap.io/photo/candle-jar-SHPHVPLC7T CC0 1.0
 make-candle-shelf.webp — "Candle Decoration" by Christian Mackie, via StockSnap. https://stocksnap.io/photo/candle-decoration-OVEFAJUOXU CC0 1.0
 make-mug-shelf.webp — "Art Craft" by Linh Pham, via StockSnap. https://stocksnap.io/photo/art-craft-FRRB2WV88A CC0 1.0
+tech-tablet-glasses.webp — "Glasses White" by Nordwood Themes, via StockSnap. https://stocksnap.io/photo/glasses-white-ETYYX6WJQI CC0 1.0

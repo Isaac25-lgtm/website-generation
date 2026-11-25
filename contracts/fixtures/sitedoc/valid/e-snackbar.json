@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Big Cat Snacks — Loud flavours, proper ingredients.",
-    "description": "Loud flavours, proper ingredients.",
+    "description": "Big Cat makes bold snacks and sweets with short ingredient lists.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1nv7bg7",
+          "id": "hero-1nvjgg7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Snacks",
             "heading": "Loud flavours, proper ingredients.",
-            "subheading": "Loud flavours, proper ingredients.",
+            "subheading": "Big Cat makes bold snacks and sweets with short ingredient lists.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1nwg9hq",
+          "id": "collections-1nw93et",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1nx6mo",
+          "id": "products-1nxa0d5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1nyczfg",
+          "id": "about-1ny37nc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1nzj4jz",
+          "id": "products-1nz9x7e",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1o0eer9",
+          "id": "about-1o075f9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1o1gk8",
+          "id": "faq-1o1h3er",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1o2be2",
+          "id": "contact-1o22h1p",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1o31pl1",
+          "id": "hours-1o3flkn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

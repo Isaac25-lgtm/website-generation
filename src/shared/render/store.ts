@@ -26,11 +26,22 @@ function collectionName(s: SCtx, p: ProductView): string {
   return (h && s.ctx.store?.collections.find((c) => c.handle === h)?.name) || "";
 }
 
-const CARD_SIZE: Record<string, [number, number]> = { tall: [600, 800], quiet: [640, 800], room: [800, 600], large: [640, 800], life: [640, 800], tech: [640, 800], bottle: [600, 800], atelier: [640, 800] };
+/** Product-card variants with their own grid styles, and the image size each one requests. */
+const CARD_VARIANTS: Readonly<Record<string, readonly [number, number]>> = Object.freeze({
+  large: [640, 800], compact: [700, 700], tall: [600, 800], quiet: [640, 800], jewel: [700, 700], room: [800, 600], object: [700, 700],
+  life: [640, 800], hair: [700, 700], pop: [700, 700], tech: [640, 800], bottle: [600, 800], atelier: [640, 800],
+});
+
+/** A stored variant is free text, so only own keys of the table count as known variants. */
+function knownCard(variant: string): boolean {
+  return Object.prototype.hasOwnProperty.call(CARD_VARIANTS, variant);
+}
+const cardSize = (variant: string): readonly [number, number] => (knownCard(variant) ? CARD_VARIANTS[variant] : [700, 700]);
+const gridClass = (variant: string): string => (knownCard(variant) ? `products-${variant}` : "");
 
 export function productCard(s: SCtx, p: ProductView, variant = ""): string {
   const avail = productAvailable(p);
-  const [w, h] = CARD_SIZE[variant] ?? [700, 700];
+  const [w, h] = cardSize(variant);
   const second = variant === "jewel" && p.images[1] ? `<span class="alt-img" aria-hidden="true">${img(s, p.images[1], { w, h, alt: "" })}</span>` : "";
   const meta = collectionName(s, p);
   const price = minPrice(p);
@@ -47,7 +58,7 @@ export function renderProductsSection(s: SCtx, sec: Extract<Section, { kind: "pr
   const d = sec.data;
   const store = s.ctx.store;
   const variant = sec.variant || s.tpl.variants.products || layoutDefault(s)?.products || "grid";
-  const cls = ["large", "compact", "tall", "quiet", "jewel", "room", "object", "life", "hair", "pop", "tech", "bottle", "atelier"].includes(variant) ? `products-${variant}` : "";
+  const cls = gridClass(variant);
   let products = (store?.products ?? []).slice();
   let tools = "";
   if (d.mode === "all") {
@@ -117,7 +128,7 @@ export function productPage(s: SCtx, p: ProductView): string {
   const sameCat = cat ? others.filter((x) => x.collections.includes(cat.handle)) : [];
   const related = [...sameCat, ...others.filter((x) => !sameCat.includes(x))].slice(0, 4);
   const relVariant = s.tpl.variants.products || layoutDefault(s)?.products || "grid";
-  const relCls = ["large", "compact", "tall", "quiet", "jewel", "room", "object", "life", "hair", "pop", "tech", "bottle", "atelier"].includes(relVariant) ? `products-${relVariant}` : "";
+  const relCls = gridClass(relVariant);
   const relatedHtml = related.length ? `<section class="sec related" aria-labelledby="rel-h"><div class="wrap"><div class="sec-head"><h2 id="rel-h">${cat && sameCat.length >= 2 ? `More from ${esc(cat.name)}` : "You may also like"}</h2></div><div class="grid ${relCls}"${relCls ? "" : ' style="--min:220px"'}>${related.map((x) => productCard(s, x, relVariant)).join("")}</div></div></section>` : "";
   return `<section class="sec"><div class="wrap"><nav aria-label="Breadcrumb" class="meta" style="margin-bottom:1.5rem"><a href="${esc(pageUrl(s.ctx, ""))}">Home</a> / <a href="${esc(pageUrl(s.ctx, "shop"))}">Shop</a>${cat ? ` / <a href="${esc(pageUrl(s.ctx, "shop"))}?c=${encodeURIComponent(cat.handle)}">${esc(cat.name)}</a>` : ""} / <span aria-current="page">${esc(p.title)}</span></nav>
 <div class="pdp${stacked ? " stacked" : ""}"><div>${media}</div>

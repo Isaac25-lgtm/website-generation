@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-10a9g8g",
+          "id": "hero-10a80bv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -68,14 +68,14 @@
               "href": "/services"
             },
             "image": {
-              "stock": "work-pattern",
+              "stock": "home-butterfly-chair",
               "alt": "Brightwater Digital",
               "caption": ""
             }
           }
         },
         {
-          "id": "services-10bgggn",
+          "id": "services-10blbg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -89,8 +89,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "home-white-room",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -99,8 +99,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "flower-tulip",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -109,8 +109,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "home-desk-lamp",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-10c3o90",
+          "id": "about-10cizl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -127,8 +127,8 @@
             "heading": "About Brightwater Digital",
             "body": "A team of eleven designers and developers.",
             "image": {
-              "stock": "work-pattern",
-              "alt": "A sculptural pattern",
+              "stock": "home-butterfly-chair",
+              "alt": "Brightwater Digital work",
               "caption": ""
             },
             "highlights": [
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-10d5y4w",
+          "id": "cta-10de0ly",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-10e8yn5",
+          "id": "about-10e4en2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -171,8 +171,8 @@
             "heading": "Our story",
             "body": "A team of eleven designers and developers.",
             "image": {
-              "stock": "obj-journal",
-              "alt": "Sketchbook",
+              "stock": "obj-book-pages",
+              "alt": "Brightwater Digital work",
               "caption": ""
             },
             "highlights": [
@@ -183,7 +183,7 @@
           }
         },
         {
-          "id": "faq-10fgsl1",
+          "id": "faq-10fe4xd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -211,7 +211,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-10gcn3h",
+          "id": "services-10g91kb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -225,8 +225,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "home-white-room",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -235,8 +235,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "flower-tulip",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -245,8 +245,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "home-desk-lamp",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -278,7 +278,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-10i67nk",
+          "id": "gallery-10i89gy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -288,23 +288,18 @@
             "intro": "",
             "images": [
               {
-                "stock": "work-pattern",
-                "alt": "A sculptural pattern",
+                "stock": "home-butterfly-chair",
+                "alt": "Brightwater Digital work",
                 "caption": ""
               },
               {
-                "stock": "obj-journal",
-                "alt": "Sketchbook",
+                "stock": "obj-book-pages",
+                "alt": "Brightwater Digital work",
                 "caption": ""
               },
               {
-                "stock": "biz-glass",
-                "alt": "Office building",
-                "caption": ""
-              },
-              {
-                "stock": "home-white-room",
-                "alt": "Studio space",
+                "stock": "home-glass-jar",
+                "alt": "Brightwater Digital work",
                 "caption": ""
               }
             ]
@@ -319,7 +314,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-10jh6k4",
+          "id": "contact-10jibws",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

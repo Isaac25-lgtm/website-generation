@@ -4,10 +4,10 @@
   "templateId": "b-contractor",
   "brand": {
     "name": "Ridgeline Engineering",
-    "tagline": "Engineering, fabrication and construction services"
+    "tagline": "Steel, plant and pipework, built and installed"
   },
   "seo": {
-    "title": "Ridgeline Engineering — Engineering, fabrication and construction serv",
+    "title": "Ridgeline Engineering — Steel, plant and pipework, built and installed",
     "description": "Civil, mechanical, fabrication and industrial support for factories, mills and plants across the region.",
     "lang": "en"
   },
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-lh2ngg",
+          "id": "hero-lhes84",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Engineering contractor · Houston",
-            "heading": "Engineering, fabrication and construction services",
+            "heading": "Steel, plant and pipework, built and installed",
             "subheading": "Civil, mechanical, fabrication and industrial support for factories, mills and plants across the region.",
             "primaryCta": {
               "label": "Call +1 713 555 0148",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "services-lihjqn",
+          "id": "services-li8p9n",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -85,8 +85,8 @@
             "intro": "",
             "items": [
               {
-                "title": "Civil and construction",
-                "description": "Foundations, ground beams, column bases and factory building works.",
+                "title": "Civil works",
+                "description": "Concrete bases, plinths and industrial floors for new plant.",
                 "price": "",
                 "image": {
                   "stock": "owner-ats-civil",
@@ -138,7 +138,7 @@
           }
         },
         {
-          "id": "about-ljfcej",
+          "id": "about-lj2kls",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -159,7 +159,7 @@
           }
         },
         {
-          "id": "cta-lkbdp7",
+          "id": "cta-lk952b",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -182,7 +182,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-llxm7",
+          "id": "about-ll3598",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -211,7 +211,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-lm8nwh",
+          "id": "services-lm9vcp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -221,8 +221,8 @@
             "intro": "",
             "items": [
               {
-                "title": "Civil and construction",
-                "description": "Foundations, ground beams, column bases and factory building works.",
+                "title": "Civil works",
+                "description": "Concrete bases, plinths and industrial floors for new plant.",
                 "price": "",
                 "image": {
                   "stock": "owner-ats-civil",
@@ -283,7 +283,7 @@
             "heading": "Request a quote",
             "intro": "Tell us about your needs and we'll get back to you.",
             "services": [
-              "Civil and construction",
+              "Civil works",
               "Mechanical and plant installation",
               "Structural steel and warehouses",
               "Process pipework",
@@ -300,7 +300,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-loe90r",
+          "id": "gallery-loh2ev",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -341,7 +341,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-lp8lfr",
+          "id": "contact-lp67xv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

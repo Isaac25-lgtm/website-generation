@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Studio Nil — Unlabelled clothes, numbered by hand.",
-    "description": "Unlabelled clothes, numbered by hand.",
+    "description": "Studio Nil makes garments without visible branding.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1gd4g79",
+          "id": "hero-1gdim60",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Designer label",
             "heading": "Unlabelled clothes, numbered by hand.",
-            "subheading": "Unlabelled clothes, numbered by hand.",
+            "subheading": "Studio Nil makes garments without visible branding.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1ge3vi7",
+          "id": "collections-1gei2x3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1gfl2lg",
+          "id": "products-1gfknci",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1ggern1",
+          "id": "about-1ggd316",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1ghjlgw",
+          "id": "products-1gh93x2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1gi8e4m",
+          "id": "about-1gi4n55",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1gj9sed",
+          "id": "faq-1gjj931",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1gkc6ac",
+          "id": "contact-1gkh12g",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1gl8603",
+          "id": "hours-1glby75",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Field Notes Parfum — Natural perfume, written like a field journal.",
-    "description": "Natural perfume, written like a field journal.",
+    "description": "We make perfume from natural materials and publish every ingredient.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-19d2dn7",
+          "id": "hero-19d8t66",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Natural perfumery",
             "heading": "Natural perfume, written like a field journal.",
-            "subheading": "Natural perfume, written like a field journal.",
+            "subheading": "We make perfume from natural materials and publish every ingredient.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-19efphw",
+          "id": "collections-19egxxd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-19fh0p4",
+          "id": "products-19f4zs5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-19gfpcw",
+          "id": "about-19gkhmr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-19hd2o3",
+          "id": "products-19hfhkz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-19ihd88",
+          "id": "about-19ibtcs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-19jc7dq",
+          "id": "faq-19j8fbr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-19kgc2o",
+          "id": "contact-19kklq6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-19lccbj",
+          "id": "hours-19l3ju0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

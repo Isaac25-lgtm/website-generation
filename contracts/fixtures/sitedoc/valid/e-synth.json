@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Carry Instruments — Instruments small enough to carry.",
-    "description": "Instruments small enough to carry.",
+    "description": "We design synthesisers, speakers and recorders with plain controls and long lives.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1qdl8rn",
+          "id": "hero-1qdapgx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Music tech",
             "heading": "Instruments small enough to carry.",
-            "subheading": "Instruments small enough to carry.",
+            "subheading": "We design synthesisers, speakers and recorders with plain controls and long lives.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1qea6eb",
+          "id": "collections-1qegxm9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1qf7kqb",
+          "id": "products-1qff2m6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1qghywr",
+          "id": "about-1qg7z5h",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1qh75hr",
+          "id": "products-1qhis8e",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1qiaod3",
+          "id": "about-1qiznx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1qj2q0d",
+          "id": "faq-1qjh7s",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1qkk0kk",
+          "id": "contact-1qkjxn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1ql4m5d",
+          "id": "hours-1ql7me4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

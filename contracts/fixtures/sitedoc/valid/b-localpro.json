@@ -39,6 +39,7 @@
     "city": "Austin",
     "country": "United States",
     "mapQuery": "East Austin, Texas",
+    "whatsappFloat": true,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1g58pe",
+          "id": "hero-1g3ggt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -69,7 +70,7 @@
           }
         },
         {
-          "id": "services-1hghck",
+          "id": "services-1hfam5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -97,7 +98,7 @@
           }
         },
         {
-          "id": "about-1ih4be",
+          "id": "about-1i7lo8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -109,7 +110,7 @@
           }
         },
         {
-          "id": "cta-1jaolb",
+          "id": "cta-1jbess",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -132,7 +133,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1k3qsk",
+          "id": "about-1k6x4b",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -152,7 +153,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-1lc47o",
+          "id": "services-1lg7qt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -204,7 +205,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1nebtf",
+          "id": "contact-1nh8x6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -217,7 +218,7 @@
           }
         },
         {
-          "id": "hours-1o5e1d",
+          "id": "hours-1o5j2z",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

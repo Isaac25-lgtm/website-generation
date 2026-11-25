@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Orbit Labs — Useful gadgets in bright colours.",
-    "description": "Useful gadgets in bright colours.",
+    "description": "Orbit Labs designs affordable tech with removable parts and colours you can swap.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1pd52yh",
+          "id": "hero-1pdicr2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Consumer tech",
             "heading": "Useful gadgets in bright colours.",
-            "subheading": "Useful gadgets in bright colours.",
+            "subheading": "Orbit Labs designs affordable tech with removable parts and colours you can swap.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1pe9eus",
+          "id": "collections-1pe3cbx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1pf61es",
+          "id": "products-1pfod6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1pgj14a",
+          "id": "about-1pg1mx7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1ph4ah1",
+          "id": "products-1ph7bhq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1pi5c8a",
+          "id": "about-1pibsqj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,7 +156,7 @@
             "heading": "Our story",
             "body": "Orbit Labs designs affordable tech with removable parts and colours you can swap.",
             "image": {
-              "stock": "tech-desk-overhead",
+              "stock": "tech-tablet-glasses",
               "alt": "Paper-like tablet",
               "caption": ""
             },
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1pjaeka",
+          "id": "faq-1pjfb0j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -173,8 +173,8 @@
             "heading": "Frequently asked questions",
             "items": [
               {
-                "q": "Which size ring should I order?",
-                "a": "Order the free sizing kit first. It's credited against your ring."
+                "q": "Which strap size should I order?",
+                "a": "Measure your wrist: under 16 cm is small, 16 to 19 cm medium, over 19 cm large."
               },
               {
                 "q": "Do I need a subscription?",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1pk9iws",
+          "id": "contact-1pkkdxt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1pljvhm",
+          "id": "hours-1plhh7a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

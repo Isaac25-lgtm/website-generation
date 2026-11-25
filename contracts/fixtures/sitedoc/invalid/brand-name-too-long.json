@@ -39,6 +39,7 @@
     "city": "London",
     "country": "United Kingdom",
     "mapQuery": "",
+    "whatsappFloat": true,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-4tdfb0",
+          "id": "hero-1z8k49d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -74,7 +75,7 @@
           }
         },
         {
-          "id": "services-4u4z74",
+          "id": "services-1z9bof7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -117,7 +118,7 @@
           }
         },
         {
-          "id": "about-4v8xr5",
+          "id": "about-1zagyh1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,7 +139,7 @@
           }
         },
         {
-          "id": "cta-4wbtgw",
+          "id": "cta-1zbfko4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -161,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-4x80fn",
+          "id": "about-1zcc0wg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -182,7 +183,7 @@
           }
         },
         {
-          "id": "faq-4y80zc",
+          "id": "faq-1zdfrjx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -214,7 +215,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-4z2glo",
+          "id": "services-1ze6ags",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -281,7 +282,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-518bcv",
+          "id": "gallery-1zgrwo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -332,7 +333,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-526lv5",
+          "id": "contact-1zhjc5q",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

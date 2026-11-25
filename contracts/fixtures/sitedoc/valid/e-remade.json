@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Second Life Audio — Speakers made from plastic waste.",
-    "description": "Speakers made from plastic waste.",
+    "description": "Second Life Audio presses its speaker cases from household plastic waste, each one marbled differently.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1qvajtf",
+          "id": "hero-1qvglsg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Recycled tech",
             "heading": "Speakers made from plastic waste.",
-            "subheading": "Speakers made from plastic waste.",
+            "subheading": "Second Life Audio presses its speaker cases from household plastic waste, each one marbled differently.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1qwe5cc",
+          "id": "collections-1qwrxa",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1qx80qg",
+          "id": "products-1qx2vqu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1qykb69",
+          "id": "about-1qy1p7j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1qzfri7",
+          "id": "products-1qz761l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1r05n9",
+          "id": "about-1r0i14l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1r14suq",
+          "id": "faq-1r168fb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1r24but",
+          "id": "contact-1r2jvtb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1r3r4g",
+          "id": "hours-1r3ej7n",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Atelier Mane — Salon-quality care for your hair at home.",
-    "description": "Salon-quality care for your hair at home.",
+    "description": "Atelier Mane was started by two stylists who wanted their clients' hair to look as good at home as in the chair.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-16m7poa",
+          "id": "hero-16m4a9k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Hair care",
             "heading": "Salon-quality care for your hair at home.",
-            "subheading": "Salon-quality care for your hair at home.",
+            "subheading": "Atelier Mane was started by two stylists who wanted their clients' hair to look as good at home as in the chair.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-16n9d9n",
+          "id": "collections-16n3x7e",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-16o52x2",
+          "id": "products-16o2iyx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-16p1b96",
+          "id": "about-16peuy0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-16q4pod",
+          "id": "products-16q8lnl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-16r42kw",
+          "id": "about-16rb9p9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-16s6es",
+          "id": "faq-16sl4t7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-16t965o",
+          "id": "contact-16tfq12",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-16uhrqw",
+          "id": "hours-16uhkp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

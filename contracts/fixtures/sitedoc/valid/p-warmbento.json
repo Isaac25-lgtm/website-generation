@@ -4,11 +4,11 @@
   "templateId": "p-warmbento",
   "brand": {
     "name": "Clara Ruiz",
-    "tagline": "Everything a young company needs to look like the first choice."
+    "tagline": "Good design early saves a year of explaining later."
   },
   "seo": {
-    "title": "Clara Ruiz — Everything a young company needs to look like the first c",
-    "description": "Everything a young company needs to look like the first choice.",
+    "title": "Clara Ruiz — Good design early saves a year of explaining later.",
+    "description": "Good design early saves a year of explaining later.",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-ew59ms",
+          "id": "hero-exjhwp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Independent designer · Valencia, Spain",
-            "heading": "Everything a young company needs to look like the first choice.",
+            "heading": "Good design early saves a year of explaining later.",
             "subheading": "Clara Ruiz, Independent designer",
             "primaryCta": {
               "label": "Get in touch",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-exbovu",
+          "id": "about-ey3afi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-ezldpd",
+          "id": "cta-f0b9it",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,7 +156,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "skills-f0g6ck",
+          "id": "skills-f14w83",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -186,7 +186,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-f19do4",
+          "id": "contact-f2gc55",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

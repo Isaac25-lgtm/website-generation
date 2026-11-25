@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Vera Stanek — Evening dresses with a hard edge.",
-    "description": "Evening dresses with a hard edge.",
+    "description": "Vera Stanek designs two collections a year, made in a studio in Warsaw from Italian silk and lace.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1g425xm",
+          "id": "hero-1g44bvb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Designer womenswear",
             "heading": "Evening dresses with a hard edge.",
-            "subheading": "Evening dresses with a hard edge.",
+            "subheading": "Vera Stanek designs two collections a year, made in a studio in Warsaw from Italian silk and lace.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1g52xwk",
+          "id": "collections-1g5e4qx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1g6b1lu",
+          "id": "products-1g63ht2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1g7be2h",
+          "id": "about-1g736x6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1g8j2bo",
+          "id": "products-1g8krxq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1g91x33",
+          "id": "about-1g99alb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1gaazoq",
+          "id": "faq-1gakkvy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1gbky80",
+          "id": "contact-1gbeuji",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1gc4cwv",
+          "id": "hours-1gci4nv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

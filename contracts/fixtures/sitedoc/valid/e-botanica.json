@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Fernwood Botanicals — Botanical skincare from a garden in the hills.",
-    "description": "Botanical skincare from a garden in the hills.",
+    "description": "We grow most of our own botanicals and press the oils on site.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-16vhezv",
+          "id": "hero-16vhit7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Botanical skincare",
             "heading": "Botanical skincare from a garden in the hills.",
-            "subheading": "Botanical skincare from a garden in the hills.",
+            "subheading": "We grow most of our own botanicals and press the oils on site.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-16w343f",
+          "id": "collections-16wetp2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-16xcy5y",
+          "id": "products-16xboot",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-16ydf49",
+          "id": "about-16yj5vg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-16zc5vy",
+          "id": "products-16zgn15",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-17099m0",
+          "id": "about-17035wf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1718mbw",
+          "id": "faq-171fif5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-172k4hz",
+          "id": "contact-172c001",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-173jucv",
+          "id": "hours-173ec83",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

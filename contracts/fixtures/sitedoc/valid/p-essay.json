@@ -4,11 +4,11 @@
   "templateId": "p-essay",
   "brand": {
     "name": "Arjun Mehra",
-    "tagline": "I build software for small teams and the tools that keep it reliable."
+    "tagline": "Software for clinics and schools, and the tests that keep it honest."
   },
   "seo": {
-    "title": "Arjun Mehra — I build software for small teams and the tools that keep",
-    "description": "I build software for small teams and the tools that keep it reliable.",
+    "title": "Arjun Mehra — Software for clinics and schools, and the tests that kee",
+    "description": "Software for clinics and schools, and the tests that keep it honest.",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-ec7mj4",
+          "id": "hero-ed5mwj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Software engineer · Chicago, United States",
-            "heading": "I build software for small teams and the tools that keep it reliable.",
+            "heading": "Software for clinics and schools, and the tests that keep it honest.",
             "subheading": "Arjun Mehra, Software engineer",
             "primaryCta": {
               "label": "Get in touch",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-ed4nrf",
+          "id": "about-eejoo5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -121,7 +121,7 @@
           }
         },
         {
-          "id": "cta-ef29tz",
+          "id": "cta-egthi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -144,7 +144,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "experience-egi8t9",
+          "id": "experience-ehhkpb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -171,7 +171,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-eh9nfb",
+          "id": "gallery-ei5r74",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -212,7 +212,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-eiap1n",
+          "id": "contact-ej3e8i",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

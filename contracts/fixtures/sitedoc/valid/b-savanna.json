@@ -39,6 +39,7 @@
     "city": "London",
     "country": "United Kingdom",
     "mapQuery": "",
+    "whatsappFloat": true,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1pi05d",
+          "id": "hero-1phlwt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -74,7 +75,7 @@
           }
         },
         {
-          "id": "services-1qhhgs",
+          "id": "services-1qcry3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -117,7 +118,7 @@
           }
         },
         {
-          "id": "about-1rlajz",
+          "id": "about-1r3i6j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,7 +139,7 @@
           }
         },
         {
-          "id": "cta-1s55zp",
+          "id": "cta-1sjife",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -161,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1t1928",
+          "id": "about-1tdwpr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -182,7 +183,7 @@
           }
         },
         {
-          "id": "faq-1u4j1i",
+          "id": "faq-1ugwq4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -214,7 +215,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-1v1why",
+          "id": "services-1vfku5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -281,7 +282,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-1x3z4a",
+          "id": "gallery-1x587o",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -332,7 +333,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1y7gcr",
+          "id": "contact-1yc7d4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

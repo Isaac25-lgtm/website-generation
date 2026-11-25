@@ -4,10 +4,10 @@
   "templateId": "b-skyline",
   "brand": {
     "name": "Altamar Estates",
-    "tagline": "Exceptional homes without borders."
+    "tagline": "Homes chosen one by one."
   },
   "seo": {
-    "title": "Altamar Estates — Exceptional homes without borders.",
+    "title": "Altamar Estates — Homes chosen one by one.",
     "description": "Exceptional properties in the most sought-after markets, chosen with care.",
     "lang": "en"
   },
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-j828bd",
+          "id": "hero-j81uep",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Luxury property · Panama City",
-            "heading": "Exceptional homes without borders.",
+            "heading": "Homes chosen one by one.",
             "subheading": "Exceptional properties in the most sought-after markets, chosen with care.",
             "primaryCta": {
               "label": "Contact us",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "services-j9i1n7",
+          "id": "services-j94kf2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -103,7 +103,7 @@
           }
         },
         {
-          "id": "about-jaf769",
+          "id": "about-ja8nxe",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -126,7 +126,7 @@
           }
         },
         {
-          "id": "cta-jbdpg3",
+          "id": "cta-jbe9ry",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -149,7 +149,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-jcl1lp",
+          "id": "about-jccob6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -180,7 +180,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-jd8m4a",
+          "id": "services-jdlep6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -216,7 +216,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-je6879",
+          "id": "gallery-jecbgo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -247,7 +247,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-jfcg6p",
+          "id": "contact-jf8q2l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

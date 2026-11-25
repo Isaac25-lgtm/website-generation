@@ -2,7 +2,7 @@
 // Inner class names carry a short prefix per hero so they never collide with the base stylesheet.
 import type { ImageRef, Section, SiteDoc } from "../schema";
 import type { SCtx } from "./sections";
-import { img, pageUrl } from "./sections";
+import { img, pageUrl, sectionHref, workHref } from "./sections";
 import { esc } from "../util";
 
 type Hero = Extract<Section, { kind: "hero" }>;
@@ -23,6 +23,7 @@ export function premiumHero(s: SCtx, sec: Hero, variant: string, actions: string
   const about = secOf(s.doc, "about");
   const bio = about?.data.body.split(/\n\s*\n/)[0] || "";
   // Business sites have services instead of projects: use them so project-led heroes work for both.
+  const work = workHref(s);
   const projects = (secOf(s.doc, "projects")?.data.items ?? []).length ? secOf(s.doc, "projects")!.data.items : (secOf(s.doc, "services")?.data.items ?? []).map((x) => ({ title: x.title, description: x.description, role: x.price, period: "", tags: [] as string[], images: x.image ? [x.image] : [], link: undefined as string | undefined }));
   const skills = (secOf(s.doc, "skills")?.data.groups ?? []).flatMap((g) => g.items).concat((secOf(s.doc, "about")?.data.highlights ?? []));
   const exp = secOf(s.doc, "experience")?.data.items ?? [];
@@ -40,7 +41,7 @@ export function premiumHero(s: SCtx, sec: Hero, variant: string, actions: string
 
   switch (variant) {
     case "desktop": {
-      const icons = [["About", about ? `#${about.id}` : contact], ["Work", "#work"], ...pages.filter((p) => p.slug && p.slug !== "contact").map((p) => [p.title, link(p.slug)]), ["Contact", contact]].slice(0, 5);
+      const icons = [["About", about ? sectionHref(s, ["about"]) : contact], ["Work", work], ...pages.filter((p) => p.slug && p.slug !== "contact").map((p) => [p.title, link(p.slug)]), ["Contact", contact]].slice(0, 5);
       return H("desktop", `<div class="dk-screen">${photo(1600, 1000)}<ul class="dk-icons">${icons.map(([l, h]) => `<li><a href="${esc(h)}"><span class="dk-ico" aria-hidden="true"></span>${esc(l)}</a></li>`).join("")}</ul><div class="dk-win" role="group" aria-label="${esc(name)}"><div class="dk-bar"><span>${esc(name)}.txt</span><i aria-hidden="true"></i></div><div class="dk-body"><h1>${esc(name)}</h1><p>${esc(d.heading)}</p>${actions}</div></div><div class="dk-task"><span class="dk-start">Start</span><span>${esc(role)}</span></div></div>`);
     }
     case "globe":
@@ -79,13 +80,13 @@ export function premiumHero(s: SCtx, sec: Hero, variant: string, actions: string
       return H("ticker", `<div class="tk-shapes" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap"><h1>${esc(name)}</h1><p class="sub">${esc(d.heading)}</p>${actions}</div>${items.length ? `<div class="tk-band" aria-hidden="true"><div class="tk-run">${line}${line}</div></div>` : ""}`);
     }
     case "clients": {
-      const list = projects.slice(0, 8).map((p) => `<li><a href="#work">${esc(p.title)}</a></li>`).join("");
+      const list = projects.slice(0, 8).map((p) => `<li><a href="${esc(work)}">${esc(p.title)}</a></li>`).join("");
       return H("clients", `<div class="wrap"><h1 class="cl-intro">${esc(name)} — ${esc(d.heading)}</h1>${list ? `<ul class="cl-list">${list}</ul>` : ""}${actions}</div>`);
     }
     case "swiss":
       return H("swiss", `<div class="wrap"><div class="sw-grid"><h1>${esc(name)}</h1><p class="sw-role">${esc(parts.join(", "))}</p><p class="sw-bio">${esc(bio || d.heading)}</p><div class="sw-act">${actions}</div></div></div>`);
     case "profilegrid": {
-      const grid = projects.slice(0, 6).map((p) => `<a class="pg-item" href="#work">${img(s, p.images[0], { w: 600, h: 450, fallbackSeed: p.title })}<span>${esc(p.title)}</span></a>`).join("");
+      const grid = projects.slice(0, 6).map((p) => `<a class="pg-item" href="${esc(work)}">${img(s, p.images[0], { w: 600, h: 450, fallbackSeed: p.title })}<span>${esc(p.title)}</span></a>`).join("");
       return H("profilegrid", `<div class="wrap"><aside class="pg-side">${d.image ? `<div class="pg-pic">${photo(240, 240)}</div>` : ""}<h1>${esc(name)}</h1><p>${esc(role)}</p><p class="muted">${esc(d.heading)}</p>${actions}</aside><div class="pg-grid">${grid}</div></div>`);
     }
     case "outline":
@@ -95,7 +96,7 @@ export function premiumHero(s: SCtx, sec: Hero, variant: string, actions: string
     case "monogram":
       return H("monogram", `<div class="wrap"><span class="mg-mark" aria-hidden="true">${esc(initials)}</span><h1>${esc(name)}</h1><p class="sub"><em>${esc(d.heading)}</em></p>${actions}</div>`);
     case "datelist": {
-      const rows = projects.slice(0, 10).map((p) => `<li><span>${esc(p.period || "")}</span><a href="#work">${esc(p.title)}</a></li>`).join("");
+      const rows = projects.slice(0, 10).map((p) => `<li><span>${esc(p.period || "")}</span><a href="${esc(work)}">${esc(p.title)}</a></li>`).join("");
       return H("datelist", `<div class="wrap"><h1>${esc(name)}</h1><p>${esc(d.heading)}</p>${rows ? `<ul class="dl-list">${rows}</ul>` : ""}${actions}</div>`);
     }
     case "tripane":
@@ -130,7 +131,7 @@ export function premiumHero(s: SCtx, sec: Hero, variant: string, actions: string
     case "twotone":
       return H("twotone", `<div class="wrap"><h1>${esc(words.slice(0, half).join(" "))} <span>${esc(words.slice(half).join(" "))}</span></h1><p class="sub">${esc(name)}${role ? ` — ${esc(role)}` : ""}</p>${actions}</div>`);
     case "handnote":
-      return H("handnote", `<div class="wrap"><span class="hn-badge">${esc(role || "Available")}</span><h1>${esc(d.heading)}</h1><p class="hn-note">— ${esc(first.toLowerCase())}</p>${actions}</div>`);
+      return H("handnote", `<div class="wrap">${role ? `<span class="hn-badge">${esc(role)}</span>` : ""}<h1>${esc(d.heading)}</h1><p class="hn-note">— ${esc(first.toLowerCase())}</p>${actions}</div>`);
     case "chat": {
       const msgs = [`Hi, I'm ${first}.`, d.heading, bio].filter(Boolean).slice(0, 3);
       return H("chat", `<div class="wrap"><div class="ch-win"><div class="ch-bar"><b>${esc(name)}</b><span>${esc(role)}</span></div><div class="ch-body"><h1 class="sr-only">${esc(name)}</h1>${msgs.map((m) => `<p class="ch-msg">${esc(m)}</p>`).join("")}<p class="ch-msg me">Tell me more about your work.</p></div><div class="ch-foot">${actions}</div></div></div>`);
@@ -138,11 +139,11 @@ export function premiumHero(s: SCtx, sec: Hero, variant: string, actions: string
     case "profilesplit":
       return H("profilesplit", `<div class="wrap"><aside class="psp-l">${d.image ? `<div class="psp-pic">${photo(240, 240)}</div>` : ""}<h1>${esc(name)}</h1><p>${esc(role)}</p><ul>${li(skills.slice(0, 5))}</ul>${actions}</aside><div class="psp-r">${projects[0] ? `<span class="eyebrow">Case study</span><h2>${esc(projects[0].title)}</h2><p>${esc(projects[0].description)}</p>${img(s, projects[0].images[0], { w: 1200, h: 800, fallbackSeed: projects[0].title })}` : `<p>${esc(d.heading)}</p>`}</div></div>`);
     case "statementcards": {
-      const cards = projects.slice(0, 3).map((p) => `<a class="sc2-card" href="#work">${img(s, p.images[0], { w: 600, h: 720, fallbackSeed: p.title })}<span>${esc(p.title)}</span></a>`).join("");
+      const cards = projects.slice(0, 3).map((p) => `<a class="sc2-card" href="${esc(work)}">${img(s, p.images[0], { w: 600, h: 720, fallbackSeed: p.title })}<span>${esc(p.title)}</span></a>`).join("");
       return H("statementcards", `<div class="wrap"><h1>${esc(d.heading)}</h1><p class="sub">${esc(name)}${role ? ` — ${esc(role)}` : ""}</p>${actions}${cards ? `<div class="sc2-row">${cards}</div>` : ""}</div>`);
     }
     case "blog": {
-      const posts = projects.slice(0, 5).map((p) => `<li><span class="bl-date">${esc(p.period || "")}</span><a href="#work">${esc(p.title)}</a><p>${esc(p.description)}</p></li>`).join("");
+      const posts = projects.slice(0, 5).map((p) => `<li><span class="bl-date">${esc(p.period || "")}</span><a href="${esc(work)}">${esc(p.title)}</a><p>${esc(p.description)}</p></li>`).join("");
       return H("blog", `<div class="wrap"><div class="bl-mast"><h1>${esc(name)}</h1><p>${esc(d.heading)}</p></div>${posts ? `<ol class="bl-list">${posts}</ol>` : ""}${actions}</div>`);
     }
   }

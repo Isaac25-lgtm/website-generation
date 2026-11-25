@@ -4,11 +4,11 @@
   "templateId": "p-keynote",
   "brand": {
     "name": "Dr. Samuel Mwangi",
-    "tagline": "I study how people across Africa use technology, then help boards decide what to do about it."
+    "tagline": "Research and talks on how mobile money and AI change everyday life, for conference audiences and boards."
   },
   "seo": {
-    "title": "Dr. Samuel Mwangi — I study how people across Africa use technology, t",
-    "description": "I study how people across Africa use technology, then help boards decide what to do about it.",
+    "title": "Dr. Samuel Mwangi — Research and talks on how mobile money and AI chan",
+    "description": "Research and talks on how mobile money and AI change everyday life, for conference audiences and boards.",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-fii92s",
+          "id": "hero-fl7r7i",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Speaker & researcher · Nairobi, Kenya",
-            "heading": "I study how people across Africa use technology, then help boards decide what to do about it.",
+            "heading": "Research and talks on how mobile money and AI change everyday life, for conference audiences and boards.",
             "subheading": "Dr. Samuel Mwangi, Speaker & researcher",
             "primaryCta": {
               "label": "Book a call",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-fj6w1s",
+          "id": "about-fmdoel",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-fl3rlt",
+          "id": "cta-fo40bz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,7 +156,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "achievements-fmd5w7",
+          "id": "achievements-fpg8au",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -191,7 +191,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-fnish2",
+          "id": "contact-fqcdzg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

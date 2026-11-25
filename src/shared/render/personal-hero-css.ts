@@ -309,7 +309,7 @@ ${SM}{.hero.bento .bgrid{grid-template-columns:repeat(2,1fr)}.hero.bento .intro{
   bookcover: `.hero.bookcover{text-align:center}
 .hero.bookcover .book{position:relative;margin:0 auto;width:min(440px,100%);aspect-ratio:5/7;background:#2a1a12;color:#e8d9b5;border-radius:3px 8px 8px 3px;padding:2.4rem 2.2rem;display:flex;flex-direction:column;align-items:flex-start;text-align:left;box-shadow:inset 6px 0 10px -4px rgba(0,0,0,.6),18px 24px 50px -24px rgba(0,0,0,.6);border-right:8px solid #efe3c7}
 .hero.bookcover .book::before{content:"";position:absolute;inset:1.1rem;border:1px solid rgba(201,163,94,.45);pointer-events:none}
-.hero.bookcover .ribbon{position:absolute;right:2.4rem;top:-6px;width:16px;height:64px;background:#a3262a;clip-path:polygon(0 0,100% 0,100% 100%,50% 84%,0 100%)}
+.hero.bookcover .bk-mark{position:absolute;right:2.4rem;top:-6px;width:16px;height:64px;background:#a3262a;clip-path:polygon(0 0,100% 0,100% 100%,50% 84%,0 100%)}
 .hero.bookcover .kicker{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#c9a35e}
 .hero.bookcover .orn{width:100%;height:1px;background:rgba(201,163,94,.5);margin:1.2rem 0}
 .hero.bookcover h1{font-weight:400;color:#f2e6c8;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.02}

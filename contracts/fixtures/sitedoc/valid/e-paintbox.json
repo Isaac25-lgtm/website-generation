@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Paint Pot — Paint colours that are easy to choose.",
-    "description": "Paint colours that are easy to choose.",
+    "description": "Paint Pot makes a short list of carefully mixed colours and sends peel-and-stick swatches first.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1km6o7h",
+          "id": "hero-1km4m31",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Paint",
             "heading": "Paint colours that are easy to choose.",
-            "subheading": "Paint colours that are easy to choose.",
+            "subheading": "Paint Pot makes a short list of carefully mixed colours and sends peel-and-stick swatches first.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1kn4uzs",
+          "id": "collections-1kn5chk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1kod9bq",
+          "id": "products-1koifcj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1kpgt3d",
+          "id": "about-1kpcid2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1kq48wf",
+          "id": "products-1kq1yo3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1kri504",
+          "id": "about-1krd7dw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ks5suh",
+          "id": "faq-1ks5h0t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1kt9l2r",
+          "id": "contact-1kt4fyw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1ku8e2d",
+          "id": "hours-1kudtu4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

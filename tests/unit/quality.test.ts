@@ -109,19 +109,33 @@ describe("owner-supplied photos stay in template previews", () => {
 });
 
 describe("no personal identifiers from the reference sites", () => {
-  it("demo content never reuses a word from a source site's domain or owner's name", async () => {
+  // Hashes only: the plaintext list of reference sites and names stays outside the repository.
+  // "hashes" are single words (5+ letters) from reference domains and owner names; "names" are whole normalised
+  // reference names and host labels. Coverage: every persona string (copy, products, collections, URLs and
+  // photo file names) plus template names and descriptions.
+  it("demo content never reuses a reference site's name, domain or owner's name", async () => {
     const { readFileSync } = await import("node:fs");
     const { createHash } = await import("node:crypto");
-    const banned = new Set<string>(JSON.parse(readFileSync("tests/unit/source-token-hashes.json", "utf8")).hashes);
+    const data = JSON.parse(readFileSync("tests/unit/source-token-hashes.json", "utf8"));
+    const words = new Set<string>(data.hashes);
+    const names = new Set<string>(data.names);
     const hash = (w: string) => createHash("sha256").update(w).digest("hex").slice(0, 16);
-    const hit = (s: string) => (s.toLowerCase().match(/[a-z]{5,}/g) ?? []).find((w) => banned.has(hash(w))) ?? null;
+    const norm = (x: string) => x.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g, "");
+    const problems: string[] = [];
+    const check = (where: string, s: string) => {
+      const pieces = new Set<string>();
+      for (const m of s.matchAll(/https?:\/\/([a-z0-9.-]+)/gi)) for (const lab of m[1].toLowerCase().split(".")) pieces.add(norm(lab));
+      if (/^[a-z0-9-]+$/.test(s)) { pieces.add(norm(s)); for (const part of s.split("-")) pieces.add(part); } // photo ids and slugs
+      if (s.length <= 60) pieces.add(norm(s)); // names, titles, collection names
+      for (const piece of pieces) if (piece.length >= 5 && names.has(hash(piece))) problems.push(`${where}: "${s}" (name)`);
+      const text = /^https?:/.test(s) || /^[a-z0-9-]+$/.test(s) ? "" : s.toLowerCase(); // ids get the whole-name check only
+      for (const w of text.match(/[a-z]{5,}/g) ?? []) if (words.has(hash(w))) problems.push(`${where}: "${s}" (word)`);
+    };
     for (const tpl of TEMPLATES) {
       const p = PERSONAS[tpl.id];
-      for (const s of strings([p.answers, p.products])) {
-        if (/^(https?:|[a-z0-9-]+$)/.test(s)) continue; // URLs and photo ids
-        expect(hit(s), `${tpl.id}: ${s}`).toBeNull();
-      }
-      expect(hit(tpl.description), `${tpl.id} description`).toBeNull();
+      for (const s of strings([p.answers, p.products, p.collections])) check(tpl.id, s);
+      check(`${tpl.id} description`, tpl.description);
     }
+    expect(problems).toEqual([]);
   });
 });

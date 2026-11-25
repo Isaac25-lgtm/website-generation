@@ -39,6 +39,7 @@
     "city": "London",
     "country": "United Kingdom",
     "mapQuery": "Canary Wharf, London",
+    "whatsappFloat": false,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-158k44",
+          "id": "hero-158hti",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -74,7 +75,7 @@
           }
         },
         {
-          "id": "services-1615dv",
+          "id": "services-16f93c",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -117,7 +118,7 @@
           }
         },
         {
-          "id": "about-17imch",
+          "id": "about-17hzks",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,7 +139,7 @@
           }
         },
         {
-          "id": "cta-18cxm9",
+          "id": "cta-18kmae",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -161,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-194u9i",
+          "id": "about-19ixp7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -182,7 +183,7 @@
           }
         },
         {
-          "id": "faq-1a6mhm",
+          "id": "faq-1aap82",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -214,7 +215,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-1bh02l",
+          "id": "services-1bhjlb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -281,7 +282,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-1d2hl4",
+          "id": "gallery-1dfmh9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -322,7 +323,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1e8n46",
+          "id": "contact-1e9gbp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -335,7 +336,7 @@
           }
         },
         {
-          "id": "hours-1fc41u",
+          "id": "hours-1f9dc6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

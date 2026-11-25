@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Switchback Cycling — Cycling kit for long climbs.",
-    "description": "Cycling kit for long climbs.",
+    "description": "Switchback designs cycling kit in Melbourne for riders who go out early and come back late.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1rvfr65",
+          "id": "hero-1rv7u28",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Cycling apparel",
             "heading": "Cycling kit for long climbs.",
-            "subheading": "Cycling kit for long climbs.",
+            "subheading": "Switchback designs cycling kit in Melbourne for riders who go out early and come back late.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1rwedqv",
+          "id": "collections-1rw60iq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1rxhidw",
+          "id": "products-1rxqg2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1ry95iu",
+          "id": "about-1ryajy8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1rz2q9j",
+          "id": "products-1rzg5ox",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1s0eu82",
+          "id": "about-1s08n2v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1s1jath",
+          "id": "faq-1s1f5sy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1s2e2vf",
+          "id": "contact-1s24pzb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1s3cf2w",
+          "id": "hours-1s3879p",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

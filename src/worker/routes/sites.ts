@@ -6,7 +6,7 @@ import { draftDoc, loadAssetMeta, loadStore, renderCtxBase, verifyPreviewToken, 
 import { getBlob } from "../lib/storage";
 import { ensureDemos } from "../seed";
 import { routeOrderView } from "./public";
-import { parseSiteDoc } from "../../shared/schema";
+import { parseSiteDoc, type SiteDoc } from "../../shared/schema";
 import { getTemplate, STORE_CATEGORIES, TEMPLATE_MAP, TEMPLATES } from "../../shared/templates";
 import { renderSite } from "../../shared/render";
 import { PERSONAS, demoProductViews, PUBLIC_DEMOS } from "../../shared/demo";
@@ -104,15 +104,26 @@ sites.get("/api/templates", (c) => {
   });
 });
 
+/** The limited document behind a signed-out gallery card: the home page's first section only, no other page content. */
+export function thumbnailDoc(doc: SiteDoc): SiteDoc {
+  return { ...doc, pages: doc.pages.map((p) => ({ ...p, sections: p.slug === "" ? p.sections.slice(0, 1) : [] })) };
+}
+
 async function serveTemplatePreview(c: Ctx) {
   const tpl = TEMPLATE_MAP[c.req.param("tid")!];
   if (!tpl) return c.notFound();
-  // Static thumbnails (gallery cards) are visible to everyone; the interactive preview of a member template needs sign-in.
-  if (tpl.tier === "member" && !c.get("user") && new URL(c.req.url).searchParams.get("static") !== "1") {
+  // Member templates need sign-in. Signed-out visitors get only a deliberately limited gallery thumbnail
+  // (home page header and first section, static) — never the full home page, other pages or product details.
+  const reqUrl = new URL(c.req.url);
+  const restPath = reqUrl.pathname.slice(`/api/templates/${tpl.id}/preview`.length).replace(/^\/+|\/+$/g, "");
+  const locked = tpl.tier === "member" && !c.get("user");
+  const thumbOnly = locked && reqUrl.searchParams.get("static") === "1" && restPath === "";
+  if (locked && !thumbOnly) {
     return c.html(`<!doctype html><meta charset="utf-8"><body style="font-family:system-ui;display:grid;place-items:center;min-height:95vh;background:#fafafa;color:#171717;margin:0"><div style="text-align:center;padding:2rem"><h1 style="font-size:1.3rem">Sign in to unlock “${tpl.name}”</h1><p style="opacity:.75">Members get access to the full template library.</p></div></body>`, 200);
   }
   const persona = PERSONAS[tpl.id];
-  const doc = generateSiteDoc(tpl.type, tpl.id, persona.answers);
+  const full = generateSiteDoc(tpl.type, tpl.id, persona.answers);
+  const doc = thumbOnly ? thumbnailDoc(full) : full;
   const url = new URL(c.req.url);
   const base = `/api/templates/${tpl.id}/preview`;
   const rest = url.pathname.slice(base.length);

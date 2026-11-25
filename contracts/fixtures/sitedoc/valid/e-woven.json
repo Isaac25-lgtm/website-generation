@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Sol y Sal — Woven shoes for long summers.",
-    "description": "Woven shoes for long summers.",
+    "description": "Sol y Sal makes woven summer shoes with local artisans.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1cmc6mk",
+          "id": "hero-1cmetzk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Espadrilles",
             "heading": "Woven shoes for long summers.",
-            "subheading": "Woven shoes for long summers.",
+            "subheading": "Sol y Sal makes woven summer shoes with local artisans.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -68,14 +68,14 @@
               "href": "/about"
             },
             "image": {
-              "stock": "shoe-white-fence",
+              "stock": "shoe-navy-canvas",
               "alt": "Sol y Sal",
               "caption": ""
             }
           }
         },
         {
-          "id": "collections-1cncyr9",
+          "id": "collections-1cn6jht",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1coisnf",
+          "id": "products-1coi4vf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1cpoqz",
+          "id": "about-1cpkadd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1cqcft",
+          "id": "products-1cqb1be",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1cre3fl",
+          "id": "about-1crcupj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1csbxfg",
+          "id": "faq-1cs8jhx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1ctde2z",
+          "id": "contact-1ctf97y",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1cuemx7",
+          "id": "hours-1cuir2o",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

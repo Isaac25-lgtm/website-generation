@@ -1,4 +1,4 @@
-import { stripOwnerPhotos } from "../../shared/owner-photos";
+import { isOwnerStock, stripOwnerPhotos } from "../../shared/owner-photos";
 import type { AppEnv, Ctx, SessionUser } from "../env";
 import { HttpError, baseUrl, now } from "../env";
 import type { CollectionView, ProductView, AssetMeta, RenderCtx } from "../../shared/render";
@@ -73,7 +73,7 @@ export async function loadStore(env: AppEnv, projectId: string, opts: { includeD
 function safeImages(json: string): ImageRef[] {
   try {
     const arr = JSON.parse(json || "[]");
-    return Array.isArray(arr) ? arr.filter((x) => x && (typeof x.assetId === "string" || (typeof x.stock === "string" && /^[a-z0-9-]{1,48}$/.test(x.stock)))).slice(0, 12).map((x) => ({ assetId: typeof x.assetId === "string" ? x.assetId : undefined, stock: typeof x.assetId === "string" ? undefined : x.stock, alt: String(x.alt || "").slice(0, 300), caption: "" })) : [];
+    return Array.isArray(arr) ? arr.filter((x) => x && (typeof x.assetId === "string" || (typeof x.stock === "string" && /^[a-z0-9-]{1,48}$/.test(x.stock) && !isOwnerStock(x.stock)))).slice(0, 12).map((x) => ({ assetId: typeof x.assetId === "string" ? x.assetId : undefined, stock: typeof x.assetId === "string" ? undefined : x.stock, alt: String(x.alt || "").slice(0, 300), caption: "" })) : [];
   } catch { return []; }
 }
 

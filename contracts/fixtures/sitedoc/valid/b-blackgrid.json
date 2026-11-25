@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-11yd31l",
+          "id": "hero-11y66kf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -68,14 +68,14 @@
               "href": "/services"
             },
             "image": {
-              "stock": "work-pattern",
+              "stock": "home-brass-pendants",
               "alt": "Obsidian & Oak",
               "caption": ""
             }
           }
         },
         {
-          "id": "services-11zkyl8",
+          "id": "services-11zc9b5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -89,8 +89,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "men-brogues",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -99,8 +99,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "fashion-weekender",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -109,8 +109,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "jewel-halo-ring",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-120dz8l",
+          "id": "about-1207kbl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -127,8 +127,8 @@
             "heading": "About Obsidian & Oak",
             "body": "A product studio designing homeware and accessories.",
             "image": {
-              "stock": "work-pattern",
-              "alt": "A sculptural pattern",
+              "stock": "home-brass-pendants",
+              "alt": "Obsidian & Oak work",
               "caption": ""
             },
             "highlights": [
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-121hp6o",
+          "id": "cta-121bthi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1223fyd",
+          "id": "about-122f8kp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -171,8 +171,8 @@
             "heading": "Our story",
             "body": "A product studio designing homeware and accessories.",
             "image": {
-              "stock": "obj-journal",
-              "alt": "Sketchbook",
+              "stock": "men-pocket-square",
+              "alt": "Obsidian & Oak work",
               "caption": ""
             },
             "highlights": [
@@ -183,7 +183,7 @@
           }
         },
         {
-          "id": "faq-12335n8",
+          "id": "faq-12328s1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -211,7 +211,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-124cz39",
+          "id": "services-1242rk0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -225,8 +225,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "men-brogues",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -235,8 +235,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "fashion-weekender",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -245,8 +245,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "jewel-halo-ring",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -278,7 +278,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-12622u5",
+          "id": "gallery-126gska",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -288,23 +288,18 @@
             "intro": "",
             "images": [
               {
-                "stock": "work-pattern",
-                "alt": "A sculptural pattern",
+                "stock": "home-brass-pendants",
+                "alt": "Obsidian & Oak work",
                 "caption": ""
               },
               {
-                "stock": "obj-journal",
-                "alt": "Sketchbook",
+                "stock": "men-pocket-square",
+                "alt": "Obsidian & Oak work",
                 "caption": ""
               },
               {
-                "stock": "biz-glass",
-                "alt": "Office building",
-                "caption": ""
-              },
-              {
-                "stock": "home-white-room",
-                "alt": "Studio space",
+                "stock": "home-desk-lamp",
+                "alt": "Obsidian & Oak work",
                 "caption": ""
               }
             ]
@@ -319,7 +314,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1277gk",
+          "id": "contact-1275p07",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

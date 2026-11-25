@@ -29,7 +29,7 @@ export interface Kit { collections: string[]; products: DemoProduct[]; faqs: { q
 const SIZES = { name: "Size", values: ["XS", "S", "M", "L"] };
 const MSIZES = { name: "Size", values: ["S", "M", "L", "XL"] };
 
-export const KITS: Record<string, Kit> = {
+const BASE_KITS: Record<string, Kit> = {
   fashion: {
     collections: ["Dresses", "Tops & jackets", "Accessories"],
     products: [
@@ -127,15 +127,19 @@ export const KITS: Record<string, Kit> = {
   },
 };
 
+export const KITS: Readonly<Record<string, Kit>> = Object.freeze({
+  ...BASE_KITS,
+  lighting: {
+    collections: ["Pendants", "Wall lights", "Lamps"],
+    products: [
+      ...BASE_KITS.home.products.filter((p) => p.collection === "Lighting").map((p) => ({ ...p, collection: p.title === "Wall sconce" ? "Wall lights" : "Pendants" })),
+      ...BASE_KITS.furniture.products.filter((p) => p.collection === "Lighting").map((p) => ({ ...p, collection: "Lamps", featured: true })),
+    ],
+    faqs: BASE_KITS.home.faqs,
+  },
+});
+
 // A lighting-only range for lighting shops (pendants and wall lights from "home", lamps from "furniture").
-KITS.lighting = {
-  collections: ["Pendants", "Wall lights", "Lamps"],
-  products: [
-    ...KITS.home.products.filter((p) => p.collection === "Lighting").map((p) => ({ ...p, collection: p.title === "Wall sconce" ? "Wall lights" : "Pendants" })),
-    ...KITS.furniture.products.filter((p) => p.collection === "Lighting").map((p) => ({ ...p, collection: "Lamps", featured: true })),
-  ],
-  faqs: KITS.home.faqs,
-};
 
 export interface ShopSpec {
   name: string; tagline: string; description: string; about: string; industry: string;
@@ -147,8 +151,9 @@ export interface ShopSpec {
 
 const nice = (v: number) => (v >= 100 ? Math.round(v / 5) * 5 : Math.round(v));
 
-export function shop(kitKey: keyof typeof KITS, x: ShopSpec): Persona {
-  const kit = KITS[kitKey];
+export function shop(kitOrKey: string | Kit, x: ShopSpec): Persona {
+  const kit = typeof kitOrKey === "string" ? KITS[kitOrKey] : kitOrKey;
+  if (!kit) throw new Error(`Unknown product kit: ${String(kitOrKey)}`);
   const products = kit.products
     .map((p) => ({ ...p, price: nice(p.price * x.rate), compareAt: p.compareAt ? nice(p.compareAt * x.rate) : undefined }))
     .sort((a, b) => (x.lead ? Number(b.collection === x.lead) - Number(a.collection === x.lead) : 0));
@@ -352,3 +357,18 @@ export const STORE_PERSONAS: Record<string, Persona> = {
     hero: ["home-cushions", "Cushions on a pale sofa"], gallery: [["home-grey-sofa", "A sofa with cushions"], ["home-coffee-table", "A coffee table in a living room"]],
   }),
 };
+
+/** One row of a shop batch: template id, kit, and the fictional shop's details. */
+export type ShopRow = [id: string, kit: string, name: string, tagline: string, industry: string, city: string, country: string, currency: string, rate: number, hero: string, about: string, lead?: string];
+
+/** Builds shop personas from rows against an explicitly composed kit map (no import-order side effects). */
+export function shopPersonas(rows: ShopRow[], kits: Readonly<Record<string, Kit>>): Record<string, Persona> {
+  return Object.fromEntries(rows.map(([id, kitKey, name, tagline, industry, city, country, currency, rate, hero, about, lead]) => {
+    const k = kits[kitKey];
+    if (!k) throw new Error(`${id}: unknown product kit "${kitKey}"`);
+    const gallery = k.products.slice(1, 3).map((pr) => [pr.image!, pr.title] as [string, string]);
+    // The hero subheading is the first sentence of the story, so it never repeats the headline.
+    const description = about.split(/(?<=\.)\s/)[0];
+    return [id, shop(k, { name, tagline, industry, description, about, currency, rate, city, country, hero: [hero, name], gallery, lead })];
+  }));
+}

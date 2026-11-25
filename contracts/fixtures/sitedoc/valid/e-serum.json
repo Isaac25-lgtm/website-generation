@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Clarity Lab — Simple formulas that do one thing well.",
-    "description": "Simple formulas that do one thing well.",
+    "description": "Clarity Lab makes a short range of serums and creams with published concentrations.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-174l2ku",
+          "id": "hero-174fy4t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Skincare",
             "heading": "Simple formulas that do one thing well.",
-            "subheading": "Simple formulas that do one thing well.",
+            "subheading": "Clarity Lab makes a short range of serums and creams with published concentrations.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-175zzu",
+          "id": "collections-175jkah",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-17629sv",
+          "id": "products-176j5n2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-17737nz",
+          "id": "about-1778oj7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-178d8wn",
+          "id": "products-1787lu3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1794rdp",
+          "id": "about-179k3dy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-17a6uh9",
+          "id": "faq-17a6f14",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-17b4wx2",
+          "id": "contact-17b7dxc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-17cyzo",
+          "id": "hours-17cbacx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

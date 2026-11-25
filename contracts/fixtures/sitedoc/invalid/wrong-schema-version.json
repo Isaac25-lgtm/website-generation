@@ -39,6 +39,7 @@
     "city": "London",
     "country": "United Kingdom",
     "mapQuery": "",
+    "whatsappFloat": true,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-5dajn7",
+          "id": "hero-1zs2jrf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -74,7 +75,7 @@
           }
         },
         {
-          "id": "services-5e59jp",
+          "id": "services-1zt78mi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -117,7 +118,7 @@
           }
         },
         {
-          "id": "about-5fd5jn",
+          "id": "about-1zu6jbv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,7 +139,7 @@
           }
         },
         {
-          "id": "cta-5g5ij3",
+          "id": "cta-1zvibxq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -161,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-5ha9d3",
+          "id": "about-1zw4hlt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -182,7 +183,7 @@
           }
         },
         {
-          "id": "faq-5idcxt",
+          "id": "faq-1zx6hyi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -214,7 +215,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-5j51qv",
+          "id": "services-1zyl4wd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -281,7 +282,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-5lifnr",
+          "id": "gallery-2001xt9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -332,7 +333,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-5miqqx",
+          "id": "contact-2019hlc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

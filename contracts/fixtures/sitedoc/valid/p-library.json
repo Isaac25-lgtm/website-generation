@@ -3,11 +3,11 @@
   "type": "personal",
   "templateId": "p-library",
   "brand": {
-    "name": "Katherine Doyle",
+    "name": "Siobhán Grady",
     "tagline": "I help founders run their companies: planning, hiring and the meetings that matter."
   },
   "seo": {
-    "title": "Katherine Doyle — I help founders run their companies: planning, hirin",
+    "title": "Siobhán Grady — I help founders run their companies: planning, hiring ",
     "description": "I help founders run their companies: planning, hiring and the meetings that matter.",
     "lang": "en"
   },
@@ -32,7 +32,7 @@
     "ornament": "none"
   },
   "contact": {
-    "email": "katherine@example.com",
+    "email": "siobhan@example.com",
     "phone": "",
     "whatsapp": "",
     "address": "",
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-gjjkwt",
+          "id": "hero-grgvde",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Chief of staff · Dublin, Ireland",
             "heading": "I help founders run their companies: planning, hiring and the meetings that matter.",
-            "subheading": "Katherine Doyle, Chief of staff",
+            "subheading": "Siobhán Grady, Chief of staff",
             "primaryCta": {
               "label": "Get in touch",
               "href": "/contact"
@@ -66,7 +66,7 @@
           }
         },
         {
-          "id": "about-gk2kik",
+          "id": "about-gshdb1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -78,7 +78,7 @@
           }
         },
         {
-          "id": "cta-gl9ozv",
+          "id": "cta-gtg0du",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -101,7 +101,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "experience-gmgn8j",
+          "id": "experience-gu36qb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -142,7 +142,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-gngo99",
+          "id": "contact-gv3b7c",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

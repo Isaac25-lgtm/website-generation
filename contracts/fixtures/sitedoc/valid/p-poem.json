@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-goepc6",
+          "id": "hero-gwjty1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-gpi65x",
+          "id": "about-gx3yh5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-gr6utb",
+          "id": "cta-gz7llh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -150,13 +150,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-h058ti",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Creative technologist",
+                "org": "Independent",
+                "period": "2019 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Interaction designer",
+                "org": "Museum (fictional)",
+                "period": "2015 — 2019",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-gs51tf",
+          "id": "contact-h17b9m",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

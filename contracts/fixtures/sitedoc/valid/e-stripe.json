@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Left Bank Knits — Striped knits from the Left Bank.",
-    "description": "Striped knits from the Left Bank.",
+    "description": "A Parisian knitwear house known for stripes, soft jersey and black-and-white tailoring.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1i4brso",
+          "id": "hero-1i4c2z3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Knitwear",
             "heading": "Striped knits from the Left Bank.",
-            "subheading": "Striped knits from the Left Bank.",
+            "subheading": "A Parisian knitwear house known for stripes, soft jersey and black-and-white tailoring.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1i56prm",
+          "id": "collections-1i5ir2g",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1i6c5ak",
+          "id": "products-1i625iz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1i77jit",
+          "id": "about-1i7fp7x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1i8hufq",
+          "id": "products-1i8gh0x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1i9easc",
+          "id": "about-1i9afzu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1iade7j",
+          "id": "faq-1ialc0y",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1ibdqgy",
+          "id": "contact-1iblbr4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1icl656",
+          "id": "hours-1ici7ha",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

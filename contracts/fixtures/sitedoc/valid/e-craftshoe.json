@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Cobbler's Bench — Hand-made shoes and boots.",
-    "description": "Hand-made shoes and boots.",
+    "description": "We make every pair by hand and resole them when they wear out.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1cddhdh",
+          "id": "hero-1cdg2l0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Handmade footwear",
             "heading": "Hand-made shoes and boots.",
-            "subheading": "Hand-made shoes and boots.",
+            "subheading": "We make every pair by hand and resole them when they wear out.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1cechls",
+          "id": "collections-1ceeowo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1cfeytc",
+          "id": "products-1cf8a8s",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1cg9xzl",
+          "id": "about-1cgg4eu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1chg4xv",
+          "id": "products-1chfkey",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1cijyy5",
+          "id": "about-1ciqh5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1cj2xic",
+          "id": "faq-1cj7tgx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1ck1x01",
+          "id": "contact-1ckg8x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1clf66b",
+          "id": "hours-1cl3zdw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

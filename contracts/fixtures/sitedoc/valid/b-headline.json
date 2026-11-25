@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-woayn6",
+          "id": "hero-wo7nu1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -68,14 +68,14 @@
               "href": "/services"
             },
             "image": {
-              "stock": "work-pattern",
+              "stock": "home-desk-lamp",
               "alt": "Fieldwork Co.",
               "caption": ""
             }
           }
         },
         {
-          "id": "services-wpcl7t",
+          "id": "services-wp1sui",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -89,8 +89,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "stay-lobby",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -99,8 +99,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "home-white-room",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -109,8 +109,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "flower-tulip",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-wq2mqq",
+          "id": "about-wq8nq7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -127,8 +127,8 @@
             "heading": "About Fieldwork Co.",
             "body": "Fieldwork is a studio of twelve, working with independent businesses.",
             "image": {
-              "stock": "work-pattern",
-              "alt": "A sculptural pattern",
+              "stock": "home-desk-lamp",
+              "alt": "Fieldwork Co. work",
               "caption": ""
             },
             "highlights": [
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-wrj0o7",
+          "id": "cta-wr6kmc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-wsclk8",
+          "id": "about-ws12el",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -171,8 +171,8 @@
             "heading": "Our story",
             "body": "Fieldwork is a studio of twelve, working with independent businesses.",
             "image": {
-              "stock": "obj-journal",
-              "alt": "Sketchbook",
+              "stock": "home-butterfly-chair",
+              "alt": "Fieldwork Co. work",
               "caption": ""
             },
             "highlights": [
@@ -183,7 +183,7 @@
           }
         },
         {
-          "id": "faq-wtdijg",
+          "id": "faq-wte1hj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -211,7 +211,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-wuc4du",
+          "id": "services-wu79ks",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -225,8 +225,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "stay-lobby",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -235,8 +235,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "home-white-room",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -245,8 +245,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "flower-tulip",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -278,7 +278,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-wwfuz2",
+          "id": "gallery-wwav14",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -288,23 +288,18 @@
             "intro": "",
             "images": [
               {
-                "stock": "work-pattern",
-                "alt": "A sculptural pattern",
+                "stock": "home-desk-lamp",
+                "alt": "Fieldwork Co. work",
                 "caption": ""
               },
               {
-                "stock": "obj-journal",
-                "alt": "Sketchbook",
+                "stock": "home-butterfly-chair",
+                "alt": "Fieldwork Co. work",
                 "caption": ""
               },
               {
-                "stock": "biz-glass",
-                "alt": "Office building",
-                "caption": ""
-              },
-              {
-                "stock": "home-white-room",
-                "alt": "Studio space",
+                "stock": "obj-book-pages",
+                "alt": "Fieldwork Co. work",
                 "caption": ""
               }
             ]
@@ -319,7 +314,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-wx1d28",
+          "id": "contact-wxftiy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

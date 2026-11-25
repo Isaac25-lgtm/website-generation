@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Touchpoint — Controllers you feel as well as hear.",
-    "description": "Controllers you feel as well as hear.",
+    "description": "Touchpoint makes haptic controllers and headphones for producers and sound designers.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1r44yim",
+          "id": "hero-1r41h6d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Audio controllers",
             "heading": "Controllers you feel as well as hear.",
-            "subheading": "Controllers you feel as well as hear.",
+            "subheading": "Touchpoint makes haptic controllers and headphones for producers and sound designers.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1r59oq1",
+          "id": "collections-1r5hjuh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1r61ikd",
+          "id": "products-1r620w1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1r7f23b",
+          "id": "about-1r7ao74",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1r8hbg1",
+          "id": "products-1r883jj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1r9dad0",
+          "id": "about-1r97mzn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ra3bbk",
+          "id": "faq-1ra7w1l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1rbbz01",
+          "id": "contact-1rbcl09",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1rcj7tv",
+          "id": "hours-1rch6tl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

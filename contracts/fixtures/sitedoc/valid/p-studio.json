@@ -39,6 +39,7 @@
     "city": "",
     "country": "",
     "mapQuery": "",
+    "whatsappFloat": false,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-o706i",
+          "id": "hero-o4m4e",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -69,7 +70,7 @@
           }
         },
         {
-          "id": "about-p63x6",
+          "id": "about-pef0p",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -143,7 +144,7 @@
           }
         },
         {
-          "id": "cta-r29pk",
+          "id": "cta-rk6yy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -166,7 +167,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-sl4aw",
+          "id": "gallery-s4gvs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -217,7 +218,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-tfqkx",
+          "id": "contact-t9s0g",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

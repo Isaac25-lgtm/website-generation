@@ -3,11 +3,11 @@
   "type": "personal",
   "templateId": "p-deco",
   "brand": {
-    "name": "Samuel Reyes",
+    "name": "Teo Alcázar",
     "tagline": "Bold illustration for posters, books and brands."
   },
   "seo": {
-    "title": "Samuel Reyes — Bold illustration for posters, books and brands.",
+    "title": "Teo Alcázar — Bold illustration for posters, books and brands.",
     "description": "Bold illustration for posters, books and brands.",
     "lang": "en"
   },
@@ -32,7 +32,7 @@
     "ornament": "none"
   },
   "contact": {
-    "email": "samuel@example.com",
+    "email": "teo@example.com",
     "phone": "",
     "whatsapp": "",
     "address": "",
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-he20sf",
+          "id": "hero-hqlc2v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Illustrator · Barcelona",
             "heading": "Bold illustration for posters, books and brands.",
-            "subheading": "Samuel Reyes, Illustrator",
+            "subheading": "Teo Alcázar, Illustrator",
             "primaryCta": {
               "label": "Get in touch",
               "href": "/contact"
@@ -70,7 +70,7 @@
           }
         },
         {
-          "id": "about-hf72yt",
+          "id": "about-hr4kkr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -123,7 +123,7 @@
           }
         },
         {
-          "id": "cta-hhy1z",
+          "id": "cta-htal8r",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -146,7 +146,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-hiaxe9",
+          "id": "gallery-hu1oma",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -182,7 +182,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-hjfqzm",
+          "id": "contact-hvj3m1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

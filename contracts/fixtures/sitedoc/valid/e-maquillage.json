@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Maison Rouge — Colour for evenings that matter.",
-    "description": "Colour for evenings that matter.",
+    "description": "Maison Rouge makes lipstick, blush and powder in a Paris laboratory.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-17djfuw",
+          "id": "hero-17dijge",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Luxury cosmetics",
             "heading": "Colour for evenings that matter.",
-            "subheading": "Colour for evenings that matter.",
+            "subheading": "Maison Rouge makes lipstick, blush and powder in a Paris laboratory.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-17ebw0l",
+          "id": "collections-17e7fk8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-17f8w9y",
+          "id": "products-17fcevw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-17g2ya9",
+          "id": "about-17g956z",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-17h7h4f",
+          "id": "products-17hl2hj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-17icdfr",
+          "id": "about-17ic1ma",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-17jg5qh",
+          "id": "faq-17jkd4k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-17kiokl",
+          "id": "contact-17k1ppd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-17lenkj",
+          "id": "hours-17l4i58",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

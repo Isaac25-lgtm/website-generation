@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-dfj0pl",
+          "id": "hero-dfigsl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,13 +75,13 @@
           }
         },
         {
-          "id": "services-dg73w5",
+          "id": "services-dg1kdx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "services",
           "data": {
-            "heading": "What we do",
+            "heading": "Classes and membership",
             "intro": "",
             "items": [
               {
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-dhff7r",
+          "id": "about-dh3ny6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-difgnf",
+          "id": "cta-dig8pa",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-djfdl4",
+          "id": "about-dj3a79",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -191,13 +191,13 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-dkbh5h",
+          "id": "services-dkazvp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "services",
           "data": {
-            "heading": "Services",
+            "heading": "Classes and membership",
             "intro": "",
             "items": [
               {
@@ -242,7 +242,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-dl6br9",
+          "id": "gallery-dlg7a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -273,7 +273,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-dmaxms",
+          "id": "contact-dm792c",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -286,7 +286,7 @@
           }
         },
         {
-          "id": "hours-dnc0ap",
+          "id": "hours-dn6zew",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

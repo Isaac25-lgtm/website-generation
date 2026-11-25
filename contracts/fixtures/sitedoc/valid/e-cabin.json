@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Pine & Pitch — Simple furniture for small homes.",
-    "description": "Simple furniture for small homes.",
+    "description": "Pine & Pitch makes beds, shelves and tables in solid pine, finished with natural soap.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1jvh5cu",
+          "id": "hero-1jvdlyk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Furniture",
             "heading": "Simple furniture for small homes.",
-            "subheading": "Simple furniture for small homes.",
+            "subheading": "Pine & Pitch makes beds, shelves and tables in solid pine, finished with natural soap.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1jwfbcg",
+          "id": "collections-1jwdszy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1jxalhn",
+          "id": "products-1jxfzla",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1jy84z0",
+          "id": "about-1jygluz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1jzcbgp",
+          "id": "products-1jz7ptd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1k02411",
+          "id": "about-1k06927",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1k1bz8h",
+          "id": "faq-1k1zvy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1k2c8hn",
+          "id": "contact-1k2f82",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1k3jakb",
+          "id": "hours-1k33sr5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

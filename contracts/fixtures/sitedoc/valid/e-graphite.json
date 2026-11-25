@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Lead & Line — Pencils, pens and tools for serious writing.",
-    "description": "Pencils, pens and tools for serious writing.",
+    "description": "Lead & Line makes pencils and pens for writers and illustrators.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1dvc41o",
+          "id": "hero-1dvi5em",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Writing tools",
             "heading": "Pencils, pens and tools for serious writing.",
-            "subheading": "Pencils, pens and tools for serious writing.",
+            "subheading": "Lead & Line makes pencils and pens for writers and illustrators.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1dw17lz",
+          "id": "collections-1dw5b62",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1dx7u4e",
+          "id": "products-1dx1re6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1dy7d16",
+          "id": "about-1dy3j9y",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1dz3tv2",
+          "id": "products-1dzedh0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1e0ag04",
+          "id": "about-1e0irl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1e17p8o",
+          "id": "faq-1e1kmtj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1e2c5tv",
+          "id": "contact-1e2hd3t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1e3hn9m",
+          "id": "hours-1e350om",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

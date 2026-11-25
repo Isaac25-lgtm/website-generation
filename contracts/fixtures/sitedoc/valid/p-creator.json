@@ -4,11 +4,11 @@
   "templateId": "p-creator",
   "brand": {
     "name": "Victor Hale",
-    "tagline": "Build an audience around a busy life."
+    "tagline": "Write every day around a full-time job."
   },
   "seo": {
-    "title": "Victor Hale — Build an audience around a busy life.",
-    "description": "Build an audience around a busy life.",
+    "title": "Victor Hale — Write every day around a full-time job.",
+    "description": "Write every day around a full-time job.",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-fogr63",
+          "id": "hero-frk5s6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Writer · Lisbon, Portugal",
-            "heading": "Build an audience around a busy life.",
+            "heading": "Write every day around a full-time job.",
             "subheading": "Victor Hale, Writer",
             "primaryCta": {
               "label": "Get in touch",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-fpasi2",
+          "id": "about-fs7yd0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -107,7 +107,13 @@
                 "role": "Writer",
                 "period": "Weekly",
                 "tags": [],
-                "images": []
+                "images": [
+                  {
+                    "stock": "obj-journal",
+                    "alt": "A notebook and coffee",
+                    "caption": ""
+                  }
+                ]
               },
               {
                 "title": "A short course on writing daily",
@@ -115,13 +121,19 @@
                 "role": "Teacher",
                 "period": "2025",
                 "tags": [],
-                "images": []
+                "images": [
+                  {
+                    "stock": "obj-open-book",
+                    "alt": "An open book",
+                    "caption": ""
+                  }
+                ]
               }
             ]
           }
         },
         {
-          "id": "cta-frk9g8",
+          "id": "cta-fuj48z",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,13 +150,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-fv3pkb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Writer",
+                "org": "The Sunday letter",
+                "period": "2021 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Operations manager",
+                "org": "Logistics company (fictional)",
+                "period": "2008 — now",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-fsjn1a",
+          "id": "contact-fwdlv0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

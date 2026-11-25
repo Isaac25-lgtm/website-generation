@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Form Atelier — Sculptural clothes in quiet colours.",
-    "description": "Sculptural clothes in quiet colours.",
+    "description": "Form Atelier drapes every pattern on the stand before it's drafted, and makes each style in small numbers.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1hdgn3p",
+          "id": "hero-1hdl693",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Designer womenswear",
             "heading": "Sculptural clothes in quiet colours.",
-            "subheading": "Sculptural clothes in quiet colours.",
+            "subheading": "Form Atelier drapes every pattern on the stand before it's drafted, and makes each style in small numbers.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1he4tyv",
+          "id": "collections-1he1l4r",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1hfb41b",
+          "id": "products-1hfcq2t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1hgg5r9",
+          "id": "about-1hg7xa4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1hhasqq",
+          "id": "products-1hhrhk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1hic4mj",
+          "id": "about-1hi1geb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1hjfjlz",
+          "id": "faq-1hjjb0b",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1hkbbfk",
+          "id": "contact-1hk27w3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1hlin8r",
+          "id": "hours-1hl6hdv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

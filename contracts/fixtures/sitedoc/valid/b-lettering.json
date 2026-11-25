@@ -4,10 +4,10 @@
   "templateId": "b-lettering",
   "brand": {
     "name": "Hart & Vale",
-    "tagline": "Careful identities for imaginative clients."
+    "tagline": "Hand-drawn logos for restaurants, shops and publishers."
   },
   "seo": {
-    "title": "Hart & Vale — Careful identities for imaginative clients.",
+    "title": "Hart & Vale — Hand-drawn logos for restaurants, shops and publishers.",
     "description": "Logos, lettering and identities for restaurants, shops and publishers.",
     "lang": "en"
   },
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-k77nab",
+          "id": "hero-k7ixd9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Branding studio · Toronto",
-            "heading": "Careful identities for imaginative clients.",
+            "heading": "Hand-drawn logos for restaurants, shops and publishers.",
             "subheading": "Logos, lettering and identities for restaurants, shops and publishers.",
             "primaryCta": {
               "label": "Email us",
@@ -70,7 +70,7 @@
           }
         },
         {
-          "id": "services-k888ub",
+          "id": "services-k8bdua",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -98,7 +98,7 @@
           }
         },
         {
-          "id": "about-k9d3fl",
+          "id": "about-k9a1em",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -115,7 +115,7 @@
           }
         },
         {
-          "id": "cta-kaintj",
+          "id": "cta-ka9jty",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,7 +138,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-kbga5d",
+          "id": "about-kb46dq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -163,7 +163,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-kc8crz",
+          "id": "services-kcjdab",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -215,7 +215,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-ke3ujm",
+          "id": "gallery-kece6v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -251,7 +251,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-kf8ehl",
+          "id": "contact-kfgx7z",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

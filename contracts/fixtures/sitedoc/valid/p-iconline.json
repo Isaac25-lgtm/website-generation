@@ -4,11 +4,11 @@
   "templateId": "p-iconline",
   "brand": {
     "name": "Ola Berg",
-    "tagline": "I'm Ola Berg, a digital design lead based in Oslo. I'm currently growing the design team at a travel company."
+    "tagline": "Ola Berg designs booking tools for a travel company in Oslo and teaches interface design on Fridays."
   },
   "seo": {
-    "title": "Ola Berg — I'm Ola Berg, a digital design lead based in Oslo. I'm curr",
-    "description": "I'm Ola Berg, a digital design lead based in Oslo. I'm currently growing the design team at a travel company.",
+    "title": "Ola Berg — Ola Berg designs booking tools for a travel company in Oslo",
+    "description": "Ola Berg designs booking tools for a travel company in Oslo and teaches interface design on Fridays.",
     "lang": "en"
   },
   "theme": {
@@ -17,7 +17,7 @@
       "bg": "#ffffff",
       "surface": "#f3f3f3",
       "text": "#111111",
-      "muted": "#a3a3a3",
+      "muted": "#666666",
       "primary": "#111111",
       "accent": "#111111"
     },
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-fyeq4e",
+          "id": "hero-g3fr9p",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Design lead · Oslo, Norway",
-            "heading": "I'm Ola Berg, a digital design lead based in Oslo. I'm currently growing the design team at a travel company.",
+            "heading": "Ola Berg designs booking tools for a travel company in Oslo and teaches interface design on Fridays.",
             "subheading": "Ola Berg, Design lead",
             "primaryCta": {
               "label": "Get in touch",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-fzeve7",
+          "id": "about-g46xyz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-g1epbc",
+          "id": "cta-g6bscb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -150,13 +150,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-g7apjs",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Design lead",
+                "org": "Travel company (fictional)",
+                "period": "2022 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Senior designer",
+                "org": "Public services agency (fictional)",
+                "period": "2015 — 2022",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-g2doab",
+          "id": "contact-g814xl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -29,7 +29,7 @@
     "animation": "subtle",
     "headerStyle": "bar",
     "cardStyle": "outline",
-    "ornament": "grid"
+    "ornament": "none"
   },
   "contact": {
     "email": "dev@example.com",
@@ -39,6 +39,7 @@
     "city": "",
     "country": "",
     "mapQuery": "",
+    "whatsappFloat": false,
     "socials": [
       {
         "network": "GitHub",
@@ -58,7 +59,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-8b9kt",
+          "id": "hero-8jy5k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -78,7 +79,7 @@
           }
         },
         {
-          "id": "about-9he8e",
+          "id": "about-965xn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,7 +157,7 @@
           }
         },
         {
-          "id": "cta-b2h8g",
+          "id": "cta-bk4tx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -179,7 +180,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "experience-cdg27",
+          "id": "experience-c9zx5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -198,7 +199,7 @@
           }
         },
         {
-          "id": "education-deonc",
+          "id": "education-dko4h",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -216,7 +217,7 @@
           }
         },
         {
-          "id": "skills-eetlw",
+          "id": "skills-eigzn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -254,7 +255,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-f2ruu",
+          "id": "contact-fg01b",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

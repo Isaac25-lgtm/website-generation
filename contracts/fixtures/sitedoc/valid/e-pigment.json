@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Brightside Cosmetics — Bold colour, easy to wear.",
-    "description": "Bold colour, easy to wear.",
+    "description": "Brightside makes bright, buildable colour for every skin tone.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-17m6alp",
+          "id": "hero-17mbxws",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Cosmetics",
             "heading": "Bold colour, easy to wear.",
-            "subheading": "Bold colour, easy to wear.",
+            "subheading": "Brightside makes bright, buildable colour for every skin tone.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-17njhdz",
+          "id": "collections-17n8nek",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-17ohjd0",
+          "id": "products-17odx74",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-17pjmob",
+          "id": "about-17p7k0z",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-17qcghh",
+          "id": "products-17q40pf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-17rfce6",
+          "id": "about-17rbz24",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-17s9dud",
+          "id": "faq-17s4g70",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-17t8e0g",
+          "id": "contact-17t4epa",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-17uhxd4",
+          "id": "hours-17ufb5g",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

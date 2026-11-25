@@ -4,11 +4,11 @@
   "templateId": "p-founder",
   "brand": {
     "name": "Ines Moreau",
-    "tagline": "Ines Moreau is the founder and creative director of Northlight, a studio that helps food and hospitality companies build brands people remember."
+    "tagline": "Ines Moreau runs Northlight, a twelve-person studio designing menus, packaging and interiors for restaurants and hotels."
   },
   "seo": {
-    "title": "Ines Moreau — Ines Moreau is the founder and creative director of Nort",
-    "description": "Ines Moreau is the founder and creative director of Northlight, a studio that helps food and hospitality companies build brands people remember.",
+    "title": "Ines Moreau — Ines Moreau runs Northlight, a twelve-person studio desi",
+    "description": "Ines Moreau runs Northlight, a twelve-person studio designing menus, packaging and interiors for restaurants and hotels.",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-e7eugy",
+          "id": "hero-e71kk2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Founder & creative director · Paris, France",
-            "heading": "Ines Moreau is the founder and creative director of Northlight, a studio that helps food and hospitality companies build brands people remember.",
+            "heading": "Ines Moreau runs Northlight, a twelve-person studio designing menus, packaging and interiors for restaurants and hotels.",
             "subheading": "Ines Moreau, Founder & creative director",
             "primaryCta": {
               "label": "See my work",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-e82r8v",
+          "id": "about-e85ql4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
           }
         },
         {
-          "id": "cta-ea7rc7",
+          "id": "cta-ea7edc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,13 +164,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-ebacbg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Founder & creative director",
+                "org": "Northlight (fictional)",
+                "period": "2017 — now",
+                "location": "Paris",
+                "description": ""
+              },
+              {
+                "role": "Design director",
+                "org": "Branding agency (fictional)",
+                "period": "2009 — 2017",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-ebd9z5",
+          "id": "contact-eckhab",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

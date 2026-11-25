@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1326fm8",
+          "id": "hero-132l93o",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -68,14 +68,14 @@
               "href": "/services"
             },
             "image": {
-              "stock": "work-pattern",
+              "stock": "home-glass-jar",
               "alt": "Loud Matter",
               "caption": ""
             }
           }
         },
         {
-          "id": "services-13376ri",
+          "id": "services-1338sl1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -89,8 +89,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "home-desk-lamp",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -99,8 +99,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "home-butterfly-chair",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -109,8 +109,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "obj-book-pages",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-134esds",
+          "id": "about-13460o2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -127,8 +127,8 @@
             "heading": "About Loud Matter",
             "body": "A creative agency of forty.",
             "image": {
-              "stock": "work-pattern",
-              "alt": "A sculptural pattern",
+              "stock": "home-glass-jar",
+              "alt": "Loud Matter work",
               "caption": ""
             },
             "highlights": [
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-135183d",
+          "id": "cta-135bbg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-136cjfg",
+          "id": "about-136arem",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -171,8 +171,8 @@
             "heading": "Our story",
             "body": "A creative agency of forty.",
             "image": {
-              "stock": "obj-journal",
-              "alt": "Sketchbook",
+              "stock": "work-wireframes",
+              "alt": "Loud Matter work",
               "caption": ""
             },
             "highlights": [
@@ -183,7 +183,7 @@
           }
         },
         {
-          "id": "faq-137ggm",
+          "id": "faq-137ddec",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -211,7 +211,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-1382jzy",
+          "id": "services-1383yg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -225,8 +225,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "home-desk-lamp",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -235,8 +235,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "home-butterfly-chair",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -245,8 +245,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "obj-book-pages",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -278,7 +278,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-13a87wt",
+          "id": "gallery-13ajy1k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -288,23 +288,18 @@
             "intro": "",
             "images": [
               {
-                "stock": "work-pattern",
-                "alt": "A sculptural pattern",
+                "stock": "home-glass-jar",
+                "alt": "Loud Matter work",
                 "caption": ""
               },
               {
-                "stock": "obj-journal",
-                "alt": "Sketchbook",
+                "stock": "work-wireframes",
+                "alt": "Loud Matter work",
                 "caption": ""
               },
               {
-                "stock": "biz-glass",
-                "alt": "Office building",
-                "caption": ""
-              },
-              {
-                "stock": "home-white-room",
-                "alt": "Studio space",
+                "stock": "work-sketches",
+                "alt": "Loud Matter work",
                 "caption": ""
               }
             ]
@@ -319,7 +314,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-13bd6v3",
+          "id": "contact-13bgw7l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

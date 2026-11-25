@@ -55,7 +55,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-ah7yvw",
+          "id": "hero-ahdy5y",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -73,14 +73,14 @@
               "href": "/#work"
             },
             "image": {
-              "stock": "pro-portrait-woman",
+              "stock": "pro-portrait-woman-head",
               "alt": "Portrait of Helena Varga",
               "caption": ""
             }
           }
         },
         {
-          "id": "about-ai9w4i",
+          "id": "about-aihtyi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -89,7 +89,7 @@
             "heading": "About me",
             "body": "For twelve years I ran strategy at two software companies, from thirty people to six hundred. Now I work with a small number of founders each year, usually in the months after a funding round, when the list of possible projects is longest.\n\nMost engagements last a quarter. We meet every week, and I write a short decision memo after every session.",
             "image": {
-              "stock": "pro-portrait-woman",
+              "stock": "pro-portrait-woman-head",
               "alt": "Portrait of Helena Varga",
               "caption": ""
             },
@@ -141,7 +141,7 @@
           }
         },
         {
-          "id": "cta-akbt3",
+          "id": "cta-ak85du",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "experience-alenbe",
+          "id": "experience-alp7a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -190,7 +190,7 @@
           }
         },
         {
-          "id": "achievements-am2nrz",
+          "id": "achievements-amgc4t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -215,7 +215,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-ankhcn",
+          "id": "contact-anbijh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Turnkey — Physical controls for a digital desk.",
-    "description": "Physical controls for a digital desk.",
+    "description": "Turnkey makes knobs, dials and keys that control your computer and lights.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1pv84ol",
+          "id": "hero-1pvk8b5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Desk tech",
             "heading": "Physical controls for a digital desk.",
-            "subheading": "Physical controls for a digital desk.",
+            "subheading": "Turnkey makes knobs, dials and keys that control your computer and lights.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1pw727d",
+          "id": "collections-1pwg5bx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1pxhs89",
+          "id": "products-1px64lk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1pyg29v",
+          "id": "about-1py8gb8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1pz87q3",
+          "id": "products-1pza64",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1q0jyz6",
+          "id": "about-1q0dqc3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,7 +156,7 @@
             "heading": "Our story",
             "body": "Turnkey makes knobs, dials and keys that control your computer and lights.",
             "image": {
-              "stock": "tech-desk-overhead",
+              "stock": "tech-tablet-glasses",
               "alt": "Paper-like tablet",
               "caption": ""
             },
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1q14uy",
+          "id": "faq-1q115xv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -173,8 +173,8 @@
             "heading": "Frequently asked questions",
             "items": [
               {
-                "q": "Which size ring should I order?",
-                "a": "Order the free sizing kit first. It's credited against your ring."
+                "q": "Which strap size should I order?",
+                "a": "Measure your wrist: under 16 cm is small, 16 to 19 cm medium, over 19 cm large."
               },
               {
                 "q": "Do I need a subscription?",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1q289dl",
+          "id": "contact-1q26hl3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1q3843d",
+          "id": "hours-1q3k4jx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

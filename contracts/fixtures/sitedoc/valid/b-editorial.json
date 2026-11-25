@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-14q3kqv",
+          "id": "hero-14qjk3i",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "services-14rj0o",
+          "id": "services-14rfvwh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -85,32 +85,32 @@
             "intro": "",
             "items": [
               {
-                "title": "Main stage",
-                "description": "Two days of talks from builders and artists.",
-                "price": "From $480",
+                "title": "Books",
+                "description": "Four new titles a year, printed in small runs.",
+                "price": "From £14",
                 "image": {
-                  "stock": "pro-speaker-man",
-                  "alt": "A speaker on stage",
+                  "stock": "obj-old-books",
+                  "alt": "Books on a shelf",
                   "caption": ""
                 }
               },
               {
-                "title": "Workshops",
-                "description": "Small hands-on sessions.",
-                "price": "From $120",
+                "title": "Prints",
+                "description": "Limited-edition prints from our archive.",
+                "price": "From £40",
                 "image": {
-                  "stock": "biz-workshop",
-                  "alt": "A workshop",
+                  "stock": "work-drawing",
+                  "alt": "A drawing",
                   "caption": ""
                 }
               },
               {
-                "title": "Partner programme",
-                "description": "For companies who want to take part.",
-                "price": "On request",
+                "title": "Archive visits",
+                "description": "Reading-room appointments for researchers.",
+                "price": "By appointment",
                 "image": {
-                  "stock": "biz-boardroom",
-                  "alt": "A partner meeting",
+                  "stock": "obj-book-pages",
+                  "alt": "An open book",
                   "caption": ""
                 }
               }
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-14shspo",
+          "id": "about-14sgb5z",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -127,19 +127,19 @@
             "heading": "About Design Council North",
             "body": "A non-profit organisation promoting good design in public life.",
             "image": {
-              "stock": "stay-lobby",
-              "alt": "The venue",
+              "stock": "obj-open-book",
+              "alt": "An open book",
               "caption": ""
             },
             "highlights": [
-              "Two days, 3,000 guests",
-              "Sixty sessions",
-              "Held in a former factory"
+              "Independent since 1998",
+              "Printed locally",
+              "Open archive"
             ]
           }
         },
         {
-          "id": "cta-14tbsv6",
+          "id": "cta-14tce1j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-14uck1x",
+          "id": "about-14uekd5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -171,19 +171,19 @@
             "heading": "Our story",
             "body": "A non-profit organisation promoting good design in public life.",
             "image": {
-              "stock": "biz-team",
-              "alt": "Guests",
+              "stock": "obj-journal",
+              "alt": "Notebook",
               "caption": ""
             },
             "highlights": [
-              "Two days, 3,000 guests",
-              "Sixty sessions",
-              "Held in a former factory"
+              "Independent since 1998",
+              "Printed locally",
+              "Open archive"
             ]
           }
         },
         {
-          "id": "faq-14v8rd3",
+          "id": "faq-14vdpiy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,12 +192,12 @@
             "heading": "Frequently asked questions",
             "items": [
               {
-                "q": "When is the next edition?",
-                "a": "Every May. Dates are announced in January."
+                "q": "Do you accept manuscripts?",
+                "a": "Yes, twice a year. Check the dates on our contact page."
               },
               {
-                "q": "Are tickets refundable?",
-                "a": "Tickets can be transferred to another person at no charge."
+                "q": "Can I visit the archive?",
+                "a": "Yes, by appointment on weekdays."
               }
             ]
           }
@@ -211,7 +211,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-14wc5hi",
+          "id": "services-14w6gp6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -221,32 +221,32 @@
             "intro": "",
             "items": [
               {
-                "title": "Main stage",
-                "description": "Two days of talks from builders and artists.",
-                "price": "From $480",
+                "title": "Books",
+                "description": "Four new titles a year, printed in small runs.",
+                "price": "From £14",
                 "image": {
-                  "stock": "pro-speaker-man",
-                  "alt": "A speaker on stage",
+                  "stock": "obj-old-books",
+                  "alt": "Books on a shelf",
                   "caption": ""
                 }
               },
               {
-                "title": "Workshops",
-                "description": "Small hands-on sessions.",
-                "price": "From $120",
+                "title": "Prints",
+                "description": "Limited-edition prints from our archive.",
+                "price": "From £40",
                 "image": {
-                  "stock": "biz-workshop",
-                  "alt": "A workshop",
+                  "stock": "work-drawing",
+                  "alt": "A drawing",
                   "caption": ""
                 }
               },
               {
-                "title": "Partner programme",
-                "description": "For companies who want to take part.",
-                "price": "On request",
+                "title": "Archive visits",
+                "description": "Reading-room appointments for researchers.",
+                "price": "By appointment",
                 "image": {
-                  "stock": "biz-boardroom",
-                  "alt": "A partner meeting",
+                  "stock": "obj-book-pages",
+                  "alt": "An open book",
                   "caption": ""
                 }
               }
@@ -263,9 +263,9 @@
             "heading": "Request a quote",
             "intro": "Tell us about your needs and we'll get back to you.",
             "services": [
-              "Main stage",
-              "Workshops",
-              "Partner programme"
+              "Books",
+              "Prints",
+              "Archive visits"
             ]
           }
         }
@@ -278,7 +278,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-14y2mza",
+          "id": "gallery-14ye0r9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -288,18 +288,18 @@
             "intro": "",
             "images": [
               {
-                "stock": "stay-lobby",
-                "alt": "The venue",
+                "stock": "obj-open-book",
+                "alt": "An open book",
                 "caption": ""
               },
               {
-                "stock": "biz-team",
-                "alt": "Guests",
+                "stock": "obj-journal",
+                "alt": "Notebook",
                 "caption": ""
               },
               {
-                "stock": "pro-speaker-woman",
-                "alt": "A talk",
+                "stock": "pro-reader-woman",
+                "alt": "A reader",
                 "caption": ""
               }
             ]
@@ -314,7 +314,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-14zawat",
+          "id": "contact-14zgt28",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

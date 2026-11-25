@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-gt9qh1",
+          "id": "hero-h2jmnw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-gu6ke4",
+          "id": "about-h3a8d1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -161,7 +161,7 @@
           }
         },
         {
-          "id": "cta-gw8xum",
+          "id": "cta-h5hkmi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -178,13 +178,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-h684tb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Design director",
+                "org": "Independent",
+                "period": "2018 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Art director",
+                "org": "Film studio (fictional)",
+                "period": "2011 — 2018",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-gx9bnu",
+          "id": "contact-h77omr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

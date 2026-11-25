@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Green Stone Tea — Bright green tea for slow mornings.",
-    "description": "Bright green tea for slow mornings.",
+    "description": "Green Stone imports green tea from two family farms.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1ema2et",
+          "id": "hero-1emfujy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Tea",
             "heading": "Bright green tea for slow mornings.",
-            "subheading": "Bright green tea for slow mornings.",
+            "subheading": "Green Stone imports green tea from two family farms.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1en4c6e",
+          "id": "collections-1en9kpb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1eo5evt",
+          "id": "products-1eo74dr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1epatkx",
+          "id": "about-1epxf8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1eqj6re",
+          "id": "products-1eq1qyk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1ercyit",
+          "id": "about-1er2v0t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1esb126",
+          "id": "faq-1es6hlr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1et1qks",
+          "id": "contact-1et305h",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1euirb3",
+          "id": "hours-1eu6e7t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

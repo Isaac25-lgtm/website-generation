@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1001t9y",
+          "id": "hero-100l0ek",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -68,14 +68,14 @@
               "href": "/services"
             },
             "image": {
-              "stock": "work-pattern",
+              "stock": "home-floor-lamp",
               "alt": "Form & Matter",
               "caption": ""
             }
           }
         },
         {
-          "id": "services-101g7pr",
+          "id": "services-101kngz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -89,8 +89,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "home-desk-lamp",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -99,8 +99,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "home-butterfly-chair",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -109,8 +109,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "home-white-jug",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-102evkk",
+          "id": "about-102i9ss",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -127,8 +127,8 @@
             "heading": "About Form & Matter",
             "body": "Form & Matter designs furniture, lighting and kitchenware.",
             "image": {
-              "stock": "work-pattern",
-              "alt": "A sculptural pattern",
+              "stock": "home-floor-lamp",
+              "alt": "Form & Matter work",
               "caption": ""
             },
             "highlights": [
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-1037xvo",
+          "id": "cta-103cxm4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1048uzo",
+          "id": "about-1048r6r",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -171,8 +171,8 @@
             "heading": "Our story",
             "body": "Form & Matter designs furniture, lighting and kitchenware.",
             "image": {
-              "stock": "obj-journal",
-              "alt": "Sketchbook",
+              "stock": "home-orange-armchair",
+              "alt": "Form & Matter work",
               "caption": ""
             },
             "highlights": [
@@ -183,7 +183,7 @@
           }
         },
         {
-          "id": "faq-10568hb",
+          "id": "faq-105evjq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -211,7 +211,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-10681mn",
+          "id": "services-106a7q",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -225,8 +225,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "home-desk-lamp",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -235,8 +235,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "home-butterfly-chair",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -245,8 +245,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "home-white-jug",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -278,7 +278,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-1082ykz",
+          "id": "gallery-1085js1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -288,23 +288,18 @@
             "intro": "",
             "images": [
               {
-                "stock": "work-pattern",
-                "alt": "A sculptural pattern",
+                "stock": "home-floor-lamp",
+                "alt": "Form & Matter work",
                 "caption": ""
               },
               {
-                "stock": "obj-journal",
-                "alt": "Sketchbook",
+                "stock": "home-orange-armchair",
+                "alt": "Form & Matter work",
                 "caption": ""
               },
               {
-                "stock": "biz-glass",
-                "alt": "Office building",
-                "caption": ""
-              },
-              {
-                "stock": "home-white-room",
-                "alt": "Studio space",
+                "stock": "home-pink-vase",
+                "alt": "Form & Matter work",
                 "caption": ""
               }
             ]
@@ -319,7 +314,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1094qng",
+          "id": "contact-109paj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Hot Pot Co. — Chilli oil with coffee in it.",
-    "description": "Chilli oil with coffee in it.",
+    "description": "Hot Pot makes chilli oils and crisps, including our coffee chilli crunch.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1od8nyz",
+          "id": "hero-1od6tiu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Hot sauce",
             "heading": "Chilli oil with coffee in it.",
-            "subheading": "Chilli oil with coffee in it.",
+            "subheading": "Hot Pot makes chilli oils and crisps, including our coffee chilli crunch.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1oebues",
+          "id": "collections-1oe65ll",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1off4lc",
+          "id": "products-1of80nw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1ogcodj",
+          "id": "about-1ogk0ce",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1oh8p7r",
+          "id": "products-1ohkjj3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1oifkcq",
+          "id": "about-1oidwnx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ojkqn9",
+          "id": "faq-1oj2wta",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1okb065",
+          "id": "contact-1okjpfw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1ol3jj6",
+          "id": "hours-1ollq7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

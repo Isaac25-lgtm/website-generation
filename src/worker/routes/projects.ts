@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { z } from "zod";
+import { stripOwnerPhotos } from "../../shared/owner-photos";
 import type { Ctx, HonoEnv } from "../env";
 import { HttpError, baseUrl, now } from "../env";
 import { audit, enforceRate, requireUser } from "../lib/auth";
@@ -162,7 +163,7 @@ projects.post("/:id/duplicate", async (c) => {
   const t = now();
   const intake = await c.env.DB.prepare("SELECT data_json FROM project_intake WHERE project_id = ?").bind(p.id).first<{ data_json: string }>();
   await c.env.DB.batch([
-    c.env.DB.prepare("INSERT INTO projects (id, owner_id, site_type, name, slug, template_id, status, draft_json, draft_revision, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)").bind(id, u.id, p.site_type, `${p.name} (copy)`.slice(0, 80), slug, p.template_id, p.draft_json ? "preview_ready" : "draft", p.draft_json, t, t),
+    c.env.DB.prepare("INSERT INTO projects (id, owner_id, site_type, name, slug, template_id, status, draft_json, draft_revision, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)").bind(id, u.id, p.site_type, `${p.name} (copy)`.slice(0, 80), slug, p.template_id, p.draft_json ? "preview_ready" : "draft", p.draft_json ? JSON.stringify(stripOwnerPhotos(JSON.parse(p.draft_json))) : null, t, t),
     c.env.DB.prepare("INSERT INTO project_members (project_id, user_id, role, created_at) VALUES (?, ?, 'owner', ?)").bind(id, u.id, t),
     c.env.DB.prepare("INSERT INTO project_intake (project_id, step, data_json, updated_at) VALUES (?, 0, ?, ?)").bind(id, intake?.data_json ?? "{}", t),
   ]);
@@ -522,7 +523,7 @@ projects.get("/:id/export", async (c) => {
     for (const prod of store.products) files.push({ name: `product/${prod.handle}/index.html`, data: enc.encode(renderSite(doc, tpl, ctx, `product/${prod.handle}`).html) });
     for (const k of ["cart", "checkout"]) files.push({ name: `${k}/index.html`, data: enc.encode(renderSite(doc, tpl, ctx, k).html) });
   }
-  files.push({ name: "site.json", data: enc.encode(JSON.stringify(doc, null, 2)) });
+  files.push({ name: "site.json", data: enc.encode(JSON.stringify(stripOwnerPhotos(doc), null, 2)) });
   files.push({ name: "README.txt", data: enc.encode(`Static export of "${p.name}" from ${c.env.APP_NAME}.\nUpload these files to the root of any static host. Forms and store checkout keep sending to ${baseUrl(c)} while your project exists there.\nsite.json contains your full site content in structured form.\n`) });
   for (const a of assets.results) {
     const blob = await getBlob(c.env, a.storage, a.storage_key);

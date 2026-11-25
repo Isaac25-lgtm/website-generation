@@ -29,7 +29,7 @@
     "animation": "lively",
     "headerStyle": "bar",
     "cardStyle": "outline",
-    "ornament": "grid"
+    "ornament": "none"
   },
   "contact": {
     "email": "",
@@ -39,6 +39,7 @@
     "city": "San Francisco",
     "country": "United States",
     "mapQuery": "",
+    "whatsappFloat": false,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-2x1rk6",
+          "id": "hero-2x23oc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -61,11 +62,15 @@
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
+            },
+            "secondaryCta": {
+              "label": "Our story",
+              "href": "/about"
             }
           }
         },
         {
-          "id": "collections-2ygp3t",
+          "id": "collections-2yjzej",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -76,7 +81,7 @@
           }
         },
         {
-          "id": "products-2zjqxn",
+          "id": "products-2z1ce",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -88,6 +93,18 @@
             "collectionHandle": "",
             "limit": 8
           }
+        },
+        {
+          "id": "about-3056nv",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Voltline",
+            "body": "Voltline tests every product for a month before it goes on sale, and stocks only what passes. Every item carries a two-year warranty, handled by our own support team in San Francisco.",
+            "highlights": []
+          }
         }
       ]
     },
@@ -98,7 +115,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-30e2n",
+          "id": "products-314abs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -114,13 +131,53 @@
       ]
     },
     {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-32jj8l",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Voltline tests every product for a month before it goes on sale, and stocks only what passes. Every item carries a two-year warranty, handled by our own support team in San Francisco.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "faq-338jpe",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "What does the warranty cover?",
+                "a": "Faults in materials and workmanship for two years from delivery. We repair or replace the item."
+              },
+              {
+                "q": "How fast is shipping?",
+                "a": "Orders placed before 2 pm ship the same day."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-311ii8",
+          "id": "contact-347ca2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

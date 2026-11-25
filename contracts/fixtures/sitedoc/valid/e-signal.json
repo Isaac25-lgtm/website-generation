@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "SIGNAL/NOISE — Heavyweight basics and limited drops.",
-    "description": "Heavyweight basics and limited drops.",
+    "description": "SIGNAL/NOISE makes heavyweight hoodies and tees in small runs.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1evlc7z",
+          "id": "hero-1evclnp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Streetwear",
             "heading": "Heavyweight basics and limited drops.",
-            "subheading": "Heavyweight basics and limited drops.",
+            "subheading": "SIGNAL/NOISE makes heavyweight hoodies and tees in small runs.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1ewfi8k",
+          "id": "collections-1ewkdk0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1ex26jw",
+          "id": "products-1excrwo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1eyas1e",
+          "id": "about-1eyawdy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1ezk00w",
+          "id": "products-1ezid92",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1f0k679",
+          "id": "about-1f08nor",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1f1icqj",
+          "id": "faq-1f1fugs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1f28agq",
+          "id": "contact-1f2hvgr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1f32y0v",
+          "id": "hours-1f33sgr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

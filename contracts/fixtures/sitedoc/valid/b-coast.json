@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-dyf2o1",
+          "id": "hero-dy5nsd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,13 +75,13 @@
           }
         },
         {
-          "id": "services-dz82jo",
+          "id": "services-dz4hkk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "services",
           "data": {
-            "heading": "What we do",
+            "heading": "Villas",
             "intro": "",
             "items": [
               {
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-e04ywd",
+          "id": "about-e0dzk4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-e1bqvh",
+          "id": "cta-e17qmq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-e28agu",
+          "id": "about-e2k5lr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -191,13 +191,13 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-e352f4",
+          "id": "services-e31320",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "services",
           "data": {
-            "heading": "Services",
+            "heading": "Villas",
             "intro": "",
             "items": [
               {
@@ -258,7 +258,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-e56ehx",
+          "id": "gallery-e59vza",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -294,7 +294,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-e6cra1",
+          "id": "contact-e63i33",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

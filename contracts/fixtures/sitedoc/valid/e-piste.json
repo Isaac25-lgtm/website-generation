@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Haute Neige — Skis made in the Alps since 1962.",
-    "description": "Skis made in the Alps since 1962.",
+    "description": "Haute Neige makes skis in its own factory at the foot of the Alps.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1rmdij3",
+          "id": "hero-1rmklal",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Skis",
             "heading": "Skis made in the Alps since 1962.",
-            "subheading": "Skis made in the Alps since 1962.",
+            "subheading": "Haute Neige makes skis in its own factory at the foot of the Alps.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1rn62l3",
+          "id": "collections-1rngzu9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1ro1vgw",
+          "id": "products-1ro1kph",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1rp64u9",
+          "id": "about-1rpd60w",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1rq9yp3",
+          "id": "products-1rq5k3x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1rr7yob",
+          "id": "about-1rr8v0b",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1rsk89m",
+          "id": "faq-1rsbh9w",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1rtebna",
+          "id": "contact-1rtdsng",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1ruj3pt",
+          "id": "hours-1ru552s",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

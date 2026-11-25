@@ -39,6 +39,7 @@
     "city": "Vancouver",
     "country": "Canada",
     "mapQuery": "",
+    "whatsappFloat": false,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-3d6h56",
+          "id": "hero-3m731j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -69,7 +70,7 @@
           }
         },
         {
-          "id": "collections-3ejayw",
+          "id": "collections-3n735j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -80,7 +81,7 @@
           }
         },
         {
-          "id": "products-3fjouy",
+          "id": "products-3o5k0f",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -94,7 +95,7 @@
           }
         },
         {
-          "id": "about-3gd9nr",
+          "id": "about-3pfn90",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -114,7 +115,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-3has6w",
+          "id": "products-3qgurz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -136,7 +137,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-3i6sou",
+          "id": "about-3r4ryj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,7 +157,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-3jheb7",
+          "id": "contact-3siput",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

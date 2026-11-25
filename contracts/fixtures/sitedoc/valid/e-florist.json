@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Bloom & Bramble — Flowers from the market to your door.",
-    "description": "Flowers from the market to your door.",
+    "description": "Bloom & Bramble buys from local growers and delivers bouquets across the city by bicycle.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1t485cw",
+          "id": "hero-1t4905c",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Florist",
             "heading": "Flowers from the market to your door.",
-            "subheading": "Flowers from the market to your door.",
+            "subheading": "Bloom & Bramble buys from local growers and delivers bouquets across the city by bicycle.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1t56ol6",
+          "id": "collections-1t57vix",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1t6j968",
+          "id": "products-1t69l58",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1t71jjh",
+          "id": "about-1t72ahg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1t8juw9",
+          "id": "products-1t84f26",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1t9i8gt",
+          "id": "about-1t9cxo5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ta1ewr",
+          "id": "faq-1tageov",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1tb7l0b",
+          "id": "contact-1tb53wf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1tc7u4k",
+          "id": "hours-1tcfki6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

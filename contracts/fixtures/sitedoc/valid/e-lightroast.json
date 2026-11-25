@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Nord Roast — Light-roasted coffee from Copenhagen.",
-    "description": "Light-roasted coffee from Copenhagen.",
+    "description": "Nord Roast buys from twelve farms and roasts light to show where each coffee comes from.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1md2tb",
+          "id": "hero-1md4p42",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Coffee roaster",
             "heading": "Light-roasted coffee from Copenhagen.",
-            "subheading": "Light-roasted coffee from Copenhagen.",
+            "subheading": "Nord Roast buys from twelve farms and roasts light to show where each coffee comes from.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1mekzuv",
+          "id": "collections-1me271x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1mf9jge",
+          "id": "products-1mfjfbq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1mg3hr5",
+          "id": "about-1mgdzp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1mhkx70",
+          "id": "products-1mhan37",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1mi8c69",
+          "id": "about-1mif6k8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1mj806d",
+          "id": "faq-1mjlvc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1mk85x8",
+          "id": "contact-1mk3u1y",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1ml1dck",
+          "id": "hours-1mla8mv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

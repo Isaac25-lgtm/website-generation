@@ -4,11 +4,11 @@
   "templateId": "p-hello",
   "brand": {
     "name": "Priya Raman",
-    "tagline": "A product designer with a love for careful questions, good teams and work that lasts."
+    "tagline": "I design tools that help people make decisions about money with confidence."
   },
   "seo": {
-    "title": "Priya Raman — A product designer with a love for careful questions, go",
-    "description": "A product designer with a love for careful questions, good teams and work that lasts.",
+    "title": "Priya Raman — I design tools that help people make decisions about mon",
+    "description": "I design tools that help people make decisions about money with confidence.",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-f8h53g",
+          "id": "hero-f93ccs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Product designer · Singapore",
-            "heading": "A product designer with a love for careful questions, good teams and work that lasts.",
+            "heading": "I design tools that help people make decisions about money with confidence.",
             "subheading": "Priya Raman, Product designer",
             "primaryCta": {
               "label": "Get in touch",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-f9l30t",
+          "id": "about-fa83gc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-fbiolb",
+          "id": "cta-fcj9eq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -150,13 +150,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-fdf432",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Lead product designer",
+                "org": "Fintech company (fictional)",
+                "period": "2022 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Product designer",
+                "org": "Bank (fictional)",
+                "period": "2018 — 2022",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-fccwha",
+          "id": "contact-fe3y08",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

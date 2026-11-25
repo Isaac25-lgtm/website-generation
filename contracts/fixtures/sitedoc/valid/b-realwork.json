@@ -4,11 +4,11 @@
   "templateId": "b-realwork",
   "brand": {
     "name": "Keystone Systems",
-    "tagline": "Built around real work"
+    "tagline": "Systems that fit the way you work"
   },
   "seo": {
-    "title": "Keystone Systems — Built around real work",
-    "description": "We bring practical data tools to organisations, and design and build the systems that clinics, schools, cooperatives and businesses run on.",
+    "title": "Keystone Systems — Systems that fit the way you work",
+    "description": "Reporting, records and payment systems for clinics, schools, cooperatives and growing companies.",
     "lang": "en"
   },
   "theme": {
@@ -50,15 +50,15 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-l8esvu",
+          "id": "hero-l81ulj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "IT and data services · Nairobi",
-            "heading": "Built around real work",
-            "subheading": "We bring practical data tools to organisations, and design and build the systems that clinics, schools, cooperatives and businesses run on.",
+            "heading": "Systems that fit the way you work",
+            "subheading": "Reporting, records and payment systems for clinics, schools, cooperatives and growing companies.",
             "primaryCta": {
               "label": "Contact us",
               "href": "/contact"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "services-l9b7vh",
+          "id": "services-l920w5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-labckh",
+          "id": "about-lajtwl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-lb2c5z",
+          "id": "cta-lbia2s",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-lc3n0g",
+          "id": "about-lckam8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -191,7 +191,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-ldd03q",
+          "id": "services-lda72h",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -258,7 +258,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-lfehkc",
+          "id": "gallery-lfkknh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -289,7 +289,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-lg1wa5",
+          "id": "contact-lg3ge0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Slow Screen — A tablet you can read in the sun.",
-    "description": "A tablet you can read in the sun.",
+    "description": "Slow Screen makes a paper-like tablet for reading, writing and thinking without distraction.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1pmj2la",
+          "id": "hero-1pm7jql",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Tablets",
             "heading": "A tablet you can read in the sun.",
-            "subheading": "A tablet you can read in the sun.",
+            "subheading": "Slow Screen makes a paper-like tablet for reading, writing and thinking without distraction.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1pnh2dx",
+          "id": "collections-1pnhxm3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1pog2x9",
+          "id": "products-1poa6a8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1pp8umc",
+          "id": "about-1ppiejc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1pqaxq2",
+          "id": "products-1pqfc6t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1pr3rgd",
+          "id": "about-1pri5o3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,7 +156,7 @@
             "heading": "Our story",
             "body": "Slow Screen makes a paper-like tablet for reading, writing and thinking without distraction.",
             "image": {
-              "stock": "tech-desk-overhead",
+              "stock": "tech-tablet-glasses",
               "alt": "Paper-like tablet",
               "caption": ""
             },
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1psekvr",
+          "id": "faq-1pskx8l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -173,8 +173,8 @@
             "heading": "Frequently asked questions",
             "items": [
               {
-                "q": "Which size ring should I order?",
-                "a": "Order the free sizing kit first. It's credited against your ring."
+                "q": "Which strap size should I order?",
+                "a": "Measure your wrist: under 16 cm is small, 16 to 19 cm medium, over 19 cm large."
               },
               {
                 "q": "Do I need a subscription?",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1pt4ioh",
+          "id": "contact-1ptagsy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1pub1g2",
+          "id": "hours-1puhi87",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

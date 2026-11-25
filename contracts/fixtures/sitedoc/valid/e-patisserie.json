@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Pâtisserie Brume — Pastries and cakes from a Manhattan kitchen.",
-    "description": "Pastries and cakes from a Manhattan kitchen.",
+    "description": "Brume bakes French pastries and seasonal cakes, delivered across Manhattan every morning.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1ovelvw",
+          "id": "hero-1ov3guk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Pâtisserie",
             "heading": "Pastries and cakes from a Manhattan kitchen.",
-            "subheading": "Pastries and cakes from a Manhattan kitchen.",
+            "subheading": "Brume bakes French pastries and seasonal cakes, delivered across Manhattan every morning.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1owjse",
+          "id": "collections-1owdvvc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1ox7hec",
+          "id": "products-1ox8v96",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1oy9rew",
+          "id": "about-1oy56ej",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1oz94m6",
+          "id": "products-1oz9uo5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1p03zzz",
+          "id": "about-1p0267y",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1p1ji8l",
+          "id": "faq-1p1dkbh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1p29skh",
+          "id": "contact-1p2b9pm",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1p35zcp",
+          "id": "hours-1p37sof",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

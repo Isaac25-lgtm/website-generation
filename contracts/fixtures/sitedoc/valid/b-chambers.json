@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-c372f1",
+          "id": "hero-c3ft5n",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,13 +75,13 @@
           }
         },
         {
-          "id": "services-c4gk45",
+          "id": "services-c41ur3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "services",
           "data": {
-            "heading": "What we do",
+            "heading": "Practice areas",
             "intro": "",
             "items": [
               {
@@ -108,7 +108,7 @@
           }
         },
         {
-          "id": "about-c53lhp",
+          "id": "about-c5gqj4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -129,7 +129,7 @@
           }
         },
         {
-          "id": "cta-c6degh",
+          "id": "cta-c6k6jq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -152,7 +152,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-c7fnae",
+          "id": "about-c7d1cs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -173,7 +173,7 @@
           }
         },
         {
-          "id": "team-c89z1k",
+          "id": "team-c8bcea",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "faq-c9ar03",
+          "id": "faq-c9lcuc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -233,13 +233,13 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-cal6vp",
+          "id": "services-capqy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "services",
           "data": {
-            "heading": "Services",
+            "heading": "Practice areas",
             "intro": "",
             "items": [
               {
@@ -274,7 +274,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-cb31vj",
+          "id": "gallery-cb8bta",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -305,7 +305,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-cc1bsd",
+          "id": "contact-cctzx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -318,7 +318,7 @@
           }
         },
         {
-          "id": "hours-cd64fv",
+          "id": "hours-cd8dvk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

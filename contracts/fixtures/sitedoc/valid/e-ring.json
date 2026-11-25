@@ -3,12 +3,12 @@
   "type": "ecommerce",
   "templateId": "e-ring",
   "brand": {
-    "name": "Halo Health",
-    "tagline": "Sleep and recovery, on your finger."
+    "name": "Restmark Health",
+    "tagline": "Sleep and recovery, on your wrist."
   },
   "seo": {
-    "title": "Halo Health — Sleep and recovery, on your finger.",
-    "description": "Sleep and recovery, on your finger.",
+    "title": "Restmark Health — Sleep and recovery, on your wrist.",
+    "description": "Restmark Health makes a titanium watch that tracks sleep, recovery and heart rate.",
     "lang": "en"
   },
   "theme": {
@@ -50,15 +50,15 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1q4hcy3",
+          "id": "hero-1q4lccd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Wearables",
-            "heading": "Sleep and recovery, on your finger.",
-            "subheading": "Sleep and recovery, on your finger.",
+            "heading": "Sleep and recovery, on your wrist.",
+            "subheading": "Restmark Health makes a titanium watch that tracks sleep, recovery and heart rate.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -69,13 +69,13 @@
             },
             "image": {
               "stock": "tech-smartwatch",
-              "alt": "Halo Health",
+              "alt": "Restmark Health",
               "caption": ""
             }
           }
         },
         {
-          "id": "collections-1q53jfb",
+          "id": "collections-1q5gs8p",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1q6bbvx",
+          "id": "products-1q61nui",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,14 +100,14 @@
           }
         },
         {
-          "id": "about-1q7dl7o",
+          "id": "about-1q77ab1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
-            "heading": "About Halo Health",
-            "body": "Halo Health makes a titanium ring that tracks sleep, recovery and heart rate.",
+            "heading": "About Restmark Health",
+            "body": "Restmark Health makes a titanium watch that tracks sleep, recovery and heart rate.",
             "image": {
               "stock": "tech-wood-watches",
               "alt": "Wooden watch",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1q8c2mk",
+          "id": "products-1q8b4o6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,16 +147,16 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1q95zzd",
+          "id": "about-1q9ksar",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "Our story",
-            "body": "Halo Health makes a titanium ring that tracks sleep, recovery and heart rate.",
+            "body": "Restmark Health makes a titanium watch that tracks sleep, recovery and heart rate.",
             "image": {
-              "stock": "tech-desk-overhead",
+              "stock": "tech-tablet-glasses",
               "alt": "Paper-like tablet",
               "caption": ""
             },
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1qak5rc",
+          "id": "faq-1qa7wgg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -173,8 +173,8 @@
             "heading": "Frequently asked questions",
             "items": [
               {
-                "q": "Which size ring should I order?",
-                "a": "Order the free sizing kit first. It's credited against your ring."
+                "q": "Which strap size should I order?",
+                "a": "Measure your wrist: under 16 cm is small, 16 to 19 cm medium, over 19 cm large."
               },
               {
                 "q": "Do I need a subscription?",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1qbbiqd",
+          "id": "contact-1qbd0to",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1qc4mwo",
+          "id": "hours-1qceppv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

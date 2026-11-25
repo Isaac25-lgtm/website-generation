@@ -4,11 +4,11 @@
   "templateId": "p-badge",
   "brand": {
     "name": "Lena Fischer",
-    "tagline": "I design and build products, and the tools behind them."
+    "tagline": "Designer-developer finishing a master's thesis on study tools."
   },
   "seo": {
-    "title": "Lena Fischer — I design and build products, and the tools behind them.",
-    "description": "I design and build products, and the tools behind them.",
+    "title": "Lena Fischer — Designer-developer finishing a master's thesis on study",
+    "description": "Designer-developer finishing a master's thesis on study tools.",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-h9d0yv",
+          "id": "hero-hkj53m",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Studying digital design · Berlin",
-            "heading": "I design and build products, and the tools behind them.",
+            "heading": "Designer-developer finishing a master's thesis on study tools.",
             "subheading": "Lena Fischer, Studying digital design",
             "primaryCta": {
               "label": "Get in touch",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-ha2pen",
+          "id": "about-hl8qvu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-hcfuh4",
+          "id": "cta-hnef9c",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -150,13 +150,40 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-hoexot",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Design engineer (part-time)",
+                "org": "Software studio (fictional)",
+                "period": "2024 — now",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-hdkdwe",
+          "id": "contact-hpj1g3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

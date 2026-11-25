@@ -141,7 +141,7 @@ admin.get("/orders", async (c) => {
   return c.json({ orders: r.results });
 });
 
-const SETTING_KEYS = ["hosting_fee_status", "hosting_fee_amount", "hosting_fee_amount_personal", "hosting_fee_amount_business", "hosting_fee_amount_ecommerce", "hosting_fee_currency", "hosting_fee_interval", "ai_generations_per_project", "free_previews_per_day", "operator_display_name", "operator_status_note", "support_email"] as const;
+const SETTING_KEYS = ["hosting_fee_status", "hosting_fee_amount", "hosting_fee_amount_personal", "hosting_fee_amount_business", "hosting_fee_amount_ecommerce", "hosting_fee_currency", "hosting_fee_interval", "ai_generations_per_project", "free_previews_per_day", "operator_display_name", "operator_status_note", "support_email", "assistant_daily_token_budget"] as const;
 
 admin.get("/settings", async (c) => {
   const r = await c.env.DB.prepare("SELECT key, value, updated_at FROM system_settings").all();
@@ -157,6 +157,7 @@ admin.put("/settings", async (c) => {
     if (k === "hosting_fee_status" && !["not_set", "announced", "active"].includes(v)) throw new HttpError(400, "hosting_fee_status must be not_set, announced or active");
     if (k.startsWith("hosting_fee_amount") && !/^\d{1,4}(\.\d{1,2})?$/.test(v.trim())) throw new HttpError(400, "Hosting amounts must be a number such as 4 or 4.50");
     if (k === "ai_generations_per_project" && !/^\d{1,3}$/.test(v)) throw new HttpError(400, "AI limit must be a number");
+    if (k === "assistant_daily_token_budget" && !/^\d{1,9}$/.test(v.trim())) throw new HttpError(400, "Assistant budget must be a whole number of tokens (0 switches the assistant off)");
     stmts.push(c.env.DB.prepare("INSERT INTO system_settings (key, value, updated_by, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_by = excluded.updated_by, updated_at = excluded.updated_at").bind(k, v.trim(), me.id, now()));
   }
   if (stmts.length) await c.env.DB.batch(stmts);

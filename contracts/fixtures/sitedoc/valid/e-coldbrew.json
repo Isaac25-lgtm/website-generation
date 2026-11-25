@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Spoonful Coffee — Coffee concentrate, one spoon at a time.",
-    "description": "Coffee concentrate, one spoon at a time.",
+    "description": "Spoonful makes an ultra-concentrated coffee.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1o441xu",
+          "id": "hero-1o46yvr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Coffee concentrate",
             "heading": "Coffee concentrate, one spoon at a time.",
-            "subheading": "Coffee concentrate, one spoon at a time.",
+            "subheading": "Spoonful makes an ultra-concentrated coffee.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1o534lq",
+          "id": "collections-1o5zr5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1o629gr",
+          "id": "products-1o66us9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1o7g0dx",
+          "id": "about-1o7i5lh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1o8788d",
+          "id": "products-1o892m9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1o9dq93",
+          "id": "about-1o940qy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1oabxb6",
+          "id": "faq-1oaiy2e",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1ob9lbx",
+          "id": "contact-1ob9mlh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1occwvn",
+          "id": "hours-1oc8rej",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

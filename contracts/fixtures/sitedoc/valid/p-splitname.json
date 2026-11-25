@@ -4,11 +4,11 @@
   "templateId": "p-splitname",
   "brand": {
     "name": "Zora Novak",
-    "tagline": "Art direction, digital production and branding for fashion and culture."
+    "tagline": "Campaigns and lookbooks for fashion labels and museums."
   },
   "seo": {
-    "title": "Zora Novak — Art direction, digital production and branding for fashio",
-    "description": "Art direction, digital production and branding for fashion and culture.",
+    "title": "Zora Novak — Campaigns and lookbooks for fashion labels and museums.",
+    "description": "Campaigns and lookbooks for fashion labels and museums.",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-g8bm1d",
+          "id": "hero-gfai7f",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Art direction · Prague",
-            "heading": "Art direction, digital production and branding for fashion and culture.",
+            "heading": "Campaigns and lookbooks for fashion labels and museums.",
             "subheading": "Zora Novak, Art direction · Prague",
             "primaryCta": {
               "label": "Get in touch",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-g9gzqk",
+          "id": "about-gg70r8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-gbaacy",
+          "id": "cta-gib45n",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,7 +156,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-gcgm0k",
+          "id": "gallery-gjl0td",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-gd3j3y",
+          "id": "contact-gkl4me",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

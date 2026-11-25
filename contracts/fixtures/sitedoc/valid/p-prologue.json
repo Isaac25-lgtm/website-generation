@@ -4,11 +4,11 @@
   "templateId": "p-prologue",
   "brand": {
     "name": "Adaeze Okafor",
-    "tagline": "A brand designer crafting clear, deliberate brand identities."
+    "tagline": "Brand identities for fashion, food and finance companies in West Africa."
   },
   "seo": {
-    "title": "Adaeze Okafor — A brand designer crafting clear, deliberate brand iden",
-    "description": "A brand designer crafting clear, deliberate brand identities.",
+    "title": "Adaeze Okafor — Brand identities for fashion, food and finance compani",
+    "description": "Brand identities for fashion, food and finance companies in West Africa.",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-ge5juy",
+          "id": "hero-glcsqd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Now showing · Lagos",
-            "heading": "A brand designer crafting clear, deliberate brand identities.",
+            "heading": "Brand identities for fashion, food and finance companies in West Africa.",
             "subheading": "Adaeze Okafor, Now showing",
             "primaryCta": {
               "label": "Get in touch",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-gf30rh",
+          "id": "about-gm6rp0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-gh709k",
+          "id": "cta-go4vi8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -150,13 +150,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-gp5myo",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Brand designer",
+                "org": "Independent",
+                "period": "2020 — now",
+                "location": "Lagos",
+                "description": ""
+              },
+              {
+                "role": "Designer",
+                "org": "Studio (fictional)",
+                "period": "2016 — 2020",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-giav8j",
+          "id": "contact-gq3049",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

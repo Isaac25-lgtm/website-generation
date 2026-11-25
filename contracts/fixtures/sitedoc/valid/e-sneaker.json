@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Common Step — Good sneakers, nothing extra.",
-    "description": "Good sneakers, nothing extra.",
+    "description": "Common Step makes three sneakers and keeps improving them.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1bm69oz",
+          "id": "hero-1bm4on6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Sneakers",
             "heading": "Good sneakers, nothing extra.",
-            "subheading": "Good sneakers, nothing extra.",
+            "subheading": "Common Step makes three sneakers and keeps improving them.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1bn2lgl",
+          "id": "collections-1bnbj2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1bo11q8",
+          "id": "products-1bo4u92",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1bp2vxu",
+          "id": "about-1bpfwpa",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1bq5bav",
+          "id": "products-1bqfszn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1bra7f3",
+          "id": "about-1brju9w",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1bskgze",
+          "id": "faq-1bs7dzg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1btedk4",
+          "id": "contact-1btdspt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1buci6h",
+          "id": "hours-1bucdmu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

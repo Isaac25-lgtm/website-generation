@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Mineral Studio — Plain gold, nothing to hide.",
-    "description": "Plain gold, nothing to hide.",
+    "description": "Mineral Studio makes minimal fine jewellery in recycled gold, with prices shown by gram.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1id6zku",
+          "id": "hero-1id1ca6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Fine jewellery",
             "heading": "Plain gold, nothing to hide.",
-            "subheading": "Plain gold, nothing to hide.",
+            "subheading": "Mineral Studio makes minimal fine jewellery in recycled gold, with prices shown by gram.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1ie15di",
+          "id": "collections-1ie6teg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1if1q9h",
+          "id": "products-1ifihl9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1igg1i6",
+          "id": "about-1igggm7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1ihcftf",
+          "id": "products-1ihcoo4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1iiacav",
+          "id": "about-1iikgwz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ijnkb",
+          "id": "faq-1ijct1v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1ik4f0b",
+          "id": "contact-1ikgsl1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1ildgs2",
+          "id": "hours-1il1tt4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

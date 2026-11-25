@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-ce6j2j",
+          "id": "hero-ced3dn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,13 +75,13 @@
           }
         },
         {
-          "id": "services-cfl35r",
+          "id": "services-cf2esk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "services",
           "data": {
-            "heading": "What we do",
+            "heading": "How we invest",
             "intro": "",
             "items": [
               {
@@ -103,7 +103,7 @@
           }
         },
         {
-          "id": "about-cg5t3n",
+          "id": "about-cgbod9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -124,7 +124,7 @@
           }
         },
         {
-          "id": "cta-chl74t",
+          "id": "cta-chby4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-ci297s",
+          "id": "about-ci4qz7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -168,7 +168,7 @@
           }
         },
         {
-          "id": "team-cj2utj",
+          "id": "team-cjfqys",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -208,13 +208,13 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-cke70h",
+          "id": "services-ck9vf2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "services",
           "data": {
-            "heading": "Services",
+            "heading": "How we invest",
             "intro": "",
             "items": [
               {
@@ -260,7 +260,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-cmbb83",
+          "id": "gallery-cmc66o",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -291,7 +291,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-cnbl7r",
+          "id": "contact-cna7ou",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

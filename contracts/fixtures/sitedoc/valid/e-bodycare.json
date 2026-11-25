@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Softday — Body care for every day of the week.",
-    "description": "Body care for every day of the week.",
+    "description": "Softday makes gentle body washes, creams and oils in Texas.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-17v314i",
+          "id": "hero-17v1n8m",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Body care",
             "heading": "Body care for every day of the week.",
-            "subheading": "Body care for every day of the week.",
+            "subheading": "Softday makes gentle body washes, creams and oils in Texas.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-17w59m5",
+          "id": "collections-17wuwq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-17x46pb",
+          "id": "products-17xfcbg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-17y2kjl",
+          "id": "about-17y2vfu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-17zczbc",
+          "id": "products-17zjj0j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-180ce9e",
+          "id": "about-180jqso",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-181ccec",
+          "id": "faq-181lf90",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-182iw2y",
+          "id": "contact-182fv1n",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1831gtk",
+          "id": "hours-1836kte",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

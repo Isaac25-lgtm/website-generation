@@ -123,6 +123,49 @@ test.describe("Ask ImprintSites AI", () => {
   });
 });
 
+test.describe("Ask ImprintSites AI: conversations", () => {
+  test("each account gets its own chat, and Clear discards a reply still in flight", async ({ page }) => {
+    let delay = 0;
+    await page.route("**/api/assistant", async (route) => {
+      if (delay) await new Promise((r) => setTimeout(r, delay));
+      await route.fulfill({ json: { reply: "Business sites cost USD 30, paid once." } }).catch(() => undefined);
+    });
+    const signUp = async (n: string) => {
+      await page.goto("/signup");
+      await page.getByLabel("Your name").fill(`Chat ${n}`);
+      await page.getByLabel("Email").fill(`chat-${n}-${Date.now().toString(36)}@test.example`);
+      await page.getByLabel("Password").fill("Sup3r-Secret-Pass");
+      await page.getByLabel(/I agree to the/).check();
+      await page.getByRole("button", { name: "Create account" }).click();
+      await expect(page).toHaveURL(/\/dashboard/);
+    };
+    await signUp("a");
+    await page.getByRole("button", { name: "Ask ImprintSites AI" }).click();
+    const panel = page.getByRole("dialog", { name: "Ask ImprintSites AI" });
+    await expect(panel).toContainText("DeepSeek");
+    await panel.getByLabel("Your question").fill("What does a business site cost?");
+    await panel.getByRole("button", { name: "Send" }).click();
+    await expect(panel.locator(".ast-assistant").first()).toContainText("USD 30");
+    // A pending reply is discarded after Clear.
+    delay = 1500;
+    await panel.getByLabel("Your question").fill("And a store?");
+    await panel.getByRole("button", { name: "Send" }).click();
+    await panel.getByRole("button", { name: "Clear" }).click();
+    await page.waitForTimeout(2200);
+    await expect(panel.locator(".ast-msg")).toHaveCount(0);
+    delay = 0;
+    await panel.getByLabel("Your question").fill("Kept for account A");
+    await panel.getByRole("button", { name: "Send" }).click();
+    await expect(panel.locator(".ast-assistant")).toHaveCount(1);
+    // Sign out and in as someone else in the same tab: the chat starts empty.
+    await page.keyboard.press("Escape");
+    await page.getByRole("button", { name: "Sign out" }).click();
+    await signUp("b");
+    await page.getByRole("button", { name: "Ask ImprintSites AI" }).click();
+    await expect(page.getByRole("dialog", { name: "Ask ImprintSites AI" }).locator(".ast-msg")).toHaveCount(0);
+  });
+});
+
 test.describe("dark mode", () => {
   test("is off by default, can be switched on from the header or footer, and is remembered", async ({ page }) => {
     await page.goto("/");
@@ -315,7 +358,7 @@ test.describe("builder flows (signed in)", () => {
   });
 
   test("every template renders for members", async ({ page }) => {
-    test.setTimeout(15 * 60_000); // ~90 templates, one page load each
+    test.setTimeout(15 * 60_000); // ~300 templates, one page load each
     await page.goto("/signup");
     await page.getByLabel("Your name").fill("E2E Member");
     await page.getByLabel("Email").fill(`e2e-member-${Date.now().toString(36)}@test.example`);
@@ -325,14 +368,21 @@ test.describe("builder flows (signed in)", () => {
     await expect(page).toHaveURL(/\/dashboard/);
     const r = await page.request.get("/api/templates");
     const list = (await r.json()).templates as { id: string; type: string }[];
-    expect(list.length).toBeGreaterThanOrEqual(43);
-    for (const t of list) {
-      await page.goto(`/api/templates/${t.id}/preview/`);
-      await expect(page.locator("h1").first()).toBeVisible();
-      await page.screenshot({ path: `${SHOTS}/40-template-${t.id}.png` });
-    }
+    expect(list.length).toBeGreaterThanOrEqual(299);
+    // One pass at phone width: every member template loads (not the sign-in gate), has exactly one h1 and fits.
     await page.setViewportSize(MOBILE);
-    for (const id of ["p-kernel", "b-savanna", "e-maison", "e-couture", "e-plain", "e-lustre", "e-loft"]) {
+    const problems: string[] = [];
+    for (const t of list) {
+      const res = await page.goto(`/api/templates/${t.id}/preview/`, { waitUntil: "domcontentloaded" });
+      if (res?.status() !== 200) { problems.push(`${t.id}: HTTP ${res?.status()}`); continue; }
+      const m = await page.evaluate(() => ({ gate: document.body.innerText.includes("Sign in to unlock"), h1: document.querySelectorAll("h1").length, main: !!document.querySelector("main"), width: document.documentElement.scrollWidth }));
+      if (m.gate) problems.push(`${t.id}: sign-in gate`);
+      if (m.h1 !== 1) problems.push(`${t.id}: ${m.h1} h1`);
+      if (!m.main) problems.push(`${t.id}: no main`);
+      if (m.width > MOBILE.width + 1) problems.push(`${t.id}: ${m.width}px wide`);
+    }
+    expect(problems).toEqual([]);
+    for (const id of ["p-kernel", "b-savanna", "e-maison", "e-kiln", "e-synth", "e-printshop", "e-piste"]) {
       await page.goto(`/api/templates/${id}/preview/`);
       await page.screenshot({ path: `${SHOTS}/41-template-${id}-mobile.png` });
     }

@@ -8,9 +8,33 @@ import { slugify } from "../shared/util";
 
 const SEED_VERSION = "demo-v6";
 let seededInIsolate = false;
+let registrySyncedInIsolate = false;
+
+/** A short fingerprint of the code template registry; the D1 `templates` table is re-synced whenever it changes. */
+export function registryFingerprint(): string {
+  let h = 2166136261;
+  for (const t of TEMPLATES) for (const ch of `${t.id}|${t.type}|${t.name}|${t.tier};`) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619) >>> 0; }
+  return `${TEMPLATES.length}-${h.toString(16)}`;
+}
+
+/** Keeps the D1 template catalogue in step with the code registry, independently of the demo-site version. */
+export async function syncTemplateRegistry(env: AppEnv): Promise<void> {
+  if (registrySyncedInIsolate) return;
+  const fp = registryFingerprint();
+  const cur = await env.DB.prepare("SELECT value FROM system_settings WHERE key = 'template_registry'").first<{ value: string }>();
+  if (cur?.value !== fp) {
+    // One atomic batch: retire everything, then (re)activate exactly the registry (D1 caps bound parameters, so no NOT IN list).
+    const stmts = [env.DB.prepare("UPDATE templates SET active = 0")];
+    stmts.push(...TEMPLATES.map((tp) => env.DB.prepare("INSERT OR REPLACE INTO templates (id, site_type, name, tier, active) VALUES (?, ?, ?, ?, 1)").bind(tp.id, tp.type, tp.name, tp.tier)));
+    stmts.push(env.DB.prepare("INSERT INTO system_settings (key, value, updated_at) VALUES ('template_registry', ?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = excluded.updated_at").bind(fp, now()));
+    await env.DB.batch(stmts);
+  }
+  registrySyncedInIsolate = true;
+}
 
 /** Idempotently creates the three public demo sites (clearly labelled as demonstrations). */
 export async function ensureDemos(env: AppEnv): Promise<void> {
+  await syncTemplateRegistry(env);
   if (seededInIsolate) return;
   const done = await env.DB.prepare("SELECT value FROM system_settings WHERE key = 'demo_seed'").first<{ value: string }>();
   if (done?.value === SEED_VERSION) { seededInIsolate = true; return; }
@@ -20,7 +44,6 @@ export async function ensureDemos(env: AppEnv): Promise<void> {
   const t = now();
   const ownerId = "usr_demo_owner_system";
   await env.DB.prepare("INSERT OR IGNORE INTO users (id, email, name, role, status, email_verified, created_at, updated_at) VALUES (?, 'demo-owner@demo.invalid', 'Demo content (system)', 'customer', 'active', 0, ?, ?)").bind(ownerId, t, t).run();
-  await env.DB.batch(TEMPLATES.map((tp) => env.DB.prepare("INSERT OR REPLACE INTO templates (id, site_type, name, tier, active) VALUES (?, ?, ?, ?, 1)").bind(tp.id, tp.type, tp.name, tp.tier)));
 
   // Replace demos from an older seed version (demo data only: owned by the system demo account).
   const old = await env.DB.prepare("SELECT id FROM projects WHERE owner_id = ? AND is_demo = 1").bind(ownerId).all<{ id: string }>();

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Rosa Lind — Soft dresses for summer days.",
-    "description": "Soft dresses for summer days.",
+    "description": "Rosa Lind designs floral dresses and blouses, made in small runs in Lithuania.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1h4ehgu",
+          "id": "hero-1h49o1i",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Womenswear",
             "heading": "Soft dresses for summer days.",
-            "subheading": "Soft dresses for summer days.",
+            "subheading": "Rosa Lind designs floral dresses and blouses, made in small runs in Lithuania.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1h5dh1",
+          "id": "collections-1h5c890",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1h657od",
+          "id": "products-1h6djg7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1h78w3f",
+          "id": "about-1h77oqk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1h83jls",
+          "id": "products-1h88onq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1h9cy9s",
+          "id": "about-1h9c99e",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1hadkrr",
+          "id": "faq-1haagh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1hb9j4m",
+          "id": "contact-1hbh9l6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1hc7il6",
+          "id": "hours-1hc4m6p",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

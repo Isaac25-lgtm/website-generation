@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { z } from "zod";
+import { isOwnerStock } from "../../shared/owner-photos";
 import type { Ctx, HonoEnv } from "../env";
 import { HttpError, now } from "../env";
 import { audit, requireUser } from "../lib/auth";
@@ -67,7 +68,8 @@ const ProductIn = z.object({
   dimensions: z.string().max(80).nullable().optional(),
   tags: z.string().max(400).default(""),
   images: z.array(z.object({ assetId: z.string().regex(/^ast_[a-z0-9]+$/).optional(), stock: z.string().regex(/^[a-z0-9-]{1,48}$/).optional(), alt: z.string().max(300).default("") })
-    .refine((i) => !!i.assetId !== !!i.stock, "Each image needs exactly one source.")).max(12).default([]),
+    .refine((i) => !!i.assetId !== !!i.stock, "Each image needs exactly one source.")
+    .refine((i) => !isOwnerStock(i.stock), "That photo is only available in template previews.")).max(12).default([]),
   option1Name: z.string().trim().max(40).nullable().optional(),
   option2Name: z.string().trim().max(40).nullable().optional(),
   maxPerOrder: z.number().int().min(1).max(999).default(10),

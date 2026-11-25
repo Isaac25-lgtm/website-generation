@@ -3,11 +3,11 @@
   "type": "personal",
   "templateId": "p-slides",
   "brand": {
-    "name": "Camille Laurent",
+    "name": "Odette Marchal",
     "tagline": "Independent design and art direction."
   },
   "seo": {
-    "title": "Camille Laurent — Independent design and art direction.",
+    "title": "Odette Marchal — Independent design and art direction.",
     "description": "Independent design and art direction.",
     "lang": "en"
   },
@@ -32,7 +32,7 @@
     "ornament": "none"
   },
   "contact": {
-    "email": "camille@example.com",
+    "email": "odette@example.com",
     "phone": "",
     "whatsapp": "",
     "address": "",
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-hkfp0",
+          "id": "hero-hwape6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Independent designer & art director · Paris",
             "heading": "Independent design and art direction.",
-            "subheading": "Camille Laurent, Independent designer & art director",
+            "subheading": "Odette Marchal, Independent designer & art director",
             "primaryCta": {
               "label": "Get in touch",
               "href": "/contact"
@@ -70,7 +70,7 @@
           }
         },
         {
-          "id": "about-hlav3a",
+          "id": "about-hxiazt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -151,7 +151,7 @@
           }
         },
         {
-          "id": "cta-hn1wlz",
+          "id": "cta-hz8mm4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -168,13 +168,40 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-i0kmwa",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Independent designer & art director",
+                "org": "Self-employed",
+                "period": "2016 — now",
+                "location": "Paris",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-hoeeqz",
+          "id": "contact-i1ecpx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

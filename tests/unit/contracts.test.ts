@@ -20,7 +20,12 @@ function writeFixture(dir: "valid" | "invalid", name: string, doc: unknown) {
   const d = `${root}fixtures/sitedoc/${dir}`;
   mkdirSync(d, { recursive: true });
   const f = `${d}/${name}.json`;
-  if (UPDATE || !existsSync(f)) writeFileSync(f, json(doc));
+  // Read-only by default: a missing or stale fixture fails. Regenerate deliberately with the update flag.
+  if (UPDATE) { writeFileSync(f, json(doc)); return; }
+  expect(existsSync(f), `missing fixture ${dir}/${name}.json (regenerate with the update flag)`).toBe(true);
+  // Section and page ids are random per generation, so compare everything except id values.
+  const stable = (x: unknown) => JSON.stringify(x, (k, v) => (k === "id" && typeof v === "string" ? "<id>" : v));
+  expect(stable(JSON.parse(readFileSync(f, "utf8"))), `stale fixture ${dir}/${name}.json (regenerate with the update flag)`).toBe(stable(doc));
 }
 
 describe("contracts shared with the Python backend", () => {
@@ -36,7 +41,7 @@ describe("contracts shared with the Python backend", () => {
     await expect(json(contract)).toMatchFileSnapshot("../../contracts/public-config.json");
   });
 
-  it("writes the fixture corpus when missing", () => {
+  it("the fixture corpus matches every registered template exactly (catalog-to-fixture equality)", () => {
     for (const tpl of TEMPLATES) writeFixture("valid", tpl.id, generateSiteDoc(tpl.type, tpl.id, PERSONAS[tpl.id].answers));
     const base = () => generateSiteDoc("business", "b-savanna", PERSONAS["b-savanna"].answers) as any;
     const cases: Record<string, (d: any) => void> = {
@@ -54,7 +59,7 @@ describe("contracts shared with the Python backend", () => {
 
   it("every valid fixture parses and is already in stored (normalized) form", () => {
     const files = readdirSync(`${root}fixtures/sitedoc/valid`).filter((f) => f.endsWith(".json"));
-    expect(files.length).toBeGreaterThanOrEqual(18);
+    expect(files.map((f) => f.replace(/\.json$/, "")).sort()).toEqual(TEMPLATES.map((t) => t.id).sort());
     for (const f of files) {
       const doc = JSON.parse(readFileSync(`${root}fixtures/sitedoc/valid/${f}`, "utf8"));
       const r = parseSiteDoc(doc);

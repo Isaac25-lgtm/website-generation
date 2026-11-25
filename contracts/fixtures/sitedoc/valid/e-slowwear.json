@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Second Season — Simple clothes, made to be worn again and again.",
-    "description": "Simple clothes, made to be worn again and again.",
+    "description": "Second Season makes timeless shapes in organic fibres, and buys back worn pieces to resell or remake.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1gvlak9",
+          "id": "hero-1gvd79y",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Sustainable fashion",
             "heading": "Simple clothes, made to be worn again and again.",
-            "subheading": "Simple clothes, made to be worn again and again.",
+            "subheading": "Second Season makes timeless shapes in organic fibres, and buys back worn pieces to resell or remake.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1gwjk10",
+          "id": "collections-1gwdzoo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1gxjoub",
+          "id": "products-1gxeajo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1gyibtx",
+          "id": "about-1gy4unf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1gzai3f",
+          "id": "products-1gz96bz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1h0a788",
+          "id": "about-1h0k80x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1h1ebdx",
+          "id": "faq-1h17nhs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1h2di45",
+          "id": "contact-1h2itxp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1h3avsl",
+          "id": "hours-1h3jq4t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

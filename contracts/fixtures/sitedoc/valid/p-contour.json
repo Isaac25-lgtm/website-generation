@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-fd8s0j",
+          "id": "hero-ffl1p7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-fejs0o",
+          "id": "about-fgd1pj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-fghpph",
+          "id": "cta-fiahxp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -150,13 +150,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-fjhpzg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Co-founder & engineer",
+                "org": "Product studio (fictional)",
+                "period": "2021 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Software engineer",
+                "org": "Payments company (fictional)",
+                "period": "2016 — 2021",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-fh3j5p",
+          "id": "contact-fkjxxe",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

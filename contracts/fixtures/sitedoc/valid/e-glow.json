@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Solace Skin — Skincare that fits into a busy morning.",
-    "description": "Skincare that fits into a busy morning.",
+    "description": "Solace makes three-step routines with ingredients you can pronounce.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-16daf38",
+          "id": "hero-16dk26d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Skincare",
             "heading": "Skincare that fits into a busy morning.",
-            "subheading": "Skincare that fits into a busy morning.",
+            "subheading": "Solace makes three-step routines with ingredients you can pronounce.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-16ec6yl",
+          "id": "collections-16e56ma",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-16f4uxy",
+          "id": "products-16fc4il",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-16g4a0e",
+          "id": "about-16gdypa",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-16hi5nz",
+          "id": "products-16hieq5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-16iczpz",
+          "id": "about-16ihdml",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-16jjsyw",
+          "id": "faq-16j9wih",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-16ki664",
+          "id": "contact-16k38lx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-16l5tbl",
+          "id": "hours-16leh63",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Glen & Fell — Tailoring that can handle a hill walk.",
-    "description": "Tailoring that can handle a hill walk.",
+    "description": "Glen & Fell cuts jackets and trousers from mountain-weight wool, made in a tailoring workshop in Tyrol.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1fvekth",
+          "id": "hero-1fvbd86",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Outdoor tailoring",
             "heading": "Tailoring that can handle a hill walk.",
-            "subheading": "Tailoring that can handle a hill walk.",
+            "subheading": "Glen & Fell cuts jackets and trousers from mountain-weight wool, made in a tailoring workshop in Tyrol.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1fwe625",
+          "id": "collections-1fw4lxw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1fxb7t9",
+          "id": "products-1fxavsq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1fy5edz",
+          "id": "about-1fy5juq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1fzb8cp",
+          "id": "products-1fz51it",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1g07snp",
+          "id": "about-1g06pdp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1g1f6vp",
+          "id": "faq-1g1dij8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1g24rrw",
+          "id": "contact-1g23c2s",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1g33lzf",
+          "id": "hours-1g32a4t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

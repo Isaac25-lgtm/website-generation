@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "SAME DAY — Plywood furniture, cut to order.",
-    "description": "Plywood furniture, cut to order.",
+    "description": "SAME DAY designs plywood furniture and cuts each piece to order on a CNC router in Los Angeles.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1jm5iuu",
+          "id": "hero-1jm8sgg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Plywood furniture",
             "heading": "Plywood furniture, cut to order.",
-            "subheading": "Plywood furniture, cut to order.",
+            "subheading": "SAME DAY designs plywood furniture and cuts each piece to order on a CNC router in Los Angeles.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1jndqmg",
+          "id": "collections-1jnc3uw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1jo9wrb",
+          "id": "products-1jo291",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1jpgvnu",
+          "id": "about-1jp6aul",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1jqiqqh",
+          "id": "products-1jq4ib7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1jre1lh",
+          "id": "about-1jrb4sw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1jsa25l",
+          "id": "faq-1jsgt37",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1jtdega",
+          "id": "contact-1jta5mx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1jujk2t",
+          "id": "hours-1jufusx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

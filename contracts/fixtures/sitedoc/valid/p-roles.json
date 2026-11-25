@@ -3,12 +3,12 @@
   "type": "personal",
   "templateId": "p-roles",
   "brand": {
-    "name": "Kofi Amoako",
-    "tagline": "Welcome to my corner of the internet: design, engineering, writing and photography."
+    "name": "Kwesi Boateng",
+    "tagline": "Design, engineering, writing and photography from Accra."
   },
   "seo": {
-    "title": "Kofi Amoako — Welcome to my corner of the internet: design, engineerin",
-    "description": "Welcome to my corner of the internet: design, engineering, writing and photography.",
+    "title": "Kwesi Boateng — Design, engineering, writing and photography from Accr",
+    "description": "Design, engineering, writing and photography from Accra.",
     "lang": "en"
   },
   "theme": {
@@ -32,7 +32,7 @@
     "ornament": "none"
   },
   "contact": {
-    "email": "kofi@example.com",
+    "email": "kwesi@example.com",
     "phone": "",
     "whatsapp": "",
     "address": "",
@@ -50,15 +50,15 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-hpfla0",
+          "id": "hero-i2l5i0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Designer · Engineer · Accra",
-            "heading": "Welcome to my corner of the internet: design, engineering, writing and photography.",
-            "subheading": "Kofi Amoako, Designer · Engineer",
+            "heading": "Design, engineering, writing and photography from Accra.",
+            "subheading": "Kwesi Boateng, Designer · Engineer",
             "primaryCta": {
               "label": "Get in touch",
               "href": "/contact"
@@ -70,7 +70,7 @@
           }
         },
         {
-          "id": "about-hq7mml",
+          "id": "about-i3gtdg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -123,7 +123,7 @@
           }
         },
         {
-          "id": "cta-hs5ol9",
+          "id": "cta-i5hckc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -146,7 +146,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "skills-htiy07",
+          "id": "skills-i6dpd0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -179,7 +179,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-huk8q7",
+          "id": "contact-i74jsw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -4,11 +4,11 @@
   "templateId": "p-chapters",
   "brand": {
     "name": "Edmund Hale",
-    "tagline": "Being an account of a design engineer, told in seven short chapters, with plates."
+    "tagline": "The working life of an engineer, set out in short chapters with illustrations."
   },
   "seo": {
-    "title": "Edmund Hale — Being an account of a design engineer, told in seven sho",
-    "description": "Being an account of a design engineer, told in seven short chapters, with plates.",
+    "title": "Edmund Hale — The working life of an engineer, set out in short chapte",
+    "description": "The working life of an engineer, set out in short chapters with illustrations.",
     "lang": "en"
   },
   "theme": {
@@ -50,15 +50,15 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-ejf6rd",
+          "id": "hero-ek1a1w",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "The Curious Engineer · Edinburgh",
-            "heading": "Being an account of a design engineer, told in seven short chapters, with plates.",
-            "subheading": "Edmund Hale, The Curious Engineer",
+            "eyebrow": "A Builder's Notebook · Edinburgh",
+            "heading": "The working life of an engineer, set out in short chapters with illustrations.",
+            "subheading": "Edmund Hale, A Builder's Notebook",
             "primaryCta": {
               "label": "Get in touch",
               "href": "/contact"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-ekiri5",
+          "id": "about-el6osg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -129,7 +129,7 @@
           }
         },
         {
-          "id": "cta-embqs4",
+          "id": "cta-enfd7v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -152,7 +152,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "experience-enczz9",
+          "id": "experience-eo5ead",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -186,7 +186,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-eo1yv9",
+          "id": "contact-ephdj9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

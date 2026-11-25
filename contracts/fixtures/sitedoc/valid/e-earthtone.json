@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Common Ground — Clothes in the colours of the land.",
-    "description": "Clothes in the colours of the land.",
+    "description": "Common Ground makes a small range of utility clothing in natural, undyed fibres.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1fm43wg",
+          "id": "hero-1fmdu0a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Menswear",
             "heading": "Clothes in the colours of the land.",
-            "subheading": "Clothes in the colours of the land.",
+            "subheading": "Common Ground makes a small range of utility clothing in natural, undyed fibres.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1fne42c",
+          "id": "collections-1fnkod2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1focl9v",
+          "id": "products-1fo8yug",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1fpfkxm",
+          "id": "about-1fpbbb0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1fq9dqb",
+          "id": "products-1fqkv97",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1frggv",
+          "id": "about-1frbl3g",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1fscd3o",
+          "id": "faq-1fsblkn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1ftavbk",
+          "id": "contact-1ftj1sv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1fuflwi",
+          "id": "hours-1fui3zh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

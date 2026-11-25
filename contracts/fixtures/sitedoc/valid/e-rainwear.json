@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Stormproof — Waterproof bags for wet cities.",
-    "description": "Waterproof bags for wet cities.",
+    "description": "Stormproof makes waterproof bags and coats for wet weather.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1bd80om",
+          "id": "hero-1bdaba1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Rainwear",
             "heading": "Waterproof bags for wet cities.",
-            "subheading": "Waterproof bags for wet cities.",
+            "subheading": "Stormproof makes waterproof bags and coats for wet weather.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1be1hcq",
+          "id": "collections-1be8s63",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1bf9zj5",
+          "id": "products-1bfky2r",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1bgbz3v",
+          "id": "about-1bgffyx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1bh28ku",
+          "id": "products-1bhjlol",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1bifw57",
+          "id": "about-1bi41pt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1bjb7wz",
+          "id": "faq-1bjhy04",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1bkjuv3",
+          "id": "contact-1bkftzx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1bl2tp2",
+          "id": "hours-1blh4td",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

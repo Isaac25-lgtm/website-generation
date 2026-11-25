@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "SHORT BLACK — Coffee for people who take milk.",
-    "description": "Coffee for people who take milk.",
+    "description": "SHORT BLACK roasts espresso blends that taste good with milk, and nothing else.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1m43gpa",
+          "id": "hero-1m4334d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Coffee",
             "heading": "Coffee for people who take milk.",
-            "subheading": "Coffee for people who take milk.",
+            "subheading": "SHORT BLACK roasts espresso blends that taste good with milk, and nothing else.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1m5ghew",
+          "id": "collections-1m52wpe",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1m64kl3",
+          "id": "products-1m69m5j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1m7gc10",
+          "id": "about-1m74upx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1m8dtte",
+          "id": "products-1m81nha",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1m96x3c",
+          "id": "about-1m9ehtn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ma7gcd",
+          "id": "faq-1mac108",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1mb4kcr",
+          "id": "contact-1mbbkzt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1mcgwcv",
+          "id": "hours-1mcdd5j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

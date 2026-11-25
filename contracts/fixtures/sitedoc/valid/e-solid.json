@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Karat Club — Solid gold, priced fairly.",
-    "description": "Solid gold, priced fairly.",
+    "description": "Karat Club makes solid gold chains and rings, with the gold price shown next to ours.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1imkc96",
+          "id": "hero-1ima3x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Gold jewellery",
             "heading": "Solid gold, priced fairly.",
-            "subheading": "Solid gold, priced fairly.",
+            "subheading": "Karat Club makes solid gold chains and rings, with the gold price shown next to ours.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1ine3a9",
+          "id": "collections-1injt8s",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1iotm1",
+          "id": "products-1io3pr9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1ip1ipz",
+          "id": "about-1ipdlvp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1iq46pk",
+          "id": "products-1iq1p58",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1irh42o",
+          "id": "about-1iratsl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1isjiky",
+          "id": "faq-1isjdoa",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1itjp09",
+          "id": "contact-1it9ecc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1iugtdz",
+          "id": "hours-1iug9fe",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

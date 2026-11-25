@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Wool & Water — Knitwear made slowly in the north.",
-    "description": "Knitwear made slowly in the north.",
+    "description": "Wool & Water designs jumpers and cardigans knitted by a small mill on the west coast of Norway.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1fdgh77",
+          "id": "hero-1fd31i5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Knitwear",
             "heading": "Knitwear made slowly in the north.",
-            "subheading": "Knitwear made slowly in the north.",
+            "subheading": "Wool & Water designs jumpers and cardigans knitted by a small mill on the west coast of Norway.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1fe9m1q",
+          "id": "collections-1fe1ek5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1ffjd1l",
+          "id": "products-1ff62el",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1fg55ya",
+          "id": "about-1fgap55",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1fh9emc",
+          "id": "products-1fhgt1d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1fiko0x",
+          "id": "about-1fi1btl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1fjaeip",
+          "id": "faq-1fjjv40",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1fkd5gd",
+          "id": "contact-1fkfeiv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1fl6l7k",
+          "id": "hours-1fl6aq6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

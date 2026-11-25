@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Colour Card — Forty colours, chosen for real rooms.",
-    "description": "Forty colours, chosen for real rooms.",
+    "description": "Colour Card sells forty paint colours in low-odour, washable finishes, with samples posted free.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1kv3lzb",
+          "id": "hero-1kvfwdb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Paint",
             "heading": "Forty colours, chosen for real rooms.",
-            "subheading": "Forty colours, chosen for real rooms.",
+            "subheading": "Colour Card sells forty paint colours in low-odour, washable finishes, with samples posted free.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1kwu42",
+          "id": "collections-1kwkgtu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1kx270s",
+          "id": "products-1kxbek9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1kykm19",
+          "id": "about-1kyfe0t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1kz3rcf",
+          "id": "products-1kz3ar8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1l08pmg",
+          "id": "about-1l07o8g",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1l17x1z",
+          "id": "faq-1l16ea9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1l27u71",
+          "id": "contact-1l2cth5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1l35xlk",
+          "id": "hours-1l3f4pa",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

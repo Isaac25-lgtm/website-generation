@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Index Editions — Design books and reissued manuals.",
-    "description": "Design books and reissued manuals.",
+    "description": "Index Editions publishes design books and reissues of classic graphic standards.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1dm41it",
+          "id": "hero-1dmipci",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Design publishing",
             "heading": "Design books and reissued manuals.",
-            "subheading": "Design books and reissued manuals.",
+            "subheading": "Index Editions publishes design books and reissues of classic graphic standards.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1dncsk6",
+          "id": "collections-1dnkiv1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1do6rw4",
+          "id": "products-1do1rco",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1dpg29s",
+          "id": "about-1dpckmy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1dq941c",
+          "id": "products-1dqhc0a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1dr3o0e",
+          "id": "about-1dr22pl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1dsi7xt",
+          "id": "faq-1ds5kwu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1dt6xlv",
+          "id": "contact-1dt324e",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1duirkn",
+          "id": "hours-1du93f9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-i6asd9",
+          "id": "hero-ikg5uy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-i76c89",
+          "id": "about-il83k3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -121,7 +121,7 @@
           }
         },
         {
-          "id": "cta-i9f066",
+          "id": "cta-indijp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,13 +138,40 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-io4zih",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Poet and teacher",
+                "org": "Independent",
+                "period": "2008 — now",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-iagqwn",
+          "id": "contact-ipfb06",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

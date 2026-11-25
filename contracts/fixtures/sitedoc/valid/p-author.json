@@ -4,11 +4,11 @@
   "templateId": "p-author",
   "brand": {
     "name": "Margaret Lowe",
-    "tagline": "Money in Order"
+    "tagline": "The Weekend Budget"
   },
   "seo": {
-    "title": "Margaret Lowe — Money in Order",
-    "description": "Money in Order",
+    "title": "Margaret Lowe — The Weekend Budget",
+    "description": "The Weekend Budget",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-g3cnom",
+          "id": "hero-g95z5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "A book about personal money · 2026 edition",
-            "heading": "Money in Order",
+            "heading": "The Weekend Budget",
             "subheading": "Margaret Lowe, A book about personal money · 2026 edition",
             "primaryCta": {
               "label": "Get in touch",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-g4w3t",
+          "id": "about-ga7kci",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-g6gyvr",
+          "id": "cta-gchif1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -150,13 +150,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-gdunw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Author",
+                "org": "The Weekend Budget",
+                "period": "2026",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Financial planner",
+                "org": "Advice firm (fictional)",
+                "period": "2005 — 2024",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-g7fiy0",
+          "id": "contact-gei832",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

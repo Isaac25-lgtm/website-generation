@@ -3,11 +3,11 @@
   "type": "personal",
   "templateId": "p-gazette",
   "brand": {
-    "name": "Nina Moretti",
+    "name": "Giulia Ferrante",
     "tagline": "Designer turns a decade of editorial work into a new studio"
   },
   "seo": {
-    "title": "Nina Moretti — Designer turns a decade of editorial work into a new st",
+    "title": "Giulia Ferrante — Designer turns a decade of editorial work into a new",
     "description": "Designer turns a decade of editorial work into a new studio",
     "lang": "en"
   },
@@ -32,7 +32,7 @@
     "ornament": "none"
   },
   "contact": {
-    "email": "nina@example.com",
+    "email": "giulia@example.com",
     "phone": "",
     "whatsapp": "",
     "address": "",
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-gyfhk",
+          "id": "hero-h8575a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Designer · Milan",
             "heading": "Designer turns a decade of editorial work into a new studio",
-            "subheading": "Nina Moretti, Designer",
+            "subheading": "Giulia Ferrante, Designer",
             "primaryCta": {
               "label": "Get in touch",
               "href": "/contact"
@@ -69,23 +69,23 @@
             },
             "image": {
               "stock": "pro-fence-woman",
-              "alt": "Nina Moretti",
+              "alt": "Giulia Ferrante",
               "caption": ""
             }
           }
         },
         {
-          "id": "about-gz56vw",
+          "id": "about-h918zy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "About me",
-            "body": "Nina Moretti has designed magazines, newspapers and books for twelve years. Her new studio works with publishers and cultural institutions on print and digital editions, from type choices to the last page.",
+            "body": "Giulia Ferrante has designed magazines, newspapers and books for twelve years. Her new studio works with publishers and cultural institutions on print and digital editions, from type choices to the last page.",
             "image": {
               "stock": "pro-fence-woman",
-              "alt": "Nina Moretti",
+              "alt": "Giulia Ferrante",
               "caption": ""
             },
             "highlights": []
@@ -129,7 +129,7 @@
           }
         },
         {
-          "id": "cta-h15kt3",
+          "id": "cta-hbco84",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -146,13 +146,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-hcafax",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Founder",
+                "org": "Editorial design studio (fictional)",
+                "period": "2025 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Art director",
+                "org": "Daily newspaper (fictional)",
+                "period": "2013 — 2025",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-h23ukq",
+          "id": "contact-hd3354",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

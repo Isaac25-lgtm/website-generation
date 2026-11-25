@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Maison Lune — Leather bags, quietly made in Spain.",
-    "description": "Leather bags, quietly made in Spain.",
+    "description": "Maison Lune makes small-batch leather bags in a family workshop near Ubrique.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1a432j",
+          "id": "hero-1a4his9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Leather bags",
             "heading": "Leather bags, quietly made in Spain.",
-            "subheading": "Leather bags, quietly made in Spain.",
+            "subheading": "Maison Lune makes small-batch leather bags in a family workshop near Ubrique.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1a5ksdf",
+          "id": "collections-1a5cyni",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1a6a0kr",
+          "id": "products-1a6hdm5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1a79bc9",
+          "id": "about-1a793uc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1a8g5f3",
+          "id": "products-1a8icu1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1a94yu7",
+          "id": "about-1a93lq5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1aaisni",
+          "id": "faq-1aa3odl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1ab5u5c",
+          "id": "contact-1ab8tn3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1ac4hnk",
+          "id": "hours-1ac9p9b",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

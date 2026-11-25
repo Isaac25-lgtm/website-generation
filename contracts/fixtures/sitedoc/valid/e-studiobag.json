@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Atelier Dune — Sculptural bags in soft leather.",
-    "description": "Sculptural bags in soft leather.",
+    "description": "Atelier Dune designs bags with architectural shapes.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1amfg17",
+          "id": "hero-1aminds",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Designer bags",
             "heading": "Sculptural bags in soft leather.",
-            "subheading": "Sculptural bags in soft leather.",
+            "subheading": "Atelier Dune designs bags with architectural shapes.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1andz61",
+          "id": "collections-1angm3g",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1aobd6u",
+          "id": "products-1aogc1v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1ap2oua",
+          "id": "about-1apd94o",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1aqah10",
+          "id": "products-1aqagi8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1ardefb",
+          "id": "about-1arkgte",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1asia96",
+          "id": "faq-1asdy2v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1at76is",
+          "id": "contact-1at64i",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1au33nn",
+          "id": "hours-1audlo6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

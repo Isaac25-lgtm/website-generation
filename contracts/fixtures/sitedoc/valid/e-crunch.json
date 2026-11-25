@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Fun Guy Snacks — Crisps made from mushrooms.",
-    "description": "Crisps made from mushrooms.",
+    "description": "Fun Guy makes crunchy snacks from mushrooms and vegetables, in flavours that taste like something.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1ombsor",
+          "id": "hero-1omciv4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Snacks",
             "heading": "Crisps made from mushrooms.",
-            "subheading": "Crisps made from mushrooms.",
+            "subheading": "Fun Guy makes crunchy snacks from mushrooms and vegetables, in flavours that taste like something.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -68,14 +68,14 @@
               "href": "/about"
             },
             "image": {
-              "stock": "food-cookies",
+              "stock": "food-market-crates",
               "alt": "Fun Guy Snacks",
               "caption": ""
             }
           }
         },
         {
-          "id": "collections-1onjd5k",
+          "id": "collections-1on9ld8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1oo4qes",
+          "id": "products-1oofgxe",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1opfe0g",
+          "id": "about-1op4svi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1oq8hz",
+          "id": "products-1oqaost",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1or6w42",
+          "id": "about-1orc5jv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1os9c5i",
+          "id": "faq-1osbudc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1otl6zt",
+          "id": "contact-1otiy62",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1oug543",
+          "id": "hours-1oud49w",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

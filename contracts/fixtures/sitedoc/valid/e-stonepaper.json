@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Slate Notes — Notebooks with a smaller footprint.",
-    "description": "Notebooks with a smaller footprint.",
+    "description": "Slate Notes makes notebooks from recycled and tree-free papers.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1e4ygn",
+          "id": "hero-1e411mm",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Eco stationery",
             "heading": "Notebooks with a smaller footprint.",
-            "subheading": "Notebooks with a smaller footprint.",
+            "subheading": "Slate Notes makes notebooks from recycled and tree-free papers.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1e5b5dr",
+          "id": "collections-1e56dy1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1e6a5of",
+          "id": "products-1e6kxsz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1e7jt52",
+          "id": "about-1e73t1w",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1e8aswi",
+          "id": "products-1e8fiv3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1e9l08f",
+          "id": "about-1e97u7x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ea2h0d",
+          "id": "faq-1eahgp5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1ebeelr",
+          "id": "contact-1eb2lcp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1ec1hl5",
+          "id": "hours-1ec98ps",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

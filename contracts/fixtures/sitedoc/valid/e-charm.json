@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Lucky Thirteen — Charms and chains to collect.",
-    "description": "Charms and chains to collect.",
+    "description": "Lucky Thirteen makes gold-plated charms that clip on and off our chains.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1j4i2wj",
+          "id": "hero-1j4c3lp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Charm jewellery",
             "heading": "Charms and chains to collect.",
-            "subheading": "Charms and chains to collect.",
+            "subheading": "Lucky Thirteen makes gold-plated charms that clip on and off our chains.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1j5by75",
+          "id": "collections-1j5hepn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1j6jnrt",
+          "id": "products-1j6f6r3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1j7iqi",
+          "id": "about-1j7khvk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1j861zs",
+          "id": "products-1j89sc0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1j9jbb2",
+          "id": "about-1j9a2gp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ja36o9",
+          "id": "faq-1ja7dh6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1jb4yv3",
+          "id": "contact-1jbe4ct",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1jcxl3",
+          "id": "hours-1jc5ex2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

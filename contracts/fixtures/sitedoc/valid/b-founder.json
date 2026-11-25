@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-10k3ct3",
+          "id": "hero-10kj9o9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "services-10l8kb3",
+          "id": "services-10l90n5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -89,8 +89,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "home-glass-jar",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -100,7 +100,7 @@
                 "price": "From $12,000",
                 "image": {
                   "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -109,8 +109,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "work-sketches",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-10m4yvy",
+          "id": "about-10mdfmq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -127,8 +127,8 @@
             "heading": "About Mara Ellison Studio",
             "body": "I ran an agency for twelve years. Now I help other founders build calmer ones.",
             "image": {
-              "stock": "work-pattern",
-              "alt": "A sculptural pattern",
+              "stock": "work-drawing",
+              "alt": "Mara Ellison Studio work",
               "caption": ""
             },
             "highlights": [
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-10n5yl7",
+          "id": "cta-10ni9wc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-10oashy",
+          "id": "about-10obykt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -171,8 +171,8 @@
             "heading": "Our story",
             "body": "I ran an agency for twelve years. Now I help other founders build calmer ones.",
             "image": {
-              "stock": "obj-journal",
-              "alt": "Sketchbook",
+              "stock": "work-pattern",
+              "alt": "Mara Ellison Studio work",
               "caption": ""
             },
             "highlights": [
@@ -183,7 +183,7 @@
           }
         },
         {
-          "id": "faq-10p3y22",
+          "id": "faq-10p9cse",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -211,7 +211,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-10qkerz",
+          "id": "services-10q51r5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -225,8 +225,8 @@
                 "description": "Strategy, naming and visual identity.",
                 "price": "From $9,000",
                 "image": {
-                  "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "stock": "home-glass-jar",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -236,7 +236,7 @@
                 "price": "From $12,000",
                 "image": {
                   "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -245,8 +245,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "work-sketches",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -278,7 +278,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-10s6s9s",
+          "id": "gallery-10sd0fu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -288,23 +288,18 @@
             "intro": "",
             "images": [
               {
+                "stock": "work-drawing",
+                "alt": "Mara Ellison Studio work",
+                "caption": ""
+              },
+              {
                 "stock": "work-pattern",
-                "alt": "A sculptural pattern",
+                "alt": "Mara Ellison Studio work",
                 "caption": ""
               },
               {
                 "stock": "obj-journal",
-                "alt": "Sketchbook",
-                "caption": ""
-              },
-              {
-                "stock": "biz-glass",
-                "alt": "Office building",
-                "caption": ""
-              },
-              {
-                "stock": "home-white-room",
-                "alt": "Studio space",
+                "alt": "Mara Ellison Studio work",
                 "caption": ""
               }
             ]
@@ -319,7 +314,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-10tjlbc",
+          "id": "contact-10til7c",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

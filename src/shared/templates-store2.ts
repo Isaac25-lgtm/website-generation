@@ -1,15 +1,11 @@
 import type { TemplateDef } from "./templates";
-import type { Theme } from "./schema";
-import type { StoreLayout } from "./render/layouts";
-import { storeTemplate } from "./templates-store";
+import { storeRows, type StoreRow } from "./templates-store";
 
 // Shop batch 2: one template per five-star storefront in beauty, fragrance, bags, footwear, kids,
 // stationery, wellness and streetwear (structure only; no source names, photos, copy or code).
 
-type C = Theme["colors"];
-type Row = [id: string, name: string, category: string, layout: StoreLayout, rank: "signature" | "premium", c: [string, string, string, string, string, string], h: Theme["fontHeading"], b: Theme["fontBody"], description: string, industries: string, x?: Partial<{ dark: boolean; hero: string; css: string; radius: Theme["radius"]; tier: "public" | "member"; header: Theme["headerStyle"] }>];
 
-const ROWS: Row[] = [
+const ROWS: StoreRow[] = [
   // Beauty
   ["e-apothecary", "Apothecary", "beauty", "quiet", "signature", ["#f4f0e8", "#e9e2d4", "#24211c", "#625c51", "#24211c", "#7b6a4c"], "cormorant", "inter", "Parchment tones, botanical calm and products set on soft grounds. An apothecary for considered skincare.", "skincare, apothecary, natural beauty", { tier: "public" }],
   ["e-glow", "Glow", "beauty", "lifestyle", "signature", ["#fbf4ef", "#f2e4da", "#2c1d17", "#6c5a50", "#2c1d17", "#c4703f"], "fraunces", "dm-sans", "Warm skin tones and sunlit routines, with a soft card over a wide photograph.", "skincare, beauty, body care"],
@@ -56,13 +52,4 @@ const ROWS: Row[] = [
   ["e-signal", "Signal", "fashion", "wordmark", "signature", ["#ffffff", "#f3f3f3", "#0c0c0c", "#5c5c5c", "#e10600", "#e10600"], "archivo-black", "inter", "Red and white with a giant grotesk wordmark over a tight product grid. Streetwear energy.", "streetwear, hoodies, sneakers", { tier: "public" }],
 ];
 
-export const STORE2_TEMPLATES: TemplateDef[] = ROWS.map(([id, name, category, layout, rank, c, h, b, description, industries, x = {}]) => ({
-  ...storeTemplate({
-    id, name, category, layout, tier: x.tier ?? "member",
-    styles: [layout, x.dark ? "dark" : "light"], industries: industries.split(", "), description,
-    colors: { bg: c[0], surface: c[1], text: c[2], muted: c[3], primary: c[4], accent: c[5] } as C,
-    mode: x.dark ? "dark" : "light", fontHeading: h, fontBody: b, headerStyle: x.header, radius: x.radius,
-    hero: x.hero, css: x.css ?? "",
-  }),
-  rank,
-}));
+export const STORE2_TEMPLATES: TemplateDef[] = storeRows(ROWS);

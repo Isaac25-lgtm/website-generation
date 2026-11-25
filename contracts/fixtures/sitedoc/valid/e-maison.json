@@ -39,6 +39,7 @@
     "city": "Paris",
     "country": "France",
     "mapQuery": "",
+    "whatsappFloat": false,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "banner-2pfclw",
+          "id": "banner-2pijlh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -63,7 +64,7 @@
           }
         },
         {
-          "id": "hero-2q766",
+          "id": "hero-2qkwor",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -88,7 +89,7 @@
           }
         },
         {
-          "id": "collections-2r2wl2",
+          "id": "collections-2rfv30",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -99,7 +100,7 @@
           }
         },
         {
-          "id": "products-2s3kok",
+          "id": "products-2scinp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -113,7 +114,7 @@
           }
         },
         {
-          "id": "about-2tkvqb",
+          "id": "about-2tbg0r",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,7 +139,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-2ujt7j",
+          "id": "products-2uh79l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -160,7 +161,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-2v1rv1",
+          "id": "about-2v8z4l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -185,7 +186,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-2wdg4j",
+          "id": "contact-2wj5rq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

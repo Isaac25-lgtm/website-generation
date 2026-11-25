@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Stillwater — Tools for calmer days and deeper sleep.",
-    "description": "Tools for calmer days and deeper sleep.",
+    "description": "Stillwater makes products for rest, from eye pillows to evening teas.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1edjm7f",
+          "id": "hero-1ed37il",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Wellness",
             "heading": "Tools for calmer days and deeper sleep.",
-            "subheading": "Tools for calmer days and deeper sleep.",
+            "subheading": "Stillwater makes products for rest, from eye pillows to evening teas.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1ee3jzz",
+          "id": "collections-1eebn4y",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1ef385w",
+          "id": "products-1efhu5k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1egf9jd",
+          "id": "about-1egev9n",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1ehla17",
+          "id": "products-1eh508r",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1eihhlr",
+          "id": "about-1eiddjh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ej2o1c",
+          "id": "faq-1ejeoc5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1eke4i7",
+          "id": "contact-1ekgym8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1el292k",
+          "id": "hours-1el3s2k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

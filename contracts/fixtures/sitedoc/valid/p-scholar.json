@@ -39,6 +39,7 @@
     "city": "",
     "country": "",
     "mapQuery": "",
+    "whatsappFloat": false,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-gkfkj",
+          "id": "hero-g3xv3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -70,7 +71,7 @@
           }
         },
         {
-          "id": "about-h2gjf",
+          "id": "about-hek4a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -87,7 +88,7 @@
           }
         },
         {
-          "id": "cta-ibgx2",
+          "id": "cta-ikfui",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -110,7 +111,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "experience-jk6hw",
+          "id": "experience-jazq2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -136,7 +137,7 @@
           }
         },
         {
-          "id": "education-kbpnk",
+          "id": "education-k6r1p",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -160,7 +161,7 @@
           }
         },
         {
-          "id": "skills-l4ku6",
+          "id": "skills-lekmk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -182,7 +183,7 @@
           }
         },
         {
-          "id": "achievements-m622p",
+          "id": "achievements-maa4d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -212,7 +213,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-ncabd",
+          "id": "contact-n45q8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

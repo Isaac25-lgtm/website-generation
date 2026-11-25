@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Far Field Instruments — Synths for open spaces.",
-    "description": "Synths for open spaces.",
+    "description": "Far Field makes analogue synthesisers in small batches in a workshop by the sea.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1qmaihs",
+          "id": "hero-1qmkvbd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Synthesisers",
             "heading": "Synths for open spaces.",
-            "subheading": "Synths for open spaces.",
+            "subheading": "Far Field makes analogue synthesisers in small batches in a workshop by the sea.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1qnexjo",
+          "id": "collections-1qn5tb2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1qo2mon",
+          "id": "products-1qol9pv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1qpklwk",
+          "id": "about-1qpj9wf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1qq52bi",
+          "id": "products-1qqh3z9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1qr6kql",
+          "id": "about-1qrk50w",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1qs875t",
+          "id": "faq-1qs1lyp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1qt7qh4",
+          "id": "contact-1qtcgpa",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1qu3rps",
+          "id": "hours-1qubmfy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

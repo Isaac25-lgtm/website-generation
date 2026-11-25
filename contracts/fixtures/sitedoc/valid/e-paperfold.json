@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Fold Studio — Soft furniture and lights in folded paper.",
-    "description": "Soft furniture and lights in folded paper.",
+    "description": "Fold Studio designs flexible paper furniture, lights and tableware in Vancouver.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1tvf7xq",
+          "id": "hero-1tvgyx4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Design studio",
             "heading": "Soft furniture and lights in folded paper.",
-            "subheading": "Soft furniture and lights in folded paper.",
+            "subheading": "Fold Studio designs flexible paper furniture, lights and tableware in Vancouver.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1tw9elc",
+          "id": "collections-1tw90az",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1tx1qyc",
+          "id": "products-1tx3u7x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1tyhye",
+          "id": "about-1tyk9od",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1tzepwe",
+          "id": "products-1tz3git",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1u05x4n",
+          "id": "about-1u0i79",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1u1222c",
+          "id": "faq-1u17zhv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1u2gqc6",
+          "id": "contact-1u2et08",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1u3h3s",
+          "id": "hours-1u3iues",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

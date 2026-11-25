@@ -4,11 +4,11 @@
   "templateId": "p-bookcover",
   "brand": {
     "name": "Rahim Chowdhury",
-    "tagline": "The Book of Building"
+    "tagline": "Field Notes on Software"
   },
   "seo": {
-    "title": "Rahim Chowdhury — The Book of Building",
-    "description": "The Book of Building",
+    "title": "Rahim Chowdhury — Field Notes on Software",
+    "description": "Field Notes on Software",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-infkf0",
+          "id": "hero-j21j00",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Essays on engineering · Dhaka",
-            "heading": "The Book of Building",
+            "heading": "Field Notes on Software",
             "subheading": "Rahim Chowdhury, Essays on engineering",
             "primaryCta": {
               "label": "Get in touch",
@@ -70,14 +70,14 @@
           }
         },
         {
-          "id": "about-iohmgo",
+          "id": "about-j3hbmy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "About me",
-            "body": "Essays on building reliable software and thinking beyond the screen. New chapters most months.",
+            "body": "Essays on keeping software small, readable and alive. A new chapter most months.",
             "highlights": []
           }
         },
@@ -119,7 +119,7 @@
           }
         },
         {
-          "id": "cta-iqk576",
+          "id": "cta-j529g9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -136,13 +136,47 @@
       ]
     },
     {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-j6h5aj",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Staff engineer",
+                "org": "Software company (fictional)",
+                "period": "2020 — now",
+                "location": "Dhaka",
+                "description": ""
+              },
+              {
+                "role": "Software engineer",
+                "org": "Startup (fictional)",
+                "period": "2015 — 2020",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-ircusf",
+          "id": "contact-j7aje9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

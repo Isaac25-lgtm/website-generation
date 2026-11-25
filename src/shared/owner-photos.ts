@@ -3,6 +3,10 @@
 
 export const OWNER_PREFIX = "owner-";
 
+export function isOwnerStock(name: unknown): boolean {
+  return typeof name === "string" && name.startsWith(OWNER_PREFIX);
+}
+
 /** Returns a copy of any SiteDoc-like value with every owner-only stock photo reference removed. */
 export function stripOwnerPhotos<T>(value: T): T {
   const walk = (v: unknown): unknown => {

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Ridgeback Outdoor — Shoes for long trails.",
-    "description": "Shoes for long trails.",
+    "description": "Ridgeback designs hiking and trail shoes tested on mountain routes.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1cvl6we",
+          "id": "hero-1cva51s",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Trail footwear",
             "heading": "Shoes for long trails.",
-            "subheading": "Shoes for long trails.",
+            "subheading": "Ridgeback designs hiking and trail shoes tested on mountain routes.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1cw45c1",
+          "id": "collections-1cw7skc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1cxj0pz",
+          "id": "products-1cx4ucr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1cyj1me",
+          "id": "about-1cyjv52",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1cz2oqm",
+          "id": "products-1cz4vel",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1d0emac",
+          "id": "about-1d04jqt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1d17dya",
+          "id": "faq-1d1kgke",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1d28h3t",
+          "id": "contact-1d2fapj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1d3h1fn",
+          "id": "hours-1d3j9ou",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

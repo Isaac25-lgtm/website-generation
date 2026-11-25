@@ -3,12 +3,12 @@
   "type": "ecommerce",
   "templateId": "e-sunroom",
   "brand": {
-    "name": "Fieldhouse",
+    "name": "Packwood Home",
     "tagline": "Furniture that moves house with you."
   },
   "seo": {
-    "title": "Fieldhouse — Furniture that moves house with you.",
-    "description": "Furniture that moves house with you.",
+    "title": "Packwood Home — Furniture that moves house with you.",
+    "description": "Packwood Home makes sofas, tables and beds that flat-pack, rebuild without tools and last through every move.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1jdjy0c",
+          "id": "hero-1jdde4e",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Modular furniture",
             "heading": "Furniture that moves house with you.",
-            "subheading": "Furniture that moves house with you.",
+            "subheading": "Packwood Home makes sofas, tables and beds that flat-pack, rebuild without tools and last through every move.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -69,13 +69,13 @@
             },
             "image": {
               "stock": "home-veranda",
-              "alt": "Fieldhouse",
+              "alt": "Packwood Home",
               "caption": ""
             }
           }
         },
         {
-          "id": "collections-1jed2hl",
+          "id": "collections-1jectli",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1jf8fmo",
+          "id": "products-1jf7526",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,14 +100,14 @@
           }
         },
         {
-          "id": "about-1jge17g",
+          "id": "about-1jg60qa",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
-            "heading": "About Fieldhouse",
-            "body": "Fieldhouse makes sofas, tables and beds that flat-pack, rebuild without tools and last through every move.",
+            "heading": "About Packwood Home",
+            "body": "Packwood Home makes sofas, tables and beds that flat-pack, rebuild without tools and last through every move.",
             "image": {
               "stock": "home-leather-armchair",
               "alt": "Leather club chair",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1jha7kd",
+          "id": "products-1jhhl3j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,14 +147,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1jidgvh",
+          "id": "about-1jic8po",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "Our story",
-            "body": "Fieldhouse makes sofas, tables and beds that flat-pack, rebuild without tools and last through every move.",
+            "body": "Packwood Home makes sofas, tables and beds that flat-pack, rebuild without tools and last through every move.",
             "image": {
               "stock": "home-butterfly-chair",
               "alt": "Butterfly chair",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1jj6e0d",
+          "id": "faq-1jjb7o9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1jklddp",
+          "id": "contact-1jk920u",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1jlk11g",
+          "id": "hours-1jlaobx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

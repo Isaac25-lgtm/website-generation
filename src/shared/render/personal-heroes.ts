@@ -2,7 +2,7 @@
 // Each hero reads only the customer's own content: name, role, location, tagline, photo, projects, skills, experience.
 import type { ImageRef, Section, SiteDoc } from "../schema";
 import type { SCtx } from "./sections";
-import { img, pageUrl } from "./sections";
+import { img, pageUrl, sectionHref, workHref } from "./sections";
 import { esc } from "../util";
 
 type Hero = Extract<Section, { kind: "hero" }>;
@@ -38,6 +38,7 @@ export function personalHero(s: SCtx, sec: Hero, variant: string, actions: strin
   const about = secOf(s.doc, "about");
   const bio = about?.data.body.split(/\n\s*\n/)[0] || "";
   // Business sites have services instead of projects: use them so project-led heroes work for both.
+  const work = workHref(s);
   const projects = (secOf(s.doc, "projects")?.data.items ?? []).length ? secOf(s.doc, "projects")!.data.items : (secOf(s.doc, "services")?.data.items ?? []).map((x) => ({ title: x.title, description: x.description, role: x.price, period: "", tags: [] as string[], images: x.image ? [x.image] : [], link: undefined as string | undefined }));
   const skills = (secOf(s.doc, "skills")?.data.groups ?? []).flatMap((g) => g.items).concat((secOf(s.doc, "about")?.data.highlights ?? []));
   const exp = secOf(s.doc, "experience")?.data.items ?? [];
@@ -76,8 +77,8 @@ export function personalHero(s: SCtx, sec: Hero, variant: string, actions: strin
 
     case "tiles": {
       const t: [string, string][] = [];
-      if (about) t.push(["Intro", `#${about.id}`]);
-      if (projects.length) t.push(["Work", "#work"]);
+      if (about) t.push(["Intro", sectionHref(s, ["about"])]);
+      if (projects.length) t.push(["Work", work]);
       for (const p of navPages) if (p.slug && p.slug !== "contact") t.push([p.title, link(p.slug)]);
       if (skills.length) t.push(["Skills", link("experience")]);
       t.push(["Contact", contactHref]);
@@ -106,7 +107,7 @@ export function personalHero(s: SCtx, sec: Hero, variant: string, actions: strin
     }
 
     case "keynote":
-      return head("keynote", `<div class="wrap"><div><h1>Hi, I'm<br><mark>${esc(first)}.</mark></h1><p class="sub">${esc(d.heading)}</p>${actions}</div><div class="speaker"><div class="pic">${photo(760, 900)}</div><div class="spk"><span class="strap" aria-hidden="true"></span><span class="spk-tag">Speaker</span><strong>${esc(name)}</strong>${role ? `<span>${esc(role)}</span>` : ""}${place ? `<span class="mono">${esc(place)}</span>` : ""}</div></div></div>`);
+      return head("keynote", `<div class="wrap"><div><h1>Hi, I'm<br><mark>${esc(first)}.</mark></h1><p class="sub">${esc(d.heading)}</p>${actions}</div><div class="speaker"><div class="pic">${photo(760, 900)}</div><div class="spk"><span class="strap" aria-hidden="true"></span>${role ? `<span class="spk-tag">${esc(role)}</span>` : ""}<strong>${esc(name)}</strong>${place ? `<span class="mono">${esc(place)}</span>` : ""}</div></div></div>`);
 
     case "creator": {
       const w = d.heading.split(/\s+/);
@@ -150,7 +151,7 @@ export function personalHero(s: SCtx, sec: Hero, variant: string, actions: strin
     }
 
     case "cinema": {
-      const frames = projects.slice(0, 6).map((p, i) => `<a class="frame" href="#work">${img(s, p.images[0], { w: 360, h: 240, fallbackSeed: p.title })}<span>0${i + 1} ${esc(p.title)}</span></a>`).join("");
+      const frames = projects.slice(0, 6).map((p, i) => `<a class="frame" href="${esc(work)}">${img(s, p.images[0], { w: 360, h: 240, fallbackSeed: p.title })}<span>0${i + 1} ${esc(p.title)}</span></a>`).join("");
       return head("cinema", `<div class="bgimg">${photo(1920, 1080)}</div><div class="wrap"><div class="title">${d.eyebrow ? `<span class="eyebrow">${esc(d.eyebrow)}</span>` : ""}<h1>${esc(name)}</h1><p class="sub">${esc(d.heading)}</p></div>${frames ? `<div class="strip">${frames}</div>` : ""}</div>`);
     }
 
@@ -173,7 +174,7 @@ export function personalHero(s: SCtx, sec: Hero, variant: string, actions: strin
     case "slides": {
       const lead = projects[0];
       const ref = lead?.images[0] ?? d.image;
-      return head("slides", `<div class="bgimg">${photo(1920, 1080, ref)}</div><div class="wrap"><span class="count">01 / ${String(Math.max(projects.length, 1)).padStart(2, "0")}</span><h1>${esc(lead?.title || name)}</h1><p class="sub">${esc(name)}${role ? ` — ${esc(role)}` : ""}</p>${projects.length > 1 ? `<ol class="index">${projects.slice(0, 6).map((p, i) => `<li><a href="#work"><span>0${i + 1}</span>${esc(p.title)}</a></li>`).join("")}</ol>` : ""}</div>`);
+      return head("slides", `<div class="bgimg">${photo(1920, 1080, ref)}</div><div class="wrap"><span class="count">01 / ${String(Math.max(projects.length, 1)).padStart(2, "0")}</span><h1>${esc(lead?.title || name)}</h1><p class="sub">${esc(name)}${role ? ` — ${esc(role)}` : ""}</p>${projects.length > 1 ? `<ol class="index">${projects.slice(0, 6).map((p, i) => `<li><a href="${esc(work)}"><span>0${i + 1}</span>${esc(p.title)}</a></li>`).join("")}</ol>` : ""}</div>`);
     }
 
     case "roles": {
@@ -187,8 +188,8 @@ export function personalHero(s: SCtx, sec: Hero, variant: string, actions: strin
 
     case "hotspots": {
       const spots: [string, string, number, number][] = [];
-      if (about) spots.push(["About", `#${about.id}`, 22, 58]);
-      if (projects.length) spots.push(["Work", "#work", 52, 38]);
+      if (about) spots.push(["About", sectionHref(s, ["about"]), 22, 58]);
+      if (projects.length) spots.push(["Work", work, 52, 38]);
       for (const p of navPages) if (p.slug && p.slug !== "contact") spots.push([p.title, link(p.slug), 76, 60]);
       spots.push(["Contact", contactHref, 60, 82]);
       const pins = spots.slice(0, 4).map(([l, h, x, y]) => `<a class="spot" href="${esc(h)}" style="left:${x}%;top:${y}%"><i></i><span>${esc(l)}</span></a>`).join("");
@@ -199,7 +200,7 @@ export function personalHero(s: SCtx, sec: Hero, variant: string, actions: strin
       return head("landscape", `<div class="scene">${photo(1920, 1000)}</div><div class="wrap">${d.eyebrow ? `<p class="kicker">${esc(d.eyebrow)}</p>` : ""}<h1>${esc(d.heading)}</h1><p class="sub">${esc(name)}</p>${actions}</div>`);
 
     case "bento": {
-      const projTiles = projects.slice(0, 3).map((p) => `<a class="b proj" href="#work">${img(s, p.images[0], { w: 600, h: 400, fallbackSeed: p.title })}<span>${esc(p.title)}${p.period ? `<small>${esc(p.period)}</small>` : ""}</span></a>`).join("");
+      const projTiles = projects.slice(0, 3).map((p) => `<a class="b proj" href="${esc(work)}">${img(s, p.images[0], { w: 600, h: 400, fallbackSeed: p.title })}<span>${esc(p.title)}${p.period ? `<small>${esc(p.period)}</small>` : ""}</span></a>`).join("");
       return head("bento", `<div class="wrap"><div class="bgrid"><div class="b intro"><h1>${esc(name)}</h1><p>${esc(d.heading)}</p></div>${place ? `<div class="b where"><span class="lbl">Based in</span><strong>${esc(place)}</strong></div>` : ""}<div class="b hello">${photo(900, 600)}<span>hello</span></div>${skills.length ? `<div class="b list"><span class="lbl">Services</span><ul>${skills.slice(0, 6).map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}${projTiles}${role ? `<div class="b status"><span class="lbl">Current role</span><strong>${esc(role)}</strong></div>` : ""}<a class="b talk" href="${esc(contactHref)}"><span class="lbl">Let's talk</span><strong>Start a conversation →</strong></a></div></div>`);
     }
 
@@ -207,7 +208,7 @@ export function personalHero(s: SCtx, sec: Hero, variant: string, actions: strin
       return head("champion", `<div class="bgimg">${photo(1920, 1200)}</div><div class="wrap">${d.eyebrow ? `<span class="eyebrow">${esc(d.eyebrow)}</span>` : ""}<h1>${esc(first)}<br>${esc(last)}</h1><p class="sub">${esc(d.heading)}</p>${actions}</div>`);
 
     case "bookcover":
-      return head("bookcover", `<div class="wrap"><div class="book"><span class="ribbon" aria-hidden="true"></span>${role ? `<span class="kicker">${esc(role)}</span>` : ""}<span class="orn" aria-hidden="true"></span><h1>${esc(d.heading)}</h1>${bio ? `<p class="blurb">${esc(bio.split(/(?<=\.)\s/)[0])}</p>` : ""}<span class="by">${esc(name)}</span></div>${actions}</div>`);
+      return head("bookcover", `<div class="wrap"><div class="book"><span class="bk-mark" aria-hidden="true"></span>${role ? `<span class="kicker">${esc(role)}</span>` : ""}<span class="orn" aria-hidden="true"></span><h1>${esc(d.heading)}</h1>${bio ? `<p class="blurb">${esc(bio.split(/(?<=\.)\s/)[0])}</p>` : ""}<span class="by">${esc(name)}</span></div>${actions}</div>`);
   }
   return null;
 }

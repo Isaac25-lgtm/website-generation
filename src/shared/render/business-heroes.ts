@@ -36,10 +36,10 @@ export function businessHero(s: SCtx, sec: Hero, variant: string, actions: strin
     case "studiodark":
       return head("studiodark", `<div class="wrap"><p class="lead">${esc(d.subheading || d.heading)}</p><h1>${words.map(esc).join("<br>")}</h1><div class="row">${actions}<span class="scroll">Scroll to explore</span></div></div>`);
     case "lettering":
-      return head("lettering", `<div class="wrap"><p class="mark" aria-hidden="true">${esc(brand)}</p><h1>${esc(d.heading)}</h1>${c.email ? `<p class="reach">Project and press enquiries:</p><a class="mailpill" href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : ""}${actions}</div>`);
+      return head("lettering", `<div class="wrap"><p class="mark" aria-hidden="true">${esc(brand)}</p><h1>${esc(d.heading)}</h1>${c.email ? `<p class="reach">Get in touch:</p><a class="mailpill" href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : ""}${actions}</div>`);
     case "catalogue": {
       const pills = services.slice(0, 5).map((x) => `<a class="pill" href="${esc(pageUrl(s.ctx, "services"))}">${esc(x.title)}</a>`).join("");
-      return head("catalogue", `<div class="wrap"><p class="kicker">${esc(brand)}</p><h1>${esc(d.heading)}</h1>${pills ? `<nav class="pills" aria-label="Services">${pills}</nav>` : ""}</div><div class="wide">${photo(2000, 900)}<div class="cat-card"><strong>Request our catalogue</strong><p>${esc(d.subheading)}</p>${actions}</div></div>`);
+      return head("catalogue", `<div class="wrap"><p class="kicker">${esc(brand)}</p><h1>${esc(d.heading)}</h1>${pills ? `<nav class="pills" aria-label="Services">${pills}</nav>` : ""}</div><div class="wide">${photo(2000, 900)}<div class="cat-card"><strong>${esc(brand)}</strong><p>${esc(d.subheading)}</p>${actions}</div></div>`);
     }
     case "monolith":
       return head("monolith", `<div class="wrap"><p class="word" aria-hidden="true">${esc(brand)}</p><div class="stage"><p class="l">${esc(parts.join(" · "))}</p><div class="obj">${photo(900, 900)}</div><div class="r"><h1>${esc(d.heading)}</h1>${actions}</div></div></div>`);

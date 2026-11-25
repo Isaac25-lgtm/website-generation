@@ -3,11 +3,11 @@
   "type": "ecommerce",
   "templateId": "e-blanc",
   "brand": {
-    "name": "BLANC STUDIO",
-    "tagline": "Objects to wear."
+    "name": "STUDIO NEUF",
+    "tagline": "Clothes shown like objects."
   },
   "seo": {
-    "title": "BLANC STUDIO — Objects to wear.",
+    "title": "STUDIO NEUF — Clothes shown like objects.",
     "description": "A concept store for clothing and accessories by independent designers.",
     "lang": "en"
   },
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-5sa2da",
+          "id": "hero-64ithx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Concept store",
-            "heading": "Objects to wear.",
+            "heading": "Clothes shown like objects.",
             "subheading": "A concept store for clothing and accessories by independent designers.",
             "primaryCta": {
               "label": "Shop now",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-5t7mbb",
+          "id": "collections-65ia83",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-5uji63",
+          "id": "products-66fjzv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,14 +100,14 @@
           }
         },
         {
-          "id": "about-5vkbgc",
+          "id": "about-67hqfd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
-            "heading": "About BLANC STUDIO",
-            "body": "Blanc Studio is a small concept store in Berlin-Mitte. We buy from independent designers we have met in person, and show their work like a gallery.\n\nThe shop changes every season.",
+            "heading": "About STUDIO NEUF",
+            "body": "Studio Neuf is a small concept store in Berlin-Mitte. We buy from independent designers we have met in person, and show their work like a gallery.\n\nThe shop changes every season.",
             "image": {
               "stock": "fashion-wooden-hangers",
               "alt": "Hangers on a rail",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-5wcdde",
+          "id": "products-683yrl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,14 +147,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-5x8ukl",
+          "id": "about-69frel",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "Our story",
-            "body": "Blanc Studio is a small concept store in Berlin-Mitte. We buy from independent designers we have met in person, and show their work like a gallery.\n\nThe shop changes every season.",
+            "body": "Studio Neuf is a small concept store in Berlin-Mitte. We buy from independent designers we have met in person, and show their work like a gallery.\n\nThe shop changes every season.",
             "image": {
               "stock": "fashion-boutique-rails",
               "alt": "The shop",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-5yi09w",
+          "id": "faq-6a8qyb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-5zkt0r",
+          "id": "contact-6b84zf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-60l3rh",
+          "id": "hours-6ciq79",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

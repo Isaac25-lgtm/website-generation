@@ -39,6 +39,7 @@
     "city": "Melbourne",
     "country": "Australia",
     "mapQuery": "Fitzroy, Melbourne",
+    "whatsappFloat": false,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-2ggcqi",
+          "id": "hero-2g1op",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -74,7 +75,7 @@
           }
         },
         {
-          "id": "services-2hfi2g",
+          "id": "services-2h8zd1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -107,7 +108,7 @@
           }
         },
         {
-          "id": "about-2i9w0w",
+          "id": "about-2ii26o",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -119,7 +120,7 @@
           }
         },
         {
-          "id": "cta-2jgxu1",
+          "id": "cta-2jl3cw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -142,7 +143,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-2kib52",
+          "id": "about-2k92mk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -162,7 +163,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-2l7gvz",
+          "id": "services-2lcfbm",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -220,7 +221,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-2n8nfh",
+          "id": "contact-2nbf9q",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -233,7 +234,7 @@
           }
         },
         {
-          "id": "hours-2okibj",
+          "id": "hours-2ob6ys",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

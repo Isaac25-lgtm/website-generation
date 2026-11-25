@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-13c1us3",
+          "id": "hero-13c5fdq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -68,14 +68,14 @@
               "href": "/services"
             },
             "image": {
-              "stock": "work-pattern",
+              "stock": "obj-journal",
               "alt": "Quiet Room Studio",
               "caption": ""
             }
           }
         },
         {
-          "id": "services-13darex",
+          "id": "services-13d28cf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -90,7 +90,7 @@
                 "price": "From $9,000",
                 "image": {
                   "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -99,8 +99,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "work-drawing",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -109,8 +109,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "work-pattern",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -118,7 +118,7 @@
           }
         },
         {
-          "id": "about-13ecg8f",
+          "id": "about-13efm5n",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -127,8 +127,8 @@
             "heading": "About Quiet Room Studio",
             "body": "A small creative studio.",
             "image": {
-              "stock": "work-pattern",
-              "alt": "A sculptural pattern",
+              "stock": "obj-journal",
+              "alt": "Quiet Room Studio work",
               "caption": ""
             },
             "highlights": [
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-13f5q3s",
+          "id": "cta-13f2etm",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,7 +162,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-13g2ptq",
+          "id": "about-13ggf2d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -171,8 +171,8 @@
             "heading": "Our story",
             "body": "A small creative studio.",
             "image": {
-              "stock": "obj-journal",
-              "alt": "Sketchbook",
+              "stock": "home-bud-vases",
+              "alt": "Quiet Room Studio work",
               "caption": ""
             },
             "highlights": [
@@ -183,7 +183,7 @@
           }
         },
         {
-          "id": "faq-13h8il0",
+          "id": "faq-13h7te0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -211,7 +211,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-13i3q2v",
+          "id": "services-13i1hxo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -226,7 +226,7 @@
                 "price": "From $9,000",
                 "image": {
                   "stock": "work-sketches",
-                  "alt": "Identity sketches",
+                  "alt": "Brand identity",
                   "caption": ""
                 }
               },
@@ -235,8 +235,8 @@
                 "description": "Design and build of fast, accessible sites.",
                 "price": "From $12,000",
                 "image": {
-                  "stock": "work-wireframes",
-                  "alt": "Wireframes",
+                  "stock": "work-drawing",
+                  "alt": "Websites",
                   "caption": ""
                 }
               },
@@ -245,8 +245,8 @@
                 "description": "Labels, boxes and retail displays.",
                 "price": "From $6,000",
                 "image": {
-                  "stock": "home-bud-vases",
-                  "alt": "Packaged ceramics",
+                  "stock": "work-pattern",
+                  "alt": "Packaging",
                   "caption": ""
                 }
               }
@@ -278,7 +278,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-13k4nn4",
+          "id": "gallery-13k1123",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -288,23 +288,18 @@
             "intro": "",
             "images": [
               {
-                "stock": "work-pattern",
-                "alt": "A sculptural pattern",
-                "caption": ""
-              },
-              {
                 "stock": "obj-journal",
-                "alt": "Sketchbook",
+                "alt": "Quiet Room Studio work",
                 "caption": ""
               },
               {
-                "stock": "biz-glass",
-                "alt": "Office building",
+                "stock": "home-bud-vases",
+                "alt": "Quiet Room Studio work",
                 "caption": ""
               },
               {
-                "stock": "home-white-room",
-                "alt": "Studio space",
+                "stock": "home-pink-vase",
+                "alt": "Quiet Room Studio work",
                 "caption": ""
               }
             ]
@@ -319,7 +314,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-13lrog",
+          "id": "contact-13l7dfy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

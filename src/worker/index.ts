@@ -7,6 +7,7 @@ import { aiAvailable } from "./lib/ai";
 import { dodoConfigured, paymentsMode } from "./lib/dodo";
 import { emailConfigured } from "./lib/email";
 import { storageBackend } from "./lib/storage";
+import { publicConfig } from "./lib/config";
 import { auth, account } from "./routes/auth";
 import { projects } from "./routes/projects";
 import { assets } from "./routes/assets";
@@ -38,23 +39,7 @@ app.get("/healthz", async (c) => {
   return c.json({ ok: !!db, time: new Date().toISOString() }, db ? 200 : 503);
 });
 
-app.get("/api/config", async (c) => {
-  const rows = await c.env.DB.prepare("SELECT key, value FROM system_settings WHERE key IN ('hosting_fee_status','hosting_fee_amount','hosting_fee_amount_personal','hosting_fee_amount_business','hosting_fee_amount_ecommerce','hosting_fee_currency','hosting_fee_interval','operator_display_name','operator_status_note','support_email','ai_generations_per_project')").all<{ key: string; value: string }>();
-  const s = Object.fromEntries(rows.results.map((r) => [r.key, r.value]));
-  return c.json({
-    appName: c.env.APP_NAME,
-    prices: Object.values(PLANS).map((p) => ({ type: p.type, name: p.name, priceCents: p.priceCents, currency: p.currency, billing: p.billing })),
-    payments: { provider: "dodo", configured: dodoConfigured(c.env), mode: paymentsMode(c.env) },
-    ai: { available: aiAvailable(c.env), perProjectLimit: Number(s.ai_generations_per_project || 20) },
-    google: { enabled: !!(c.env.GOOGLE_CLIENT_ID && c.env.GOOGLE_CLIENT_SECRET) },
-    browserRun: { bound: !!c.env.BROWSER },
-    email: { configured: emailConfigured(c.env) },
-    storage: storageBackend(c.env),
-    hosting: { status: s.hosting_fee_status || "not_set", amount: s.hosting_fee_amount || "", amounts: { personal: s.hosting_fee_amount_personal || "", business: s.hosting_fee_amount_business || "", ecommerce: s.hosting_fee_amount_ecommerce || "" }, currency: s.hosting_fee_currency || "", interval: s.hosting_fee_interval || "" },
-    operator: { name: s.operator_display_name || "Motion Imprints Technologies", note: s.operator_status_note || "", supportEmail: s.support_email || "" },
-    demos: PUBLIC_DEMOS.map((d) => ({ slug: d.slug, type: d.type, url: `/s/${d.slug}/` })),
-  });
-});
+app.get("/api/config", async (c) => c.json(await publicConfig(c.env)));
 
 app.route("/api/auth", auth);
 app.route("/api/account", account);

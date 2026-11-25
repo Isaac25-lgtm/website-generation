@@ -29,7 +29,7 @@
     "animation": "lively",
     "headerStyle": "floating",
     "cardStyle": "glass",
-    "ornament": "blobs"
+    "ornament": "none"
   },
   "contact": {
     "email": "hello@example.com",
@@ -39,6 +39,7 @@
     "city": "Singapore",
     "country": "Singapore",
     "mapQuery": "",
+    "whatsappFloat": false,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-2862od",
+          "id": "hero-28cxlc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -69,7 +70,7 @@
           }
         },
         {
-          "id": "services-29io87",
+          "id": "services-29f9r7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -97,7 +98,7 @@
           }
         },
         {
-          "id": "about-2a15de",
+          "id": "about-2a6vkp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -109,7 +110,7 @@
           }
         },
         {
-          "id": "cta-2bizhl",
+          "id": "cta-2bkjsw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -132,7 +133,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-2cd0hl",
+          "id": "about-2cia3p",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -152,7 +153,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-2ddkye",
+          "id": "services-2dblqc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -204,7 +205,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-2fe4p9",
+          "id": "contact-2fzkl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

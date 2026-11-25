@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Dock Street — Workwear for people who don't work in an office.",
-    "description": "Workwear for people who don't work in an office.",
+    "description": "Dock Street makes chore jackets, overshirts and trousers in heavy cotton, built to be repaired.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1hvjkg6",
+          "id": "hero-1hvemnj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Workwear",
             "heading": "Workwear for people who don't work in an office.",
-            "subheading": "Workwear for people who don't work in an office.",
+            "subheading": "Dock Street makes chore jackets, overshirts and trousers in heavy cotton, built to be repaired.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1hwax9",
+          "id": "collections-1hwbb8d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1hx4c2r",
+          "id": "products-1hx1hkf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1hyfdjf",
+          "id": "about-1hyeqdk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1hzdv2",
+          "id": "products-1hzb7ds",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1i0jvye",
+          "id": "about-1i0ewa8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1i14w4e",
+          "id": "faq-1i17e24",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1i2b0rt",
+          "id": "contact-1i2iz6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1i3jdlg",
+          "id": "hours-1i3aobg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

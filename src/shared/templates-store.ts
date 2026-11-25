@@ -46,6 +46,22 @@ const S = (x: Spec): TemplateDef => ({
 const upperNav = `.nav a,.cart-link{text-transform:uppercase;letter-spacing:.16em!important;font-size:.72rem!important}`;
 
 export { S as storeTemplate };
+
+/** A compact storefront row used by the shop batches: colours are bg, surface, text, muted, primary, accent. */
+export type StoreRow = [id: string, name: string, category: string, layout: StoreLayout, rank: "signature" | "premium" | "standard", c: [string, string, string, string, string, string], h: Theme["fontHeading"], b: Theme["fontBody"], description: string, industries: string, x?: Partial<{ dark: boolean; hero: string; css: string; radius: Theme["radius"]; tier: "public" | "member"; header: Theme["headerStyle"] }>];
+
+export function storeRows(rows: StoreRow[]): TemplateDef[] {
+  return rows.map(([id, name, category, layout, rank, c, h, b, description, industries, x = {}]) => ({
+    ...S({
+      id, name, category, layout, tier: x.tier ?? "member",
+      styles: [layout, x.dark ? "dark" : "light"], industries: industries.split(", "), description,
+      colors: { bg: c[0], surface: c[1], text: c[2], muted: c[3], primary: c[4], accent: c[5] } as C,
+      mode: x.dark ? "dark" : "light", fontHeading: h, fontBody: b, headerStyle: x.header, radius: x.radius,
+      hero: x.hero, css: x.css ?? "",
+    }),
+    rank,
+  }));
+}
 export const STORE_TEMPLATES: TemplateDef[] = [
   // ───────────── Fashion (womenswear) ─────────────
   S({

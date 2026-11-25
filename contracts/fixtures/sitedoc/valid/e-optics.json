@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Lens & Line — Glasses made with care, fitted in person.",
-    "description": "Glasses made with care, fitted in person.",
+    "description": "Lens & Line designs its own frames and fits them in two shops.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1b4e5jq",
+          "id": "hero-1b4fhey",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Opticians",
             "heading": "Glasses made with care, fitted in person.",
-            "subheading": "Glasses made with care, fitted in person.",
+            "subheading": "Lens & Line designs its own frames and fits them in two shops.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1b5igug",
+          "id": "collections-1b5d1k7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1b6fugi",
+          "id": "products-1b6fq9o",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1b7d2gz",
+          "id": "about-1b7fm4y",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1b884lb",
+          "id": "products-1b86bqi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1b9nfe",
+          "id": "about-1b91xu0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ba2hfh",
+          "id": "faq-1bah7kp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1bbfbf1",
+          "id": "contact-1bb3wog",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1bc2ke5",
+          "id": "hours-1bcf51s",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

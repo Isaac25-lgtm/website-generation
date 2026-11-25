@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Brookfield Leather — Leather satchels for school, work and the weekend",
-    "description": "Leather satchels for school, work and the weekend.",
+    "description": "Brookfield has made satchels in the same Yorkshire workshop since 1989.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1adicx0",
+          "id": "hero-1adanpd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Leather goods",
             "heading": "Leather satchels for school, work and the weekend.",
-            "subheading": "Leather satchels for school, work and the weekend.",
+            "subheading": "Brookfield has made satchels in the same Yorkshire workshop since 1989.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1ae9ta3",
+          "id": "collections-1aedld2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1af8o6c",
+          "id": "products-1afb8f4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1aghhw3",
+          "id": "about-1agavqt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1ahnts",
+          "id": "products-1ahbhru",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1ai6xu3",
+          "id": "about-1aikusw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ajkxby",
+          "id": "faq-1aj15j6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1aka81l",
+          "id": "contact-1ak4un5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1alk3wy",
+          "id": "hours-1al2ny0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

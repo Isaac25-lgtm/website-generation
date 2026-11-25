@@ -39,6 +39,7 @@
     "city": "London",
     "country": "United Kingdom",
     "mapQuery": "",
+    "whatsappFloat": false,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "banner-329jmu",
+          "id": "banner-35cwdl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -63,7 +64,7 @@
           }
         },
         {
-          "id": "hero-33noq",
+          "id": "hero-364ol8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,11 +76,15 @@
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
+            },
+            "secondaryCta": {
+              "label": "Our story",
+              "href": "/about"
             }
           }
         },
         {
-          "id": "collections-34hhyf",
+          "id": "collections-378wdq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -90,7 +95,7 @@
           }
         },
         {
-          "id": "products-353u0d",
+          "id": "products-38gvep",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -102,6 +107,18 @@
             "collectionHandle": "",
             "limit": 8
           }
+        },
+        {
+          "id": "about-39443b",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Field & Basket",
+            "body": "Field & Basket buys directly from twelve independent farms within 80 miles of London. We pack orders the morning they are delivered, so produce is usually picked the day before.",
+            "highlights": []
+          }
         }
       ]
     },
@@ -112,7 +129,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-36kvu4",
+          "id": "products-3a7nrg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -128,13 +145,53 @@
       ]
     },
     {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-3bkshb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Field & Basket buys directly from twelve independent farms within 80 miles of London. We pack orders the morning they are delivered, so produce is usually picked the day before.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "faq-3c9eqk",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "When do you deliver?",
+                "a": "Every day except Sunday, between 8 am and 8 pm."
+              },
+              {
+                "q": "What if something is not fresh?",
+                "a": "Tell us within 24 hours and we will refund or replace it."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-378yng",
+          "id": "contact-3di7xn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

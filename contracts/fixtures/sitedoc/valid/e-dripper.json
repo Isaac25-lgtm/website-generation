@@ -3,12 +3,12 @@
   "type": "ecommerce",
   "templateId": "e-dripper",
   "brand": {
-    "name": "Kumo Coffee",
+    "name": "Kettle & Cone Coffee",
     "tagline": "Pour-over coffee, made slowly."
   },
   "seo": {
-    "title": "Kumo Coffee — Pour-over coffee, made slowly.",
-    "description": "Pour-over coffee, made slowly.",
+    "title": "Kettle & Cone Coffee — Pour-over coffee, made slowly.",
+    "description": "Kettle & Cone roasts light coffee for pour-over and makes ceramic drippers with a potter in Gifu.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1lmau6k",
+          "id": "hero-1lm4ytf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Coffee",
             "heading": "Pour-over coffee, made slowly.",
-            "subheading": "Pour-over coffee, made slowly.",
+            "subheading": "Kettle & Cone roasts light coffee for pour-over and makes ceramic drippers with a potter in Gifu.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -69,13 +69,13 @@
             },
             "image": {
               "stock": "coffee-pourover",
-              "alt": "Kumo Coffee",
+              "alt": "Kettle & Cone Coffee",
               "caption": ""
             }
           }
         },
         {
-          "id": "collections-1ln2sui",
+          "id": "collections-1ln2vjq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1lo2o8v",
+          "id": "products-1loa9sr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,14 +100,14 @@
           }
         },
         {
-          "id": "about-1lpfr2u",
+          "id": "about-1lp348g",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
-            "heading": "About Kumo Coffee",
-            "body": "Kumo roasts light coffee for pour-over and makes ceramic drippers with a potter in Gifu.",
+            "heading": "About Kettle & Cone Coffee",
+            "body": "Kettle & Cone roasts light coffee for pour-over and makes ceramic drippers with a potter in Gifu.",
             "image": {
               "stock": "coffee-pourover",
               "alt": "Single-origin filter, 250 g",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1lq2gh5",
+          "id": "products-1lqel59",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,14 +147,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1lrcjnk",
+          "id": "about-1lr5mpj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "Our story",
-            "body": "Kumo roasts light coffee for pour-over and makes ceramic drippers with a potter in Gifu.",
+            "body": "Kettle & Cone roasts light coffee for pour-over and makes ceramic drippers with a potter in Gifu.",
             "image": {
               "stock": "coffee-cortado",
               "alt": "Glass pour-over set",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1lsfmqn",
+          "id": "faq-1ls2zj0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1ltiiyt",
+          "id": "contact-1lt1u55",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1lugy8t",
+          "id": "hours-1lu71rc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Ninth Hour — Coffee roasted in south London.",
-    "description": "Coffee roasted in south London.",
+    "description": "Ninth Hour roasts twice a week and runs three cafés in south London.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1lv3chb",
+          "id": "hero-1lv1jnr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Coffee roaster",
             "heading": "Coffee roasted in south London.",
-            "subheading": "Coffee roasted in south London.",
+            "subheading": "Ninth Hour roasts twice a week and runs three cafés in south London.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1lw67ot",
+          "id": "collections-1lw1lzb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1lxiki2",
+          "id": "products-1lxhecf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1ly9zb6",
+          "id": "about-1ly51jn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1lz3ami",
+          "id": "products-1lzfa29",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1m0e0hr",
+          "id": "about-1m0b9bi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1m1czy1",
+          "id": "faq-1m1dr6h",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1m29nad",
+          "id": "contact-1m2gwne",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1m3g2y4",
+          "id": "hours-1m3co43",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

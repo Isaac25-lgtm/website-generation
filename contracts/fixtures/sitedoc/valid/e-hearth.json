@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Hearth & Table — Kitchen and table things made with care.",
-    "description": "Kitchen and table things made with care.",
+    "description": "Hearth & Table works with small makers on cookware, linens and tableware for everyday cooking.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1l462n5",
+          "id": "hero-1l4fpwj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Homeware",
             "heading": "Kitchen and table things made with care.",
-            "subheading": "Kitchen and table things made with care.",
+            "subheading": "Hearth & Table works with small makers on cookware, linens and tableware for everyday cooking.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1l5932n",
+          "id": "collections-1l5k2ww",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1l644hs",
+          "id": "products-1l6i9w7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1l76c86",
+          "id": "about-1l79ume",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1l8bok9",
+          "id": "products-1l8f01d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1l9afj3",
+          "id": "about-1l9fr8q",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1la8me0",
+          "id": "faq-1lalf87",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1lb63yn",
+          "id": "contact-1lbaup7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1lc8c2m",
+          "id": "hours-1lc7efw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

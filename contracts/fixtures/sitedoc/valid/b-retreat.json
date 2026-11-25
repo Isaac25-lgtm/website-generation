@@ -4,11 +4,11 @@
   "templateId": "b-retreat",
   "brand": {
     "name": "Casa Olmo",
-    "tagline": "Twelve rooms in an old farmhouse above the sea."
+    "tagline": "Twelve rooms in a palm garden by the sea."
   },
   "seo": {
-    "title": "Casa Olmo — Twelve rooms in an old farmhouse above the sea.",
-    "description": "A small hotel with a pool, an olive grove and a kitchen that cooks from the garden.",
+    "title": "Casa Olmo — Twelve rooms in a palm garden by the sea.",
+    "description": "A small hotel with a long pool, a palm garden and a kitchen that cooks from its own beds.",
     "lang": "en"
   },
   "theme": {
@@ -36,8 +36,8 @@
     "phone": "",
     "whatsapp": "",
     "address": "",
-    "city": "Puglia",
-    "country": "Italy",
+    "city": "Tulum",
+    "country": "Mexico",
     "mapQuery": "",
     "whatsappFloat": false,
     "socials": []
@@ -50,15 +50,15 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-do44f3",
+          "id": "hero-do6nx0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "Boutique hotel · Puglia",
-            "heading": "Twelve rooms in an old farmhouse above the sea.",
-            "subheading": "A small hotel with a pool, an olive grove and a kitchen that cooks from the garden.",
+            "eyebrow": "Boutique hotel · Tulum",
+            "heading": "Twelve rooms in a palm garden by the sea.",
+            "subheading": "A small hotel with a long pool, a palm garden and a kitchen that cooks from its own beds.",
             "primaryCta": {
               "label": "Contact us",
               "href": "/contact"
@@ -75,19 +75,19 @@
           }
         },
         {
-          "id": "services-dp99qi",
+          "id": "services-dpbhgs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "services",
           "data": {
-            "heading": "What we do",
+            "heading": "Rooms",
             "intro": "",
             "items": [
               {
                 "title": "Garden rooms",
-                "description": "Ground-floor rooms opening onto the olive grove.",
-                "price": "From €220 a night",
+                "description": "Ground-floor rooms opening onto the palm garden.",
+                "price": "From $240 a night",
                 "image": {
                   "stock": "stay-room-green",
                   "alt": "A garden room",
@@ -97,7 +97,7 @@
               {
                 "title": "Sea-view rooms",
                 "description": "First-floor rooms with a view to the coast.",
-                "price": "From €290 a night",
+                "price": "From $310 a night",
                 "image": {
                   "stock": "stay-white-bed",
                   "alt": "A sea-view room",
@@ -107,7 +107,7 @@
               {
                 "title": "The farmhouse suite",
                 "description": "Two rooms and a private terrace.",
-                "price": "From €480 a night",
+                "price": "From $520 a night",
                 "image": {
                   "stock": "stay-rooftop",
                   "alt": "A private terrace",
@@ -118,14 +118,14 @@
           }
         },
         {
-          "id": "about-dq7b7o",
+          "id": "about-dqfy8c",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "About Casa Olmo",
-            "body": "Casa Olmo is a restored eighteenth-century farmhouse with twelve rooms. Breakfast is served under the pergola, and dinner is cooked from what grows in the garden.",
+            "body": "Casa Olmo is a restored hacienda with twelve rooms. Breakfast is served by the pool, and dinner is cooked from what grows in the garden.",
             "image": {
               "stock": "stay-room-green",
               "alt": "A guest room with a green wall",
@@ -134,12 +134,12 @@
             "highlights": [
               "Twelve rooms only",
               "Breakfast and dinner from the garden",
-              "Ten minutes from the sea"
+              "A short walk to the beach"
             ]
           }
         },
         {
-          "id": "cta-dr4lik",
+          "id": "cta-dr6d4t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,14 +162,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-dsg1u5",
+          "id": "about-dshptb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
           "kind": "about",
           "data": {
             "heading": "Our story",
-            "body": "Casa Olmo is a restored eighteenth-century farmhouse with twelve rooms. Breakfast is served under the pergola, and dinner is cooked from what grows in the garden.",
+            "body": "Casa Olmo is a restored hacienda with twelve rooms. Breakfast is served by the pool, and dinner is cooked from what grows in the garden.",
             "image": {
               "stock": "stay-white-bed",
               "alt": "A white bed by a window",
@@ -178,12 +178,12 @@
             "highlights": [
               "Twelve rooms only",
               "Breakfast and dinner from the garden",
-              "Ten minutes from the sea"
+              "A short walk to the beach"
             ]
           }
         },
         {
-          "id": "faq-dtda6o",
+          "id": "faq-dt4l5r",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -193,7 +193,7 @@
             "items": [
               {
                 "q": "When are you open?",
-                "a": "From April to October."
+                "a": "All year, except September."
               },
               {
                 "q": "Do you welcome children?",
@@ -211,19 +211,19 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-du1kl6",
+          "id": "services-du4ruc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "services",
           "data": {
-            "heading": "Services",
+            "heading": "Rooms",
             "intro": "",
             "items": [
               {
                 "title": "Garden rooms",
-                "description": "Ground-floor rooms opening onto the olive grove.",
-                "price": "From €220 a night",
+                "description": "Ground-floor rooms opening onto the palm garden.",
+                "price": "From $240 a night",
                 "image": {
                   "stock": "stay-room-green",
                   "alt": "A garden room",
@@ -233,7 +233,7 @@
               {
                 "title": "Sea-view rooms",
                 "description": "First-floor rooms with a view to the coast.",
-                "price": "From €290 a night",
+                "price": "From $310 a night",
                 "image": {
                   "stock": "stay-white-bed",
                   "alt": "A sea-view room",
@@ -243,7 +243,7 @@
               {
                 "title": "The farmhouse suite",
                 "description": "Two rooms and a private terrace.",
-                "price": "From €480 a night",
+                "price": "From $520 a night",
                 "image": {
                   "stock": "stay-rooftop",
                   "alt": "A private terrace",
@@ -278,7 +278,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-dwgrns",
+          "id": "gallery-dwkevh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -319,7 +319,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-dx2qel",
+          "id": "contact-dx82zx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

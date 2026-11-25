@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Jolly Stripe — Bold prints for clothes and the home.",
-    "description": "Bold prints for clothes and the home.",
+    "description": "Jolly Stripe knits and prints its own patterns in New York, for clothes, blankets and cushions.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1gmcnxb",
+          "id": "hero-1gm92o9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Printed clothing",
             "heading": "Bold prints for clothes and the home.",
-            "subheading": "Bold prints for clothes and the home.",
+            "subheading": "Jolly Stripe knits and prints its own patterns in New York, for clothes, blankets and cushions.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1gn32yk",
+          "id": "collections-1gnbkux",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1go9857",
+          "id": "products-1go2udw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1gp820r",
+          "id": "about-1gphr6j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1gq6ug3",
+          "id": "products-1gq9vod",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1grcima",
+          "id": "about-1gr57u8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1gsg6wd",
+          "id": "faq-1gsp4u",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1gtdwb3",
+          "id": "contact-1gtfool",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1gu82lh",
+          "id": "hours-1gu6rr8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

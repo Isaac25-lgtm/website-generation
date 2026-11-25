@@ -63,4 +63,25 @@ def draft_doc(text: str | None):
     except ValueError:
         return None
     ok, _ = validate_sitedoc(doc)
-    return doc if ok else None
+    return strip_owner_photos(doc) if ok else None
+
+
+OWNER_PREFIX = "owner-"
+
+
+def strip_owner_photos(value):
+    """Mirror of stripOwnerPhotos(): owner-only stock photos never leave template previews."""
+    drop = object()
+
+    def walk(v):
+        if isinstance(v, list):
+            return [x for x in (walk(i) for i in v) if x is not drop]
+        if isinstance(v, dict):
+            stock = v.get("stock")
+            if isinstance(stock, str) and stock.startswith(OWNER_PREFIX):
+                rest = {k: x for k, x in v.items() if k != "stock"}
+                return rest if ("assetId" in rest or "art" in rest) else drop
+            return {k: x for k, x in ((k, walk(x)) for k, x in v.items()) if x is not drop}
+        return v
+
+    return walk(value)

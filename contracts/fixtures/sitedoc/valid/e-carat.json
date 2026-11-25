@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "First Light Diamonds — Diamonds you can trace from mine to ring.",
-    "description": "Diamonds you can trace from mine to ring.",
+    "description": "First Light sells traceable diamonds, each with a record of where it was cut and polished.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1iv1u4b",
+          "id": "hero-1ivg52",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Diamond jewellery",
             "heading": "Diamonds you can trace from mine to ring.",
-            "subheading": "Diamonds you can trace from mine to ring.",
+            "subheading": "First Light sells traceable diamonds, each with a record of where it was cut and polished.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1iwk4ir",
+          "id": "collections-1iwc3n9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1ixe2yo",
+          "id": "products-1ix93zb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1iy815d",
+          "id": "about-1iyit2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1izf64r",
+          "id": "products-1iz3qhj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1j07mz9",
+          "id": "about-1j0l7o2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1j1710p",
+          "id": "faq-1j1cpoo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1j24luu",
+          "id": "contact-1j21ckr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1j3474j",
+          "id": "hours-1j3ebwo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

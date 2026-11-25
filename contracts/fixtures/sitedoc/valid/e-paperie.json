@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Paper & Plume — Notebooks and paper goods for everyday writing.",
-    "description": "Notebooks and paper goods for everyday writing.",
+    "description": "Paper & Plume designs notebooks, planners and cards printed in Britain.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1dd3mlk",
+          "id": "hero-1dd55by",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Stationery",
             "heading": "Notebooks and paper goods for everyday writing.",
-            "subheading": "Notebooks and paper goods for everyday writing.",
+            "subheading": "Paper & Plume designs notebooks, planners and cards printed in Britain.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1debtcd",
+          "id": "collections-1dejwp2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1df1tdh",
+          "id": "products-1dfk0fs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1dgec9",
+          "id": "about-1dgdos0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1dh8g3m",
+          "id": "products-1dhg4oc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1di3pax",
+          "id": "about-1di85gt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1dj99vz",
+          "id": "faq-1djafh4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1dkbc54",
+          "id": "contact-1dk134o",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1dljxfy",
+          "id": "hours-1dlkco7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

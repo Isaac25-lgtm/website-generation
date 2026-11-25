@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Bunker Club — Golf, without the stuffiness.",
-    "description": "Golf, without the stuffiness.",
+    "description": "Bunker Club makes golf clothes and gear for people who'd rather laugh than keep score.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1sdgok6",
+          "id": "hero-1sdgolk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Golf",
             "heading": "Golf, without the stuffiness.",
-            "subheading": "Golf, without the stuffiness.",
+            "subheading": "Bunker Club makes golf clothes and gear for people who'd rather laugh than keep score.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1sebcjw",
+          "id": "collections-1seka77",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1sfdul3",
+          "id": "products-1sfbioj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1sgbhdj",
+          "id": "about-1sgg842",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1shhbn5",
+          "id": "products-1shj9lf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1sihpta",
+          "id": "about-1si5184",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1sjg3br",
+          "id": "faq-1sj6jq9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1sk3n7v",
+          "id": "contact-1skfu0u",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1slk7pk",
+          "id": "hours-1slcc4i",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

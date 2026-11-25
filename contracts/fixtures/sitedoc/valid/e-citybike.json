@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Slow Lane Bicycles — Simple bikes for city streets.",
-    "description": "Simple bikes for city streets.",
+    "description": "Slow Lane makes lightweight steel bikes for short city rides, sold and serviced from our shop.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1sm1ucl",
+          "id": "hero-1smfdp5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Bicycles",
             "heading": "Simple bikes for city streets.",
-            "subheading": "Simple bikes for city streets.",
+            "subheading": "Slow Lane makes lightweight steel bikes for short city rides, sold and serviced from our shop.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1snaf5s",
+          "id": "collections-1sn9qwf",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1sogzzy",
+          "id": "products-1sopap",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1sp4j6a",
+          "id": "about-1spfsk0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1sqh0vh",
+          "id": "products-1sq6gzt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1srei7y",
+          "id": "about-1sra3hy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ss1wjo",
+          "id": "faq-1ss6iin",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1sthdqo",
+          "id": "contact-1st2wuv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1su3nrv",
+          "id": "hours-1suhgsb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

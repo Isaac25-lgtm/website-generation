@@ -29,7 +29,7 @@
     "animation": "subtle",
     "headerStyle": "centered",
     "cardStyle": "glass",
-    "ornament": "blobs"
+    "ornament": "none"
   },
   "contact": {
     "email": "",
@@ -39,6 +39,7 @@
     "city": "Sydney",
     "country": "Australia",
     "mapQuery": "",
+    "whatsappFloat": false,
     "socials": []
   },
   "pages": [
@@ -49,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-387nj0",
+          "id": "hero-3e2rfh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -61,11 +62,15 @@
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
+            },
+            "secondaryCta": {
+              "label": "Our story",
+              "href": "/about"
             }
           }
         },
         {
-          "id": "collections-39htc2",
+          "id": "collections-3f4762",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -76,7 +81,7 @@
           }
         },
         {
-          "id": "products-3abas6",
+          "id": "products-3gdb2k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -88,6 +93,18 @@
             "collectionHandle": "",
             "limit": 8
           }
+        },
+        {
+          "id": "about-3hsqz",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Lumière Botanics",
+            "body": "Lumière Botanics makes face and body care in small batches in Sydney. Every formula uses cold-pressed plant oils, and every batch is dated so you know how fresh it is.",
+            "highlights": []
+          }
         }
       ]
     },
@@ -98,7 +115,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-3bl1uk",
+          "id": "products-3i2dcm",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -114,13 +131,53 @@
       ]
     },
     {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-3ji16l",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Lumière Botanics makes face and body care in small batches in Sydney. Every formula uses cold-pressed plant oils, and every batch is dated so you know how fresh it is.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "faq-3k2qtw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "Are your products suitable for sensitive skin?",
+                "a": "Most are fragrance-free. Each product page lists every ingredient."
+              },
+              {
+                "q": "How long do products last?",
+                "a": "Twelve months unopened, six months once opened."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "contact",
       "slug": "contact",
       "title": "Contact",
       "inNav": true,
       "sections": [
         {
-          "id": "contact-3cavsj",
+          "id": "contact-3lc63v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

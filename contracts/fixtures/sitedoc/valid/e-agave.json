@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Casa Oscura — Tequila made from highland agave.",
-    "description": "Tequila made from highland agave.",
+    "description": "Casa Oscura is a family distillery in the Jalisco highlands, cooking agave in stone ovens.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1n4i8b7",
+          "id": "hero-1n475vw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Tequila",
             "heading": "Tequila made from highland agave.",
-            "subheading": "Tequila made from highland agave.",
+            "subheading": "Casa Oscura is a family distillery in the Jalisco highlands, cooking agave in stone ovens.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1n536y3",
+          "id": "collections-1n5aqlo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1n68kyo",
+          "id": "products-1n6dffc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1n7dkyv",
+          "id": "about-1n71524",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1n8kny8",
+          "id": "products-1n8l15m",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1n924d9",
+          "id": "about-1n96vl1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1nadbrb",
+          "id": "faq-1nachqm",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1nb4a0y",
+          "id": "contact-1nbh9cz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1nc9kur",
+          "id": "hours-1nccymv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

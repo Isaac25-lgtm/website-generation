@@ -28,7 +28,12 @@ const SHARED = `
 .lay .pdp h1{font-weight:500}
 .lay .pdp .btn-primary{width:100%;min-height:54px;letter-spacing:.08em}
 .lay .related{border-top:1px solid var(--border)}
+/* Grid children may shrink below their content, and long product names wrap, so no layout overflows a phone. */
+.lay .grid>*,.lay .hero .wg-items>*,.lay .hero .ps-grid>*,.lay .hero .wb-grid>*,.lay .hero .ts-grid>*{min-width:0}
+.lay .product-card .p-title,.lay .product-card .info{overflow-wrap:anywhere;min-width:0}
+.lay .wg-word{overflow-wrap:normal;max-width:100%}
 @media(max-width:640px){.lay .brand{font-size:1.1rem!important;letter-spacing:.06em!important;white-space:nowrap}}
+@media(max-width:400px){.lay .brand{white-space:normal;font-size:1rem!important;letter-spacing:.02em!important;line-height:1.15;min-width:0}.lay .head-actions{flex:none}}
 /* stacked product gallery with sticky details (editorial + interiors) */
 .pdp.stacked{grid-template-columns:1.35fr .65fr}
 .pdp.stacked .gallery-stack{display:grid;gap:.75rem}
@@ -296,8 +301,6 @@ export const STORE_HERO_CSS = `
 .hero.workbench .wb-pics{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:clamp(.6rem,1.4vw,1rem);aspect-ratio:6/5}
 .hero.workbench .wb-pics figure{margin:0;overflow:hidden}.hero.workbench .wb-pics img{width:100%;height:100%;object-fit:cover}
 .hero.workbench .wb-p0{grid-row:1/3}
-.hero.workbench .wb-note{margin-top:1.75rem;padding:1rem 1.2rem;border:1px solid var(--text);max-width:26rem;font-size:.92rem}
-.hero.workbench .wb-note strong{display:block;font-family:var(--font-h);font-style:italic;font-weight:400;font-size:1.1rem;margin-bottom:.2rem}
 @media(max-width:860px){
  .hero.popstack .ps-grid,.hero.tablescape .ts-grid,.hero.workbench .wb-grid{grid-template-columns:1fr}
  .hero.tablescape .ts-media{min-height:55vh}

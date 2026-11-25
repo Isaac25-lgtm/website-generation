@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Sandstone House — Hand-made things for a calmer home.",
-    "description": "Hand-made things for a calmer home.",
+    "description": "Sandstone House works with block printers, weavers and potters across Rajasthan.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1k43oo0",
+          "id": "hero-1k44i88",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Home décor",
             "heading": "Hand-made things for a calmer home.",
-            "subheading": "Hand-made things for a calmer home.",
+            "subheading": "Sandstone House works with block printers, weavers and potters across Rajasthan.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1k54zsl",
+          "id": "collections-1k57cnj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1k64x3j",
+          "id": "products-1k64077",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1k7juvj",
+          "id": "about-1k79qzs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1k83sxv",
+          "id": "products-1k88xiv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1k97qcy",
+          "id": "about-1k9a5up",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ka1g4w",
+          "id": "faq-1ka74tl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1kbeu6y",
+          "id": "contact-1kb8ogn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1kcbrdg",
+          "id": "hours-1kcj9d7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

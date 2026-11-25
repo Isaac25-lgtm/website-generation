@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Juniper & Ash — Skincare made in small batches, the slow way.",
-    "description": "Skincare made in small batches, the slow way.",
+    "description": "Juniper & Ash blends every product by hand in a small workshop.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1649c64",
+          "id": "hero-16471gd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Skincare",
             "heading": "Skincare made in small batches, the slow way.",
-            "subheading": "Skincare made in small batches, the slow way.",
+            "subheading": "Juniper & Ash blends every product by hand in a small workshop.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-16596rc",
+          "id": "collections-165gh4l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-166cdgq",
+          "id": "products-166c0uz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1678ikp",
+          "id": "about-1679yxl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-168lfl0",
+          "id": "products-1688god",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-16928jc",
+          "id": "about-169flpl",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-16a3jpb",
+          "id": "faq-16ad23a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-16ba581",
+          "id": "contact-16b9e98",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-16c7n4q",
+          "id": "hours-16ciowy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

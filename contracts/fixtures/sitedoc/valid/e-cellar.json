@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1xvau2w",
+          "id": "hero-1xv9zc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1xwjgdz",
+          "id": "collections-1xwf700",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1xxk7jk",
+          "id": "products-1xxdhvn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1xy7n3n",
+          "id": "about-1xy4grg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -109,8 +109,8 @@
             "heading": "About Low Cellar",
             "body": "Low Cellar is a small wine shop that sells low-intervention wine from growers it has visited.",
             "image": {
-              "stock": "drink-citrus-tonic",
-              "alt": "Citrus botanical, 70 cl",
+              "stock": "drink-wine-pour",
+              "alt": "Skin-contact white, 75 cl",
               "caption": ""
             },
             "highlights": []
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1xz608z",
+          "id": "products-1xzcddw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1y0grqt",
+          "id": "about-1y0ai66",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,15 +156,15 @@
             "heading": "Our story",
             "body": "Low Cellar is a small wine shop that sells low-intervention wine from growers it has visited.",
             "image": {
-              "stock": "drink-spritz",
-              "alt": "Sparkling spritz, 4 cans",
+              "stock": "drink-wine-glasses",
+              "alt": "Mountain white, 75 cl",
               "caption": ""
             },
             "highlights": []
           }
         },
         {
-          "id": "faq-1y184es",
+          "id": "faq-1y1gg6x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -173,12 +173,12 @@
             "heading": "Frequently asked questions",
             "items": [
               {
-                "q": "Do you deliver alcohol?",
-                "a": "Yes, to adults only. The courier checks ID on delivery."
+                "q": "What is natural wine?",
+                "a": "Wine made from organically farmed grapes with little or nothing added in the cellar."
               },
               {
-                "q": "How long does an opened bottle keep?",
-                "a": "Three months in the fridge for our aperitifs, a few days for wine."
+                "q": "Do you deliver?",
+                "a": "Yes, to adults only. The courier checks ID on delivery."
               }
             ]
           }
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1y28byu",
+          "id": "contact-1y2iymm",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1y3fpd9",
+          "id": "hours-1y33xdc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

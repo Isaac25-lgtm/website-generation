@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Ora d'Oro — Aperitivo hour, bottled.",
-    "description": "Aperitivo hour, bottled.",
+    "description": "Ora d'Oro makes bitter aperitifs and spritzes in a small Turin distillery.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1nm6ccq",
+          "id": "hero-1nm4h7h",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Aperitifs",
             "heading": "Aperitivo hour, bottled.",
-            "subheading": "Aperitivo hour, bottled.",
+            "subheading": "Ora d'Oro makes bitter aperitifs and spritzes in a small Turin distillery.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1nn6hvy",
+          "id": "collections-1nna7fc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1noctji",
+          "id": "products-1nods43",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1npc964",
+          "id": "about-1npbam0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1nqagvp",
+          "id": "products-1nqjzhc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1nravsp",
+          "id": "about-1nrfw9d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ns3svh",
+          "id": "faq-1ns7f0d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1ntepmj",
+          "id": "contact-1nt8d2j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1nuc46v",
+          "id": "hours-1nu9h8p",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

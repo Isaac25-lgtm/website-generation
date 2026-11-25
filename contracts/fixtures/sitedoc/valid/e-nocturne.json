@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Nuit Ambrée — Perfume for the hours after dark.",
-    "description": "Perfume for the hours after dark.",
+    "description": "Nuit Ambrée composes rich, slow perfumes in small editions.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-19mg7b5",
+          "id": "hero-19m5tyj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Luxury perfume",
             "heading": "Perfume for the hours after dark.",
-            "subheading": "Perfume for the hours after dark.",
+            "subheading": "Nuit Ambrée composes rich, slow perfumes in small editions.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-19nk1rl",
+          "id": "collections-19n46vz",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-19oj5cv",
+          "id": "products-19of632",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-19pkrn7",
+          "id": "about-19p3rp2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-19q3s6p",
+          "id": "products-19qb1hk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-19r9sri",
+          "id": "about-19rerwp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-19sa3za",
+          "id": "faq-19s7eub",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-19tk1yc",
+          "id": "contact-19tbmxs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-19u7eyb",
+          "id": "hours-19u9zbc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

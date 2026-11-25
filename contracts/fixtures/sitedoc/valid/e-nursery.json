@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Little Acorn — Gentle things for the first year.",
-    "description": "Gentle things for the first year.",
+    "description": "Little Acorn makes nursery basics in organic cotton and natural materials.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1d4cma4",
+          "id": "hero-1d4koct",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Baby and nursery",
             "heading": "Gentle things for the first year.",
-            "subheading": "Gentle things for the first year.",
+            "subheading": "Little Acorn makes nursery basics in organic cotton and natural materials.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1d5i1wb",
+          "id": "collections-1d58og5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1d6iahy",
+          "id": "products-1d67du5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1d7a84m",
+          "id": "about-1d7l09x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1d86exp",
+          "id": "products-1d8eyt1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1d9ngd",
+          "id": "about-1d9ad3d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1da8id5",
+          "id": "faq-1dakgqq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1dbktv7",
+          "id": "contact-1db20iu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1dci13i",
+          "id": "hours-1dcka9z",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Northbound — Bags for the trip, the gym and everything between.",
-    "description": "Bags for the trip, the gym and everything between.",
+    "description": "Northbound makes weekenders and packs in recycled nylon.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1avdy6i",
+          "id": "hero-1avhmlv",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Travel bags",
             "heading": "Bags for the trip, the gym and everything between.",
-            "subheading": "Bags for the trip, the gym and everything between.",
+            "subheading": "Northbound makes weekenders and packs in recycled nylon.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1awhb7j",
+          "id": "collections-1aw3t4i",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1axbrsf",
+          "id": "products-1axcved",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1ay32b4",
+          "id": "about-1ay8lfq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1az94ig",
+          "id": "products-1az3u5j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1b0kp6n",
+          "id": "about-1b0hyc9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1b1e1xy",
+          "id": "faq-1b1hgw4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1b272co",
+          "id": "contact-1b2bpa3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1b3aaro",
+          "id": "hours-1b3jd6d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Darkroom Prints — Photographs printed in limited editions.",
-    "description": "Photographs printed in limited editions.",
+    "description": "Darkroom Prints publishes photographs by twelve photographers in numbered editions of fifty.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1ldf92w",
+          "id": "hero-1ldctbe",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Photographic prints",
             "heading": "Photographs printed in limited editions.",
-            "subheading": "Photographs printed in limited editions.",
+            "subheading": "Darkroom Prints publishes photographs by twelve photographers in numbered editions of fifty.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1lecnl0",
+          "id": "collections-1le39ua",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1lfku7y",
+          "id": "products-1lfc5i0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1lgcm9e",
+          "id": "about-1lgfg3m",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1lh60fj",
+          "id": "products-1lhemvn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1li54v4",
+          "id": "about-1li17jt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ljftob",
+          "id": "faq-1ljf2r2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1lk526u",
+          "id": "contact-1lk5itg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-1lla2al",
+          "id": "hours-1lliwdj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

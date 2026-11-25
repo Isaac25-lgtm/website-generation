@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Fizz Beauty — Loud colour for hair and skin.",
-    "description": "Loud colour for hair and skin.",
+    "description": "Fizz makes playful hair and skin products that smell like summer.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1949p3i",
+          "id": "hero-194dxrd",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Beauty",
             "heading": "Loud colour for hair and skin.",
-            "subheading": "Loud colour for hair and skin.",
+            "subheading": "Fizz makes playful hair and skin products that smell like summer.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-195k88t",
+          "id": "collections-1959jcj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-196dfme",
+          "id": "products-196hu10",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-197g1rq",
+          "id": "about-197gk40",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-198jjdk",
+          "id": "products-198a32t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1992buk",
+          "id": "about-199aarh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-19a9u55",
+          "id": "faq-19a5tzy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-19b9jkm",
+          "id": "contact-19bd82s",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-19cdjdx",
+          "id": "hours-19cv0a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

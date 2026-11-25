@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "banner-6tktxy",
+          "id": "banner-75es45",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -64,7 +64,7 @@
           }
         },
         {
-          "id": "hero-6ujjos",
+          "id": "hero-765r3j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -82,14 +82,14 @@
               "href": "/about"
             },
             "image": {
-              "stock": "jewel-hand-rings",
-              "alt": "Hands wearing gold rings",
+              "stock": "jewel-spiral-earring",
+              "alt": "A woman wearing a gold spiral earring by the sea",
               "caption": ""
             }
           }
         },
         {
-          "id": "collections-6v4pmq",
+          "id": "collections-774coh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "products-6w5z7k",
+          "id": "products-787clg",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -114,7 +114,7 @@
           }
         },
         {
-          "id": "about-6x1jol",
+          "id": "about-79ba6k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -139,7 +139,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-6yjk3u",
+          "id": "products-7a9uzt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -161,7 +161,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-6z9kom",
+          "id": "about-7bb6fy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -178,7 +178,7 @@
           }
         },
         {
-          "id": "faq-70ekvh",
+          "id": "faq-7c2dlo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -210,7 +210,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-714jqr",
+          "id": "contact-7dchyc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -223,7 +223,7 @@
           }
         },
         {
-          "id": "hours-72esg5",
+          "id": "hours-7eejdx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

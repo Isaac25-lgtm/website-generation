@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Spice Route Pantry — Chutneys and pickles for every table.",
-    "description": "Chutneys and pickles for every table.",
+    "description": "Spice Route makes chutneys, pickles and chilli crisp from family recipes.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1ndw7w",
+          "id": "hero-1ndhz5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Condiments",
             "heading": "Chutneys and pickles for every table.",
-            "subheading": "Chutneys and pickles for every table.",
+            "subheading": "Spice Route makes chutneys, pickles and chilli crisp from family recipes.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1nee7u9",
+          "id": "collections-1ne2f7l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1nfhi8v",
+          "id": "products-1nfcq6s",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1ng19rm",
+          "id": "about-1ng1f4j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1nhhg1v",
+          "id": "products-1nhae82",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1nilelx",
+          "id": "about-1nihx4k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1njjznm",
+          "id": "faq-1njfm6c",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1nk51yj",
+          "id": "contact-1nkk1s7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1nl61u0",
+          "id": "hours-1nlbvhh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

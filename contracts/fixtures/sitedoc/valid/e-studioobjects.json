@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Still Life Objects — Small objects for quiet rooms.",
-    "description": "Small objects for quiet rooms.",
+    "description": "Still Life designs candles, vases and small objects, made by craftspeople around Lisbon.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1tm10tw",
+          "id": "hero-1tmatum",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Design objects",
             "heading": "Small objects for quiet rooms.",
-            "subheading": "Small objects for quiet rooms.",
+            "subheading": "Still Life designs candles, vases and small objects, made by craftspeople around Lisbon.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1tn1510",
+          "id": "collections-1tniy31",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1toeg14",
+          "id": "products-1toggel",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1tp8ich",
+          "id": "about-1tpl1ql",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1tq9opv",
+          "id": "products-1tq4w9x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1trbfip",
+          "id": "about-1trjr7e",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1ts9c8a",
+          "id": "faq-1tscfci",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -188,7 +188,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1tt2axa",
+          "id": "contact-1ttd6jq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -201,7 +201,7 @@
           }
         },
         {
-          "id": "hours-1tu17mw",
+          "id": "hours-1tu3xl4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

@@ -3,12 +3,12 @@
   "type": "personal",
   "templateId": "p-bento",
   "brand": {
-    "name": "Yara Pires",
-    "tagline": "I turn ideas into working products: research, design systems and code."
+    "name": "Inês Duarte",
+    "tagline": "Product design lead: research, design systems and front-end code."
   },
   "seo": {
-    "title": "Yara Pires — I turn ideas into working products: research, design syst",
-    "description": "I turn ideas into working products: research, design systems and code.",
+    "title": "Inês Duarte — Product design lead: research, design systems and front-",
+    "description": "Product design lead: research, design systems and front-end code.",
     "lang": "en"
   },
   "theme": {
@@ -32,7 +32,7 @@
     "ornament": "none"
   },
   "contact": {
-    "email": "yara@example.com",
+    "email": "ines@example.com",
     "phone": "",
     "whatsapp": "",
     "address": "",
@@ -50,15 +50,15 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-ib34ba",
+          "id": "hero-iq7s3f",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Product design lead · Lisbon",
-            "heading": "I turn ideas into working products: research, design systems and code.",
-            "subheading": "Yara Pires, Product design lead",
+            "heading": "Product design lead: research, design systems and front-end code.",
+            "subheading": "Inês Duarte, Product design lead",
             "primaryCta": {
               "label": "Get in touch",
               "href": "/contact"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "about-ic57a3",
+          "id": "about-ir2uyr",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
           }
         },
         {
-          "id": "cta-ie8e5s",
+          "id": "cta-itgod6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -170,7 +170,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "skills-ifbewq",
+          "id": "skills-iu1x99",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -201,7 +201,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-igio2s",
+          "id": "contact-ivhrj3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

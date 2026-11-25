@@ -4,11 +4,11 @@
   "templateId": "p-growth",
   "brand": {
     "name": "Daniel Okoye",
-    "tagline": "Marketing that turns attention into sales."
+    "tagline": "Campaigns measured in sales, not likes."
   },
   "seo": {
-    "title": "Daniel Okoye — Marketing that turns attention into sales.",
-    "description": "Marketing that turns attention into sales.",
+    "title": "Daniel Okoye — Campaigns measured in sales, not likes.",
+    "description": "Campaigns measured in sales, not likes.",
     "lang": "en"
   },
   "theme": {
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-f2ad2d",
+          "id": "hero-f3hjn2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
             "eyebrow": "Marketing lead · Toronto, Canada",
-            "heading": "Marketing that turns attention into sales.",
+            "heading": "Campaigns measured in sales, not likes.",
             "subheading": "Daniel Okoye, Marketing lead",
             "primaryCta": {
               "label": "Get in touch",
@@ -75,14 +75,14 @@
           }
         },
         {
-          "id": "about-f31cuk",
+          "id": "about-f4hs5t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "About me",
-            "body": "Campaigns across digital, email, print and retail for consumer brands. I plan the campaign, write the brief and track every result back to revenue.",
+            "body": "I plan retail and email campaigns for consumer brands and report every result against revenue.",
             "image": {
               "stock": "pro-blazer-laptop-man",
               "alt": "Daniel Okoye",
@@ -133,7 +133,7 @@
           }
         },
         {
-          "id": "cta-f5axxd",
+          "id": "cta-f6jekj",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -156,7 +156,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "experience-f61b3e",
+          "id": "experience-f71b1d",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -183,7 +183,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-f7cdqt",
+          "id": "contact-f87sor",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

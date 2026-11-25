@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Cadence & Co. — Riding kit for every season.",
-    "description": "Riding kit for every season.",
+    "description": "Cadence & Co.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1s4b278",
+          "id": "hero-1s47iwy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Cycling apparel",
             "heading": "Riding kit for every season.",
-            "subheading": "Riding kit for every season.",
+            "subheading": "Cadence & Co.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1s5fbc",
+          "id": "collections-1s5gbsp",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1s61xxo",
+          "id": "products-1s6jg4g",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1s74oeg",
+          "id": "about-1s71w0t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1s87qca",
+          "id": "products-1s8edsm",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1s95sc8",
+          "id": "about-1s91ncx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1sa64vd",
+          "id": "faq-1sa4k9u",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1sb2n0t",
+          "id": "contact-1sbch5t",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1sccxq9",
+          "id": "hours-1sc9zt1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

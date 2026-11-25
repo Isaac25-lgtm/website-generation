@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Bare Shelf — The make-up you'll actually finish.",
-    "description": "The make-up you'll actually finish.",
+    "description": "Bare Shelf makes a short range of multi-use make-up in refillable cases.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-18vixhl",
+          "id": "hero-18v7xl6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Make-up",
             "heading": "The make-up you'll actually finish.",
-            "subheading": "The make-up you'll actually finish.",
+            "subheading": "Bare Shelf makes a short range of multi-use make-up in refillable cases.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-18wa6q0",
+          "id": "collections-18w946m",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-18x35s9",
+          "id": "products-18xbggy",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-18yfcoj",
+          "id": "about-18ygor1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-18z6k4l",
+          "id": "products-18zhrmu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1906a2",
+          "id": "about-1901f9r",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-19153tv",
+          "id": "faq-191cbj9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1925xrr",
+          "id": "contact-19296rt",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-193f1ec",
+          "id": "hours-193irft",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

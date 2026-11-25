@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Midnight Bakehouse — Very large cookies, baked after dark.",
-    "description": "Very large cookies, baked after dark.",
+    "description": "Midnight Bakehouse bakes thick cookies every night and ships them in the morning.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1p4cllm",
+          "id": "hero-1p42dul",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Bakery",
             "heading": "Very large cookies, baked after dark.",
-            "subheading": "Very large cookies, baked after dark.",
+            "subheading": "Midnight Bakehouse bakes thick cookies every night and ships them in the morning.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1p5l5ka",
+          "id": "collections-1p5i5vq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1p66n39",
+          "id": "products-1p677mk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1p77eap",
+          "id": "about-1p7l8si",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1p8a32o",
+          "id": "products-1p8f96l",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1p9gcch",
+          "id": "about-1p9951x",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1pajef5",
+          "id": "faq-1pa1i8j",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1pb2uut",
+          "id": "contact-1pb3owi",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1pc307f",
+          "id": "hours-1pcazt2",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

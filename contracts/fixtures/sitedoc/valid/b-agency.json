@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Northfield — Digital Design",
-    "description": "A design studio partnering with brands and businesses that build places where people live, work and unwind.",
+    "description": "A design studio for property, hospitality and retail companies.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-jyd5u4",
+          "id": "hero-jy951v",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Design studio · Amsterdam",
             "heading": "Digital Design",
-            "subheading": "A design studio partnering with brands and businesses that build places where people live, work and unwind.",
+            "subheading": "A design studio for property, hospitality and retail companies.",
             "primaryCta": {
               "label": "Email us",
               "href": "mailto:hello@example.com"
@@ -70,7 +70,7 @@
           }
         },
         {
-          "id": "services-jzgt5m",
+          "id": "services-jzwz8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -98,7 +98,7 @@
           }
         },
         {
-          "id": "about-k0e85v",
+          "id": "about-k0g5ns",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -115,7 +115,7 @@
           }
         },
         {
-          "id": "cta-k188d5",
+          "id": "cta-k14umk",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -138,7 +138,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-k2ecse",
+          "id": "about-k21vvw",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
@@ -163,7 +163,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-k3aszn",
+          "id": "services-k3eoet",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -215,7 +215,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-k58q33",
+          "id": "gallery-k5k3a1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -251,7 +251,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-k6d8xz",
+          "id": "contact-k6c2s0",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

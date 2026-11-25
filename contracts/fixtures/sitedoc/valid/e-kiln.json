@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Hollow Earth Pottery — Pots for everyday use.",
-    "description": "Pots for everyday use.",
+    "description": "Hollow Earth is a two-person pottery in the Blue Ridge Mountains, making tableware for daily use.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1sve32w",
+          "id": "hero-1sv9nh6",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Ceramics",
             "heading": "Pots for everyday use.",
-            "subheading": "Pots for everyday use.",
+            "subheading": "Hollow Earth is a two-person pottery in the Blue Ridge Mountains, making tableware for daily use.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1sw9231",
+          "id": "collections-1swjnic",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1sxbxfq",
+          "id": "products-1sxhneo",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1sycgg5",
+          "id": "about-1sycwh8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1szf95b",
+          "id": "products-1szcnco",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1t0l3n6",
+          "id": "about-1t03gu5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1t1hvyj",
+          "id": "faq-1t1b9ug",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1t26ani",
+          "id": "contact-1t2k2mm",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1t3l3z5",
+          "id": "hours-1t37cm4",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

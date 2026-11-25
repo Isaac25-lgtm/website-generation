@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Clay & Kiln — Tableware thrown by hand in Yorkshire.",
-    "description": "Tableware thrown by hand in Yorkshire.",
+    "description": "Clay & Kiln is one potter and one wood-fired kiln.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1kd1w25",
+          "id": "hero-1kd7jl3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Ceramics",
             "heading": "Tableware thrown by hand in Yorkshire.",
-            "subheading": "Tableware thrown by hand in Yorkshire.",
+            "subheading": "Clay & Kiln is one potter and one wood-fired kiln.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1ke55bc",
+          "id": "collections-1kee1ud",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1kfjf17",
+          "id": "products-1kfde7a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1kgeto6",
+          "id": "about-1kggs24",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1kh8vzq",
+          "id": "products-1kheg4q",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1kihrcs",
+          "id": "about-1kiaw5a",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1kj27yh",
+          "id": "faq-1kja6jx",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1kkl955",
+          "id": "contact-1kkibzm",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1kli0vy",
+          "id": "hours-1klbqkb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

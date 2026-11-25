@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Terra Herbal — Herbal skincare from old recipes.",
-    "description": "Herbal skincare from old recipes.",
+    "description": "Terra Herbal works with family herb growers and makes everything in small batches.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-18djk8",
+          "id": "hero-18daok1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Herbal skincare",
             "heading": "Herbal skincare from old recipes.",
-            "subheading": "Herbal skincare from old recipes.",
+            "subheading": "Terra Herbal works with family herb growers and makes everything in small batches.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-18egngf",
+          "id": "collections-18e6chn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-18ffrkv",
+          "id": "products-18f8dd7",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-18gf1nz",
+          "id": "about-18ghjzs",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-18hc09s",
+          "id": "products-18hboi9",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-18iktbl",
+          "id": "about-18i92ah",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-18jkq7p",
+          "id": "faq-18jg6u3",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -196,7 +196,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-18kio40",
+          "id": "contact-18k764w",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -209,7 +209,7 @@
           }
         },
         {
-          "id": "hours-18l9fbo",
+          "id": "hours-18lgn0m",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

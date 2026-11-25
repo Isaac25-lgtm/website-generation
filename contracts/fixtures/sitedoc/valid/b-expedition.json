@@ -4,10 +4,10 @@
   "templateId": "b-expedition",
   "brand": {
     "name": "Polar Line Expeditions",
-    "tagline": "Vast, quiet and almost untouched: travelling to the far south is a rare experience."
+    "tagline": "Eight days at the bottom of the world, with a camp of twelve guests and four guides."
   },
   "seo": {
-    "title": "Polar Line Expeditions — Vast, quiet and almost untouched: travelling ",
+    "title": "Polar Line Expeditions — Eight days at the bottom of the world, with a",
     "description": "Small-group flights and camps deep in the polar interior, with expert guides.",
     "lang": "en"
   },
@@ -50,14 +50,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-jg8k51",
+          "id": "hero-jg6ypb",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "hero",
           "data": {
-            "eyebrow": "The last wilderness · Cape Town",
-            "heading": "Vast, quiet and almost untouched: travelling to the far south is a rare experience.",
+            "eyebrow": "Polar journeys · Cape Town",
+            "heading": "Eight days at the bottom of the world, with a camp of twelve guests and four guides.",
             "subheading": "Small-group flights and camps deep in the polar interior, with expert guides.",
             "primaryCta": {
               "label": "Contact us",
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "services-jhi2an",
+          "id": "services-jhebdn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -118,14 +118,14 @@
           }
         },
         {
-          "id": "about-jikdn0",
+          "id": "about-ji7335",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
           "kind": "about",
           "data": {
             "heading": "About Polar Line Expeditions",
-            "body": "After twenty years of guiding, the far south still surprises me. It cannot help but change how you see the rest of the world. — Founder",
+            "body": "We started flying guests south in 2009. Every season we take fewer people, stay longer and leave less behind.",
             "image": {
               "stock": "photo-teal-lake",
               "alt": "A glacier lake",
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "cta-jj5bhl",
+          "id": "cta-jjeke5",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -162,14 +162,14 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-jk7lbd",
+          "id": "about-jkcw8k",
           "hidden": false,
           "aiSuggested": false,
           "variant": "split",
           "kind": "about",
           "data": {
             "heading": "Our story",
-            "body": "After twenty years of guiding, the far south still surprises me. It cannot help but change how you see the rest of the world. — Founder",
+            "body": "We started flying guests south in 2009. Every season we take fewer people, stay longer and leave less behind.",
             "image": {
               "stock": "safari-camp",
               "alt": "Camp at night",
@@ -191,7 +191,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "services-jl6y37",
+          "id": "services-jloyu",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -258,7 +258,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "gallery-jn5ou6",
+          "id": "gallery-jnbmiq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -294,7 +294,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-joh33y",
+          "id": "contact-joic4i",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

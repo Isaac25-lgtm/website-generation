@@ -8,7 +8,7 @@
   },
   "seo": {
     "title": "Prairie Fizz — Sparkling water with lime and a kick.",
-    "description": "Sparkling water with lime and a kick.",
+    "description": "Prairie Fizz makes sparkling drinks with real lime, inspired by long afternoons in West Texas.",
     "lang": "en"
   },
   "theme": {
@@ -50,7 +50,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "hero-1mm6fg8",
+          "id": "hero-1mmc6ql",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -58,7 +58,7 @@
           "data": {
             "eyebrow": "Drinks",
             "heading": "Sparkling water with lime and a kick.",
-            "subheading": "Sparkling water with lime and a kick.",
+            "subheading": "Prairie Fizz makes sparkling drinks with real lime, inspired by long afternoons in West Texas.",
             "primaryCta": {
               "label": "Shop now",
               "href": "/shop"
@@ -75,7 +75,7 @@
           }
         },
         {
-          "id": "collections-1mnj98u",
+          "id": "collections-1mnixyh",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -86,7 +86,7 @@
           }
         },
         {
-          "id": "products-1mof41t",
+          "id": "products-1mobdwq",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -100,7 +100,7 @@
           }
         },
         {
-          "id": "about-1mpdqas",
+          "id": "about-1mp8ggn",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -125,7 +125,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "products-1mq1jpl",
+          "id": "products-1mq41l8",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -147,7 +147,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "about-1mrawtw",
+          "id": "about-1mr1h1g",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -164,7 +164,7 @@
           }
         },
         {
-          "id": "faq-1mshcvj",
+          "id": "faq-1msde4o",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -192,7 +192,7 @@
       "inNav": true,
       "sections": [
         {
-          "id": "contact-1mtgdcj",
+          "id": "contact-1mtjh1",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",
@@ -205,7 +205,7 @@
           }
         },
         {
-          "id": "hours-1mu441f",
+          "id": "hours-1mugjdc",
           "hidden": false,
           "aiSuggested": false,
           "variant": "",

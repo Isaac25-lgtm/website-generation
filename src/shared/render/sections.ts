@@ -2,6 +2,7 @@ import type { ImageRef, Link, Page, Section, SiteDoc } from "../schema";
 import type { TemplateDef } from "../templates";
 import type { RenderCtx } from "./types";
 import { artDataUri } from "../art";
+import { isOwnerStock } from "../owner-photos";
 import { esc, formatMoney, isExternal, paragraphs, safeHref, whatsappLink } from "../util";
 import { renderProductsSection, renderCollectionsSection } from "./store";
 import { personalHero } from "./personal-heroes";
@@ -17,6 +18,26 @@ export interface SCtx {
 
 export function pageUrl(ctx: RenderCtx, slug: string): string {
   return slug ? `${ctx.basePath}/${slug}` : `${ctx.basePath}/`;
+}
+
+/**
+ * Where a "Work" link should point: the first visible projects section, else services, wherever it lives in
+ * the document (same-page fragment or another page). Falls back to the contact page, then the home page,
+ * so a link never targets a fragment that doesn't exist.
+ */
+export function workHref(s: SCtx): string {
+  return sectionHref(s, ["projects", "services"]);
+}
+
+/** Link to the first visible section of the given kinds, on whichever page holds it (same principle as workHref). */
+export function sectionHref(s: SCtx, kinds: string[]): string {
+  for (const kind of kinds) {
+    for (const p of s.doc.pages) {
+      const sec = p.sections.find((x) => x.kind === kind && !x.hidden);
+      if (sec) return p.slug === s.page.slug ? `#${sec.id}` : `${pageUrl(s.ctx, p.slug)}#${sec.id}`;
+    }
+  }
+  return s.doc.pages.some((p) => p.slug === "contact") ? pageUrl(s.ctx, "contact") : pageUrl(s.ctx, "");
 }
 
 /** Resolve a link from the SiteDoc: internal "/slug" paths are prefixed with the site base path. */
@@ -36,9 +57,14 @@ export function stockUrl(ctx: RenderCtx, name: string): string {
   return `${ctx.mode === "export" ? ctx.platformUrl.replace(/\/$/, "") : ""}/stock/${name}.webp`;
 }
 
+/** A stock photo this render may show: CC0 names everywhere, owner-only photos in template previews only. */
+function allowedStock(s: SCtx, name: string | undefined): name is string {
+  return !!name && /^[a-z0-9-]{1,48}$/.test(name) && (s.ctx.mode === "template" || !isOwnerStock(name));
+}
+
 export function imageSrc(s: SCtx, ref: ImageRef | undefined): string {
   if (ref?.assetId) return s.ctx.assetUrl(ref.assetId);
-  if (ref?.stock && /^[a-z0-9-]{1,48}$/.test(ref.stock)) return stockUrl(s.ctx, ref.stock);
+  if (allowedStock(s, ref?.stock)) return stockUrl(s.ctx, ref.stock);
   return "";
 }
 
@@ -49,7 +75,7 @@ export function img(s: SCtx, ref: ImageRef | undefined, opts: { w?: number; h?: 
   if (ref?.assetId) {
     src = s.ctx.assetUrl(ref.assetId);
     if (!alt) alt = s.ctx.assets?.[ref.assetId]?.alt || "";
-  } else if (ref?.stock && /^[a-z0-9-]{1,48}$/.test(ref.stock)) {
+  } else if (allowedStock(s, ref?.stock)) {
     src = stockUrl(s.ctx, ref.stock);
   } else if (ref?.art || opts.fallbackSeed) {
     src = artDataUri(ref?.art || opts.fallbackSeed!, s.tpl.art, s.doc.theme.colors, w, h);
@@ -257,7 +283,7 @@ function hero(s: SCtx, sec: Extract<Section, { kind: "hero" }>): string {
     }
     case "workbench": {
       const pics: (ImageRef | undefined)[] = [d.image, ...(s.ctx.store?.products ?? []).slice(0, 2).map((p) => p.images[0])];
-      return `<section id="${id}" class="hero workbench"><div class="wrap wb-grid"><div>${eyebrow}${h1}${sub}${actions}<p class="wb-note"><strong>Made to order</strong>Ask about a commission: sizes, finishes and lead times to suit you.</p></div><div class="wb-pics">${pics.map((im, i) => `<figure class="wb-p${i}">${img(s, im, { w: i ? 600 : 900, h: i ? 600 : 1100, eager: i === 0, fallbackSeed: `${seed}-${i}` })}</figure>`).join("")}</div></div></section>`;
+      return `<section id="${id}" class="hero workbench"><div class="wrap wb-grid"><div>${eyebrow}${h1}${sub}${actions}</div><div class="wb-pics">${pics.map((im, i) => `<figure class="wb-p${i}">${img(s, im, { w: i ? 600 : 900, h: i ? 600 : 1100, eager: i === 0, fallbackSeed: `${seed}-${i}` })}</figure>`).join("")}</div></div></section>`;
     }
     case "lookbook":
       return `<section id="${id}" class="hero lookbook"><div class="bgimg">${img(s, d.image, { w: 1920, h: 1200, eager: true, fallbackSeed: seed })}</div><div class="wrap">${text}</div></section>`;

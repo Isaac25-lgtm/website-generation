@@ -83,7 +83,8 @@ export function Assistant() {
   const compact = /^\/projects\/[^/]+\/(editor|setup)/.test(loc.pathname); // keep the editor canvas clear
 
   useEffect(() => { try { sessionStorage.setItem(keyFor(conv.owner), JSON.stringify(conv.msgs.slice(-20))); } catch { /* private mode */ } }, [conv]);
-  useEffect(() => { list.current?.scrollTo({ top: list.current.scrollHeight }); }, [msgs, busy, open]);
+  // Follow the conversation; an empty chat starts at the top so the first starter question is visible.
+  useEffect(() => { list.current?.scrollTo({ top: msgs.length || busy ? list.current.scrollHeight : 0 }); }, [msgs, busy, open]);
   useEffect(() => {
     if (!open) return;
     input.current?.focus();
@@ -120,7 +121,7 @@ export function Assistant() {
           <header className="ast-head">
             <img src="/logo-mark.svg" alt="" width={26} height={26} />
             <div><strong>ImprintSites AI</strong><span>Answers about building your site</span></div>
-            {msgs.length > 0 && <button className="ast-clear" onClick={() => { generation.current++; setMsgs([]); setText(""); setNote(""); setBusy(false); }}>Clear</button>}
+            {(msgs.length > 0 || note) && <button className="ast-clear" title="Clear this chat and start again" onClick={() => { generation.current++; setMsgs([]); setText(""); setNote(""); setBusy(false); input.current?.focus(); }}><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg> New chat</button>}
             <button className="ast-x" aria-label="Close assistant" onClick={() => setOpen(false)}>×</button>
           </header>
           <div className="ast-list" ref={list} aria-live="polite">

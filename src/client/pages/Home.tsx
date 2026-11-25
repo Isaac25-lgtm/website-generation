@@ -28,11 +28,12 @@ const HOME_PICKS: Record<string, string[]> = {
 const CheckCircle = <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M7.5 12.3l3 3 6-6.3" /></svg>;
 
 // Real CC0 photographs (see public/hero/CREDITS.txt), each showing a step of building and running a website with us.
+// Phones load a portrait crop framed on the subject ("-m"), so the photo is not a blurry sliver of a wide shot.
 const SLIDES = [
-  { src: "/hero/design.webp", label: "1 · We design your site", pos: "62% 50%" },
-  { src: "/hero/devices.webp", label: "2 · Looks right on every device", pos: "60% 55%" },
-  { src: "/hero/customers.webp", label: "Customers find you online", pos: "64% 40%" },
-  { src: "/hero/orders.webp", label: "Take orders and deliver", pos: "58% 45%" },
+  { src: "/hero/design.webp", mobile: "/hero/design-m.webp", label: "1 · We design your site", pos: "70% 45%", mpos: "55% 40%" },
+  { src: "/hero/devices.webp", mobile: "/hero/devices-m.webp", label: "2 · Looks right on every device", pos: "62% 55%", mpos: "50% 55%" },
+  { src: "/hero/customers.webp", mobile: "/hero/customers-m.webp", label: "Customers find you online", pos: "68% 30%", mpos: "50% 25%" },
+  { src: "/hero/orders.webp", mobile: "/hero/orders-m.webp", label: "Take orders and deliver", pos: "62% 55%", mpos: "55% 60%" },
 ];
 
 function HeroSlides() {
@@ -52,7 +53,10 @@ function HeroSlides() {
     <>
       <div className="hero-slides" aria-hidden="true">
         {SLIDES.map((s, k) => seen.has(k) && (
-          <img key={s.src} src={s.src} alt="" className={k === i ? "on" : ""} style={{ objectPosition: s.pos }} width={960} height={640} decoding="async" {...(k === 0 ? { fetchPriority: "high" as const } : {})} />
+          <picture key={s.src}>
+            <source media="(max-width: 640px)" srcSet={s.mobile} width={1080} height={1920} />
+            <img src={s.src} alt="" className={k === i ? "on" : ""} style={{ ["--pos" as string]: s.pos, ["--mpos" as string]: s.mpos }} width={1920} height={1280} decoding="async" {...(k === 0 ? { fetchPriority: "high" as const } : {})} />
+          </picture>
         ))}
       </div>
       <div className="photo-hero-shade" aria-hidden="true" />
@@ -115,6 +119,7 @@ export default function Home() {
           </div>
           <ul className="hero-checks">
             <li>{CheckCircle} Free preview before you pay</li>
+            <li>{CheckCircle} Build, publish and host it all from your phone</li>
             <li>{CheckCircle} No coding experience required</li>
             <li>{CheckCircle} Your web address set up for you</li>
           </ul>

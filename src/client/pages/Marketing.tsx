@@ -154,11 +154,12 @@ export function HowItWorks() {
     <main id="main" className="section">
       <div className="narrow">
         <div className="section-head"><span className="eyebrow">How it works</span><h1 style={{ fontSize: "clamp(2.2rem,4.5vw,3.4rem)" }}>What happens when you build with us</h1></div>
+        <div className="alert info" style={{ marginBottom: "1.25rem" }}><strong>Do it all from your phone.</strong> Every step below works in your phone's web browser: build, edit, preview, publish and manage your site and store. No app to install and no computer needed.</div>
         <div className="stack" style={{ gap: "1.25rem" }}>
           {[
             ["1. Choose your website type", "Personal ($20), Business ($30) or E-commerce ($100). Each has its own guided questions. The store setup is the most detailed because it covers products, stock, delivery, payments and policies."],
             ["2. Answer guided questions", "Add your bio, services or products, photos, contact details and preferences. Upload your own images, or choose openly licensed photos with attribution handled for you. Answers save automatically, so you can come back later."],
-            ["3. Pick a template or paste an inspiration link", "Choose from 18 original templates (9 free to browse, 9 more for members). Or paste a website you admire: we read its high-level style (colours, fonts, spacing, shapes) using an automated browser where available, and apply it to an original design. We never copy text, images, logos or code."],
+            ["3. Pick a template or paste an inspiration link", "Choose from nearly 300 complete templates for businesses, people and online stores (browse them all; a free account opens them in full). Or paste a website you admire: we read its high-level style (colours, fonts, spacing, shapes) using an automated browser where available, and apply it to an original design. We never copy text, images, logos or code."],
             ["4. Generate & preview", "Your site is built from your answers using our template engine. Optional AI can polish your wording, but it never adds facts. You review everything. Preview it privately on desktop, tablet and mobile."],
             ["5. Edit and refine", "Change text, images, colours, fonts and layout, reorder sections, add pages, or type requests like “use more space” or “make it more elegant”. Every change can be undone, and checkpoints are kept."],
             ["6. Pick your web address", "Choose the name for your site's address, for example /s/your-business. We check that it's free and set it up automatically with a secure https connection when you publish, so there's nothing to configure. Connecting a domain you already own is coming soon."],

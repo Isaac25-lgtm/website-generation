@@ -176,9 +176,10 @@ test.describe("Ask ImprintSites AI: conversations", () => {
     delay = 1500;
     await panel.getByLabel("Your question").fill("And a store?");
     await panel.getByRole("button", { name: "Send" }).click();
-    await panel.getByRole("button", { name: "Clear" }).click();
+    await panel.getByRole("button", { name: "New chat" }).click();
     await page.waitForTimeout(2200);
     await expect(panel.locator(".ast-msg")).toHaveCount(0);
+    await expect(panel.locator(".ast-chip").first()).toBeVisible(); // a fresh chat shows the starter questions again
     delay = 0;
     await panel.getByLabel("Your question").fill("Kept for account A");
     await panel.getByRole("button", { name: "Send" }).click();

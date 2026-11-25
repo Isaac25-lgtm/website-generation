@@ -109,7 +109,7 @@ button { font: inherit; }
 /* ── Photographic hero (real CC0 photo, darkened for legible white type) ── */
 .photo-hero { position: relative; overflow: hidden; color: #fff; background: #1b1b1d; padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(8.5rem, 13vw, 10.5rem); }
 .hero-slides { position: absolute; inset: 0; overflow: hidden; }
-.hero-slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.6s ease; }
+.hero-slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%); opacity: 0; transition: opacity 1.6s ease; }
 .hero-slides img.on { opacity: 1; animation: heroZoom 9s ease-out both; }
 @keyframes heroZoom { from { transform: scale(1.07); } to { transform: scale(1); } }
 .hero-slide-ui { position: absolute; z-index: 1; top: 1.1rem; right: max(1.25rem, calc((100vw - 1160px) / 2)); display: flex; align-items: center; gap: .7rem; }
@@ -425,9 +425,10 @@ button { font: inherit; }
    isn't stretched far, and the shade is lighter than on desktop so the picture stays visible. */
 @media (max-width: 640px) {
   .lede-long { display: none; } .lede-short { display: inline; }
-  .photo-hero { padding: 2.75rem 0 5.25rem; min-height: min(88svh, 720px); }
-  .photo-hero-shade { background: linear-gradient(180deg, rgba(10,10,12,.5) 0%, rgba(10,10,12,.62) 45%, rgba(10,10,12,.74) 100%); }
-  .hero-slides img { object-position: 50% 50% !important; }
+  .photo-hero { padding: 2.75rem 0 6.25rem; min-height: min(88svh, 720px); }
+  .photo-hero-shade { background: linear-gradient(180deg, rgba(10,10,12,.56) 0%, rgba(10,10,12,.42) 30%, rgba(10,10,12,.34) 50%, rgba(10,10,12,.5) 75%, rgba(10,10,12,.62) 100%); }
+  .hero-slides img { object-position: var(--mpos, 50% 50%); }
+  .hero-slides img.on { animation: none; }
   .photo-hero h1 { font-size: 2.3rem; margin-bottom: .8rem; text-shadow: 0 2px 18px rgba(0,0,0,.35); }
   .photo-hero .lede { color: #fff; margin-bottom: 1.3rem; text-shadow: 0 1px 10px rgba(0,0,0,.45); }
   .hero-types > button { background: rgba(10,10,12,.35); backdrop-filter: blur(6px); }
@@ -437,7 +438,7 @@ button { font: inherit; }
   .photo-hero { display: flex; flex-direction: column; }
   .photo-hero-inner { order: 1; }
   .hero-slide-ui { position: relative; order: 2; inset: auto; margin: 1.5rem 1.25rem 0; align-self: flex-start; }
-  .hero-slide-label { display: inline-block; }
+  .hero-slide-label { display: none; }
 }
 
 /* ── Dark mode switch ── */
@@ -574,3 +575,27 @@ button { font: inherit; }
 .start-choices p { margin: 0; }
 @media (max-width: 760px) { .start-grid, .start-choices { grid-template-columns: 1fr; } }
 .start-pick .help { display: block; margin-top: .7rem; }
+
+/* Small phones: keep the logo, theme switch and buttons from touching (owner, 25 Nov 2026) */
+@media (max-width: 420px) {
+  .topnav .bar { gap: .5rem; }
+  .topnav .logo { flex-shrink: 0; font-size: 1rem; gap: .4rem; }
+  .nav-actions { gap: .3rem; margin-left: auto; }
+  .nav-actions .theme-btn { width: 32px; min-height: 32px; }
+  .nav-actions .btn-sm:not(.theme-btn) { padding-inline: .7rem; }
+}
+.ast-clear { display: inline-flex; align-items: center; gap: .3rem; border: 1px solid var(--line-2) !important; font-weight: 600; color: var(--ink) !important; }
+
+/* Signed-in header on phones: logo and account on one line, the app links on a second line (owner, 25 Nov 2026) */
+@media (max-width: 640px) {
+  .app-head .bar { height: auto; flex-wrap: wrap; padding: .55rem 0 .45rem; gap: .35rem .5rem; }
+  .app-head .app-left { display: contents; }
+  .app-head .logo { order: 1; flex-shrink: 0; }
+  .app-head .app-right { order: 2; gap: .3rem; margin-left: auto; flex-wrap: nowrap; }
+  .app-head .app-nav { order: 3; flex-basis: 100%; overflow-x: auto; }
+  .app-head .app-right .app-acct { display: none; }
+  .app-head .app-nav .app-acct-m { display: inline-flex; }
+  .app-head .theme-btn { width: 32px; min-height: 32px; }
+}
+
+.app-acct-m { display: none; }

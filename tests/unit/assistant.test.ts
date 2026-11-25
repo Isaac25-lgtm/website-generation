@@ -96,8 +96,8 @@ describe("help assistant", () => {
 
   it("a service-wide daily allowance stops provider calls for every identity, and failures release reservations", async () => {
     const { env, db } = freshEnv();
-    db.prepare("UPDATE system_settings SET value = '6000' WHERE key = 'assistant_daily_token_budget'").run();
-    // Each call reserves its estimate plus 500 output tokens; distinct IPs bypass the per-identity limit.
+    db.prepare("UPDATE system_settings SET value = '20000' WHERE key = 'assistant_daily_token_budget'").run();
+    // Each call reserves the full prompt plus the output allowance (well over 6,000 tokens now); distinct IPs bypass the per-identity limit.
     status = 401;
     for (let i = 0; i < 5; i++) expect((await ask(env, { messages: [{ role: "user", content: "Hi" }] })).status).toBe(502);
     const afterFailures = db.prepare("SELECT reserved_tokens, used_tokens FROM assistant_usage").get() as any;
@@ -116,7 +116,7 @@ describe("help assistant", () => {
     const row = db.prepare("SELECT reserved_tokens, used_tokens, calls FROM assistant_usage").get() as any;
     expect(row.reserved_tokens).toBe(0);
     expect(row.used_tokens).toBe(ok * 940); // settled with the provider's reported usage
-    expect(row.used_tokens).toBeLessThanOrEqual(6000);
+    expect(row.used_tokens).toBeLessThanOrEqual(20000);
   });
 
   it("settles once against the reservation day across midnight", async () => {

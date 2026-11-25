@@ -15,6 +15,7 @@ export const PAGE_GUIDES: Record<PageCategory, PageGuide> = {
   home: {
     starters: [
       "Should I start from a template or share the link of a website I love? Explain both ways to start and how to combine them.",
+      "Can I build, publish and host my whole website from my phone? Walk me through it on mobile.",
       "I run a small business. Should I choose a business site or an online store, and what is the difference in features and price?",
       "Walk me through every step from describing my website to having it live at my own web address.",
       "What exactly do I get for the one-time build fee, and what does the monthly hosting and maintenance cover?",
@@ -44,6 +45,7 @@ export const PAGE_GUIDES: Record<PageCategory, PageGuide> = {
   "how-it-works": {
     starters: [
       "Explain each step of building a site here, from the setup questions to publishing, and roughly how long each takes.",
+      "How do I get my own domain name, like mybusiness.com, and use it with my site?",
       "What does 'Paste a website you love' do, and what does it take from that website (and what does it never copy)?",
       "How does 'Polish my wording with AI' work, and do I have to accept its suggestions?",
       "After I publish, how do I make changes, and how do they go live?",
@@ -77,6 +79,7 @@ export const PAGE_GUIDES: Record<PageCategory, PageGuide> = {
   dashboard: {
     starters: [
       "What are the two ways to start a new website here: choosing a template or sharing a website I love? Walk me through each.",
+      "Can I manage my site and store from my phone: editing, orders and publishing changes?",
       "How do I start a new website from here, and which site type should I choose for what I sell or do?",
       "What does each button on my site card do: Edit design, Publish, Store, Leads, Duplicate and Archive?",
       "How can I copy my site to try a different design without risking the original?",
@@ -107,6 +110,7 @@ export const PAGE_GUIDES: Record<PageCategory, PageGuide> = {
   publish: {
     starters: [
       "How do I choose my web address, and what happens if the name I want is already taken?",
+      "How do I get a domain name of my own, and what can I do with it today while connecting domains is coming soon?",
       "Walk me through paying and publishing for the first time, and then publishing changes later.",
       "How do I go back to an earlier published version, or take my site offline for a while?",
       "How do I share a private preview link with someone before my site is public?",

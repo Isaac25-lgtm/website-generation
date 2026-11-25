@@ -21,16 +21,17 @@ export function AppShell() {
     <>
       <header className="app-head">
         <div className="container bar" style={{ width: "min(100% - 2rem, 1400px)" }}>
-          <div className="row" style={{ gap: "1.5rem" }}><Logo to="/dashboard" small />
-            <nav className="row" aria-label="App" style={{ gap: ".25rem" }}>
+          <div className="row app-left" style={{ gap: "1.5rem" }}><Logo to="/dashboard" small />
+            <nav className="row app-nav" aria-label="App" style={{ gap: ".25rem" }}>
               <NavLink to="/dashboard" end className="btn btn-ghost btn-sm">My sites</NavLink>
               <NavLink to="/templates" className="btn btn-ghost btn-sm">Templates</NavLink>
               {me?.isAdmin && <NavLink to="/admin" className="btn btn-ghost btn-sm">Admin</NavLink>}
+              <NavLink to="/account" className="btn btn-ghost btn-sm app-acct-m">Account</NavLink>
             </nav>
           </div>
-          <div className="row">
+          <div className="row app-right">
             <ThemeToggle />
-            <NavLink to="/account" className="btn btn-ghost btn-sm">{me?.name || me?.email}</NavLink>
+            <NavLink to="/account" className="btn btn-ghost btn-sm app-acct" title="Account">{me?.name || me?.email}</NavLink>
             <button className="btn btn-sm" onClick={async () => { await api("/api/auth/logout", { body: {} }); await refresh(); nav("/"); }}>Sign out</button>
           </div>
         </div>

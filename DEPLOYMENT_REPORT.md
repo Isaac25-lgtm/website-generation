@@ -175,3 +175,16 @@ Screenshots are in `tests/e2e/screenshots/prod/`. The test support ticket was de
   - production smoke test 39/39;
   - all 223 live previews checked;
   - test data removed.
+
+## 25 November 2026: landing templates section, business first (version cac8fc9d)
+
+- **Landing page:** "Our templates" now uses the gallery's own cards (preview, name, colours, description, badges, buttons). It opens on Business, and the tabs read Business, Personal, Online store. There are six cards per tab and a "See all N templates" button.
+- **The owner's personal picks** appear under Personal, in this order: Essay, Tiles, Poem, Full Bleed, Kernel, Lens.
+- **Business first** in the gallery's "All" view and type buttons.
+- **Kernel's description** no longer mentions the grid background, which was removed under the no-slop rule.
+- **Verification:**
+  - unit 1307/1307;
+  - integration 61/61;
+  - Playwright 12/12 (local) plus the production run;
+  - production smoke test 39/39;
+  - test data removed.

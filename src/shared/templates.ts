@@ -74,7 +74,7 @@ h1,h2{font-weight:400;letter-spacing:-.02em}
   T({
     id: "p-kernel", name: "Kernel", type: "personal", tier: "public",
     styles: ["tech", "dark"], industries: ["developer", "engineer", "data"],
-    description: "Dark, terminal-inspired portfolio with monospace accents and a subtle grid. Built for developers and data people.",
+    description: "Dark, terminal-inspired portfolio with monospace accents and a command-line hero. Built for developers and data people.",
     theme: {
       mode: "dark", colors: { bg: "#0a0e13", surface: "#111820", text: "#d8e3ee", muted: "#8496a8", primary: "#3cf2a6", accent: "#7aa2ff" },
       fontHeading: "jetbrains-mono", fontBody: "inter", radius: "sm", density: "comfortable", headingScale: "md",

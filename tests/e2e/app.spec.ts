@@ -90,11 +90,16 @@ test.describe("public marketing site", () => {
     await expect(page).toHaveURL(/\/(#made)?$/);
     // The landing page shows the templates (owner, 25 Nov 2026): six Signature designs per kind of site, as pictures.
     await expect(page.getByRole("heading", { name: "Our templates" })).toBeVisible();
-    await expect(page.locator(".show-tile")).toHaveCount(6);
-    await expect(page.locator(".show-tile a")).toHaveCount(0);
-    await page.locator(".show-tabs").getByRole("button", { name: "Online store" }).click();
-    await expect(page.locator(".show-tile")).toHaveCount(6);
-    await expect(page.getByRole("link", { name: "See all templates" })).toHaveAttribute("href", "/templates");
+    // Same cards as the gallery, business first, six at a time.
+    const home = page.locator(".templates-home");
+    await expect(home.locator(".tpl-card")).toHaveCount(6);
+    await expect(home.locator(".tpl-card").first()).toContainText("Business");
+    await home.getByRole("button", { name: "Personal" }).click();
+    await expect(home.locator(".tpl-card").first()).toContainText("Essay");
+    await expect(home.locator(".tpl-card").nth(5)).toContainText("Lens");
+    await home.getByRole("button", { name: "Online store" }).click();
+    await expect(home.locator(".tpl-card")).toHaveCount(6);
+    await expect(home.getByRole("link", { name: /See all \d+ templates/ })).toHaveAttribute("href", "/templates");
     await expect(page.getByRole("link", { name: /examples/i })).toHaveCount(0);
   });
 });

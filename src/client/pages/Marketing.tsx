@@ -53,18 +53,20 @@ type Cat = { key: string; label: string };
 const RANK_ORDER = { signature: 0, premium: 1, standard: 2 } as const;
 /** Cards shown before "See more": the best few first (owner rule, 24 Nov 2026). */
 const FIRST = 12;
+/** Business templates lead everywhere (owner, 25 Nov 2026), then personal, then online stores. */
+const TYPE_ORDER: Record<string, number> = { business: 0, personal: 1, ecommerce: 2 };
 
-export function TemplateGallery({ embedded, onPick, type: fixedType, selected }: { embedded?: boolean; onPick?: (id: string) => void; type?: string; selected?: string }) {
+export function TemplateGallery({ embedded, onPick, type: fixedType, selected, initialType, showcase, featured }: { embedded?: boolean; onPick?: (id: string) => void; type?: string; selected?: string; initialType?: string; showcase?: number; featured?: Record<string, string[]> }) {
   const [list, setList] = useState<Tpl[]>([]);
   const [cats, setCats] = useState<Cat[]>([]);
   const [signedIn, setSignedIn] = useState(false);
-  const [type, setType] = useState(fixedType ?? "all");
+  const [type, setType] = useState(fixedType ?? initialType ?? "all");
   const [cat, setCat] = useState("all");
   const [style, setStyle] = useState("all");
-  const [limit, setLimit] = useState(FIRST);
+  const [limit, setLimit] = useState(showcase ?? FIRST);
   const [open, setOpen] = useState<Tpl | null>(null);
   useEffect(() => { api("/api/templates").then((r) => { setList(r.templates); setCats(r.categories ?? []); setSignedIn(r.signedIn); }).catch(() => {}); }, []);
-  useEffect(() => { setLimit(FIRST); }, [type, cat, style]);
+  useEffect(() => { setLimit(showcase ?? FIRST); }, [type, cat, style, showcase]);
   const ofType = useMemo(() => list.filter((t) => type === "all" || t.type === type), [list, type]);
   const store = type === "ecommerce";
   const usedCats = useMemo(() => cats.filter((c) => ofType.some((t) => t.category === c.key)), [cats, ofType]);
@@ -72,9 +74,11 @@ export function TemplateGallery({ embedded, onPick, type: fixedType, selected }:
   const sorted = ofType
     .filter((t) => (!store || cat === "all" || t.category === cat) && (store || style === "all" || t.styles.includes(style)))
     .map((t, i) => ({ t, i }))
-    .sort((a, b) => RANK_ORDER[a.t.rank] - RANK_ORDER[b.t.rank] || a.i - b.i)
+    .sort((a, b) => RANK_ORDER[a.t.rank] - RANK_ORDER[b.t.rank] || (TYPE_ORDER[a.t.type] ?? 9) - (TYPE_ORDER[b.t.type] ?? 9) || a.i - b.i)
     .map((x) => x.t);
-  const head = sorted.slice(0, limit);
+  // A hand-picked set for this kind of site (landing page), in the owner's chosen order.
+  const picks = featured?.[type]?.map((id) => sorted.find((t) => t.id === id)).filter((t): t is Tpl => !!t);
+  const head = picks?.length ? picks.slice(0, limit) : sorted.slice(0, limit);
   const sel = sorted.find((t) => t.id === selected);
   // Keep the currently selected template visible even when it is past the first few.
   const shown = sel && !head.includes(sel) ? [...head, sel] : head;
@@ -84,16 +88,16 @@ export function TemplateGallery({ embedded, onPick, type: fixedType, selected }:
     <>
       {!fixedType && (
         <div className="filters" role="group" aria-label="Filter by site type">
-          {[["all", "All"], ["personal", "Personal"], ["business", "Business"], ["ecommerce", "Online store"]].map(([k, l]) => <button key={k} aria-pressed={type === k} onClick={() => { setType(k); setCat("all"); }}>{l}</button>)}
+          {(showcase ? [["business", "Business"], ["personal", "Personal"], ["ecommerce", "Online store"]] : [["all", "All"], ["business", "Business"], ["personal", "Personal"], ["ecommerce", "Online store"]]).map(([k, l]) => <button key={k} aria-pressed={type === k} onClick={() => { setType(k); setCat("all"); }}>{l}</button>)}
         </div>
       )}
-      {store && usedCats.length > 1 && (
+      {store && !showcase && usedCats.length > 1 && (
         <div className="filters cat-tabs" role="group" aria-label="Filter by shop category" style={{ marginTop: fixedType ? 0 : "-1rem" }}>
           <button aria-pressed={cat === "all"} onClick={() => setCat("all")}>All shops</button>
           {usedCats.map((c) => <button key={c.key} aria-pressed={cat === c.key} onClick={() => setCat(c.key)}>{c.label} <span className="muted">{ofType.filter((t) => t.category === c.key).length}</span></button>)}
         </div>
       )}
-      {!store && (
+      {!store && !showcase && (
         <div className="filters" role="group" aria-label="Filter by style" style={{ marginTop: fixedType ? 0 : "-1rem" }}>
           {styles.map((s) => <button key={s} aria-pressed={style === s} onClick={() => setStyle(s)} style={{ fontSize: ".85rem", padding: ".3rem .8rem" }}>{s === "all" ? "Any style" : s}</button>)}
         </div>
@@ -122,7 +126,8 @@ export function TemplateGallery({ embedded, onPick, type: fixedType, selected }:
       </div>
       <div className="center" style={{ marginTop: "2rem" }}>
         <p className="muted small" aria-live="polite">Showing {shown.length} of {sorted.length} templates</p>
-        {hidden > 0 && <button className="btn" onClick={() => setLimit((n) => n + FIRST)}>See more templates ({hidden} more)</button>}
+        {showcase ? <Link className="btn btn-primary" to={`/templates`}>See all {list.length} templates</Link>
+          : hidden > 0 && <button className="btn" onClick={() => setLimit((n) => n + FIRST)}>See more templates ({hidden} more)</button>}
       </div>
       {open && (
         <Modal title={`${open.name} — sample content`} onClose={() => setOpen(null)} wide>

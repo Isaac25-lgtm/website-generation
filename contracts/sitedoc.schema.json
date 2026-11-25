@@ -171,7 +171,15 @@
             "syne",
             "archivo-black",
             "bricolage",
-            "instrument-serif"
+            "instrument-serif",
+            "bodoni-moda",
+            "newsreader",
+            "jost",
+            "inter-tight",
+            "instrument-sans",
+            "libre-caslon",
+            "archivo",
+            "unbounded"
           ]
         },
         "fontBody": {
@@ -196,7 +204,15 @@
             "syne",
             "archivo-black",
             "bricolage",
-            "instrument-serif"
+            "instrument-serif",
+            "bodoni-moda",
+            "newsreader",
+            "jost",
+            "inter-tight",
+            "instrument-sans",
+            "libre-caslon",
+            "archivo",
+            "unbounded"
           ]
         },
         "radius": {

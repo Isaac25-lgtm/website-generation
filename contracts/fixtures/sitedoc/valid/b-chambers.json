@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-chambers",
+  "brand": {
+    "name": "Ashford Whitley LLP",
+    "tagline": "Commercial law for owner-run businesses."
+  },
+  "seo": {
+    "title": "Ashford Whitley LLP — Commercial law for owner-run businesses.",
+    "description": "Contracts, employment, property and disputes for companies with 10 to 500 people.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f6f3ec",
+      "surface": "#ebe5d8",
+      "text": "#13213b",
+      "muted": "#54607a",
+      "primary": "#13213b",
+      "accent": "#94743a"
+    },
+    "fontHeading": "libre-caslon",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "enquiries@example.com",
+    "phone": "+44 161 496 0000",
+    "whatsapp": "",
+    "address": "1 Sample Square",
+    "city": "Manchester",
+    "country": "United Kingdom",
+    "mapQuery": "Spinningfields, Manchester",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-c372f1",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Law firm · Manchester",
+            "heading": "Commercial law for owner-run businesses.",
+            "subheading": "Contracts, employment, property and disputes for companies with 10 to 500 people.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "biz-towers",
+              "alt": "Office towers seen from street level",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-c4gk45",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Commercial contracts",
+                "description": "Supply, distribution and services agreements, drafted and negotiated.",
+                "price": ""
+              },
+              {
+                "title": "Employment",
+                "description": "Contracts, policies, disputes and tribunal claims.",
+                "price": ""
+              },
+              {
+                "title": "Commercial property",
+                "description": "Leases, purchases and landlord disputes.",
+                "price": ""
+              },
+              {
+                "title": "Disputes",
+                "description": "Negotiation, mediation and litigation.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-c53lhp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Ashford Whitley LLP",
+            "body": "Ashford Whitley is a firm of fourteen lawyers. Every client has a named partner who answers their own phone, and every piece of advice comes with a fixed fee agreed in advance.",
+            "image": {
+              "stock": "biz-boardroom",
+              "alt": "A meeting in the firm's boardroom",
+              "caption": ""
+            },
+            "highlights": [
+              "A named partner for every client",
+              "Fixed fees, agreed in writing",
+              "Advice in plain English"
+            ]
+          }
+        },
+        {
+          "id": "cta-c6degh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-c7fnae",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Ashford Whitley is a firm of fourteen lawyers. Every client has a named partner who answers their own phone, and every piece of advice comes with a fixed fee agreed in advance.",
+            "image": {
+              "stock": "biz-window-table",
+              "alt": "A client meeting by a window",
+              "caption": ""
+            },
+            "highlights": [
+              "A named partner for every client",
+              "Fixed fees, agreed in writing",
+              "Advice in plain English"
+            ]
+          }
+        },
+        {
+          "id": "team-c89z1k",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "team",
+          "data": {
+            "heading": "Our team",
+            "members": [
+              {
+                "name": "Eleanor Ashford",
+                "role": "Managing partner",
+                "bio": "Commercial contracts.",
+                "image": {
+                  "stock": "pro-portrait-woman",
+                  "alt": "Eleanor Ashford",
+                  "caption": ""
+                }
+              },
+              {
+                "name": "Daniel Whitley",
+                "role": "Partner",
+                "bio": "Disputes and employment.",
+                "image": {
+                  "stock": "pro-advisor-man",
+                  "alt": "Daniel Whitley",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "faq-c9ar03",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "How are your fees set?",
+                "a": "We agree a fixed fee in writing before any work starts."
+              },
+              {
+                "q": "Do you work outside Manchester?",
+                "a": "Yes, for clients across England and Wales."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-cal6vp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Commercial contracts",
+                "description": "Supply, distribution and services agreements, drafted and negotiated.",
+                "price": ""
+              },
+              {
+                "title": "Employment",
+                "description": "Contracts, policies, disputes and tribunal claims.",
+                "price": ""
+              },
+              {
+                "title": "Commercial property",
+                "description": "Leases, purchases and landlord disputes.",
+                "price": ""
+              },
+              {
+                "title": "Disputes",
+                "description": "Negotiation, mediation and litigation.",
+                "price": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-cb31vj",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "biz-boardroom",
+                "alt": "A meeting in the firm's boardroom",
+                "caption": ""
+              },
+              {
+                "stock": "biz-window-table",
+                "alt": "A client meeting by a window",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-cc1bsd",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": true
+          }
+        },
+        {
+          "id": "hours-cd64fv",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hours",
+          "data": {
+            "heading": "Opening hours",
+            "rows": [
+              {
+                "days": "Monday – Friday",
+                "hours": "8:30 – 17:30"
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

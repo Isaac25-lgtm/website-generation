@@ -17,6 +17,7 @@ export const FONT_KEYS = [
   "inter", "manrope", "plus-jakarta", "outfit", "space-grotesk", "dm-sans", "work-sans", "poppins",
   "playfair", "fraunces", "cormorant", "dm-serif", "libre-baskerville", "lora",
   "jetbrains-mono", "space-mono", "syne", "archivo-black", "bricolage", "instrument-serif",
+  "bodoni-moda", "newsreader", "jost", "inter-tight", "instrument-sans", "libre-caslon", "archivo", "unbounded",
 ] as const;
 export type FontKey = (typeof FONT_KEYS)[number];
 

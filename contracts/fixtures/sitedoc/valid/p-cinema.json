@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-cinema",
+  "brand": {
+    "name": "Elias Brandt",
+    "tagline": "Design direction for travel, outdoor and film."
+  },
+  "seo": {
+    "title": "Elias Brandt — Design direction for travel, outdoor and film.",
+    "description": "Design direction for travel, outdoor and film.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0d0d0d",
+      "surface": "#171717",
+      "text": "#f2f2f2",
+      "muted": "#a5a5a5",
+      "primary": "#f2f2f2",
+      "accent": "#c9a86b"
+    },
+    "fontHeading": "inter-tight",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "elias@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-gt9qh1",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Design director · Hamburg",
+            "heading": "Design direction for travel, outdoor and film.",
+            "subheading": "Elias Brandt, Design director",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "photo-misty-mountains",
+              "alt": "Fog over forested mountains",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-gu6ke4",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I lead design for brands that work outdoors: travel companies, outdoor clothing and documentary film.",
+            "image": {
+              "stock": "photo-misty-mountains",
+              "alt": "Fog over forested mountains",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Fjord ferries",
+                "description": "Identity for a ferry line.",
+                "role": "Design director",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "photo-boat",
+                    "alt": "A boat on the water",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Lake documentary",
+                "description": "Titles and posters.",
+                "role": "Design director",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "photo-teal-lake",
+                    "alt": "A mountain lake",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Paddle maps",
+                "description": "Waterproof maps.",
+                "role": "Design director",
+                "period": "2023",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "photo-kayak",
+                    "alt": "Kayak",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Safari guide",
+                "description": "Field guides.",
+                "role": "Design director",
+                "period": "2022",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "safari-plains",
+                    "alt": "Plains at sunset",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-gw8xum",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-gx9bnu",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Hamburg.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

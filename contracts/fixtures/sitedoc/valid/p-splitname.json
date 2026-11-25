@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-splitname",
+  "brand": {
+    "name": "Zora Novak",
+    "tagline": "Art direction, digital production and branding for fashion and culture."
+  },
+  "seo": {
+    "title": "Zora Novak — Art direction, digital production and branding for fashio",
+    "description": "Art direction, digital production and branding for fashion and culture.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ddd6cb",
+      "surface": "#d2cabd",
+      "text": "#1e1b17",
+      "muted": "#5d564c",
+      "primary": "#d4401f",
+      "accent": "#d4401f"
+    },
+    "fontHeading": "bodoni-moda",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "zora@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-g8bm1d",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Art direction · Prague",
+            "heading": "Art direction, digital production and branding for fashion and culture.",
+            "subheading": "Zora Novak, Art direction · Prague",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-city-woman",
+              "alt": "Zora Novak",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-g9gzqk",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I art-direct campaigns and lookbooks for fashion labels and cultural institutions.",
+            "image": {
+              "stock": "pro-city-woman",
+              "alt": "Zora Novak",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Autumn lookbook",
+                "description": "Studio and street photography for a womenswear label.",
+                "role": "Art director",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "fashion-street",
+                    "alt": "Street look",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Museum season campaign",
+                "description": "Posters and film for a design museum.",
+                "role": "Art director",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "biz-facade-bw",
+                    "alt": "Museum facade",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-gbaacy",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-gcgm0k",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "fashion-hero",
+                "alt": "Campaign image",
+                "caption": ""
+              },
+              {
+                "stock": "fashion-atelier",
+                "alt": "Studio",
+                "caption": ""
+              },
+              {
+                "stock": "fashion-slip-dress",
+                "alt": "Lookbook",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-gd3j3y",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

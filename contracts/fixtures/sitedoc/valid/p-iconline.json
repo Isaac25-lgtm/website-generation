@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-iconline",
+  "brand": {
+    "name": "Ola Berg",
+    "tagline": "I'm Ola Berg, a digital design lead based in Oslo. I'm currently growing the design team at a travel company."
+  },
+  "seo": {
+    "title": "Ola Berg — I'm Ola Berg, a digital design lead based in Oslo. I'm curr",
+    "description": "I'm Ola Berg, a digital design lead based in Oslo. I'm currently growing the design team at a travel company.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f3f3f3",
+      "text": "#111111",
+      "muted": "#a3a3a3",
+      "primary": "#111111",
+      "accent": "#111111"
+    },
+    "fontHeading": "inter-tight",
+    "fontBody": "inter-tight",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "ola@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-fyeq4e",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Design lead · Oslo, Norway",
+            "heading": "I'm Ola Berg, a digital design lead based in Oslo. I'm currently growing the design team at a travel company.",
+            "subheading": "Ola Berg, Design lead",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-laptop-man",
+              "alt": "Ola Berg",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-fzeve7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Fifteen years designing digital products, mostly in travel and public services.",
+            "image": {
+              "stock": "pro-laptop-man",
+              "alt": "Ola Berg",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Booking flow redesign",
+                "description": "Fewer steps, clearer prices.",
+                "role": "Design lead",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "work-wireframes",
+                    "alt": "Wireframes",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Design system",
+                "description": "Components used by eight teams.",
+                "role": "Design lead",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "work-pattern",
+                    "alt": "Pattern",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-g1epbc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-g2doab",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Oslo, Norway.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-ragged",
+  "brand": {
+    "name": "Flint Harbour",
+    "tagline": "Brands with a bit of grit."
+  },
+  "seo": {
+    "title": "Flint Harbour — Brands with a bit of grit.",
+    "description": "Branding and film for food, drink and outdoor companies.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0f0f10",
+      "surface": "#19191b",
+      "text": "#f3f3f0",
+      "muted": "#a8a8a3",
+      "primary": "#ff5b2e",
+      "accent": "#ff5b2e"
+    },
+    "fontHeading": "archivo",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Glasgow",
+    "country": "United Kingdom",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-vk55xd",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Branding agency · Glasgow",
+            "heading": "Brands with a bit of grit.",
+            "subheading": "Branding and film for food, drink and outdoor companies.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "safari-dust",
+              "alt": "Flint Harbour",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-vlcfdh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Brand identity",
+                "description": "Strategy, naming and visual identity.",
+                "price": "From $9,000",
+                "image": {
+                  "stock": "work-sketches",
+                  "alt": "Identity sketches",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Websites",
+                "description": "Design and build of fast, accessible sites.",
+                "price": "From $12,000",
+                "image": {
+                  "stock": "work-wireframes",
+                  "alt": "Wireframes",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels, boxes and retail displays.",
+                "price": "From $6,000",
+                "image": {
+                  "stock": "home-bud-vases",
+                  "alt": "Packaged ceramics",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-vm6etg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Flint Harbour",
+            "body": "We are a branding and film studio working with companies that make real things.",
+            "image": {
+              "stock": "work-pattern",
+              "alt": "A sculptural pattern",
+              "caption": ""
+            },
+            "highlights": [
+              "Senior team on every project",
+              "Fixed proposals",
+              "Hand-over files you own"
+            ]
+          }
+        },
+        {
+          "id": "cta-vnafyp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-vo5nnk",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "We are a branding and film studio working with companies that make real things.",
+            "image": {
+              "stock": "obj-journal",
+              "alt": "Sketchbook",
+              "caption": ""
+            },
+            "highlights": [
+              "Senior team on every project",
+              "Fixed proposals",
+              "Hand-over files you own"
+            ]
+          }
+        },
+        {
+          "id": "faq-vp614j",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "How long does a brand project take?",
+                "a": "Usually eight to twelve weeks."
+              },
+              {
+                "q": "Do you work with small companies?",
+                "a": "Yes. Most of our clients have fewer than fifty people."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-vqet7i",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Brand identity",
+                "description": "Strategy, naming and visual identity.",
+                "price": "From $9,000",
+                "image": {
+                  "stock": "work-sketches",
+                  "alt": "Identity sketches",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Websites",
+                "description": "Design and build of fast, accessible sites.",
+                "price": "From $12,000",
+                "image": {
+                  "stock": "work-wireframes",
+                  "alt": "Wireframes",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels, boxes and retail displays.",
+                "price": "From $6,000",
+                "image": {
+                  "stock": "home-bud-vases",
+                  "alt": "Packaged ceramics",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Brand identity",
+              "Websites",
+              "Packaging"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-vsc4kq",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "work-pattern",
+                "alt": "A sculptural pattern",
+                "caption": ""
+              },
+              {
+                "stock": "obj-journal",
+                "alt": "Sketchbook",
+                "caption": ""
+              },
+              {
+                "stock": "biz-glass",
+                "alt": "Office building",
+                "caption": ""
+              },
+              {
+                "stock": "home-white-room",
+                "alt": "Studio space",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-vtjx4o",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

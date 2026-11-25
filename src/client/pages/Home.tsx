@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { hostingPrice, useApp, usd } from "../lib";
-import { Icon } from "../components/ui";
+import { api, hostingPrice, useApp, usd } from "../lib";
+import { Icon, SiteThumb } from "../components/ui";
 import { PLANS } from "../../shared/pricing";
 
 const PLAN_INFO = [
@@ -17,20 +17,40 @@ const KINDS = [
   { t: "ecommerce", name: "Online store", img: "/hero/store-bright-boutique.webp", alt: "A bright fashion boutique with clothing rails", desc: "A real shop with products in sizes and colours, live stock levels, a cart and a checkout. Orders arrive in your dashboard, ready to confirm and deliver.", shot: "/showcase/store-full.webp", address: "/s/demo-store/" },
 ] as const;
 
-// "Made with ImprintSites": screenshots of our demo sites, shown as a picture wall on the landing page only.
-// Deliberately not links: visitors judge the product from these finished views, not by browsing sample content.
-const SHOWCASE = [
-  [
-    { src: "/showcase/store-home.webp", title: "Maison Nia", sub: "Online store · Maison template" },
-    { src: "/showcase/store-product-m.webp", title: "Product page", sub: "On a phone", phone: true },
-    { src: "/showcase/business-home.webp", title: "Kingsway Advisory", sub: "Business · Meridian template" },
-  ],
-  [
-    { src: "/showcase/portfolio-home.webp", title: "Amina Yusuf", sub: "Portfolio · Lens template" },
-    { src: "/showcase/business-services-m.webp", title: "Services & quotes", sub: "On a phone", phone: true },
-    { src: "/showcase/store-shop.webp", title: "Shop with filters", sub: "Search, categories and cart" },
-  ],
-] as const;
+// "Our templates" (owner, 25 Nov 2026): replaces the old "Made with ImprintSites" wall. Live, non-clickable
+// previews of the best (Signature) templates for each kind of site, with a link to the full gallery.
+type ShowTpl = { id: string; name: string; type: string; rank: string; description: string };
+const SHOW_TABS = [["personal", "Personal"], ["business", "Business"], ["ecommerce", "Online store"]] as const;
+
+function TemplateShowcase() {
+  const [list, setList] = useState<ShowTpl[]>([]);
+  const [tab, setTab] = useState<string>("personal");
+  useEffect(() => { api("/api/templates").then((r) => setList(r.templates)).catch(() => {}); }, []);
+  const ofType = list.filter((t) => t.type === tab);
+  const best = ofType.filter((t) => t.rank === "signature").slice(0, 6);
+  return (
+    <>
+      <div className="showcase-head">
+        <h2 id="made">Our templates</h2>
+        <div className="show-tabs" role="group" aria-label="Kind of site">
+          {SHOW_TABS.map(([k, l]) => <button key={k} type="button" aria-pressed={tab === k} onClick={() => setTab(k)}>{l}</button>)}
+        </div>
+      </div>
+      <div className="show-grid">
+        {best.map((t) => (
+          <figure key={t.id} className="show-tile">
+            <SiteThumb src={`/api/templates/${t.id}/preview/`} title={`${t.name} template`} />
+            <figcaption className="bento-cap"><strong>{t.name}</strong><span>{t.description}</span></figcaption>
+          </figure>
+        ))}
+      </div>
+      <div className="show-foot">
+        <p className="showcase-note">{list.length ? `${ofType.length} ${tab === "ecommerce" ? "online store" : tab} templates, ${list.length} in total. Every one is a complete site with sample content.` : "Loading templates…"}</p>
+        <Link className="btn btn-light" to="/templates">See all templates</Link>
+      </div>
+    </>
+  );
+}
 
 const CheckCircle = <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M7.5 12.3l3 3 6-6.3" /></svg>;
 
@@ -170,18 +190,7 @@ export default function Home() {
 
       <section className="showcase" aria-labelledby="made">
         <div className="container">
-          <div className="showcase-head"><h2 id="made">Made with ImprintSites</h2></div>
-          {SHOWCASE.map((row, r) => (
-            <div key={r} className={`bento bento-${r + 1}`}>
-              {row.map((t) => (
-                <figure key={t.src} className={`bento-tile ${"phone" in t && t.phone ? "is-phone" : ""}`}>
-                  <img src={t.src} alt={`${t.title}: ${t.sub}`} loading="lazy" decoding="async" />
-                  <figcaption className="bento-cap"><strong>{t.title}</strong><span>{t.sub}</span></figcaption>
-                </figure>
-              ))}
-            </div>
-          ))}
-          <p className="showcase-note">Demo sites with sample content, built with ImprintSites templates.</p>
+          <TemplateShowcase />
         </div>
       </section>
 

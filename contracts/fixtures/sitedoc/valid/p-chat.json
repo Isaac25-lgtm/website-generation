@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-chat",
+  "brand": {
+    "name": "Can Demir",
+    "tagline": "Product manager who likes to talk to customers."
+  },
+  "seo": {
+    "title": "Can Demir — Product manager who likes to talk to customers.",
+    "description": "Product manager who likes to talk to customers.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f5f6f8",
+      "surface": "#eceef2",
+      "text": "#14171c",
+      "muted": "#5a606b",
+      "primary": "#2f6fed",
+      "accent": "#2f6fed"
+    },
+    "fontHeading": "inter",
+    "fontBody": "inter",
+    "radius": "lg",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-txl240",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Product manager · Bursa",
+            "heading": "Product manager who likes to talk to customers.",
+            "subheading": "Can Demir, Product manager",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-tyen0y",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I run discovery and delivery for software teams.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Keynote: leading change",
+                "description": "A 40-minute talk for leadership teams.",
+                "role": "Speaker",
+                "period": "2025",
+                "tags": [
+                  "Keynote"
+                ],
+                "images": [
+                  {
+                    "stock": "pro-speaker-man",
+                    "alt": "On stage",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Strategy workshops",
+                "description": "Half-day sessions for boards.",
+                "role": "Facilitator",
+                "period": "2025",
+                "tags": [
+                  "Workshop"
+                ],
+                "images": [
+                  {
+                    "stock": "biz-boardroom",
+                    "alt": "A boardroom",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Podcast series",
+                "description": "Conversations with founders.",
+                "role": "Host",
+                "period": "Weekly",
+                "tags": [
+                  "Podcast"
+                ],
+                "images": [
+                  {
+                    "stock": "obj-journal",
+                    "alt": "Notes",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-u064us",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-u1becs",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Strategist and speaker",
+                "org": "Independent",
+                "period": "2018 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Head of strategy",
+                "org": "Agency (fictional)",
+                "period": "2011 — 2018",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-u28oan",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "Strategy",
+                  "Keynotes",
+                  "Workshops",
+                  "Brand",
+                  "Podcasting"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-u32iv5",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Bursa.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

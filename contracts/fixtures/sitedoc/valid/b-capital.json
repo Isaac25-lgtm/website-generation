@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-capital",
+  "brand": {
+    "name": "Linden Row Capital",
+    "tagline": "Long-term investment in residential property."
+  },
+  "seo": {
+    "title": "Linden Row Capital — Long-term investment in residential property.",
+    "description": "We buy, restore and manage apartment buildings in Dutch and German cities, for pension funds and family offices.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#fbfaf6",
+      "surface": "#eef0ea",
+      "text": "#17241d",
+      "muted": "#54605a",
+      "primary": "#1f4433",
+      "accent": "#97753a"
+    },
+    "fontHeading": "newsreader",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "investors@example.com",
+    "phone": "+31 20 555 0100",
+    "whatsapp": "",
+    "address": "",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-ce6j2j",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Property investment · Amsterdam",
+            "heading": "Long-term investment in residential property.",
+            "subheading": "We buy, restore and manage apartment buildings in Dutch and German cities, for pension funds and family offices.",
+            "primaryCta": {
+              "label": "Email us",
+              "href": "mailto:investors@example.com"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "biz-facade-bw",
+              "alt": "A modern apartment facade",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-cfl35r",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Acquisition",
+                "description": "Apartment buildings of 20 to 200 homes in city centres.",
+                "price": ""
+              },
+              {
+                "title": "Restoration",
+                "description": "Energy upgrades and renovation, finished within eighteen months.",
+                "price": ""
+              },
+              {
+                "title": "Management",
+                "description": "Lettings, maintenance and tenant care by our own team.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-cg5t3n",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Linden Row Capital",
+            "body": "Linden Row has invested in residential property since 2009. We hold buildings for the long term, restore them to high energy standards and manage them ourselves.",
+            "image": {
+              "stock": "biz-dark-boardroom",
+              "alt": "The investment committee room",
+              "caption": ""
+            },
+            "highlights": [
+              "Buildings held for ten years or more",
+              "Energy upgrades on every purchase",
+              "In-house management"
+            ]
+          }
+        },
+        {
+          "id": "cta-chl74t",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Email us",
+              "href": "mailto:investors@example.com"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-ci297s",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Linden Row has invested in residential property since 2009. We hold buildings for the long term, restore them to high energy standards and manage them ourselves.",
+            "image": {
+              "stock": "biz-glass",
+              "alt": "A glass facade",
+              "caption": ""
+            },
+            "highlights": [
+              "Buildings held for ten years or more",
+              "Energy upgrades on every purchase",
+              "In-house management"
+            ]
+          }
+        },
+        {
+          "id": "team-cj2utj",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "team",
+          "data": {
+            "heading": "Our team",
+            "members": [
+              {
+                "name": "Pieter de Vries",
+                "role": "Managing director",
+                "bio": "",
+                "image": {
+                  "stock": "pro-exec-man",
+                  "alt": "Pieter de Vries",
+                  "caption": ""
+                }
+              },
+              {
+                "name": "Sofia Brandt",
+                "role": "Head of acquisitions",
+                "bio": "",
+                "image": {
+                  "stock": "pro-glasses-woman",
+                  "alt": "Sofia Brandt",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-cke70h",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Acquisition",
+                "description": "Apartment buildings of 20 to 200 homes in city centres.",
+                "price": ""
+              },
+              {
+                "title": "Restoration",
+                "description": "Energy upgrades and renovation, finished within eighteen months.",
+                "price": ""
+              },
+              {
+                "title": "Management",
+                "description": "Lettings, maintenance and tenant care by our own team.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Acquisition",
+              "Restoration",
+              "Management"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-cmbb83",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "biz-dark-boardroom",
+                "alt": "The investment committee room",
+                "caption": ""
+              },
+              {
+                "stock": "biz-glass",
+                "alt": "A glass facade",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-cnbl7r",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

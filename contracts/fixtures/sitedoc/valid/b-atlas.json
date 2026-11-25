@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-atlas",
+  "brand": {
+    "name": "lumen atlas",
+    "tagline": "City Library, Reading Hall"
+  },
+  "seo": {
+    "title": "lumen atlas — City Library, Reading Hall",
+    "description": "Architecture and interiors photographed for architects, developers and magazines.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f3f3f3",
+      "text": "#141414",
+      "muted": "#6b6b6b",
+      "primary": "#141414",
+      "accent": "#141414"
+    },
+    "fontHeading": "inter",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "studio@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-jpcktf",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Architecture photography · Lisbon",
+            "heading": "City Library, Reading Hall",
+            "subheading": "Architecture and interiors photographed for architects, developers and magazines.",
+            "primaryCta": {
+              "label": "Email us",
+              "href": "mailto:studio@example.com"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "biz-facade-bw",
+              "alt": "A modern building facade",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-jq9lfr",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Architecture",
+                "description": "Exteriors and interiors for completed projects.",
+                "price": "Day rate"
+              },
+              {
+                "title": "Interiors",
+                "description": "Rooms, details and materials.",
+                "price": "Half day"
+              },
+              {
+                "title": "Construction progress",
+                "description": "Monthly visits through the build.",
+                "price": "Monthly"
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-jr7rka",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About lumen atlas",
+            "body": "Lumen Atlas is two photographers working with architects across Europe. We photograph buildings in daylight and at dusk, and deliver within a week.",
+            "image": {
+              "stock": "home-loft",
+              "alt": "Loft interior",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-jskvkm",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Email us",
+              "href": "mailto:studio@example.com"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-jte3wc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Lumen Atlas is two photographers working with architects across Europe. We photograph buildings in daylight and at dusk, and deliver within a week.",
+            "image": {
+              "stock": "biz-towers",
+              "alt": "Towers",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-juj23b",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Architecture",
+                "description": "Exteriors and interiors for completed projects.",
+                "price": "Day rate"
+              },
+              {
+                "title": "Interiors",
+                "description": "Rooms, details and materials.",
+                "price": "Half day"
+              },
+              {
+                "title": "Construction progress",
+                "description": "Monthly visits through the build.",
+                "price": "Monthly"
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Architecture",
+              "Interiors",
+              "Construction progress"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-jweio",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "home-loft",
+                "alt": "Loft interior",
+                "caption": ""
+              },
+              {
+                "stock": "biz-towers",
+                "alt": "Towers",
+                "caption": ""
+              },
+              {
+                "stock": "stay-lobby",
+                "alt": "Hotel lobby",
+                "caption": ""
+              },
+              {
+                "stock": "biz-glass",
+                "alt": "Glass facade",
+                "caption": ""
+              },
+              {
+                "stock": "home-white-room",
+                "alt": "White room",
+                "caption": ""
+              },
+              {
+                "stock": "home-dining",
+                "alt": "Dining room",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-jxjt3a",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

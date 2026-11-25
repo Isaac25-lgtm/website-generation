@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-avatar",
+  "brand": {
+    "name": "Yaw Darko",
+    "tagline": "Engineer writing about building software in West Africa."
+  },
+  "seo": {
+    "title": "Yaw Darko — Engineer writing about building software in West Africa.",
+    "description": "Engineer writing about building software in West Africa.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#fbfaf7",
+      "surface": "#f1efe9",
+      "text": "#1b1d22",
+      "muted": "#5c5f67",
+      "primary": "#1b1d22",
+      "accent": "#3f7d5c"
+    },
+    "fontHeading": "lora",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-qe6d91",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Engineer & writer · Cape Coast",
+            "heading": "Engineer writing about building software in West Africa.",
+            "subheading": "Yaw Darko, Engineer & writer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-young-man",
+              "alt": "Yaw Darko",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-qfcuae",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Software engineer and writer.",
+            "image": {
+              "stock": "pro-young-man",
+              "alt": "Yaw Darko",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "A book about small habits",
+                "description": "Twelve essays on doing a little every day.",
+                "role": "Author",
+                "period": "2025",
+                "tags": [
+                  "Book"
+                ],
+                "images": [
+                  {
+                    "stock": "obj-open-book",
+                    "alt": "An open book",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Weekly letter",
+                "description": "One practical idea every Sunday.",
+                "role": "Writer",
+                "period": "Weekly",
+                "tags": [
+                  "Newsletter"
+                ],
+                "images": [
+                  {
+                    "stock": "obj-journal",
+                    "alt": "A notebook",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Magazine features",
+                "description": "Long reads on food and work.",
+                "role": "Writer",
+                "period": "2024",
+                "tags": [
+                  "Features"
+                ],
+                "images": [
+                  {
+                    "stock": "obj-old-books",
+                    "alt": "Old books",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-qh6ye5",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-qiazt4",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Writer",
+                "org": "Independent",
+                "period": "2019 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Editor",
+                "org": "Magazine (fictional)",
+                "period": "2013 — 2019",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-qjk20d",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "Writing",
+                  "Editing",
+                  "Interviews",
+                  "Newsletters",
+                  "Workshops"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-qk6y3v",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Cape Coast.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

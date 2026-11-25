@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-index",
+  "brand": {
+    "name": "Archive Press",
+    "tagline": "Books, prints and a small archive."
+  },
+  "seo": {
+    "title": "Archive Press — Books, prints and a small archive.",
+    "description": "Independent publisher of books and prints.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f3f3f1",
+      "text": "#141414",
+      "muted": "#5e5e5b",
+      "primary": "#141414",
+      "accent": "#141414"
+    },
+    "fontHeading": "inter",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Edinburgh",
+    "country": "United Kingdom",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-15k2gew",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Publisher · Edinburgh",
+            "heading": "Books, prints and a small archive.",
+            "subheading": "Independent publisher of books and prints.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "stay-lobby",
+              "alt": "Archive Press",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-15l4778",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Main stage",
+                "description": "Two days of talks from builders and artists.",
+                "price": "From $480",
+                "image": {
+                  "stock": "pro-speaker-man",
+                  "alt": "A speaker on stage",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Workshops",
+                "description": "Small hands-on sessions.",
+                "price": "From $120",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A workshop",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Partner programme",
+                "description": "For companies who want to take part.",
+                "price": "On request",
+                "image": {
+                  "stock": "biz-boardroom",
+                  "alt": "A partner meeting",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-15m3j2f",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Archive Press",
+            "body": "A small press publishing four books a year.",
+            "image": {
+              "stock": "stay-lobby",
+              "alt": "The venue",
+              "caption": ""
+            },
+            "highlights": [
+              "Two days, 3,000 guests",
+              "Sixty sessions",
+              "Held in a former factory"
+            ]
+          }
+        },
+        {
+          "id": "cta-15nj3wu",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-15o5gi3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "A small press publishing four books a year.",
+            "image": {
+              "stock": "biz-team",
+              "alt": "Guests",
+              "caption": ""
+            },
+            "highlights": [
+              "Two days, 3,000 guests",
+              "Sixty sessions",
+              "Held in a former factory"
+            ]
+          }
+        },
+        {
+          "id": "faq-15pkomh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "When is the next edition?",
+                "a": "Every May. Dates are announced in January."
+              },
+              {
+                "q": "Are tickets refundable?",
+                "a": "Tickets can be transferred to another person at no charge."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-15qa9ar",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Main stage",
+                "description": "Two days of talks from builders and artists.",
+                "price": "From $480",
+                "image": {
+                  "stock": "pro-speaker-man",
+                  "alt": "A speaker on stage",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Workshops",
+                "description": "Small hands-on sessions.",
+                "price": "From $120",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A workshop",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Partner programme",
+                "description": "For companies who want to take part.",
+                "price": "On request",
+                "image": {
+                  "stock": "biz-boardroom",
+                  "alt": "A partner meeting",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Main stage",
+              "Workshops",
+              "Partner programme"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-15s59cp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "stay-lobby",
+                "alt": "The venue",
+                "caption": ""
+              },
+              {
+                "stock": "biz-team",
+                "alt": "Guests",
+                "caption": ""
+              },
+              {
+                "stock": "pro-speaker-woman",
+                "alt": "A talk",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-15tf2ox",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

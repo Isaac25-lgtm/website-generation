@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-deco",
+  "brand": {
+    "name": "Samuel Reyes",
+    "tagline": "Bold illustration for posters, books and brands."
+  },
+  "seo": {
+    "title": "Samuel Reyes — Bold illustration for posters, books and brands.",
+    "description": "Bold illustration for posters, books and brands.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#fbf3ea",
+      "surface": "#f3e4d3",
+      "text": "#2a1b17",
+      "muted": "#6c5a52",
+      "primary": "#c94f3a",
+      "accent": "#2a1b17"
+    },
+    "fontHeading": "dm-serif",
+    "fontBody": "dm-sans",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "centered",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "samuel@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-he20sf",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Illustrator · Barcelona",
+            "heading": "Bold illustration for posters, books and brands.",
+            "subheading": "Samuel Reyes, Illustrator",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-hf72yt",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I draw posters, book covers and brand illustrations in a bold, geometric style.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Festival posters",
+                "description": "A series of six posters.",
+                "role": "Illustrator",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "work-drawing",
+                    "alt": "Drawing",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Book covers",
+                "description": "Covers for a classics series.",
+                "role": "Illustrator",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "obj-old-books",
+                    "alt": "Old books",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-hhy1z",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-hiaxe9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "work-drawing",
+                "alt": "Drawing",
+                "caption": ""
+              },
+              {
+                "stock": "work-sketches",
+                "alt": "Sketches",
+                "caption": ""
+              },
+              {
+                "stock": "work-pattern",
+                "alt": "Pattern",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-hjfqzm",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Barcelona.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

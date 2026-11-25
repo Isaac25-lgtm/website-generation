@@ -47,36 +47,70 @@ export function Pricing() {
   );
 }
 
-type Tpl = { id: string; name: string; type: string; tier: string; styles: string[]; industries: string[]; description: string; colors: Record<string, string>; locked: boolean; fontHeading: string };
+type Tpl = { id: string; name: string; type: string; tier: string; styles: string[]; industries: string[]; description: string; colors: Record<string, string>; locked: boolean; fontHeading: string; category: string | null; rank: "signature" | "premium" | "standard"; layout: string | null };
+type Cat = { key: string; label: string };
+
+const RANK_ORDER = { signature: 0, premium: 1, standard: 2 } as const;
+/** Cards shown before "See more": the best few first (owner rule, 24 Nov 2026). */
+const FIRST = 12;
 
 export function TemplateGallery({ embedded, onPick, type: fixedType, selected }: { embedded?: boolean; onPick?: (id: string) => void; type?: string; selected?: string }) {
   const [list, setList] = useState<Tpl[]>([]);
+  const [cats, setCats] = useState<Cat[]>([]);
   const [signedIn, setSignedIn] = useState(false);
   const [type, setType] = useState(fixedType ?? "all");
+  const [cat, setCat] = useState("all");
   const [style, setStyle] = useState("all");
+  const [limit, setLimit] = useState(FIRST);
   const [open, setOpen] = useState<Tpl | null>(null);
-  useEffect(() => { api("/api/templates").then((r) => { setList(r.templates); setSignedIn(r.signedIn); }).catch(() => {}); }, []);
-  const styles = useMemo(() => ["all", ...new Set(list.flatMap((t) => t.styles))].slice(0, 12), [list]);
-  const shown = list.filter((t) => (type === "all" || t.type === type) && (style === "all" || t.styles.includes(style)));
+  useEffect(() => { api("/api/templates").then((r) => { setList(r.templates); setCats(r.categories ?? []); setSignedIn(r.signedIn); }).catch(() => {}); }, []);
+  useEffect(() => { setLimit(FIRST); }, [type, cat, style]);
+  const ofType = useMemo(() => list.filter((t) => type === "all" || t.type === type), [list, type]);
+  const store = type === "ecommerce";
+  const usedCats = useMemo(() => cats.filter((c) => ofType.some((t) => t.category === c.key)), [cats, ofType]);
+  const styles = useMemo(() => ["all", ...new Set(ofType.flatMap((t) => t.styles))].slice(0, 12), [ofType]);
+  const sorted = ofType
+    .filter((t) => (!store || cat === "all" || t.category === cat) && (store || style === "all" || t.styles.includes(style)))
+    .map((t, i) => ({ t, i }))
+    .sort((a, b) => RANK_ORDER[a.t.rank] - RANK_ORDER[b.t.rank] || a.i - b.i)
+    .map((x) => x.t);
+  const head = sorted.slice(0, limit);
+  const sel = sorted.find((t) => t.id === selected);
+  // Keep the currently selected template visible even when it is past the first few.
+  const shown = sel && !head.includes(sel) ? [...head, sel] : head;
+  const hidden = sorted.length - shown.length;
+  const catLabel = (k: string) => cats.find((c) => c.key === k)?.label ?? k;
   return (
     <>
       {!fixedType && (
         <div className="filters" role="group" aria-label="Filter by site type">
-          {[["all", "All"], ["personal", "Personal"], ["business", "Business"], ["ecommerce", "E-commerce"]].map(([k, l]) => <button key={k} aria-pressed={type === k} onClick={() => setType(k)}>{l}</button>)}
+          {[["all", "All"], ["personal", "Personal"], ["business", "Business"], ["ecommerce", "Online store"]].map(([k, l]) => <button key={k} aria-pressed={type === k} onClick={() => { setType(k); setCat("all"); }}>{l}</button>)}
         </div>
       )}
-      <div className="filters" role="group" aria-label="Filter by style" style={{ marginTop: fixedType ? 0 : "-1rem" }}>
-        {styles.map((s) => <button key={s} aria-pressed={style === s} onClick={() => setStyle(s)} style={{ fontSize: ".85rem", padding: ".3rem .8rem" }}>{s === "all" ? "Any style" : s}</button>)}
-      </div>
-      {!signedIn && <p className="muted small" style={{ marginTop: "-.5rem", marginBottom: "1.5rem" }}>{list.filter((t) => t.locked).length} member templates unlock when you <Link to="/signup">sign up free</Link> or sign in with Google.</p>}
+      {store && usedCats.length > 1 && (
+        <div className="filters cat-tabs" role="group" aria-label="Filter by shop category" style={{ marginTop: fixedType ? 0 : "-1rem" }}>
+          <button aria-pressed={cat === "all"} onClick={() => setCat("all")}>All shops</button>
+          {usedCats.map((c) => <button key={c.key} aria-pressed={cat === c.key} onClick={() => setCat(c.key)}>{c.label} <span className="muted">{ofType.filter((t) => t.category === c.key).length}</span></button>)}
+        </div>
+      )}
+      {!store && (
+        <div className="filters" role="group" aria-label="Filter by style" style={{ marginTop: fixedType ? 0 : "-1rem" }}>
+          {styles.map((s) => <button key={s} aria-pressed={style === s} onClick={() => setStyle(s)} style={{ fontSize: ".85rem", padding: ".3rem .8rem" }}>{s === "all" ? "Any style" : s}</button>)}
+        </div>
+      )}
+      {!signedIn && list.some((t) => t.locked) && <p className="muted small" style={{ marginTop: "-.5rem", marginBottom: "1.5rem" }}>Templates marked “Member” unlock when you <Link to="/signup">sign up free</Link> or sign in with Google.</p>}
       <div className="grid-3">
         {shown.map((t) => (
           <article key={t.id} className={`card hover tpl-card ${selected === t.id ? "plan featured" : ""}`}>
-            <SiteThumb src={`/api/templates/${t.id}/preview/`} title={`${t.name} template preview`} locked={t.locked ? <div><strong style={{ fontWeight: 500 }}>{t.name}</strong><div className="small muted">Sign in to unlock</div></div> : undefined} />
+            <SiteThumb src={`/api/templates/${t.id}/preview/`} title={`${t.name} template preview`} locked={t.locked ? <span>Member</span> : undefined} />
             <div className="meta stack-sm">
               <div className="row between"><strong style={{ fontFamily: "var(--font-h)", fontSize: "1.1rem" }}>{t.name}</strong><div className="swatches" aria-hidden="true">{["bg", "primary", "accent", "text"].map((k) => <i key={k} style={{ background: t.colors[k] }} />)}</div></div>
               <p className="muted small" style={{ margin: 0 }}>{t.description}</p>
-              <div className="row">{t.tier === "member" ? <span className="badge amber">Member</span> : <span className="badge green">Free to all</span>}<span className="badge">{t.type === "ecommerce" ? "E-commerce" : t.type[0].toUpperCase() + t.type.slice(1)}</span></div>
+              <div className="row">
+                {t.rank === "signature" ? <span className="badge rank-sig">Signature</span> : t.rank === "premium" ? <span className="badge">Premium</span> : null}
+                {t.tier === "member" ? <span className="badge amber">Member</span> : <span className="badge green">Free to all</span>}
+                <span className="badge">{t.category ? catLabel(t.category) : t.type === "ecommerce" ? "Online store" : t.type[0].toUpperCase() + t.type.slice(1)}</span>
+              </div>
               <div className="row" style={{ marginTop: ".4rem" }}>
                 {t.locked ? <Link to="/signup?next=%2Ftemplates" className="btn btn-primary btn-sm">Unlock free</Link> : <button className="btn btn-sm" onClick={() => setOpen(t)}>Preview</button>}
                 {onPick && !t.locked && <button className="btn btn-primary btn-sm" onClick={() => onPick(t.id)} aria-pressed={selected === t.id}>{selected === t.id ? "Selected ✓" : "Use this template"}</button>}
@@ -85,6 +119,10 @@ export function TemplateGallery({ embedded, onPick, type: fixedType, selected }:
             </div>
           </article>
         ))}
+      </div>
+      <div className="center" style={{ marginTop: "2rem" }}>
+        <p className="muted small" aria-live="polite">Showing {shown.length} of {sorted.length} templates</p>
+        {hidden > 0 && <button className="btn" onClick={() => setLimit((n) => n + FIRST)}>See more templates ({hidden} more)</button>}
       </div>
       {open && (
         <Modal title={`${open.name} — sample content`} onClose={() => setOpen(null)} wide>
@@ -99,7 +137,7 @@ export function Templates() {
   return (
     <main id="main" className="section">
       <div className="container">
-        <div className="section-head"><span className="eyebrow">Template gallery</span><h1 style={{ fontSize: "clamp(2.2rem,4.5vw,3.4rem)" }}>18 original designs, ready for your content</h1><p>Every template is fully responsive, accessible and editable: colours, fonts, spacing and layout. Previews use fictional sample content.</p></div>
+        <div className="section-head"><span className="eyebrow">Template gallery</span><h1 style={{ fontSize: "clamp(2.2rem,4.5vw,3.4rem)" }}>Complete sites, ready for your content</h1><p>Every template is a full, working site: every page designed, responsive, accessible and editable. Signature designs are shown first. Previews use fictional sample content.</p></div>
         <TemplateGallery />
       </div>
     </main>

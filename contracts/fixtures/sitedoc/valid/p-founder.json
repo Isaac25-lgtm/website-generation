@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-founder",
+  "brand": {
+    "name": "Ines Moreau",
+    "tagline": "Ines Moreau is the founder and creative director of Northlight, a studio that helps food and hospitality companies build brands people remember."
+  },
+  "seo": {
+    "title": "Ines Moreau — Ines Moreau is the founder and creative director of Nort",
+    "description": "Ines Moreau is the founder and creative director of Northlight, a studio that helps food and hospitality companies build brands people remember.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#111111",
+      "surface": "#1b1b1b",
+      "text": "#f2f0eb",
+      "muted": "#a9a59d",
+      "primary": "#f2f0eb",
+      "accent": "#c9b28a"
+    },
+    "fontHeading": "newsreader",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "ines@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-e7eugy",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Founder & creative director · Paris, France",
+            "heading": "Ines Moreau is the founder and creative director of Northlight, a studio that helps food and hospitality companies build brands people remember.",
+            "subheading": "Ines Moreau, Founder & creative director",
+            "primaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "secondaryCta": {
+              "label": "Contact me",
+              "href": "/contact"
+            },
+            "image": {
+              "stock": "pro-window-woman",
+              "alt": "Ines Moreau by a window",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-e82r8v",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I started Northlight in 2017 after ten years in agency design. We are eleven people working with restaurants, hotels and food companies across Europe.\n\nI lead every project's first workshop myself.",
+            "image": {
+              "stock": "pro-window-woman",
+              "alt": "Ines Moreau by a window",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "A bakery group's new identity",
+                "description": "Name, logo, packaging and shop interiors for nine bakeries.",
+                "role": "Creative director",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "work-sketches",
+                    "alt": "Identity sketches",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Hotel restaurant relaunch",
+                "description": "Menus, signage and uniforms for a hotel's ground-floor restaurant.",
+                "role": "Creative director",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "stay-lobby",
+                    "alt": "A hotel lobby",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Ceramics packaging",
+                "description": "Boxes and labels for a tableware maker.",
+                "role": "Creative director",
+                "period": "2023",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "make-ceramics-shelf",
+                    "alt": "Ceramics on shelves",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-ea7rc7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-ebd9z5",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Paris, France.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

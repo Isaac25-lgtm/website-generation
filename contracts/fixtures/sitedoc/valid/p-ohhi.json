@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-ohhi",
+  "brand": {
+    "name": "Chelsea Moore",
+    "tagline": "A cool way to say I follow every rabbit hole. Funny thing: they all come out in the same place."
+  },
+  "seo": {
+    "title": "Chelsea Moore — A cool way to say I follow every rabbit hole. Funny th",
+    "description": "A cool way to say I follow every rabbit hole. Funny thing: they all come out in the same place.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#fbf3e2",
+      "surface": "#f3e6cc",
+      "text": "#262019",
+      "muted": "#6b5f50",
+      "primary": "#2f7d73",
+      "accent": "#c9452f"
+    },
+    "fontHeading": "instrument-serif",
+    "fontBody": "dm-sans",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "chelsea@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-hvoo",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Community builder & author · Portland",
+            "heading": "A cool way to say I follow every rabbit hole. Funny thing: they all come out in the same place.",
+            "subheading": "Chelsea Moore, Community builder & author",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-reader-woman",
+              "alt": "Chelsea Moore reading",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-hw7i6r",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I build communities, write about shared economies and teach people to make things together.",
+            "image": {
+              "stock": "pro-reader-woman",
+              "alt": "Chelsea Moore reading",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "A book about sharing",
+                "description": "Stories from shared workshops and kitchens.",
+                "role": "Author",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "obj-open-book",
+                    "alt": "Open book",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Neighbourhood workshops",
+                "description": "Monthly making nights.",
+                "role": "Organiser",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "make-bench",
+                    "alt": "Workbench",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-hy61qw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-hzeqdj",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Portland.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

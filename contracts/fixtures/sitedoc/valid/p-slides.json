@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-slides",
+  "brand": {
+    "name": "Camille Laurent",
+    "tagline": "Independent design and art direction."
+  },
+  "seo": {
+    "title": "Camille Laurent — Independent design and art direction.",
+    "description": "Independent design and art direction.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0e0e0e",
+      "surface": "#181818",
+      "text": "#f3f3f3",
+      "muted": "#a6a6a6",
+      "primary": "#f3f3f3",
+      "accent": "#f3f3f3"
+    },
+    "fontHeading": "instrument-serif",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "camille@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-hkfp0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Independent designer & art director · Paris",
+            "heading": "Independent design and art direction.",
+            "subheading": "Camille Laurent, Independent designer & art director",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-hlav3a",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I work on identities, spaces and campaigns for hotels, galleries and fashion houses.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Hotel lobby",
+                "description": "Identity and interiors.",
+                "role": "Art director",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "stay-lobby",
+                    "alt": "Hotel lobby",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Gallery facade",
+                "description": "Signage.",
+                "role": "Designer",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "biz-facade-bw",
+                    "alt": "Facade",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Loft showroom",
+                "description": "Showroom design.",
+                "role": "Art director",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "home-loft",
+                    "alt": "Loft",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Summer campaign",
+                "description": "Campaign images.",
+                "role": "Art director",
+                "period": "2023",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "fashion-hero",
+                    "alt": "Campaign",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-hn1wlz",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-hoeeqz",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Paris.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

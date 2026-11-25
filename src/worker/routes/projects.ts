@@ -11,6 +11,7 @@ import { generateSiteDoc, switchTemplate, type AnyAnswers } from "../../shared/g
 import { FONT_KEYS, parseSiteDoc, type SiteDoc } from "../../shared/schema";
 import { PLANS, isSiteType } from "../../shared/pricing";
 import { getTemplate, TEMPLATE_MAP } from "../../shared/templates";
+import { copySlop } from "../../shared/quality";
 import { applyPatch, RefinePatch, ruleRefine } from "../../shared/refine";
 import { slugify } from "../../shared/util";
 import { renderSite } from "../../shared/render";
@@ -218,7 +219,9 @@ async function polishCopy(c: Ctx, p: ProjectRow, userId: string, doc: SiteDoc): 
     return { doc, ai: { used: false, error: "The AI service didn't return a valid result, so your original text was kept." } };
   }
   await logJob(c, p.id, userId, "ai_copy", "succeeded", { provider: "workers-ai", model: r.model, inputTokens: r.inputTokens, outputTokens: r.outputTokens });
-  const d = r.data;
+  // No-AI-slop rule: any suggested field with cliché phrasing or emoji is dropped, keeping the customer's own words.
+  const clean = (x: string) => (copySlop(x) ? "" : x);
+  const d = { ...r.data, heroHeading: clean(r.data.heroHeading), heroSubheading: clean(r.data.heroSubheading), about: clean(r.data.about), seoDescription: clean(r.data.seoDescription), serviceDescriptions: r.data.serviceDescriptions.map(clean) };
   const pages = doc.pages.map((pg) => ({
     ...pg,
     sections: pg.sections.map((s) => {

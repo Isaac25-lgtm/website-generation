@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-author",
+  "brand": {
+    "name": "Margaret Lowe",
+    "tagline": "Money in Order"
+  },
+  "seo": {
+    "title": "Margaret Lowe — Money in Order",
+    "description": "Money in Order",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#e9e9e6",
+      "surface": "#deded9",
+      "text": "#1a1a1a",
+      "muted": "#5b5b57",
+      "primary": "#0d5c3f",
+      "accent": "#0d5c3f"
+    },
+    "fontHeading": "dm-serif",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "xl",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "book@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-g3cnom",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "A book about personal money · 2026 edition",
+            "heading": "Money in Order",
+            "subheading": "Margaret Lowe, A book about personal money · 2026 edition",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "obj-book-pages",
+              "alt": "The open book",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-g4w3t",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "A short, practical book about getting your finances in order in a weekend: budgets, debts, savings and the papers to keep. Written for people who would rather do anything else.",
+            "image": {
+              "stock": "obj-book-pages",
+              "alt": "The open book",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Hardback",
+                "description": "Cloth-bound, 220 pages.",
+                "role": "€24",
+                "period": "2026",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "obj-open-book",
+                    "alt": "Hardback edition",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Paperback",
+                "description": "220 pages.",
+                "role": "€14",
+                "period": "2026",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "obj-old-books",
+                    "alt": "Paperback edition",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-g6gyvr",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-g7fiy0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

@@ -73,7 +73,7 @@ export const COPY_SYSTEM = `You are a careful website copy editor. Improve clari
 STRICT RULES:
 - Use ONLY information present in the input. Never add numbers, years, awards, certifications, client names, testimonials, prices, locations, guarantees or claims that are not in the input.
 - If a field is empty in the input, return an empty string for it.
-- Keep the same language as the input. Keep it concise and natural; no hype words like "world-class" or "best".
+- Keep the same language as the input. Write like a skilled human copywriter: plain, specific, concise. No hype or cliché words ("world-class", "best", "elevate", "seamless", "unleash", "cutting-edge", "empower", "next level"), no emoji, no exclamation marks.
 - serviceDescriptions must have exactly one entry per input service, in the same order.
 - heroHeading max 12 words. seoDescription max 160 characters.
 Return JSON only.`;
@@ -97,7 +97,7 @@ export const REFINE_JSON_SCHEMA = {
         ornament: { type: "string", enum: ["none", "grain", "grid", "blobs", "lines", "dots"] },
       },
     },
-    heroVariant: { type: "string", enum: ["split", "centered", "editorial", "fullbleed", "terminal", "mosaic", "stacked", "poster", "minimal"] },
+    heroVariant: { type: "string", enum: ["split", "centered", "editorial", "fullbleed", "terminal", "mosaic", "stacked", "poster", "minimal", "lookbook", "statement", "panel", "room", "intro", "nameplate", "cvhead", "panelcard", "firm", "promise", "calm", "sentence", "essay", "chapters", "tiles", "warmbento", "growth", "hello", "contour", "keynote", "creator", "shapes", "iconline", "author", "splitname", "prologue", "library", "poem", "cinema", "gazette", "boarding", "badge", "deco", "slides", "roles", "ohhi", "hotspots", "landscape", "bento", "champion", "bookcover", "skyline", "continent", "coordinates", "studiodark", "lettering", "catalogue", "monolith", "canal", "realwork", "contractor", "desktop", "globe", "planet", "nameback", "fullportrait", "scatter", "lockscreen", "levels", "playshapes", "stickies", "initials", "ticker", "clients", "swiss", "profilegrid", "outline", "wordmark", "monogram", "datelist", "tripane", "resumecard", "centeravatar", "desk", "editorialname", "stacked3", "mockups", "centername", "photogrid", "gridpaper", "twotone", "handnote", "chat", "profilesplit", "statementcards", "blog", "colorword", "blueprint", "typeintro", "marquee", "pixel", "objecthero", "sunlit", "wordgrid"] },
     explanation: { type: "string" },
   },
   required: ["theme", "explanation"],

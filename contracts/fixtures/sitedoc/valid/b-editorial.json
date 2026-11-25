@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-editorial",
+  "brand": {
+    "name": "Design Council North",
+    "tagline": "Design that serves the public."
+  },
+  "seo": {
+    "title": "Design Council North — Design that serves the public.",
+    "description": "Research, exhibitions and publications on design.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f4f0e7",
+      "surface": "#e9e3d6",
+      "text": "#141414",
+      "muted": "#5d5850",
+      "primary": "#141414",
+      "accent": "#c8102e"
+    },
+    "fontHeading": "playfair",
+    "fontBody": "lora",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Montreal",
+    "country": "Canada",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-14q3kqv",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Design organisation · Montreal",
+            "heading": "Design that serves the public.",
+            "subheading": "Research, exhibitions and publications on design.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "pro-reader-woman",
+              "alt": "Design Council North",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-14rj0o",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Main stage",
+                "description": "Two days of talks from builders and artists.",
+                "price": "From $480",
+                "image": {
+                  "stock": "pro-speaker-man",
+                  "alt": "A speaker on stage",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Workshops",
+                "description": "Small hands-on sessions.",
+                "price": "From $120",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A workshop",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Partner programme",
+                "description": "For companies who want to take part.",
+                "price": "On request",
+                "image": {
+                  "stock": "biz-boardroom",
+                  "alt": "A partner meeting",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-14shspo",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Design Council North",
+            "body": "A non-profit organisation promoting good design in public life.",
+            "image": {
+              "stock": "stay-lobby",
+              "alt": "The venue",
+              "caption": ""
+            },
+            "highlights": [
+              "Two days, 3,000 guests",
+              "Sixty sessions",
+              "Held in a former factory"
+            ]
+          }
+        },
+        {
+          "id": "cta-14tbsv6",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-14uck1x",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "A non-profit organisation promoting good design in public life.",
+            "image": {
+              "stock": "biz-team",
+              "alt": "Guests",
+              "caption": ""
+            },
+            "highlights": [
+              "Two days, 3,000 guests",
+              "Sixty sessions",
+              "Held in a former factory"
+            ]
+          }
+        },
+        {
+          "id": "faq-14v8rd3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "When is the next edition?",
+                "a": "Every May. Dates are announced in January."
+              },
+              {
+                "q": "Are tickets refundable?",
+                "a": "Tickets can be transferred to another person at no charge."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-14wc5hi",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Main stage",
+                "description": "Two days of talks from builders and artists.",
+                "price": "From $480",
+                "image": {
+                  "stock": "pro-speaker-man",
+                  "alt": "A speaker on stage",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Workshops",
+                "description": "Small hands-on sessions.",
+                "price": "From $120",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A workshop",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Partner programme",
+                "description": "For companies who want to take part.",
+                "price": "On request",
+                "image": {
+                  "stock": "biz-boardroom",
+                  "alt": "A partner meeting",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Main stage",
+              "Workshops",
+              "Partner programme"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-14y2mza",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "stay-lobby",
+                "alt": "The venue",
+                "caption": ""
+              },
+              {
+                "stock": "biz-team",
+                "alt": "Guests",
+                "caption": ""
+              },
+              {
+                "stock": "pro-speaker-woman",
+                "alt": "A talk",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-14zawat",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

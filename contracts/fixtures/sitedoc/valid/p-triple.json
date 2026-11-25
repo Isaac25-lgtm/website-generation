@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-triple",
+  "brand": {
+    "name": "Erik Sand",
+    "tagline": "I try it. I make it. I write it up."
+  },
+  "seo": {
+    "title": "Erik Sand — I try it. I make it. I write it up.",
+    "description": "I try it. I make it. I write it up.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f3f3f3",
+      "text": "#111111",
+      "muted": "#7a7a7a",
+      "primary": "#0f62fe",
+      "accent": "#0f62fe"
+    },
+    "fontHeading": "archivo",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-rkiht4",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Maker · Gothenburg",
+            "heading": "I try it. I make it. I write it up.",
+            "subheading": "Erik Sand, Maker",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-coffee-man",
+              "alt": "Erik Sand",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-rl3oiz",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Maker and tester of hardware and software.",
+            "image": {
+              "stock": "pro-coffee-man",
+              "alt": "Erik Sand",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Payments dashboard",
+                "description": "Orders, refunds and payouts in one place.",
+                "role": "Engineer",
+                "period": "2025",
+                "tags": [
+                  "TypeScript",
+                  "PostgreSQL"
+                ],
+                "images": [
+                  {
+                    "stock": "biz-analytics",
+                    "alt": "Charts on a laptop",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Delivery tracking",
+                "description": "Live tracking for 3,000 daily deliveries.",
+                "role": "Tech lead",
+                "period": "2024",
+                "tags": [
+                  "Go",
+                  "Maps"
+                ],
+                "images": [
+                  {
+                    "stock": "biz-glass",
+                    "alt": "An office building",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Open-source form library",
+                "description": "Accessible forms for React apps.",
+                "role": "Maintainer",
+                "period": "2023",
+                "tags": [
+                  "Open source"
+                ],
+                "images": [
+                  {
+                    "stock": "work-wireframes",
+                    "alt": "Form sketches",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-rn9e4k",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-rodalo",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Senior engineer",
+                "org": "Logistics company (fictional)",
+                "period": "2021 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Engineer",
+                "org": "Fintech startup (fictional)",
+                "period": "2017 — 2021",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-rpbeoc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "TypeScript",
+                  "Go",
+                  "PostgreSQL",
+                  "React",
+                  "System design"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-rqa4pn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Gothenburg.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

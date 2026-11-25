@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-lettering",
+  "brand": {
+    "name": "Hart & Vale",
+    "tagline": "Careful identities for imaginative clients."
+  },
+  "seo": {
+    "title": "Hart & Vale — Careful identities for imaginative clients.",
+    "description": "Logos, lettering and identities for restaurants, shops and publishers.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#000000",
+      "surface": "#111111",
+      "text": "#ffffff",
+      "muted": "#a3a3a3",
+      "primary": "#ffffff",
+      "accent": "#3ddc84"
+    },
+    "fontHeading": "playfair",
+    "fontBody": "archivo",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "studio@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Toronto",
+    "country": "Canada",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-k77nab",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Branding studio · Toronto",
+            "heading": "Careful identities for imaginative clients.",
+            "subheading": "Logos, lettering and identities for restaurants, shops and publishers.",
+            "primaryCta": {
+              "label": "Email us",
+              "href": "mailto:studio@example.com"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            }
+          }
+        },
+        {
+          "id": "services-k888ub",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Logos and lettering",
+                "description": "Custom marks drawn by hand.",
+                "price": ""
+              },
+              {
+                "title": "Identity systems",
+                "description": "Type, colour and guidelines.",
+                "price": ""
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels and boxes.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-k9d3fl",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Hart & Vale",
+            "body": "Hart & Vale is a two-person studio drawing custom lettering and logos by hand, then finishing them digitally.",
+            "image": {
+              "stock": "work-sketches",
+              "alt": "Lettering sketches",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-kaintj",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Email us",
+              "href": "mailto:studio@example.com"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-kbga5d",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Hart & Vale is a two-person studio drawing custom lettering and logos by hand, then finishing them digitally.",
+            "image": {
+              "stock": "work-drawing",
+              "alt": "Drawing",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-kc8crz",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Logos and lettering",
+                "description": "Custom marks drawn by hand.",
+                "price": ""
+              },
+              {
+                "title": "Identity systems",
+                "description": "Type, colour and guidelines.",
+                "price": ""
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels and boxes.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Logos and lettering",
+              "Identity systems",
+              "Packaging"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-ke3ujm",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "work-sketches",
+                "alt": "Lettering sketches",
+                "caption": ""
+              },
+              {
+                "stock": "work-drawing",
+                "alt": "Drawing",
+                "caption": ""
+              },
+              {
+                "stock": "obj-journal",
+                "alt": "Sketchbook",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-kf8ehl",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

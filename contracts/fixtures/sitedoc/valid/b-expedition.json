@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-expedition",
+  "brand": {
+    "name": "Polar Line Expeditions",
+    "tagline": "Vast, quiet and almost untouched: travelling to the far south is a rare experience."
+  },
+  "seo": {
+    "title": "Polar Line Expeditions — Vast, quiet and almost untouched: travelling ",
+    "description": "Small-group flights and camps deep in the polar interior, with expert guides.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f5f5f2",
+      "text": "#1d2430",
+      "muted": "#6b7280",
+      "primary": "#1d2430",
+      "accent": "#d1561a"
+    },
+    "fontHeading": "cormorant",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "travel@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Cape Town",
+    "country": "South Africa",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-jg8k51",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "The last wilderness · Cape Town",
+            "heading": "Vast, quiet and almost untouched: travelling to the far south is a rare experience.",
+            "subheading": "Small-group flights and camps deep in the polar interior, with expert guides.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "photo-misty-mountains",
+              "alt": "Fog over mountains",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-jhi2an",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Journeys",
+            "intro": "",
+            "items": [
+              {
+                "title": "The Interior",
+                "description": "Eight days at a remote camp.",
+                "price": "From $38,000",
+                "image": {
+                  "stock": "photo-misty-mountains",
+                  "alt": "Mountains",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Emperor Colony",
+                "description": "Four days with an emperor colony.",
+                "price": "From $29,000",
+                "image": {
+                  "stock": "photo-sea",
+                  "alt": "The coast",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Summit Expedition",
+                "description": "Fourteen days, guided climb.",
+                "price": "From $54,000",
+                "image": {
+                  "stock": "safari-trek",
+                  "alt": "A climber on a ridge",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-jikdn0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Polar Line Expeditions",
+            "body": "After twenty years of guiding, the far south still surprises me. It cannot help but change how you see the rest of the world. — Founder",
+            "image": {
+              "stock": "photo-teal-lake",
+              "alt": "A glacier lake",
+              "caption": ""
+            },
+            "highlights": [
+              "Groups of twelve",
+              "Expert polar guides",
+              "Fully supported camps"
+            ]
+          }
+        },
+        {
+          "id": "cta-jj5bhl",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-jk7lbd",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "After twenty years of guiding, the far south still surprises me. It cannot help but change how you see the rest of the world. — Founder",
+            "image": {
+              "stock": "safari-camp",
+              "alt": "Camp at night",
+              "caption": ""
+            },
+            "highlights": [
+              "Groups of twelve",
+              "Expert polar guides",
+              "Fully supported camps"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-jl6y37",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Journeys",
+            "intro": "",
+            "items": [
+              {
+                "title": "The Interior",
+                "description": "Eight days at a remote camp.",
+                "price": "From $38,000",
+                "image": {
+                  "stock": "photo-misty-mountains",
+                  "alt": "Mountains",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Emperor Colony",
+                "description": "Four days with an emperor colony.",
+                "price": "From $29,000",
+                "image": {
+                  "stock": "photo-sea",
+                  "alt": "The coast",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Summit Expedition",
+                "description": "Fourteen days, guided climb.",
+                "price": "From $54,000",
+                "image": {
+                  "stock": "safari-trek",
+                  "alt": "A climber on a ridge",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "The Interior",
+              "Emperor Colony",
+              "Summit Expedition"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-jn5ou6",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "photo-teal-lake",
+                "alt": "A glacier lake",
+                "caption": ""
+              },
+              {
+                "stock": "safari-camp",
+                "alt": "Camp at night",
+                "caption": ""
+              },
+              {
+                "stock": "photo-sea",
+                "alt": "The coast",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-joh33y",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

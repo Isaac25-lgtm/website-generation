@@ -4,6 +4,9 @@ import type { RenderCtx } from "./types";
 import { artDataUri } from "../art";
 import { esc, isExternal, paragraphs, safeHref, whatsappLink } from "../util";
 import { renderProductsSection, renderCollectionsSection } from "./store";
+import { personalHero } from "./personal-heroes";
+import { businessHero } from "./business-heroes";
+import { premiumHero } from "./premium-heroes";
 
 export interface SCtx {
   doc: SiteDoc;
@@ -112,6 +115,11 @@ export function renderSection(s: SCtx, sec: Section, index: number): string {
     }
     case "achievements": {
       const d = sec.data; if (!d.items.length) return "";
+      if (v(s, sec) === "fame") return wrapSec(sec, `${head(d.heading)}<div class="fame">${d.items.map((x) => `<article>${x.year ? `<span class="yr">${esc(x.year)}</span>` : ""}<h3>${esc(x.title)}</h3>${x.detail ? `<p class="muted" style="margin:0">${esc(x.detail)}</p>` : ""}</article>`).join("")}</div>`, "", alt);
+      if (v(s, sec) === "table") return wrapSec(sec, `${head(d.heading)}<table class="awards"><thead><tr><th scope="col">Recognition</th><th scope="col">Detail</th><th scope="col">Year</th></tr></thead><tbody>${d.items.map((x) => {
+        const href = linkHref(s.ctx, x.link);
+        return `<tr><td class="t">${href ? `<a${linkAttrs(href)}>${esc(x.title)}</a>` : esc(x.title)}</td><td class="muted">${esc(x.detail || "")}</td><td>${esc(x.year || "")}</td></tr>`;
+      }).join("")}</tbody></table>`, "", alt);
       return wrapSec(sec, `${head(d.heading)}<ul class="list-plain">${d.items.map((x) => {
         const href = linkHref(s.ctx, x.link);
         return `<li><strong>${href ? `<a${linkAttrs(href)}>${esc(x.title)}</a>` : esc(x.title)}</strong>${x.year ? ` <span class="meta">· ${esc(x.year)}</span>` : ""}${x.detail ? `<div class="muted">${esc(x.detail)}</div>` : ""}</li>`;
@@ -185,6 +193,8 @@ function hero(s: SCtx, sec: Extract<Section, { kind: "hero" }>): string {
   const sub = d.subheading ? `<p class="sub">${esc(d.subheading)}</p>` : "";
   const text = `${eyebrow}${h1}${sub}${actions}`;
   const id = esc(sec.id);
+  const personal = personalHero(s, sec, variant, actions) ?? businessHero(s, sec, variant, actions) ?? premiumHero(s, sec, variant, actions);
+  if (personal) return personal;
   switch (variant) {
     case "centered":
       return `<section id="${id}" class="hero centered"><div class="wrap">${text}${d.image ? `<div class="hero-media">${img(s, d.image, { w: 1600, h: 800, eager: true })}</div>` : ""}</div></section>`;
@@ -204,6 +214,43 @@ function hero(s: SCtx, sec: Extract<Section, { kind: "hero" }>): string {
       return `<section id="${id}" class="hero stacked"><div class="wrap">${text}<div class="hero-media">${img(s, d.image, { w: 2100, h: 800, eager: true, fallbackSeed: seed })}</div></div></section>`;
     case "poster":
       return `<section id="${id}" class="hero poster"><div class="wrap"><div>${text}</div><div class="hero-media">${img(s, d.image, { w: 900, h: 900, eager: true, fallbackSeed: seed })}</div></div></section>`;
+    case "intro": {
+      const pic = d.image ? `<span class="pic">${img(s, d.image, { w: 160, h: 160, eager: true })}</span>` : "";
+      return `<section id="${id}" class="hero intro"><div class="wrap"><div class="who">${pic}${eyebrow}</div>${h1}${sub}${actions}</div></section>`;
+    }
+    case "nameplate": {
+      const chips = (d.eyebrow || "").split("·").map((x) => x.trim()).filter(Boolean).map((x) => `<span class="chip-s">${esc(x)}</span>`).join("");
+      return `<section id="${id}" class="hero nameplate"><div class="wrap">${chips ? `<div class="np-meta">${chips}</div>` : ""}<h1>${esc(s.doc.brand.name || d.heading)}</h1><div class="np-row"><div class="np-photo">${img(s, d.image, { w: 920, h: 1150, eager: true, fallbackSeed: seed })}</div><div><p class="np-line">${esc(d.heading)}</p>${actions}</div></div></div></section>`;
+    }
+    case "cvhead":
+      return `<section id="${id}" class="hero cvhead"><div class="wrap"><div><h1>${esc(s.doc.brand.name || d.heading)}</h1>${d.eyebrow ? `<p class="role">${esc(d.eyebrow)}</p>` : ""}</div><div><p class="statement">${esc(d.heading)}</p>${actions}</div></div></section>`;
+    case "panelcard":
+      return `<section id="${id}" class="hero panelcard"><div class="wrap"><div class="frame"><div class="pc-copy"><div>${eyebrow}<h1>${esc(s.doc.brand.name || d.heading)}</h1></div><p class="pc-line">${esc(d.heading)}</p>${actions}</div><div class="pc-photo">${img(s, d.image, { w: 800, h: 1000, eager: true, fallbackSeed: seed })}</div></div></div></section>`;
+    case "firm":
+      return `<section id="${id}" class="hero firm"><div class="firm-grid"><div class="copy"><div>${text}</div></div><div class="media">${img(s, d.image, { w: 1200, h: 1400, eager: true, fallbackSeed: seed })}</div></div></section>`;
+    case "promise":
+      return `<section id="${id}" class="hero promise"><div class="wrap">${text}${d.image ? `<div class="hero-media">${img(s, d.image, { w: 2100, h: 900, eager: true })}</div>` : ""}</div></section>`;
+    case "calm":
+      return `<section id="${id}" class="hero calm"><div class="wrap">${text}</div>${d.image ? `<div class="calm-media">${img(s, d.image, { w: 2100, h: 900, eager: true })}</div>` : ""}</section>`;
+    case "objecthero":
+      return `<section id="${id}" class="hero objecthero"><div class="oh-grid"><div class="oh-copy">${text}</div><div class="oh-stage">${img(s, d.image, { w: 900, h: 900, eager: true, fallbackSeed: seed })}</div></div></section>`;
+    case "sunlit":
+      return `<section id="${id}" class="hero sunlit"><div class="sl-img">${img(s, d.image, { w: 1920, h: 1100, eager: true, fallbackSeed: seed })}</div><div class="sl-card">${text}</div></section>`;
+    case "wordgrid": {
+      const items = (s.ctx.store?.products ?? []).slice(0, 4).map((p) => `<a href="${esc(`${s.ctx.basePath}/product/${encodeURIComponent(p.handle)}`)}">${img(s, p.images[0], { w: 500, h: 500, fallbackSeed: p.title, alt: p.title })}<span>${esc(p.title)}</span></a>`).join("");
+      const word = s.doc.brand.name || d.heading;
+      // Size the wordmark so its longest word always fits the screen width.
+      const longest = Math.max(...word.split(/\s+/).map((w) => w.length), 1);
+      return `<section id="${id}" class="hero wordgrid"><div class="wrap"><p class="wg-word" aria-hidden="true" style="font-size:min(14.5vw,${(128 / longest).toFixed(2)}vw,14rem)">${esc(word)}</p><div class="wg-row">${h1}${actions}</div>${items ? `<div class="wg-items">${items}</div>` : ""}</div></section>`;
+    }
+    case "lookbook":
+      return `<section id="${id}" class="hero lookbook"><div class="bgimg">${img(s, d.image, { w: 1920, h: 1200, eager: true, fallbackSeed: seed })}</div><div class="wrap">${text}</div></section>`;
+    case "statement":
+      return `<section id="${id}" class="hero statement"><div class="wrap"><div>${text}</div>${d.image ? `<div class="hero-media">${img(s, d.image, { w: 1400, h: 960, eager: true })}</div>` : ""}</div></section>`;
+    case "panel":
+      return `<section id="${id}" class="hero panel"><div class="grid2"><div class="media">${img(s, d.image, { w: 1200, h: 1400, eager: true, fallbackSeed: seed })}</div><div class="copy">${text}</div></div></section>`;
+    case "room":
+      return `<section id="${id}" class="hero room"><div class="wrap"><div class="head"><div>${eyebrow}${h1}</div><div>${sub}${actions}</div></div><div class="hero-media">${img(s, d.image, { w: 2100, h: 900, eager: true, fallbackSeed: seed })}</div></div></section>`;
     case "minimal":
       return `<section id="${id}" class="hero minimal"><div class="wrap">${d.image ? `<div class="avatar">${img(s, d.image, { w: 400, h: 400, eager: true })}</div>` : ""}<div>${text}</div></div></section>`;
     default:

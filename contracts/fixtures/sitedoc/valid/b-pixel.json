@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-pixel",
+  "brand": {
+    "name": "Ashgrove Holdings",
+    "tagline": "Patient capital for good companies."
+  },
+  "seo": {
+    "title": "Ashgrove Holdings — Patient capital for good companies.",
+    "description": "A family office investing in private companies and property.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f7f5ef",
+      "surface": "#ece8dc",
+      "text": "#1b1a17",
+      "muted": "#605d55",
+      "primary": "#1f4d3a",
+      "accent": "#1f4d3a"
+    },
+    "fontHeading": "space-mono",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Zurich",
+    "country": "Switzerland",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-xibzrc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Family office · Zurich",
+            "heading": "Patient capital for good companies.",
+            "subheading": "A family office investing in private companies and property.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "biz-boardroom",
+              "alt": "Ashgrove Holdings",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-xjlfg1",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Long-term investment",
+                "description": "Patient capital for profitable private companies.",
+                "price": "",
+                "image": {
+                  "stock": "biz-dark-boardroom",
+                  "alt": "A boardroom",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Property",
+                "description": "Residential and commercial buildings held for decades.",
+                "price": "",
+                "image": {
+                  "stock": "biz-towers",
+                  "alt": "Office towers",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Family governance",
+                "description": "Structures that help families decide together.",
+                "price": "",
+                "image": {
+                  "stock": "biz-window-table",
+                  "alt": "A meeting by a window",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-xk4ccp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Ashgrove Holdings",
+            "body": "Ashgrove has invested one family's capital since 1987.",
+            "image": {
+              "stock": "biz-boardroom",
+              "alt": "Boardroom",
+              "caption": ""
+            },
+            "highlights": [
+              "Independent and family-owned",
+              "Ten-year holding periods",
+              "No outside funds"
+            ]
+          }
+        },
+        {
+          "id": "cta-xldhiq",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-xm1t3a",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Ashgrove has invested one family's capital since 1987.",
+            "image": {
+              "stock": "biz-review",
+              "alt": "Reviewing figures",
+              "caption": ""
+            },
+            "highlights": [
+              "Independent and family-owned",
+              "Ten-year holding periods",
+              "No outside funds"
+            ]
+          }
+        },
+        {
+          "id": "faq-xnifwr",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "Do you take outside money?",
+                "a": "No. We invest only family capital."
+              },
+              {
+                "q": "What size of company do you back?",
+                "a": "Profitable companies with revenue between two and fifty million."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-xo3lx",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Long-term investment",
+                "description": "Patient capital for profitable private companies.",
+                "price": "",
+                "image": {
+                  "stock": "biz-dark-boardroom",
+                  "alt": "A boardroom",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Property",
+                "description": "Residential and commercial buildings held for decades.",
+                "price": "",
+                "image": {
+                  "stock": "biz-towers",
+                  "alt": "Office towers",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Family governance",
+                "description": "Structures that help families decide together.",
+                "price": "",
+                "image": {
+                  "stock": "biz-window-table",
+                  "alt": "A meeting by a window",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Long-term investment",
+              "Property",
+              "Family governance"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-xqgjpa",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "biz-boardroom",
+                "alt": "Boardroom",
+                "caption": ""
+              },
+              {
+                "stock": "biz-review",
+                "alt": "Reviewing figures",
+                "caption": ""
+              },
+              {
+                "stock": "biz-office",
+                "alt": "Office",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-xrie3e",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

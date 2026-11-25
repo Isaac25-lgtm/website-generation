@@ -141,3 +141,13 @@ Still open before a paid launch: billing webhook handling (audit #5) and inspira
 4. Email notifications (Resend) and Turnstile on public forms.
 5. Stage 2 domains: an owned SaaS zone, wildcard subdomains, Cloudflare for SaaS custom hostnames.
 6. Prerender marketing pages for SEO, and use the Cache API for published sites.
+
+## Signature templates (24 November 2026)
+
+- [x] Signature shop templates, batch 1: 25 (Fashion, Menswear, Jewellery, Furniture, Home).
+- [x] Signature personal templates (8) and business templates (8).
+- [x] Gallery with category tabs, Signature-first ordering and "See more".
+- [x] No-AI-slop rule enforced in tests and in AI copy polish.
+- [ ] Shop batch 2: Hero Object, Lifestyle and Wordmark layouts (Beauty, Fragrance, Bags, Footwear, Kids, Stationery).
+- [ ] Shop batch 3: Pop, Performance, Object, Table and Atelier layouts (Food, Drinks, Coffee, Tech, Sport, Makers).
+- [ ] Premium (52) and Standard shop templates, and more personal and business designs from `research/ranked_sites.csv`.

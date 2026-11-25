@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-twotone",
+  "brand": {
+    "name": "Second Light",
+    "tagline": "A studio for brands and the people behind them."
+  },
+  "seo": {
+    "title": "Second Light — A studio for brands and the people behind them.",
+    "description": "Brand strategy and design.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ecebe7",
+      "surface": "#e0ded8",
+      "text": "#151513",
+      "muted": "#8a8780",
+      "primary": "#151513",
+      "accent": "#151513"
+    },
+    "fontHeading": "inter-tight",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "floating",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Vienna",
+    "country": "Austria",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-146gs0z",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Creative studio · Vienna",
+            "heading": "A studio for brands and the people behind them.",
+            "subheading": "Brand strategy and design.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "work-pattern",
+              "alt": "Second Light",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-1473dfv",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Brand identity",
+                "description": "Strategy, naming and visual identity.",
+                "price": "From $9,000",
+                "image": {
+                  "stock": "work-sketches",
+                  "alt": "Identity sketches",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Websites",
+                "description": "Design and build of fast, accessible sites.",
+                "price": "From $12,000",
+                "image": {
+                  "stock": "work-wireframes",
+                  "alt": "Wireframes",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels, boxes and retail displays.",
+                "price": "From $6,000",
+                "image": {
+                  "stock": "home-bud-vases",
+                  "alt": "Packaged ceramics",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-1484y4p",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Second Light",
+            "body": "Second Light is a studio of eight.",
+            "image": {
+              "stock": "work-pattern",
+              "alt": "A sculptural pattern",
+              "caption": ""
+            },
+            "highlights": [
+              "Senior team on every project",
+              "Fixed proposals",
+              "Hand-over files you own"
+            ]
+          }
+        },
+        {
+          "id": "cta-149d2xf",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-14a3gth",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Second Light is a studio of eight.",
+            "image": {
+              "stock": "obj-journal",
+              "alt": "Sketchbook",
+              "caption": ""
+            },
+            "highlights": [
+              "Senior team on every project",
+              "Fixed proposals",
+              "Hand-over files you own"
+            ]
+          }
+        },
+        {
+          "id": "faq-14b6z9o",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "How long does a brand project take?",
+                "a": "Usually eight to twelve weeks."
+              },
+              {
+                "q": "Do you work with small companies?",
+                "a": "Yes. Most of our clients have fewer than fifty people."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-14c4njt",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Brand identity",
+                "description": "Strategy, naming and visual identity.",
+                "price": "From $9,000",
+                "image": {
+                  "stock": "work-sketches",
+                  "alt": "Identity sketches",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Websites",
+                "description": "Design and build of fast, accessible sites.",
+                "price": "From $12,000",
+                "image": {
+                  "stock": "work-wireframes",
+                  "alt": "Wireframes",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels, boxes and retail displays.",
+                "price": "From $6,000",
+                "image": {
+                  "stock": "home-bud-vases",
+                  "alt": "Packaged ceramics",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Brand identity",
+              "Websites",
+              "Packaging"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-14egz41",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "work-pattern",
+                "alt": "A sculptural pattern",
+                "caption": ""
+              },
+              {
+                "stock": "obj-journal",
+                "alt": "Sketchbook",
+                "caption": ""
+              },
+              {
+                "stock": "biz-glass",
+                "alt": "Office building",
+                "caption": ""
+              },
+              {
+                "stock": "home-white-room",
+                "alt": "Studio space",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-14fazq3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

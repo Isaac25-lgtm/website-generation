@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-initials",
+  "brand": {
+    "name": "Daniel Ho",
+    "tagline": "Product design for travel and finance."
+  },
+  "seo": {
+    "title": "Daniel Ho — Product design for travel and finance.",
+    "description": "Product design for travel and finance.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0c0c0c",
+      "surface": "#161616",
+      "text": "#f1f1ef",
+      "muted": "#a8a8a4",
+      "primary": "#f1f1ef",
+      "accent": "#f1f1ef"
+    },
+    "fontHeading": "inter-tight",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-o2hhw5",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Senior product designer · Taipei",
+            "heading": "Product design for travel and finance.",
+            "subheading": "Daniel Ho, Senior product designer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-o3ip79",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Senior designer working across Hong Kong and London.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Booking app redesign",
+                "description": "Cut the booking flow from nine steps to four.",
+                "role": "Lead designer",
+                "period": "2025",
+                "tags": [
+                  "Product",
+                  "Mobile"
+                ],
+                "images": [
+                  {
+                    "stock": "work-wireframes",
+                    "alt": "Wireframes on paper",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Identity for a coffee roaster",
+                "description": "Name, logo and packaging for a new roastery.",
+                "role": "Designer",
+                "period": "2024",
+                "tags": [
+                  "Brand"
+                ],
+                "images": [
+                  {
+                    "stock": "work-sketches",
+                    "alt": "Logo sketches",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Design system",
+                "description": "Components shared by eight product teams.",
+                "role": "Design lead",
+                "period": "2023",
+                "tags": [
+                  "Systems"
+                ],
+                "images": [
+                  {
+                    "stock": "work-pattern",
+                    "alt": "A geometric pattern",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-o5535m",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-o6811",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Senior designer",
+                "org": "Product studio (fictional)",
+                "period": "2021 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Designer",
+                "org": "Agency (fictional)",
+                "period": "2016 — 2021",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-o73yl7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "Product design",
+                  "Brand identity",
+                  "Prototyping",
+                  "Design systems",
+                  "Workshops"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-o8f8dd",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Taipei.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

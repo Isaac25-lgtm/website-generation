@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-marquee",
+  "brand": {
+    "name": "Jonah Reyes",
+    "tagline": "Brand identities for restaurants, hotels and independent shops."
+  },
+  "seo": {
+    "title": "Jonah Reyes — Brand identities for restaurants, hotels and independent",
+    "description": "Brand identities for restaurants, hotels and independent shops.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f2f1ed",
+      "surface": "#e6e4de",
+      "text": "#0f0f0f",
+      "muted": "#5a5a56",
+      "primary": "#0f0f0f",
+      "accent": "#d64b25"
+    },
+    "fontHeading": "inter-tight",
+    "fontBody": "inter-tight",
+    "radius": "lg",
+    "density": "airy",
+    "headingScale": "xl",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "studio@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-av74p1",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Brand designer · Mexico City",
+            "heading": "Brand identities for restaurants, hotels and independent shops.",
+            "subheading": "Jonah Reyes, Brand designer",
+            "primaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "secondaryCta": {
+              "label": "Contact me",
+              "href": "/contact"
+            },
+            "image": {
+              "stock": "pro-consultant-man",
+              "alt": "Jonah Reyes in a studio corridor",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-aw1qh0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I design names, logos, signage and menus for hospitality businesses, usually from the first sketch to the day the doors open. I work alone, with a small group of trusted printers and sign makers.",
+            "image": {
+              "stock": "pro-consultant-man",
+              "alt": "Jonah Reyes in a studio corridor",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Hotel identity and wayfinding",
+                "description": "Logo, room signage and printed guides for a 40-room hotel.",
+                "role": "Lead designer",
+                "period": "2025",
+                "tags": [
+                  "Identity",
+                  "Signage"
+                ],
+                "images": [
+                  {
+                    "stock": "stay-lobby",
+                    "alt": "A hotel lobby",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Ceramics studio rebrand",
+                "description": "A new wordmark, packaging and shop signs for a pottery studio.",
+                "role": "Designer",
+                "period": "2024",
+                "tags": [
+                  "Identity",
+                  "Packaging"
+                ],
+                "images": [
+                  {
+                    "stock": "make-ceramics-shelf",
+                    "alt": "Shelves of ceramics",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Office building signage",
+                "description": "Lobby directory and floor signage in brushed steel.",
+                "role": "Designer",
+                "period": "2024",
+                "tags": [
+                  "Wayfinding"
+                ],
+                "images": [
+                  {
+                    "stock": "biz-glass",
+                    "alt": "A glass office facade",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-ayanun",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-az4qz4",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Independent brand designer",
+                "org": "Self-employed",
+                "period": "2019 — now",
+                "location": "",
+                "description": "Identity and signage for hospitality clients."
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-b03jh7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "Brand identity",
+                  "Naming",
+                  "Signage",
+                  "Packaging",
+                  "Menus"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-b19dhb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Mexico City.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

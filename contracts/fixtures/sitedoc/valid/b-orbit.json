@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-orbit",
+  "brand": {
+    "name": "Meridian Orbital",
+    "tagline": "Seeing the planet clearly, every day."
+  },
+  "seo": {
+    "title": "Meridian Orbital — Seeing the planet clearly, every day.",
+    "description": "Satellites and imaging for agriculture and climate research.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0b0e14",
+      "surface": "#141924",
+      "text": "#eef1f6",
+      "muted": "#9ba4b5",
+      "primary": "#eef1f6",
+      "accent": "#7aa7ff"
+    },
+    "fontHeading": "archivo",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Toulouse",
+    "country": "France",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-y29q0s",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Earth observation · Toulouse",
+            "heading": "Seeing the planet clearly, every day.",
+            "subheading": "Satellites and imaging for agriculture and climate research.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "photo-teal-lake",
+              "alt": "Meridian Orbital",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-y3765q",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Engineering",
+                "description": "Design and testing of equipment and plant.",
+                "price": "",
+                "image": {
+                  "stock": "make-tools",
+                  "alt": "Workshop tools",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Manufacturing",
+                "description": "Small-batch production in our own facility.",
+                "price": "",
+                "image": {
+                  "stock": "make-bench",
+                  "alt": "A workbench",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Field service",
+                "description": "Installation, maintenance and support on site.",
+                "price": "",
+                "image": {
+                  "stock": "safari-drive",
+                  "alt": "A vehicle on a field site",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-y4b9cc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Meridian Orbital",
+            "body": "We build small imaging satellites and sell the data to researchers and farmers.",
+            "image": {
+              "stock": "biz-facade-bw",
+              "alt": "Our building",
+              "caption": ""
+            },
+            "highlights": [
+              "Own test facility",
+              "Certified engineers",
+              "Support in the field"
+            ]
+          }
+        },
+        {
+          "id": "cta-y58bqw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-y66d0b",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "We build small imaging satellites and sell the data to researchers and farmers.",
+            "image": {
+              "stock": "make-apron",
+              "alt": "An engineer at work",
+              "caption": ""
+            },
+            "highlights": [
+              "Own test facility",
+              "Certified engineers",
+              "Support in the field"
+            ]
+          }
+        },
+        {
+          "id": "faq-y7lbvc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "Do you work outside your region?",
+                "a": "Yes, with partners in several countries."
+              },
+              {
+                "q": "Can you build to our specification?",
+                "a": "Yes. Send us drawings and we will quote within ten days."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-y8404y",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Engineering",
+                "description": "Design and testing of equipment and plant.",
+                "price": "",
+                "image": {
+                  "stock": "make-tools",
+                  "alt": "Workshop tools",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Manufacturing",
+                "description": "Small-batch production in our own facility.",
+                "price": "",
+                "image": {
+                  "stock": "make-bench",
+                  "alt": "A workbench",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Field service",
+                "description": "Installation, maintenance and support on site.",
+                "price": "",
+                "image": {
+                  "stock": "safari-drive",
+                  "alt": "A vehicle on a field site",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Engineering",
+              "Manufacturing",
+              "Field service"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-yabmo",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "biz-facade-bw",
+                "alt": "Our building",
+                "caption": ""
+              },
+              {
+                "stock": "make-apron",
+                "alt": "An engineer at work",
+                "caption": ""
+              },
+              {
+                "stock": "photo-misty-mountains",
+                "alt": "A field site",
+                "caption": ""
+              },
+              {
+                "stock": "biz-team",
+                "alt": "The team",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-yb5iqn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

@@ -49,7 +49,7 @@ const cfg = (await req("/api/config")).json;
 check("prices 20/30/100 USD", JSON.stringify(cfg.prices?.map((p) => p.priceCents)) === "[2000,3000,10000]");
 check("bindings reported", cfg.ai?.available === true && cfg.browserRun?.bound === true, `ai=${cfg.ai?.available} browser=${cfg.browserRun?.bound} storage=${cfg.storage} payments=${cfg.payments?.configured} google=${cfg.google?.enabled}`);
 const tpl = (await req("/api/templates")).json;
-check("18 templates (9 public / 9 member)", tpl.templates?.length === 18 && tpl.templates.filter((t) => t.locked).length === 9);
+check("templates listed, Signature first-class, member ones locked", tpl.templates?.length >= 43 && tpl.templates.filter((t) => t.rank === "signature").length >= 25 && tpl.templates.filter((t) => t.locked).length === tpl.templates.filter((t) => t.tier === "member").length);
 for (const s of ["demo-portfolio", "demo-business", "demo-store"]) {
   const r = await req(`/s/${s}/`, { raw: true });
   check(`demo /s/${s}/`, r.status === 200 && r.text.includes("Demonstration site"), `${r.status} ${r.ms}ms`);

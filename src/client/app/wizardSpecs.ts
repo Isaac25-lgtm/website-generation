@@ -74,6 +74,7 @@ export const STEPS: Record<string, Step[]> = {
     ] },
     { id: "about", title: "About & benefits", fields: [
       { k: "about", label: "About your business / history", t: "textarea", rows: 6, max: 4000 },
+      { k: "servicesHeading", label: "Heading for your services (optional)", t: "text", max: 80, ph: "What we do · Rooms · Practice areas · Classes" },
       { k: "benefits", label: "Why customers choose you (one per line)", t: "textarea", rows: 4, max: 1000, ph: "Licensed technicians\nSame-day visits\nFixed, upfront prices" },
       { k: "targetCustomers", label: "Who you serve", t: "text", max: 200, ph: "Homes and offices across the city" },
     ] },

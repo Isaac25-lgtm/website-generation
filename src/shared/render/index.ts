@@ -7,6 +7,11 @@ import { esc, whatsappFloatOn, whatsappLink } from "../util";
 import { img, linkAttrs, pageUrl, renderSection, socials, type SCtx } from "./sections";
 import { cartPage, checkoutPage, orderPage, policyPage, productPage } from "./store";
 import { SITE_RUNTIME } from "./runtime";
+import { LAYOUT_CSS, STORE_HERO_CSS } from "./layouts";
+import { SITE_HERO_CSS, SITE_LAYOUT_CSS } from "./site-layouts";
+import { FAME_CSS, PERSONAL_HERO_CSS } from "./personal-hero-css";
+import { BUSINESS_HERO_CSS } from "./business-hero-css";
+import { PREMIUM_HERO_CSS } from "./premium-hero-css";
 
 export type { RenderCtx, RenderResult, ProductView, CollectionView, OrderView, VariantView, AssetMeta } from "./types";
 
@@ -136,10 +141,13 @@ export function renderSite(doc: SiteDoc, tpl: TemplateDef, ctx: RenderCtx, path:
   }
 
   const t = doc.theme;
+  // Only ship the CSS for personal heroes this site actually uses.
+  const used = new Set(doc.pages.flatMap((p) => p.sections.map((x) => x.variant || tpl.variants[x.kind as keyof typeof tpl.variants] || "")));
+  const extraCss = [...used].map((v) => PERSONAL_HERO_CSS[v] ?? BUSINESS_HERO_CSS[v] ?? PREMIUM_HERO_CSS[v] ?? "").join("") + (used.has("fame") ? FAME_CSS : "");
   const fonts = googleFontsHref([t.fontHeading, t.fontBody]);
   const noindex = ctx.mode !== "published";
   const bodyCls = [
-    `t-${tpl.id}`, `hs-${t.headerStyle}`, `cs-${t.cardStyle}`, `orn-${t.ornament}`, `anim-${t.animation}`, `mode-${t.mode}`,
+    `t-${tpl.id}`, ...(tpl.layout ? ["lay", `lay-${tpl.layout}`] : []), `hs-${t.headerStyle}`, `cs-${t.cardStyle}`, `orn-${t.ornament}`, `anim-${t.animation}`, `mode-${t.mode}`,
   ].join(" ");
   const cfg = JSON.stringify({
     pid: ctx.projectId, api: ctx.apiBase, base: ctx.basePath, mode: ctx.mode, store: doc.type === "ecommerce",
@@ -171,7 +179,7 @@ ${description ? `<meta property="og:description" content="${esc(description)}">`
 <meta name="theme-color" content="${esc(t.colors.bg)}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${esc(fonts)}">
-<style>${themeVars(t)}${BASE_CSS}${tpl.css}</style>
+<style>${themeVars(t)}${BASE_CSS}${STORE_HERO_CSS}${SITE_HERO_CSS}${tpl.layout ? ((LAYOUT_CSS as Record<string, string>)[tpl.layout] ?? (SITE_LAYOUT_CSS as Record<string, string>)[tpl.layout] ?? "") : ""}${extraCss}${tpl.css}</style>
 </head>
 <body class="${bodyCls}">
 <a class="skip" href="#main">Skip to content</a>

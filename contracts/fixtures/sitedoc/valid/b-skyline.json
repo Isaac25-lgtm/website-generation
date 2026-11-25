@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-skyline",
+  "brand": {
+    "name": "Altamar Estates",
+    "tagline": "Exceptional homes without borders."
+  },
+  "seo": {
+    "title": "Altamar Estates — Exceptional homes without borders.",
+    "description": "Exceptional properties in the most sought-after markets, chosen with care.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#fbfaf7",
+      "surface": "#f0eee8",
+      "text": "#0f1d3a",
+      "muted": "#566079",
+      "primary": "#14244a",
+      "accent": "#a8844e"
+    },
+    "fontHeading": "playfair",
+    "fontBody": "jost",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "office@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Panama City",
+    "country": "Panama",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-j828bd",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Luxury property · Panama City",
+            "heading": "Exceptional homes without borders.",
+            "subheading": "Exceptional properties in the most sought-after markets, chosen with care.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "biz-towers",
+              "alt": "City towers at dusk",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-j9i1n7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Buying",
+                "description": "Search, viewings and negotiation for buyers.",
+                "price": ""
+              },
+              {
+                "title": "Selling",
+                "description": "Discreet sales to qualified buyers.",
+                "price": ""
+              },
+              {
+                "title": "Relocation",
+                "description": "Schools, banking and moving, arranged.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-jaf769",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Altamar Estates",
+            "body": "Altamar works with a small number of buyers each year, across five countries. Every property is visited by a partner before it is offered.",
+            "image": {
+              "stock": "home-loft",
+              "alt": "An apartment living room",
+              "caption": ""
+            },
+            "highlights": [
+              "Five countries",
+              "Six partner firms",
+              "Over forty homes sold",
+              "Every home visited by a partner",
+              "One point of contact"
+            ]
+          }
+        },
+        {
+          "id": "cta-jbdpg3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-jcl1lp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Altamar works with a small number of buyers each year, across five countries. Every property is visited by a partner before it is offered.",
+            "image": {
+              "stock": "stay-rooftop",
+              "alt": "A rooftop pool",
+              "caption": ""
+            },
+            "highlights": [
+              "Five countries",
+              "Six partner firms",
+              "Over forty homes sold",
+              "Every home visited by a partner",
+              "One point of contact"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-jd8m4a",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Buying",
+                "description": "Search, viewings and negotiation for buyers.",
+                "price": ""
+              },
+              {
+                "title": "Selling",
+                "description": "Discreet sales to qualified buyers.",
+                "price": ""
+              },
+              {
+                "title": "Relocation",
+                "description": "Schools, banking and moving, arranged.",
+                "price": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-je6879",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "home-loft",
+                "alt": "An apartment living room",
+                "caption": ""
+              },
+              {
+                "stock": "stay-rooftop",
+                "alt": "A rooftop pool",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-jfcg6p",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

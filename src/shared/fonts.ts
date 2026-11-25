@@ -22,6 +22,14 @@ export const FONTS: Record<FontKey, { label: string; family: string; google: str
   "archivo-black": { label: "Archivo Black", family: "Archivo Black", google: "Archivo+Black", stack: "Impact, system-ui, sans-serif" },
   bricolage: { label: "Bricolage Grotesque", family: "Bricolage Grotesque", google: "Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800", stack: "system-ui, sans-serif" },
   "instrument-serif": { label: "Instrument Serif", family: "Instrument Serif", google: "Instrument+Serif:ital@0;1", stack: "Georgia, serif" },
+  "bodoni-moda": { label: "Bodoni Moda", family: "Bodoni Moda", google: "Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400", stack: "Didot, Georgia, serif" },
+  newsreader: { label: "Newsreader", family: "Newsreader", google: "Newsreader:ital,wght@0,400;0,500;0,600;1,400", stack: "Georgia, serif" },
+  jost: { label: "Jost", family: "Jost", google: "Jost:wght@300;400;500;600", stack: "system-ui, sans-serif" },
+  "inter-tight": { label: "Inter Tight", family: "Inter Tight", google: "Inter+Tight:wght@400;500;600;700", stack: "system-ui, sans-serif" },
+  "instrument-sans": { label: "Instrument Sans", family: "Instrument Sans", google: "Instrument+Sans:wght@400;500;600;700", stack: "system-ui, sans-serif" },
+  "libre-caslon": { label: "Libre Caslon", family: "Libre Caslon Text", google: "Libre+Caslon+Text:ital,wght@0,400;0,700;1,400", stack: "Georgia, serif" },
+  archivo: { label: "Archivo", family: "Archivo", google: "Archivo:wdth,wght@62..125,100..900", stack: "system-ui, sans-serif" },
+  unbounded: { label: "Unbounded", family: "Unbounded", google: "Unbounded:wght@400;500;600;700", stack: "system-ui, sans-serif" },
 };
 
 export function fontStack(key: FontKey): string {

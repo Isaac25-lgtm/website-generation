@@ -342,6 +342,6 @@ body.anim-subtle .rv,body.anim-lively .rv{opacity:0;transform:translateY(18px);t
 body.anim-lively .rv{transform:translateY(34px) scale(.98)}
 .rv.in{opacity:1!important;transform:none!important}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1!important;transform:none!important}}
-.no-js .rv{opacity:1;transform:none}
+.no-js .rv{opacity:1!important;transform:none!important}
 @media print{.site-header,.wa-float,.ribbon,.notice{display:none}}
 `;

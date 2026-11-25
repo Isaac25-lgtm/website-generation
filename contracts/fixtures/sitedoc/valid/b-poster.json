@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-poster",
+  "brand": {
+    "name": "Good Plate Foods",
+    "tagline": "Plant-based food that tastes like dinner"
+  },
+  "seo": {
+    "title": "Good Plate Foods — Plant-based food that tastes like dinner",
+    "description": "Plant-based burgers, sausages and mince.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f6f0ee",
+      "text": "#161212",
+      "muted": "#5e5654",
+      "primary": "#161212",
+      "accent": "#d6261f"
+    },
+    "fontHeading": "archivo",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Chicago",
+    "country": "United States",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-15ufx82",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Food brand · Chicago",
+            "heading": "Plant-based food that tastes like dinner",
+            "subheading": "Plant-based burgers, sausages and mince.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "home-dining",
+              "alt": "Good Plate Foods",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-15v897x",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Plant-based burgers",
+                "description": "Grilled, juicy and made from peas and beets.",
+                "price": "",
+                "image": {
+                  "stock": "home-coffee-table",
+                  "alt": "A table set for lunch",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "For restaurants",
+                "description": "Bulk packs and chef support.",
+                "price": "",
+                "image": {
+                  "stock": "make-ceramics-shelf",
+                  "alt": "Kitchen shelves",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "In stores",
+                "description": "Find us in the chilled aisle.",
+                "price": "",
+                "image": {
+                  "stock": "fashion-boutique-rails",
+                  "alt": "A store display",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-15w8vdc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Good Plate Foods",
+            "body": "Good Plate makes plant-based food in its own kitchens.",
+            "image": {
+              "stock": "home-dining",
+              "alt": "Dinner table",
+              "caption": ""
+            },
+            "highlights": [
+              "Made in our own kitchens",
+              "No artificial colours",
+              "Sold in 400 stores"
+            ]
+          }
+        },
+        {
+          "id": "cta-15x5lrg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-15y92j0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Good Plate makes plant-based food in its own kitchens.",
+            "image": {
+              "stock": "home-kitchen",
+              "alt": "Our kitchen",
+              "caption": ""
+            },
+            "highlights": [
+              "Made in our own kitchens",
+              "No artificial colours",
+              "Sold in 400 stores"
+            ]
+          }
+        },
+        {
+          "id": "faq-15zilva",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "Where can I buy your products?",
+                "a": "In supermarkets across the country, and online."
+              },
+              {
+                "q": "Are your products gluten free?",
+                "a": "Most are. Every pack lists the ingredients."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-160d6l6",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Plant-based burgers",
+                "description": "Grilled, juicy and made from peas and beets.",
+                "price": "",
+                "image": {
+                  "stock": "home-coffee-table",
+                  "alt": "A table set for lunch",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "For restaurants",
+                "description": "Bulk packs and chef support.",
+                "price": "",
+                "image": {
+                  "stock": "make-ceramics-shelf",
+                  "alt": "Kitchen shelves",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "In stores",
+                "description": "Find us in the chilled aisle.",
+                "price": "",
+                "image": {
+                  "stock": "fashion-boutique-rails",
+                  "alt": "A store display",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Plant-based burgers",
+              "For restaurants",
+              "In stores"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-162686x",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "home-dining",
+                "alt": "Dinner table",
+                "caption": ""
+              },
+              {
+                "stock": "home-kitchen",
+                "alt": "Our kitchen",
+                "caption": ""
+              },
+              {
+                "stock": "biz-team",
+                "alt": "The team",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-1637k0k",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

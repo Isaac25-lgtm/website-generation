@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-hotspots",
+  "brand": {
+    "name": "Marcus Bell",
+    "tagline": "Music, scores and a studio you can wander around."
+  },
+  "seo": {
+    "title": "Marcus Bell — Music, scores and a studio you can wander around.",
+    "description": "Music, scores and a studio you can wander around.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#141210",
+      "surface": "#1e1b18",
+      "text": "#f1ebe2",
+      "muted": "#aaa196",
+      "primary": "#e8a85a",
+      "accent": "#e8a85a"
+    },
+    "fontHeading": "syne",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "studio@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-i09nzd",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Musician & producer · London",
+            "heading": "Music, scores and a studio you can wander around.",
+            "subheading": "Marcus Bell, Musician & producer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "home-minimal-living",
+              "alt": "The studio room",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-i1knqk",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Producer and composer writing for film, games and other artists.",
+            "image": {
+              "stock": "home-minimal-living",
+              "alt": "The studio room",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Film score",
+                "description": "Score for a feature documentary.",
+                "role": "Composer",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "photo-misty-mountains",
+                    "alt": "Film still",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Album production",
+                "description": "Ten tracks for a debut album.",
+                "role": "Producer",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "home-pendant-shelves",
+                    "alt": "Studio shelves",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-i3g2jh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-i4apsn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "home-pendant-shelves",
+                "alt": "Studio",
+                "caption": ""
+              },
+              {
+                "stock": "home-wall-light",
+                "alt": "Lamp",
+                "caption": ""
+              },
+              {
+                "stock": "obj-journal",
+                "alt": "Notebook",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-i5cpu3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in London.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

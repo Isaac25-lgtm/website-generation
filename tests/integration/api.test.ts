@@ -64,14 +64,18 @@ describe("public site & policies", () => {
     }
     expect((await anon.req("/robots.txt", { raw: true })).status).toBe(200);
   });
-  it("lists 18 templates and locks member templates for anonymous visitors", async () => {
+  it("lists every template with category and rank, and locks member templates for anonymous visitors", async () => {
     const r = (await anon.req("/api/templates")).json;
-    expect(r.templates.length).toBe(18);
-    expect(r.templates.filter((t: any) => t.locked).length).toBe(9);
+    expect(r.templates.length).toBeGreaterThanOrEqual(43);
+    expect(r.templates.filter((t: any) => t.rank === "signature").length).toBeGreaterThanOrEqual(25);
+    expect(r.categories.length).toBeGreaterThanOrEqual(17);
+    expect(r.templates.filter((t: any) => t.locked).length).toBe(r.templates.filter((t: any) => t.tier === "member").length);
     const signed = (await A.req("/api/templates")).json;
     expect(signed.templates.filter((t: any) => t.locked).length).toBe(0);
     const lockedPreview = await anon.req("/api/templates/p-studio/preview/", { raw: true });
     expect(lockedPreview.text).toContain("Sign in to unlock");
+    // gallery thumbnails (static) are visible to everyone
+    expect((await anon.req("/api/templates/p-studio/preview/?static=1", { raw: true })).text).not.toContain("Sign in to unlock");
     for (const t of r.templates) expect((await A.req(`/api/templates/${t.id}/preview/`, { raw: true })).status, t.id).toBe(200);
   });
   it("support form persists tickets with validation and spam controls", async () => {

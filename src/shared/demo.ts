@@ -2,6 +2,13 @@ import type { AnyAnswers } from "./generate";
 import type { ImageRef, StoreSettings } from "./schema";
 import type { CollectionView, ProductView } from "./render/types";
 import { slugify } from "./util";
+import { STORE_BASE, STORE_PERSONAS } from "./demo-store";
+import { SITE_PERSONAS } from "./demo-site";
+import { PERSONAL_PERSONAS } from "./demo-personal";
+import { BUSINESS_PERSONAS } from "./demo-business";
+import { PREMIUM_PERSONAS } from "./demo-premium";
+import { BUSINESS4_PERSONAS } from "./demo-business4";
+import { STORE2_PERSONAS } from "./demo-store2";
 
 // Fictional sample content for template previews and the three public demo
 // sites. Every demo is labelled as a demonstration wherever it is shown.
@@ -17,6 +24,8 @@ export interface DemoProduct {
   stock?: number; featured?: boolean; digital?: boolean;
   /** stock photo name for the product image */
   image?: string;
+  /** extra stock photos (hover image, product-page gallery) */
+  images?: string[];
 }
 
 export interface Persona {
@@ -24,23 +33,6 @@ export interface Persona {
   products?: DemoProduct[];
   collections?: string[];
 }
-
-const STORE_BASE = (currency: string, delivery: string, deliveryPrice: number, pickup: string): Partial<StoreSettings> => ({
-  paymentMethods: [
-    { id: "cod", kind: "cod", label: "Pay on delivery", instructions: "Pay the courier when your order arrives." },
-    { id: "bank", kind: "bank_transfer", label: "Bank transfer", instructions: "After placing your order you'll receive our bank details. Your order is confirmed once payment arrives." },
-  ],
-  fulfillment: [
-    { id: "delivery", kind: "delivery", label: delivery, priceMinor: deliveryPrice, details: "Delivered within 1–3 working days." },
-    { id: "pickup", kind: "pickup", label: pickup, priceMinor: 0, details: "Collect from our shop during opening hours." },
-  ],
-  requirePhone: true,
-  returnsPolicy: "Unused items in their original packaging can be returned within 14 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
-  shippingPolicy: "We deliver in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
-  privacyNote: "We use your name, phone number, email and address only to process and deliver your order and to contact you about it. We do not sell your information.",
-  checkoutNote: "You will receive a confirmation page with your order number. We'll contact you to confirm delivery.",
-  prohibitedAck: true,
-});
 
 export const PERSONAS: Record<string, Persona> = {
   // ─── personal ───
@@ -195,7 +187,7 @@ export const PERSONAS: Record<string, Persona> = {
       { title: "Spiral brass earrings", price: 18, description: "Hand-formed brass spirals on hypoallergenic hooks.", collection: "Accessories", stock: 12, featured: true, image: "fashion-earrings" },
     ] },
   "e-volt": {
-    answers: { storeName: "Voltline", tagline: "Gadgets that just work.", industry: "Electronics", description: "Phone accessories, audio and smart-home gear with a two-year warranty.", currency: "USD", country: "United States", city: "San Francisco", whatsapp: "+14155550123", store: STORE_BASE("USD", "Standard shipping", 500, "Store pickup") },
+    answers: { storeName: "Voltline", tagline: "Gadgets that just work.", industry: "Electronics", description: "Phone accessories, audio and smart-home gear with a two-year warranty.", about: "Voltline tests every product for a month before it goes on sale, and stocks only what passes. Every item carries a two-year warranty, handled by our own support team in San Francisco.", faqs: [{ q: "What does the warranty cover?", a: "Faults in materials and workmanship for two years from delivery. We repair or replace the item." }, { q: "How fast is shipping?", a: "Orders placed before 2 pm ship the same day." }], currency: "USD", country: "United States", city: "San Francisco", whatsapp: "+14155550123", store: STORE_BASE("USD", "Standard shipping", 500, "Store pickup") },
     collections: ["Audio", "Power", "Smart home"],
     products: [
       { title: "Wireless earbuds Pro", price: 49, description: "Noise reduction, 24h battery with case.", collection: "Audio", option1: { name: "Colour", values: ["Black", "White"] }, stock: 10, featured: true },
@@ -205,7 +197,7 @@ export const PERSONAS: Record<string, Persona> = {
       { title: "65W USB-C charger", price: 22, description: "Charges laptops, tablets and phones.", collection: "Power", stock: 20 },
     ] },
   "e-fresh": {
-    answers: { storeName: "Field & Basket", tagline: "Farm-fresh groceries to your door.", industry: "Groceries", description: "Fruit, vegetables and pantry staples from independent farms.", currency: "GBP", country: "United Kingdom", city: "London", whatsapp: "+447700900456", promoBanner: "Free delivery on orders over £40", store: STORE_BASE("GBP", "Same-day delivery", 399, "Market stall pickup") },
+    answers: { storeName: "Field & Basket", tagline: "Farm-fresh groceries to your door.", industry: "Groceries", description: "Fruit, vegetables and pantry staples from independent farms.", about: "Field & Basket buys directly from twelve independent farms within 80 miles of London. We pack orders the morning they are delivered, so produce is usually picked the day before.", faqs: [{ q: "When do you deliver?", a: "Every day except Sunday, between 8 am and 8 pm." }, { q: "What if something is not fresh?", a: "Tell us within 24 hours and we will refund or replace it." }], currency: "GBP", country: "United Kingdom", city: "London", whatsapp: "+447700900456", promoBanner: "Free delivery on orders over £40", store: STORE_BASE("GBP", "Same-day delivery", 399, "Market stall pickup") },
     collections: ["Fruit", "Vegetables", "Pantry"],
     products: [
       { title: "Seasonal veg box", price: 18, description: "A week of seasonal vegetables for two.", collection: "Vegetables", stock: 20, featured: true },
@@ -216,7 +208,7 @@ export const PERSONAS: Record<string, Persona> = {
       { title: "Wildflower honey 340g", price: 9, description: "Raw honey from a farm cooperative.", collection: "Pantry", stock: 2 },
     ] },
   "e-lumiere": {
-    answers: { storeName: "Lumière Botanics", tagline: "Gentle skincare from botanical oils.", industry: "Skincare", description: "Small-batch skincare made with shea, marula and baobab.", currency: "USD", country: "Australia", city: "Sydney", store: STORE_BASE("USD", "Courier delivery", 600, "Studio collection") },
+    answers: { storeName: "Lumière Botanics", tagline: "Gentle skincare from botanical oils.", industry: "Skincare", description: "Small-batch skincare made with shea, marula and baobab.", about: "Lumière Botanics makes face and body care in small batches in Sydney. Every formula uses cold-pressed plant oils, and every batch is dated so you know how fresh it is.", faqs: [{ q: "Are your products suitable for sensitive skin?", a: "Most are fragrance-free. Each product page lists every ingredient." }, { q: "How long do products last?", a: "Twelve months unopened, six months once opened." }], currency: "USD", country: "Australia", city: "Sydney", store: STORE_BASE("USD", "Courier delivery", 600, "Studio collection") },
     collections: ["Face", "Body"],
     products: [
       { title: "Marula face oil", price: 28, description: "Lightweight daily face oil.", collection: "Face", stock: 12, featured: true },
@@ -233,7 +225,7 @@ export const PERSONAS: Record<string, Persona> = {
       { title: "Serving bowl", price: 38, description: "Large hand-glazed serving bowl.", collection: "Ceramics", stock: 3, featured: true },
     ] },
   "e-concrete": {
-    answers: { storeName: "CONCRETE", tagline: "Streetwear from the block.", industry: "Streetwear", description: "Heavyweight tees, hoodies and caps.", currency: "USD", country: "United States", city: "Los Angeles", store: STORE_BASE("USD", "Standard shipping", 500, "Pickup") },
+    answers: { storeName: "CONCRETE", tagline: "Streetwear from the block.", industry: "Streetwear", description: "Heavyweight tees, hoodies and caps.", about: "CONCRETE prints heavyweight tees and hoodies in small runs in Los Angeles. Each drop is printed once and not restocked.", faqs: [{ q: "How do your tees fit?", a: "Boxy and slightly cropped. Take your usual size for the intended fit." }, { q: "Will a sold-out drop come back?", a: "No. Each design is printed once." }], currency: "USD", country: "United States", city: "Los Angeles", store: STORE_BASE("USD", "Standard shipping", 500, "Pickup") },
     collections: ["Tees", "Hoodies", "Caps"],
     products: [
       { title: "Heavyweight logo tee", price: 30, description: "300gsm cotton, boxy fit.", collection: "Tees", option1: { name: "Size", values: ["S", "M", "L", "XL"] }, option2: { name: "Colour", values: ["Black", "Bone"] }, stock: 6, featured: true },
@@ -241,6 +233,13 @@ export const PERSONAS: Record<string, Persona> = {
       { title: "Five-panel cap", price: 25, description: "Nylon cap with embroidered patch.", collection: "Caps", stock: 9, featured: true },
       { title: "Graphic tee 02", price: 32, description: "Screen-printed graphic tee.", collection: "Tees", option1: { name: "Size", values: ["S", "M", "L"] }, stock: 7, featured: true },
     ] },
+  ...STORE_PERSONAS,
+  ...SITE_PERSONAS,
+  ...PERSONAL_PERSONAS,
+  ...BUSINESS_PERSONAS,
+  ...PREMIUM_PERSONAS,
+  ...BUSINESS4_PERSONAS,
+  ...STORE2_PERSONAS,
 };
 
 /** Expand a demo product list into ProductViews (for template previews rendered in memory). */
@@ -255,7 +254,7 @@ export function demoProductViews(persona: Persona, currency: string): { products
     return {
       id: `p${i}`, title: p.title, handle: slugify(p.title), description: p.description,
       priceMinor: minor(p.price), compareAtMinor: p.compareAt ? minor(p.compareAt) : null, currency,
-      images: [p.image ? st(p.image, p.title) : art(`${p.title}-img`, p.title)], tags: (p.tags ?? "").split(",").map((t) => t.trim()).filter(Boolean),
+      images: p.image ? [st(p.image, p.title), ...(p.images ?? []).map((n, k) => st(n, `${p.title}, view ${k + 2}`))] : [art(`${p.title}-img`, p.title)], tags: (p.tags ?? "").split(",").map((t) => t.trim()).filter(Boolean),
       collections: [slugify(p.collection)], featured: !!p.featured, productType: p.digital ? "digital" : "physical",
       option1Name: p.option1?.name ?? null, option2Name: p.option2?.name ?? null, maxPerOrder: 10, createdAt: i,
       variants: variants.map((v, j) => ({

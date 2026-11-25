@@ -1,5 +1,27 @@
 import type { SiteType } from "./pricing";
 import type { SectionKind, Theme } from "./schema";
+import type { StoreLayout } from "./render/layouts";
+import type { SiteLayout } from "./render/site-layouts";
+import { SITE_TEMPLATES } from "./templates-site";
+import { PERSONAL_TEMPLATES } from "./templates-personal";
+import { BUSINESS_TEMPLATES } from "./templates-business";
+import { PREMIUM_PERSONAL_TEMPLATES } from "./templates-premium";
+import { PREMIUM_BUSINESS_TEMPLATES } from "./templates-business4";
+import { STORE2_TEMPLATES } from "./templates-store2";
+import { STORE_TEMPLATES } from "./templates-store";
+
+/** Gallery ranking: Signature first, then Premium, then Standard (owner rule, 24 Nov 2026). */
+export type TemplateRank = "signature" | "premium" | "standard";
+
+/** E-commerce gallery categories, in tab order. */
+export const STORE_CATEGORIES: { key: string; label: string }[] = [
+  { key: "fashion", label: "Fashion" }, { key: "menswear", label: "Menswear" }, { key: "bags", label: "Bags" },
+  { key: "footwear", label: "Footwear" }, { key: "jewellery", label: "Jewellery" }, { key: "beauty", label: "Beauty" },
+  { key: "fragrance", label: "Fragrance" }, { key: "furniture", label: "Furniture" }, { key: "home", label: "Home" },
+  { key: "food", label: "Food" }, { key: "drinks", label: "Drinks" }, { key: "coffee", label: "Coffee" },
+  { key: "tech", label: "Tech" }, { key: "sport", label: "Sport" }, { key: "kids", label: "Kids" },
+  { key: "stationery", label: "Stationery" }, { key: "wellness", label: "Wellness" }, { key: "makers", label: "Makers" },
+];
 
 export type ArtStyle = "blobs" | "geo" | "waves" | "grid" | "arcs" | "stripes" | "rings";
 
@@ -17,6 +39,12 @@ export interface TemplateDef {
   art: ArtStyle;
   /** Template-specific CSS layered over the shared base stylesheet. */
   css: string;
+  /** Storefront layout family (e-commerce Phase 1 templates). */
+  layout?: StoreLayout | SiteLayout;
+  /** Gallery category (e-commerce), one of STORE_CATEGORIES. */
+  category?: string;
+  /** Gallery ranking; defaults to "standard". */
+  rank?: TemplateRank;
 }
 
 const T = (d: TemplateDef) => d;
@@ -50,7 +78,7 @@ h1,h2{font-weight:400;letter-spacing:-.02em}
     theme: {
       mode: "dark", colors: { bg: "#0a0e13", surface: "#111820", text: "#d8e3ee", muted: "#8496a8", primary: "#3cf2a6", accent: "#7aa2ff" },
       fontHeading: "jetbrains-mono", fontBody: "inter", radius: "sm", density: "comfortable", headingScale: "md",
-      animation: "subtle", headerStyle: "bar", cardStyle: "outline", ornament: "grid",
+      animation: "subtle", headerStyle: "bar", cardStyle: "outline", ornament: "none",
     },
     variants: { hero: "terminal", projects: "cards", experience: "timeline", skills: "tags" },
     art: "grid",
@@ -58,7 +86,7 @@ h1,h2{font-weight:400;letter-spacing:-.02em}
 .sec-head h2::before{content:"// ";color:var(--primary-ink)}
 .card{background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(4px)}
 .tag{font-family:var(--font-h);font-size:.72rem;border-color:color-mix(in srgb,var(--primary) 40%,transparent);color:var(--primary-ink)}
-.btn-primary{box-shadow:0 0 0 1px var(--primary),0 0 24px -6px var(--primary)}
+.btn-primary{box-shadow:0 0 0 1px var(--primary)}
 .site-header .brand{font-family:var(--font-h)}
 .site-header .brand::before{content:"~/";color:var(--primary-ink);margin-right:2px}
 `,
@@ -123,17 +151,17 @@ h1,h2,h3{font-weight:500;letter-spacing:.01em}
   T({
     id: "p-aura", name: "Aura", type: "personal", tier: "member",
     styles: ["soft", "modern"], industries: ["coach", "speaker", "wellness"],
-    description: "Soft gradients, glass cards and rounded shapes for coaches, speakers and wellness professionals.",
+    description: "Soft lilac tones, frosted cards and rounded shapes for coaches, speakers and wellness professionals.",
     theme: {
       mode: "light", colors: { bg: "#f7f5ff", surface: "#ffffff", text: "#221c3a", muted: "#615a7c", primary: "#7454f6", accent: "#ff7fa6" },
       fontHeading: "outfit", fontBody: "manrope", radius: "xl", density: "airy", headingScale: "lg",
-      animation: "lively", headerStyle: "floating", cardStyle: "glass", ornament: "blobs",
+      animation: "lively", headerStyle: "floating", cardStyle: "glass", ornament: "none",
     },
     variants: { hero: "centered", about: "card", testimonials: "big", services: "grid" },
     art: "blobs",
     css: `
-.hero h1{background:linear-gradient(120deg,var(--text),var(--primary) 60%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
-.btn-primary{background:linear-gradient(120deg,var(--primary),var(--accent));border:0}
+.hero h1{color:var(--text);font-weight:600;letter-spacing:-.02em}
+.btn-primary{border-radius:999px}
 `,
   }),
 
@@ -209,18 +237,18 @@ h2{font-weight:500;letter-spacing:-.03em}
   T({
     id: "b-pulse", name: "Pulse", type: "business", tier: "member",
     styles: ["tech", "dark", "startup"], industries: ["software", "agency", "startup", "IT services"],
-    description: "Dark gradient glow, glass panels and crisp grotesque type for tech companies and digital agencies.",
+    description: "Deep navy, frosted panels and crisp grotesque type for software studios and digital agencies.",
     theme: {
       mode: "dark", colors: { bg: "#070b1a", surface: "#0f1530", text: "#e8ecff", muted: "#97a0c3", primary: "#6d7bff", accent: "#22d3ee" },
       fontHeading: "bricolage", fontBody: "inter", radius: "lg", density: "comfortable", headingScale: "lg",
-      animation: "lively", headerStyle: "floating", cardStyle: "glass", ornament: "blobs",
+      animation: "lively", headerStyle: "floating", cardStyle: "glass", ornament: "none",
     },
     variants: { hero: "centered", services: "grid", testimonials: "cards", footer: "columns" },
     art: "rings",
     css: `
-.hero{background:radial-gradient(60% 50% at 50% 0%,color-mix(in srgb,var(--primary) 35%,transparent),transparent 70%)}
+.hero{border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
 .card{border:1px solid color-mix(in srgb,var(--text) 12%,transparent)}
-.btn-primary{background:linear-gradient(120deg,var(--primary),var(--accent));border:0;color:#050816}
+.btn-primary{color:#050816}
 `,
   }),
   T({
@@ -242,7 +270,7 @@ h2{font-weight:500;letter-spacing:-.03em}
 
   // ───────────────────────────── E-COMMERCE ─────────────────────────────
   T({
-    id: "e-maison", name: "Maison", type: "ecommerce", tier: "public",
+    id: "e-maison", name: "Maison", type: "ecommerce", tier: "public", category: "fashion", rank: "premium",
     styles: ["fashion", "editorial", "premium"], industries: ["fashion", "lifestyle", "accessories"],
     description: "Editorial fashion storefront with large product imagery, refined serif type and quiet luxury.",
     theme: {
@@ -259,23 +287,23 @@ h1,h2{font-weight:500}
 `,
   }),
   T({
-    id: "e-volt", name: "Volt", type: "ecommerce", tier: "public",
+    id: "e-volt", name: "Volt", type: "ecommerce", tier: "public", category: "tech", rank: "standard",
     styles: ["tech", "dark", "product"], industries: ["electronics", "gadgets", "gaming", "accessories"],
     description: "High-contrast dark store with neon accents and spec-forward product cards for electronics and gadgets.",
     theme: {
       mode: "dark", colors: { bg: "#0a0c10", surface: "#13171e", text: "#eef2f7", muted: "#93a0b2", primary: "#00e0a4", accent: "#3d7cff" },
       fontHeading: "space-grotesk", fontBody: "inter", radius: "lg", density: "comfortable", headingScale: "lg",
-      animation: "lively", headerStyle: "bar", cardStyle: "outline", ornament: "grid",
+      animation: "lively", headerStyle: "bar", cardStyle: "outline", ornament: "none",
     },
     variants: { hero: "split", products: "grid", collections: "chips", footer: "columns" },
     art: "grid",
     css: `
-.product-card:hover{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary),0 18px 40px -20px var(--primary)}
+.product-card:hover{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
 .price{color:var(--primary-ink)}
 `,
   }),
   T({
-    id: "e-fresh", name: "Market Fresh", type: "ecommerce", tier: "public",
+    id: "e-fresh", name: "Market Fresh", type: "ecommerce", tier: "public", category: "food", rank: "standard",
     styles: ["friendly", "local"], industries: ["grocery", "farm produce", "food", "household"],
     description: "Friendly, rounded grocery storefront with compact product tiles, big category chips and clear delivery info.",
     theme: {
@@ -291,13 +319,13 @@ h1,h2{font-weight:500}
 `,
   }),
   T({
-    id: "e-lumiere", name: "Lumière", type: "ecommerce", tier: "member",
+    id: "e-lumiere", name: "Lumière", type: "ecommerce", tier: "member", category: "beauty", rank: "premium",
     styles: ["beauty", "soft", "premium"], industries: ["cosmetics", "skincare", "fragrance", "jewellery"],
     description: "Blush tones, elegant serif and soft glass for beauty, skincare and jewellery brands.",
     theme: {
       mode: "light", colors: { bg: "#fff7f5", surface: "#ffffff", text: "#3a2326", muted: "#7c5f63", primary: "#b85d6c", accent: "#d9a189" },
       fontHeading: "playfair", fontBody: "manrope", radius: "xl", density: "airy", headingScale: "lg",
-      animation: "subtle", headerStyle: "centered", cardStyle: "glass", ornament: "blobs",
+      animation: "subtle", headerStyle: "centered", cardStyle: "glass", ornament: "none",
     },
     variants: { hero: "centered", products: "large", collections: "tiles", testimonials: "big" },
     art: "rings",
@@ -307,7 +335,7 @@ h1{font-style:italic;font-weight:500}
 `,
   }),
   T({
-    id: "e-craft", name: "Craft & Co", type: "ecommerce", tier: "member",
+    id: "e-craft", name: "Craft & Co", type: "ecommerce", tier: "member", category: "makers", rank: "standard",
     styles: ["artisan", "warm"], industries: ["handmade", "crafts", "home decor", "art prints"],
     description: "Kraft-paper textures, hand-made warmth and story-led product pages for artisans and makers.",
     theme: {
@@ -323,7 +351,7 @@ h1{font-style:italic;font-weight:500}
 `,
   }),
   T({
-    id: "e-concrete", name: "Concrete", type: "ecommerce", tier: "member",
+    id: "e-concrete", name: "Concrete", type: "ecommerce", tier: "member", category: "fashion", rank: "standard",
     styles: ["streetwear", "bold", "brutalist"], industries: ["streetwear", "sneakers", "merch", "music"],
     description: "Brutalist streetwear store: hard borders, acid accent, oversized type and a tight product grid.",
     theme: {
@@ -340,6 +368,13 @@ h1,h2{text-transform:uppercase;font-weight:800;letter-spacing:-.03em}
 .banner{background:var(--text);color:var(--accent)}
 `,
   }),
+  ...STORE_TEMPLATES,
+  ...SITE_TEMPLATES,
+  ...PERSONAL_TEMPLATES,
+  ...BUSINESS_TEMPLATES,
+  ...PREMIUM_PERSONAL_TEMPLATES,
+  ...PREMIUM_BUSINESS_TEMPLATES,
+  ...STORE2_TEMPLATES,
 ];
 
 export const TEMPLATE_MAP: Record<string, TemplateDef> = Object.fromEntries(TEMPLATES.map((t) => [t.id, t]));

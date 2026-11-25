@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-friendly",
+  "brand": {
+    "name": "Clearview Research",
+    "tagline": "We find out what your customers think, and why."
+  },
+  "seo": {
+    "title": "Clearview Research — We find out what your customers think, and why.",
+    "description": "Customer research, surveys and workshops.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f7f8ff",
+      "surface": "#eaedfc",
+      "text": "#1a1d3a",
+      "muted": "#5a5f80",
+      "primary": "#5b5fe0",
+      "accent": "#1a1d3a"
+    },
+    "fontHeading": "bricolage",
+    "fontBody": "dm-sans",
+    "radius": "xl",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Dublin",
+    "country": "Ireland",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-12873oo",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Research firm · Dublin",
+            "heading": "We find out what your customers think, and why.",
+            "subheading": "Customer research, surveys and workshops.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "biz-workshop",
+              "alt": "Clearview Research",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-129l8vm",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Brand identity",
+                "description": "Strategy, naming and visual identity.",
+                "price": "From $9,000",
+                "image": {
+                  "stock": "work-sketches",
+                  "alt": "Identity sketches",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Websites",
+                "description": "Design and build of fast, accessible sites.",
+                "price": "From $12,000",
+                "image": {
+                  "stock": "work-wireframes",
+                  "alt": "Wireframes",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels, boxes and retail displays.",
+                "price": "From $6,000",
+                "image": {
+                  "stock": "home-bud-vases",
+                  "alt": "Packaged ceramics",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-12a857d",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Clearview Research",
+            "body": "Clearview is a team of researchers and analysts.",
+            "image": {
+              "stock": "work-pattern",
+              "alt": "A sculptural pattern",
+              "caption": ""
+            },
+            "highlights": [
+              "Senior team on every project",
+              "Fixed proposals",
+              "Hand-over files you own"
+            ]
+          }
+        },
+        {
+          "id": "cta-12b155t",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-12c1ygr",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Clearview is a team of researchers and analysts.",
+            "image": {
+              "stock": "obj-journal",
+              "alt": "Sketchbook",
+              "caption": ""
+            },
+            "highlights": [
+              "Senior team on every project",
+              "Fixed proposals",
+              "Hand-over files you own"
+            ]
+          }
+        },
+        {
+          "id": "faq-12d72dg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "How long does a brand project take?",
+                "a": "Usually eight to twelve weeks."
+              },
+              {
+                "q": "Do you work with small companies?",
+                "a": "Yes. Most of our clients have fewer than fifty people."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-12eh41l",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Brand identity",
+                "description": "Strategy, naming and visual identity.",
+                "price": "From $9,000",
+                "image": {
+                  "stock": "work-sketches",
+                  "alt": "Identity sketches",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Websites",
+                "description": "Design and build of fast, accessible sites.",
+                "price": "From $12,000",
+                "image": {
+                  "stock": "work-wireframes",
+                  "alt": "Wireframes",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels, boxes and retail displays.",
+                "price": "From $6,000",
+                "image": {
+                  "stock": "home-bud-vases",
+                  "alt": "Packaged ceramics",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Brand identity",
+              "Websites",
+              "Packaging"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-12gcdwf",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "work-pattern",
+                "alt": "A sculptural pattern",
+                "caption": ""
+              },
+              {
+                "stock": "obj-journal",
+                "alt": "Sketchbook",
+                "caption": ""
+              },
+              {
+                "stock": "biz-glass",
+                "alt": "Office building",
+                "caption": ""
+              },
+              {
+                "stock": "home-white-room",
+                "alt": "Studio space",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-12h1wzl",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

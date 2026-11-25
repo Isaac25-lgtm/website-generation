@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-monolith",
+  "brand": {
+    "name": "Forma",
+    "tagline": "We design buildings and objects that are simple to make and hard to forget."
+  },
+  "seo": {
+    "title": "Forma — We design buildings and objects that are simple to make and ha",
+    "description": "An architecture and product studio.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f2f2f2",
+      "text": "#0a0a0a",
+      "muted": "#5f5f5f",
+      "primary": "#2341f2",
+      "accent": "#2341f2"
+    },
+    "fontHeading": "archivo",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "floating",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "studio@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Oslo",
+    "country": "Norway",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-kpfr1g",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Architecture · Objects · Oslo",
+            "heading": "We design buildings and objects that are simple to make and hard to forget.",
+            "subheading": "An architecture and product studio.",
+            "primaryCta": {
+              "label": "Email us",
+              "href": "mailto:studio@example.com"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "work-pattern",
+              "alt": "A sculptural white pattern",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-kqftck",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Architecture",
+                "description": "Houses and small public buildings.",
+                "price": ""
+              },
+              {
+                "title": "Interiors",
+                "description": "Fit-outs and furniture.",
+                "price": ""
+              },
+              {
+                "title": "Objects",
+                "description": "Furniture and lighting.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-krft04",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Forma",
+            "body": "Forma is eight architects and designers. We work on houses, small public buildings and a range of furniture.",
+            "image": {
+              "stock": "biz-facade-bw",
+              "alt": "Facade",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-ksee8u",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Email us",
+              "href": "mailto:studio@example.com"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-ktcnmh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Forma is eight architects and designers. We work on houses, small public buildings and a range of furniture.",
+            "image": {
+              "stock": "home-white-room",
+              "alt": "Interior",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-kuirnu",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Architecture",
+                "description": "Houses and small public buildings.",
+                "price": ""
+              },
+              {
+                "title": "Interiors",
+                "description": "Fit-outs and furniture.",
+                "price": ""
+              },
+              {
+                "title": "Objects",
+                "description": "Furniture and lighting.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Architecture",
+              "Interiors",
+              "Objects"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-kwap41",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "biz-facade-bw",
+                "alt": "Facade",
+                "caption": ""
+              },
+              {
+                "stock": "home-white-room",
+                "alt": "Interior",
+                "caption": ""
+              },
+              {
+                "stock": "home-butterfly-chair",
+                "alt": "Chair",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-kxd5fa",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

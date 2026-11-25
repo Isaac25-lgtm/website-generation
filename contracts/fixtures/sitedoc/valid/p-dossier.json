@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-dossier",
+  "brand": {
+    "name": "Kenji Watanabe",
+    "tagline": "I build data platforms that stay fast as they grow."
+  },
+  "seo": {
+    "title": "Kenji Watanabe — I build data platforms that stay fast as they grow.",
+    "description": "I build data platforms that stay fast as they grow.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f4f4f4",
+      "text": "#111111",
+      "muted": "#5b5b5b",
+      "primary": "#111111",
+      "accent": "#2b59c3"
+    },
+    "fontHeading": "space-grotesk",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "md",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "kenji@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-b8kdgt",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Senior software engineer · Toronto · Toronto, Canada",
+            "heading": "I build data platforms that stay fast as they grow.",
+            "subheading": "Kenji Watanabe, Senior software engineer · Toronto",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-laptop-man",
+              "alt": "Kenji Watanabe at a laptop",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-b9d32j",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Backend and data engineer with ten years of experience in payments and logistics. I care about clear schemas, small services and dashboards that people trust.",
+            "image": {
+              "stock": "pro-laptop-man",
+              "alt": "Kenji Watanabe at a laptop",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Event pipeline rebuild",
+                "description": "Replaced a nightly batch with a streaming pipeline; reports now update within a minute.",
+                "role": "Tech lead",
+                "period": "2025",
+                "tags": [
+                  "Kafka",
+                  "PostgreSQL"
+                ],
+                "images": []
+              },
+              {
+                "title": "Fraud rules engine",
+                "description": "A rules service checking 2 million payments a day.",
+                "role": "Engineer",
+                "period": "2023",
+                "tags": [
+                  "Go",
+                  "Redis"
+                ],
+                "images": []
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-bb1zmc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-bcd38b",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Senior software engineer",
+                "org": "Payments company (fictional)",
+                "period": "2021 — now",
+                "location": "Toronto",
+                "description": "Data platform and reporting."
+              },
+              {
+                "role": "Software engineer",
+                "org": "Logistics startup (fictional)",
+                "period": "2016 — 2021",
+                "location": "Vancouver",
+                "description": "Routing and tracking services."
+              }
+            ]
+          }
+        },
+        {
+          "id": "education-bd2jlg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "education",
+          "data": {
+            "heading": "Education & certifications",
+            "items": [
+              {
+                "title": "BASc, Computer Engineering",
+                "org": "University (fictional)",
+                "period": "2016",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-be79l8",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "Languages",
+                "items": [
+                  "Go",
+                  "Python",
+                  "TypeScript",
+                  "SQL"
+                ]
+              },
+              {
+                "name": "Systems",
+                "items": [
+                  "PostgreSQL",
+                  "Kafka",
+                  "Redis",
+                  "Kubernetes"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "achievements-bf2sd7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "achievements",
+          "data": {
+            "heading": "Achievements & publications",
+            "items": [
+              {
+                "title": "Conference talk: schemas that last (sample)",
+                "detail": "",
+                "year": "2024"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-bg9k0m",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Toronto, Canada.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

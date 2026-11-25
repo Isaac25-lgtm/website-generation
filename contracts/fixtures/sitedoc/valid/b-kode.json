@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-kode",
+  "brand": {
+    "name": "Copperline",
+    "tagline": "Websites and apps, designed and built in one place."
+  },
+  "seo": {
+    "title": "Copperline — Websites and apps, designed and built in one place.",
+    "description": "Design and development.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f1f4ff",
+      "text": "#0d0f1a",
+      "muted": "#545a72",
+      "primary": "#111827",
+      "accent": "#111827"
+    },
+    "fontHeading": "playfair",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Belgrade",
+    "country": "Serbia",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-14gjxb0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Development studio · Belgrade",
+            "heading": "Websites and apps, designed and built in one place.",
+            "subheading": "Design and development.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "work-pattern",
+              "alt": "Copperline",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-14h5g0w",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Brand identity",
+                "description": "Strategy, naming and visual identity.",
+                "price": "From $9,000",
+                "image": {
+                  "stock": "work-sketches",
+                  "alt": "Identity sketches",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Websites",
+                "description": "Design and build of fast, accessible sites.",
+                "price": "From $12,000",
+                "image": {
+                  "stock": "work-wireframes",
+                  "alt": "Wireframes",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels, boxes and retail displays.",
+                "price": "From $6,000",
+                "image": {
+                  "stock": "home-bud-vases",
+                  "alt": "Packaged ceramics",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-14i5xwx",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Copperline",
+            "body": "A studio of fifteen developers and designers.",
+            "image": {
+              "stock": "work-pattern",
+              "alt": "A sculptural pattern",
+              "caption": ""
+            },
+            "highlights": [
+              "Senior team on every project",
+              "Fixed proposals",
+              "Hand-over files you own"
+            ]
+          }
+        },
+        {
+          "id": "cta-14j5xn5",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-14kbyl6",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "A studio of fifteen developers and designers.",
+            "image": {
+              "stock": "obj-journal",
+              "alt": "Sketchbook",
+              "caption": ""
+            },
+            "highlights": [
+              "Senior team on every project",
+              "Fixed proposals",
+              "Hand-over files you own"
+            ]
+          }
+        },
+        {
+          "id": "faq-14lesgk",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "How long does a brand project take?",
+                "a": "Usually eight to twelve weeks."
+              },
+              {
+                "q": "Do you work with small companies?",
+                "a": "Yes. Most of our clients have fewer than fifty people."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-14mjbrc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Brand identity",
+                "description": "Strategy, naming and visual identity.",
+                "price": "From $9,000",
+                "image": {
+                  "stock": "work-sketches",
+                  "alt": "Identity sketches",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Websites",
+                "description": "Design and build of fast, accessible sites.",
+                "price": "From $12,000",
+                "image": {
+                  "stock": "work-wireframes",
+                  "alt": "Wireframes",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels, boxes and retail displays.",
+                "price": "From $6,000",
+                "image": {
+                  "stock": "home-bud-vases",
+                  "alt": "Packaged ceramics",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Brand identity",
+              "Websites",
+              "Packaging"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-14o1tl9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "work-pattern",
+                "alt": "A sculptural pattern",
+                "caption": ""
+              },
+              {
+                "stock": "obj-journal",
+                "alt": "Sketchbook",
+                "caption": ""
+              },
+              {
+                "stock": "biz-glass",
+                "alt": "Office building",
+                "caption": ""
+              },
+              {
+                "stock": "home-white-room",
+                "alt": "Studio space",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-14pd8to",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

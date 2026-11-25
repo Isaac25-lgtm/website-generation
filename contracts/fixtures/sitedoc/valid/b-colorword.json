@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-colorword",
+  "brand": {
+    "name": "Bright & Fable",
+    "tagline": "A brand agency for companies that make things people use every day."
+  },
+  "seo": {
+    "title": "Bright & Fable — A brand agency for companies that make things people ",
+    "description": "Identity, packaging and campaigns for consumer brands.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f3f3f1",
+      "text": "#141414",
+      "muted": "#5e5e5b",
+      "primary": "#141414",
+      "accent": "#141414"
+    },
+    "fontHeading": "archivo",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Brooklyn",
+    "country": "United States",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-vaaker",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Brand agency · Brooklyn",
+            "heading": "A brand agency for companies that make things people use every day.",
+            "subheading": "Identity, packaging and campaigns for consumer brands.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "work-pattern",
+              "alt": "Bright & Fable",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-vbikq",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Brand identity",
+                "description": "Strategy, naming and visual identity.",
+                "price": "From $9,000",
+                "image": {
+                  "stock": "work-sketches",
+                  "alt": "Identity sketches",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Websites",
+                "description": "Design and build of fast, accessible sites.",
+                "price": "From $12,000",
+                "image": {
+                  "stock": "work-wireframes",
+                  "alt": "Wireframes",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels, boxes and retail displays.",
+                "price": "From $6,000",
+                "image": {
+                  "stock": "home-bud-vases",
+                  "alt": "Packaged ceramics",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-vcajrx",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Bright & Fable",
+            "body": "Bright & Fable is fourteen designers and writers.",
+            "image": {
+              "stock": "work-pattern",
+              "alt": "A sculptural pattern",
+              "caption": ""
+            },
+            "highlights": [
+              "Senior team on every project",
+              "Fixed proposals",
+              "Hand-over files you own"
+            ]
+          }
+        },
+        {
+          "id": "cta-vde99z",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-ve57z2",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Bright & Fable is fourteen designers and writers.",
+            "image": {
+              "stock": "obj-journal",
+              "alt": "Sketchbook",
+              "caption": ""
+            },
+            "highlights": [
+              "Senior team on every project",
+              "Fixed proposals",
+              "Hand-over files you own"
+            ]
+          }
+        },
+        {
+          "id": "faq-vfbs53",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "How long does a brand project take?",
+                "a": "Usually eight to twelve weeks."
+              },
+              {
+                "q": "Do you work with small companies?",
+                "a": "Yes. Most of our clients have fewer than fifty people."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-vgdl9l",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Brand identity",
+                "description": "Strategy, naming and visual identity.",
+                "price": "From $9,000",
+                "image": {
+                  "stock": "work-sketches",
+                  "alt": "Identity sketches",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Websites",
+                "description": "Design and build of fast, accessible sites.",
+                "price": "From $12,000",
+                "image": {
+                  "stock": "work-wireframes",
+                  "alt": "Wireframes",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Packaging",
+                "description": "Labels, boxes and retail displays.",
+                "price": "From $6,000",
+                "image": {
+                  "stock": "home-bud-vases",
+                  "alt": "Packaged ceramics",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Brand identity",
+              "Websites",
+              "Packaging"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-vi7jae",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "work-pattern",
+                "alt": "A sculptural pattern",
+                "caption": ""
+              },
+              {
+                "stock": "obj-journal",
+                "alt": "Sketchbook",
+                "caption": ""
+              },
+              {
+                "stock": "biz-glass",
+                "alt": "Office building",
+                "caption": ""
+              },
+              {
+                "stock": "home-white-room",
+                "alt": "Studio space",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-vjhtru",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

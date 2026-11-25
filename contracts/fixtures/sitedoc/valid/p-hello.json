@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-hello",
+  "brand": {
+    "name": "Priya Raman",
+    "tagline": "A product designer with a love for careful questions, good teams and work that lasts."
+  },
+  "seo": {
+    "title": "Priya Raman — A product designer with a love for careful questions, go",
+    "description": "A product designer with a love for careful questions, good teams and work that lasts.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#fbf9f6",
+      "surface": "#f2eee8",
+      "text": "#3b1830",
+      "muted": "#6e5a68",
+      "primary": "#3b1830",
+      "accent": "#a8296e"
+    },
+    "fontHeading": "fraunces",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "priya@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-f8h53g",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Product designer · Singapore",
+            "heading": "A product designer with a love for careful questions, good teams and work that lasts.",
+            "subheading": "Priya Raman, Product designer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-pinkhair-woman",
+              "alt": "Priya Raman",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-f9l30t",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I design tools for people who work with money: dashboards, forms and the small moments where people decide whether to trust a product.",
+            "image": {
+              "stock": "pro-pinkhair-woman",
+              "alt": "Priya Raman",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Invoicing for small businesses",
+                "description": "Simplified a 12-step flow into four.",
+                "role": "Lead designer",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "work-wireframes",
+                    "alt": "Wireframes",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Banking app onboarding",
+                "description": "A new sign-up flow tested with 40 customers.",
+                "role": "Designer",
+                "period": "2023",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "work-sketches",
+                    "alt": "Sketches",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-fbiolb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-fccwha",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Singapore.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

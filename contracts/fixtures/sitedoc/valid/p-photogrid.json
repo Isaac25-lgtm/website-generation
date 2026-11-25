@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-photogrid",
+  "brand": {
+    "name": "Ruth Okonkwo",
+    "tagline": "Portraits, film and stills."
+  },
+  "seo": {
+    "title": "Ruth Okonkwo — Portraits, film and stills.",
+    "description": "Portraits, film and stills.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f3f3f1",
+      "text": "#141414",
+      "muted": "#5e5e5b",
+      "primary": "#141414",
+      "accent": "#141414"
+    },
+    "fontHeading": "inter",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-scanms",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Portrait photographer · Winnipeg",
+            "heading": "Portraits, film and stills.",
+            "subheading": "Ruth Okonkwo, Portrait photographer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-sdgbgy",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Portrait photographer.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Lake communities",
+                "description": "A year with fishing families.",
+                "role": "Photographer",
+                "period": "2025",
+                "tags": [
+                  "Documentary"
+                ],
+                "images": [
+                  {
+                    "stock": "photo-fisherman-gold",
+                    "alt": "Fisherman at golden hour",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Portraits of makers",
+                "description": "Artists photographed where they work.",
+                "role": "Photographer",
+                "period": "2024",
+                "tags": [
+                  "Portraits"
+                ],
+                "images": [
+                  {
+                    "stock": "photo-street-artist",
+                    "alt": "A street artist",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Coastline",
+                "description": "Sea and light along the coast.",
+                "role": "Photographer",
+                "period": "2023",
+                "tags": [
+                  "Landscape"
+                ],
+                "images": [
+                  {
+                    "stock": "photo-sea",
+                    "alt": "The sea",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-sf8nk5",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-sg7di7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Photographer",
+                "org": "Independent",
+                "period": "2016 — now",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-shkkf9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "Portraits",
+                  "Documentary",
+                  "Editorial",
+                  "Film",
+                  "Retouching"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-sif56s",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "photo-portrait-smile",
+                "alt": "Portrait",
+                "caption": ""
+              },
+              {
+                "stock": "photo-teal-lake",
+                "alt": "Lake",
+                "caption": ""
+              },
+              {
+                "stock": "photo-misty-mountains",
+                "alt": "Mountains",
+                "caption": ""
+              },
+              {
+                "stock": "photo-elder",
+                "alt": "Elder",
+                "caption": ""
+              },
+              {
+                "stock": "photo-boat",
+                "alt": "Boat",
+                "caption": ""
+              },
+              {
+                "stock": "photo-kayak",
+                "alt": "Kayak",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-sjfn0w",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Winnipeg.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

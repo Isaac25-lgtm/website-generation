@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-laureate",
+  "brand": {
+    "name": "Rafael Moreno",
+    "tagline": "Public buildings and housing that age well."
+  },
+  "seo": {
+    "title": "Rafael Moreno — Public buildings and housing that age well.",
+    "description": "Public buildings and housing that age well.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f4f2ec",
+      "surface": "#ebe7dd",
+      "text": "#16203a",
+      "muted": "#566073",
+      "primary": "#16203a",
+      "accent": "#87692f"
+    },
+    "fontHeading": "bodoni-moda",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "xl",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "studio@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-bw7h4c",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Architect and partner · Madrid, Spain",
+            "heading": "Public buildings and housing that age well.",
+            "subheading": "Rafael Moreno, Architect and partner",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-suit-window",
+              "alt": "Rafael Moreno by a window",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-bx3f2d",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I lead a practice of twenty architects designing libraries, schools and social housing in Spain and Latin America. Our buildings are known for daylight, local materials and low running costs.",
+            "image": {
+              "stock": "pro-suit-window",
+              "alt": "Rafael Moreno by a window",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Municipal library, Seville",
+                "description": "A 4,000 m² library built around a shaded courtyard.",
+                "role": "Lead architect",
+                "period": "2024",
+                "tags": [],
+                "images": []
+              },
+              {
+                "title": "Social housing, Valencia",
+                "description": "120 homes in timber and brick, rated nearly zero-energy.",
+                "role": "Partner",
+                "period": "2022",
+                "tags": [],
+                "images": []
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-bzl51p",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-c0kaxh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Founding partner",
+                "org": "Architecture practice (fictional)",
+                "period": "2008 — now",
+                "location": "Madrid",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "achievements-c11fqw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "achievements",
+          "data": {
+            "heading": "Achievements & publications",
+            "items": [
+              {
+                "title": "National architecture award (sample)",
+                "detail": "Public buildings",
+                "year": "2024"
+              },
+              {
+                "title": "Housing design prize (sample)",
+                "detail": "Social housing, winner",
+                "year": "2022"
+              },
+              {
+                "title": "Biennale exhibition (sample)",
+                "detail": "Invited participant",
+                "year": "2020"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-c2fijb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Madrid, Spain.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

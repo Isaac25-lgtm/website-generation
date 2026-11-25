@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-poem",
+  "brand": {
+    "name": "Mei Lin",
+    "tagline": "I make small things with code, light and paper, slowly, and mostly at night."
+  },
+  "seo": {
+    "title": "Mei Lin — I make small things with code, light and paper, slowly, and ",
+    "description": "I make small things with code, light and paper, slowly, and mostly at night.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#121110",
+      "surface": "#1c1a18",
+      "text": "#ece6dc",
+      "muted": "#a39d92",
+      "primary": "#e3b7a0",
+      "accent": "#e3b7a0"
+    },
+    "fontHeading": "cormorant",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "mei@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-goepc6",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Creative technologist · Taipei",
+            "heading": "I make small things with code, light and paper, slowly, and mostly at night.",
+            "subheading": "Mei Lin, Creative technologist",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "flower-dahlias",
+              "alt": "Peach dahlias",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-gpi65x",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Creative technologist working on installations, interactive books and exhibitions.",
+            "image": {
+              "stock": "flower-dahlias",
+              "alt": "Peach dahlias",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "A book that glows",
+                "description": "A paper book with printed light circuits.",
+                "role": "Maker",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "obj-open-book",
+                    "alt": "Open book",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Night garden installation",
+                "description": "Light and sound for a botanical garden.",
+                "role": "Maker",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "flower-dark-dahlia",
+                    "alt": "A dahlia at night",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-gr6utb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-gs51tf",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Taipei.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

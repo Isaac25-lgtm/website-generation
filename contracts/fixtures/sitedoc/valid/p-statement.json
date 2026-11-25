@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-statement",
+  "brand": {
+    "name": "Helena Varga",
+    "tagline": "I help founders decide what to build next, and what to stop doing."
+  },
+  "seo": {
+    "title": "Helena Varga — I help founders decide what to build next, and what to ",
+    "description": "I help founders decide what to build next, and what to stop doing.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f7f5f0",
+      "surface": "#eeeae2",
+      "text": "#161513",
+      "muted": "#5d5952",
+      "primary": "#161513",
+      "accent": "#9a4a2a"
+    },
+    "fontHeading": "instrument-serif",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "xl",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-ah7yvw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Strategy advisor · Vienna, Austria",
+            "heading": "I help founders decide what to build next, and what to stop doing.",
+            "subheading": "Helena Varga, Strategy advisor",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-portrait-woman",
+              "alt": "Portrait of Helena Varga",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-ai9w4i",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "For twelve years I ran strategy at two software companies, from thirty people to six hundred. Now I work with a small number of founders each year, usually in the months after a funding round, when the list of possible projects is longest.\n\nMost engagements last a quarter. We meet every week, and I write a short decision memo after every session.",
+            "image": {
+              "stock": "pro-portrait-woman",
+              "alt": "Portrait of Helena Varga",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Pricing reset for a logistics platform",
+                "description": "Moved a mid-market product from per-seat to usage pricing over two quarters.",
+                "role": "Advisor",
+                "period": "2025",
+                "tags": [
+                  "Pricing",
+                  "B2B"
+                ],
+                "images": []
+              },
+              {
+                "title": "Market entry plan, Nordic region",
+                "description": "Sequenced the launch of a payments product across four countries.",
+                "role": "Advisor",
+                "period": "2024",
+                "tags": [
+                  "Expansion"
+                ],
+                "images": []
+              },
+              {
+                "title": "Portfolio review for a design-tools company",
+                "description": "Retired three products and refocused the team on one.",
+                "role": "Advisor",
+                "period": "2024",
+                "tags": [
+                  "Product strategy"
+                ],
+                "images": []
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-akbt3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-alenbe",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Independent strategy advisor",
+                "org": "Self-employed",
+                "period": "2022 — now",
+                "location": "Vienna",
+                "description": "Quarter-long engagements with founders after a funding round."
+              },
+              {
+                "role": "VP Strategy",
+                "org": "Software company (fictional)",
+                "period": "2016 — 2022",
+                "location": "",
+                "description": "Planning, pricing and market entry."
+              }
+            ]
+          }
+        },
+        {
+          "id": "achievements-am2nrz",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "achievements",
+          "data": {
+            "heading": "Achievements & publications",
+            "items": [
+              {
+                "title": "Guest lecturer, strategy programme (sample)",
+                "detail": "",
+                "year": "2025"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-ankhcn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Vienna, Austria.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

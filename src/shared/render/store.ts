@@ -3,6 +3,7 @@ import type { ProductView } from "./types";
 import type { SCtx } from "./sections";
 import { img, imageSrc, pageUrl } from "./sections";
 import { esc, formatMoney, paragraphs, whatsappLink } from "../util";
+import { LAYOUT_DEFAULTS } from "./layouts";
 
 export function productUrl(s: SCtx, p: ProductView): string {
   return `${s.ctx.basePath}/product/${encodeURIComponent(p.handle)}`;
@@ -16,12 +17,26 @@ function minPrice(p: ProductView): number {
   return p.variants.length ? Math.min(...p.variants.map((v) => v.priceMinor)) : p.priceMinor;
 }
 
-export function productCard(s: SCtx, p: ProductView): string {
+function layoutDefault(s: SCtx) {
+  return s.tpl.layout ? (LAYOUT_DEFAULTS as Record<string, (typeof LAYOUT_DEFAULTS)[keyof typeof LAYOUT_DEFAULTS] | undefined>)[s.tpl.layout] : undefined;
+}
+
+function collectionName(s: SCtx, p: ProductView): string {
+  const h = p.collections[0];
+  return (h && s.ctx.store?.collections.find((c) => c.handle === h)?.name) || "";
+}
+
+const CARD_SIZE: Record<string, [number, number]> = { tall: [600, 800], quiet: [640, 800], room: [800, 600], large: [640, 800], life: [640, 800] };
+
+export function productCard(s: SCtx, p: ProductView, variant = ""): string {
   const avail = productAvailable(p);
+  const [w, h] = CARD_SIZE[variant] ?? [700, 700];
+  const second = variant === "jewel" && p.images[1] ? `<span class="alt-img" aria-hidden="true">${img(s, p.images[1], { w, h, alt: "" })}</span>` : "";
+  const meta = collectionName(s, p);
   const price = minPrice(p);
   const multi = new Set(p.variants.map((v) => v.priceMinor)).size > 1;
   const onSale = p.compareAtMinor !== null && p.compareAtMinor > price;
-  return `<a class="product-card" href="${esc(productUrl(s, p))}"><div class="ph">${img(s, p.images[0], { w: 700, h: 700, fallbackSeed: p.title, alt: p.images[0]?.alt || p.title })}${!avail ? `<span class="badge sold">Sold out</span>` : onSale ? `<span class="badge">Sale</span>` : ""}</div><div class="info"><span class="p-title">${esc(p.title)}</span><span><span class="price">${multi ? "From " : ""}${esc(formatMoney(price, p.currency))}</span>${onSale ? `<span class="compare">${esc(formatMoney(p.compareAtMinor!, p.currency))}</span>` : ""}</span></div></a>`;
+  return `<a class="product-card" href="${esc(productUrl(s, p))}"><div class="ph">${img(s, p.images[0], { w, h, fallbackSeed: p.title, alt: p.images[0]?.alt || p.title })}${second}${!avail ? `<span class="badge sold">Sold out</span>` : onSale ? `<span class="badge">Sale</span>` : ""}</div><div class="info">${meta ? `<span class="p-meta" hidden>${esc(meta)}</span>` : ""}<span class="p-title">${esc(p.title)}</span><span><span class="price">${multi ? "From " : ""}${esc(formatMoney(price, p.currency))}</span>${onSale ? `<span class="compare">${esc(formatMoney(p.compareAtMinor!, p.currency))}</span>` : ""}</span></div></a>`;
 }
 
 function emptyStore(s: SCtx): string {
@@ -31,8 +46,8 @@ function emptyStore(s: SCtx): string {
 export function renderProductsSection(s: SCtx, sec: Extract<Section, { kind: "products" }>, alt: boolean): string {
   const d = sec.data;
   const store = s.ctx.store;
-  const variant = sec.variant || s.tpl.variants.products || "grid";
-  const cls = variant === "large" ? "products-large" : variant === "compact" ? "products-compact" : "";
+  const variant = sec.variant || s.tpl.variants.products || layoutDefault(s)?.products || "grid";
+  const cls = ["large", "compact", "tall", "quiet", "jewel", "room", "object", "life", "hair"].includes(variant) ? `products-${variant}` : "";
   let products = (store?.products ?? []).slice();
   let tools = "";
   if (d.mode === "all") {
@@ -56,7 +71,7 @@ export function renderProductsSection(s: SCtx, sec: Extract<Section, { kind: "pr
     const featured = products.filter((p) => p.featured);
     products = (featured.length ? featured : products).slice(0, d.limit);
   }
-  const grid = products.length ? `<div class="grid ${cls}" style="${cls ? "" : "--min:240px"}">${products.map((p) => productCard(s, p)).join("")}</div>` : d.mode === "all" && (s.ctx.query?.get("q") || s.ctx.query?.get("c")) ? `<p>No products match your search.</p>` : emptyStore(s);
+  const grid = products.length ? `<div class="grid ${cls}" style="${cls ? "" : "--min:240px"}">${products.map((p) => productCard(s, p, variant)).join("")}</div>` : d.mode === "all" && (s.ctx.query?.get("q") || s.ctx.query?.get("c")) ? `<p>No products match your search.</p>` : emptyStore(s);
   const more = d.mode !== "all" && s.doc.pages.some((p) => p.slug === "shop") && s.page.slug !== "shop" ? `<div class="actions"><a class="btn btn-ghost" href="${esc(pageUrl(s.ctx, "shop"))}">View all products</a></div>` : "";
   return `<section id="${esc(sec.id)}" class="sec products${alt ? " alt" : ""}"><div class="wrap rv">${d.heading || d.intro ? `<div class="sec-head">${d.heading ? `<h2>${esc(d.heading)}</h2>` : ""}${d.intro ? `<p class="lead">${esc(d.intro)}</p>` : ""}</div>` : ""}${tools}${grid}${more}</div></section>`;
 }
@@ -92,15 +107,27 @@ export function productPage(s: SCtx, p: ProductView): string {
   const onSale = p.compareAtMinor !== null && p.compareAtMinor > (first?.priceMinor ?? p.priceMinor);
   const fulfil = (store?.fulfillment ?? []).map((f) => `<li>${esc(f.label)} — ${f.priceMinor ? esc(formatMoney(f.priceMinor, store!.currency)) : "free"}${f.details ? `<br><span class="muted">${esc(f.details)}</span>` : ""}</li>`).join("");
   const pays = (store?.paymentMethods ?? []).map((m) => `<li>${esc(m.label)}</li>`).join("");
-  return `<section class="sec"><div class="wrap"><nav aria-label="Breadcrumb" class="meta" style="margin-bottom:1.5rem"><a href="${esc(pageUrl(s.ctx, ""))}">Home</a> / <a href="${esc(pageUrl(s.ctx, "shop"))}">Shop</a> / <span aria-current="page">${esc(p.title)}</span></nav>
-<div class="pdp"><div><div class="main-img">${mainImg}</div>${thumbs}</div>
-<div><h1 style="font-size:clamp(1.9rem,3.6vw,2.8rem)">${esc(p.title)}</h1><p class="p-price"><span class="price" data-price>${esc(formatMoney(first?.priceMinor ?? p.priceMinor, p.currency))}</span>${onSale ? `<span class="compare">${esc(formatMoney(p.compareAtMinor!, p.currency))}</span>` : ""}</p>
+  const stacked = layoutDefault(s)?.pdp === "stacked";
+  const media = stacked
+    ? `<div class="gallery-stack">${images.map((im, i) => img(s, im, { w: 960, h: 1200, eager: i === 0, alt: im.alt || p.title })).join("")}</div>`
+    : `<div class="main-img">${mainImg}</div>${thumbs}`;
+  const cat = p.collections[0] ? s.ctx.store?.collections.find((c) => c.handle === p.collections[0]) : undefined;
+  // Same category first, then the rest of the shop, so small categories still get a full row.
+  const others = (s.ctx.store?.products ?? []).filter((x) => x.id !== p.id);
+  const sameCat = cat ? others.filter((x) => x.collections.includes(cat.handle)) : [];
+  const related = [...sameCat, ...others.filter((x) => !sameCat.includes(x))].slice(0, 4);
+  const relVariant = s.tpl.variants.products || layoutDefault(s)?.products || "grid";
+  const relCls = ["large", "compact", "tall", "quiet", "jewel", "room", "object", "life", "hair"].includes(relVariant) ? `products-${relVariant}` : "";
+  const relatedHtml = related.length ? `<section class="sec related" aria-labelledby="rel-h"><div class="wrap"><div class="sec-head"><h2 id="rel-h">${cat && sameCat.length >= 2 ? `More from ${esc(cat.name)}` : "You may also like"}</h2></div><div class="grid ${relCls}"${relCls ? "" : ' style="--min:220px"'}>${related.map((x) => productCard(s, x, relVariant)).join("")}</div></div></section>` : "";
+  return `<section class="sec"><div class="wrap"><nav aria-label="Breadcrumb" class="meta" style="margin-bottom:1.5rem"><a href="${esc(pageUrl(s.ctx, ""))}">Home</a> / <a href="${esc(pageUrl(s.ctx, "shop"))}">Shop</a>${cat ? ` / <a href="${esc(pageUrl(s.ctx, "shop"))}?c=${encodeURIComponent(cat.handle)}">${esc(cat.name)}</a>` : ""} / <span aria-current="page">${esc(p.title)}</span></nav>
+<div class="pdp${stacked ? " stacked" : ""}"><div>${media}</div>
+<div class="details"><h1 style="font-size:clamp(1.9rem,3.6vw,2.8rem)">${esc(p.title)}</h1><p class="p-price"><span class="price" data-price>${esc(formatMoney(first?.priceMinor ?? p.priceMinor, p.currency))}</span>${onSale ? `<span class="compare">${esc(formatMoney(p.compareAtMinor!, p.currency))}</span>` : ""}</p>
 <form class="f" data-add><input type="hidden" name="variant" value="${esc(first?.id ?? "")}">${select("option1", p.option1Name, opts1, first?.option1 ?? null)}${select("option2", p.option2Name, opts2, first?.option2 ?? null)}
 <label>Quantity<input class="qty" type="number" name="qty" min="1" max="${p.maxPerOrder}" value="1" inputmode="numeric"></label>
 <p class="stock" data-stock aria-live="polite"></p><div><button class="btn btn-primary" type="submit" style="min-width:220px">Add to cart</button></div><p class="form-status" role="status" aria-live="polite"></p></form>
 <div style="margin-top:1.5rem">${paragraphs(p.description)}</div>
 <div class="info-list">${fulfil ? `<details><summary>Delivery &amp; pickup</summary><ul>${fulfil}</ul></details>` : ""}${pays ? `<details><summary>Ways to pay</summary><ul>${pays}</ul></details>` : ""}${store?.returnsPolicy ? `<details><summary>Returns</summary>${paragraphs(store.returnsPolicy)}</details>` : ""}</div>
-</div></div></div></section><script type="application/json" id="is-product">${productJson}</script>`;
+</div></div></div></section>${relatedHtml}<script type="application/json" id="is-product">${productJson}</script>`;
 }
 
 export function cartPage(s: SCtx): string {

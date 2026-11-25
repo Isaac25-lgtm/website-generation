@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-ledger",
+  "brand": {
+    "name": "Dr. Ingrid Solberg",
+    "tagline": "Clinical research on heart failure in older adults."
+  },
+  "seo": {
+    "title": "Dr. Ingrid Solberg — Clinical research on heart failure in older adult",
+    "description": "Clinical research on heart failure in older adults.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f8f5ee",
+      "surface": "#eee9de",
+      "text": "#22201c",
+      "muted": "#605b53",
+      "primary": "#6b2d1f",
+      "accent": "#6b2d1f"
+    },
+    "fontHeading": "libre-caslon",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "md",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "office@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-bh4s2n",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Cardiologist and clinical researcher · Bergen, Norway",
+            "heading": "Clinical research on heart failure in older adults.",
+            "subheading": "Dr. Ingrid Solberg, Cardiologist and clinical researcher",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "image": {
+              "stock": "pro-glasses-woman",
+              "alt": "Portrait of Dr. Ingrid Solberg",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-bihgv2",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I am a consultant cardiologist and lead a research group studying heart failure care for patients over seventy-five. Our trials test simpler treatment plans that patients can follow at home.",
+            "image": {
+              "stock": "pro-glasses-woman",
+              "alt": "Portrait of Dr. Ingrid Solberg",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-bj8caa",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-bkd0lg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Consultant cardiologist",
+                "org": "University hospital (fictional)",
+                "period": "2017 — now",
+                "location": "Bergen",
+                "description": "Heart failure clinic and research group lead."
+              },
+              {
+                "role": "Research fellow",
+                "org": "Cardiology institute (fictional)",
+                "period": "2013 — 2017",
+                "location": "",
+                "description": "Trials in home-based care."
+              }
+            ]
+          }
+        },
+        {
+          "id": "education-blemoj",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "education",
+          "data": {
+            "heading": "Education & certifications",
+            "items": [
+              {
+                "title": "PhD, Clinical Medicine",
+                "org": "University (fictional)",
+                "period": "2013",
+                "description": ""
+              },
+              {
+                "title": "MD",
+                "org": "University (fictional)",
+                "period": "2008",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-bme9wo",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "Clinical trials",
+                  "Heart failure",
+                  "Echocardiography",
+                  "Biostatistics"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "achievements-bnfseb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "achievements",
+          "data": {
+            "heading": "Achievements & publications",
+            "items": [
+              {
+                "title": "Home-based follow-up after heart failure admission (journal article, sample)",
+                "detail": "Sample publication entry.",
+                "year": "2025"
+              },
+              {
+                "title": "Simplified medication plans in older adults (journal article, sample)",
+                "detail": "Sample publication entry.",
+                "year": "2023"
+              },
+              {
+                "title": "Young investigator award (sample)",
+                "detail": "",
+                "year": "2019"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-bo39i8",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Bergen, Norway.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

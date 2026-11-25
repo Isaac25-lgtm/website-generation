@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-fullbleed",
+  "brand": {
+    "name": "Tamás Kiss",
+    "tagline": "Product designer and engineer."
+  },
+  "seo": {
+    "title": "Tamás Kiss — Product designer and engineer.",
+    "description": "Product designer and engineer.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#111111",
+      "surface": "#1b1b1b",
+      "text": "#f2f2f2",
+      "muted": "#a8a8a8",
+      "primary": "#f2f2f2",
+      "accent": "#f2f2f2"
+    },
+    "fontHeading": "inter-tight",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-tq1oqh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Product designer & engineer · Debrecen",
+            "heading": "Product designer and engineer.",
+            "subheading": "Tamás Kiss, Product designer & engineer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-older-man",
+              "alt": "Tamás Kiss",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-tr340z",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I design and build products.",
+            "image": {
+              "stock": "pro-older-man",
+              "alt": "Tamás Kiss",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Payments dashboard",
+                "description": "Orders, refunds and payouts in one place.",
+                "role": "Engineer",
+                "period": "2025",
+                "tags": [
+                  "TypeScript",
+                  "PostgreSQL"
+                ],
+                "images": [
+                  {
+                    "stock": "biz-analytics",
+                    "alt": "Charts on a laptop",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Delivery tracking",
+                "description": "Live tracking for 3,000 daily deliveries.",
+                "role": "Tech lead",
+                "period": "2024",
+                "tags": [
+                  "Go",
+                  "Maps"
+                ],
+                "images": [
+                  {
+                    "stock": "biz-glass",
+                    "alt": "An office building",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Open-source form library",
+                "description": "Accessible forms for React apps.",
+                "role": "Maintainer",
+                "period": "2023",
+                "tags": [
+                  "Open source"
+                ],
+                "images": [
+                  {
+                    "stock": "work-wireframes",
+                    "alt": "Form sketches",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-ttjdyq",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-tubkm1",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Senior engineer",
+                "org": "Logistics company (fictional)",
+                "period": "2021 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Engineer",
+                "org": "Fintech startup (fictional)",
+                "period": "2017 — 2021",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-tvbfj5",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "TypeScript",
+                  "Go",
+                  "PostgreSQL",
+                  "React",
+                  "System design"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-twgbwr",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Debrecen.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

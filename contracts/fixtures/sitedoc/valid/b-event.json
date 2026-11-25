@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-event",
+  "brand": {
+    "name": "Assembly Days",
+    "tagline": "Two days of ideas, in a factory."
+  },
+  "seo": {
+    "title": "Assembly Days — Two days of ideas, in a factory.",
+    "description": "A two-day festival of talks and workshops.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0d0d0f",
+      "surface": "#17171a",
+      "text": "#f1f1ee",
+      "muted": "#a6a6a2",
+      "primary": "#f1f1ee",
+      "accent": "#f1f1ee"
+    },
+    "fontHeading": "syne",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Detroit",
+    "country": "United States",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-15ae8m3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Conference · Detroit",
+            "heading": "Two days of ideas, in a factory.",
+            "subheading": "A two-day festival of talks and workshops.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "stay-lobby",
+              "alt": "Assembly Days",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-15bdhy8",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Main stage",
+                "description": "Two days of talks from builders and artists.",
+                "price": "From $480",
+                "image": {
+                  "stock": "pro-speaker-man",
+                  "alt": "A speaker on stage",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Workshops",
+                "description": "Small hands-on sessions.",
+                "price": "From $120",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A workshop",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Partner programme",
+                "description": "For companies who want to take part.",
+                "price": "On request",
+                "image": {
+                  "stock": "biz-boardroom",
+                  "alt": "A partner meeting",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-15cei6u",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Assembly Days",
+            "body": "Assembly Days brings together builders, artists and founders every May.",
+            "image": {
+              "stock": "stay-lobby",
+              "alt": "The venue",
+              "caption": ""
+            },
+            "highlights": [
+              "Two days, 3,000 guests",
+              "Sixty sessions",
+              "Held in a former factory"
+            ]
+          }
+        },
+        {
+          "id": "cta-15datvk",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-15e1l8f",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Assembly Days brings together builders, artists and founders every May.",
+            "image": {
+              "stock": "biz-team",
+              "alt": "Guests",
+              "caption": ""
+            },
+            "highlights": [
+              "Two days, 3,000 guests",
+              "Sixty sessions",
+              "Held in a former factory"
+            ]
+          }
+        },
+        {
+          "id": "faq-15f8j34",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "When is the next edition?",
+                "a": "Every May. Dates are announced in January."
+              },
+              {
+                "q": "Are tickets refundable?",
+                "a": "Tickets can be transferred to another person at no charge."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-15gkilb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Main stage",
+                "description": "Two days of talks from builders and artists.",
+                "price": "From $480",
+                "image": {
+                  "stock": "pro-speaker-man",
+                  "alt": "A speaker on stage",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Workshops",
+                "description": "Small hands-on sessions.",
+                "price": "From $120",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A workshop",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Partner programme",
+                "description": "For companies who want to take part.",
+                "price": "On request",
+                "image": {
+                  "stock": "biz-boardroom",
+                  "alt": "A partner meeting",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Main stage",
+              "Workshops",
+              "Partner programme"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-15i5p7k",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "stay-lobby",
+                "alt": "The venue",
+                "caption": ""
+              },
+              {
+                "stock": "biz-team",
+                "alt": "Guests",
+                "caption": ""
+              },
+              {
+                "stock": "pro-speaker-woman",
+                "alt": "A talk",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-15j3ixb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

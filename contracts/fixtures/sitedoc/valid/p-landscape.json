@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-landscape",
+  "brand": {
+    "name": "Owen Gray",
+    "tagline": "The coast does not ask who you are. It waits, and keeps the light for you."
+  },
+  "seo": {
+    "title": "Owen Gray — The coast does not ask who you are. It waits, and keeps th",
+    "description": "The coast does not ask who you are. It waits, and keeps the light for you.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f6f3ee",
+      "surface": "#ece7df",
+      "text": "#2a2a26",
+      "muted": "#6b685f",
+      "primary": "#3d5a50",
+      "accent": "#3d5a50"
+    },
+    "fontHeading": "cormorant",
+    "fontBody": "lora",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "centered",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "owen@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-i6asd9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Poet & author",
+            "heading": "The coast does not ask who you are. It waits, and keeps the light for you.",
+            "subheading": "Owen Gray, Poet & author",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "photo-teal-lake",
+              "alt": "A still lake in the mountains",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-i76c89",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Poet and author of four collections. I give readings and run writing retreats by the sea.",
+            "image": {
+              "stock": "photo-teal-lake",
+              "alt": "A still lake in the mountains",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Salt and Light",
+                "description": "Poems from a year on the coast.",
+                "role": "Collection",
+                "period": "2025",
+                "tags": [],
+                "images": []
+              },
+              {
+                "title": "Writing retreats",
+                "description": "Five days of writing and walking.",
+                "role": "Teacher",
+                "period": "Yearly",
+                "tags": [],
+                "images": []
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-i9f066",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-iagqwn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

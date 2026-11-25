@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-bench",
+  "brand": {
+    "name": "Clay Room",
+    "tagline": "A ceramics studio with classes, kilns and open studio time."
+  },
+  "seo": {
+    "title": "Clay Room — A ceramics studio with classes, kilns and open studio time",
+    "description": "Wheel and hand-building classes for beginners, and studio membership for potters.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f5f4f0",
+      "surface": "#eae8e1",
+      "text": "#1c1c1a",
+      "muted": "#5b5a54",
+      "primary": "#1c1c1a",
+      "accent": "#3f5e78"
+    },
+    "fontHeading": "instrument-serif",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "xl",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Melbourne",
+    "country": "Australia",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-dfj0pl",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Ceramics studio · Melbourne",
+            "heading": "A ceramics studio with classes, kilns and open studio time.",
+            "subheading": "Wheel and hand-building classes for beginners, and studio membership for potters.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "make-potter",
+              "alt": "A potter shaping clay on the wheel",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-dg73w5",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Beginner wheel course",
+                "description": "Six weekly sessions on the wheel, all materials included.",
+                "price": "A$420",
+                "image": {
+                  "stock": "make-potter",
+                  "alt": "A student at the wheel",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Hand-building workshop",
+                "description": "A Saturday workshop making a set of bowls.",
+                "price": "A$140",
+                "image": {
+                  "stock": "make-ceramics-shelf",
+                  "alt": "Hand-built bowls",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Studio membership",
+                "description": "Open studio hours, a shelf and weekly firings.",
+                "price": "A$190 a month",
+                "image": {
+                  "stock": "home-white-jug",
+                  "alt": "A glazed jug",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-dhff7r",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Clay Room",
+            "body": "Clay Room opened in a former print works in 2019. We run small classes of eight, rent shelf space and kiln firings to members, and sell work made in the studio.",
+            "image": {
+              "stock": "make-ceramics-shelf",
+              "alt": "Finished pieces on studio shelves",
+              "caption": ""
+            },
+            "highlights": [
+              "Classes of eight people",
+              "Kiln firings every week",
+              "Open studio for members"
+            ]
+          }
+        },
+        {
+          "id": "cta-difgnf",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-djfdl4",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Clay Room opened in a former print works in 2019. We run small classes of eight, rent shelf space and kiln firings to members, and sell work made in the studio.",
+            "image": {
+              "stock": "home-bud-vases",
+              "alt": "Two bud vases",
+              "caption": ""
+            },
+            "highlights": [
+              "Classes of eight people",
+              "Kiln firings every week",
+              "Open studio for members"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-dkbh5h",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Beginner wheel course",
+                "description": "Six weekly sessions on the wheel, all materials included.",
+                "price": "A$420",
+                "image": {
+                  "stock": "make-potter",
+                  "alt": "A student at the wheel",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Hand-building workshop",
+                "description": "A Saturday workshop making a set of bowls.",
+                "price": "A$140",
+                "image": {
+                  "stock": "make-ceramics-shelf",
+                  "alt": "Hand-built bowls",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Studio membership",
+                "description": "Open studio hours, a shelf and weekly firings.",
+                "price": "A$190 a month",
+                "image": {
+                  "stock": "home-white-jug",
+                  "alt": "A glazed jug",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-dl6br9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "make-ceramics-shelf",
+                "alt": "Finished pieces on studio shelves",
+                "caption": ""
+              },
+              {
+                "stock": "home-bud-vases",
+                "alt": "Two bud vases",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-dmaxms",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        },
+        {
+          "id": "hours-dnc0ap",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hours",
+          "data": {
+            "heading": "Opening hours",
+            "rows": [
+              {
+                "days": "Tuesday – Sunday",
+                "hours": "10:00 – 21:00"
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

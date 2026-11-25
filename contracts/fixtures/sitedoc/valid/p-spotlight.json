@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-spotlight",
+  "brand": {
+    "name": "Amara Okafor",
+    "tagline": "Talks and workshops on leading teams through change."
+  },
+  "seo": {
+    "title": "Amara Okafor — Talks and workshops on leading teams through change.",
+    "description": "Talks and workshops on leading teams through change.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#121417",
+      "surface": "#1b1e23",
+      "text": "#f2f0ea",
+      "muted": "#a9a8a2",
+      "primary": "#f2c14e",
+      "accent": "#f2c14e"
+    },
+    "fontHeading": "bricolage",
+    "fontBody": "inter",
+    "radius": "md",
+    "density": "airy",
+    "headingScale": "xl",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "bookings@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-b2ceja",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Speaker and leadership coach · London · Lagos",
+            "heading": "Talks and workshops on leading teams through change.",
+            "subheading": "Amara Okafor, Speaker and leadership coach",
+            "primaryCta": {
+              "label": "Book a call",
+              "href": "https://example.com/book"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-speaker-woman",
+              "alt": "Amara Okafor presenting at a whiteboard",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-b3l9i6",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I spent fifteen years leading operations teams in banking before I started coaching. Today I speak at conferences and run workshops for leadership teams on difficult conversations, feedback and change.\n\nTalks are 30 to 60 minutes; workshops run for half a day or a full day.",
+            "image": {
+              "stock": "pro-speaker-woman",
+              "alt": "Amara Okafor presenting at a whiteboard",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Leading through a merger",
+                "description": "Opening talk for 400 managers on the first year after a merger.",
+                "role": "Keynote",
+                "period": "2025",
+                "tags": [
+                  "Keynote"
+                ],
+                "images": [
+                  {
+                    "stock": "pro-speaker-man",
+                    "alt": "A speaker presenting to a room",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Feedback that lands",
+                "description": "A half-day workshop for senior leaders, run monthly.",
+                "role": "Workshop",
+                "period": "2025",
+                "tags": [
+                  "Workshop"
+                ],
+                "images": [
+                  {
+                    "stock": "biz-boardroom",
+                    "alt": "A leadership team in a boardroom",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "One-to-one coaching",
+                "description": "Six sessions over three months for new directors.",
+                "role": "Coaching",
+                "period": "Ongoing",
+                "tags": [
+                  "Coaching"
+                ],
+                "images": [
+                  {
+                    "stock": "biz-window-table",
+                    "alt": "A coaching session by a window",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-b5x7u",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-b6l6v6",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Coach and speaker",
+                "org": "Self-employed",
+                "period": "2020 — now",
+                "location": "London",
+                "description": "Keynotes, workshops and coaching."
+              },
+              {
+                "role": "Head of Operations",
+                "org": "Bank (fictional)",
+                "period": "2008 — 2020",
+                "location": "",
+                "description": "Led teams of up to 300 people."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-b77rn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in London · Lagos.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-gazette",
+  "brand": {
+    "name": "Nina Moretti",
+    "tagline": "Designer turns a decade of editorial work into a new studio"
+  },
+  "seo": {
+    "title": "Nina Moretti — Designer turns a decade of editorial work into a new st",
+    "description": "Designer turns a decade of editorial work into a new studio",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f3efe6",
+      "surface": "#e9e3d6",
+      "text": "#141414",
+      "muted": "#5d5850",
+      "primary": "#141414",
+      "accent": "#8c1c13"
+    },
+    "fontHeading": "playfair",
+    "fontBody": "lora",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "md",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "nina@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-gyfhk",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Designer · Milan",
+            "heading": "Designer turns a decade of editorial work into a new studio",
+            "subheading": "Nina Moretti, Designer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-fence-woman",
+              "alt": "Nina Moretti",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-gz56vw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Nina Moretti has designed magazines, newspapers and books for twelve years. Her new studio works with publishers and cultural institutions on print and digital editions, from type choices to the last page.",
+            "image": {
+              "stock": "pro-fence-woman",
+              "alt": "Nina Moretti",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Weekend magazine redesign",
+                "description": "New grid and type for a weekend supplement.",
+                "role": "Designer",
+                "period": "2025",
+                "tags": [],
+                "images": []
+              },
+              {
+                "title": "Museum catalogue",
+                "description": "A 300-page exhibition catalogue.",
+                "role": "Designer",
+                "period": "2024",
+                "tags": [],
+                "images": []
+              },
+              {
+                "title": "A new literary quarterly",
+                "description": "Launch design.",
+                "role": "Art director",
+                "period": "2023",
+                "tags": [],
+                "images": []
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-h15kt3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-h23ukq",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Milan.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

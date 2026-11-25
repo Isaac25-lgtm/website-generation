@@ -44,7 +44,7 @@ export interface PersonalAnswers extends CommonAnswers {
 
 export interface BusinessAnswers extends CommonAnswers {
   businessName?: string; tagline?: string; description?: string; industry?: string; about?: string;
-  benefits?: string; targetCustomers?: string; serviceAreas?: string;
+  benefits?: string; targetCustomers?: string; serviceAreas?: string; servicesHeading?: string;
   services?: { title: string; description?: string; price?: string; image?: ImageRef }[];
   team?: { name: string; role?: string; bio?: string; image?: ImageRef }[];
   hours?: { days: string; hours: string }[]; hoursNote?: string;
@@ -225,7 +225,7 @@ export function generateSiteDoc(type: SiteType, templateId: string | undefined, 
       primaryCta: primary, secondaryCta: services.length ? { label: "Our services", href: "/services" } : undefined,
       image: img(a.heroImage, brandName),
     }));
-    if (services.length) home.push(sec("services", { heading: "What we do", intro: s(a.targetCustomers) ? `For ${s(a.targetCustomers, 200)}` : "", items: services.slice(0, 6).map((x) => ({ title: s(x.title, 100), description: s(x.description, 600), price: s(x.price, 60), image: img(x.image, s(x.title)) })) }));
+    if (services.length) home.push(sec("services", { heading: s(a.servicesHeading, 80) || "What we do", intro: s(a.targetCustomers) ? `For ${s(a.targetCustomers, 200)}` : "", items: services.slice(0, 6).map((x) => ({ title: s(x.title, 100), description: s(x.description, 600), price: s(x.price, 60), image: img(x.image, s(x.title)) })) }));
     const benefits = lines(a.benefits).slice(0, 8);
     if (s(a.about) || benefits.length) home.push(sec("about", { heading: `About ${brandName}`, body: s(a.about, 4000), image: img(a.gallery?.[0]), highlights: benefits }));
     commonTail(a, home);
@@ -242,7 +242,7 @@ export function generateSiteDoc(type: SiteType, templateId: string | undefined, 
 
     if (services.length || a.quoteForm) {
       const sv: Section[] = [];
-      if (services.length) sv.push(sec("services", { heading: "Services", intro: "", items: services.map((x) => ({ title: s(x.title, 100), description: s(x.description, 600), price: s(x.price, 60), image: img(x.image, s(x.title)) })) }));
+      if (services.length) sv.push(sec("services", { heading: s(a.servicesHeading, 80) || "Services", intro: "", items: services.map((x) => ({ title: s(x.title, 100), description: s(x.description, 600), price: s(x.price, 60), image: img(x.image, s(x.title)) })) }));
       if (a.quoteForm !== false) { const q = sec("quote", { heading: "Request a quote", intro: "Tell us about your needs and we'll get back to you.", services: services.map((x) => s(x.title, 80)) }); q.id = "quote"; sv.push(q); }
       pages.push(page("services", "services", "Services", sv));
     }

@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-catalogue",
+  "brand": {
+    "name": "Oaken & Lime",
+    "tagline": "We make furniture and fittings for kitchens, bathrooms and shops, in solid wood and stone."
+  },
+  "seo": {
+    "title": "Oaken & Lime — We make furniture and fittings for kitchens, bathrooms ",
+    "description": "Download our catalogue of 120 pieces, or ask us to quote for a project.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f2efe8",
+      "surface": "#e8e3d8",
+      "text": "#232019",
+      "muted": "#64604f",
+      "primary": "#232019",
+      "accent": "#232019"
+    },
+    "fontHeading": "manrope",
+    "fontBody": "manrope",
+    "radius": "md",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "sales@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Porto",
+    "country": "Portugal",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-kgk2fe",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Manufacturer · Porto",
+            "heading": "We make furniture and fittings for kitchens, bathrooms and shops, in solid wood and stone.",
+            "subheading": "Download our catalogue of 120 pieces, or ask us to quote for a project.",
+            "primaryCta": {
+              "label": "Request a quote",
+              "href": "/services#quote"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "home-kitchen",
+              "alt": "A finished kitchen",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-khkiei",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Kitchens",
+                "description": "Cabinets and worktops.",
+                "price": "",
+                "image": {
+                  "stock": "home-kitchen",
+                  "alt": "Kitchen",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Bathrooms",
+                "description": "Vanities and storage.",
+                "price": "",
+                "image": {
+                  "stock": "home-white-room",
+                  "alt": "Bathroom",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Shop fittings",
+                "description": "Counters and shelving.",
+                "price": "",
+                "image": {
+                  "stock": "fashion-boutique-rails",
+                  "alt": "Shop interior",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Tables",
+                "description": "Dining and work tables.",
+                "price": "",
+                "image": {
+                  "stock": "home-tulip-table",
+                  "alt": "Table",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-kii7xm",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Oaken & Lime",
+            "body": "Oaken & Lime is a family workshop of thirty people. We supply architects, shops and homeowners, and make every piece to order.",
+            "image": {
+              "stock": "home-dining",
+              "alt": "Dining room",
+              "caption": ""
+            },
+            "highlights": [
+              "Made to order",
+              "Solid wood and stone",
+              "Delivered across Europe"
+            ]
+          }
+        },
+        {
+          "id": "cta-kjev7v",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Tell us what you need",
+            "body": "",
+            "cta": {
+              "label": "Request a quote",
+              "href": "/services#quote"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-kkc9en",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Oaken & Lime is a family workshop of thirty people. We supply architects, shops and homeowners, and make every piece to order.",
+            "image": {
+              "stock": "home-pendant-shelves",
+              "alt": "Shelves",
+              "caption": ""
+            },
+            "highlights": [
+              "Made to order",
+              "Solid wood and stone",
+              "Delivered across Europe"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-klhhhq",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Kitchens",
+                "description": "Cabinets and worktops.",
+                "price": "",
+                "image": {
+                  "stock": "home-kitchen",
+                  "alt": "Kitchen",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Bathrooms",
+                "description": "Vanities and storage.",
+                "price": "",
+                "image": {
+                  "stock": "home-white-room",
+                  "alt": "Bathroom",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Shop fittings",
+                "description": "Counters and shelving.",
+                "price": "",
+                "image": {
+                  "stock": "fashion-boutique-rails",
+                  "alt": "Shop interior",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Tables",
+                "description": "Dining and work tables.",
+                "price": "",
+                "image": {
+                  "stock": "home-tulip-table",
+                  "alt": "Table",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Kitchens",
+              "Bathrooms",
+              "Shop fittings",
+              "Tables"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-knhuky",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "home-dining",
+                "alt": "Dining room",
+                "caption": ""
+              },
+              {
+                "stock": "home-pendant-shelves",
+                "alt": "Shelves",
+                "caption": ""
+              },
+              {
+                "stock": "make-bench",
+                "alt": "The workshop",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-kofpul",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

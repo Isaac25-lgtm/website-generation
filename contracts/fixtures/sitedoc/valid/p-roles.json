@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-roles",
+  "brand": {
+    "name": "Kofi Amoako",
+    "tagline": "Welcome to my corner of the internet: design, engineering, writing and photography."
+  },
+  "seo": {
+    "title": "Kofi Amoako — Welcome to my corner of the internet: design, engineerin",
+    "description": "Welcome to my corner of the internet: design, engineering, writing and photography.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f3f3f3",
+      "text": "#0d0d0d",
+      "muted": "#6f6f6f",
+      "primary": "#0d0d0d",
+      "accent": "#1f9d57"
+    },
+    "fontHeading": "archivo",
+    "fontBody": "inter",
+    "radius": "lg",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "kofi@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-hpfla0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Designer · Engineer · Accra",
+            "heading": "Welcome to my corner of the internet: design, engineering, writing and photography.",
+            "subheading": "Kofi Amoako, Designer · Engineer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-hq7mml",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I am a designer, engineer and writer. I run a small product studio and photograph cities on weekends.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Studio website",
+                "description": "Our own site.",
+                "role": "Designer",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "work-wireframes",
+                    "alt": "Wireframes",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "City photo book",
+                "description": "A book of Accra streets.",
+                "role": "Photographer",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "photo-street-artist",
+                    "alt": "Street scene",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-hs5ol9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "skills-htiy07",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "Brand designer",
+                  "Product designer",
+                  "Software engineer",
+                  "Writer",
+                  "Photographer",
+                  "Strategist",
+                  "Speaker",
+                  "Team lead"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-huk8q7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Accra.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-datelist",
+  "brand": {
+    "name": "Cian Byrne",
+    "tagline": "Selected work, newest first."
+  },
+  "seo": {
+    "title": "Cian Byrne — Selected work, newest first.",
+    "description": "Selected work, newest first.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f3f3f1",
+      "text": "#141414",
+      "muted": "#5e5e5b",
+      "primary": "#141414",
+      "accent": "#141414"
+    },
+    "fontHeading": "inter",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-q0hcyu",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Designer & engineer · Galway",
+            "heading": "Selected work, newest first.",
+            "subheading": "Cian Byrne, Designer & engineer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-q1hbrh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Designer and engineer.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Payments dashboard",
+                "description": "Orders, refunds and payouts in one place.",
+                "role": "Engineer",
+                "period": "2025",
+                "tags": [
+                  "TypeScript",
+                  "PostgreSQL"
+                ],
+                "images": [
+                  {
+                    "stock": "biz-analytics",
+                    "alt": "Charts on a laptop",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Delivery tracking",
+                "description": "Live tracking for 3,000 daily deliveries.",
+                "role": "Tech lead",
+                "period": "2024",
+                "tags": [
+                  "Go",
+                  "Maps"
+                ],
+                "images": [
+                  {
+                    "stock": "biz-glass",
+                    "alt": "An office building",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Open-source form library",
+                "description": "Accessible forms for React apps.",
+                "role": "Maintainer",
+                "period": "2023",
+                "tags": [
+                  "Open source"
+                ],
+                "images": [
+                  {
+                    "stock": "work-wireframes",
+                    "alt": "Form sketches",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-q3l936",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-q48eio",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Senior engineer",
+                "org": "Logistics company (fictional)",
+                "period": "2021 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Engineer",
+                "org": "Fintech startup (fictional)",
+                "period": "2017 — 2021",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-q561ln",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "TypeScript",
+                  "Go",
+                  "PostgreSQL",
+                  "React",
+                  "System design"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-q69cnl",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Galway.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

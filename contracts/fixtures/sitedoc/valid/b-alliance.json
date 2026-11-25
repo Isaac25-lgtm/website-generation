@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-alliance",
+  "brand": {
+    "name": "Harbourline Health",
+    "tagline": "Care that starts in your neighbourhood."
+  },
+  "seo": {
+    "title": "Harbourline Health — Care that starts in your neighbourhood.",
+    "description": "Twelve neighbourhood clinics and community programmes.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f2f6f8",
+      "text": "#132028",
+      "muted": "#566570",
+      "primary": "#146c94",
+      "accent": "#146c94"
+    },
+    "fontHeading": "manrope",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Liverpool",
+    "country": "United Kingdom",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-zghis",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Community health network · Liverpool",
+            "heading": "Care that starts in your neighbourhood.",
+            "subheading": "Twelve neighbourhood clinics and community programmes.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "biz-team",
+              "alt": "Harbourline Health",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-zh542l",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Primary care",
+                "description": "Family doctors and nurses in twelve neighbourhood clinics.",
+                "price": "",
+                "image": {
+                  "stock": "pro-desk-woman",
+                  "alt": "A clinician at a desk",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Mental health",
+                "description": "Counselling and therapy, in person or online.",
+                "price": "",
+                "image": {
+                  "stock": "pro-window-woman",
+                  "alt": "A counsellor by a window",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Community programmes",
+                "description": "Health education in schools and workplaces.",
+                "price": "",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A community workshop",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-zi1g7f",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Harbourline Health",
+            "body": "Harbourline is a not-for-profit network of community clinics.",
+            "image": {
+              "stock": "biz-team",
+              "alt": "Our team",
+              "caption": ""
+            },
+            "highlights": [
+              "Same-week appointments",
+              "Care in five languages",
+              "Fees on a sliding scale"
+            ]
+          }
+        },
+        {
+          "id": "cta-zjk4zw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-zk8yuj",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Harbourline is a not-for-profit network of community clinics.",
+            "image": {
+              "stock": "home-white-room",
+              "alt": "A clinic room",
+              "caption": ""
+            },
+            "highlights": [
+              "Same-week appointments",
+              "Care in five languages",
+              "Fees on a sliding scale"
+            ]
+          }
+        },
+        {
+          "id": "faq-zleoc9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "Do I need a referral?",
+                "a": "No. You can book directly."
+              },
+              {
+                "q": "Do you offer online sessions?",
+                "a": "Yes, for counselling and follow-up appointments."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-zmbvl7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Primary care",
+                "description": "Family doctors and nurses in twelve neighbourhood clinics.",
+                "price": "",
+                "image": {
+                  "stock": "pro-desk-woman",
+                  "alt": "A clinician at a desk",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Mental health",
+                "description": "Counselling and therapy, in person or online.",
+                "price": "",
+                "image": {
+                  "stock": "pro-window-woman",
+                  "alt": "A counsellor by a window",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Community programmes",
+                "description": "Health education in schools and workplaces.",
+                "price": "",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A community workshop",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Primary care",
+              "Mental health",
+              "Community programmes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-zo835d",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "biz-team",
+                "alt": "Our team",
+                "caption": ""
+              },
+              {
+                "stock": "home-white-room",
+                "alt": "A clinic room",
+                "caption": ""
+              },
+              {
+                "stock": "biz-window-table",
+                "alt": "A consultation",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-zpdcnf",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

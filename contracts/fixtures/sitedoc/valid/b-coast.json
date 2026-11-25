@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-coast",
+  "brand": {
+    "name": "Blue Harbour Resort",
+    "tagline": "Beach villas on a quiet bay."
+  },
+  "seo": {
+    "title": "Blue Harbour Resort — Beach villas on a quiet bay.",
+    "description": "Thirty villas with private pools, a beach club and a dive centre.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#eef3f6",
+      "text": "#10263a",
+      "muted": "#506378",
+      "primary": "#10263a",
+      "accent": "#2b7594"
+    },
+    "fontHeading": "jost",
+    "fontBody": "jost",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "centered",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "reservations@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Bali",
+    "country": "Indonesia",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-dyf2o1",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Beach resort · Bali",
+            "heading": "Beach villas on a quiet bay.",
+            "subheading": "Thirty villas with private pools, a beach club and a dive centre.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "stay-resort",
+              "alt": "The resort and its pools from above",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-dz82jo",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Garden villa",
+                "description": "One bedroom, a plunge pool and an outdoor shower.",
+                "price": "From $260 a night",
+                "image": {
+                  "stock": "stay-white-bed",
+                  "alt": "A garden villa bedroom",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Pool villa",
+                "description": "Two bedrooms and a 10-metre pool.",
+                "price": "From $420 a night",
+                "image": {
+                  "stock": "stay-rooftop",
+                  "alt": "A villa pool",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Beach house",
+                "description": "Three bedrooms on the sand.",
+                "price": "From $780 a night",
+                "image": {
+                  "stock": "stay-pool",
+                  "alt": "The beach house pool",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-e04ywd",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Blue Harbour Resort",
+            "body": "Blue Harbour opened in 2016 on a bay with no other hotels. Every villa has its own pool, and the reef is a short swim from the beach.",
+            "image": {
+              "stock": "stay-pool",
+              "alt": "The main pool",
+              "caption": ""
+            },
+            "highlights": [
+              "Private pool in every villa",
+              "Dive centre on the beach",
+              "Airport transfers included"
+            ]
+          }
+        },
+        {
+          "id": "cta-e1bqvh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-e28agu",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Blue Harbour opened in 2016 on a bay with no other hotels. Every villa has its own pool, and the reef is a short swim from the beach.",
+            "image": {
+              "stock": "stay-rooftop",
+              "alt": "A villa pool",
+              "caption": ""
+            },
+            "highlights": [
+              "Private pool in every villa",
+              "Dive centre on the beach",
+              "Airport transfers included"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-e352f4",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Garden villa",
+                "description": "One bedroom, a plunge pool and an outdoor shower.",
+                "price": "From $260 a night",
+                "image": {
+                  "stock": "stay-white-bed",
+                  "alt": "A garden villa bedroom",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Pool villa",
+                "description": "Two bedrooms and a 10-metre pool.",
+                "price": "From $420 a night",
+                "image": {
+                  "stock": "stay-rooftop",
+                  "alt": "A villa pool",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Beach house",
+                "description": "Three bedrooms on the sand.",
+                "price": "From $780 a night",
+                "image": {
+                  "stock": "stay-pool",
+                  "alt": "The beach house pool",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Garden villa",
+              "Pool villa",
+              "Beach house"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-e56ehx",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "stay-pool",
+                "alt": "The main pool",
+                "caption": ""
+              },
+              {
+                "stock": "stay-rooftop",
+                "alt": "A villa pool",
+                "caption": ""
+              },
+              {
+                "stock": "stay-white-bed",
+                "alt": "A villa bedroom",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-e6cra1",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

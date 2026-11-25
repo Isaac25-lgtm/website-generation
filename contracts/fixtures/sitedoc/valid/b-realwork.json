@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-realwork",
+  "brand": {
+    "name": "Keystone Systems",
+    "tagline": "Built around real work"
+  },
+  "seo": {
+    "title": "Keystone Systems — Built around real work",
+    "description": "We bring practical data tools to organisations, and design and build the systems that clinics, schools, cooperatives and businesses run on.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f4f4f2",
+      "text": "#0f0f10",
+      "muted": "#5c5c5f",
+      "primary": "#0f0f10",
+      "accent": "#e8590c"
+    },
+    "fontHeading": "outfit",
+    "fontBody": "inter",
+    "radius": "md",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Nairobi",
+    "country": "Kenya",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-l8esvu",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "IT and data services · Nairobi",
+            "heading": "Built around real work",
+            "subheading": "We bring practical data tools to organisations, and design and build the systems that clinics, schools, cooperatives and businesses run on.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "biz-team",
+              "alt": "A team planning together",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-l9b7vh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Data and reporting",
+                "description": "Dashboards and reports from the data you already collect.",
+                "price": "",
+                "image": {
+                  "stock": "owner-mi-laptop",
+                  "alt": "Working on a laptop",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Systems for clinics and schools",
+                "description": "Records, scheduling and stock, built for your workflow.",
+                "price": "",
+                "image": {
+                  "stock": "biz-office",
+                  "alt": "An office",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Payments and finance",
+                "description": "Billing, collections and reconciliations.",
+                "price": "",
+                "image": {
+                  "stock": "owner-mi-payment",
+                  "alt": "A card payment",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-labckh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Keystone Systems",
+            "body": "Keystone Systems is a team of engineers, analysts and designers. We start every project by sitting with the people who will use the system.",
+            "image": {
+              "stock": "biz-workshop",
+              "alt": "A workshop",
+              "caption": ""
+            },
+            "highlights": [
+              "We visit before we design",
+              "Training for every user",
+              "Support after launch"
+            ]
+          }
+        },
+        {
+          "id": "cta-lb2c5z",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-lc3n0g",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Keystone Systems is a team of engineers, analysts and designers. We start every project by sitting with the people who will use the system.",
+            "image": {
+              "stock": "biz-review",
+              "alt": "Reviewing figures",
+              "caption": ""
+            },
+            "highlights": [
+              "We visit before we design",
+              "Training for every user",
+              "Support after launch"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-ldd03q",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Data and reporting",
+                "description": "Dashboards and reports from the data you already collect.",
+                "price": "",
+                "image": {
+                  "stock": "owner-mi-laptop",
+                  "alt": "Working on a laptop",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Systems for clinics and schools",
+                "description": "Records, scheduling and stock, built for your workflow.",
+                "price": "",
+                "image": {
+                  "stock": "biz-office",
+                  "alt": "An office",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Payments and finance",
+                "description": "Billing, collections and reconciliations.",
+                "price": "",
+                "image": {
+                  "stock": "owner-mi-payment",
+                  "alt": "A card payment",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Data and reporting",
+              "Systems for clinics and schools",
+              "Payments and finance"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-lfehkc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "biz-workshop",
+                "alt": "A workshop",
+                "caption": ""
+              },
+              {
+                "stock": "biz-review",
+                "alt": "Reviewing figures",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-lg1wa5",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

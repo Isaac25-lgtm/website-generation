@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-prologue",
+  "brand": {
+    "name": "Adaeze Okafor",
+    "tagline": "A brand designer crafting clear, deliberate brand identities."
+  },
+  "seo": {
+    "title": "Adaeze Okafor — A brand designer crafting clear, deliberate brand iden",
+    "description": "A brand designer crafting clear, deliberate brand identities.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f5efe6",
+      "surface": "#ebe1d3",
+      "text": "#1b1414",
+      "muted": "#64534f",
+      "primary": "#6b1d1d",
+      "accent": "#6b1d1d"
+    },
+    "fontHeading": "manrope",
+    "fontBody": "manrope",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "floating",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "adaeze@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-ge5juy",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Now showing · Lagos",
+            "heading": "A brand designer crafting clear, deliberate brand identities.",
+            "subheading": "Adaeze Okafor, Now showing",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "men-tweed-cloth",
+              "alt": "Woven fabric close-up",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-gf30rh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I design identities for companies in fashion, food and finance across West Africa and Europe.",
+            "image": {
+              "stock": "men-tweed-cloth",
+              "alt": "Woven fabric close-up",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Fintech identity",
+                "description": "Logo, type and app icons.",
+                "role": "Brand designer",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "work-sketches",
+                    "alt": "Logo sketches",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Restaurant identity",
+                "description": "Menus, signs and uniforms.",
+                "role": "Brand designer",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "obj-journal",
+                    "alt": "Sketchbook",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-gh709k",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-giav8j",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Lagos.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-counsel",
+  "brand": {
+    "name": "Northgate Advisory",
+    "tagline": "Independent advice for boards and owners."
+  },
+  "seo": {
+    "title": "Northgate Advisory — Independent advice for boards and owners.",
+    "description": "We advise boards and owners on sales, succession and strategy. We do not take commission and we do not sell products.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0f0f0e",
+      "surface": "#181817",
+      "text": "#f1eee8",
+      "muted": "#a6a29a",
+      "primary": "#f1eee8",
+      "accent": "#b89b6b"
+    },
+    "fontHeading": "instrument-serif",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "xl",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "office@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "New York",
+    "country": "United States",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-co5i8u",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Strategy advisory · New York",
+            "heading": "Independent advice for boards and owners.",
+            "subheading": "We advise boards and owners on sales, succession and strategy. We do not take commission and we do not sell products.",
+            "primaryCta": {
+              "label": "Email us",
+              "href": "mailto:office@example.com"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "biz-dark-boardroom",
+              "alt": "A quiet boardroom at dusk",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-cpaap2",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Sale preparation",
+                "description": "Getting a company ready for sale over twelve to eighteen months.",
+                "price": ""
+              },
+              {
+                "title": "Succession",
+                "description": "Planning the handover of a family business.",
+                "price": ""
+              },
+              {
+                "title": "Board advisory",
+                "description": "An independent view for boards facing a large decision.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-cq8mpz",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Northgate Advisory",
+            "body": "Northgate is five senior advisers who have each run a business. We take a small number of engagements at a time and work on each one ourselves.",
+            "image": {
+              "stock": "pro-advisor-man",
+              "alt": "An adviser in conversation",
+              "caption": ""
+            },
+            "highlights": [
+              "Independent: no commission, no products",
+              "Senior advisers on every engagement",
+              "A written recommendation at the end"
+            ]
+          }
+        },
+        {
+          "id": "cta-crfx6q",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Email us",
+              "href": "mailto:office@example.com"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-csi3nm",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Northgate is five senior advisers who have each run a business. We take a small number of engagements at a time and work on each one ourselves.",
+            "image": {
+              "stock": "biz-boardroom",
+              "alt": "A board meeting",
+              "caption": ""
+            },
+            "highlights": [
+              "Independent: no commission, no products",
+              "Senior advisers on every engagement",
+              "A written recommendation at the end"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-ctiyox",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Sale preparation",
+                "description": "Getting a company ready for sale over twelve to eighteen months.",
+                "price": ""
+              },
+              {
+                "title": "Succession",
+                "description": "Planning the handover of a family business.",
+                "price": ""
+              },
+              {
+                "title": "Board advisory",
+                "description": "An independent view for boards facing a large decision.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Sale preparation",
+              "Succession",
+              "Board advisory"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-cvdy1v",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "pro-advisor-man",
+                "alt": "An adviser in conversation",
+                "caption": ""
+              },
+              {
+                "stock": "biz-boardroom",
+                "alt": "A board meeting",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-cwk350",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

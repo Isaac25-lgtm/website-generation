@@ -1,3 +1,4 @@
+import { stripOwnerPhotos } from "../../shared/owner-photos";
 import type { AppEnv, Ctx, SessionUser } from "../env";
 import { HttpError, baseUrl, now } from "../env";
 import type { CollectionView, ProductView, AssetMeta, RenderCtx } from "../../shared/render";
@@ -158,6 +159,8 @@ export async function uniqueSlug(env: AppEnv, rawBase: string): Promise<string> 
 }
 
 export async function saveDraft(env: AppEnv, projectId: string, doc: SiteDoc, revision: number, userId: string | null, note: string | null, checkpoint: boolean) {
+  // Owner-supplied preview photos are never allowed on a customer's site.
+  doc = stripOwnerPhotos(doc);
   const json = JSON.stringify(doc);
   const t = now();
   // Compare-and-set: the write lands only if the draft is still at the revision this save was based on, so two

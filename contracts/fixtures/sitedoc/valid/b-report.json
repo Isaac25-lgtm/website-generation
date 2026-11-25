@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-report",
+  "brand": {
+    "name": "Tideline Institute",
+    "tagline": "The state of coastal towns, in seven short chapters."
+  },
+  "seo": {
+    "title": "Tideline Institute — The state of coastal towns, in seven short chapte",
+    "description": "Research and an annual report on coastal communities.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#efe9dd",
+      "surface": "#e4dccb",
+      "text": "#262019",
+      "muted": "#6a5f4e",
+      "primary": "#262019",
+      "accent": "#8a4a24"
+    },
+    "fontHeading": "cormorant",
+    "fontBody": "lora",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "centered",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Plymouth",
+    "country": "United Kingdom",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-150k3rl",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Research institute · Plymouth",
+            "heading": "The state of coastal towns, in seven short chapters.",
+            "subheading": "Research and an annual report on coastal communities.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "obj-book-pages",
+              "alt": "Tideline Institute",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-151j4n",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Main stage",
+                "description": "Two days of talks from builders and artists.",
+                "price": "From $480",
+                "image": {
+                  "stock": "pro-speaker-man",
+                  "alt": "A speaker on stage",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Workshops",
+                "description": "Small hands-on sessions.",
+                "price": "From $120",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A workshop",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Partner programme",
+                "description": "For companies who want to take part.",
+                "price": "On request",
+                "image": {
+                  "stock": "biz-boardroom",
+                  "alt": "A partner meeting",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-152k8t0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Tideline Institute",
+            "body": "Tideline publishes research on the economy and health of coastal towns.",
+            "image": {
+              "stock": "stay-lobby",
+              "alt": "The venue",
+              "caption": ""
+            },
+            "highlights": [
+              "Two days, 3,000 guests",
+              "Sixty sessions",
+              "Held in a former factory"
+            ]
+          }
+        },
+        {
+          "id": "cta-1538izo",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-1544qxq",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Tideline publishes research on the economy and health of coastal towns.",
+            "image": {
+              "stock": "biz-team",
+              "alt": "Guests",
+              "caption": ""
+            },
+            "highlights": [
+              "Two days, 3,000 guests",
+              "Sixty sessions",
+              "Held in a former factory"
+            ]
+          }
+        },
+        {
+          "id": "faq-1554sao",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "When is the next edition?",
+                "a": "Every May. Dates are announced in January."
+              },
+              {
+                "q": "Are tickets refundable?",
+                "a": "Tickets can be transferred to another person at no charge."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-156d04x",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Main stage",
+                "description": "Two days of talks from builders and artists.",
+                "price": "From $480",
+                "image": {
+                  "stock": "pro-speaker-man",
+                  "alt": "A speaker on stage",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Workshops",
+                "description": "Small hands-on sessions.",
+                "price": "From $120",
+                "image": {
+                  "stock": "biz-workshop",
+                  "alt": "A workshop",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Partner programme",
+                "description": "For companies who want to take part.",
+                "price": "On request",
+                "image": {
+                  "stock": "biz-boardroom",
+                  "alt": "A partner meeting",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Main stage",
+              "Workshops",
+              "Partner programme"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-15866vt",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "stay-lobby",
+                "alt": "The venue",
+                "caption": ""
+              },
+              {
+                "stock": "biz-team",
+                "alt": "Guests",
+                "caption": ""
+              },
+              {
+                "stock": "pro-speaker-woman",
+                "alt": "A talk",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-1599i2m",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

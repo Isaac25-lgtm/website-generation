@@ -147,8 +147,8 @@ function buildBrief(host: string, method: InspirationBrief["method"], sig: RawSi
   if (!headingFams.length) uncertainties.push("Fonts could not be detected; template typography kept.");
   const fontHeading = mapFont(headingFams, mode === "dark" ? "space-grotesk" : "inter");
   let fontBody = mapFont(bodyFams, "inter");
-  if (["syne", "archivo-black", "cormorant", "instrument-serif", "dm-serif"].includes(fontBody)) fontBody = "inter";
-  const serif = ["fraunces", "playfair", "cormorant", "lora", "libre-baskerville", "dm-serif", "instrument-serif"].includes(fontHeading);
+  if (["syne", "archivo-black", "cormorant", "instrument-serif", "dm-serif", "bodoni-moda", "unbounded"].includes(fontBody)) fontBody = "inter";
+  const serif = ["fraunces", "playfair", "cormorant", "lora", "libre-baskerville", "dm-serif", "instrument-serif", "bodoni-moda", "newsreader", "libre-caslon"].includes(fontHeading);
   const mono = fontHeading === "jetbrains-mono";
 
   const medRadius = sig.radii.length ? sig.radii.sort((a, b) => a - b)[Math.floor(sig.radii.length / 2)] : 8;

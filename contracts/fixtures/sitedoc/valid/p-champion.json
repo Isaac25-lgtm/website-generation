@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-champion",
+  "brand": {
+    "name": "Rafa Ortega",
+    "tagline": "Fourteen summits, one rope team and a lot of patience."
+  },
+  "seo": {
+    "title": "Rafa Ortega — Fourteen summits, one rope team and a lot of patience.",
+    "description": "Fourteen summits, one rope team and a lot of patience.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0f1012",
+      "surface": "#18191c",
+      "text": "#f3f3f1",
+      "muted": "#a8a8a4",
+      "primary": "#d4ff3f",
+      "accent": "#d4ff3f"
+    },
+    "fontHeading": "archivo",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "team@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-ih4rjp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Mountaineer & speaker · Andorra",
+            "heading": "Fourteen summits, one rope team and a lot of patience.",
+            "subheading": "Rafa Ortega, Mountaineer & speaker",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "image": {
+              "stock": "safari-trek",
+              "alt": "Rafa Ortega on a ridge",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-iii7b",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Mountaineer, guide and speaker. I have climbed in the Himalaya, the Andes and the Alps, and I speak to teams about decisions under pressure.",
+            "image": {
+              "stock": "safari-trek",
+              "alt": "Rafa Ortega on a ridge",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-ij17od",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "achievements-ik492r",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "achievements",
+          "data": {
+            "heading": "Achievements & publications",
+            "items": [
+              {
+                "title": "Fourteenth summit (sample)",
+                "detail": "",
+                "year": "2025"
+              },
+              {
+                "title": "Mountain film festival award (sample)",
+                "detail": "Best short documentary",
+                "year": "2023"
+              },
+              {
+                "title": "First winter traverse (sample)",
+                "detail": "",
+                "year": "2021"
+              },
+              {
+                "title": "Guide certification",
+                "detail": "",
+                "year": "2016"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-ilkpn3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "photo-misty-mountains",
+                "alt": "Clouds over the forest",
+                "caption": ""
+              },
+              {
+                "stock": "safari-plains",
+                "alt": "Sunset on the plains",
+                "caption": ""
+              },
+              {
+                "stock": "safari-camp",
+                "alt": "Camp at night",
+                "caption": ""
+              },
+              {
+                "stock": "photo-teal-lake",
+                "alt": "A glacier lake",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-im1ynn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Andorra.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

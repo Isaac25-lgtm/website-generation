@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-technical",
+  "brand": {
+    "name": "Fluxion Power",
+    "tagline": "Compact power units for remote sites."
+  },
+  "seo": {
+    "title": "Fluxion Power — Compact power units for remote sites.",
+    "description": "Power units for clinics, towers and field stations.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#fafbfb",
+      "surface": "#eef1f2",
+      "text": "#101416",
+      "muted": "#59636a",
+      "primary": "#101416",
+      "accent": "#e5532b"
+    },
+    "fontHeading": "space-grotesk",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Seattle",
+    "country": "United States",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-z6jtmd",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Energy hardware · Seattle",
+            "heading": "Compact power units for remote sites.",
+            "subheading": "Power units for clinics, towers and field stations.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "make-tools",
+              "alt": "Fluxion Power",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-z7g0p4",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Engineering",
+                "description": "Design and testing of equipment and plant.",
+                "price": "",
+                "image": {
+                  "stock": "make-tools",
+                  "alt": "Workshop tools",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Manufacturing",
+                "description": "Small-batch production in our own facility.",
+                "price": "",
+                "image": {
+                  "stock": "make-bench",
+                  "alt": "A workbench",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Field service",
+                "description": "Installation, maintenance and support on site.",
+                "price": "",
+                "image": {
+                  "stock": "safari-drive",
+                  "alt": "A vehicle on a field site",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-z8e5fv",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Fluxion Power",
+            "body": "Fluxion designs and builds compact power units.",
+            "image": {
+              "stock": "biz-facade-bw",
+              "alt": "Our building",
+              "caption": ""
+            },
+            "highlights": [
+              "Own test facility",
+              "Certified engineers",
+              "Support in the field"
+            ]
+          }
+        },
+        {
+          "id": "cta-z9cd40",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-zae6cx",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Fluxion designs and builds compact power units.",
+            "image": {
+              "stock": "make-apron",
+              "alt": "An engineer at work",
+              "caption": ""
+            },
+            "highlights": [
+              "Own test facility",
+              "Certified engineers",
+              "Support in the field"
+            ]
+          }
+        },
+        {
+          "id": "faq-zb3z2h",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "Do you work outside your region?",
+                "a": "Yes, with partners in several countries."
+              },
+              {
+                "q": "Can you build to our specification?",
+                "a": "Yes. Send us drawings and we will quote within ten days."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-zc27w9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Engineering",
+                "description": "Design and testing of equipment and plant.",
+                "price": "",
+                "image": {
+                  "stock": "make-tools",
+                  "alt": "Workshop tools",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Manufacturing",
+                "description": "Small-batch production in our own facility.",
+                "price": "",
+                "image": {
+                  "stock": "make-bench",
+                  "alt": "A workbench",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Field service",
+                "description": "Installation, maintenance and support on site.",
+                "price": "",
+                "image": {
+                  "stock": "safari-drive",
+                  "alt": "A vehicle on a field site",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Engineering",
+              "Manufacturing",
+              "Field service"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-zeienu",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "biz-facade-bw",
+                "alt": "Our building",
+                "caption": ""
+              },
+              {
+                "stock": "make-apron",
+                "alt": "An engineer at work",
+                "caption": ""
+              },
+              {
+                "stock": "photo-misty-mountains",
+                "alt": "A field site",
+                "caption": ""
+              },
+              {
+                "stock": "biz-team",
+                "alt": "The team",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-zfbldn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

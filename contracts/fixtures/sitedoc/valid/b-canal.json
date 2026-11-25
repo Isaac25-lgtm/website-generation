@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-canal",
+  "brand": {
+    "name": "City Waters Museum",
+    "tagline": "Four centuries of canals"
+  },
+  "seo": {
+    "title": "City Waters Museum — Four centuries of canals",
+    "description": "Exhibitions, walking tours and school programmes about the city's canals.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f4efe6",
+      "surface": "#eae3d6",
+      "text": "#1c1a17",
+      "muted": "#5f5a50",
+      "primary": "#c42a1e",
+      "accent": "#c42a1e"
+    },
+    "fontHeading": "archivo",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "visit@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-kyghgw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Museum · Amsterdam",
+            "heading": "Four centuries of canals",
+            "subheading": "Exhibitions, walking tours and school programmes about the city's canals.",
+            "primaryCta": {
+              "label": "Find us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "photo-boat",
+              "alt": "A boat on still water",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-kzc2vo",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Visit",
+            "intro": "",
+            "items": [
+              {
+                "title": "The permanent exhibition",
+                "description": "Maps, models and boats.",
+                "price": "€16"
+              },
+              {
+                "title": "Canal walking tour",
+                "description": "Ninety minutes with a guide.",
+                "price": "€22"
+              },
+              {
+                "title": "School programmes",
+                "description": "Lessons for ages 8 to 16.",
+                "price": "On request"
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-l0e6fu",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About City Waters Museum",
+            "body": "City Waters Museum tells the story of the canals through maps, boats and the people who built them. Tours run daily from the museum.",
+            "image": {
+              "stock": "photo-teal-lake",
+              "alt": "Water",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-l131tl",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Find us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-l25t5n",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "City Waters Museum tells the story of the canals through maps, boats and the people who built them. Tours run daily from the museum.",
+            "image": {
+              "stock": "photo-kayak",
+              "alt": "From a boat",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-l3izho",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Visit",
+            "intro": "",
+            "items": [
+              {
+                "title": "The permanent exhibition",
+                "description": "Maps, models and boats.",
+                "price": "€16"
+              },
+              {
+                "title": "Canal walking tour",
+                "description": "Ninety minutes with a guide.",
+                "price": "€22"
+              },
+              {
+                "title": "School programmes",
+                "description": "Lessons for ages 8 to 16.",
+                "price": "On request"
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "The permanent exhibition",
+              "Canal walking tour",
+              "School programmes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-l5f4la",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "photo-teal-lake",
+                "alt": "Water",
+                "caption": ""
+              },
+              {
+                "stock": "photo-kayak",
+                "alt": "From a boat",
+                "caption": ""
+              },
+              {
+                "stock": "biz-facade-bw",
+                "alt": "Canal house",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-l6c2al",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        },
+        {
+          "id": "hours-l7heen",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hours",
+          "data": {
+            "heading": "Opening hours",
+            "rows": [
+              {
+                "days": "Daily",
+                "hours": "10:00 – 17:00"
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

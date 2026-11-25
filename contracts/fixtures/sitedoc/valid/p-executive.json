@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-executive",
+  "brand": {
+    "name": "Martin Hale",
+    "tagline": "Twenty-five years running operations for consumer brands, from factory floor to boardroom."
+  },
+  "seo": {
+    "title": "Martin Hale — Twenty-five years running operations for consumer brands",
+    "description": "Twenty-five years running operations for consumer brands, from factory floor to boardroom.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#141413",
+      "surface": "#1c1c1a",
+      "text": "#eeebe4",
+      "muted": "#a8a499",
+      "primary": "#c8a96a",
+      "accent": "#c8a96a"
+    },
+    "fontHeading": "cormorant",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "xl",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "office@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-bp3glr",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Chief Operating Officer · Zurich, Switzerland",
+            "heading": "Twenty-five years running operations for consumer brands, from factory floor to boardroom.",
+            "subheading": "Martin Hale, Chief Operating Officer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-exec-man",
+              "alt": "Martin Hale seated in his office",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-bq51tw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I have run supply chains, factories and customer operations for three consumer companies across Europe and Asia. I now sit on two boards and advise companies preparing for international expansion.",
+            "image": {
+              "stock": "pro-exec-man",
+              "alt": "Martin Hale seated in his office",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Asia manufacturing move",
+                "description": "Moved production for 1,200 products to two new plants without a stock-out.",
+                "role": "COO",
+                "period": "2019 — 2021",
+                "tags": [],
+                "images": []
+              },
+              {
+                "title": "Customer operations rebuild",
+                "description": "Brought service in-house across eight countries.",
+                "role": "COO",
+                "period": "2016 — 2018",
+                "tags": [],
+                "images": []
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-bsdpim",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-btiaee",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Board member",
+                "org": "Two consumer companies (fictional)",
+                "period": "2022 — now",
+                "location": "Zurich",
+                "description": ""
+              },
+              {
+                "role": "Chief Operating Officer",
+                "org": "Consumer brand (fictional)",
+                "period": "2014 — 2022",
+                "location": "Zurich",
+                "description": "Supply chain, manufacturing and customer operations."
+              }
+            ]
+          }
+        },
+        {
+          "id": "achievements-bukbj4",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "achievements",
+          "data": {
+            "heading": "Achievements & publications",
+            "items": [
+              {
+                "title": "Operations leader of the year (sample)",
+                "detail": "Industry association award",
+                "year": "2021"
+              },
+              {
+                "title": "Supply chain excellence (sample)",
+                "detail": "Manufacturing award, finalist",
+                "year": "2019"
+              },
+              {
+                "title": "Visiting fellow, business school (sample)",
+                "detail": "Operations programme",
+                "year": "2018"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-bv7l82",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Zurich, Switzerland.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

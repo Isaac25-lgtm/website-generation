@@ -71,14 +71,30 @@ test.describe("public marketing site", () => {
 
   test("template gallery and examples", async ({ page }) => {
     await page.goto("/templates");
-    await expect(page.getByText(/member templates unlock/)).toBeVisible();
+    await expect(page.getByText(/unlock when you/)).toBeVisible();
+    // Online store: category tabs, Signature first, the best six then "See more".
+    await page.getByRole("button", { name: "Online store" }).click();
+    await expect(page.getByRole("group", { name: "Filter by shop category" })).toBeVisible();
+    await expect(page.locator(".tpl-card")).toHaveCount(12);
+    await expect(page.getByText(/Showing 12 of \d+ templates/)).toBeVisible();
+    await expect(page.locator(".tpl-card").first().getByText("Signature")).toBeVisible();
+    await page.getByRole("button", { name: /^Jewellery/ }).click();
+    await expect(page.locator(".tpl-card").first()).toContainText("Lustre");
+    await page.getByRole("button", { name: "All shops" }).click();
+    await page.getByRole("button", { name: /See more templates/ }).click();
+    await expect(page.locator(".tpl-card")).toHaveCount(24);
     await page.waitForTimeout(2500);
     await page.screenshot({ path: `${SHOTS}/05-templates-public.png` });
     // Examples are shown only on the landing page, as pictures rather than links into the demo sites.
     await page.goto("/examples");
     await expect(page).toHaveURL(/\/(#made)?$/);
-    await expect(page.getByRole("heading", { name: "Made with ImprintSites" })).toBeVisible();
-    await expect(page.locator(".showcase a")).toHaveCount(0);
+    // The landing page shows the templates (owner, 25 Nov 2026): six Signature designs per kind of site, as pictures.
+    await expect(page.getByRole("heading", { name: "Our templates" })).toBeVisible();
+    await expect(page.locator(".show-tile")).toHaveCount(6);
+    await expect(page.locator(".show-tile a")).toHaveCount(0);
+    await page.locator(".show-tabs").getByRole("button", { name: "Online store" }).click();
+    await expect(page.locator(".show-tile")).toHaveCount(6);
+    await expect(page.getByRole("link", { name: "See all templates" })).toHaveAttribute("href", "/templates");
     await expect(page.getByRole("link", { name: /examples/i })).toHaveCount(0);
   });
 });
@@ -274,7 +290,8 @@ test.describe("builder flows (signed in)", () => {
     await page.screenshot({ path: `${SHOTS}/34-store-payments-step.png`, fullPage: true });
   });
 
-  test("all 18 templates render for members", async ({ page }) => {
+  test("every template renders for members", async ({ page }) => {
+    test.setTimeout(15 * 60_000); // ~90 templates, one page load each
     await page.goto("/signup");
     await page.getByLabel("Your name").fill("E2E Member");
     await page.getByLabel("Email").fill(`e2e-member-${Date.now().toString(36)}@test.example`);
@@ -284,14 +301,14 @@ test.describe("builder flows (signed in)", () => {
     await expect(page).toHaveURL(/\/dashboard/);
     const r = await page.request.get("/api/templates");
     const list = (await r.json()).templates as { id: string; type: string }[];
-    expect(list.length).toBe(18);
+    expect(list.length).toBeGreaterThanOrEqual(43);
     for (const t of list) {
       await page.goto(`/api/templates/${t.id}/preview/`);
       await expect(page.locator("h1").first()).toBeVisible();
       await page.screenshot({ path: `${SHOTS}/40-template-${t.id}.png` });
     }
     await page.setViewportSize(MOBILE);
-    for (const id of ["p-kernel", "b-savanna", "e-maison"]) {
+    for (const id of ["p-kernel", "b-savanna", "e-maison", "e-couture", "e-plain", "e-lustre", "e-loft"]) {
       await page.goto(`/api/templates/${id}/preview/`);
       await page.screenshot({ path: `${SHOTS}/41-template-${id}-mobile.png` });
     }

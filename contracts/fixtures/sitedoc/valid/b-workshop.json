@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-workshop",
+  "brand": {
+    "name": "Hollis & Grain",
+    "tagline": "Furniture and joinery, made to order in our workshop."
+  },
+  "seo": {
+    "title": "Hollis & Grain — Furniture and joinery, made to order in our workshop.",
+    "description": "Kitchens, tables, shelving and built-in furniture in solid wood.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f3eee4",
+      "surface": "#e9e1d2",
+      "text": "#2a211b",
+      "muted": "#64584b",
+      "primary": "#2a211b",
+      "accent": "#a23b26"
+    },
+    "fontHeading": "fraunces",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "workshop@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Bristol",
+    "country": "United Kingdom",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-d53vq7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Joinery · Bristol",
+            "heading": "Furniture and joinery, made to order in our workshop.",
+            "subheading": "Kitchens, tables, shelving and built-in furniture in solid wood.",
+            "primaryCta": {
+              "label": "Request a quote",
+              "href": "/services#quote"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "make-bench",
+              "alt": "A maker at the workbench",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-d6gzqq",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Kitchens",
+                "description": "Solid-wood kitchens, designed and fitted.",
+                "price": "",
+                "image": {
+                  "stock": "home-kitchen",
+                  "alt": "A solid-wood kitchen",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Tables",
+                "description": "Dining and coffee tables in oak, ash and walnut.",
+                "price": "",
+                "image": {
+                  "stock": "home-coffee-table",
+                  "alt": "A wooden coffee table",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Shelving and storage",
+                "description": "Built-in shelves, wardrobes and window seats.",
+                "price": "",
+                "image": {
+                  "stock": "home-pendant-shelves",
+                  "alt": "Built-in shelves",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-d7bw66",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Hollis & Grain",
+            "body": "Hollis & Grain is a workshop of six makers. We design every piece with the client, build it by hand and fit it ourselves.\n\nMost commissions take eight to twelve weeks.",
+            "image": {
+              "stock": "make-apron",
+              "alt": "A craftsman in a leather apron",
+              "caption": ""
+            },
+            "highlights": [
+              "Designed with you",
+              "Built by hand in Bristol",
+              "Fitted by the makers"
+            ]
+          }
+        },
+        {
+          "id": "cta-d8bzog",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Tell us what you need",
+            "body": "",
+            "cta": {
+              "label": "Request a quote",
+              "href": "/services#quote"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-d9kdwn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Hollis & Grain is a workshop of six makers. We design every piece with the client, build it by hand and fit it ourselves.\n\nMost commissions take eight to twelve weeks.",
+            "image": {
+              "stock": "make-tools",
+              "alt": "Hand tools on the workshop wall",
+              "caption": ""
+            },
+            "highlights": [
+              "Designed with you",
+              "Built by hand in Bristol",
+              "Fitted by the makers"
+            ]
+          }
+        },
+        {
+          "id": "faq-da64td",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "How long does a commission take?",
+                "a": "Usually eight to twelve weeks from the agreed design."
+              },
+              {
+                "q": "Do you work outside Bristol?",
+                "a": "Yes, across the south-west of England."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-db4w9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Kitchens",
+                "description": "Solid-wood kitchens, designed and fitted.",
+                "price": "",
+                "image": {
+                  "stock": "home-kitchen",
+                  "alt": "A solid-wood kitchen",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Tables",
+                "description": "Dining and coffee tables in oak, ash and walnut.",
+                "price": "",
+                "image": {
+                  "stock": "home-coffee-table",
+                  "alt": "A wooden coffee table",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Shelving and storage",
+                "description": "Built-in shelves, wardrobes and window seats.",
+                "price": "",
+                "image": {
+                  "stock": "home-pendant-shelves",
+                  "alt": "Built-in shelves",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Kitchens",
+              "Tables",
+              "Shelving and storage"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-ddd7zu",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "make-apron",
+                "alt": "A craftsman in a leather apron",
+                "caption": ""
+              },
+              {
+                "stock": "make-tools",
+                "alt": "Hand tools on the workshop wall",
+                "caption": ""
+              },
+              {
+                "stock": "home-kitchen",
+                "alt": "A finished kitchen",
+                "caption": ""
+              },
+              {
+                "stock": "home-coffee-table",
+                "alt": "A finished coffee table",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-de2eip",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

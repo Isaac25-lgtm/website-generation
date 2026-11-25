@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-library",
+  "brand": {
+    "name": "Katherine Doyle",
+    "tagline": "I help founders run their companies: planning, hiring and the meetings that matter."
+  },
+  "seo": {
+    "title": "Katherine Doyle — I help founders run their companies: planning, hirin",
+    "description": "I help founders run their companies: planning, hiring and the meetings that matter.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#efe8da",
+      "surface": "#e5dcc9",
+      "text": "#2a2418",
+      "muted": "#6a5f4b",
+      "primary": "#9c2b20",
+      "accent": "#2f4e6e"
+    },
+    "fontHeading": "libre-baskerville",
+    "fontBody": "work-sans",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "md",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "katherine@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-gjjkwt",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Chief of staff · Dublin, Ireland",
+            "heading": "I help founders run their companies: planning, hiring and the meetings that matter.",
+            "subheading": "Katherine Doyle, Chief of staff",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        },
+        {
+          "id": "about-gk2kik",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Chief of staff to three founders over ten years, in software, retail and healthcare.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "cta-gl9ozv",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-gmgn8j",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Chief of staff",
+                "org": "Health company (fictional)",
+                "period": "2023 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Chief of staff",
+                "org": "Retail group (fictional)",
+                "period": "2019 — 2023",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Operations lead",
+                "org": "Software company (fictional)",
+                "period": "2015 — 2019",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-gngo99",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Dublin, Ireland.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

@@ -7,7 +7,7 @@ import { getBlob } from "../lib/storage";
 import { ensureDemos } from "../seed";
 import { routeOrderView } from "./public";
 import { parseSiteDoc } from "../../shared/schema";
-import { getTemplate, TEMPLATE_MAP, TEMPLATES } from "../../shared/templates";
+import { getTemplate, STORE_CATEGORIES, TEMPLATE_MAP, TEMPLATES } from "../../shared/templates";
 import { renderSite } from "../../shared/render";
 import { PERSONAS, demoProductViews, PUBLIC_DEMOS } from "../../shared/demo";
 import { generateSiteDoc } from "../../shared/generate";
@@ -98,14 +98,17 @@ sites.get("/api/templates", (c) => {
     templates: TEMPLATES.map((t) => ({
       id: t.id, name: t.name, type: t.type, tier: t.tier, styles: t.styles, industries: t.industries, description: t.description,
       colors: t.theme.colors, mode: t.theme.mode, fontHeading: t.theme.fontHeading, locked: t.tier === "member" && !signedIn,
+      category: t.category ?? null, rank: t.rank ?? "standard", layout: t.layout ?? null,
     })),
+    categories: STORE_CATEGORIES,
   });
 });
 
 async function serveTemplatePreview(c: Ctx) {
   const tpl = TEMPLATE_MAP[c.req.param("tid")!];
   if (!tpl) return c.notFound();
-  if (tpl.tier === "member" && !c.get("user")) {
+  // Static thumbnails (gallery cards) are visible to everyone; the interactive preview of a member template needs sign-in.
+  if (tpl.tier === "member" && !c.get("user") && new URL(c.req.url).searchParams.get("static") !== "1") {
     return c.html(`<!doctype html><meta charset="utf-8"><body style="font-family:system-ui;display:grid;place-items:center;min-height:95vh;background:#fafafa;color:#171717;margin:0"><div style="text-align:center;padding:2rem"><h1 style="font-size:1.3rem">Sign in to unlock “${tpl.name}”</h1><p style="opacity:.75">Members get access to the full template library.</p></div></body>`, 200);
   }
   const persona = PERSONAS[tpl.id];

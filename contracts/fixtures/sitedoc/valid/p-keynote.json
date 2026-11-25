@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-keynote",
+  "brand": {
+    "name": "Dr. Samuel Mwangi",
+    "tagline": "I study how people across Africa use technology, then help boards decide what to do about it."
+  },
+  "seo": {
+    "title": "Dr. Samuel Mwangi — I study how people across Africa use technology, t",
+    "description": "I study how people across Africa use technology, then help boards decide what to do about it.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f6f3ee",
+      "text": "#161616",
+      "muted": "#5c5a56",
+      "primary": "#7a1f2b",
+      "accent": "#7a1f2b"
+    },
+    "fontHeading": "newsreader",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "talks@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-fii92s",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Speaker & researcher · Nairobi, Kenya",
+            "heading": "I study how people across Africa use technology, then help boards decide what to do about it.",
+            "subheading": "Dr. Samuel Mwangi, Speaker & researcher",
+            "primaryCta": {
+              "label": "Book a call",
+              "href": "https://example.com/book"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-older-man",
+              "alt": "Dr. Samuel Mwangi",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-fj6w1s",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Researcher and speaker on mobile money, social media and artificial intelligence in emerging markets. I advise boards and give around twenty talks a year.",
+            "image": {
+              "stock": "pro-older-man",
+              "alt": "Dr. Samuel Mwangi",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Mobile money and trust",
+                "description": "A 40-minute talk for banking leaders.",
+                "role": "Keynote",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "pro-speaker-man",
+                    "alt": "On stage",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Board briefing on AI",
+                "description": "Half-day sessions for boards.",
+                "role": "Workshop",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "biz-boardroom",
+                    "alt": "Boardroom",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-fl3rlt",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "achievements-fmd5w7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "achievements",
+          "data": {
+            "heading": "Achievements & publications",
+            "items": [
+              {
+                "title": "Research fellowship (sample)",
+                "detail": "Two-year fellowship",
+                "year": "2024"
+              },
+              {
+                "title": "Book on mobile money (sample)",
+                "detail": "Published",
+                "year": "2022"
+              },
+              {
+                "title": "Conference keynote (sample)",
+                "detail": "",
+                "year": "2021"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-fnish2",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Nairobi, Kenya.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

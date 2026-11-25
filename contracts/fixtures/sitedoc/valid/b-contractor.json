@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-contractor",
+  "brand": {
+    "name": "Ridgeline Engineering",
+    "tagline": "Engineering, fabrication and construction services"
+  },
+  "seo": {
+    "title": "Ridgeline Engineering — Engineering, fabrication and construction serv",
+    "description": "Civil, mechanical, fabrication and industrial support for factories, mills and plants across the region.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#ffffff",
+      "surface": "#f3f4f6",
+      "text": "#121417",
+      "muted": "#565b63",
+      "primary": "#c8231a",
+      "accent": "#e0a800"
+    },
+    "fontHeading": "manrope",
+    "fontBody": "manrope",
+    "radius": "md",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "split",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "projects@example.com",
+    "phone": "+1 713 555 0148",
+    "whatsapp": "",
+    "address": "",
+    "city": "Houston",
+    "country": "United States",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-lh2ngg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Engineering contractor · Houston",
+            "heading": "Engineering, fabrication and construction services",
+            "subheading": "Civil, mechanical, fabrication and industrial support for factories, mills and plants across the region.",
+            "primaryCta": {
+              "label": "Call +1 713 555 0148",
+              "href": "tel:+17135550148"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "owner-ats-lifting",
+              "alt": "A crane lifting steelwork on site",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-lihjqn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Civil and construction",
+                "description": "Foundations, ground beams, column bases and factory building works.",
+                "price": "",
+                "image": {
+                  "stock": "owner-ats-civil",
+                  "alt": "Civil works",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Mechanical and plant installation",
+                "description": "Machine installation and plant assembly.",
+                "price": "",
+                "image": {
+                  "stock": "owner-ats-plant",
+                  "alt": "Plant installation",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Structural steel and warehouses",
+                "description": "Steel erection, sheeting and warehouse buildings.",
+                "price": "",
+                "image": {
+                  "stock": "owner-ats-steel",
+                  "alt": "Structural steel",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Process pipework",
+                "description": "Mild and stainless-steel process pipework.",
+                "price": "",
+                "image": {
+                  "stock": "owner-ats-pipework",
+                  "alt": "Pipework",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Storage tanks and silos",
+                "description": "Fabrication and installation of storage tanks.",
+                "price": "",
+                "image": {
+                  "stock": "owner-ats-silos",
+                  "alt": "Silos",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-ljfcej",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Ridgeline Engineering",
+            "body": "Ridgeline Engineering builds and installs the structures and equipment that industrial sites depend on, from foundations to commissioning.",
+            "image": {
+              "stock": "owner-ats-tower",
+              "alt": "Tower erection",
+              "caption": ""
+            },
+            "highlights": [
+              "Own workshop and lifting equipment",
+              "Certified welders",
+              "Safety-first sites"
+            ]
+          }
+        },
+        {
+          "id": "cta-lkbdp7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Call +1 713 555 0148",
+              "href": "tel:+17135550148"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-llxm7",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Ridgeline Engineering builds and installs the structures and equipment that industrial sites depend on, from foundations to commissioning.",
+            "image": {
+              "stock": "owner-ats-process",
+              "alt": "Process plant",
+              "caption": ""
+            },
+            "highlights": [
+              "Own workshop and lifting equipment",
+              "Certified welders",
+              "Safety-first sites"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-lm8nwh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Civil and construction",
+                "description": "Foundations, ground beams, column bases and factory building works.",
+                "price": "",
+                "image": {
+                  "stock": "owner-ats-civil",
+                  "alt": "Civil works",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Mechanical and plant installation",
+                "description": "Machine installation and plant assembly.",
+                "price": "",
+                "image": {
+                  "stock": "owner-ats-plant",
+                  "alt": "Plant installation",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Structural steel and warehouses",
+                "description": "Steel erection, sheeting and warehouse buildings.",
+                "price": "",
+                "image": {
+                  "stock": "owner-ats-steel",
+                  "alt": "Structural steel",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Process pipework",
+                "description": "Mild and stainless-steel process pipework.",
+                "price": "",
+                "image": {
+                  "stock": "owner-ats-pipework",
+                  "alt": "Pipework",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Storage tanks and silos",
+                "description": "Fabrication and installation of storage tanks.",
+                "price": "",
+                "image": {
+                  "stock": "owner-ats-silos",
+                  "alt": "Silos",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Civil and construction",
+              "Mechanical and plant installation",
+              "Structural steel and warehouses",
+              "Process pipework",
+              "Storage tanks and silos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-loe90r",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "owner-ats-tower",
+                "alt": "Tower erection",
+                "caption": ""
+              },
+              {
+                "stock": "owner-ats-process",
+                "alt": "Process plant",
+                "caption": ""
+              },
+              {
+                "stock": "owner-ats-stacks",
+                "alt": "Insulated stacks",
+                "caption": ""
+              },
+              {
+                "stock": "owner-ats-pumps",
+                "alt": "Pumps and pipework",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-lp8lfr",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

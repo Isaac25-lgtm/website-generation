@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-portrait",
+  "brand": {
+    "name": "Carla Benedetti",
+    "tagline": "Costume design for theatre, film and opera."
+  },
+  "seo": {
+    "title": "Carla Benedetti — Costume design for theatre, film and opera.",
+    "description": "Costume design for theatre, film and opera.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f6f2ec",
+      "surface": "#ece5da",
+      "text": "#221c16",
+      "muted": "#655a4e",
+      "primary": "#221c16",
+      "accent": "#8c6b3f"
+    },
+    "fontHeading": "cormorant",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "centered",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-mp8bux",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Costume designer · Turin",
+            "heading": "Costume design for theatre, film and opera.",
+            "subheading": "Carla Benedetti, Costume designer",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-city-woman",
+              "alt": "Carla Benedetti",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-mqadzu",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Costume designer with twenty productions across Europe.",
+            "image": {
+              "stock": "pro-city-woman",
+              "alt": "Carla Benedetti",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Booking app redesign",
+                "description": "Cut the booking flow from nine steps to four.",
+                "role": "Lead designer",
+                "period": "2025",
+                "tags": [
+                  "Product",
+                  "Mobile"
+                ],
+                "images": [
+                  {
+                    "stock": "work-wireframes",
+                    "alt": "Wireframes on paper",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Identity for a coffee roaster",
+                "description": "Name, logo and packaging for a new roastery.",
+                "role": "Designer",
+                "period": "2024",
+                "tags": [
+                  "Brand"
+                ],
+                "images": [
+                  {
+                    "stock": "work-sketches",
+                    "alt": "Logo sketches",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Design system",
+                "description": "Components shared by eight product teams.",
+                "role": "Design lead",
+                "period": "2023",
+                "tags": [
+                  "Systems"
+                ],
+                "images": [
+                  {
+                    "stock": "work-pattern",
+                    "alt": "A geometric pattern",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-msk3p9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-mtldnw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Senior designer",
+                "org": "Product studio (fictional)",
+                "period": "2021 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Designer",
+                "org": "Agency (fictional)",
+                "period": "2016 — 2021",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-mubnir",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "Product design",
+                  "Brand identity",
+                  "Prototyping",
+                  "Design systems",
+                  "Workshops"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-mv47y3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Turin.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

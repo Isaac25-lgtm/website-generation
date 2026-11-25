@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-venture",
+  "brand": {
+    "name": "Lantern Ventures",
+    "tagline": "We back founders building in hard industries."
+  },
+  "seo": {
+    "title": "Lantern Ventures — We back founders building in hard industries.",
+    "description": "Early investment in industrial, energy and health companies.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0f0f10",
+      "surface": "#18181a",
+      "text": "#efede8",
+      "muted": "#a6a39c",
+      "primary": "#efede8",
+      "accent": "#c9b28a"
+    },
+    "fontHeading": "instrument-serif",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "San Francisco",
+    "country": "United States",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-12shv2s",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Venture capital · San Francisco",
+            "heading": "We back founders building in hard industries.",
+            "subheading": "Early investment in industrial, energy and health companies.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "biz-boardroom",
+              "alt": "Lantern Ventures",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-12t8z59",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Long-term investment",
+                "description": "Patient capital for profitable private companies.",
+                "price": "",
+                "image": {
+                  "stock": "biz-dark-boardroom",
+                  "alt": "A boardroom",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Property",
+                "description": "Residential and commercial buildings held for decades.",
+                "price": "",
+                "image": {
+                  "stock": "biz-towers",
+                  "alt": "Office towers",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Family governance",
+                "description": "Structures that help families decide together.",
+                "price": "",
+                "image": {
+                  "stock": "biz-window-table",
+                  "alt": "A meeting by a window",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-12u9ioa",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Lantern Ventures",
+            "body": "Lantern invests at the first round and stays for the long run.",
+            "image": {
+              "stock": "biz-boardroom",
+              "alt": "Boardroom",
+              "caption": ""
+            },
+            "highlights": [
+              "Independent and family-owned",
+              "Ten-year holding periods",
+              "No outside funds"
+            ]
+          }
+        },
+        {
+          "id": "cta-12v345q",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-12wcssi",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Lantern invests at the first round and stays for the long run.",
+            "image": {
+              "stock": "biz-review",
+              "alt": "Reviewing figures",
+              "caption": ""
+            },
+            "highlights": [
+              "Independent and family-owned",
+              "Ten-year holding periods",
+              "No outside funds"
+            ]
+          }
+        },
+        {
+          "id": "faq-12x4h1k",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "Do you take outside money?",
+                "a": "No. We invest only family capital."
+              },
+              {
+                "q": "What size of company do you back?",
+                "a": "Profitable companies with revenue between two and fifty million."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-12yc6fa",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Long-term investment",
+                "description": "Patient capital for profitable private companies.",
+                "price": "",
+                "image": {
+                  "stock": "biz-dark-boardroom",
+                  "alt": "A boardroom",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Property",
+                "description": "Residential and commercial buildings held for decades.",
+                "price": "",
+                "image": {
+                  "stock": "biz-towers",
+                  "alt": "Office towers",
+                  "caption": ""
+                }
+              },
+              {
+                "title": "Family governance",
+                "description": "Structures that help families decide together.",
+                "price": "",
+                "image": {
+                  "stock": "biz-window-table",
+                  "alt": "A meeting by a window",
+                  "caption": ""
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "quote",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "quote",
+          "data": {
+            "heading": "Request a quote",
+            "intro": "Tell us about your needs and we'll get back to you.",
+            "services": [
+              "Long-term investment",
+              "Property",
+              "Family governance"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-1308cuz",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "biz-boardroom",
+                "alt": "Boardroom",
+                "caption": ""
+              },
+              {
+                "stock": "biz-review",
+                "alt": "Reviewing figures",
+                "caption": ""
+              },
+              {
+                "stock": "biz-office",
+                "alt": "Office",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-131kpd8",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

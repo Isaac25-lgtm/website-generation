@@ -89,3 +89,89 @@ Screenshots are in `tests/e2e/screenshots/prod/`. The test support ticket was de
   - local, 4 rounds: unit 59/59, integration 36/36, Playwright 11/11
   - production: smoke 36/36, Playwright full suite (including the signed-in builder flows) 11/11
 - Test data was removed from production afterwards. Production holds only the demo-content account and the 3 demo sites.
+
+## 24 November 2026: Signature templates (version 80b0606a)
+
+- **41 new Signature templates** (59 in total):
+  - 25 shop templates on 4 layouts: Editorial, Quiet, Fine Jewellery, Interiors.
+  - 8 personal templates: Statement, Prose, Marquee, Spotlight, Dossier, Ledger, Executive, Laureate.
+  - 8 business templates: Chambers, Capital, Counsel, Quorum, Workshop, Bench, Retreat, Coast.
+- **Template gallery:** shop category tabs, Signature templates first, six shown at a time with "See more". Member templates now show static previews.
+- **No-AI-slop rule enforced** (`src/shared/quality.ts`):
+  - tests fail on slop in any template or demo copy;
+  - AI copy polish discards suggestions that contain slop.
+- **Photos:** 87 new CC0 StockSnap photos, credited in `public/stock/CREDITS.txt`.
+- **Verification:**
+  - unit 408/408;
+  - integration 61/61 (local);
+  - Playwright 12/12 (local and production);
+  - production smoke test 39/39;
+  - test data removed with `scripts/cleanup-test-data.sql`.
+
+## 25 November 2026: personal Signature templates (version 6afdefaa)
+
+- **30 new personal templates**, one for each five-star reference site, each with its own hero design: Founder, Essay, Chapters, Tiles, Warm Bento, Growth, Hello, Contour, Keynote, Creator, Shapes, Iconline, Author, Split Name, Prologue, Library Card, Poem, Cinema, Gazette, Boarding Pass, Badge, Deco, Slides, Roles, Oh Hi, Studio, Landscape, Bento, Champion and Book Cover. That brings the total to 89 templates, 44 of them personal.
+- **Gallery:** shows 12 at a time with "Showing X of Y" and "See more".
+- **Photos:** 25 new CC0 photos.
+- **Verification:**
+  - unit 588/588;
+  - integration 61/61 (local);
+  - Playwright 12/12 (local and production);
+  - production smoke test 39/39;
+  - test data removed with `scripts/cleanup-test-data.sql`.
+
+## 25 November 2026: business Signature templates (version ba246f55)
+
+- **10 new business templates**, one per five-star business reference: Skyline, Expedition, Atlas, Agency, Lettering, Catalogue, Monolith, Canal, Real Work and Contractor. That brings the total to 99 templates, 24 of them business.
+- **Owner-supplied photos** from the owner's ATS and Motion Imprints sites appear only in template previews. `saveDraft` strips them from every customer draft, and a unit test checks this.
+- **Verification:**
+  - unit 650/650;
+  - integration 61/61 (local);
+  - Playwright 12/12 (local and production);
+  - production smoke test 39/39;
+  - test data removed.
+
+## 25 November 2026: premium personal templates (version b882096c)
+
+- **49 premium personal templates**, one per four-star reference site, each with its own hero design. That brings the total to 148 templates, 93 of them personal.
+- **Privacy fix:** sample names and taglines that echoed the source sites' owners or wording were replaced across the earlier batches too. A new unit test blocks any word taken from a source domain or owner name.
+- **Verification:**
+  - unit 896/896;
+  - integration 61/61 (local);
+  - Playwright 12/12 (local) and 11/12 on production. The production run hit the signup rate limit, so all 148 live previews were checked directly instead: every one loads with its content;
+  - production smoke test 39/39;
+  - test data removed.
+
+## 25 November 2026: premium business templates (version 702fd1f6)
+
+- **39 premium business templates**, one per four-star business reference. That brings the total to 187 templates: 93 personal, 63 business and 31 shop.
+- **Verification:**
+  - unit 1091/1091;
+  - integration 61/61 (local);
+  - Playwright 12/12 (local and production);
+  - production smoke test 39/39;
+  - all 187 live previews checked;
+  - test data removed.
+
+## 25 November 2026: home page shows the templates (version db4fc9d8)
+
+- **"Made with ImprintSites" replaced** by "Our templates": six live, non-clickable previews of the Signature templates per kind of site (Personal, Business, Online store tabs), a count, and "See all templates". The anchor `#made` still works, so old `/examples` links land here.
+- **Verification:**
+  - unit 1091/1091;
+  - integration 61/61;
+  - Playwright 12/12 (local) plus the production run;
+  - production smoke test 39/39;
+  - test data removed.
+
+## 25 November 2026: shop batch 2 (version dc47a6ac)
+
+- **36 shop templates**, one per five-star storefront in Beauty (13), Bags and eyewear (7), Footwear (6), Stationery (4), Fragrance (2), Wellness (2), Kids (1) and Streetwear (1). That brings the total to 223 templates: 93 personal, 63 business and 67 shop.
+- **Three new storefront layouts:** Hero Object, Lifestyle and Wordmark, with the heroes objecthero, sunlit and wordgrid. There's also a new Wellness category tab.
+- **Photos:** 52 new CC0 product photos. Shots showing other brands' logos or bottles were left out.
+- **Verification:**
+  - unit 1307/1307;
+  - integration 61/61;
+  - Playwright 12/12 (local) plus the production run;
+  - production smoke test 39/39;
+  - all 223 live previews checked;
+  - test data removed.

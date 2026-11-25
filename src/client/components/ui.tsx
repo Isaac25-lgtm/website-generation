@@ -134,8 +134,8 @@ export function SiteThumb({ src, title, locked, eager }: { src: string; title: s
   }, []);
   return (
     <div className="thumb" ref={box}>
-      {!locked && <iframe src={`${src}${src.includes("?") ? "&" : "?"}static=1`} title={title} loading={eager ? "eager" : "lazy"} tabIndex={-1} aria-hidden="true" style={{ transform: `scale(${scale})` }} sandbox="allow-same-origin" />}
-      {locked && <div className="lock">{locked}</div>}
+      <iframe src={`${src}${src.includes("?") ? "&" : "?"}static=1`} title={title} loading={eager ? "eager" : "lazy"} tabIndex={-1} aria-hidden="true" scrolling="no" style={{ transform: `scale(${scale})` }} sandbox="allow-same-origin" />
+      {locked && <div className="lock-tag">{locked}</div>}
     </div>
   );
 }

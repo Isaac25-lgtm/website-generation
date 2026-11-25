@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-shapes",
+  "brand": {
+    "name": "Leila Haddad",
+    "tagline": "Brand advice for beauty, wellness and design companies at the moment they grow up."
+  },
+  "seo": {
+    "title": "Leila Haddad — Brand advice for beauty, wellness and design companies ",
+    "description": "Brand advice for beauty, wellness and design companies at the moment they grow up.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f4f1ec",
+      "surface": "#e9e4dc",
+      "text": "#121212",
+      "muted": "#5e5a54",
+      "primary": "#121212",
+      "accent": "#121212"
+    },
+    "fontHeading": "unbounded",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "leila@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-ft3g9l",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Advisor · Dubai",
+            "heading": "Brand advice for beauty, wellness and design companies at the moment they grow up.",
+            "subheading": "Leila Haddad, Advisor",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            }
+          }
+        },
+        {
+          "id": "about-fugydn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I advise founders on positioning, naming and launches, usually in the year before a big retail deal or a new market.",
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Repositioning a skincare line",
+                "description": "From pharmacy shelf to department store.",
+                "role": "Advisor",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "flower-tulip",
+                    "alt": "A single tulip",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Homeware launch",
+                "description": "Naming and launch plan for a ceramics brand.",
+                "role": "Advisor",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "home-bud-vases",
+                    "alt": "Bud vases",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Jewellery expansion",
+                "description": "Entering two new markets.",
+                "role": "Advisor",
+                "period": "2024",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "jewel-pendant",
+                    "alt": "A pendant",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-fw4spm",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-fx8cb0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Dubai.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

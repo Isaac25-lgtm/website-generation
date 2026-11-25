@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-desktop",
+  "brand": {
+    "name": "Femi Adewale",
+    "tagline": "Art direction for record labels, fashion and film."
+  },
+  "seo": {
+    "title": "Femi Adewale — Art direction for record labels, fashion and film.",
+    "description": "Art direction for record labels, fashion and film.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f3efe6",
+      "surface": "#e9e3d6",
+      "text": "#1c1b18",
+      "muted": "#5f5a50",
+      "primary": "#2a6f97",
+      "accent": "#2a6f97"
+    },
+    "fontHeading": "space-grotesk",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "hello@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-lqh3vl",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Art director · Ibadan",
+            "heading": "Art direction for record labels, fashion and film.",
+            "subheading": "Femi Adewale, Art director",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-young-man",
+              "alt": "Femi Adewale",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-lrgz7n",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "I art-direct campaigns and album artwork, and I keep my CV one click away.",
+            "image": {
+              "stock": "pro-young-man",
+              "alt": "Femi Adewale",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Booking app redesign",
+                "description": "Cut the booking flow from nine steps to four.",
+                "role": "Lead designer",
+                "period": "2025",
+                "tags": [
+                  "Product",
+                  "Mobile"
+                ],
+                "images": [
+                  {
+                    "stock": "work-wireframes",
+                    "alt": "Wireframes on paper",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Identity for a coffee roaster",
+                "description": "Name, logo and packaging for a new roastery.",
+                "role": "Designer",
+                "period": "2024",
+                "tags": [
+                  "Brand"
+                ],
+                "images": [
+                  {
+                    "stock": "work-sketches",
+                    "alt": "Logo sketches",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Design system",
+                "description": "Components shared by eight product teams.",
+                "role": "Design lead",
+                "period": "2023",
+                "tags": [
+                  "Systems"
+                ],
+                "images": [
+                  {
+                    "stock": "work-pattern",
+                    "alt": "A geometric pattern",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-ltgkaf",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-lu6f50",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Senior designer",
+                "org": "Product studio (fictional)",
+                "period": "2021 — now",
+                "location": "",
+                "description": ""
+              },
+              {
+                "role": "Designer",
+                "org": "Agency (fictional)",
+                "period": "2016 — 2021",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-lvbpwi",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "Product design",
+                  "Brand identity",
+                  "Prototyping",
+                  "Design systems",
+                  "Workshops"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-lwtga",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Ibadan.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

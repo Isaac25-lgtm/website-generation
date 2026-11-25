@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "type": "personal",
+  "templateId": "p-tiles",
+  "brand": {
+    "name": "Tobias Lund",
+    "tagline": "I design systems that small teams can run, and I speak about how to keep them simple."
+  },
+  "seo": {
+    "title": "Tobias Lund — I design systems that small teams can run, and I speak a",
+    "description": "I design systems that small teams can run, and I speak about how to keep them simple.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#0b0b0b",
+      "surface": "#151515",
+      "text": "#f1f1ee",
+      "muted": "#a3a39e",
+      "primary": "#2e6b4c",
+      "accent": "#5fa77a"
+    },
+    "fontHeading": "manrope",
+    "fontBody": "inter",
+    "radius": "lg",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "tobias@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-epdb46",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Software architect · Copenhagen, Denmark",
+            "heading": "I design systems that small teams can run, and I speak about how to keep them simple.",
+            "subheading": "Tobias Lund, Software architect",
+            "primaryCta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "See my work",
+              "href": "/#work"
+            },
+            "image": {
+              "stock": "pro-coffee-man",
+              "alt": "Tobias Lund holding a coffee",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "about-eq7arw",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About me",
+            "body": "Software architect with fifteen years in logistics and healthcare. I help teams choose fewer, better tools and I speak at engineering conferences.",
+            "image": {
+              "stock": "pro-coffee-man",
+              "alt": "Tobias Lund holding a coffee",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "work",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "projects",
+          "data": {
+            "heading": "Selected work",
+            "intro": "",
+            "items": [
+              {
+                "title": "Hospital scheduling platform",
+                "description": "Replaced four systems with one service and a shared calendar.",
+                "role": "Architect",
+                "period": "2025",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "biz-boardroom",
+                    "alt": "Planning session",
+                    "caption": ""
+                  }
+                ]
+              },
+              {
+                "title": "Warehouse routing",
+                "description": "Cut picking routes by a fifth.",
+                "role": "Architect",
+                "period": "2023",
+                "tags": [],
+                "images": [
+                  {
+                    "stock": "biz-glass",
+                    "alt": "Office building",
+                    "caption": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "cta-esiohc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Let's work together",
+            "body": "I'd love to hear about your project.",
+            "cta": {
+              "label": "Get in touch",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "slug": "experience",
+      "title": "Experience",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "experience-et5wui",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "experience",
+          "data": {
+            "heading": "Experience",
+            "items": [
+              {
+                "role": "Principal architect",
+                "org": "Logistics company (fictional)",
+                "period": "2019 — now",
+                "location": "",
+                "description": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "skills-eugkuh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "skills",
+          "data": {
+            "heading": "Skills",
+            "groups": [
+              {
+                "name": "",
+                "items": [
+                  "System design",
+                  "Go",
+                  "PostgreSQL",
+                  "Event sourcing",
+                  "Public speaking"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-ev9wzt",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Get in touch",
+            "intro": "Based in Copenhagen, Denmark.",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

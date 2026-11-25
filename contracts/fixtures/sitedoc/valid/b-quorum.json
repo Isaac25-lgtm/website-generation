@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "type": "business",
+  "templateId": "b-quorum",
+  "brand": {
+    "name": "Fernhill Partners",
+    "tagline": "Financial advice for families, across generations."
+  },
+  "seo": {
+    "title": "Fernhill Partners — Financial advice for families, across generations.",
+    "description": "Independent financial planning, investment and estate advice for families and their businesses.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "bg": "#10201a",
+      "surface": "#172a22",
+      "text": "#eef1ec",
+      "muted": "#a5b3aa",
+      "primary": "#d8c9a3",
+      "accent": "#d8c9a3"
+    },
+    "fontHeading": "fraunces",
+    "fontBody": "inter",
+    "radius": "sm",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "families@example.com",
+    "phone": "+44 131 496 0000",
+    "whatsapp": "",
+    "address": "",
+    "city": "Edinburgh",
+    "country": "United Kingdom",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-cxgbny",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Financial advice · Edinburgh",
+            "heading": "Financial advice for families, across generations.",
+            "subheading": "Independent financial planning, investment and estate advice for families and their businesses.",
+            "primaryCta": {
+              "label": "Contact us",
+              "href": "/contact"
+            },
+            "secondaryCta": {
+              "label": "Our services",
+              "href": "/services"
+            },
+            "image": {
+              "stock": "stay-lobby",
+              "alt": "A calm reception room",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "services-cy89dp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "What we do",
+            "intro": "",
+            "items": [
+              {
+                "title": "Financial planning",
+                "description": "A written plan for income, savings and retirement.",
+                "price": ""
+              },
+              {
+                "title": "Investment management",
+                "description": "Diversified portfolios, reviewed twice a year.",
+                "price": ""
+              },
+              {
+                "title": "Estate planning",
+                "description": "Wills, trusts and gifts, with your solicitor.",
+                "price": ""
+              }
+            ]
+          }
+        },
+        {
+          "id": "about-czjeqp",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Fernhill Partners",
+            "body": "Fernhill Partners advises around ninety families. Fees are fixed and published, and we meet every client at least twice a year.",
+            "image": {
+              "stock": "biz-window-table",
+              "alt": "A meeting by a window",
+              "caption": ""
+            },
+            "highlights": [
+              "Fixed, published fees",
+              "Two reviews a year as standard",
+              "Advice for every generation"
+            ]
+          }
+        },
+        {
+          "id": "cta-d0c5q",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "cta",
+          "data": {
+            "heading": "Ready when you are",
+            "body": "",
+            "cta": {
+              "label": "Contact us",
+              "href": "/contact"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-d19spf",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "split",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Fernhill Partners advises around ninety families. Fees are fixed and published, and we meet every client at least twice a year.",
+            "image": {
+              "stock": "pro-advisor-man",
+              "alt": "An adviser",
+              "caption": ""
+            },
+            "highlights": [
+              "Fixed, published fees",
+              "Two reviews a year as standard",
+              "Advice for every generation"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "slug": "services",
+      "title": "Services",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "services-d26plg",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "services",
+          "data": {
+            "heading": "Services",
+            "intro": "",
+            "items": [
+              {
+                "title": "Financial planning",
+                "description": "A written plan for income, savings and retirement.",
+                "price": ""
+              },
+              {
+                "title": "Investment management",
+                "description": "Diversified portfolios, reviewed twice a year.",
+                "price": ""
+              },
+              {
+                "title": "Estate planning",
+                "description": "Wills, trusts and gifts, with your solicitor.",
+                "price": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "slug": "gallery",
+      "title": "Gallery",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "gallery-d3gj7w",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "gallery",
+          "data": {
+            "heading": "Gallery",
+            "intro": "",
+            "images": [
+              {
+                "stock": "biz-window-table",
+                "alt": "A meeting by a window",
+                "caption": ""
+              },
+              {
+                "stock": "pro-advisor-man",
+                "alt": "An adviser",
+                "caption": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-d4gtnx",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "",
+            "showForm": true,
+            "showMap": false
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  }
+}

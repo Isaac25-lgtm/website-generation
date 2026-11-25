@@ -76,7 +76,7 @@ export const STORE_TEMPLATES: TemplateDef[] = [
 .product-card .p-title{font-family:var(--font-h);font-size:1.05rem}`,
   }),
   S({
-    id: "e-runway", name: "Runway", category: "fashion", layout: "editorial", tier: "member",
+    id: "e-runway", name: "Drape Study", category: "fashion", layout: "editorial", tier: "member",
     styles: ["bold", "monochrome", "fashion"], industries: ["fashion", "designer label", "concept store"],
     description: "Black and white, condensed capitals set screen-wide over the season's campaign photo.",
     colors: { bg: "#ffffff", surface: "#f1f1f1", text: "#0a0a0a", muted: "#5a5a5a", primary: "#0a0a0a", accent: "#b3122e" },

@@ -4,7 +4,7 @@ import type { AppEnv, HonoEnv } from "../env";
 import { HttpError, now } from "../env";
 import { enforceRate, ipHash } from "../lib/auth";
 import { loadSettings, publicConfig, type PublicConfig } from "../lib/config";
-import { PLANS } from "../../shared/pricing";
+import { PLANS, HOSTING_DEFAULTS, hostingNotice } from "../../shared/pricing";
 import { TEMPLATES } from "../../shared/templates";
 import { PaymentMethod } from "../../shared/schema";
 import { ASSISTANT_MAX_BODY, ASSISTANT_MAX_HISTORY, ASSISTANT_MAX_TURN, PAGE_CATEGORIES, pageCategory } from "../../shared/assistant";
@@ -36,8 +36,7 @@ export function systemPrompt(cfg: PublicConfig, page: keyof typeof PAGE_CATEGORI
   const price = (k: keyof typeof PLANS) => `${PLANS[k].currency} ${PLANS[k].priceCents / 100}`;
   const cur = cfg.hosting.currency || "USD";
   const per = cfg.hosting.interval || "month";
-  const host = (k: "personal" | "business" | "ecommerce") => cfg.hosting.amounts[k] ? `${cur} ${cfg.hosting.amounts[k]}` : "not set yet";
-  const hostingState = cfg.hosting.status === "active" ? "It is charged for every published site." : "It is announced but not being charged yet; site owners will be told before it starts.";
+  const host = (k: "personal" | "business" | "ecommerce") => `${cur} ${cfg.hosting.amounts[k] || HOSTING_DEFAULTS[k]}`;
   const paying = cfg.payments.configured && cfg.payments.mode === "live"
     ? "Publishing is unlocked by paying the one-time build fee online."
     : `Online payment for publishing is ${cfg.payments.configured ? "in test mode, so real payments are not taken yet" : "not switched on yet"}. People who want to publish now should use the Contact page.`;
@@ -48,7 +47,7 @@ You help visitors and customers understand the product and build their website. 
 FACTS (use only these; never invent features, prices, discounts, guarantees or deadlines):
 - Three kinds of site only: personal/portfolio, business, and online store. It does not build apps, SaaS products or enterprise systems.
 - One-time build fees: personal ${price("personal")}, business ${price("business")}, online store ${price("ecommerce")}.
-- Hosting and maintenance per site, per ${per}: personal ${host("personal")}, business ${host("business")}, online store ${host("ecommerce")}. ${hostingState}
+- Hosting and maintenance per site, per ${per}: personal ${host("personal")}, business ${host("business")}, online store ${host("ecommerce")}. ${hostingNotice(cfg.hosting.status)}
 - ${paying}
 - ${TEMPLATES.length} templates: ${count("business")} business, ${count("personal")} personal, ${count("ecommerce")} online store. Each is a complete site with sample content. Anyone can browse the gallery; a free account is needed to open member templates in full and to build.
 - How it works: describe your site or answer a short wizard, pick a template (or paste a website you like for inspiration), edit everything in the live editor, preview, then publish to your own web address.
@@ -66,31 +65,57 @@ RULES:
 The visitor is on ${PAGE_CATEGORIES[page]}.`;
 }
 
-const today = () => new Date().toISOString().slice(0, 10);
+type Reservation = { id: string; day: string; tokens: number };
 
-/** Reserve tokens from the service-wide daily allowance. Returns false when the allowance is used up. */
-export async function reserveTokens(env: AppEnv, tokens: number, budget: number): Promise<boolean> {
-  const day = today();
+export async function reserveTokens(env: AppEnv, tokens: number, budget: number): Promise<Reservation | null> {
+  const day = new Date().toISOString().slice(0, 10);
+  const id = crypto.randomUUID();
   await env.DB.prepare("INSERT INTO assistant_usage (day, updated_at) VALUES (?, ?) ON CONFLICT(day) DO NOTHING").bind(day, now()).run();
-  const r = await env.DB.prepare("UPDATE assistant_usage SET reserved_tokens = reserved_tokens + ?1, updated_at = ?2 WHERE day = ?3 AND used_tokens + reserved_tokens + ?1 <= ?4")
-    .bind(tokens, now(), day, budget).run();
-  return (r.meta.changes ?? 0) > 0;
+  // The conditional insert and its trigger run in the same SQLite statement.
+  const result = await env.DB.prepare(
+    "INSERT INTO assistant_reservations (id, day, tokens) SELECT ?, day, ? FROM assistant_usage WHERE day = ? AND used_tokens + reserved_tokens + ? <= ?",
+  ).bind(id, tokens, day, tokens, budget).run();
+  return result.meta.changes ? { id, day, tokens } : null;
 }
 
-/** Release a reservation, recording the provider's reported usage (0 when the call failed). */
-export async function settleTokens(env: AppEnv, reserved: number, used: number): Promise<void> {
-  await env.DB.prepare("UPDATE assistant_usage SET reserved_tokens = MAX(reserved_tokens - ?1, 0), used_tokens = used_tokens + ?2, calls = calls + ?3, updated_at = ?4 WHERE day = ?5")
-    .bind(reserved, used, used > 0 ? 1 : 0, now(), today()).run();
+export async function settleTokens(env: AppEnv, ticket: Reservation, used: number): Promise<void> {
+  // D1 batches are atomic. A repeated settlement sees no ticket and charges nothing.
+  await env.DB.batch([
+    env.DB.prepare("UPDATE assistant_usage SET reserved_tokens = reserved_tokens - ?, used_tokens = used_tokens + ?, calls = calls + ?, updated_at = ? WHERE day = ? AND EXISTS (SELECT 1 FROM assistant_reservations WHERE id = ?)")
+      .bind(ticket.tokens, used, used > 0 ? 1 : 0, now(), ticket.day, ticket.id),
+    env.DB.prepare("DELETE FROM assistant_reservations WHERE id = ?").bind(ticket.id),
+  ]);
+}
+
+async function readConversation(request: Request): Promise<string> {
+  const tooLarge = () => new HttpError(413, "That conversation is too long. Clear it and ask again.", "too_large");
+  if (Number(request.headers.get("content-length")) > ASSISTANT_MAX_BODY) throw tooLarge();
+  const reader = request.body?.getReader();
+  if (!reader) return "";
+  const decoder = new TextDecoder();
+  let bytes = 0;
+  let raw = "";
+  try {
+    for (;;) {
+      const chunk = await reader.read();
+      if (chunk.done) return raw + decoder.decode();
+      bytes += chunk.value.byteLength;
+      if (bytes > ASSISTANT_MAX_BODY) {
+        await reader.cancel();
+        throw tooLarge();
+      }
+      raw += decoder.decode(chunk.value, { stream: true });
+    }
+  } finally {
+    reader.releaseLock();
+  }
 }
 
 assistant.post("/", async (c) => {
-  // Identity limits come first, before the body is read or parsed.
   const user = c.get("user");
   const who = user ? `u:${user.id}` : `ip:${await ipHash(c)}`;
   await enforceRate(c.env, `assistant:${who}`, user ? 120 : 30, 3600, "You've asked a lot of questions in the last hour. Please try again a little later.");
-  if (Number(c.req.header("content-length") || 0) > ASSISTANT_MAX_BODY) throw new HttpError(413, "That conversation is too long. Clear it and ask again.", "too_large");
-  const raw = await c.req.text();
-  if (raw.length > ASSISTANT_MAX_BODY) throw new HttpError(413, "That conversation is too long. Clear it and ask again.", "too_large");
+  const raw = await readConversation(c.req.raw);
   let json: unknown = null;
   try { json = JSON.parse(raw); } catch { /* handled below */ }
   const body = Body.safeParse(json);
@@ -104,13 +129,16 @@ assistant.post("/", async (c) => {
 
   const history = body.data.messages.slice(-ASSISTANT_MAX_HISTORY);
   const messages = [{ role: "system", content: systemPrompt(await publicConfig(c.env), pageCategory(body.data.page)) }, ...history];
-  const chars = messages.reduce((n, m) => n + m.content.length, 0);
-  const reserve = Math.ceil(chars / 2.5) + MAX_OUTPUT_TOKENS; // generous estimate: fewer than 2.5 characters per token is rare
-  if (!(await reserveTokens(c.env, reserve, budget))) {
+  // Budget for byte-level tokens, message framing and the complete output allowance.
+  const inputBytes = new TextEncoder().encode(JSON.stringify(messages)).byteLength;
+  const reserve = inputBytes + 32 * messages.length + 128 + MAX_OUTPUT_TOKENS;
+  const ticket = await reserveTokens(c.env, reserve, budget);
+  if (!ticket) {
     return c.json({ error: "The assistant has answered as many questions as it can today. For help now, use the Contact page.", code: "daily_limit" }, 503);
   }
 
-  let used = 0;
+  // Once dispatched, an ambiguous outcome may still have incurred a provider charge.
+  let used = reserve;
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), 25_000);
   try {
@@ -123,11 +151,15 @@ assistant.post("/", async (c) => {
       // Operator configuration problems (bad key, unknown model, no balance) are logged distinctly from
       // transient provider trouble. Only the status code is logged, never the conversation.
       const config = [400, 401, 402, 403, 404, 422].includes(r.status);
+      if (config || r.status === 429) used = 0;
       console.error(JSON.stringify({ event: config ? "assistant.provider_config_error" : "assistant.provider_unavailable", status: r.status }));
       return c.json({ error: "The assistant is busy right now. Please try again in a moment.", code: config ? "provider_config" : "upstream" }, 502);
     }
     const j = (await r.json()) as { choices?: { message?: { content?: string } }[]; usage?: { prompt_tokens?: number; completion_tokens?: number } };
-    used = Math.max(0, (j.usage?.prompt_tokens ?? 0) + (j.usage?.completion_tokens ?? 0)) || reserve;
+    const input = j.usage?.prompt_tokens;
+    const output = j.usage?.completion_tokens;
+    if (typeof input === "number" && Number.isSafeInteger(input) && input >= 0 &&
+        typeof output === "number" && Number.isSafeInteger(output) && output >= 0) used = input + output;
     const reply = (j.choices?.[0]?.message?.content || "").trim().slice(0, ASSISTANT_MAX_TURN);
     if (!reply) return c.json({ error: "The assistant didn't answer. Please try again.", code: "empty" }, 502);
     return c.json({ reply });
@@ -135,6 +167,6 @@ assistant.post("/", async (c) => {
     return c.json({ error: "The assistant took too long to answer. Please try again.", code: "timeout" }, 504);
   } finally {
     clearTimeout(timer);
-    await settleTokens(c.env, reserve, used).catch(() => undefined);
+    await settleTokens(c.env, ticket, used).catch(() => console.error("assistant.settlement_deferred", ticket.id));
   }
 });

@@ -16,13 +16,14 @@ export function stripOwnerPhotos<T>(value: T): T {
       if (typeof o.stock === "string" && o.stock.startsWith(OWNER_PREFIX)) {
         const { stock: _s, ...rest } = o;
         // An image that was only an owner photo becomes empty; arrays of images drop it entirely.
-        return Object.keys(rest).some((k) => k === "assetId" || k === "art") ? rest : DROP;
+        return Object.keys(rest).some((k) => k === "assetId" || k === "art") ? walk(rest) : DROP;
       }
       return Object.fromEntries(Object.entries(o).map(([k, x]) => [k, walk(x)]).filter(([, x]) => x !== DROP));
     }
     return v;
   };
-  return walk(value) as T;
+  const cleaned = walk(value);
+  return (cleaned === DROP ? {} : cleaned) as T;
 }
 
 const DROP = Symbol("drop");

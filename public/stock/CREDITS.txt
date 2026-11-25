@@ -199,6 +199,7 @@ shoe-white-above.webp — "Shoes Sneakers" by Daria Nepriakhina, via StockSnap. 
 shoe-hiking-boots.webp — "Shoes Sneakers" by Julien Sister, via StockSnap. https://stocksnap.io/photo/shoes-sneakers-T320J64GN4 CC0 1.0
 shoe-runners-magenta.webp — "Sneakers Weights" by Kristin Hardwick, via StockSnap. https://stocksnap.io/photo/sneakers-weights-DAVLOF8C3R CC0 1.0
 shoe-navy-canvas.webp — "Shoes Sneakers" by Patrycja Tomaszczyk, via StockSnap. https://stocksnap.io/photo/shoes-sneakers-3K5S13RPLL CC0 1.0
+shoe-white-fence.webp — "Shoes Sneakers" by Patrycja Tomaszczyk, via StockSnap. https://stocksnap.io/photo/shoes-sneakers-3K5S13RPLL CC0 1.0 (legacy URL for the replacement photo)
 shoe-white-studio.webp — "Sneakers Shoes" by Kristin Hardwick, via StockSnap. https://stocksnap.io/photo/sneakers-shoes-U20YIXFQBC CC0 1.0
 shoe-green-hightops.webp — "Sneakers Jeans" by Ylanite Koppens, via StockSnap. https://stocksnap.io/photo/sneakers-jeans-BRDLQ22VO4 CC0 1.0
 kids-tiny-sneakers.webp — "Baby Shoes" by Drew Hays, via StockSnap. https://stocksnap.io/photo/baby-shoes-AM0TUTSZ4U CC0 1.0
@@ -305,3 +306,4 @@ make-candle-tin.webp — "Candle Jar" by Burst, via StockSnap. https://stocksnap
 make-candle-shelf.webp — "Candle Decoration" by Christian Mackie, via StockSnap. https://stocksnap.io/photo/candle-decoration-OVEFAJUOXU CC0 1.0
 make-mug-shelf.webp — "Art Craft" by Linh Pham, via StockSnap. https://stocksnap.io/photo/art-craft-FRRB2WV88A CC0 1.0
 tech-tablet-glasses.webp — "Glasses White" by Nordwood Themes, via StockSnap. https://stocksnap.io/photo/glasses-white-ETYYX6WJQI CC0 1.0
+tech-desk-overhead.webp — "Glasses White" by Nordwood Themes, via StockSnap. https://stocksnap.io/photo/glasses-white-ETYYX6WJQI CC0 1.0 (legacy URL for the replacement photo)

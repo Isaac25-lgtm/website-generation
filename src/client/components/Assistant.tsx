@@ -26,18 +26,19 @@ export function Assistant() {
   const owner = me?.id ?? "visitor";
   const [open, setOpen] = useState(false);
   const [conv, setConv] = useState(() => ({ owner, msgs: load(owner) }));
-  // Bumped on Clear and on account change, so a reply that arrives afterwards is discarded.
-  const generation = useRef(0);
-  if (conv.owner !== owner) {
-    try { sessionStorage.removeItem(keyFor(conv.owner)); } catch { /* private mode */ }
-    generation.current++;
-    setConv({ owner, msgs: load(owner) });
-  }
   const msgs = conv.msgs;
   const setMsgs = (f: Msg[] | ((m: Msg[]) => Msg[])) => setConv((c) => ({ ...c, msgs: typeof f === "function" ? f(c.msgs) : f }));
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState("");
+  // Bumped on Clear and on account change, so a reply that arrives afterwards is discarded.
+  const generation = useRef(0);
+  if (conv.owner !== owner) {
+    try { sessionStorage.removeItem(keyFor(conv.owner)); } catch { /* private mode */ }
+    generation.current++;
+    setText(""); setBusy(false); setNote(""); setOpen(false);
+    setConv({ owner, msgs: load(owner) });
+  }
   const list = useRef<HTMLDivElement>(null);
   const input = useRef<HTMLTextAreaElement>(null);
   const compact = /^\/projects\/[^/]+\/(editor|setup)/.test(loc.pathname); // keep the editor canvas clear
@@ -69,7 +70,7 @@ export function Assistant() {
       if (err.code === "not_configured" || err.status === 400) setMsgs((m) => m.slice(0, -1));
       if (err.code === "not_configured" || err.status === 400) setText(content);
     } finally {
-      setBusy(false);
+      if (gen === generation.current) setBusy(false);
     }
   }
 
@@ -80,7 +81,7 @@ export function Assistant() {
           <header className="ast-head">
             <img src="/logo-mark.svg" alt="" width={26} height={26} />
             <div><strong>ImprintSites AI</strong><span>Answers about building your site</span></div>
-            {msgs.length > 0 && <button className="ast-clear" onClick={() => { generation.current++; setMsgs([]); setNote(""); setBusy(false); }}>Clear</button>}
+            {msgs.length > 0 && <button className="ast-clear" onClick={() => { generation.current++; setMsgs([]); setText(""); setNote(""); setBusy(false); }}>Clear</button>}
             <button className="ast-x" aria-label="Close assistant" onClick={() => setOpen(false)}>×</button>
           </header>
           <div className="ast-list" ref={list} aria-live="polite">

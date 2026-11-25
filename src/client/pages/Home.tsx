@@ -153,7 +153,7 @@ export default function Home() {
               ["Choose a look", "Pick a template, or paste a site you admire and we'll take its style, never its content."],
               ["Preview and adjust", "See the real site on phone, tablet and desktop. Change anything, or just ask for it."],
               ["Pick your web address", "Choose a name like /s/your-business. We set it up automatically with secure https. Your own domain: coming soon."],
-              ["Publish", `Pay the one-time build fee and you're live. Hosting and maintenance are then ${hosting} per site per month, depending on the site type.`],
+              ["Publish", `Pay the one-time build fee and you're live. Hosting and maintenance are then ${hosting} per site per ${hp.interval}, depending on the site type.`],
             ].map(([h, d], k) => (
               <li key={h} className="step"><span className="num">{String(k + 1).padStart(2, "0")}</span><h3>{h}</h3><p className="muted">{d}</p></li>
             ))}
@@ -203,7 +203,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <p className="center muted small" style={{ marginTop: "1.5rem" }}>Prices in US dollars. {hp.billingLive ? "" : "You'll agree to the monthly hosting plan before any monthly charge. "}Cancel the monthly plan any time. <Link to="/pricing">Full pricing details</Link></p>
+          <p className="center muted small" style={{ marginTop: "1.5rem" }}>Prices in US dollars. {hp.notice} <Link to="/pricing">Full pricing details</Link></p>
         </div>
       </section>
 

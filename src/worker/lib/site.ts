@@ -31,7 +31,7 @@ export async function ownedProject(c: Ctx, user: SessionUser, projectId: string,
 export function draftDoc(p: ProjectRow): SiteDoc | null {
   if (!p.draft_json) return null;
   const r = parseSiteDoc(JSON.parse(p.draft_json));
-  return r.ok ? r.doc : null;
+  return r.ok ? stripOwnerPhotos(r.doc) : null;
 }
 
 export async function loadStore(env: AppEnv, projectId: string, opts: { includeDrafts?: boolean } = {}): Promise<{ products: ProductView[]; collections: CollectionView[] }> {

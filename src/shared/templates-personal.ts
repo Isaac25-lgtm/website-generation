@@ -53,7 +53,7 @@ export const PERSONAL_TEMPLATES: TemplateDef[] = [
     description: "A navy serif headline with a hand-drawn underline, a short promise and a 'Let's talk' button beside a tall portrait. For marketers.",
     c: ["#eef0f3", "#e2e6ec", "#1b2440", "#56607a", "#1b2440", "#3a5ccc"], h: "dm-serif", b: "inter", header: "bar", radius: "md", v: { projects: "alternating" },
     css: `.brand{font-family:var(--font-h);font-size:1.3rem}` }),
-  T({ id: "p-hello", name: "Hello", hero: "hello", tier: "public", styles: ["warm", "centred", "elegant"], industries: ["product designer", "UX designer", "researcher"],
+  T({ id: "p-hello", name: "First Letters", hero: "hello", tier: "public", styles: ["warm", "centred", "elegant"], industries: ["product designer", "UX designer", "researcher"],
     description: "A centred serif greeting, one line in a warm magenta and a small 'currently' note. Gentle, elegant and personal.",
     c: ["#fbf9f6", "#f2eee8", "#3b1830", "#6e5a68", "#3b1830", "#a8296e"], h: "fraunces", b: "inter", header: "bar", v: { projects: "cards" },
     css: `.brand{font-family:var(--font-h);font-size:1.25rem}` }),

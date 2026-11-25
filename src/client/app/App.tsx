@@ -3,7 +3,6 @@ import { Link, Navigate, NavLink, Outlet, useLocation, useNavigate, useParams, u
 import { api, fmtDate, hostingPrice, useApp, useAsync, usd } from "../lib";
 import { Icon, LoadingPage, Logo, Modal, SiteThumb, Spinner, ThemeToggle } from "../components/ui";
 import { PLANS } from "../../shared/pricing";
-import { switchMode } from "../../shared/refine";
 import { OrdersManager, ProductsManager } from "./Store";
 
 export function RequireAuth() {
@@ -201,7 +200,7 @@ export function Publish() {
             {data.doc && (
               <div className="stack-sm">
                 <span className="small"><b>Light or dark?</b> Choose how your site looks before you publish. You can change it again at any time.</span>
-                <div className="seg" role="group" aria-label="Colour mode" style={{ justifySelf: "start" }}>{(["light", "dark"] as const).map((m) => <button key={m} aria-pressed={data.doc.theme.mode === m} disabled={!!busy} onClick={() => data.doc.theme.mode !== m && run("mode", async () => { await api(`/api/projects/${id}/draft`, { method: "PUT", body: { doc: switchMode(data.doc, m), baseRevision: p.revision } }); toast(m === "dark" ? "Your site now has a dark look" : "Your site now has a light look"); reload(); })}>{m === "light" ? "Light" : "Dark"}</button>)}</div>
+                <div className="seg" role="group" aria-label="Colour mode" style={{ justifySelf: "start" }}>{(["light", "dark"] as const).map((m) => <button key={m} aria-pressed={data.doc.theme.mode === m} disabled={!!busy} onClick={() => data.doc.theme.mode !== m && run("mode", async () => { const { switchMode } = await import("../../shared/refine"); await api(`/api/projects/${id}/draft`, { method: "PUT", body: { doc: switchMode(data.doc, m), baseRevision: p.revision } }); toast(m === "dark" ? "Your site now has a dark look" : "Your site now has a light look"); reload(); })}>{m === "light" ? "Light" : "Dark"}</button>)}</div>
                 <span className="tiny muted">To see it first, open the editor or create a private preview link below.</span>
               </div>
             )}
@@ -245,7 +244,7 @@ export function Publish() {
             <a className="btn btn-sm" style={{ justifySelf: "start" }} href={`/api/projects/${id}/export`}>Download a copy (ZIP)</a>
           </div>
           <PaymentsHistory id={id!} />
-          {config && <p className="tiny muted">Hosting &amp; maintenance: {hostingPrice(config, p.type).label} per site per {hostingPrice(config, p.type).interval}{hostingPrice(config, p.type).billingLive ? "." : ". You'll agree to the monthly plan before any monthly charge."}</p>}
+          {config && <p className="tiny muted">Hosting &amp; maintenance: {hostingPrice(config, p.type).label} per site per {hostingPrice(config, p.type).interval}. {hostingPrice(config, p.type).notice}</p>}
         </div>
       </div>
     </div>

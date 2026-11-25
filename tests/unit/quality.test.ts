@@ -132,10 +132,35 @@ describe("no personal identifiers from the reference sites", () => {
       for (const w of text.match(/[a-z]{5,}/g) ?? []) if (words.has(hash(w))) problems.push(`${where}: "${s}" (word)`);
     };
     for (const tpl of TEMPLATES) {
+      check(tpl.id, tpl.name);
+      // IDs are persisted keys. Compare the complete identifier, including its site type prefix.
+      if (names.has(hash(norm(tpl.id)))) problems.push(tpl.id + " (template id)");
       const p = PERSONAS[tpl.id];
       for (const s of strings([p.answers, p.products, p.collections])) check(tpl.id, s);
       check(`${tpl.id} description`, tpl.description);
     }
+    // Check real repository URL hosts and asset/source basenames as identifiers.
+    // Ordinary prose and language keywords are not owner or brand names.
+    const { readdirSync } = await import("node:fs");
+    const { posix, extname, basename } = await import("node:path");
+    // Exact existing generic filenames, unrelated to a source brand or a customer identity.
+    const genericPaths = new Set(["src/client/components/forms.tsx", "src/client/pages/Marketing.tsx", "docs/screenshots/checkout.jpg"]);
+    const scan = (dir: string) => {
+      for (const entry of readdirSync(dir, { withFileTypes: true })) {
+        const path = posix.join(dir, entry.name);
+        if (entry.isDirectory()) { scan(path); continue; }
+        if (!entry.isFile()) continue;
+        const ext = extname(path);
+        const stem = norm(basename(path, ext));
+        if (!genericPaths.has(path) && stem.length >= 5 && names.has(hash(stem))) problems.push(path + " (filename)");
+        if (![".md", ".txt", ".ts", ".tsx", ".css", ".js", ".json", ".svg", ".html"].includes(ext)) continue;
+        for (const match of readFileSync(path, "utf8").matchAll(/https?:\/\/([a-z0-9.-]+)/gi)) {
+          if (match[1].toLowerCase() === "imprintsites.omodingisaac123.workers.dev") continue; // official product host
+          if (match[1].split(".").some(label => label.length >= 5 && names.has(hash(norm(label))))) problems.push(path + " (host)");
+        }
+      }
+    };
+    for (const dir of ["src", "public", "docs"]) scan(dir);
     expect(problems).toEqual([]);
   });
 });

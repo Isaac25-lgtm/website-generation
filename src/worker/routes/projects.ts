@@ -91,11 +91,12 @@ projects.post("/", async (c) => {
     slug = body.data.slug;
   } else slug = await uniqueSlug(c.env, slugify(body.data.name, 40));
   const t = now();
-  const answers = body.data.answers ?? {};
+  const answers = stripOwnerPhotos(body.data.answers ?? {});
+  if (JSON.stringify(answers).length > 200_000) throw new HttpError(413, "Your answers are too long.");
   await c.env.DB.batch([
     c.env.DB.prepare("INSERT INTO projects (id, owner_id, site_type, name, slug, template_id, status, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, 'draft', ?, ?)").bind(id, u.id, type, body.data.name, slug, tpl.id, t, t),
     c.env.DB.prepare("INSERT INTO project_members (project_id, user_id, role, created_at) VALUES (?, ?, 'owner', ?)").bind(id, u.id, t),
-    c.env.DB.prepare("INSERT INTO project_intake (project_id, step, data_json, updated_at) VALUES (?, 0, ?, ?)").bind(id, JSON.stringify(answers).slice(0, 200_000), t),
+    c.env.DB.prepare("INSERT INTO project_intake (project_id, step, data_json, updated_at) VALUES (?, 0, ?, ?)").bind(id, JSON.stringify(answers), t),
   ]);
   return c.json({ id, slug });
 });
@@ -115,7 +116,7 @@ projects.get("/:id", async (c) => {
   const valid = await activeEntitlement(c.env, p.id);
   return c.json({
     project: summary(p, { contentRightsAck: !!p.content_rights_ack_at, aiReviewAck: !!p.ai_review_ack_at }),
-    intake: ir ? { step: ir.step, answers: JSON.parse(ir.data_json || "{}"), completedAt: ir.completed_at } : { step: 0, answers: {} },
+    intake: ir ? { step: ir.step, answers: stripOwnerPhotos(JSON.parse(ir.data_json || "{}")), completedAt: ir.completed_at } : { step: 0, answers: {} },
     doc: draftDoc(p),
     publish: pr ? { status: pr.status, version: pr.version, versionId: pr.version_id, firstPublishedAt: pr.first_published_at, lastPublishedAt: pr.last_published_at, url: `${baseUrl(c)}/s/${p.slug}/` } : null,
     entitlement: valid ? { source: valid.source } : (ent.results[0] ? { source: (ent.results[0] as any).source, invalidInThisMode: true } : null),
@@ -165,7 +166,7 @@ projects.post("/:id/duplicate", async (c) => {
   await c.env.DB.batch([
     c.env.DB.prepare("INSERT INTO projects (id, owner_id, site_type, name, slug, template_id, status, draft_json, draft_revision, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)").bind(id, u.id, p.site_type, `${p.name} (copy)`.slice(0, 80), slug, p.template_id, p.draft_json ? "preview_ready" : "draft", p.draft_json ? JSON.stringify(stripOwnerPhotos(JSON.parse(p.draft_json))) : null, t, t),
     c.env.DB.prepare("INSERT INTO project_members (project_id, user_id, role, created_at) VALUES (?, ?, 'owner', ?)").bind(id, u.id, t),
-    c.env.DB.prepare("INSERT INTO project_intake (project_id, step, data_json, updated_at) VALUES (?, 0, ?, ?)").bind(id, intake?.data_json ?? "{}", t),
+    c.env.DB.prepare("INSERT INTO project_intake (project_id, step, data_json, updated_at) VALUES (?, 0, ?, ?)").bind(id, JSON.stringify(stripOwnerPhotos(JSON.parse(intake?.data_json || "{}"))), t),
   ]);
   return c.json({ id });
 });
@@ -178,7 +179,7 @@ projects.put("/:id/intake", async (c) => {
   if (text.length > 250_000) throw new HttpError(413, "Your answers are too long. Shorten some text and try again.");
   const body = z.object({ step: z.number().int().min(0).max(30), answers: z.record(z.string(), z.unknown()), templateId: z.string().max(40).optional(), contentRightsAck: z.boolean().optional() }).safeParse(JSON.parse(text || "{}"));
   if (!body.success) throw new HttpError(400, "Invalid answers.");
-  const stmts = [c.env.DB.prepare("UPDATE project_intake SET step = ?, data_json = ?, updated_at = ? WHERE project_id = ?").bind(body.data.step, JSON.stringify(body.data.answers), now(), p.id)];
+  const stmts = [c.env.DB.prepare("UPDATE project_intake SET step = ?, data_json = ?, updated_at = ? WHERE project_id = ?").bind(body.data.step, JSON.stringify(stripOwnerPhotos(body.data.answers)), now(), p.id)];
   if (body.data.templateId && TEMPLATE_MAP[body.data.templateId]?.type === p.site_type) stmts.push(c.env.DB.prepare("UPDATE projects SET template_id = ?, updated_at = ? WHERE id = ?").bind(body.data.templateId, now(), p.id));
   if (body.data.contentRightsAck) {
     stmts.push(c.env.DB.prepare("UPDATE projects SET content_rights_ack_at = ? WHERE id = ?").bind(now(), p.id));
@@ -244,7 +245,7 @@ projects.post("/:id/generate", async (c) => {
   const body = z.object({ useAi: z.boolean().default(false) }).parse(await c.req.json().catch(() => ({})));
   await enforceRate(c.env, `gen:${u.id}`, 40, 3600, "You've generated many times in the last hour. Please wait a little.");
   const intake = await c.env.DB.prepare("SELECT data_json FROM project_intake WHERE project_id = ?").bind(p.id).first<{ data_json: string }>();
-  const answers = JSON.parse(intake?.data_json || "{}") as AnyAnswers;
+  const answers = stripOwnerPhotos(JSON.parse(intake?.data_json || "{}")) as AnyAnswers;
   let doc: SiteDoc;
   try { doc = generateSiteDoc(p.site_type, p.template_id, answers); }
   catch (e) {
@@ -331,7 +332,7 @@ projects.post("/:id/template", async (c) => {
   const rev = p.draft_revision + 1;
   if (doc) {
     const intake = await c.env.DB.prepare("SELECT data_json FROM project_intake WHERE project_id = ?").bind(p.id).first<{ data_json: string }>();
-    const answers = JSON.parse(intake?.data_json || "{}") as AnyAnswers;
+    const answers = stripOwnerPhotos(JSON.parse(intake?.data_json || "{}")) as AnyAnswers;
     const next = switchTemplate(doc, tpl.id, { ...(answers.inspiration?.tokens ?? {}), ...(answers.style ?? {}) });
     await saveDraft(c.env, p.id, next, rev, u.id, `Template: ${tpl.name}`, true);
     return c.json({ doc: next, revision: rev });

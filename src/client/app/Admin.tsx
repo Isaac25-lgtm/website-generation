@@ -128,15 +128,16 @@ function Settings() {
   const { data, reload } = useAsync(() => api("/api/admin/settings"), []);
   const [vals, setVals] = useState<Record<string, string> | null>(null);
   if (!data) return <Spinner />;
-  const cur = vals ?? Object.fromEntries(data.settings.filter((s: any) => !s.key.startsWith("demo_seed")).map((s: any) => [s.key, s.value]));
+  const saved = Object.fromEntries(data.settings.map((s: { key: string; value: string }) => [s.key, s.value]));
   const LABELS: Record<string, string> = {
     hosting_fee_status: "Hosting fee status (not_set / announced / active)", hosting_fee_amount: "Hosting fee amount (approved figure only)", hosting_fee_amount_personal: "Hosting fee: personal sites (approved figure only)", hosting_fee_amount_business: "Hosting fee: business sites (approved figure only)", hosting_fee_amount_ecommerce: "Hosting fee: online stores (approved figure only)", hosting_fee_currency: "Hosting fee currency", hosting_fee_interval: "Hosting fee interval (e.g. month)",
+    assistant_daily_token_budget: "Daily help assistant token budget (0 pauses the assistant)",
     ai_generations_per_project: "AI suggestions allowed per site", free_previews_per_day: "Free previews per day", operator_display_name: "Operator name shown on legal pages", operator_status_note: "Operator status note", support_email: "Public support email (leave empty if none)",
   };
   return (
-    <form className="card stack" style={{ maxWidth: 720 }} onSubmit={async (e) => { e.preventDefault(); try { await api("/api/admin/settings", { method: "PUT", body: cur }); toast("Settings saved"); setVals(null); reload(); } catch (er) { toast((er as Error).message, "err"); } }}>
+    <form className="card stack" style={{ maxWidth: 720 }} onSubmit={async (e) => { e.preventDefault(); try { await api("/api/admin/settings", { method: "PUT", body: vals ?? {} }); toast("Settings saved"); setVals(null); reload(); } catch (er) { toast((er as Error).message, "err"); } }}>
       <div className="alert warn small">Hosting fees are displayed to customers but never charged automatically. Only set “active” once a recurring hosting price and billing flow have been approved.</div>
-      {Object.keys(LABELS).map((k) => <label key={k} className="field"><span>{LABELS[k]}</span><input value={cur[k] ?? ""} onChange={(e) => setVals({ ...cur, [k]: e.target.value })} /></label>)}
+      {Object.keys(LABELS).map((k) => <label key={k} className="field"><span>{LABELS[k]}</span><input value={vals?.[k] ?? saved[k] ?? ""} onChange={(e) => setVals({ ...vals, [k]: e.target.value })} /></label>)}
       <button className="btn btn-primary" style={{ justifySelf: "start" }}>Save settings</button>
     </form>
   );

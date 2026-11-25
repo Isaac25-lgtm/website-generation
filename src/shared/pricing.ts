@@ -2,6 +2,16 @@
 // Changing these requires explicit owner approval (see PRICING_AND_BILLING.md).
 // The server never accepts an amount from the client; it always reads from here.
 
+export const HOSTING_DEFAULTS = { personal: "3", business: "4", ecommerce: "5" } as const;
+
+export function hostingNotice(status = "not_set"): string {
+  return ({
+    active: "The hosting fee is marked active. Automatic recurring collection is unavailable.",
+    announced: "Hosting has been announced but is not being charged automatically.",
+    not_set: "The hosting fee has not been announced. Automatic recurring collection is unavailable.",
+  } as Record<string, string>)[status] ?? "Contact support to confirm the hosting status.";
+}
+
 export const SITE_TYPES = ["personal", "business", "ecommerce"] as const;
 export type SiteType = (typeof SITE_TYPES)[number];
 

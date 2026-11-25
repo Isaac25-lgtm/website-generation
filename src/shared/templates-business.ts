@@ -51,7 +51,7 @@ export const BUSINESS_TEMPLATES: TemplateDef[] = [
     description: "A calm cream page with one centred sentence, pill buttons for each product line, a wide photograph and a catalogue request card.",
     c: ["#f2efe8", "#e8e3d8", "#232019", "#64604f", "#232019", "#232019"], h: "manrope", b: "manrope", header: "minimal", radius: "md", v: { gallery: "masonry" },
     css: `.btn{border-radius:99px}` }),
-  T({ id: "b-monolith", name: "Monolith", hero: "monolith", styles: ["bold", "studio", "sculptural"], industries: ["architecture studio", "product studio", "design firm"],
+  T({ id: "b-monolith", name: "Stone Outline", hero: "monolith", styles: ["bold", "studio", "sculptural"], industries: ["architecture studio", "product studio", "design firm"],
     description: "A screen-wide wordmark above a sculptural photograph with one bright blue call to action, and black sections in condensed type.",
     c: ["#ffffff", "#f2f2f2", "#0a0a0a", "#5f5f5f", "#2341f2", "#2341f2"], h: "archivo", b: "inter", header: "floating", v: { services: "numbered" },
     css: `.sec.alt{background:#0a0a0a;color:#f2f2f2}.sec.alt .muted,.sec.alt p{color:#c9c9c9}.sec-head h2{text-transform:uppercase;font-stretch:75%;font-size:clamp(2.4rem,6vw,4.8rem)}` }),

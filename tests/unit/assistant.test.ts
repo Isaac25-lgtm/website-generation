@@ -3,7 +3,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
 import { Hono } from "hono";
 import { HttpError } from "../../src/worker/env";
-import { assistant, DEFAULT_MODEL, systemPrompt } from "../../src/worker/routes/assistant";
+import { assistant, DEFAULT_MODEL, reserveTokens, settleTokens, systemPrompt } from "../../src/worker/routes/assistant";
 import { ASSISTANT_MAX_TURN, PAGE_CATEGORIES, pageCategory } from "../../src/shared/assistant";
 import { PaymentMethod } from "../../src/shared/schema";
 
@@ -98,7 +98,7 @@ describe("help assistant", () => {
     const { env, db } = freshEnv();
     db.prepare("UPDATE system_settings SET value = '6000' WHERE key = 'assistant_daily_token_budget'").run();
     // Each call reserves its estimate plus 500 output tokens; distinct IPs bypass the per-identity limit.
-    status = 503;
+    status = 401;
     for (let i = 0; i < 5; i++) expect((await ask(env, { messages: [{ role: "user", content: "Hi" }] })).status).toBe(502);
     const afterFailures = db.prepare("SELECT reserved_tokens, used_tokens FROM assistant_usage").get() as any;
     expect(afterFailures).toEqual({ reserved_tokens: 0, used_tokens: 0 }); // nothing held by failed calls
@@ -117,6 +117,36 @@ describe("help assistant", () => {
     expect(row.reserved_tokens).toBe(0);
     expect(row.used_tokens).toBe(ok * 940); // settled with the provider's reported usage
     expect(row.used_tokens).toBeLessThanOrEqual(6000);
+  });
+
+  it("settles once against the reservation day across midnight", async () => {
+    const { env, db } = freshEnv();
+    vi.useFakeTimers();
+    try {
+      vi.setSystemTime(new Date("2026-11-25T23:59:58Z"));
+      const ticket = await reserveTokens(env, 1500, 5000);
+      expect(ticket).toBeTruthy();
+      vi.setSystemTime(new Date("2026-11-26T00:00:01Z"));
+      await settleTokens(env, ticket!, 780);
+      await settleTokens(env, ticket!, 780);
+      expect(db.prepare("SELECT day, reserved_tokens, used_tokens, calls FROM assistant_usage").all())
+        .toEqual([{ day: "2026-11-25", reserved_tokens: 0, used_tokens: 780, calls: 1 }]);
+    } finally { vi.useRealTimers(); }
+  });
+
+  it("retains the full token allowance when a dispatched call loses its response", async () => {
+    const { env, db } = freshEnv();
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new TypeError("connection interrupted")));
+    expect((await ask(env, { messages: [{ role: "user", content: "Hello" }] })).status).toBe(504);
+    const row = db.prepare("SELECT reserved_tokens, used_tokens FROM assistant_usage").get()!;
+    expect(row.reserved_tokens).toBe(0);
+    expect(Number(row.used_tokens)).toBeGreaterThan(500);
+  });
+
+  it("admits only one concurrent reservation when both cannot fit", async () => {
+    const { env } = freshEnv();
+    const tickets = await Promise.all([reserveTokens(env, 4000, 5000), reserveTokens(env, 4000, 5000)]);
+    expect(tickets.filter(Boolean)).toHaveLength(1);
   });
 
   it("a budget of 0 pauses the assistant; oversized bodies are refused before parsing", async () => {
@@ -147,7 +177,7 @@ describe("assistant facts come from the same source as /api/config", () => {
 
   it("states the locked build prices, hosting amounts, currency, interval and operator exactly", () => {
     const p = systemPrompt(cfg({ hosting: { status: "active", amount: "", amounts: { personal: "3", business: "4.50", ecommerce: "5" }, currency: "EUR", interval: "year" }, operator: { name: "Motion Analytics", note: "", supportEmail: "help@example.com" } }), "pricing");
-    for (const s of ["USD 20", "USD 30", "USD 100", "EUR 4.50", "per year", "operated by Motion Analytics", "help@example.com", "It is charged for every published site."]) expect(p).toContain(s);
+    for (const s of ["USD 20", "USD 30", "USD 100", "EUR 4.50", "per year", "operated by Motion Analytics", "help@example.com", "Automatic recurring collection is unavailable."]) expect(p).toContain(s);
     expect(p).not.toMatch(/undefined|NaN|\$/);
   });
 
@@ -155,7 +185,13 @@ describe("assistant facts come from the same source as /api/config", () => {
     expect(systemPrompt(cfg(), "home")).toContain("not switched on yet");
     expect(systemPrompt(cfg({ payments: { provider: "dodo", configured: true, mode: "test" } }), "home")).toContain("test mode");
     expect(systemPrompt(cfg({ payments: { provider: "dodo", configured: true, mode: "live" } }), "home")).toContain("paying the one-time build fee online");
-    expect(systemPrompt(cfg(), "home")).toContain("announced but not being charged yet");
+    expect(systemPrompt(cfg(), "home")).toContain("announced but is not being charged automatically");
+  });
+
+  it("keeps unset hosting distinct from announced fees and uses the public price defaults", () => {
+    const prompt = systemPrompt(cfg({ hosting: { status: "not_set", amounts: {}, currency: "USD", interval: "month" } }), "pricing");
+    expect(prompt).toContain("has not been announced");
+    expect(prompt).toContain("personal USD 3, business USD 4, online store USD 5");
   });
 
   it("lists every offline payment option the store schema supports", () => {

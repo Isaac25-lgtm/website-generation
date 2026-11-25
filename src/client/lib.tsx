@@ -1,3 +1,4 @@
+import { HOSTING_DEFAULTS, hostingNotice } from "../shared/pricing";
 import { parseMoney, parsePrice } from "../shared/util";
 import { createContext, useRef, useCallback, useContext, useEffect, useState, type ReactNode, type RefObject } from "react";
 
@@ -110,18 +111,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
 export const usd = (cents: number) => `$${(cents / 100).toFixed(cents % 100 ? 2 : 0)}`;
 
 type SiteKind = "personal" | "business" | "ecommerce";
-/** Owner-approved hosting & maintenance per published site per month, used until the admin settings load. */
-const HOSTING_DEFAULTS: Record<SiteKind, string> = { personal: "3", business: "4", ecommerce: "5" };
 
 /**
  * Hosting & maintenance price as configured by the admin, per site type (approved: $3 personal, $4 business,
  * $5 online store). `label` is the price for `type` (business when omitted); `range` spans all types, e.g. "$3–$5".
  */
-export function hostingPrice(config: Config | null, type?: string): { label: string; range: string; byType: Record<SiteKind, string>; amount: string; interval: string; billingLive: boolean } {
+export function hostingPrice(config: Config | null, type?: string): { label: string; range: string; byType: Record<SiteKind, string>; amount: string; interval: string; notice: string } {
   const h = config?.hosting;
   const cur = h?.currency || "USD";
   const interval = h?.interval || "month";
-  const amounts = { ...HOSTING_DEFAULTS };
+  const amounts: Record<SiteKind, string> = { ...HOSTING_DEFAULTS };
   for (const k of Object.keys(amounts) as SiteKind[]) { const v = h?.amounts?.[k]; if (v) amounts[k] = v; }
   const fmt = (a: string) => (cur === "USD" ? `$${a}` : `${cur} ${a}`);
   const kind: SiteKind = type === "personal" || type === "ecommerce" ? type : "business";
@@ -129,7 +128,7 @@ export function hostingPrice(config: Config | null, type?: string): { label: str
   const lo = String(Math.min(...nums)), hi = String(Math.max(...nums));
   const range = lo === hi ? fmt(lo) : cur === "USD" ? `$${lo}–$${hi}` : `${cur} ${lo}–${hi}`;
   const byType = { personal: fmt(amounts.personal), business: fmt(amounts.business), ecommerce: fmt(amounts.ecommerce) };
-  return { label: fmt(amounts[kind]), range, byType, amount: amounts[kind], interval, billingLive: h?.status === "active" };
+  return { label: fmt(amounts[kind]), range, byType, amount: amounts[kind], interval, notice: hostingNotice(h?.status) };
 }
 
 export function money(minor: number, currency: string) {

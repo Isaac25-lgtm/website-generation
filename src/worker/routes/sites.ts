@@ -119,7 +119,7 @@ async function serveTemplatePreview(c: Ctx) {
   const locked = tpl.tier === "member" && !c.get("user");
   const thumbOnly = locked && reqUrl.searchParams.get("static") === "1" && restPath === "";
   if (locked && !thumbOnly) {
-    return c.html(`<!doctype html><meta charset="utf-8"><body style="font-family:system-ui;display:grid;place-items:center;min-height:95vh;background:#fafafa;color:#171717;margin:0"><div style="text-align:center;padding:2rem"><h1 style="font-size:1.3rem">Sign in to unlock “${tpl.name}”</h1><p style="opacity:.75">Members get access to the full template library.</p></div></body>`, 200);
+    return c.html(`<!doctype html><meta charset="utf-8"><body style="font-family:system-ui;display:grid;place-items:center;min-height:95vh;background:#fafafa;color:#171717;margin:0"><div style="text-align:center;padding:2rem"><h1 style="font-size:1.3rem">Sign in to unlock “${tpl.name}”</h1><p style="opacity:.75">Members get access to the full template library.</p></div></body>`, 200, { "cache-control": "private, no-store" });
   }
   const persona = PERSONAS[tpl.id];
   const full = generateSiteDoc(tpl.type, tpl.id, persona.answers);
@@ -131,7 +131,7 @@ async function serveTemplatePreview(c: Ctx) {
   const ctx = { ...renderCtxBase(c, "prj_template_preview", base, "template" as const), nonce, query: url.searchParams, staticMode: url.searchParams.get("static") === "1" };
   if (tpl.type === "ecommerce") Object.assign(ctx, { store: demoProductViews(persona, doc.store!.currency) });
   const r = renderSite(doc, tpl, ctx, rest);
-  return new Response(r.html, { status: r.status, headers: siteHeaders(nonce, { "cache-control": tpl.tier === "public" ? "public, max-age=600" : "private, max-age=600", "x-robots-tag": "noindex" }) });
+  return new Response(r.html, { status: r.status, headers: siteHeaders(nonce, { "cache-control": tpl.tier === "public" ? "public, max-age=600" : "private, no-store", "x-robots-tag": "noindex" }) });
 }
 sites.get("/api/templates/:tid/preview", (c) => c.redirect(`/api/templates/${c.req.param("tid")}/preview/`));
 sites.get("/api/templates/:tid/preview/*", serveTemplatePreview);

@@ -80,8 +80,9 @@ def strip_owner_photos(value):
             stock = v.get("stock")
             if isinstance(stock, str) and stock.startswith(OWNER_PREFIX):
                 rest = {k: x for k, x in v.items() if k != "stock"}
-                return rest if ("assetId" in rest or "art" in rest) else drop
+                return walk(rest) if ("assetId" in rest or "art" in rest) else drop
             return {k: x for k, x in ((k, walk(x)) for k, x in v.items()) if x is not drop}
         return v
 
-    return walk(value)
+    cleaned = walk(value)
+    return {} if cleaned is drop else cleaned

@@ -123,6 +123,32 @@ test.describe("Ask ImprintSites AI", () => {
   });
 });
 
+test("admin edits only the selected setting after the registry has initialized", async ({ page }) => {
+  await page.route("**/api/auth/me", route => route.fulfill({ json: { user: { id: "admin-test", name: "Admin", isAdmin: true } } }));
+  await page.route("**/api/admin/overview", route => route.fulfill({ json: null }));
+  const settings = [
+    { key: "template_registry", value: "current" },
+    { key: "support_email", value: "admin@example.test" },
+    { key: "assistant_daily_token_budget", value: "1500000" },
+  ];
+  let saved: Record<string, string> | undefined;
+  await page.route("**/api/admin/settings", async route => {
+    if (route.request().method() === "PUT") {
+      saved = route.request().postDataJSON();
+      for (const setting of settings) setting.value = saved?.[setting.key] ?? setting.value;
+    }
+    await route.fulfill({ json: { settings } });
+  });
+  await page.goto("/admin");
+  await page.getByRole("tab", { name: "Settings" }).click();
+  const budget = page.getByLabel("Daily help assistant token budget", { exact: false });
+  await budget.fill("0");
+  await page.getByRole("button", { name: "Save settings" }).click();
+  await expect.poll(() => saved).toEqual({ assistant_daily_token_budget: "0" });
+  await expect(budget).toHaveValue("0");
+  await expect(page.getByLabel("Public support email", { exact: false })).toHaveValue("admin@example.test");
+});
+
 test.describe("Ask ImprintSites AI: conversations", () => {
   test("each account gets its own chat, and Clear discards a reply still in flight", async ({ page }) => {
     let delay = 0;
@@ -157,9 +183,13 @@ test.describe("Ask ImprintSites AI: conversations", () => {
     await panel.getByLabel("Your question").fill("Kept for account A");
     await panel.getByRole("button", { name: "Send" }).click();
     await expect(panel.locator(".ast-assistant")).toHaveCount(1);
+    await panel.getByLabel("Your question").fill("An unsent private note");
     // Sign out and in as someone else in the same tab: the chat starts empty.
     await page.keyboard.press("Escape");
     await page.getByRole("button", { name: "Sign out" }).click();
+    await page.waitForURL("**/");
+    await page.getByRole("button", { name: "Ask ImprintSites AI" }).click();
+    await expect(page.getByLabel("Your question")).toHaveValue("");
     await signUp("b");
     await page.getByRole("button", { name: "Ask ImprintSites AI" }).click();
     await expect(page.getByRole("dialog", { name: "Ask ImprintSites AI" }).locator(".ast-msg")).toHaveCount(0);

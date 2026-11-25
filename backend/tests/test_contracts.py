@@ -37,3 +37,11 @@ def test_draft_doc_returns_none_for_bad_input():
 def test_locked_prices_come_from_the_contract():
     assert {p["type"]: p["priceCents"] for p in contracts.public_config()["plans"]} == {"personal": 2000, "business": 3000, "ecommerce": 10000}
     assert all(p["currency"] == "USD" and p["billing"] == "one_time" for p in contracts.public_config()["plans"])
+
+
+def test_customer_intake_drops_private_stock_and_preserves_uploaded_asset():
+    source = {"gallery": [{"stock": "owner-private"}, {"stock": "public-photo"}],
+              "logo": {"assetId": "ast_customer", "stock": "owner-private"}}
+    assert contracts.strip_owner_photos(source) == {
+        "gallery": [{"stock": "public-photo"}], "logo": {"assetId": "ast_customer"}
+    }

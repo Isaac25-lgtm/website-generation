@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { z } from "zod";
-import { isOwnerStock } from "../../shared/owner-photos";
+import { isOwnerStock, stripOwnerPhotos } from "../../shared/owner-photos";
 import type { Ctx, HonoEnv } from "../env";
 import { HttpError, now } from "../env";
 import { audit, requireUser } from "../lib/auth";
@@ -96,7 +96,7 @@ async function productOut(c: Ctx, projectId: string, productId?: string) {
   return (prods.results as any[]).map((p) => ({
     id: p.id, title: p.title, handle: p.handle, description: p.description, productType: p.product_type, status: p.status,
     priceMinor: p.price_cents, compareAtMinor: p.compare_at_cents, costMinor: p.cost_cents, currency: p.currency, sku: p.sku,
-    weightGrams: p.weight_grams, dimensions: p.dimensions, tags: p.tags, images: JSON.parse(p.images_json || "[]"),
+    weightGrams: p.weight_grams, dimensions: p.dimensions, tags: p.tags, images: stripOwnerPhotos(JSON.parse(p.images_json || "[]")),
     option1Name: p.option1_name, option2Name: p.option2_name, maxPerOrder: p.max_per_order, featured: !!p.featured,
     collections: (links.results as any[]).filter((l) => l.product_id === p.id).map((l) => l.collection_id),
     variants: (vars.results as any[]).filter((v) => v.product_id === p.id).map((v) => ({

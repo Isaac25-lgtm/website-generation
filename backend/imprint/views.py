@@ -195,7 +195,7 @@ class ProjectDetailView(APIView):
                 "createdAt": p.created_at, "updatedAt": p.updated_at, "price": contracts.plan_price_cents(p.site_type),
                 "contentRightsAck": bool(p.content_rights_ack_at), "aiReviewAck": bool(p.ai_review_ack_at),
             },
-            "intake": ({"step": intake.step, "answers": json.loads(intake.data_json or "{}"), "completedAt": intake.completed_at}
+            "intake": ({"step": intake.step, "answers": contracts.strip_owner_photos(json.loads(intake.data_json or "{}")), "completedAt": intake.completed_at}
                        if intake else {"step": 0, "answers": {}}),
             "doc": contracts.draft_doc(p.draft_json),
             "publish": publish,

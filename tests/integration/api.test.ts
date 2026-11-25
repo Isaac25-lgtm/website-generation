@@ -74,6 +74,9 @@ describe("public site & policies", () => {
     expect(signed.templates.filter((t: any) => t.locked).length).toBe(0);
     const lockedPreview = await anon.req("/api/templates/p-studio/preview/", { raw: true });
     expect(lockedPreview.text).toContain("Sign in to unlock");
+    const memberPage = await A.req("/api/templates/e-runway/preview/", { raw: true });
+    expect(memberPage.text).not.toContain("Sign in to unlock");
+    expect(memberPage.res.headers.get("cache-control")).toContain("no-store");
     // Signed-out gallery cards get a deliberately limited thumbnail: the member home page's first section only.
     const thumb = (await anon.req("/api/templates/e-runway/preview/?static=1", { raw: true })).text;
     expect(thumb).not.toContain("Sign in to unlock");
@@ -129,6 +132,17 @@ describe("auth & CSRF", () => {
     expect((await A.req("/api/admin/overview")).status).toBe(403);
     expect((await B.req("/api/admin/overview")).status).toBe(200);
   });
+});
+
+describe("legacy stock URLs", () => {
+  for (const name of ["tech-desk-overhead", "shoe-white-fence"]) {
+    it(`serves a replacement WebP for ${name}`, async () => {
+      const res = await fetch(`${BASE}/stock/${name}.webp`);
+      expect(res.status).toBe(200);
+      expect(res.headers.get("content-type")).toContain("image/webp");
+      expect(Buffer.from(await res.arrayBuffer()).subarray(8, 12).toString()).toBe("WEBP");
+    });
+  }
 });
 
 describe("Ask ImprintSites AI assistant", () => {

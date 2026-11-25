@@ -86,6 +86,9 @@ export default {
     const t = Date.now();
     await env.DB.batch([
       env.DB.prepare("DELETE FROM sessions WHERE expires_at < ?").bind(t),
+      // An interrupted request keeps its full allowance. Finalize abandoned days after all calls have expired.
+      env.DB.prepare("UPDATE assistant_usage SET used_tokens = used_tokens + reserved_tokens, reserved_tokens = 0, updated_at = ? WHERE day < date('now', '-1 day') AND reserved_tokens > 0").bind(t),
+      env.DB.prepare("DELETE FROM assistant_reservations WHERE day < date('now', '-1 day')"),
       env.DB.prepare("DELETE FROM rate_limits WHERE window_start < ?").bind(Math.floor(t / 1000) - 2 * 86400),
       env.DB.prepare("DELETE FROM password_resets WHERE expires_at < ?").bind(t - 7 * 86400_000),
       env.DB.prepare("DELETE FROM error_events WHERE created_at < ?").bind(t - 30 * 86400_000),

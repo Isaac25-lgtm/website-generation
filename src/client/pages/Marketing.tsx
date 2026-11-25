@@ -35,8 +35,7 @@ export function Pricing() {
             <h3>Hosting &amp; maintenance: {hp.range} per site per {hp.interval}</h3>
             <p className="small" style={{ margin: "0 0 .5rem" }}><strong>{hp.byType.personal}</strong> personal · <strong>{hp.byType.business}</strong> business · <strong>{hp.byType.ecommerce}</strong> online store, per site per {hp.interval}.</p>
             <p className="muted small">
-              Keeps your site online at its web address over secure https, with backups, security and platform updates, and support. It's billed monthly per published site, and you can cancel any time (your site goes offline at the end of the paid month; you can export it first).
-              {" "}{hp.billingLive ? "" : "Monthly billing is being set up: you'll be asked to agree to the monthly plan before any monthly charge is made."}
+              Keeps your site online at its web address over secure https, with backups, security and platform updates, and support. {hp.notice}
               {" "}Your web address is set up automatically. Connecting a domain you own is coming soon; domains are bought from a registrar at their price and aren't included.
             </p>
           </div>

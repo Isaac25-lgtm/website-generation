@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router";
 import { api, ApiError, useApp } from "../lib";
-import { ASSISTANT_MAX_HISTORY, ASSISTANT_MAX_TURN } from "../../shared/assistant";
+import { ASSISTANT_MAX_HISTORY, ASSISTANT_MAX_TURN, pageCategory } from "../../shared/assistant";
+import { PAGE_GUIDES } from "../../shared/assistant-guides";
 
 // "Ask ImprintSites AI" (owner, 25 Nov 2026): a help assistant on every platform page, answered by DeepSeek
 // through /api/assistant (the key never reaches the browser). Replies are shown as plain text, never HTML.
@@ -9,8 +10,45 @@ import { ASSISTANT_MAX_HISTORY, ASSISTANT_MAX_TURN } from "../../shared/assistan
 // account starts an empty chat and removes the previous one.
 
 type Msg = { role: "user" | "assistant"; content: string };
+/** Inline **bold** and `code`, as React elements (never HTML). */
+function inline(text: string): ReactNode[] {
+  return text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g).filter(Boolean).map((part, i) =>
+    part.startsWith("**") && part.endsWith("**") ? <strong key={i}>{part.slice(2, -2)}</strong>
+      : part.startsWith("`") && part.endsWith("`") ? <code key={i}>{part.slice(1, -1)}</code>
+        : <Fragment key={i}>{part}</Fragment>);
+}
+
+/** Readable formatting for the assistant's answers: headings, numbered and bulleted lists, paragraphs, bold. */
+export function RichReply({ text }: { text: string }) {
+  const blocks: ReactNode[] = [];
+  let list: { ordered: boolean; items: string[] } | null = null;
+  let para: string[] = [];
+  const flushPara = () => { if (para.length) blocks.push(<p key={blocks.length}>{inline(para.join(" "))}</p>); para = []; };
+  const flushList = () => {
+    if (!list) return;
+    const items = list.items.map((x, i) => <li key={i}>{inline(x)}</li>);
+    blocks.push(list.ordered ? <ol key={blocks.length}>{items}</ol> : <ul key={blocks.length}>{items}</ul>);
+    list = null;
+  };
+  for (const raw of text.split("\n")) {
+    const line = raw.trim();
+    const heading = line.match(/^#{1,4}\s+(.*)$/);
+    const ordered = line.match(/^\d+[.)]\s+(.*)$/);
+    const bullet = line.match(/^[-*•]\s+(.*)$/);
+    if (!line) { flushPara(); flushList(); }
+    else if (heading) { flushPara(); flushList(); blocks.push(<p key={blocks.length} className="ast-h">{inline(heading[1].replace(/\*\*/g, ""))}</p>); }
+    else if (ordered || bullet) {
+      flushPara();
+      const isOrdered = !!ordered;
+      if (!list || list.ordered !== isOrdered) { flushList(); list = { ordered: isOrdered, items: [] }; }
+      list.items.push((ordered ?? bullet)![1]);
+    } else { flushList(); para.push(line); }
+  }
+  flushPara(); flushList();
+  return <>{blocks}</>;
+}
+
 const keyFor = (owner: string) => `imprintsites-assistant:${owner}`;
-const STARTERS = ["What does it cost to publish a site?", "Which template suits a small business?", "How do I add products to my store?"];
 
 function load(owner: string): Msg[] {
   try {
@@ -87,11 +125,11 @@ export function Assistant() {
           <div className="ast-list" ref={list} aria-live="polite">
             {msgs.length === 0 && (
               <div className="ast-empty">
-                <p>Ask about templates, prices, publishing or running your store.</p>
-                {STARTERS.map((s) => <button key={s} className="ast-chip" onClick={() => send(s)}>{s}</button>)}
+                <p>Ask anything about building, publishing or running your site. Questions about this page:</p>
+                {PAGE_GUIDES[pageCategory(loc.pathname)].starters.map((s) => <button key={s} className="ast-chip" onClick={() => send(s)}>{s}</button>)}
               </div>
             )}
-            {msgs.map((m, i) => <div key={i} className={`ast-msg ast-${m.role}`}>{m.content}</div>)}
+            {msgs.map((m, i) => <div key={i} className={`ast-msg ast-${m.role}`}>{m.role === "assistant" ? <RichReply text={m.content} /> : m.content}</div>)}
             {busy && <div className="ast-msg ast-assistant ast-typing" aria-label="Writing a reply"><i /><i /><i /></div>}
             {note && <p className="ast-note" role="status">{note}</p>}
           </div>

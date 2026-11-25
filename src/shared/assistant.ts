@@ -2,7 +2,7 @@
 // returns can always be sent back as conversation history on the next turn.
 
 /** Longest single turn, in characters. Replies are cut to this length too. */
-export const ASSISTANT_MAX_TURN = 3000;
+export const ASSISTANT_MAX_TURN = 6000; // room for detailed, step-by-step answers (owner, 25 Nov 2026)
 /** Turns kept and forwarded to the model. */
 export const ASSISTANT_MAX_HISTORY = 12;
 /** Largest request body the endpoint will read, in bytes. */

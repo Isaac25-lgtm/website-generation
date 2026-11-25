@@ -154,7 +154,7 @@ describe("help assistant", () => {
     db.prepare("UPDATE system_settings SET value = '0' WHERE key = 'assistant_daily_token_budget'").run();
     expect((await (await ask(env, { messages: [{ role: "user", content: "Hi" }] })).json() as any).code).toBe("paused");
     expect(calls.length).toBe(0);
-    const big = await app.request("/api/assistant", { method: "POST", headers: { "content-type": "application/json" }, body: "x".repeat(200_000) }, env as never);
+    const big = await app.request("/api/assistant", { method: "POST", headers: { "content-type": "application/json" }, body: "x".repeat(400_000) }, env as never);
     expect(big.status).toBe(413);
   });
 
@@ -198,5 +198,36 @@ describe("assistant facts come from the same source as /api/config", () => {
     const p = systemPrompt(cfg(), "store");
     expect(PaymentMethod.shape.kind.options.length).toBe(5);
     for (const s of ["cash on delivery", "pay on pickup", "bank transfer", "mobile money", "WhatsApp"]) expect(p).toContain(s);
+  });
+});
+
+describe("page-aware starter questions and guides", () => {
+  it("every page category has its own detailed starter questions", async () => {
+    const { PAGE_GUIDES } = await import("../../src/shared/assistant-guides");
+    const all = new Set<string>();
+    for (const key of Object.keys(PAGE_CATEGORIES)) {
+      const g = PAGE_GUIDES[key as keyof typeof PAGE_CATEGORIES];
+      expect(g, key).toBeDefined();
+      expect(g.starters.length, key).toBeGreaterThanOrEqual(3);
+      for (const q of g.starters) {
+        expect(q.length, q).toBeGreaterThan(40); // guiding, specific questions, not one-liners
+        expect(q.length, q).toBeLessThanOrEqual(ASSISTANT_MAX_TURN);
+        expect(q.endsWith("?") || q.endsWith("."), q).toBe(true);
+        all.add(q);
+      }
+      if (key !== "other") expect(g.guide.length, key).toBeGreaterThan(100);
+    }
+    expect(all.size).toBe(Object.values(PAGE_GUIDES).reduce((n, g) => n + g.starters.length, 0)); // no duplicates across pages
+  });
+
+  it("sends only the current page's guide, and asks for detailed step-by-step answers", async () => {
+    const { PAGE_GUIDES } = await import("../../src/shared/assistant-guides");
+    const cfg = { payments: { configured: false, mode: "test" }, google: { enabled: false }, email: { configured: false }, hosting: { status: "announced", amount: "", amounts: { personal: "3", business: "4", ecommerce: "5" }, currency: "USD", interval: "month" }, operator: { name: "Motion Imprints Technologies", note: "", supportEmail: "" } } as any;
+    const editor = systemPrompt(cfg, "editor");
+    expect(editor).toContain(PAGE_GUIDES.editor.guide);
+    expect(editor).not.toContain(PAGE_GUIDES.store.guide);
+    expect(editor).toMatch(/numbered step-by-step/);
+    expect(systemPrompt(cfg, "store")).toContain("Import CSV");
+    expect(systemPrompt(cfg, "auth")).toContain("Google sign-in is not available yet");
   });
 });

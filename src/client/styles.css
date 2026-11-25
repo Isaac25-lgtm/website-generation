@@ -548,3 +548,13 @@ button { font: inherit; }
 [data-theme="dark"] .ast-user { background: #eceef4; color: #171a22; }
 @media (max-width: 560px) { .ast { right: .75rem; bottom: .75rem; } .ast-pill span { display: none; } .ast-pill { padding: .45rem; } }
 @media print { .ast { display: none; } }
+
+/* Formatted assistant answers */
+.ast-assistant { white-space: normal; }
+.ast-assistant p { margin: 0 0 .55rem; }
+.ast-assistant p:last-child, .ast-assistant ol:last-child, .ast-assistant ul:last-child { margin-bottom: 0; }
+.ast-assistant .ast-h { font-weight: 700; font-family: var(--font-h); margin-top: .35rem; }
+.ast-assistant ol, .ast-assistant ul { margin: 0 0 .6rem; padding-left: 1.2rem; display: grid; gap: .3rem; }
+.ast-assistant code { font-size: .85em; background: var(--soft-2); padding: .05rem .3rem; border-radius: 4px; }
+.ast-panel { width: min(420px, calc(100vw - 2.2rem)); }
+.ast-chip { line-height: 1.4; }

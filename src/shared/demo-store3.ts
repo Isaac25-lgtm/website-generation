@@ -157,6 +157,21 @@ KITS.citybike = {
   ],
 };
 
+KITS.wine = {
+  collections: ["Red", "White & orange", "Glassware"],
+  products: [
+    { title: "Chillable red, 75 cl", price: 26, description: "Gamay from granite slopes. Light, juicy and best a little cold.", collection: "Red", stock: 24, featured: true, image: "drink-wine-bottle", images: ["drink-wine-bar"] },
+    { title: "Skin-contact white, 75 cl", price: 29, description: "A week on the skins gives apricot, tea and a little grip.", collection: "White & orange", stock: 18, featured: true, image: "drink-wine-pour" },
+    { title: "Mountain white, 75 cl", price: 24, description: "Crisp and saline, from a co-operative in the Alps.", collection: "White & orange", stock: 20, featured: true, image: "drink-wine-glasses" },
+    { title: "Mixed case of six", price: 140, description: "Six bottles we're drinking this month, with tasting notes.", collection: "Red", stock: 10, featured: true, image: "drink-wine-bar" },
+    { title: "Tasting glasses, set of 4", price: 36, description: "Thin-rimmed glasses for every style of wine.", collection: "Glassware", stock: 12, image: "drink-wine-glasses" },
+  ],
+  faqs: [
+    { q: "What is natural wine?", a: "Wine made from organically farmed grapes with little or nothing added in the cellar." },
+    { q: "Do you deliver?", a: "Yes, to adults only. The courier checks ID on delivery." },
+  ],
+};
+
 KITS.ceramics = {
   collections: ["Tableware", "Vases", "Commissions"],
   products: [
@@ -285,6 +300,23 @@ const SHOPS: R[] = [
   ["e-florist", "florist", "Bloom & Bramble", "Flowers from the market to your door.", "Florist", "Berlin", "Germany", "EUR", 1, "make-flower-stall", "Bloom & Bramble buys from local growers and delivers bouquets across the city by bicycle."],
   ["e-woodshop", "woodwork", "Grain & Joint", "Furniture made by hand in Burgundy.", "Woodwork", "Dijon", "France", "EUR", 1, "make-workshop-lamps", "Grain & Joint is a family woodworking studio, making furniture and objects from local oak."],
   ["e-studioobjects", "candles", "Still Life Objects", "Small objects for quiet rooms.", "Design objects", "Lisbon", "Portugal", "EUR", 0.95, "make-candle-shelf", "Still Life designs candles, vases and small objects, made by craftspeople around Lisbon."],
+  // Four-star top-up
+  ["e-cornercafe", "coffee", "Little Corner", "Your neighbourhood café, now online.", "Café", "Belgrade", "Serbia", "EUR", 0.85, "coffee-hand-cup", "Little Corner is a café on a quiet street, roasting its own beans in the back room since 2016."],
+  ["e-bedside", "wellness", "Night Owl Rest", "Better sleep, one evening at a time.", "Sleep", "Brooklyn", "United States", "USD", 1, "home-cushions", "Night Owl Rest makes things for the hour before bed: eye pillows, teas and oils."],
+  ["e-gutfeeling", "wellness", "Sunny Side Health", "Supplements explained in plain English.", "Supplements", "London", "United Kingdom", "GBP", 0.8, "home-glass-jar", "Sunny Side makes a short range of daily supplements and publishes the research behind each one."],
+  ["e-labnotes", "wellness", "Formula Nine", "Supplements with the doses on the front.", "Supplements", "Munich", "Germany", "EUR", 1, "beauty-dropper-tan", "Formula Nine makes supplements with clinically studied doses, tested by an independent laboratory."],
+  ["e-reset", "wellness", "Slow Morning Co.", "Small rituals for calmer mornings.", "Wellness", "Byron Bay", "Australia", "AUD", 1.5, "home-white-jug", "Slow Morning makes teas, oils and bath bars for a calmer start to the day."],
+  ["e-mercantile", "kids", "Oak Street General", "A general store for small people.", "Children's shop", "Kansas City", "United States", "USD", 1, "kids-basket", "Oak Street General stocks toys, clothes and nursery things chosen by two parents who run the shop."],
+  ["e-bobble", "kids", "Pom Pom Knits", "Warm hats for small heads.", "Children's knitwear", "Reykjavik", "Iceland", "EUR", 1, "kids-baby-feet", "Pom Pom Knits makes hats and mittens in soft wool, knitted by a cooperative in the north of Iceland."],
+  ["e-isola", "kids", "Piccola Isola", "Clothes for children, made in Italy.", "Children's fashion", "Florence", "Italy", "EUR", 1, "kids-tiny-sneakers", "Piccola Isola makes clothes and shoes for babies and small children in workshops around Florence."],
+  ["e-circus", "kids", "Big Top Toys", "Toys designed to last a childhood.", "Toys", "Zurich", "Switzerland", "CHF", 0.95, "kids-teddy-mobile", "Big Top designs wooden toys and nursery things with Swiss toymakers."],
+  ["e-accord", "fragrance", "Maison Petrichor", "Perfume that smells like the first rain.", "Niche perfume", "Paris", "France", "EUR", 1.1, "frag-garden-portrait", "Maison Petrichor composes small-batch perfumes in Paris, with natural and safe synthetic materials."],
+  ["e-crew", "streetwear", "Block Party", "Drops for the people who show up.", "Streetwear", "Amsterdam", "Netherlands", "EUR", 1, "street-hoodie-camera", "Block Party started as a weekend market stall and still makes every drop with its own community."],
+  ["e-afterhours", "streetwear", "Late Shift", "Streetwear for the night.", "Streetwear", "Los Angeles", "United States", "USD", 1, "street-hood-fern", "Late Shift makes heavyweight basics and limited drops, released at midnight."],
+  ["e-planner", "stationery", "Margin Notes", "Planners for people who like paper.", "Planners", "Toronto", "Canada", "CAD", 1.35, "paper-notebook-pencil", "Margin Notes designs planners and notebooks printed and bound in Toronto."],
+  ["e-cheekycards", "stationery", "Rude Post", "Cards that say what you meant.", "Greetings cards", "Manchester", "United Kingdom", "GBP", 0.8, "paper-notebook-coffee", "Rude Post makes greetings cards with honest messages, printed in Manchester."],
+  ["e-sparkling", "drinks", "Fizzwell", "Sparkling drinks with real fruit.", "Soft drinks", "Lisbon", "Portugal", "EUR", 0.9, "drink-lemon-soda", "Fizzwell makes lightly sparkling drinks with fruit from Portuguese orchards.", "Mixers"],
+  ["e-cellar", "wine", "Low Cellar", "Natural wine, chosen by people who drink it.", "Wine shop", "Melbourne", "Australia", "AUD", 1.5, "drink-wine-pour", "Low Cellar is a small wine shop that sells low-intervention wine from growers it has visited."],
   ["e-paperfold", "ceramics", "Fold Studio", "Soft furniture and lights in folded paper.", "Design studio", "Vancouver", "Canada", "CAD", 1.35, "make-mug-shelf", "Fold Studio designs flexible paper furniture, lights and tableware in Vancouver."],
 ];
 

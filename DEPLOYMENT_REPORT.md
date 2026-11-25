@@ -205,3 +205,10 @@ Screenshots are in `tests/e2e/screenshots/prod/`. The test support ticket was de
 - New product kits with fictional demo shops: coffee, drinks, food, tech, gadgets, cycling, ski, golf, city bikes, ceramics, florist, woodwork and candles. 84 new CC0 photos are credited in `public/stock/CREDITS.txt`.
 - Shop hero subheadings now use the first sentence of the shop's story, so they no longer repeat the headline (batch 2 fixed as well).
 - Tests: unit 1668, integration 62, Playwright 13 (local, including every template), smoke 39/39, all 283 live previews return 200. Smoke records were cleaned up.
+
+## 25 November 2026: four-star shop top-up (version dfbb5ae3)
+
+- 16 four-star shops, ranked "standard" so they appear after the five-star ones: wellness 4, kids 4, stationery 2, drinks 2, streetwear 2 (filed under fashion), fragrance 1 and coffee 1. A new wine kit backs the natural-wine shop.
+- Library: 299 templates (personal 93, business 63, online store 143). Every planned five-star site and the agreed four-star fills are now live.
+- Shop categories now have at least 5 designs each, except fragrance with 3: only one four-star fragrance source exists.
+- Tests: unit 1764, integration 62, Playwright 13 (local, including every template), smoke 39/39, all 299 live previews return 200. Smoke records were cleaned up.

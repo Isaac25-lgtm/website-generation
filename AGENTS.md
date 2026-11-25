@@ -83,7 +83,7 @@ All of the following work and are tested locally and on production:
 
 ## 3. Non-negotiable owner rules
 
-- **Prices:** build fees are **$20 / $30 / $100 USD, one-time**, locked in `src/shared/pricing.ts` (frozen object) and never taken from the client.
+- **Prices:** build fees are **$20 / $25 / $100 USD, one-time** (business changed from $30 to $25 by the owner on 25 Nov 2026), locked in `src/shared/pricing.ts` (frozen object) and never taken from the client.
   - Hosting & maintenance per site per month is **$3 personal, $4 business, $5 online store** (owner, 2026-11-21). Always state the numbers; the owner explicitly rejected vague wording like "flat fee".
   - The hosting values are stored in `system_settings` (migrations 0002 and 0003), and the UI reads them via `hostingPrice()` in `src/client/lib.tsx`.
 - **Truthfulness:**

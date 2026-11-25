@@ -24,7 +24,7 @@ test.describe("public marketing site", () => {
     await page.goto("/");
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Imagine it. Build it. Launch it.");
     await expect(page.getByLabel("Describe your website")).toBeVisible();
-    for (const p of ["$20", "$30", "$100"]) await expect(page.getByText(p).first()).toBeVisible();
+    for (const p of ["$20", "$25", "$100"]) await expect(page.getByText(p).first()).toBeVisible();
     for (const fee of ["+ $3 / month hosting & maintenance", "+ $4 / month hosting & maintenance", "+ $5 / month hosting & maintenance"]) await expect(page.getByText(fee).first()).toBeAttached();
     await expect(page.getByText(/Hosting and maintenance are then \$3–\$5 per site per month, depending on the site type/)).toBeAttached();
     await page.waitForTimeout(1200);
@@ -47,7 +47,7 @@ test.describe("public marketing site", () => {
   test("pricing, legal and contact pages", async ({ page }) => {
     await page.goto("/pricing");
     await expect(page.getByText("$20").first()).toBeVisible();
-    await expect(page.getByText("$30").first()).toBeVisible();
+    await expect(page.getByText("$25").first()).toBeVisible();
     await expect(page.getByText("$100").first()).toBeVisible();
     await expect(page.getByRole("heading", { name: /Hosting & maintenance: \$3–\$5 per site per month/ })).toBeVisible();
     await page.screenshot({ path: `${SHOTS}/03-pricing.png`, fullPage: true });
@@ -154,7 +154,7 @@ test.describe("Ask ImprintSites AI: conversations", () => {
     let delay = 0;
     await page.route("**/api/assistant", async (route) => {
       if (delay) await new Promise((r) => setTimeout(r, delay));
-      await route.fulfill({ json: { reply: "Business sites cost USD 30, paid once." } }).catch(() => undefined);
+      await route.fulfill({ json: { reply: "Business sites cost USD 25, paid once." } }).catch(() => undefined);
     });
     const signUp = async (n: string) => {
       await page.goto("/signup");
@@ -171,7 +171,7 @@ test.describe("Ask ImprintSites AI: conversations", () => {
     await expect(panel).toContainText("DeepSeek");
     await panel.getByLabel("Your question").fill("What does a business site cost?");
     await panel.getByRole("button", { name: "Send" }).click();
-    await expect(panel.locator(".ast-assistant").first()).toContainText("USD 30");
+    await expect(panel.locator(".ast-assistant").first()).toContainText("USD 25");
     // A pending reply is discarded after Clear.
     delay = 1500;
     await panel.getByLabel("Your question").fill("And a store?");

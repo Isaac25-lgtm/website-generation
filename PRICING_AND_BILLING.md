@@ -5,7 +5,7 @@
 | Product | Price | Source of truth |
 |---|---:|---|
 | Personal / Portfolio | **$20.00** (2000 cents) | `src/shared/pricing.ts` → `PLANS.personal.priceCents` |
-| Business | **$30.00** (3000 cents) | `PLANS.business.priceCents` |
+| Business | **$25.00** (2500 cents; was $30 until 25 Nov 2026) | `PLANS.business.priceCents` |
 | E-commerce | **$100.00** (10000 cents) | `PLANS.ecommerce.priceCents` |
 
 - `PLANS` is frozen. The server never accepts an amount from the client: checkout looks up the price by the project's site type, and unit and integration tests assert these values.

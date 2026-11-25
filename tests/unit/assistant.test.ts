@@ -38,11 +38,11 @@ const ask = (env: unknown, body: unknown) =>
   app.request("/api/assistant", { method: "POST", headers: { "content-type": "application/json", "cf-connecting-ip": `10.0.0.${++ip}` }, body: JSON.stringify(body) }, env as never);
 
 let calls: { url: string; body: any }[] = [];
-let reply = "Business sites cost USD 30, paid once.";
+let reply = "Business sites cost USD 25, paid once.";
 let status = 200;
 beforeEach(() => {
   calls = [];
-  reply = "Business sites cost USD 30, paid once.";
+  reply = "Business sites cost USD 25, paid once.";
   status = 200;
   vi.stubGlobal("fetch", vi.fn(async (url: string, init: RequestInit) => {
     calls.push({ url, body: JSON.parse(String(init.body)) });
@@ -177,7 +177,7 @@ describe("assistant facts come from the same source as /api/config", () => {
 
   it("states the locked build prices, hosting amounts, currency, interval and operator exactly", () => {
     const p = systemPrompt(cfg({ hosting: { status: "active", amount: "", amounts: { personal: "3", business: "4.50", ecommerce: "5" }, currency: "EUR", interval: "year" }, operator: { name: "Motion Analytics", note: "", supportEmail: "help@example.com" } }), "pricing");
-    for (const s of ["USD 20", "USD 30", "USD 100", "EUR 4.50", "per year", "operated by Motion Analytics", "help@example.com", "Automatic recurring collection is unavailable."]) expect(p).toContain(s);
+    for (const s of ["USD 20", "USD 25", "USD 100", "EUR 4.50", "per year", "operated by Motion Analytics", "help@example.com", "Automatic recurring collection is unavailable."]) expect(p).toContain(s);
     expect(p).not.toMatch(/undefined|NaN|\$/);
   });
 

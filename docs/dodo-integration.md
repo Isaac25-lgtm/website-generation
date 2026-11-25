@@ -15,7 +15,7 @@
 - Base URLs: `PAYMENTS_MODE=test` → `https://test.dodopayments.com`; `live` → `https://live.dodopayments.com`. Test-mode entitlements don't count in live mode.
 
 ## Owner setup (test mode first)
-1. In Dodo **test mode**, create three **one-time** products: *ImprintSites Personal website* ($20), *Business website* ($30) and *E-commerce website* ($100). Note their product IDs.
+1. In Dodo **test mode**, create three **one-time** products: *ImprintSites Personal website* ($20), *Business website* ($25) and *E-commerce website* ($100). Note their product IDs.
 2. Under Developer → Webhooks, add the endpoint `https://imprintsites.omodingisaac123.workers.dev/api/webhooks/dodo` with the events `payment.succeeded`, `payment.failed`, `payment.cancelled` and `refund.succeeded`. Copy the signing secret.
 3. Set the secrets. Paste each value only at the Wrangler prompt, never in chat:
    ```bash
@@ -47,7 +47,7 @@ The footer links to all of them on every page. The product description, prices a
 - **Automation level:** fully software-driven. Generation is template- and rules-based, with optional AI text suggestions on Cloudflare Workers AI that the customer reviews. There's **no manual design labour** in the product.
 - **AI content:** limited to optional wording suggestions and design-token refinements. No image, voice or video generation, no impersonation, and no scraping or copying of other sites: inspiration analysis reads only high-level style and respects robots.txt.
 - **Compliance-sensitive areas:** user-generated sites. Content rules are in the Terms, there's a takedown and report route, and admins can suspend sites.
-- **Pricing:** one-time $20, $30 or $100. No subscription.
+- **Pricing:** one-time $20, $25 or $100. No subscription.
 - **Stage:** live builder with path-based publishing. Card checkout pending your approval. Customer-store card payments and custom domains are not yet available and are labelled as such on the site.
 
 ## Merchant-acceptance notes

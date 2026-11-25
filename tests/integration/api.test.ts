@@ -55,7 +55,7 @@ describe("public site & policies", () => {
       expect(r.status, p).toBe(200);
     }
     const cfg = (await anon.req("/api/config")).json;
-    expect(cfg.prices.map((p: any) => p.priceCents)).toEqual([2000, 3000, 10000]);
+    expect(cfg.prices.map((p: any) => p.priceCents)).toEqual([2000, 2500, 10000]);
     for (const s of ["demo-portfolio", "demo-business", "demo-store"]) {
       const r = await anon.req(`/s/${s}/`, { raw: true });
       expect(r.status).toBe(200);
@@ -471,7 +471,7 @@ describe("web address, hosting price and demo content", () => {
   it("exposes the approved hosting & maintenance prices per site type ($3 / $4 / $5 a month)", async () => {
     const cfg = (await anon.req("/api/config")).json;
     expect(cfg.hosting).toMatchObject({ amount: "4", amounts: { personal: "3", business: "4", ecommerce: "5" }, currency: "USD", interval: "month" });
-    expect(cfg.prices.map((p: any) => p.priceCents)).toEqual([2000, 3000, 10000]);
+    expect(cfg.prices.map((p: any) => p.priceCents)).toEqual([2000, 2500, 10000]);
   });
   it("serves demo sites with real photos and no doubled page titles", async () => {
     const store = await anon.req("/s/demo-store/shop", { raw: true });

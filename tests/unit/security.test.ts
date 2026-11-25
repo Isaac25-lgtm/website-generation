@@ -12,9 +12,9 @@ import { buildZip, crc32 } from "../../src/worker/lib/zip";
 import { TEMPLATES } from "../../src/shared/templates";
 
 describe("locked pricing", () => {
-  it("is exactly $20 / $30 / $100 one-time USD", () => {
+  it("is exactly $20 / $25 / $100 one-time USD", () => {
     expect(priceFor("personal")).toBe(2000);
-    expect(priceFor("business")).toBe(3000);
+    expect(priceFor("business")).toBe(2500);
     expect(priceFor("ecommerce")).toBe(10000);
     for (const t of SITE_TYPES) { expect(PLANS[t].currency).toBe("USD"); expect(PLANS[t].billing).toBe("one_time"); }
     expect(Object.isFrozen(PLANS)).toBe(true);

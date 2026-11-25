@@ -10,7 +10,7 @@
     {
       "type": "business",
       "name": "Business",
-      "priceCents": 3000,
+      "priceCents": 2500,
       "currency": "USD",
       "billing": "one_time"
     },

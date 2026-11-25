@@ -51,7 +51,7 @@ def test_config_shape_and_settings():
     SystemSetting.objects.create(key="hosting_fee_amount", value="4", updated_at=now_ms())
     SystemSetting.objects.create(key="hosting_fee_status", value="announced", updated_at=now_ms())
     r = Client().get("/api/config").json()
-    assert [p["priceCents"] for p in r["prices"]] == [2000, 3000, 10000]
+    assert [p["priceCents"] for p in r["prices"]] == [2000, 2500, 10000]
     assert r["hosting"]["amount"] == "4" and r["hosting"]["status"] == "announced"
     assert r["hosting"]["amounts"] == {"personal": "", "business": "", "ecommerce": ""}  # unset keys stay empty, as in the Worker
     assert r["ai"]["perProjectLimit"] == 20 and r["payments"] == {"provider": "dodo", "configured": False, "mode": "test"}

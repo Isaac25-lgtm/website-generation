@@ -7,7 +7,7 @@ import { PLANS } from "../../shared/pricing";
 
 const PLAN_INFO = [
   { type: "personal", label: "Personal", price: 2000 },
-  { type: "business", label: "Business", price: 3000 },
+  { type: "business", label: "Business", price: 2500 },
   { type: "ecommerce", label: "Online store", price: 10000 },
 ] as const;
 
@@ -216,7 +216,7 @@ export default function Home() {
         <div className="narrow">
           <div className="section-head"><h2 id="faq">Common questions</h2></div>
           <div className="faq">
-            <details><summary>What does it cost?</summary><p>A one-time build fee when you publish: $20 for a personal site, $30 for a business site or $100 for an online store. After that, hosting and maintenance are {hp.byType.personal} a month for a personal site, {hp.byType.business} for a business site or {hp.byType.ecommerce} for an online store, covering your web address, secure hosting, backups and platform updates. You'll be asked to agree to the monthly plan before any monthly charge, and you can cancel it at any time.</p></details>
+            <details><summary>What does it cost?</summary><p>A one-time build fee when you publish: $20 for a personal site, $25 for a business site or $100 for an online store. After that, hosting and maintenance are {hp.byType.personal} a month for a personal site, {hp.byType.business} for a business site or {hp.byType.ecommerce} for an online store, covering your web address, secure hosting, backups and platform updates. You'll be asked to agree to the monthly plan before any monthly charge, and you can cancel it at any time.</p></details>
             <details><summary>Can I try it before paying?</summary><p>Yes. Create an account, fill in your details, generate the site and look at it on every screen size for free. You only pay when you decide to publish.</p></details>
             <details><summary>Can I change my site after it's live?</summary><p>Any time. Edit, preview privately, then publish the update. Earlier versions are kept if you want to go back.</p></details>
             <details><summary>How do my customers pay in the shop?</summary><p>Right now: pay on delivery, pay on pickup, bank transfer, or arranging it on WhatsApp. Orders and stock are tracked properly. Card payments need your own payment account and will come as an option; the money always goes to you, not through us.</p></details>

@@ -33,7 +33,7 @@ export function Terms() {
       <ul><li>You must give accurate information and keep your login secure. You are responsible for activity on your account.</li><li>You must be old enough to form a binding contract where you live, and use the Service for lawful purposes only.</li></ul>
       <h2>3. Prices and what you buy</h2>
       <ul>
-        <li>Build fees are one-time payments in US dollars: <strong>Personal $20</strong>, <strong>Business $30</strong>, <strong>E-commerce $100</strong>, per website.</li>
+        <li>Build fees are one-time payments in US dollars: <strong>Personal $20</strong>, <strong>Business $25</strong>, <strong>E-commerce $100</strong>, per website.</li>
         <li>The build fee unlocks publishing of that website at a web address on our platform (set up automatically), unlimited manual editing and republishing, and export of your site. AI suggestions are subject to a per-site limit shown in the product.</li>
         <li>Previewing and editing before payment are free. Publishing requires a confirmed payment.</li>
         <li><strong>Hosting &amp; maintenance</strong> for each published site costs {hostingPrice(config, "personal").label} per {h?.interval || "month"} for a personal site, {hostingPrice(config, "business").label} for a business site and {hostingPrice(config, "ecommerce").label} for an online store, billed monthly. It covers hosting at your web address over https, backups, security and platform updates, and support. You agree to the monthly plan separately before any monthly charge, and you can cancel at any time; the site goes offline at the end of the paid period and you can export it first.</li>
@@ -107,7 +107,7 @@ export function Privacy() {
 export function Refunds() {
   return (
     <Shell title="Refund & Cancellation Policy">
-      <p>This policy applies to the one-time website creation fees for ImprintSites AI (Personal $20, Business $30, E-commerce $100), sold by <Operator /></p>
+      <p>This policy applies to the one-time website creation fees for ImprintSites AI (Personal $20, Business $25, E-commerce $100), sold by <Operator /></p>
       <h2>Try before you buy</h2>
       <p>You can build, generate, edit and preview your website for free before paying. We encourage you to check your preview on desktop and mobile before purchasing.</p>
       <h2>When you can get a refund</h2>

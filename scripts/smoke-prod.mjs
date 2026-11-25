@@ -46,7 +46,7 @@ for (const p of ["/pricing", "/templates", "/examples", "/how-it-works", "/conta
   const r = await req(p, { raw: true }); check(`route ${p}`, r.status === 200, `${r.status}`);
 }
 const cfg = (await req("/api/config")).json;
-check("prices 20/30/100 USD", JSON.stringify(cfg.prices?.map((p) => p.priceCents)) === "[2000,3000,10000]");
+check("prices 20/25/100 USD", JSON.stringify(cfg.prices?.map((p) => p.priceCents)) === "[2000,2500,10000]");
 check("bindings reported", cfg.ai?.available === true && cfg.browserRun?.bound === true, `ai=${cfg.ai?.available} browser=${cfg.browserRun?.bound} storage=${cfg.storage} payments=${cfg.payments?.configured} google=${cfg.google?.enabled}`);
 const tpl = (await req("/api/templates")).json;
 check("templates listed, Signature first-class, member ones locked", tpl.templates?.length >= 43 && tpl.templates.filter((t) => t.rank === "signature").length >= 25 && tpl.templates.filter((t) => t.locked).length === tpl.templates.filter((t) => t.tier === "member").length);

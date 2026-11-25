@@ -20,7 +20,7 @@ Describe the website you need, preview it on every device, refine it in a live e
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
 ![Hono](https://img.shields.io/badge/Hono-API-E36002?logo=hono&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-Django%206%20·%20Neon%20Postgres-3776AB?logo=python&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-unit%20109%20·%20integration%2057%20·%20e2e%2011%20·%20python%2053-2ea44f)
+![Tests](https://img.shields.io/badge/tests-unit%202389%20·%20integration%2064%20·%20e2e%2015%20·%20python%20335-2ea44f)
 
 <sub>A Locus Analytics product, built by Omoding Isaac</sub>
 
@@ -60,7 +60,7 @@ ImprintSites AI turns a plain-language description into a polished, mobile-ready
 | Product | What the customer gets | Build fee |
 |---|---|---:|
 | **Personal & portfolio** | About, experience, projects with galleries, downloadable CV, contact form | **$20** |
-| **Business** | Multi-page site with services, gallery, map, opening hours, WhatsApp, contact and quote forms | **$30** |
+| **Business** | Multi-page site with services, gallery, map, opening hours, WhatsApp, contact and quote forms | **$25** |
 | **Online store** | Product catalogue with variants and stock, search and filters, cart, checkout, orders dashboard | **$100** |
 
 Every published site also has **hosting & maintenance per site per month: $3 for a personal site, $4 for a business site, $5 for an online store**.
@@ -68,7 +68,7 @@ Every published site also has **hosting & maintenance per site per month: $3 for
 **How a site is made:**
 
 1. A **guided wizard** collects the customer's content. Answers save automatically, and the store flow is the most detailed of the three.
-2. The customer **pastes a website they love** (shown as the recommended option), or picks one of **18 original templates**. The platform reads that site's high-level style (palette, type, spacing, shapes, layout rhythm), names the best-matching templates and applies the style to an original design. Nothing is copied.
+2. The customer **chooses a template** from **nearly 300 complete templates** (63 business, 93 personal, 143 online store), **shares the link of a website they love**, or both. The platform reads that site's high-level style (palette, type, spacing, shapes, layout rhythm), names the best-matching templates and applies the style to an original design. Nothing is copied.
 3. A **deterministic generator** builds a strictly validated site document from the answers. Optional **Workers AI** can polish the wording, but it never adds facts, and the owner reviews every suggestion.
 4. The **editor** shows the real site at desktop, tablet and mobile sizes, with a one-click **Light / Dark** switch, sections, theme controls, undo/redo, checkpoints, template switching, and plain-English design requests ("make it more elegant").
 5. The customer **picks a web address** (availability-checked, set up automatically with HTTPS), chooses light or dark one last time on the publish page, pays the one-time build fee, and the site goes live with version history and rollback. A ZIP copy of the site can be downloaded at any time.
@@ -79,13 +79,19 @@ Every published site also has **hosting & maintenance per site per month: $3 for
 
 <table>
 <tr>
-<td width="50%"><img src="docs/screenshots/what-you-can-build.jpg" alt="Three kinds of site with photo and website mockup cards" /><br /><sub><b>What you can build</b>: each kind of site shown with the real demo it produces</sub></td>
-<td width="50%"><img src="docs/screenshots/how-it-works.jpg" alt="Five steps from description to live site" /><br /><sub><b>How it works</b>: five steps, including picking a web address</sub></td>
+<td width="100%"><img src="docs/screenshots/how-it-works.jpg" alt="Five steps from description to live site" /><br /><sub><b>How it works</b>: five steps, including picking a web address</sub></td>
 </tr>
 </table>
 
-![Made with ImprintSites](docs/screenshots/made-with-imprintsites.jpg)
-<sub><b>Made with ImprintSites</b>: real demo sites running on the platform</sub>
+![Our templates on the home page](docs/screenshots/home-templates.jpg)
+<sub><b>Our templates</b>: complete-site templates on the home page, business first, with the full gallery one click away</sub>
+
+<table>
+<tr>
+<td width="62%"><img src="docs/screenshots/assistant.jpg" alt="Ask ImprintSites AI answering a pricing question" /><br /><sub><b>Ask ImprintSites AI</b>: a help assistant on every page, with questions for that page and detailed, step-by-step answers</sub></td>
+<td width="38%"><img src="docs/screenshots/home-mobile.jpg" alt="Home page on a phone" /><br /><sub><b>On a phone</b>: everything, from building to publishing and hosting, works in a phone's browser</sub></td>
+</tr>
+</table>
 
 <table>
 <tr>
@@ -101,16 +107,20 @@ Every published site also has **hosting & maintenance per site per month: $3 for
 <td width="50%"><img src="docs/screenshots/editor-refine.jpg" alt="Editor refine request on a mobile preview" /><br /><sub><b>Refine with AI</b>: plain-English design changes, previewed on mobile</sub></td>
 </tr>
 <tr>
+<td width="50%"><img src="docs/screenshots/dashboard.jpg" alt="Dashboard with the two ways to start a website" /><br /><sub><b>Dashboard</b>: start from a template or a website you love</sub></td>
+<td width="50%"><img src="docs/screenshots/new-site-address.jpg" alt="New website form with template and inspiration choices and a web address check" /><br /><sub><b>New website</b>: choose a template and/or share a website you love, then pick a web address with a live availability check</sub></td>
+</tr>
+<tr>
 <td width="50%"><img src="docs/screenshots/wizard.jpg" alt="Guided intake wizard" /><br /><sub><b>Guided wizard</b>: autosaving, step-by-step intake</sub></td>
-<td width="50%"><img src="docs/screenshots/new-site-address.jpg" alt="Web address picker with availability check" /><br /><sub><b>Web address picker</b>: live availability check and automatic alternatives</sub></td>
+<td width="50%"><img src="docs/screenshots/what-you-can-build.jpg" alt="Three kinds of site" /><br /><sub><b>Three kinds of site</b>: personal, business and online store</sub></td>
 </tr>
 <tr>
 <td width="50%"><img src="docs/screenshots/product-editor.jpg" alt="Product editor with variants and stock" /><br /><sub><b>Product editor</b>: variants, stock, categories and photos</sub></td>
 <td width="50%"><img src="docs/screenshots/checkout.jpg" alt="Store checkout" /><br /><sub><b>Store checkout</b>: server-priced totals and delivery options</sub></td>
 </tr>
 <tr>
-<td width="50%"><img src="docs/screenshots/templates.jpg" alt="Template gallery" /><br /><sub><b>Template gallery</b>: 18 templates, 9 unlocked by signing in</sub></td>
-<td width="50%"><img src="docs/screenshots/pricing.jpg" alt="Pricing table" /><br /><sub><b>Pricing</b>: one-time build fee plus $3–$5/month hosting & maintenance</sub></td>
+<td width="50%"><img src="docs/screenshots/templates.jpg" alt="Template gallery" /><br /><sub><b>Template gallery</b>: 299 templates with type, category and style filters; a free account opens member templates in full</sub></td>
+<td width="50%"><img src="docs/screenshots/pricing.jpg" alt="Pricing table" /><br /><sub><b>Pricing</b>: one-time build fee ($20 / $25 / $100) plus $3–$5/month hosting & maintenance</sub></td>
 </tr>
 </table>
 
@@ -125,7 +135,8 @@ Every published site also has **hosting & maintenance per site per month: $3 for
 
 ### Builder
 - **Three intake wizards** with autosave, repeatable lists (experience, projects, services, team, FAQs), media library, CSV/PDF uploads and Openverse photos with licence and attribution recorded.
-- **18 templates** (6 personal, 6 business, 6 e-commerce), each structurally distinct: editorial, terminal, sidebar, poster, full-bleed, mosaic, menu-style and more.
+- **299 complete-site templates** (63 business, 93 personal, 143 online store), each a full multi-page site with its own hero design and fictional sample content; Signature designs first, then Premium, then the rest.
+- **Ask ImprintSites AI:** a DeepSeek-powered help assistant on every platform page, with page-specific starter questions, detailed step-by-step answers, a service-wide daily token cap and no server-side storage of conversations.
 - **Inspiration from a link (recommended in the UI):** Cloudflare Browser Run renders the page and extracts computed styles, with an HTML/CSS fallback and a screenshot-upload fallback. The result is a plain-language style brief, a palette and named, clickable template matches. A link pasted on the home page is analysed automatically when the customer reaches the design step.
 - **Editor:** page and section management, inspector forms for 21 section types, theme tokens (colours, fonts, radius, density, motion), undo/redo, checkpoints, template switching, click-to-select in the preview, and true-size device previews.
 - **AI refinement:** design requests become validated token patches. Workers AI (`llama-3.3-70b-instruct-fp8-fast`, JSON mode) is used when available, within a 20-second budget, with a deterministic rule-based fallback that is labelled as such.
@@ -158,7 +169,7 @@ Every published site also has **hosting & maintenance per site per month: $3 for
 
 | | Personal & portfolio | Business | Online store |
 |---|---:|---:|---:|
-| **Build fee (one-time)** | $20 | $30 | $100 |
+| **Build fee (one-time)** | $20 | $25 | $100 |
 | **Hosting & maintenance** | $3 / month | $4 / month | $5 / month |
 
 - **Build fees** are locked in [`src/shared/pricing.ts`](src/shared/pricing.ts) and are never accepted from the client.
@@ -229,7 +240,7 @@ More detail: [docs/architecture.md](docs/architecture.md).
 │   ├── shared/              # Used by Worker and tests
 │   │   ├── schema.ts        # SiteDoc schema (Zod)
 │   │   ├── pricing.ts       # Locked build fees
-│   │   ├── templates.ts     # 18 template definitions
+│   │   ├── templates.ts     # template registry (299 templates across several files)
 │   │   ├── generate.ts      # Wizard answers -> SiteDoc (never invents facts)
 │   │   ├── refine.ts        # Design patches + rule-based refine engine
 │   │   ├── demo.ts          # Demo personas and public demo sites
@@ -314,9 +325,9 @@ Step-by-step owner setup: [docs/cloudflare-setup.md](docs/cloudflare-setup.md).
 
 | Suite | Command | What it covers |
 |---|---|---|
-| **Unit** (109) | `npm run test:unit` | All 18 templates render every page; HTML escaping and link sanitising; no invented content; locked pricing; SSRF URL checks; webhook signatures; password hashing; upload type sniffing; CSV parsing; WCAG contrast of every template in light and dark mode; strict price parsing; Google account-linking rules; contracts |
-| **Integration** (54, +3 parity) | `npm run test:integration` | Against a running Worker: auth and CSRF, private previews, payment-gated publishing, versions and rollback, leads, tenant isolation, upload security, SSRF, checkout, concurrent orders that can't oversell, exactly-once restocking, web-address picker, webhook verification |
-| **End-to-end** (11) | `npx playwright test` | Real browser flows with axe-core accessibility checks and console-error checks: marketing pages, demo sites on desktop and mobile, full store purchase, sign-up → wizard → editor → publish gate, all 18 templates; saves screenshots |
+| **Unit** (2,389) | `npm run test:unit` | All 299 templates render every page, with one h1, working links and their declared hero; HTML escaping and link sanitising; no invented content; locked pricing; SSRF URL checks; webhook signatures; password hashing; upload type sniffing; CSV parsing; WCAG contrast of every template in light and dark mode; strict price parsing; Google account-linking rules; contracts |
+| **Integration** (64, +3 parity) | `npm run test:integration` | Against a running Worker: auth and CSRF, private previews, payment-gated publishing, versions and rollback, leads, tenant isolation, upload security, SSRF, checkout, concurrent orders that can't oversell, exactly-once restocking, web-address picker, webhook verification |
+| **End-to-end** (15) | `npx playwright test` | Real browser flows with axe-core accessibility checks and console-error checks: marketing pages, demo sites on desktop and mobile, full store purchase, sign-up → wizard → editor → publish gate, all 18 templates; saves screenshots |
 | **Merchant regressions** (18, part of integration) | `npx vitest run -c vitest.integration.config.ts tests/integration/merchant-regressions.test.ts` | Audit findings: one store currency everywhere; CSV re-import keeps variants and stock; editing or replaying a save after a sale never reverses it; strict decimal-comma prices; variant-SKU rows price only that variant; duplicate SKUs refused |
 | **Python backend** (53) | `cd backend && .venv/Scripts/python -m pytest` | Contracts, legacy session auth, project read shape and errors, D1 → PostgreSQL importer. Worker ↔ Python parity and a browser test are documented in [backend/README.md](backend/README.md) |
 | **Production smoke** (39) | `node scripts/smoke-prod.mjs <url>` | Live checks, with separate checks that Workers AI and Browser Run really ran (not a fallback); deletes its project and writes exact-id cleanup SQL for anything else |
@@ -370,7 +381,7 @@ Full threat model and residual risks: [SECURITY_NOTES.md](SECURITY_NOTES.md).
 
 ## Status and roadmap
 
-**Live and tested:** marketing site, accounts, wizards, generator, 18 templates, inspiration analysis, editor with AI refine and a Light / Dark switch, publishing with versions and rollback, web-address picker, stores with orders and stock control, leads, admin console, billing code.
+**Live and tested:** marketing site, accounts, wizards, generator, 299 templates, the help assistant, inspiration analysis, editor with AI refine and a Light / Dark switch, publishing with versions and rollback, web-address picker, stores with orders and stock control, leads, admin console, billing code.
 
 **Release decision:** paid launch is on hold until the remaining production-audit items are closed, chiefly billing-webhook handling and taking sites down when access is revoked ([docs/production-audit.md](docs/production-audit.md), [docs/release-audit-6a1cc2c.md](docs/release-audit-6a1cc2c.md)).
 

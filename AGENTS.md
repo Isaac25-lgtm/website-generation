@@ -1,6 +1,8 @@
 # AGENTS.md: handoff for coding agents (Codex and others)
 
-**Codex: current task (25 November 2026): verify the [fixes to your 5a23f67 review](docs/fixes-integrity-review-5a23f67.md) against your [report](docs/integrity-review-5a23f67.md). P3·18 is still open by design.**
+**Current handoff, 25 November 2026.** Start with the [Claude handoff for the fixes after 6174c29](docs/claude-handoff-6174c29-fixes.md). It covers the fixes in `528c02f`, verification through `8ed61fb`, and the remaining paid-launch work.
+
+Earlier verification of the [first fix pass](docs/fixes-integrity-review-5a23f67.md) is in the [6174c29 review](docs/integrity-verification-6174c29.md).
 
 Earlier: [full audit from the template library onwards](docs/codex-audit-templates-5a23f67.md), review commit `5a23f67`.
 

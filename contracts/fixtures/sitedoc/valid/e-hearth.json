@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "type": "ecommerce",
+  "templateId": "e-hearth",
+  "brand": {
+    "name": "Hearth & Table",
+    "tagline": "Kitchen and table things made with care."
+  },
+  "seo": {
+    "title": "Hearth & Table — Kitchen and table things made with care.",
+    "description": "Kitchen and table things made with care.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f8f4ee",
+      "surface": "#efe6d9",
+      "text": "#2a2119",
+      "muted": "#6a5c4e",
+      "primary": "#5b3a29",
+      "accent": "#a35a2f"
+    },
+    "fontHeading": "lora",
+    "fontBody": "inter",
+    "radius": "none",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "shop@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Chicago",
+    "country": "United States",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-1l462n5",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Homeware",
+            "heading": "Kitchen and table things made with care.",
+            "subheading": "Kitchen and table things made with care.",
+            "primaryCta": {
+              "label": "Shop now",
+              "href": "/shop"
+            },
+            "secondaryCta": {
+              "label": "Our story",
+              "href": "/about"
+            },
+            "image": {
+              "stock": "home-kitchen",
+              "alt": "Hearth & Table",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "collections-1l5932n",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "collections",
+          "data": {
+            "heading": "Shop by category",
+            "intro": ""
+          }
+        },
+        {
+          "id": "products-1l644hs",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "products",
+          "data": {
+            "heading": "Featured products",
+            "intro": "",
+            "mode": "featured",
+            "collectionHandle": "",
+            "limit": 8
+          }
+        },
+        {
+          "id": "about-1l76c86",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Hearth & Table",
+            "body": "Hearth & Table works with small makers on cookware, linens and tableware for everyday cooking.",
+            "image": {
+              "stock": "home-pink-vase",
+              "alt": "Blush ceramic vase",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "slug": "shop",
+      "title": "Shop",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "products-1l8bok9",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "products",
+          "data": {
+            "heading": "",
+            "intro": "",
+            "mode": "all",
+            "collectionHandle": "",
+            "limit": 48
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-1l9afj3",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Hearth & Table works with small makers on cookware, linens and tableware for everyday cooking.",
+            "image": {
+              "stock": "home-white-jug",
+              "alt": "White pitcher",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "faq-1la8me0",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "Are your ceramics food safe?",
+                "a": "Yes. All glazes are lead-free and food safe. Wash by hand to keep the finish."
+              },
+              {
+                "q": "Do your lights come with bulbs?",
+                "a": "Pendants and wall lights come with a warm dimmable bulb. Ceiling lights should be fitted by an electrician."
+              },
+              {
+                "q": "How do you pack fragile pieces?",
+                "a": "In recycled card and paper, with no plastic. Anything that arrives damaged is replaced free."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-1lb63yn",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "Questions about an order or a product? Get in touch.",
+            "showForm": true,
+            "showMap": false
+          }
+        },
+        {
+          "id": "hours-1lc8c2m",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hours",
+          "data": {
+            "heading": "Opening hours",
+            "rows": [
+              {
+                "days": "Tuesday – Saturday",
+                "hours": "10:00 – 18:00"
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  },
+  "store": {
+    "currency": "USD",
+    "paymentMethods": [
+      {
+        "id": "cod",
+        "kind": "cod",
+        "label": "Pay on delivery",
+        "instructions": "Pay the courier when your order arrives."
+      },
+      {
+        "id": "bank",
+        "kind": "bank_transfer",
+        "label": "Bank transfer",
+        "instructions": "After placing your order you'll receive our bank details. Your order is confirmed once payment arrives."
+      }
+    ],
+    "fulfillment": [
+      {
+        "id": "delivery",
+        "kind": "delivery",
+        "label": "Tracked delivery",
+        "priceMinor": 800,
+        "details": "Delivered within 1–3 working days."
+      },
+      {
+        "id": "pickup",
+        "kind": "pickup",
+        "label": "Collect in store",
+        "priceMinor": 0,
+        "details": "Collect from our shop during opening hours."
+      }
+    ],
+    "requirePhone": true,
+    "requireEmail": false,
+    "lowStockThreshold": 3,
+    "checkoutNote": "You will receive a confirmation page with your order number. We'll contact you to confirm delivery.",
+    "taxNote": "",
+    "returnsPolicy": "Unused items in their original packaging can be returned within 14 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
+    "shippingPolicy": "We deliver in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
+    "privacyNote": "We use your name, phone number, email and address only to process and deliver your order and to contact you about it. We do not sell your information.",
+    "prohibitedAck": true,
+    "notifyEmail": ""
+  }
+}

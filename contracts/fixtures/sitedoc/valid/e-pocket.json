@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "type": "ecommerce",
+  "templateId": "e-pocket",
+  "brand": {
+    "name": "Orbit Labs",
+    "tagline": "Useful gadgets in bright colours."
+  },
+  "seo": {
+    "title": "Orbit Labs — Useful gadgets in bright colours.",
+    "description": "Useful gadgets in bright colours.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f2f2f0",
+      "surface": "#e4e4e0",
+      "text": "#121212",
+      "muted": "#5a5a57",
+      "primary": "#121212",
+      "accent": "#ff5a1f"
+    },
+    "fontHeading": "space-grotesk",
+    "fontBody": "inter",
+    "radius": "none",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "shop@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Shenzhen",
+    "country": "China",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-1pd52yh",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Consumer tech",
+            "heading": "Useful gadgets in bright colours.",
+            "subheading": "Useful gadgets in bright colours.",
+            "primaryCta": {
+              "label": "Shop now",
+              "href": "/shop"
+            },
+            "secondaryCta": {
+              "label": "Our story",
+              "href": "/about"
+            },
+            "image": {
+              "stock": "tech-flatlay-grey",
+              "alt": "Orbit Labs",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "collections-1pe9eus",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "collections",
+          "data": {
+            "heading": "Shop by category",
+            "intro": ""
+          }
+        },
+        {
+          "id": "products-1pf61es",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "products",
+          "data": {
+            "heading": "Featured products",
+            "intro": "",
+            "mode": "featured",
+            "collectionHandle": "",
+            "limit": 8
+          }
+        },
+        {
+          "id": "about-1pgj14a",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Orbit Labs",
+            "body": "Orbit Labs designs affordable tech with removable parts and colours you can swap.",
+            "image": {
+              "stock": "tech-wood-watches",
+              "alt": "Wooden watch",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "slug": "shop",
+      "title": "Shop",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "products-1ph4ah1",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "products",
+          "data": {
+            "heading": "",
+            "intro": "",
+            "mode": "all",
+            "collectionHandle": "",
+            "limit": 48
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-1pi5c8a",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Orbit Labs designs affordable tech with removable parts and colours you can swap.",
+            "image": {
+              "stock": "tech-desk-overhead",
+              "alt": "Paper-like tablet",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "faq-1pjaeka",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "Which size ring should I order?",
+                "a": "Order the free sizing kit first. It's credited against your ring."
+              },
+              {
+                "q": "Do I need a subscription?",
+                "a": "No. Every feature works without one."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-1pk9iws",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "Questions about an order or a product? Get in touch.",
+            "showForm": true,
+            "showMap": false
+          }
+        },
+        {
+          "id": "hours-1pljvhm",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hours",
+          "data": {
+            "heading": "Opening hours",
+            "rows": [
+              {
+                "days": "Tuesday – Saturday",
+                "hours": "10:00 – 18:00"
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  },
+  "store": {
+    "currency": "USD",
+    "paymentMethods": [
+      {
+        "id": "cod",
+        "kind": "cod",
+        "label": "Pay on delivery",
+        "instructions": "Pay the courier when your order arrives."
+      },
+      {
+        "id": "bank",
+        "kind": "bank_transfer",
+        "label": "Bank transfer",
+        "instructions": "After placing your order you'll receive our bank details. Your order is confirmed once payment arrives."
+      }
+    ],
+    "fulfillment": [
+      {
+        "id": "delivery",
+        "kind": "delivery",
+        "label": "Tracked delivery",
+        "priceMinor": 700,
+        "details": "Delivered within 1–3 working days."
+      },
+      {
+        "id": "pickup",
+        "kind": "pickup",
+        "label": "Collect in store",
+        "priceMinor": 0,
+        "details": "Collect from our shop during opening hours."
+      }
+    ],
+    "requirePhone": true,
+    "requireEmail": false,
+    "lowStockThreshold": 3,
+    "checkoutNote": "You will receive a confirmation page with your order number. We'll contact you to confirm delivery.",
+    "taxNote": "",
+    "returnsPolicy": "Unused items in their original packaging can be returned within 14 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
+    "shippingPolicy": "We deliver in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
+    "privacyNote": "We use your name, phone number, email and address only to process and deliver your order and to contact you about it. We do not sell your information.",
+    "prohibitedAck": true,
+    "notifyEmail": ""
+  }
+}

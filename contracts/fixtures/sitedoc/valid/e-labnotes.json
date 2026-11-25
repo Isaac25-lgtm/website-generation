@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "type": "ecommerce",
+  "templateId": "e-labnotes",
+  "brand": {
+    "name": "Formula Nine",
+    "tagline": "Supplements with the doses on the front."
+  },
+  "seo": {
+    "title": "Formula Nine — Supplements with the doses on the front.",
+    "description": "Formula Nine makes supplements with clinically studied doses, tested by an independent laboratory.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f5f6f6",
+      "surface": "#e8ebeb",
+      "text": "#151a1b",
+      "muted": "#59605f",
+      "primary": "#151a1b",
+      "accent": "#3e7a73"
+    },
+    "fontHeading": "instrument-sans",
+    "fontBody": "inter",
+    "radius": "none",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "shop@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Munich",
+    "country": "Germany",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-1uv3o0c",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Supplements",
+            "heading": "Supplements with the doses on the front.",
+            "subheading": "Formula Nine makes supplements with clinically studied doses, tested by an independent laboratory.",
+            "primaryCta": {
+              "label": "Shop now",
+              "href": "/shop"
+            },
+            "secondaryCta": {
+              "label": "Our story",
+              "href": "/about"
+            },
+            "image": {
+              "stock": "beauty-dropper-tan",
+              "alt": "Formula Nine",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "collections-1uw696f",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "collections",
+          "data": {
+            "heading": "Shop by category",
+            "intro": ""
+          }
+        },
+        {
+          "id": "products-1ux3kzm",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "products",
+          "data": {
+            "heading": "Featured products",
+            "intro": "",
+            "mode": "featured",
+            "collectionHandle": "",
+            "limit": 8
+          }
+        },
+        {
+          "id": "about-1uykyit",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Formula Nine",
+            "body": "Formula Nine makes supplements with clinically studied doses, tested by an independent laboratory.",
+            "image": {
+              "stock": "home-white-jug",
+              "alt": "Tea bowl",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "slug": "shop",
+      "title": "Shop",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "products-1uz3sc8",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "products",
+          "data": {
+            "heading": "",
+            "intro": "",
+            "mode": "all",
+            "collectionHandle": "",
+            "limit": 48
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-1v0kv46",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Formula Nine makes supplements with clinically studied doses, tested by an independent laboratory.",
+            "image": {
+              "stock": "beauty-dropper-tan",
+              "alt": "Calming body oil",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "faq-1v19a7z",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "Where does your tea come from?",
+                "a": "From two family farms that grow and grind it by hand."
+              },
+              {
+                "q": "Do you ship internationally?",
+                "a": "Yes, to most countries in Europe and North America."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-1v2dpcx",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "Questions about an order or a product? Get in touch.",
+            "showForm": true,
+            "showMap": false
+          }
+        },
+        {
+          "id": "hours-1v3wbe",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hours",
+          "data": {
+            "heading": "Opening hours",
+            "rows": [
+              {
+                "days": "Tuesday – Saturday",
+                "hours": "10:00 – 18:00"
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  },
+  "store": {
+    "currency": "EUR",
+    "paymentMethods": [
+      {
+        "id": "cod",
+        "kind": "cod",
+        "label": "Pay on delivery",
+        "instructions": "Pay the courier when your order arrives."
+      },
+      {
+        "id": "bank",
+        "kind": "bank_transfer",
+        "label": "Bank transfer",
+        "instructions": "After placing your order you'll receive our bank details. Your order is confirmed once payment arrives."
+      }
+    ],
+    "fulfillment": [
+      {
+        "id": "delivery",
+        "kind": "delivery",
+        "label": "Tracked delivery",
+        "priceMinor": 800,
+        "details": "Delivered within 1–3 working days."
+      },
+      {
+        "id": "pickup",
+        "kind": "pickup",
+        "label": "Collect in store",
+        "priceMinor": 0,
+        "details": "Collect from our shop during opening hours."
+      }
+    ],
+    "requirePhone": true,
+    "requireEmail": false,
+    "lowStockThreshold": 3,
+    "checkoutNote": "You will receive a confirmation page with your order number. We'll contact you to confirm delivery.",
+    "taxNote": "",
+    "returnsPolicy": "Unused items in their original packaging can be returned within 14 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
+    "shippingPolicy": "We deliver in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
+    "privacyNote": "We use your name, phone number, email and address only to process and deliver your order and to contact you about it. We do not sell your information.",
+    "prohibitedAck": true,
+    "notifyEmail": ""
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "type": "ecommerce",
+  "templateId": "e-woodshop",
+  "brand": {
+    "name": "Grain & Joint",
+    "tagline": "Furniture made by hand in Burgundy."
+  },
+  "seo": {
+    "title": "Grain & Joint — Furniture made by hand in Burgundy.",
+    "description": "Furniture made by hand in Burgundy.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f4efe7",
+      "surface": "#e8dfd1",
+      "text": "#1f1a14",
+      "muted": "#61584b",
+      "primary": "#1f1a14",
+      "accent": "#7a5a32"
+    },
+    "fontHeading": "libre-caslon",
+    "fontBody": "inter",
+    "radius": "none",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "bar",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "shop@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Dijon",
+    "country": "France",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-1tddtsf",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Woodwork",
+            "heading": "Furniture made by hand in Burgundy.",
+            "subheading": "Furniture made by hand in Burgundy.",
+            "primaryCta": {
+              "label": "Shop now",
+              "href": "/shop"
+            },
+            "secondaryCta": {
+              "label": "Our story",
+              "href": "/about"
+            },
+            "image": {
+              "stock": "make-workshop-lamps",
+              "alt": "Grain & Joint",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "collections-1te7i7f",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "collections",
+          "data": {
+            "heading": "Shop by category",
+            "intro": ""
+          }
+        },
+        {
+          "id": "products-1tfdenr",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "products",
+          "data": {
+            "heading": "Featured products",
+            "intro": "",
+            "mode": "featured",
+            "collectionHandle": "",
+            "limit": 8
+          }
+        },
+        {
+          "id": "about-1tg7w6b",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Grain & Joint",
+            "body": "Grain & Joint is a family woodworking studio, making furniture and objects from local oak.",
+            "image": {
+              "stock": "make-bench",
+              "alt": "Workbench side table",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "slug": "shop",
+      "title": "Shop",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "products-1th4ssi",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "products",
+          "data": {
+            "heading": "",
+            "intro": "",
+            "mode": "all",
+            "collectionHandle": "",
+            "limit": 48
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-1ti6gbc",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Grain & Joint is a family woodworking studio, making furniture and objects from local oak.",
+            "image": {
+              "stock": "make-caliper",
+              "alt": "Turned bowl",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "faq-1tj2g1c",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "What wood do you use?",
+                "a": "Oak, ash, walnut and cherry from sawmills within 100 miles of the workshop."
+              },
+              {
+                "q": "Can I visit the workshop?",
+                "a": "Yes, on the first Saturday of each month, or by appointment."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-1tkkw6g",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "Questions about an order or a product? Get in touch.",
+            "showForm": true,
+            "showMap": false
+          }
+        },
+        {
+          "id": "hours-1tl4fsy",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hours",
+          "data": {
+            "heading": "Opening hours",
+            "rows": [
+              {
+                "days": "Tuesday – Saturday",
+                "hours": "10:00 – 18:00"
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  },
+  "store": {
+    "currency": "EUR",
+    "paymentMethods": [
+      {
+        "id": "cod",
+        "kind": "cod",
+        "label": "Pay on delivery",
+        "instructions": "Pay the courier when your order arrives."
+      },
+      {
+        "id": "bank",
+        "kind": "bank_transfer",
+        "label": "Bank transfer",
+        "instructions": "After placing your order you'll receive our bank details. Your order is confirmed once payment arrives."
+      }
+    ],
+    "fulfillment": [
+      {
+        "id": "delivery",
+        "kind": "delivery",
+        "label": "Tracked delivery",
+        "priceMinor": 800,
+        "details": "Delivered within 1–3 working days."
+      },
+      {
+        "id": "pickup",
+        "kind": "pickup",
+        "label": "Collect in store",
+        "priceMinor": 0,
+        "details": "Collect from our shop during opening hours."
+      }
+    ],
+    "requirePhone": true,
+    "requireEmail": false,
+    "lowStockThreshold": 3,
+    "checkoutNote": "You will receive a confirmation page with your order number. We'll contact you to confirm delivery.",
+    "taxNote": "",
+    "returnsPolicy": "Unused items in their original packaging can be returned within 14 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
+    "shippingPolicy": "We deliver in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
+    "privacyNote": "We use your name, phone number, email and address only to process and deliver your order and to contact you about it. We do not sell your information.",
+    "prohibitedAck": true,
+    "notifyEmail": ""
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "type": "ecommerce",
+  "templateId": "e-mineral",
+  "brand": {
+    "name": "Mineral Studio",
+    "tagline": "Plain gold, nothing to hide."
+  },
+  "seo": {
+    "title": "Mineral Studio — Plain gold, nothing to hide.",
+    "description": "Plain gold, nothing to hide.",
+    "lang": "en"
+  },
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "bg": "#f3f1ee",
+      "surface": "#e7e3de",
+      "text": "#1d1c1a",
+      "muted": "#5f5c57",
+      "primary": "#1d1c1a",
+      "accent": "#a98b5a"
+    },
+    "fontHeading": "inter-tight",
+    "fontBody": "inter",
+    "radius": "none",
+    "density": "airy",
+    "headingScale": "lg",
+    "animation": "subtle",
+    "headerStyle": "minimal",
+    "cardStyle": "flat",
+    "ornament": "none"
+  },
+  "contact": {
+    "email": "shop@example.com",
+    "phone": "",
+    "whatsapp": "",
+    "address": "",
+    "city": "Copenhagen",
+    "country": "Denmark",
+    "mapQuery": "",
+    "whatsappFloat": false,
+    "socials": []
+  },
+  "pages": [
+    {
+      "id": "home",
+      "slug": "",
+      "title": "Home",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "hero-1id6zku",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hero",
+          "data": {
+            "eyebrow": "Fine jewellery",
+            "heading": "Plain gold, nothing to hide.",
+            "subheading": "Plain gold, nothing to hide.",
+            "primaryCta": {
+              "label": "Shop now",
+              "href": "/shop"
+            },
+            "secondaryCta": {
+              "label": "Our story",
+              "href": "/about"
+            },
+            "image": {
+              "stock": "jewel-rings-grey",
+              "alt": "Mineral Studio",
+              "caption": ""
+            }
+          }
+        },
+        {
+          "id": "collections-1ie15di",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "collections",
+          "data": {
+            "heading": "Shop by category",
+            "intro": ""
+          }
+        },
+        {
+          "id": "products-1if1q9h",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "products",
+          "data": {
+            "heading": "Featured products",
+            "intro": "",
+            "mode": "featured",
+            "collectionHandle": "",
+            "limit": 8
+          }
+        },
+        {
+          "id": "about-1igg1i6",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "About Mineral Studio",
+            "body": "Mineral Studio makes minimal fine jewellery in recycled gold, with prices shown by gram.",
+            "image": {
+              "stock": "jewel-solitaire-band",
+              "alt": "Solitaire ring",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "slug": "shop",
+      "title": "Shop",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "products-1ihcftf",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "products",
+          "data": {
+            "heading": "",
+            "intro": "",
+            "mode": "all",
+            "collectionHandle": "",
+            "limit": 48
+          }
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "slug": "about",
+      "title": "About",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "about-1iiacav",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "about",
+          "data": {
+            "heading": "Our story",
+            "body": "Mineral Studio makes minimal fine jewellery in recycled gold, with prices shown by gram.",
+            "image": {
+              "stock": "jewel-pink-diamond",
+              "alt": "Pink sapphire ring",
+              "caption": ""
+            },
+            "highlights": []
+          }
+        },
+        {
+          "id": "faq-1ijnkb",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "faq",
+          "data": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "q": "Can I have a piece engraved?",
+                "a": "Yes. Most rings and pendants can be engraved with up to 20 characters. Add a note at checkout."
+              },
+              {
+                "q": "How do I find my ring size?",
+                "a": "Visit the studio to be measured, or ask us for a free ring sizer by post."
+              },
+              {
+                "q": "How should I care for my jewellery?",
+                "a": "Store pieces separately, take them off before swimming, and clean with a soft cloth. We clean and check claws for free."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "slug": "contact",
+      "title": "Contact",
+      "inNav": true,
+      "sections": [
+        {
+          "id": "contact-1ik4f0b",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "contact",
+          "data": {
+            "heading": "Contact us",
+            "intro": "Questions about an order or a product? Get in touch.",
+            "showForm": true,
+            "showMap": false
+          }
+        },
+        {
+          "id": "hours-1ildgs2",
+          "hidden": false,
+          "aiSuggested": false,
+          "variant": "",
+          "kind": "hours",
+          "data": {
+            "heading": "Opening hours",
+            "rows": [
+              {
+                "days": "Tuesday – Saturday",
+                "hours": "10:00 – 18:00"
+              }
+            ],
+            "note": ""
+          }
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "text": ""
+  },
+  "store": {
+    "currency": "DKK",
+    "paymentMethods": [
+      {
+        "id": "cod",
+        "kind": "cod",
+        "label": "Pay on delivery",
+        "instructions": "Pay the courier when your order arrives."
+      },
+      {
+        "id": "bank",
+        "kind": "bank_transfer",
+        "label": "Bank transfer",
+        "instructions": "After placing your order you'll receive our bank details. Your order is confirmed once payment arrives."
+      }
+    ],
+    "fulfillment": [
+      {
+        "id": "delivery",
+        "kind": "delivery",
+        "label": "Tracked delivery",
+        "priceMinor": 5600,
+        "details": "Delivered within 1–3 working days."
+      },
+      {
+        "id": "pickup",
+        "kind": "pickup",
+        "label": "Collect in store",
+        "priceMinor": 0,
+        "details": "Collect from our shop during opening hours."
+      }
+    ],
+    "requirePhone": true,
+    "requireEmail": false,
+    "lowStockThreshold": 3,
+    "checkoutNote": "You will receive a confirmation page with your order number. We'll contact you to confirm delivery.",
+    "taxNote": "",
+    "returnsPolicy": "Unused items in their original packaging can be returned within 14 days of delivery for an exchange or refund. Contact us with your order number to arrange a return.",
+    "shippingPolicy": "We deliver in 1–3 working days. Delivery fees are shown at checkout. You can also collect your order from our shop free of charge.",
+    "privacyNote": "We use your name, phone number, email and address only to process and deliver your order and to contact you about it. We do not sell your information.",
+    "prohibitedAck": true,
+    "notifyEmail": ""
+  }
+}

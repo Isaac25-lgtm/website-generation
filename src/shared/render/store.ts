@@ -26,7 +26,7 @@ function collectionName(s: SCtx, p: ProductView): string {
   return (h && s.ctx.store?.collections.find((c) => c.handle === h)?.name) || "";
 }
 
-const CARD_SIZE: Record<string, [number, number]> = { tall: [600, 800], quiet: [640, 800], room: [800, 600], large: [640, 800], life: [640, 800] };
+const CARD_SIZE: Record<string, [number, number]> = { tall: [600, 800], quiet: [640, 800], room: [800, 600], large: [640, 800], life: [640, 800], tech: [640, 800], bottle: [600, 800], atelier: [640, 800] };
 
 export function productCard(s: SCtx, p: ProductView, variant = ""): string {
   const avail = productAvailable(p);
@@ -47,7 +47,7 @@ export function renderProductsSection(s: SCtx, sec: Extract<Section, { kind: "pr
   const d = sec.data;
   const store = s.ctx.store;
   const variant = sec.variant || s.tpl.variants.products || layoutDefault(s)?.products || "grid";
-  const cls = ["large", "compact", "tall", "quiet", "jewel", "room", "object", "life", "hair"].includes(variant) ? `products-${variant}` : "";
+  const cls = ["large", "compact", "tall", "quiet", "jewel", "room", "object", "life", "hair", "pop", "tech", "bottle", "atelier"].includes(variant) ? `products-${variant}` : "";
   let products = (store?.products ?? []).slice();
   let tools = "";
   if (d.mode === "all") {
@@ -117,7 +117,7 @@ export function productPage(s: SCtx, p: ProductView): string {
   const sameCat = cat ? others.filter((x) => x.collections.includes(cat.handle)) : [];
   const related = [...sameCat, ...others.filter((x) => !sameCat.includes(x))].slice(0, 4);
   const relVariant = s.tpl.variants.products || layoutDefault(s)?.products || "grid";
-  const relCls = ["large", "compact", "tall", "quiet", "jewel", "room", "object", "life", "hair"].includes(relVariant) ? `products-${relVariant}` : "";
+  const relCls = ["large", "compact", "tall", "quiet", "jewel", "room", "object", "life", "hair", "pop", "tech", "bottle", "atelier"].includes(relVariant) ? `products-${relVariant}` : "";
   const relatedHtml = related.length ? `<section class="sec related" aria-labelledby="rel-h"><div class="wrap"><div class="sec-head"><h2 id="rel-h">${cat && sameCat.length >= 2 ? `More from ${esc(cat.name)}` : "You may also like"}</h2></div><div class="grid ${relCls}"${relCls ? "" : ' style="--min:220px"'}>${related.map((x) => productCard(s, x, relVariant)).join("")}</div></div></section>` : "";
   return `<section class="sec"><div class="wrap"><nav aria-label="Breadcrumb" class="meta" style="margin-bottom:1.5rem"><a href="${esc(pageUrl(s.ctx, ""))}">Home</a> / <a href="${esc(pageUrl(s.ctx, "shop"))}">Shop</a>${cat ? ` / <a href="${esc(pageUrl(s.ctx, "shop"))}?c=${encodeURIComponent(cat.handle)}">${esc(cat.name)}</a>` : ""} / <span aria-current="page">${esc(p.title)}</span></nav>
 <div class="pdp${stacked ? " stacked" : ""}"><div>${media}</div>

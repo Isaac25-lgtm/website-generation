@@ -2,7 +2,7 @@ import type { ImageRef, Link, Page, Section, SiteDoc } from "../schema";
 import type { TemplateDef } from "../templates";
 import type { RenderCtx } from "./types";
 import { artDataUri } from "../art";
-import { esc, isExternal, paragraphs, safeHref, whatsappLink } from "../util";
+import { esc, formatMoney, isExternal, paragraphs, safeHref, whatsappLink } from "../util";
 import { renderProductsSection, renderCollectionsSection } from "./store";
 import { personalHero } from "./personal-heroes";
 import { businessHero } from "./business-heroes";
@@ -242,6 +242,22 @@ function hero(s: SCtx, sec: Extract<Section, { kind: "hero" }>): string {
       // Size the wordmark so its longest word always fits the screen width.
       const longest = Math.max(...word.split(/\s+/).map((w) => w.length), 1);
       return `<section id="${id}" class="hero wordgrid"><div class="wrap"><p class="wg-word" aria-hidden="true" style="font-size:min(14.5vw,${(128 / longest).toFixed(2)}vw,14rem)">${esc(word)}</p><div class="wg-row">${h1}${actions}</div>${items ? `<div class="wg-items">${items}</div>` : ""}</div></section>`;
+    }
+    case "popstack": {
+      const tags = (s.ctx.store?.collections ?? []).slice(0, 4).map((c) => `<span>${esc(c.name)}</span>`).join("");
+      return `<section id="${id}" class="hero popstack"><div class="wrap ps-grid"><div>${eyebrow}${h1}${sub}${actions}</div><div class="ps-media">${img(s, d.image, { w: 900, h: 900, eager: true, fallbackSeed: seed })}</div></div>${tags ? `<div class="ps-strip" aria-hidden="true">${tags}</div>` : ""}</section>`;
+    }
+    case "action": {
+      const specs = (s.ctx.store?.collections ?? []).slice(0, 4).map((c) => `<li>${esc(c.name)}</li>`).join("");
+      return `<section id="${id}" class="hero action"><div class="ac-img">${img(s, d.image, { w: 1920, h: 1100, eager: true, fallbackSeed: seed })}</div><div class="wrap ac-copy">${eyebrow}${h1}${sub}${actions}</div>${specs ? `<ul class="ac-specs" aria-label="Collections">${specs}</ul>` : ""}</section>`;
+    }
+    case "tablescape": {
+      const menu = (s.ctx.store?.products ?? []).slice(0, 3).map((p) => `<li><a href="${esc(`${s.ctx.basePath}/product/${encodeURIComponent(p.handle)}`)}">${esc(p.title)}</a><span class="ts-dots" aria-hidden="true"></span><span>${esc(formatMoney(p.variants.length ? Math.min(...p.variants.map((v) => v.priceMinor)) : p.priceMinor, p.currency))}</span></li>`).join("");
+      return `<section id="${id}" class="hero tablescape"><div class="ts-grid"><div class="ts-media">${img(s, d.image, { w: 1200, h: 1400, eager: true, fallbackSeed: seed })}</div><div class="ts-copy">${eyebrow}${h1}${sub}${menu ? `<ul class="ts-menu">${menu}</ul>` : ""}${actions}</div></div></section>`;
+    }
+    case "workbench": {
+      const pics: (ImageRef | undefined)[] = [d.image, ...(s.ctx.store?.products ?? []).slice(0, 2).map((p) => p.images[0])];
+      return `<section id="${id}" class="hero workbench"><div class="wrap wb-grid"><div>${eyebrow}${h1}${sub}${actions}<p class="wb-note"><strong>Made to order</strong>Ask about a commission: sizes, finishes and lead times to suit you.</p></div><div class="wb-pics">${pics.map((im, i) => `<figure class="wb-p${i}">${img(s, im, { w: i ? 600 : 900, h: i ? 600 : 1100, eager: i === 0, fallbackSeed: `${seed}-${i}` })}</figure>`).join("")}</div></div></section>`;
     }
     case "lookbook":
       return `<section id="${id}" class="hero lookbook"><div class="bgimg">${img(s, d.image, { w: 1920, h: 1200, eager: true, fallbackSeed: seed })}</div><div class="wrap">${text}</div></section>`;

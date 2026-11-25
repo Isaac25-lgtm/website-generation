@@ -1,0 +1,93 @@
+import type { TemplateDef } from "./templates";
+import type { Theme } from "./schema";
+import type { StoreLayout } from "./render/layouts";
+import { storeTemplate } from "./templates-store";
+
+// Shop batch 3: one template per remaining five-star storefront in fashion, menswear, jewellery, furniture,
+// home, coffee, drinks, food, tech, sport and makers (structure only; no source names, photos, copy or code).
+
+type C = Theme["colors"];
+type Row = [id: string, name: string, category: string, layout: StoreLayout, rank: "signature" | "premium", c: [string, string, string, string, string, string], h: Theme["fontHeading"], b: Theme["fontBody"], description: string, industries: string, x?: Partial<{ dark: boolean; hero: string; css: string; radius: Theme["radius"]; tier: "public" | "member"; header: Theme["headerStyle"] }>];
+
+const upper = `.nav a,.cart-link{text-transform:uppercase;letter-spacing:.14em!important;font-size:.72rem!important}`;
+
+const ROWS: Row[] = [
+  // Fashion and menswear
+  ["e-shirting", "Shirting", "fashion", "quiet", "premium", ["#ffffff", "#f4f4f2", "#141414", "#5d5d5a", "#141414", "#3d5a80"], "instrument-sans", "inter", "One product told well: white space, fabric close-ups and a clear size guide.", "shirts, single-product brand, tailoring"],
+  ["e-knitroom", "Knit Room", "fashion", "lifestyle", "premium", ["#f6f2ec", "#ece4d8", "#2a231b", "#685d4f", "#7a4b2a", "#7a4b2a"], "fraunces", "inter", "Warm wool tones and soft photographs of jumpers worn outdoors.", "knitwear, wool, slow fashion", { radius: "md" }],
+  ["e-earthtone", "Earthtone", "menswear", "quiet", "signature", ["#f1eee8", "#e5e0d6", "#26231e", "#625d53", "#26231e", "#6f6a4f"], "jost", "inter", "Undyed colours, centred product shots and tiny captions. Utility clothing, quietly done.", "menswear, utility clothing, natural fibres", { css: upper }],
+  ["e-highland", "Highland", "menswear", "editorial", "signature", ["#f2f0ea", "#e3e0d5", "#1c1f1a", "#5a5e55", "#2e4a36", "#2e4a36"], "libre-caslon", "inter", "Mountain photographs and heritage serif type for outdoor tailoring.", "outdoor clothing, tailoring, heritage menswear"],
+  ["e-sculpt", "Sculpt", "fashion", "editorial", "signature", ["#0f0e0d", "#1a1817", "#f1ece6", "#ada69d", "#f1ece6", "#c9a27a"], "bodoni-moda", "inter", "Black, ivory and dramatic evening photographs in a tall lookbook.", "designer womenswear, eveningwear", { dark: true, css: upper }],
+  ["e-whitecoat", "White Coat", "fashion", "wordmark", "signature", ["#ffffff", "#f4f4f4", "#101010", "#5a5a5a", "#101010", "#101010"], "space-mono", "inter", "Stark white, numbered labels and a monospaced wordmark. Conceptual fashion.", "designer label, conceptual fashion, concept store", { tier: "public" }],
+  ["e-printshop", "Print Shop", "fashion", "pop", "premium", ["#fffdf7", "#ffd84a", "#141414", "#4f4b40", "#141414", "#e2412c"], "archivo-black", "inter", "Bright yellow, chunky type and pattern everywhere, for printed clothes and homeware.", "printed clothing, knit patterns, homeware", { radius: "lg" }],
+  ["e-slowwear", "Slow Wear", "fashion", "lifestyle", "premium", ["#f5f3ee", "#e9e5dc", "#2a2925", "#64625b", "#4c5a48", "#4c5a48"], "newsreader", "inter", "Calm neutrals and real people, for sustainable clothes made to last.", "sustainable fashion, womenswear"],
+  ["e-petal", "Petal", "fashion", "quiet", "premium", ["#fbf7f5", "#f3e9e4", "#2c2222", "#6c5e5c", "#a15a62", "#a15a62"], "cormorant", "inter", "Blush grounds, floral dresses and soft serif headings.", "womenswear, dresses, romantic fashion"],
+  ["e-silhouette", "Silhouette", "fashion", "object", "premium", ["#f4f2ef", "#e7e3dd", "#1c1b19", "#5f5c57", "#1c1b19", "#d9d2c7"], "instrument-serif", "inter", "One garment on a stone-coloured stage beside a fine serif.", "designer womenswear, sculptural fashion"],
+  ["e-heritagebag", "Heritage", "bags", "editorial", "premium", ["#f5f1ea", "#e9e1d4", "#1d1914", "#5f574b", "#6b2d1e", "#6b2d1e"], "playfair", "inter", "Oxblood and cream, leather bags in a cinematic lookbook. British heritage.", "leather bags, heritage brand, accessories", { css: upper }],
+  ["e-workwear", "Workwear", "menswear", "wordmark", "premium", ["#efeee9", "#e2e0d8", "#151513", "#5b5a55", "#151513", "#2f4a6b"], "archivo", "inter", "A heavy condensed wordmark over a gridded catalogue of chore jackets and trousers.", "workwear, menswear, repairable clothing"],
+  ["e-stripe", "Stripe", "fashion", "editorial", "premium", ["#ffffff", "#f2f2f2", "#111111", "#5b5b5b", "#111111", "#c8102e"], "bodoni-moda", "inter", "Black, white and one red. Striped knits in a Parisian lookbook.", "knitwear, Parisian fashion", { css: upper }],
+  // Jewellery
+  ["e-mineral", "Mineral", "jewellery", "quiet", "signature", ["#f3f1ee", "#e7e3de", "#1d1c1a", "#5f5c57", "#1d1c1a", "#a98b5a"], "inter-tight", "inter", "Minimal gold on grey stone, with prices shown plainly.", "fine jewellery, minimal jewellery, recycled gold", { tier: "public" }],
+  ["e-solid", "Solid", "jewellery", "object", "premium", ["#fbf8f2", "#f3e3b8", "#1f1a10", "#625a48", "#1f1a10", "#e0b23a"], "dm-serif", "dm-sans", "A gold piece on a warm yellow stage, friendly serif type and simple prices.", "gold jewellery, chains, rings"],
+  ["e-carat", "Carat", "jewellery", "jewel", "premium", ["#f7f6f4", "#ecebe7", "#16181c", "#5a5d63", "#16181c", "#7f8fa6"], "cormorant", "inter", "Cool silver tones and diamond close-ups, with each stone's story told.", "diamonds, engagement rings, fine jewellery"],
+  ["e-charm", "Charm", "jewellery", "lifestyle", "premium", ["#fdf8f3", "#f6e7da", "#2a1f18", "#6b5b4f", "#b0603a", "#b0603a"], "fraunces", "dm-sans", "Playful, warm and collectable, for charms and stacking chains.", "charm jewellery, gold-plated jewellery, gifts", { radius: "lg" }],
+  // Furniture and home
+  ["e-sunroom", "Sunroom", "furniture", "lifestyle", "signature", ["#f7f3ec", "#ede4d6", "#24201a", "#645c50", "#9a4a24", "#9a4a24"], "dm-serif", "inter", "Sunlit rooms and furniture in real homes, with a friendly serif.", "modular furniture, sofas, direct-to-consumer furniture"],
+  ["e-plywood", "Plywood", "furniture", "wordmark", "premium", ["#f3efe7", "#e6dfd2", "#161411", "#5c574e", "#161411", "#d4572a"], "unbounded", "inter", "A huge rounded wordmark over a hairline grid of plywood furniture.", "plywood furniture, CNC furniture, design"],
+  ["e-cabin", "Cabin", "furniture", "quiet", "premium", ["#f6f4ef", "#ebe7de", "#22211d", "#615f58", "#3c5a46", "#3c5a46"], "manrope", "inter", "Pale pine, white walls and a short, honest catalogue.", "pine furniture, Nordic furniture, small spaces"],
+  ["e-sandstone", "Sandstone", "home", "interiors", "premium", ["#f5eee4", "#ebdfcd", "#2a2017", "#68594a", "#8a4b2a", "#8a4b2a"], "cormorant", "jost", "Terracotta, sand and hand-made textiles in room settings.", "home décor, textiles, handcrafted homeware"],
+  ["e-claywork", "Claywork", "home", "atelier", "premium", ["#f3f0ea", "#e8e2d7", "#22201c", "#625d55", "#22201c", "#8b6d4f"], "libre-caslon", "inter", "A potter's shelf: staggered product photos, italic serif and a commission note.", "ceramics, tableware, pottery"],
+  ["e-paintbox", "Paintbox", "home", "pop", "premium", ["#fffaf3", "#ffb4a2", "#1b1512", "#5e524b", "#1b1512", "#1b1512"], "bricolage", "inter", "Coral, bold type and big swatches. Paint that's easy to choose.", "paint, decorating, colour", { radius: "xl" }],
+  ["e-colourcard", "Colour Card", "home", "wordmark", "premium", ["#f7f6f2", "#ecebe5", "#141413", "#5c5b56", "#141413", "#3f6e57"], "inter-tight", "inter", "A giant wordmark and a strict grid of colour swatches.", "paint, interiors, colour"],
+  ["e-hearth", "Hearth", "home", "lifestyle", "premium", ["#f8f4ee", "#efe6d9", "#2a2119", "#6a5c4e", "#5b3a29", "#a35a2f"], "lora", "inter", "Warm kitchens, everyday cookware and recipes beside the products.", "homeware, kitchenware, tableware"],
+  ["e-darkroom", "Darkroom", "home", "quiet", "premium", ["#121212", "#1c1c1c", "#ece9e4", "#a6a29b", "#ece9e4", "#ece9e4"], "newsreader", "inter", "Black walls and photographs printed in editions, like a small gallery.", "photographic prints, art editions, gallery", { dark: true }],
+  // Coffee, drinks and food
+  ["e-dripper", "Dripper", "coffee", "lifestyle", "signature", ["#f7f3ee", "#ece3d8", "#2a2420", "#685e55", "#9c5b3c", "#9c5b3c"], "fraunces", "inter", "Warm light, ceramic drippers and slow mornings, for a coffee shop with a craft.", "coffee, pour-over, ceramics", { radius: "md" }],
+  ["e-roastery", "Roastery", "coffee", "tabletop", "signature", ["#f6f3ee", "#ebe5da", "#1b1916", "#5f5a52", "#1b1916", "#a0522d"], "instrument-serif", "inter", "A tall café photograph beside a menu of this week's coffees.", "coffee roaster, café, specialty coffee", { tier: "public" }],
+  ["e-flatwhite", "Flat White", "coffee", "wordmark", "premium", ["#ffffff", "#f3f1ec", "#121212", "#5c5c58", "#121212", "#121212"], "archivo-black", "inter", "A screen-wide wordmark over a hairline grid of coffee bags.", "coffee, espresso, café"],
+  ["e-lightroast", "Light Roast", "coffee", "quiet", "signature", ["#f4f4f1", "#e9e9e4", "#1a1a18", "#5d5d58", "#1a1a18", "#7a8f6a"], "inter-tight", "inter", "Scandinavian restraint: pale grey, small type and coffee bags in a calm grid.", "specialty coffee, roaster, Nordic"],
+  ["e-ranchwater", "Ranch Water", "drinks", "pop", "signature", ["#fffaf0", "#a8e0c8", "#132018", "#4c5a51", "#132018", "#132018"], "archivo-black", "inter", "Mint, cactus-green type and a tilted can. A sparkling drink with a sense of place.", "seltzer, soft drinks, beverages", { radius: "xl" }],
+  ["e-distilled", "Distilled", "drinks", "tabletop", "signature", ["#f4f3ee", "#e8e7dd", "#1d2019", "#5a5f53", "#2f4a2c", "#2f4a2c"], "cormorant", "inter", "Botanical greens, a tablescape photograph and the bottles listed like a menu.", "non-alcoholic spirits, botanicals, drinks"],
+  ["e-agave", "Agave", "drinks", "tabletop", "signature", ["#14110e", "#201b16", "#f1e9dd", "#b3a794", "#d9a45b", "#d9a45b"], "playfair", "inter", "Dark wood, amber light and a bottle menu. A spirits house after sunset.", "tequila, spirits, distillery", { dark: true }],
+  ["e-chutney", "Chutney", "food", "pop", "premium", ["#fff8ef", "#ffcf9e", "#24140a", "#634c3c", "#24140a", "#24140a"], "bricolage", "inter", "Saffron orange, loud type and jars that look good on a table.", "condiments, chutney, pantry", { radius: "lg" }],
+  ["e-aperitivo", "Aperitivo", "drinks", "tabletop", "premium", ["#fbf5ee", "#f3e2d3", "#2a1612", "#6d544b", "#a8321f", "#a8321f"], "bodoni-moda", "inter", "Bitter red and cream, an aperitivo-hour photograph and a short drinks list.", "aperitif, spritz, Italian drinks"],
+  ["e-snackbar", "Snack Bar", "food", "pop", "premium", ["#fffbf2", "#ff9f6b", "#1c0f07", "#5e4a3c", "#1c0f07", "#1c0f07"], "archivo-black", "inter", "Bold orange, chunky borders and snacks shot close.", "snacks, sweets, food brand", { radius: "lg" }],
+  ["e-coldbrew", "Cold Brew", "coffee", "object", "premium", ["#f4f1ec", "#e8e1d6", "#1b1714", "#5d564e", "#1b1714", "#c9b8a2"], "instrument-sans", "inter", "One jar on a warm panel and a clear how-to. A single-product coffee brand.", "coffee concentrate, cold brew"],
+  ["e-chilioil", "Chili Oil", "food", "pop", "premium", ["#fff7f2", "#ffb3a0", "#260b06", "#673f37", "#260b06", "#260b06"], "unbounded", "inter", "Chilli red, rounded type and a jar on a tilted card.", "chilli oil, hot sauce, condiments", { radius: "xl" }],
+  ["e-crunch", "Crunch", "food", "pop", "premium", ["#fbfaff", "#c9b8ff", "#160f2a", "#53496b", "#160f2a", "#160f2a"], "bricolage", "inter", "Lavender, bubbly type and big product cards. Snacks that want to be noticed.", "snacks, crisps, plant-based food", { radius: "xl" }],
+  ["e-patisserie", "Pâtisserie", "food", "tabletop", "signature", ["#fdf8f5", "#f7e6df", "#2a1814", "#6c544d", "#9c3b2f", "#9c3b2f"], "dm-serif", "inter", "Giant serif type, styled cakes and a menu of today's bakes.", "pâtisserie, bakery, cakes", { tier: "public" }],
+  ["e-cookiebox", "Cookie Box", "food", "object", "premium", ["#16110d", "#241c16", "#f3e8dc", "#b5a594", "#e8b26a", "#e8b26a"], "fraunces", "inter", "Dark chocolate tones and one big cookie under a spotlight.", "bakery, cookies, desserts", { dark: true }],
+  // Tech
+  ["e-pocket", "Pocket", "tech", "object", "signature", ["#f2f2f0", "#e4e4e0", "#121212", "#5a5a57", "#121212", "#ff5a1f"], "space-grotesk", "inter", "A device on a bright orange stage with a technical sans. Affordable tech with character.", "consumer tech, gadgets, audio"],
+  ["e-calmscreen", "Calm Screen", "tech", "lifestyle", "signature", ["#f6f1e8", "#ece2d1", "#24201a", "#655c4e", "#7a5230", "#7a5230"], "newsreader", "inter", "Warm desks, natural light and a serif headline. Technology that slows you down.", "tablets, e-paper, focus tech"],
+  ["e-dial", "Dial", "tech", "object", "signature", ["#efefed", "#dfdfdb", "#151515", "#5a5a57", "#151515", "#c8c8c2"], "space-mono", "inter", "A grey stage, a single object and monospaced specs. Hardware for a calmer desk.", "desk accessories, controllers, hardware"],
+  ["e-ring", "Pulse", "tech", "object", "signature", ["#f6f3ef", "#ebe5de", "#1c1916", "#5f5953", "#1c1916", "#2a2622"], "instrument-serif", "inter", "A warm dark stage, an italic serif and one wearable in close-up.", "wearables, health tech, smart watch", { tier: "public", css: ".hero.objecthero h1{font-style:italic}" }],
+  ["e-synth", "Synth", "tech", "wordmark", "signature", ["#f2f2f2", "#e4e4e4", "#111111", "#5b5b5b", "#111111", "#ff4f00"], "space-mono", "inter", "Engineering-grey, a monospaced wordmark and a tight product grid. Instruments and speakers.", "music tech, synthesisers, audio"],
+  ["e-horizon", "Horizon", "tech", "lifestyle", "signature", ["#f3f1ec", "#e5e1d7", "#1d1c19", "#5f5c55", "#1d1c19", "#8a6d3b"], "instrument-serif", "inter", "A large serif product name over a wide landscape. Instruments for open spaces.", "synthesisers, music instruments"],
+  ["e-remade", "Remade", "tech", "pop", "premium", ["#fbfbf8", "#bfe6ff", "#0e1a24", "#4b5a66", "#0e1a24", "#0e1a24"], "space-grotesk", "inter", "Sky blue, tilted product cards and plain talk about recycled materials.", "recycled tech, speakers, sustainable products", { radius: "xl" }],
+  ["e-haptic", "Haptic", "tech", "object", "premium", ["#101113", "#1b1d21", "#eceef2", "#a1a6b0", "#eceef2", "#3b4252"], "inter-tight", "inter", "Dark graphite and a lit product stage. Hardware for producers.", "audio controllers, music production, hardware", { dark: true }],
+  ["e-hifi", "Hi-Fi", "tech", "wordmark", "premium", ["#f4f1ea", "#e8e3d8", "#1b1813", "#5e584d", "#1b1813", "#8a5a2b"], "libre-caslon", "inter", "A big serif wordmark and a hairline grid of speakers in wood.", "hi-fi, speakers, audio furniture"],
+  // Sport
+  ["e-piste", "Piste", "sport", "sport", "signature", ["#f4f6f8", "#e6eaee", "#0f1419", "#56606b", "#c8102e", "#c8102e"], "archivo", "inter", "Full-screen action photography, italic uppercase type and a strip of categories.", "skis, ski equipment, mountain sports", { tier: "public" }],
+  ["e-climb", "Climb", "sport", "sport", "signature", ["#ffffff", "#f1f1f1", "#0e0e0e", "#5a5a5a", "#0e0e0e", "#0e0e0e"], "inter-tight", "inter", "Monochrome cycling photography and a technical product grid.", "cycling apparel, sportswear"],
+  ["e-tempo", "Tempo", "sport", "sport", "signature", ["#f5f4f0", "#e8e6df", "#151614", "#5b5c57", "#2c5a46", "#2c5a46"], "manrope", "inter", "Green and stone, rides at dawn and kit that lasts.", "cycling apparel, outdoor clothing"],
+  ["e-fairway", "Fairway", "sport", "pop", "premium", ["#fbfaf4", "#c7e8b5", "#122012", "#4d5c4b", "#122012", "#122012"], "bricolage", "inter", "Fairway green, playful type and golf without the dress code.", "golf apparel, golf equipment", { radius: "lg" }],
+  ["e-citybike", "City Bike", "sport", "quiet", "premium", ["#f6f4ef", "#ebe7df", "#1f1e1b", "#605e58", "#1f1e1b", "#b5452f"], "jost", "inter", "Pale backgrounds, simple bikes and small captions. A city bicycle shop.", "bicycles, city bikes, bike shop"],
+  // Makers
+  ["e-kiln", "Kiln", "makers", "atelier", "signature", ["#f2eee7", "#e6dfd3", "#221e19", "#625b51", "#221e19", "#8a5a3c"], "cormorant", "inter", "Thrown pots on a staggered grid, an italic serif and a commission note.", "ceramics, pottery, tableware", { tier: "public" }],
+  ["e-florist", "Florist", "makers", "lifestyle", "signature", ["#fbf7f4", "#f2e7e1", "#2a1f1d", "#6b5c58", "#7d2e3a", "#7d2e3a"], "playfair", "inter", "Lush flower photography, a soft card and bouquets by size.", "florist, flower delivery, weddings"],
+  ["e-woodshop", "Woodshop", "makers", "atelier", "signature", ["#f4efe7", "#e8dfd1", "#1f1a14", "#61584b", "#1f1a14", "#7a5a32"], "libre-caslon", "inter", "Workshop photographs, joinery in close-up and made-to-order furniture.", "woodwork, furniture maker, joinery"],
+  ["e-studioobjects", "Studio Objects", "makers", "atelier", "signature", ["#f5f3ef", "#ebe8e1", "#1c1b18", "#5d5b55", "#1c1b18", "#a08463"], "instrument-serif", "inter", "Small objects photographed like still lifes, with a calm italic serif.", "design objects, candles, homeware"],
+  ["e-paperfold", "Paper Fold", "makers", "object", "signature", ["#f7f6f2", "#ecebe5", "#1a1a17", "#5c5b56", "#1a1a17", "#e8e3d6"], "inter-tight", "inter", "Folded forms on pale panels and clear dimensions. A design studio's shop.", "design studio, lighting, paper furniture"],
+];
+
+export const STORE3_TEMPLATES: TemplateDef[] = ROWS.map(([id, name, category, layout, rank, c, h, b, description, industries, x = {}]) => ({
+  ...storeTemplate({
+    id, name, category, layout, tier: x.tier ?? "member",
+    styles: [layout, x.dark ? "dark" : "light"], industries: industries.split(", "), description,
+    colors: { bg: c[0], surface: c[1], text: c[2], muted: c[3], primary: c[4], accent: c[5] } as C,
+    mode: x.dark ? "dark" : "light", fontHeading: h, fontBody: b, headerStyle: x.header, radius: x.radius,
+    hero: x.hero, css: x.css ?? "",
+  }),
+  rank,
+}));

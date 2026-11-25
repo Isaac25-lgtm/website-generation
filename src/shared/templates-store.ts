@@ -14,6 +14,10 @@ const VARIANTS: Record<StoreLayout, TemplateDef["variants"]> = {
   object: { hero: "objecthero", products: "object", collections: "chips", about: "split", footer: "columns" },
   lifestyle: { hero: "sunlit", products: "life", collections: "tiles", about: "split", footer: "big" },
   wordmark: { hero: "wordgrid", products: "hair", collections: "chips", about: "columns", footer: "simple" },
+  pop: { hero: "popstack", products: "pop", collections: "chips", about: "split", footer: "big" },
+  sport: { hero: "action", products: "tech", collections: "tiles", about: "split", footer: "columns" },
+  tabletop: { hero: "tablescape", products: "bottle", collections: "chips", about: "split", footer: "columns" },
+  atelier: { hero: "workbench", products: "atelier", collections: "chips", about: "split", footer: "simple" },
 };
 
 type C = Theme["colors"];

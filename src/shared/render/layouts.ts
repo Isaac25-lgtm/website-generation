@@ -2,7 +2,7 @@
 // templates: hero, collection grid, product page and chrome. Templates in a layout differ by palette,
 // type and their own CSS. Selected by TemplateDef.layout and applied as `body.lay.lay-<name>`.
 
-export type StoreLayout = "editorial" | "quiet" | "jewel" | "interiors" | "object" | "lifestyle" | "wordmark";
+export type StoreLayout = "editorial" | "quiet" | "jewel" | "interiors" | "object" | "lifestyle" | "wordmark" | "pop" | "sport" | "tabletop" | "atelier";
 
 /** Rules shared by every premium storefront layout. */
 const SHARED = `
@@ -164,6 +164,56 @@ const WORDMARK = `
 @media(max-width:860px){.lay-wordmark .products-hair{grid-template-columns:repeat(2,1fr)}}
 `;
 
+// Shop batch 3 (25 Nov 2026): bold pop brands, performance sport, food & drink tables, maker ateliers.
+const POP = `
+.lay-pop .sec-head h2{font-weight:800;letter-spacing:-.02em}
+.lay-pop .products-pop{grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2.2vw,1.75rem)}
+.lay-pop .products-pop .product-card{border:2px solid var(--text)!important;border-radius:var(--radius)!important;background:var(--surface)!important;overflow:hidden}
+.lay-pop .products-pop .ph{aspect-ratio:1;border-radius:0;border-bottom:2px solid var(--text)}
+.lay-pop .products-pop .info{display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:.9rem 1rem}
+.lay-pop .product-card .p-meta{display:none!important}
+.lay-pop .product-card .p-title{font-weight:800;font-size:1rem}
+.lay-pop .product-card .price{background:var(--text);color:var(--bg);border-radius:999px;padding:.2rem .7rem;font-weight:700;font-size:.85rem;white-space:nowrap}
+.lay-pop .btn{border-radius:999px;font-weight:800}
+@media(max-width:860px){.lay-pop .products-pop{grid-template-columns:repeat(2,1fr)}}
+`;
+
+const SPORT = `
+.lay-sport .sec-head h2{font-weight:800;text-transform:uppercase;letter-spacing:.01em;font-style:italic}
+.lay-sport .products-tech{grid-template-columns:repeat(4,1fr);gap:clamp(.75rem,1.6vw,1.25rem)}
+.lay-sport .products-tech .ph{aspect-ratio:4/5;background:var(--surface);border-radius:var(--radius-sm)}
+.lay-sport .products-tech .info{padding-top:.7rem}
+.lay-sport .product-card .p-title{font-weight:700;text-transform:uppercase;font-size:.82rem;letter-spacing:.04em}
+.lay-sport .product-card .p-meta{display:block!important;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em}
+.lay-sport .product-card .price{font-weight:600;font-size:.9rem}
+.lay-sport .btn{text-transform:uppercase;letter-spacing:.08em;font-weight:700;font-size:.82rem}
+@media(max-width:860px){.lay-sport .products-tech{grid-template-columns:repeat(2,1fr)}}
+`;
+
+const TABLETOP = `
+.lay-tabletop .sec-head{text-align:center;margin-inline:auto}
+.lay-tabletop .sec-head .lead{margin-inline:auto}
+.lay-tabletop .sec-head h2{font-weight:400}
+.lay-tabletop .products-bottle{grid-template-columns:repeat(4,1fr);gap:clamp(1.25rem,3vw,2.5rem)}
+.lay-tabletop .products-bottle .ph{aspect-ratio:3/4;background:var(--surface);border-radius:var(--radius)}
+.lay-tabletop .products-bottle .info{text-align:center;padding-top:1rem;display:grid;gap:.25rem}
+.lay-tabletop .product-card .p-title{font-family:var(--font-h);font-size:1.2rem;font-weight:400}
+.lay-tabletop .product-card .price{color:var(--muted)}
+.lay-tabletop .about.split .media{border-radius:var(--radius)}
+@media(max-width:860px){.lay-tabletop .products-bottle{grid-template-columns:repeat(2,1fr)}}
+`;
+
+const ATELIER = `
+.lay-atelier .sec-head h2{font-weight:400;font-style:italic}
+.lay-atelier .products-atelier{grid-template-columns:repeat(4,1fr);gap:clamp(1.25rem,3vw,2.75rem) clamp(1rem,2.4vw,2rem)}
+.lay-atelier .products-atelier .product-card:nth-child(2n){margin-top:clamp(1.5rem,4vw,3.5rem)}
+.lay-atelier .products-atelier .ph{aspect-ratio:4/5;border-radius:0}
+.lay-atelier .products-atelier .info{padding-top:.8rem;display:flex;justify-content:space-between;gap:.75rem;border-top:1px solid var(--text);margin-top:.8rem}
+.lay-atelier .product-card .p-title{font-family:var(--font-h);font-style:italic;font-size:1.08rem}
+.lay-atelier .product-card .price{font-size:.9rem}
+@media(max-width:860px){.lay-atelier .products-atelier{grid-template-columns:repeat(2,1fr)}.lay-atelier .products-atelier .product-card:nth-child(2n){margin-top:0}}
+`;
+
 /** Hero variants used by the storefront layouts (they work for any template). */
 export const STORE_HERO_CSS = `
 .hero.lookbook{min-height:min(88vh,860px);display:flex;align-items:flex-end;justify-content:center;color:#fff;padding-block:clamp(3rem,8vw,6rem);text-align:center}
@@ -214,7 +264,46 @@ export const STORE_HERO_CSS = `
 .hero.wordgrid .wg-items{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-left:1px solid var(--text);margin-top:1.5rem}
 .hero.wordgrid .wg-items a{border-right:1px solid var(--text);border-bottom:1px solid var(--text);border-top:1px solid var(--text);padding:.8rem;text-decoration:none;display:grid;gap:.5rem;font-weight:700;font-size:.8rem;text-transform:uppercase}
 .hero.wordgrid .wg-items img{aspect-ratio:1;object-fit:cover;width:100%}
+.hero.popstack{background:var(--surface);color:var(--text);padding:clamp(2.5rem,6vw,5rem) 0 0;overflow:hidden}
+.hero.popstack .ps-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.hero.popstack h1{font-weight:800;font-size:clamp(2.8rem,7vw,6.2rem);line-height:.92;letter-spacing:-.035em;max-width:11ch;color:var(--text)}
+.hero.popstack .sub{color:var(--text);font-size:1.1rem;max-width:40ch}
+.hero.popstack .eyebrow{color:var(--text)}
+.hero.popstack .ps-media img{width:100%;aspect-ratio:1;object-fit:cover;border:3px solid var(--text);border-radius:clamp(24px,4vw,48px);transform:rotate(2.5deg)}
+.hero.popstack .ps-strip{margin-top:clamp(2.5rem,5vw,4rem);background:var(--text);color:var(--bg);display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;padding:.9rem 1rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(.9rem,1.6vw,1.2rem)}
+.hero.action{padding:0;position:relative;color:#fff;background:#111}
+.hero.action .ac-img{height:min(88vh,860px)}.hero.action .ac-img img{width:100%;height:100%;object-fit:cover;opacity:.88}
+.hero.action::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.1) 70%)}
+.hero.action .ac-copy{position:absolute;inset:auto 0 clamp(5rem,10vw,7.5rem);z-index:2}
+.hero.action h1{color:#fff;font-weight:800;text-transform:uppercase;font-style:italic;font-size:clamp(2.6rem,7vw,6rem);line-height:.92;letter-spacing:-.01em;max-width:12ch}
+.hero.action .sub{color:rgba(255,255,255,.9);max-width:40ch}
+.hero.action .eyebrow{color:#fff}
+.hero.action .btn-ghost{color:#fff!important;border-color:rgba(255,255,255,.7)!important}
+.hero.action .ac-specs{position:absolute;left:0;right:0;bottom:0;z-index:2;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:0;padding:0;list-style:none;border-top:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.35)}
+.hero.action .ac-specs li{padding:1rem 1.25rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:#fff}
+.hero.action .ac-specs li+li{border-left:1px solid rgba(255,255,255,.3)}
+.hero.tablescape{padding:0}
+.hero.tablescape .ts-grid{display:grid;grid-template-columns:1.1fr .9fr;min-height:min(86vh,820px)}
+.hero.tablescape .ts-media{position:relative;overflow:hidden}.hero.tablescape .ts-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero.tablescape .ts-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,6vw,5rem);background:var(--surface)}
+.hero.tablescape h1{font-weight:400;font-size:clamp(2.2rem,4.6vw,4rem);line-height:1.04}
+.hero.tablescape .ts-menu{list-style:none;margin:.5rem 0 1.75rem;padding:0;max-width:30rem}
+.hero.tablescape .ts-menu li{display:flex;gap:.75rem;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.hero.tablescape .ts-menu .ts-dots{flex:1;border-bottom:1px dotted var(--muted);transform:translateY(-4px)}
+.hero.tablescape .ts-menu a{text-decoration:none;font-family:var(--font-h);font-size:1.08rem}
+.hero.workbench .wb-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.hero.workbench h1{font-weight:400;font-style:italic;font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.02}
+.hero.workbench .wb-pics{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:clamp(.6rem,1.4vw,1rem);aspect-ratio:6/5}
+.hero.workbench .wb-pics figure{margin:0;overflow:hidden}.hero.workbench .wb-pics img{width:100%;height:100%;object-fit:cover}
+.hero.workbench .wb-p0{grid-row:1/3}
+.hero.workbench .wb-note{margin-top:1.75rem;padding:1rem 1.2rem;border:1px solid var(--text);max-width:26rem;font-size:.92rem}
+.hero.workbench .wb-note strong{display:block;font-family:var(--font-h);font-style:italic;font-weight:400;font-size:1.1rem;margin-bottom:.2rem}
 @media(max-width:860px){
+ .hero.popstack .ps-grid,.hero.tablescape .ts-grid,.hero.workbench .wb-grid{grid-template-columns:1fr}
+ .hero.tablescape .ts-media{min-height:55vh}
+ .hero.action .ac-copy{bottom:clamp(4.5rem,18vw,6rem)}
+ .hero.action .ac-specs{display:flex;overflow-x:auto}
+ .hero.action .ac-specs li{flex:none;padding:.85rem 1rem}
  .hero.objecthero .oh-grid{grid-template-columns:1fr}
  .hero.wordgrid .wg-items{grid-template-columns:repeat(2,1fr)}
  .hero.wordgrid .wg-row{flex-direction:column;align-items:flex-start}
@@ -233,6 +322,10 @@ export const LAYOUT_CSS: Record<StoreLayout, string> = {
   object: SHARED + OBJECT,
   lifestyle: SHARED + LIFESTYLE,
   wordmark: SHARED + WORDMARK,
+  pop: SHARED + POP,
+  sport: SHARED + SPORT,
+  tabletop: SHARED + TABLETOP,
+  atelier: SHARED + ATELIER,
 };
 
 /** Default product-grid variant and product-page style per layout. */
@@ -244,4 +337,8 @@ export const LAYOUT_DEFAULTS: Record<StoreLayout, { products: string; pdp: "stac
   object: { products: "object", pdp: "single" },
   lifestyle: { products: "life", pdp: "stacked" },
   wordmark: { products: "hair", pdp: "single" },
+  pop: { products: "pop", pdp: "single" },
+  sport: { products: "tech", pdp: "stacked" },
+  tabletop: { products: "bottle", pdp: "single" },
+  atelier: { products: "atelier", pdp: "stacked" },
 };

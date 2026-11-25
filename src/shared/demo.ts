@@ -9,6 +9,7 @@ import { BUSINESS_PERSONAS } from "./demo-business";
 import { PREMIUM_PERSONAS } from "./demo-premium";
 import { BUSINESS4_PERSONAS } from "./demo-business4";
 import { STORE2_PERSONAS } from "./demo-store2";
+import { STORE3_PERSONAS } from "./demo-store3";
 
 // Fictional sample content for template previews and the three public demo
 // sites. Every demo is labelled as a demonstration wherever it is shown.
@@ -240,6 +241,7 @@ export const PERSONAS: Record<string, Persona> = {
   ...PREMIUM_PERSONAS,
   ...BUSINESS4_PERSONAS,
   ...STORE2_PERSONAS,
+  ...STORE3_PERSONAS,
 };
 
 /** Expand a demo product list into ProductViews (for template previews rendered in memory). */

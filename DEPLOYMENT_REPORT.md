@@ -197,3 +197,11 @@ Screenshots are in `tests/e2e/screenshots/prod/`. The test support ticket was de
 - Limits: 30 questions an hour per visitor, 120 for signed-in users; messages up to 2,000 characters; 25-second timeout. The CSRF header is required. Replies are shown as plain text.
 - **Not switched on yet:** the secret isn't set, so the endpoint returns 503 `not_configured` and the panel says so. To switch it on: `npx wrangler secret put DEEPSEEK_API_KEY`.
 - Tests: unit 1308, integration 62, Playwright 13 (local), smoke 39/39 plus the assistant e2e on production. Smoke records were cleaned up.
+
+## 25 November 2026: shop batch 3 (version ceae685f)
+
+- 60 new shop templates, one per remaining five-star storefront: fashion and menswear 13, jewellery 4, furniture and home 9, coffee, drinks and food 15, tech 9, sport 5, makers 5. Library: 283 templates (personal 93, business 63, online store 127).
+- Four new shop layouts: **pop** (colour block hero, tilted photo card, bordered product cards), **sport** (full-screen action photo, italic uppercase type, category strip), **tabletop** (tall photo beside a priced menu of products) and **atelier** (staggered product grid, three-photo workshop hero, commission note).
+- New product kits with fictional demo shops: coffee, drinks, food, tech, gadgets, cycling, ski, golf, city bikes, ceramics, florist, woodwork and candles. 84 new CC0 photos are credited in `public/stock/CREDITS.txt`.
+- Shop hero subheadings now use the first sentence of the shop's story, so they no longer repeat the headline (batch 2 fixed as well).
+- Tests: unit 1668, integration 62, Playwright 13 (local, including every template), smoke 39/39, all 283 live previews return 200. Smoke records were cleaned up.

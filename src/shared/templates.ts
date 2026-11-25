@@ -8,6 +8,7 @@ import { BUSINESS_TEMPLATES } from "./templates-business";
 import { PREMIUM_PERSONAL_TEMPLATES } from "./templates-premium";
 import { PREMIUM_BUSINESS_TEMPLATES } from "./templates-business4";
 import { STORE2_TEMPLATES } from "./templates-store2";
+import { STORE3_TEMPLATES } from "./templates-store3";
 import { STORE_TEMPLATES } from "./templates-store";
 
 /** Gallery ranking: Signature first, then Premium, then Standard (owner rule, 24 Nov 2026). */
@@ -375,6 +376,7 @@ h1,h2{text-transform:uppercase;font-weight:800;letter-spacing:-.03em}
   ...PREMIUM_PERSONAL_TEMPLATES,
   ...PREMIUM_BUSINESS_TEMPLATES,
   ...STORE2_TEMPLATES,
+  ...STORE3_TEMPLATES,
 ];
 
 export const TEMPLATE_MAP: Record<string, TemplateDef> = Object.fromEntries(TEMPLATES.map((t) => [t.id, t]));

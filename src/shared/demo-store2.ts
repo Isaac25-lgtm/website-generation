@@ -195,5 +195,7 @@ const SHOPS: R[] = [
 export const STORE2_PERSONAS: Record<string, Persona> = Object.fromEntries(SHOPS.map(([id, kit, name, tagline, industry, city, country, currency, rate, hero, about, lead]) => {
   const k = KITS[kit];
   const gal = k.products.slice(1, 3).map((p) => [p.image!, p.title] as [string, string]);
-  return [id, shop(kit, { name, tagline, industry, description: tagline, about, currency, rate, city, country, hero: [hero, name], gallery: gal, lead })];
+  // The hero subheading is the first sentence of the story, so it never repeats the headline.
+  const description = about.split(/(?<=\.)\s/)[0];
+  return [id, shop(kit, { name, tagline, industry, description, about, currency, rate, city, country, hero: [hero, name], gallery: gal, lead })];
 }));

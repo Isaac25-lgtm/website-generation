@@ -1,6 +1,8 @@
 # AGENTS.md: handoff for coding agents (Codex and others)
 
-**Codex: start with the [verification handoff](docs/codex-verification-db3d932.md) (21 November 2026, commit `db3d932`): check the fixes to your [1e5c9c6 review](docs/integrity-review-1e5c9c6.md) and the new WhatsApp/logo options.**
+**Codex: current task (25 November 2026): [full audit from the template library onwards](docs/codex-audit-templates-5a23f67.md), review commit `5a23f67`.**
+
+**Earlier: the [verification handoff](docs/codex-verification-db3d932.md) (21 November 2026, commit `db3d932`): check the fixes to your [1e5c9c6 review](docs/integrity-review-1e5c9c6.md) and the new WhatsApp/logo options.**
 
 **Current handoff (20 November 2026).** Read the [Claude engineering handoff](docs/claude-handoff.md) and [production audit](docs/production-audit.md) for the release decision, verified findings and proposed Python backend / React frontend split. The remaining sections record the original TypeScript build and its historical release procedure.
 

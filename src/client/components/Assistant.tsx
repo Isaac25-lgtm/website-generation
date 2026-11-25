@@ -15,7 +15,7 @@ function inline(text: string): ReactNode[] {
   return text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g).filter(Boolean).map((part, i) =>
     part.startsWith("**") && part.endsWith("**") ? <strong key={i}>{part.slice(2, -2)}</strong>
       : part.startsWith("`") && part.endsWith("`") ? <code key={i}>{part.slice(1, -1)}</code>
-        : <Fragment key={i}>{part}</Fragment>);
+        : <Fragment key={i}>{part.replace(/\*\*/g, "")}</Fragment>); // unpaired ** never shows
 }
 
 /** Readable formatting for the assistant's answers: headings, numbered and bulleted lists, paragraphs, bold. */
@@ -32,7 +32,8 @@ export function RichReply({ text }: { text: string }) {
   };
   for (const raw of text.split("\n")) {
     const line = raw.trim();
-    const heading = line.match(/^#{1,4}\s+(.*)$/);
+    // "## Heading" and a line that is entirely bold ("**1. Describe your site**") both become headings.
+    const heading = line.match(/^#{1,4}\s+(.*)$/) ?? line.match(/^\*\*([^*]+)\*\*:?$/);
     const ordered = line.match(/^\d+[.)]\s+(.*)$/);
     const bullet = line.match(/^[-*•]\s+(.*)$/);
     if (!line) { flushPara(); flushList(); }

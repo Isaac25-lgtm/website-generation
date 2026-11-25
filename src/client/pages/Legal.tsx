@@ -18,7 +18,7 @@ function Shell({ title, children }: { title: string; children: React.ReactNode }
 
 function Operator() {
   const { config } = useApp();
-  return <>{config?.operator.name ?? "Motion Imprints Technologies"} (“we”, “us”). {config?.operator.note}</>;
+  return <>{config?.operator.name ?? "ImprintSites AI"} (“we”, “us”). {config?.operator.note}</>;
 }
 
 export function Terms() {

@@ -21,7 +21,7 @@ Written 2026-11-20 at the end of the first build session. Read this file first, 
 
 ## 1. What this is
 
-**ImprintSites AI** is a no-code website builder SaaS by Motion Imprints Technologies. The parent company may rename to "Motion Analytics", so the product name deliberately stands on its own. Customers describe a site, pick a template (or paste an inspiration URL), edit it in a live editor, pay, and publish.
+**ImprintSites AI** is an independent no-code website builder (owner, 25 Nov 2026: it is not a product of Motion Imprints Technologies or any other company). The operator name shown on the site comes from the `operator_display_name` setting, default "ImprintSites AI". Customers describe a site, pick a template (or paste an inspiration URL), edit it in a live editor, pay, and publish.
 
 - **Live:** https://imprintsites.omodingisaac123.workers.dev (Cloudflare Worker `imprintsites`, latest version `712e0968-5fd8-4fb2-a3c0-63b8b61bd824`)
 - **Demo sites:** `/s/demo-portfolio/` (Lens template, Lisbon photographer), `/s/demo-business/` (Meridian, Kingsway Advisory, London), `/s/demo-store/` (Maison, Maison Nia, Paris, EUR)

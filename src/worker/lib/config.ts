@@ -28,7 +28,8 @@ export async function publicConfig(env: AppEnv) {
     email: { configured: emailConfigured(env) },
     storage: storageBackend(env),
     hosting: { status: s.hosting_fee_status || "not_set", amount: s.hosting_fee_amount || "", amounts: { personal: s.hosting_fee_amount_personal || "", business: s.hosting_fee_amount_business || "", ecommerce: s.hosting_fee_amount_ecommerce || "" }, currency: s.hosting_fee_currency || "", interval: s.hosting_fee_interval || "" },
-    operator: { name: s.operator_display_name || "Motion Imprints Technologies", note: s.operator_status_note || "", supportEmail: s.support_email || "" },
+    // ImprintSites AI is independent, not part of any other company (owner, 25 Nov 2026).
+    operator: { name: s.operator_display_name || "ImprintSites AI", note: s.operator_status_note || "", supportEmail: s.support_email || "" },
     demos: PUBLIC_DEMOS.map((d) => ({ slug: d.slug, type: d.type, url: `/s/${d.slug}/` })),
   };
 }

@@ -172,7 +172,7 @@ describe("assistant facts come from the same source as /api/config", () => {
     appName: "ImprintSites AI", prices: [], payments: { provider: "dodo", configured: false, mode: "test" }, ai: { available: false, perProjectLimit: 20 },
     google: { enabled: false }, browserRun: { bound: false }, email: { configured: false }, storage: "d1",
     hosting: { status: "announced", amount: "", amounts: { personal: "3", business: "4", ecommerce: "5" }, currency: "USD", interval: "month" },
-    operator: { name: "Motion Imprints Technologies", note: "", supportEmail: "" }, demos: [], ...o,
+    operator: { name: "ImprintSites AI", note: "", supportEmail: "" }, demos: [], ...o,
   }) as any;
 
   it("states the locked build prices, hosting amounts, currency, interval and operator exactly", () => {
@@ -222,7 +222,7 @@ describe("page-aware starter questions and guides", () => {
 
   it("sends only the current page's guide, and asks for detailed step-by-step answers", async () => {
     const { PAGE_GUIDES } = await import("../../src/shared/assistant-guides");
-    const cfg = { payments: { configured: false, mode: "test" }, google: { enabled: false }, email: { configured: false }, hosting: { status: "announced", amount: "", amounts: { personal: "3", business: "4", ecommerce: "5" }, currency: "USD", interval: "month" }, operator: { name: "Motion Imprints Technologies", note: "", supportEmail: "" } } as any;
+    const cfg = { payments: { configured: false, mode: "test" }, google: { enabled: false }, email: { configured: false }, hosting: { status: "announced", amount: "", amounts: { personal: "3", business: "4", ecommerce: "5" }, currency: "USD", interval: "month" }, operator: { name: "ImprintSites AI", note: "", supportEmail: "" } } as any;
     const editor = systemPrompt(cfg, "editor");
     expect(editor).toContain(PAGE_GUIDES.editor.guide);
     expect(editor).not.toContain(PAGE_GUIDES.store.guide);

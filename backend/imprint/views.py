@@ -136,7 +136,7 @@ class ConfigView(APIView):
                 "currency": s.get("hosting_fee_currency") or "", "interval": s.get("hosting_fee_interval") or "",
             },
             "operator": {
-                "name": s.get("operator_display_name") or "Motion Imprints Technologies",
+                "name": s.get("operator_display_name") or "ImprintSites AI",
                 "note": s.get("operator_status_note") or "", "supportEmail": s.get("support_email") or "",
             },
             "demos": cfg["demos"],

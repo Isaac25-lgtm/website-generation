@@ -4,6 +4,7 @@ import { api, fmtDate, hostingPrice, useApp, useAsync, usd } from "../lib";
 import { Icon, LoadingPage, Logo, Modal, SiteThumb, Spinner, ThemeToggle } from "../components/ui";
 import { PLANS } from "../../shared/pricing";
 import { OrdersManager, ProductsManager } from "./Store";
+import { TemplateGallery } from "../pages/Marketing";
 
 export function RequireAuth() {
   const { me, loading } = useApp();
@@ -49,6 +50,7 @@ export function Dashboard() {
   return (
     <div className="container app-main">
       <div className="page-title"><div><h1>Your websites</h1><p className="muted" style={{ margin: 0 }}>Build, preview, publish and manage.</p></div><Link className="btn btn-primary" to="/dashboard/new">+ New website</Link></div>
+      <StartChoices compact={projects.length > 0} />
       {projects.length === 0 ? (
         <div className="empty"><div className="icon-badge" style={{ margin: "0 auto 1rem" }}>{Icon.spark}</div><h2 style={{ fontSize: "1.4rem" }}>Create your first website</h2><p className="muted">Answer a few questions and see your site in minutes. Free to preview.</p><Link className="btn btn-primary btn-lg" to="/dashboard/new">Start building</Link></div>
       ) : (
@@ -75,6 +77,22 @@ export function Dashboard() {
   );
 }
 
+/** The two recommended ways to start a website, shown on the dashboard. */
+function StartChoices({ compact }: { compact?: boolean }) {
+  return (
+    <section className={`start-choices${compact ? " compact" : ""}`} aria-label="Start a new website">
+      <div>
+        <h2>Start a new website</h2>
+        <p className="muted small">The quickest way to a site you'll love: pick a template, or show us a website you like.</p>
+      </div>
+      <div className="start-grid">
+        <Link className="start-card link" to="/templates"><strong>Choose a template</strong><span className="muted small">Browse complete designs for businesses, people and online stores, then press "Use template".</span></Link>
+        <Link className="start-card link" to="/dashboard/new?start=inspiration"><strong>Share a website you love</strong><span className="muted small">Paste its link and we'll match its colours, fonts and layout, never its words or photos.</span></Link>
+      </div>
+    </section>
+  );
+}
+
 export function NewProject() {
   const [params] = useSearchParams();
   const nav = useNavigate();
@@ -89,6 +107,20 @@ export function NewProject() {
   const [slugState, setSlugState] = useState<{ checking?: boolean; available?: boolean; reason?: string; suggestion?: string }>({});
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
+  // The two recommended ways to start (owner, 25 Nov 2026): a template, or a website the customer loves.
+  const [templateId, setTemplateId] = useState<string>(params.get("template") || "");
+  const [templateName, setTemplateName] = useState<string>("");
+  const [picking, setPicking] = useState(false);
+  const [loveUrl, setLoveUrl] = useState<string>((fromPrompt && intent?.url) || "");
+  const loveRef = useRef<HTMLInputElement>(null);
+  useEffect(() => { if (params.get("start") === "inspiration") loveRef.current?.focus(); }, [params]);
+  useEffect(() => {
+    if (!templateId) { setTemplateName(""); return; }
+    api("/api/templates").then((r) => {
+      const t = (r.templates as { id: string; name: string; type: string }[]).find((x) => x.id === templateId);
+      if (t && t.type === type) setTemplateName(t.name); else { setTemplateId(""); setTemplateName(""); } // a template only fits its own site type
+    }).catch(() => undefined);
+  }, [templateId, type]);
   const { config } = useApp();
   const hp = hostingPrice(config, type);
   const prompt: string = fromPrompt ? intent?.prompt || "" : "";
@@ -115,11 +147,12 @@ export function NewProject() {
       if (type !== "personal" && prompt.length > 400) answers.about = prompt;
     }
     if (type === "personal") answers.name = name; else if (type === "business") answers.businessName = name; else answers.storeName = name;
-    if (fromPrompt && intent?.url) answers.inspiration = { url: intent.url, notes: "" };
+    const love = loveUrl.trim();
+    if (love) answers.inspiration = { url: /^https?:\/\//i.test(love) ? love : `https://${love}`, notes: "" };
     if (!slugState.available) { setErr("Choose an available web address first."); setBusy(false); return; }
     try {
       // Send exactly the address shown; the server refuses it (rather than inventing another) if it was just taken.
-      const r = await api("/api/projects", { body: { type, name, slug, templateId: params.get("template") || undefined, answers } });
+      const r = await api("/api/projects", { body: { type, name, slug, templateId: templateId || undefined, answers } });
       sessionStorage.removeItem("is_intent");
       nav(`/projects/${r.id}/setup`);
     } catch (er) { setErr((er as Error).message); setBusy(false); }
@@ -138,6 +171,32 @@ export function NewProject() {
             </button>
           ))}
         </div>
+        <fieldset className="start-pick">
+          <legend>How would you like to start?</legend>
+          <p className="muted small">Choose a template, share the link of a website you love, or both: the template sets the layout and the website you love sets the colours and fonts. You can change either later.</p>
+          <div className="start-grid">
+            <div className={`start-card${templateId ? " on" : ""}`}>
+              <strong>1. Choose a template</strong>
+              <p className="muted small">Browse complete {type === "ecommerce" ? "online store" : type} designs and pick the one closest to what you want.</p>
+              {templateId ? <p className="small"><span className="badge green">Selected: {templateName || "template"}</span></p> : null}
+              <div className="row" style={{ gap: ".4rem" }}>
+                <button type="button" className="btn btn-primary btn-sm" onClick={() => setPicking(true)}>{templateId ? "Change template" : "Browse templates"}</button>
+                {templateId && <button type="button" className="btn btn-ghost btn-sm" onClick={() => setTemplateId("")}>Clear</button>}
+              </div>
+            </div>
+            <div className={`start-card${loveUrl.trim() ? " on" : ""}`}>
+              <strong>2. Share a website you love</strong>
+              <p className="muted small">Paste its link and we'll match its style: colours, fonts and layout. We never copy its words, photos or logo.</p>
+              <input ref={loveRef} type="url" inputMode="url" aria-label="Link to a website you love" placeholder="e.g. www.example.com" maxLength={300} value={loveUrl} onChange={(e) => setLoveUrl(e.target.value)} />
+            </div>
+          </div>
+          {!templateId && !loveUrl.trim() && <p className="help">Not sure yet? Continue, and we'll recommend templates from your answers.</p>}
+        </fieldset>
+        {picking && (
+          <Modal title={`Choose a ${type === "ecommerce" ? "store" : type} template`} wide onClose={() => setPicking(false)}>
+            <TemplateGallery embedded type={type} selected={templateId} onPick={(id) => { setTemplateId(id); setPicking(false); }} />
+          </Modal>
+        )}
         <label className="field"><span>{type === "personal" ? "Your name" : type === "business" ? "Business name" : "Store name"}</span><input required maxLength={80} value={name} onChange={(e) => setName(e.target.value)} autoFocus /></label>
         <div className="field">
           <span>Your web address</span>

@@ -14,6 +14,7 @@ export interface PageGuide {
 export const PAGE_GUIDES: Record<PageCategory, PageGuide> = {
   home: {
     starters: [
+      "Should I start from a template or share the link of a website I love? Explain both ways to start and how to combine them.",
       "I run a small business. Should I choose a business site or an online store, and what is the difference in features and price?",
       "Walk me through every step from describing my website to having it live at my own web address.",
       "What exactly do I get for the one-time build fee, and what does the monthly hosting and maintenance cover?",
@@ -33,6 +34,7 @@ export const PAGE_GUIDES: Record<PageCategory, PageGuide> = {
   templates: {
     starters: [
       "How do I find the right template for my business? Explain the filters for site type, shop category and style, and the 'See more' button.",
+      "I found a template I like. How do I start my site with it, and can I also match the colours of a website I love?",
       "What is the difference between Signature, Premium and the other templates, and why are some marked 'Member'?",
       "If I start with one template and switch to another later, will I lose my text, photos or products?",
       "How do I open a template in full to see all its pages, including the shop, product and about pages?",
@@ -74,21 +76,23 @@ export const PAGE_GUIDES: Record<PageCategory, PageGuide> = {
   },
   dashboard: {
     starters: [
+      "What are the two ways to start a new website here: choosing a template or sharing a website I love? Walk me through each.",
       "How do I start a new website from here, and which site type should I choose for what I sell or do?",
       "What does each button on my site card do: Edit design, Publish, Store, Leads, Duplicate and Archive?",
       "How can I copy my site to try a different design without risking the original?",
       "Where do I see messages and quote requests from my visitors, and orders from my store?",
     ],
-    guide: `Dashboard ("Your websites"): "Start building" or "Create your first website" starts a new site by choosing a website type. Each site card shows its status and a preview, with "Edit design" (editor), "Continue setup" if unfinished, "Publish", "Store" (online stores), "Leads" (contact and quote messages), "Duplicate" (a full copy with a new address, the original untouched) and "Archive". Published sites show "Live at" with the address.`,
+    guide: `Dashboard ("Your websites"): a "Start a new website" panel offers the two recommended ways to start: "Choose a template" (opens the Templates gallery, where "Use template" starts a site with that design) and "Share a website you love" (opens the new-site form with the link box ready). "+ New website" opens the same form: choose the website type, then under "How would you like to start?" use "Browse templates" to pick a template and/or paste the link of a website you love, then the name and web address, then "Continue" to the setup wizard. Each site card shows its status and a preview, with "Edit design" (editor), "Continue setup" if unfinished, "Publish", "Store" (online stores), "Leads" (contact and quote messages), "Duplicate" (a full copy with a new address, the original untouched) and "Archive". Published sites show "Live at" with the address.`,
   },
   setup: {
     starters: [
+      "In the 'Design & inspiration' step, should I choose a template or paste a website I love, and can I use both?",
       "What should I prepare before I fill in this setup, and which answers matter most for how my site looks?",
       "How does 'Paste a website you love' work, and what can I do if that website can't be read?",
       "Should I tick 'Polish my wording with AI'? What will it change and what stays exactly as I wrote it?",
       "For my online store, which payment methods and delivery options should I offer, and what instructions should customers see?",
     ],
-    guide: `Setup wizard: steps collect details (name, what you do, location, contact details, socials, optional WhatsApp button and logo), then style. "Paste a website you love" reads only the style (colours, fonts, layout); "Upload a screenshot instead" works when a site cannot be read; "Use this style for my site" applies it; "Templates that match this style" are suggested. Store owners set "Payment methods your customers can choose" (cash on delivery, pay on pickup, bank transfer, mobile money, WhatsApp), each with a "Name shown to customers" and "Instructions shown to the customer", delivery (delivery to an address, pickup, digital delivery) and a "Low-stock warning threshold". "Generate my website" builds the draft, then "Open editor".`,
+    guide: `Setup wizard: if a template or a website-you-love link was given when the site was created, they are already applied (the link is analysed automatically in "Design & inspiration"). Steps collect details (name, what you do, location, contact details, socials, optional WhatsApp button and logo), then style. "Paste a website you love" reads only the style (colours, fonts, layout); "Upload a screenshot instead" works when a site cannot be read; "Use this style for my site" applies it; "Templates that match this style" are suggested. Store owners set "Payment methods your customers can choose" (cash on delivery, pay on pickup, bank transfer, mobile money, WhatsApp), each with a "Name shown to customers" and "Instructions shown to the customer", delivery (delivery to an address, pickup, digital delivery) and a "Low-stock warning threshold". "Generate my website" builds the draft, then "Open editor".`,
   },
   editor: {
     starters: [

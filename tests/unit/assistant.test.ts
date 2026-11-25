@@ -229,5 +229,12 @@ describe("page-aware starter questions and guides", () => {
     expect(editor).toMatch(/numbered step-by-step/);
     expect(systemPrompt(cfg, "store")).toContain("Import CSV");
     expect(systemPrompt(cfg, "auth")).toContain("Google sign-in is not available yet");
+    // Owner's emphasis: every page steers people to start from a template or a website they love.
+    for (const page of ["home", "dashboard", "setup", "editor", "other"] as const) {
+      const p = systemPrompt(cfg, page);
+      expect(p).toContain("choose a template from the gallery");
+      expect(p).toContain("share the link of a website they love");
+    }
+    expect(PAGE_GUIDES.dashboard.guide).toContain("Share a website you love");
   });
 });

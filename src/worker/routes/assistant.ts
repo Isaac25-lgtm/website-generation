@@ -42,7 +42,7 @@ export function systemPrompt(cfg: PublicConfig, page: keyof typeof PAGE_CATEGORI
     ? "Publishing is unlocked by paying the one-time build fee online."
     : `Online payment for publishing is ${cfg.payments.configured ? "in test mode, so real payments are not taken yet" : "not switched on yet"}. People who want to publish now should use the Contact page.`;
   const offline = PaymentMethod.shape.kind.options.map((k) => PAYMENT_LABELS[k]).join(", ");
-  return `You are "ImprintSites AI", the help assistant on ImprintSites AI, an independent website builder${cfg.operator.name && cfg.operator.name !== "ImprintSites AI" ? ` operated by ${cfg.operator.name}` : ""}.
+  return `You are "ImprintSites AI", the help assistant on the ImprintSites AI website builder.
 You help visitors and customers understand the product and build their website. Answer only about ImprintSites, building and running a website with it, and general website advice.
 
 FACTS (use only these; never invent features, prices, discounts, guarantees or deadlines):

@@ -197,7 +197,7 @@ export function Contact() {
           <p className="muted">Questions about building your site, billing, a refund, privacy, or a problem with content on a site we host? Send us a message and we'll reply by email, usually within 2 business days.</p>
           <div className="stack-sm" style={{ marginTop: "1.5rem" }}>
             <div className="card"><strong>Report content or copyright</strong><p className="muted small" style={{ margin: ".3rem 0 0" }}>Choose “Copyright / IP report” or “Abuse report”, include the exact page address and explain the issue. We review every report and can take sites offline.</p></div>
-            <div className="card"><strong>Operator</strong><p className="muted small" style={{ margin: ".3rem 0 0" }}>{config?.operator.name}. {config?.operator.note}{config?.operator.supportEmail ? ` Email: ${config.operator.supportEmail}` : ""}</p></div>
+            {config?.operator.supportEmail && <div className="card"><strong>Email us</strong><p className="muted small" style={{ margin: ".3rem 0 0" }}>{config.operator.supportEmail}</p></div>}
           </div>
         </div>
         <form className="card stack" onSubmit={submit} noValidate>

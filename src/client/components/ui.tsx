@@ -88,13 +88,13 @@ export function Footer() {
           <div>
             <Logo />
             <p className="muted small" style={{ marginTop: "1rem", maxWidth: 340 }}>Imagine it. Build it. Launch it. Professional personal, business and e-commerce websites without code.</p>
-            <p className="muted tiny" style={{ maxWidth: 360 }}>An independent website builder. {config?.operator.note}</p>
+            <p className="muted tiny" style={{ maxWidth: 360 }}>Professional websites for businesses, personal brands and online stores. Built, hosted and kept running for you.</p>
           </div>
           <div><h4>Product</h4><ul><li><Link to="/templates">Templates</Link></li><li><Link to="/how-it-works">How it works</Link></li><li><Link to="/pricing">Pricing</Link></li></ul></div>
           <div><h4>Support</h4><ul><li><Link to="/contact">Contact us</Link></li><li><Link to="/contact?topic=ip_report">Report content</Link></li><li><Link to="/login">Sign in</Link></li></ul></div>
           <div><h4>Legal</h4><ul><li><Link to="/terms">Terms of Service</Link></li><li><Link to="/privacy">Privacy Policy</Link></li><li><Link to="/refunds">Refund &amp; Cancellation</Link></li></ul></div>
         </div>
-        <div className="legal"><span>© {new Date().getFullYear()} {config?.operator.name ?? "ImprintSites AI"}. All rights reserved.</span><ThemeToggle labelled /></div>
+        <div className="legal"><span>© {new Date().getFullYear()} ImprintSites AI. All rights reserved.</span><ThemeToggle labelled /></div>
       </div>
     </footer>
   );

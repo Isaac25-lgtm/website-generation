@@ -17,8 +17,7 @@ function Shell({ title, children }: { title: string; children: React.ReactNode }
 }
 
 function Operator() {
-  const { config } = useApp();
-  return <>{config?.operator.name ?? "ImprintSites AI"} (“we”, “us”). {config?.operator.note}</>;
+  return <>ImprintSites AI (“we”, “us”).</>;
 }
 
 export function Terms() {
